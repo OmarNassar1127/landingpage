@@ -6,6 +6,13 @@ import { Button } from "@/components/ui/button";
 import { useInView } from "react-intersection-observer";
 import { ChevronDown, Zap, Globe, Code, Database } from "lucide-react";
 import { scrollToSection } from "@/lib/scroll-utils";
+import dynamic from 'next/dynamic';
+
+// Import the 3D animation with dynamic loading and no SSR
+const StableAnimation = dynamic(
+  () => import('@/components/animations/3d/StableAnimation'),
+  { ssr: false }
+);
 
 export default function Hero() {
   const [ref, inView] = useInView({
@@ -277,6 +284,14 @@ export default function Hero() {
             We create cutting-edge technologies and platforms that transform businesses
             and enhance user experiences across industries.
           </motion.p>
+
+          {/* Add the 3D animation here */}
+          <motion.div
+            variants={itemVariants}
+            className="w-full my-8"
+          >
+            <StableAnimation />
+          </motion.div>
 
           <motion.div variants={itemVariants} className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
             <Button size="lg" asChild>
