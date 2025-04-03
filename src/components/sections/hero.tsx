@@ -87,12 +87,9 @@ export default function Hero() {
       ref={ref}
       className="relative h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Background gradient blur effects */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background to-background/50 dark:from-background dark:to-background/80 z-0" />
-      
       {/* WOW factor: Animated gradient blur - ENHANCED */}
       <motion.div 
-        className="absolute -bottom-40 -left-40 w-[700px] h-[700px] rounded-full bg-purple-500/40 blur-[100px] dark:bg-purple-600/40 z-0"
+        className="absolute -bottom-40 -left-40 w-[700px] h-[700px] rounded-full bg-purple-500/40 blur-[100px] dark:bg-purple-600/40 z-0 will-change-transform will-change-opacity"
         animate={{
           scale: [1, 1.2, 1],
           opacity: [0.4, 0.7, 0.4],
@@ -101,11 +98,12 @@ export default function Hero() {
           duration: 15,
           repeat: Infinity,
           repeatType: "reverse",
+          useCompositeLayer: true
         }}
       />
       
       <motion.div 
-        className="absolute top-20 -right-40 w-[600px] h-[600px] rounded-full bg-blue-500/40 blur-[100px] dark:bg-blue-600/40 z-0"
+        className="absolute top-20 -right-40 w-[600px] h-[600px] rounded-full bg-blue-500/40 blur-[100px] dark:bg-blue-600/40 z-0 will-change-transform will-change-opacity"
         animate={{
           scale: [1, 1.3, 1],
           opacity: [0.3, 0.6, 0.3],
@@ -115,11 +113,12 @@ export default function Hero() {
           repeat: Infinity,
           repeatType: "reverse",
           delay: 2,
+          useCompositeLayer: true
         }}
       />
       
       <motion.div 
-        className="absolute -bottom-20 right-40 w-[500px] h-[500px] rounded-full bg-teal-500/30 blur-[80px] dark:bg-teal-600/30 z-0"
+        className="absolute -bottom-20 right-40 w-[500px] h-[500px] rounded-full bg-teal-500/30 blur-[80px] dark:bg-teal-600/30 z-0 will-change-transform will-change-opacity"
         animate={{
           scale: [1, 1.4, 1],
           opacity: [0.3, 0.5, 0.3],
@@ -129,6 +128,7 @@ export default function Hero() {
           repeat: Infinity,
           repeatType: "reverse",
           delay: 1,
+          useCompositeLayer: true
         }}
       />
 
@@ -173,7 +173,7 @@ export default function Hero() {
         {Array.from({ length: 30 }).map((_, i) => (
           <motion.div
             key={`particle-${i}`}
-            className={`absolute rounded-full ${
+            className={`absolute rounded-full will-change-transform will-change-opacity ${
               i % 5 === 0 ? "bg-purple-500/40" : 
               i % 5 === 1 ? "bg-blue-500/40" : 
               i % 5 === 2 ? "bg-teal-500/40" : 
@@ -181,8 +181,8 @@ export default function Hero() {
               "bg-white/40"
             }`}
             initial={{
-              x: Math.random() * window.innerWidth,
-              y: Math.random() * window.innerHeight,
+              x: Math.random() * 1000,
+              y: Math.random() * 1000,
               opacity: Math.random() * 0.3 + 0.2,
               scale: Math.random() * 0.6 + 0.1,
             }}
@@ -196,6 +196,7 @@ export default function Hero() {
               duration: Math.random() * 20 + 20,
               repeat: Infinity,
               repeatType: "loop",
+              useCompositeLayer: true
             }}
             style={{
               width: Math.random() * 10 + 3 + "px",
@@ -211,7 +212,7 @@ export default function Hero() {
         {Array.from({ length: 10 }).map((_, i) => (
           <motion.div
             key={`line-${i}`}
-            className="absolute h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent"
+            className="absolute h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent will-change-transform"
             style={{
               top: `${10 + i * 8}%`,
               width: "100%",
@@ -226,7 +227,8 @@ export default function Hero() {
               repeat: Infinity,
               repeatType: "loop",
               ease: "easeInOut",
-              delay: i * 0.5
+              delay: i * 0.5,
+              useCompositeLayer: true
             }}
           />
         ))}
@@ -264,7 +266,7 @@ export default function Hero() {
 
           <motion.h1
             variants={itemVariants}
-            className="text-4xl md:text-6xl font-bold tracking-tight"
+            className="text-4xl md:text-6xl font-bold tracking-tight drop-shadow-md"
           >
             Innovative Solutions for
             <span className="text-primary block md:inline"> Modern Challenges</span>
@@ -272,19 +274,19 @@ export default function Hero() {
 
           <motion.p
             variants={itemVariants}
-            className="max-w-xl text-lg text-muted-foreground"
+            className="max-w-xl text-lg text-muted-foreground/90 backdrop-blur-sm bg-background/20 px-4 py-2 rounded-lg shadow-sm border border-primary/10"
           >
             We create cutting-edge technologies and platforms that transform businesses
             and enhance user experiences across industries.
           </motion.p>
 
           <motion.div variants={itemVariants} className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-            <Button size="lg" asChild>
+            <Button size="lg" className="backdrop-blur-sm bg-primary/90 hover:bg-primary/80 shadow-lg shadow-primary/20" asChild>
               <a href="#projects" onClick={(e) => handleScrollDown(e)}>
                 Explore Projects
               </a>
             </Button>
-            <Button variant="outline" size="lg" asChild>
+            <Button variant="outline" size="lg" className="backdrop-blur-sm bg-background/50 border-primary/30 hover:bg-background/30 shadow-lg" asChild>
               <a href="#contact" onClick={(e) => {
                 e.preventDefault();
                 scrollToSection("contact");
@@ -299,8 +301,8 @@ export default function Hero() {
             <motion.a 
               href="#projects" 
               onClick={(e) => handleScrollDown(e)}
-              className="flex flex-col items-center hover:text-primary transition-colors bg-background/70 backdrop-blur-sm px-8 py-3 rounded-full shadow-lg border border-primary/20 group"
-              whileHover={{ y: -3, boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1)" }}
+              className="flex flex-col items-center hover:text-primary transition-colors bg-background/50 backdrop-blur-lg px-8 py-3 rounded-full shadow-lg border border-primary/30 group"
+              whileHover={{ y: -3, boxShadow: "0 10px 25px -5px rgba(139,92,246,0.3)" }}
               whileTap={{ y: 0 }}
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}

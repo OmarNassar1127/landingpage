@@ -87,10 +87,12 @@ export default function CompanySlider() {
           className="space-y-8"
         >
           <motion.div variants={itemVariants} className="text-center relative">
-            <h2 className="text-2xl font-bold">Trusted by Industry Leaders</h2>
-            <p className="text-muted-foreground mt-2">
+            <div className="absolute left-1/2 -top-10 w-1 h-24 bg-gradient-to-b from-transparent via-primary/50 to-transparent transform -translate-x-1/2" />
+            <h2 className="text-2xl font-bold drop-shadow-md">Trusted by Industry Leaders</h2>
+            <p className="text-muted-foreground/90 backdrop-blur-sm bg-background/30 inline-block px-4 py-2 rounded-lg shadow-sm border border-primary/10 mt-2">
               Partnering with innovative organizations around the globe
             </p>
+            <div className="absolute left-1/2 -bottom-10 w-1 h-24 bg-gradient-to-b from-primary/50 via-transparent to-transparent transform -translate-x-1/2" />
           </motion.div>
 
           <motion.div 
@@ -98,21 +100,22 @@ export default function CompanySlider() {
             className="relative overflow-hidden my-8"
           >
             {/* Fade gradient effects on sides */}
-            <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-background to-transparent z-10" />
-            <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-background to-transparent z-10" />
+            <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-background to-transparent z-10 backdrop-blur-sm" />
+            <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-background to-transparent z-10 backdrop-blur-sm" />
             {/* First Slider (Left to Right) */}
             <motion.div
-              className="flex space-x-16 mb-12"
+              className="flex space-x-16 mb-12 will-change-transform"
               animate={{
                 x: [0, -1500],
               }}
               transition={{
                 x: {
-                  duration: 30,
+                  duration: 60,
                   repeat: Infinity,
                   repeatType: "loop",
                   ease: "linear",
                 },
+                useCompositeLayer: true
               }}
             >
               {[...shuffledCompanies, ...shuffledCompanies].map((company, index) => (
@@ -121,7 +124,7 @@ export default function CompanySlider() {
                   className="flex items-center justify-center min-w-[180px] h-16"
                 >
                   {/* If you have actual logos, replace this with an Image component */}
-                  <div className="flex items-center justify-center h-full px-4 py-2 bg-background/80 backdrop-blur-sm rounded-lg border border-primary/10 shadow-sm hover:border-primary/30 transition-all duration-300 hover:shadow-md hover:scale-105">
+                  <div className="flex items-center justify-center h-full px-4 py-2 bg-background/60 backdrop-blur-md rounded-lg border border-primary/20 shadow-lg hover:border-primary/40 transition-transform duration-300 hover:scale-[1.03]">
                     <div className="text-primary/80 mr-2">
                       {company.icon}
                     </div>
@@ -135,17 +138,18 @@ export default function CompanySlider() {
             
             {/* Second Slider (Right to Left) - with shuffled array again for more variety */}
             <motion.div
-              className="flex space-x-16"
+              className="flex space-x-16 will-change-transform"
               animate={{
                 x: [-1500, 0],
               }}
               transition={{
                 x: {
-                  duration: 30,
+                  duration: 60,
                   repeat: Infinity,
                   repeatType: "loop",
                   ease: "linear",
                 },
+                useCompositeLayer: true
               }}
             >
               {[...shuffledCompaniesReverse, ...shuffledCompaniesReverse].map((company, index) => (
@@ -154,7 +158,7 @@ export default function CompanySlider() {
                   className="flex items-center justify-center min-w-[180px] h-16"
                 >
                   {/* If you have actual logos, replace this with an Image component */}
-                  <div className="flex items-center justify-center h-full px-4 py-2 bg-background/80 backdrop-blur-sm rounded-lg border border-primary/10 shadow-sm hover:border-primary/30 transition-all duration-300 hover:shadow-md hover:scale-105">
+                  <div className="flex items-center justify-center h-full px-4 py-2 bg-background/60 backdrop-blur-md rounded-lg border border-primary/20 shadow-lg hover:border-primary/40 transition-all duration-300 hover:shadow-xl hover:shadow-primary/5 hover:scale-105">
                     <div className="text-primary/80 mr-2">
                       {company.icon}
                     </div>
