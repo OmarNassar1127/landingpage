@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import Navbar from "@/components/sections/navbar";
 import Hero from "@/components/sections/hero";
+import CompanySlider from "@/components/sections/company-slider";
 import Projects from "@/components/sections/projects";
 import About from "@/components/sections/about";
 import Contact from "@/components/sections/contact";
@@ -34,6 +35,7 @@ export default function Home() {
     <main className="min-h-screen">
       <Navbar />
       <Hero />
+      <CompanySlider />
       <Projects />
       <About />
       <Contact />
