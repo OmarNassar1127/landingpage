@@ -11,6 +11,48 @@ export const metadata: Metadata = {
   title: "NexBuy - Innovative Solutions for Modern Challenges",
   description: "At NexBuy, we specialize in AI Solutions, SaaS platforms, KYC integrations, and Shop Automations to help businesses thrive in the digital age.",
   keywords: "AI Solutions, SaaS platforms, Quotum, KYC integrations, shop automations, development, technology",
+  metadataBase: new URL('https://nexbuy.com'), // ToDo::Replace with actual domain
+  alternates: {
+    canonical: 'https://nexbuy.com', // ToDo::Replace with actual domain
+    languages: {
+      'en': 'https://nexbuy.com', // ToDo::Replace with actual domain
+      'nl': 'https://nexbuy.com?lang=nl', // ToDo::Replace with actual domain
+    },
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://nexbuy.com', // ToDo::Replace with actual domain
+    siteName: 'NexBuy',
+    title: 'NexBuy - Innovative Solutions for Modern Challenges',
+    description: 'AI Solutions, SaaS platforms, KYC integrations, and shop automations to help businesses thrive in the digital age.',
+    images: [
+      {
+        url: 'https://nexbuy.com/og-image.jpg', // ToDo::Replace with actual domain
+        width: 1200,
+        height: 630,
+        alt: 'NexBuy - Digital Innovation for Your Business',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'NexBuy - Innovative Solutions',
+    description: 'Digital Innovation for Your Business',
+    site: '@nexbuy',
+    creator: '@nexbuy',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    nocache: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
   icons: {
     icon: [
       { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },

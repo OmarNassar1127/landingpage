@@ -16,6 +16,7 @@ export const translations = {
       privacyPolicy: "Privacybeleid",
       termsOfService: "Gebruiksvoorwaarden",
       cookiePolicy: "Cookiebeleid",
+      sitemap: "Sitemap",
       rights: "Alle rechten voorbehouden.",
     },
     
@@ -128,6 +129,7 @@ export const translations = {
       privacyPolicy: "Privacy Policy",
       termsOfService: "Terms of Service",
       cookiePolicy: "Cookie Policy",
+      sitemap: "Sitemap",
       rights: "All rights reserved.",
     },
     
