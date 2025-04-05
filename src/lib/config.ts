@@ -44,6 +44,6 @@ export const siteConfig = {
     projects: "#projects",
     about: "#about",
     contact: "#contact",
-    services: "#services",
+    home: "#",
   },
 };

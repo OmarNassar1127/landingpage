@@ -54,9 +54,6 @@ export default function Home() {
         <div id={siteConfig.sections.projects.substring(1)}>
           <Projects />
         </div>
-        <div id={siteConfig.sections.services.substring(1)}>
-          {/* Your services section would go here */}
-        </div>
         <div id={siteConfig.sections.about.substring(1)}>
           <About />
         </div>
