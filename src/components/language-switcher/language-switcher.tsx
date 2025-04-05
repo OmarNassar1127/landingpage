@@ -11,7 +11,7 @@ export default function LanguageSwitcher() {
   
   // Set current language on component mount
   useEffect(() => {
-    if (pathname.startsWith('/en')) {
+    if (pathname && pathname.startsWith('/en')) {
       setCurrentLang('en');
     } else {
       setCurrentLang('nl');
@@ -21,11 +21,11 @@ export default function LanguageSwitcher() {
   // Get the URL for each language
   const getDutchUrl = () => {
     // If currently on English page, go to Dutch homepage
-    if (pathname.startsWith('/en')) {
+    if (pathname && pathname.startsWith('/en')) {
       return '/';
     }
     // Already on Dutch page
-    return pathname;
+    return pathname || '/';
   };
 
   const getEnglishUrl = () => {
@@ -34,11 +34,11 @@ export default function LanguageSwitcher() {
       return '/en';
     }
     // If on another Dutch page, convert to English equivalent
-    if (!pathname.startsWith('/en')) {
+    if (pathname && !pathname.startsWith('/en')) {
       return `/en${pathname}`;
     }
     // Already on English page
-    return pathname;
+    return pathname || '/en';
   };
   
   return (
