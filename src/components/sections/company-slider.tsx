@@ -75,6 +75,7 @@ export default function CompanySlider() {
 
   return (
     <section 
+      id="trusted-partners"
       ref={ref} 
       className="py-16 relative"
     >

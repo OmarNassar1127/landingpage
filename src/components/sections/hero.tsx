@@ -91,7 +91,7 @@ function HeroContent() {
   
   const handleScrollDown = (e: React.MouseEvent) => {
     e.preventDefault();
-    scrollToSection("projects");
+    scrollToSection("trusted-partners");
   };
 
   return (
@@ -305,7 +305,7 @@ function HeroContent() {
 
           <motion.div variants={itemVariants} className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
             <Button size="lg" className="backdrop-blur-sm bg-primary/90 hover:bg-primary/80 shadow-lg shadow-primary/20" asChild>
-              <a href="#projects" onClick={(e) => handleScrollDown(e)}>
+              <a href="#trusted-partners" onClick={(e) => handleScrollDown(e)}>
                 {t.hero.ctaButton}
               </a>
             </Button>
@@ -323,7 +323,7 @@ function HeroContent() {
           {isMounted && (
             <div className="absolute bottom-[-200px] left-0 right-0 flex justify-center" style={{ zIndex: 100 }}>
               <motion.a 
-                href="#projects" 
+                href="#trusted-partners" 
                 onClick={(e) => handleScrollDown(e)}
                 className="flex flex-col items-center hover:text-primary transition-colors bg-background/50 backdrop-blur-lg px-8 py-3 rounded-full shadow-lg border border-primary/30 group"
                 whileHover={{ y: -3, boxShadow: "0 10px 25px -5px rgba(139,92,246,0.3)" }}
