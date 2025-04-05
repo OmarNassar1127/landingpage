@@ -54,9 +54,9 @@ export default function Footer() {
             <h4 className="font-semibold text-lg mb-4">{t.footer.legal}</h4>
             <ul className="space-y-2">
               {[
-                { name: t.footer.privacyPolicy, href: "#" },
-                { name: t.footer.termsOfService, href: "#" },
-                { name: t.footer.cookiePolicy, href: "#" },
+                { name: t.footer.privacyPolicy, href: "/privacy-policy" },
+                { name: t.footer.termsOfService, href: "/terms-of-service" },
+                { name: t.footer.cookiePolicy, href: "/cookie-policy" },
                 { name: t.footer.sitemap, href: "/sitemap.xml" },
               ].map((link) => (
                 <li key={link.name}>

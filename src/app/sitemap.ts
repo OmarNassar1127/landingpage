@@ -33,6 +33,26 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     
+    // Policy pages
+    {
+      url: `${baseUrl}/privacy-policy`,
+      lastModified,
+      changeFrequency: 'yearly' as const,
+      priority: 0.5,
+    },
+    {
+      url: `${baseUrl}/terms-of-service`,
+      lastModified,
+      changeFrequency: 'yearly' as const,
+      priority: 0.5,
+    },
+    {
+      url: `${baseUrl}/cookie-policy`,
+      lastModified,
+      changeFrequency: 'yearly' as const,
+      priority: 0.5,
+    },
+    
     // English pages
     {
       url: `${baseUrl}/en`,
