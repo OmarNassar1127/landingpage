@@ -2,10 +2,10 @@
 
 import * as React from "react";
 import { cn } from "@/lib/utils";
-import { motion } from "framer-motion";
+import { motion, HTMLMotionProps } from "framer-motion";
 
-export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+export interface ButtonProps 
+  extends Omit<HTMLMotionProps<"button">, "whileHover" | "whileTap"> {
   variant?: "default" | "outline" | "ghost" | "link";
   size?: "default" | "sm" | "lg" | "icon";
   asChild?: boolean;
@@ -24,7 +24,13 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     },
     ref
   ) => {
-    const Comp = asChild ? motion.button : motion.button;
+    const Comp = motion.button;
+    
+    const motionProps = {
+      whileHover: { scale: 1.03 },
+      whileTap: { scale: 0.98 }
+    };
+    
     return (
       <Comp
         className={cn(
@@ -45,14 +51,13 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
           className
         )}
         ref={ref}
-        whileHover={{ scale: 1.03 }}
-        whileTap={{ scale: 0.98 }}
+        {...motionProps}
         {...props}
       >
         {isLoading ? (
           <div className="mr-2 h-4 w-4 animate-spin rounded-full border-2 border-current border-t-transparent" />
         ) : null}
-        {props.children}
+        {props.children as React.ReactNode}
       </Comp>
     );
   }
