@@ -26,12 +26,13 @@ export default React.memo(function BackgroundEffect() {
 
       {/* S-curve path with blur and glow - OPTIMIZED */}
       <div className="absolute inset-0 flex items-center justify-center">
-        {/* Static vertical line for better performance */}
+        {/* Static vertical line with limited height for better readability */}
         <div
-          className="absolute h-[100%] w-[2px] bg-gradient-to-b from-primary/0 via-primary/30 to-primary/0"
+          className="absolute h-[70vh] w-[2px] bg-gradient-to-b from-primary/0 via-primary/30 to-primary/0"
           style={{
             filter: "blur(3px)",
             willChange: "transform",
+            top: "10vh", /* Position from top instead of stretching full height */
           }}
         />
         
@@ -126,21 +127,23 @@ export default React.memo(function BackgroundEffect() {
         }}
       />
       
-      {/* Main S-shaped static gradient for better performance */}
+      {/* Main S-shaped static gradient with limited height for better performance and readability */}
       <div 
-        className="absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-transparent via-primary/30 to-transparent"
+        className="absolute left-1/2 w-1 h-[80vh] bg-gradient-to-b from-transparent via-primary/30 to-transparent"
         style={{
           transform: "translateX(-50%)",
+          top: "5vh", /* Position from top instead of stretching full height */
         }}
       />
       
-      {/* Subtle vertical light column */}
+      {/* Subtle vertical light column with limited height */}
       <div 
-        className="absolute left-1/2 top-0 bottom-0 w-[20vw] opacity-[0.04]"
+        className="absolute left-1/2 w-[20vw] h-[85vh] opacity-[0.04]"
         style={{
           background: "linear-gradient(to right, transparent 0%, rgba(255,255,255,0.05) 50%, transparent 100%)",
           transform: "translateX(-50%)",
           filter: "blur(20px)",
+          top: "0",
         }}
       />
       
