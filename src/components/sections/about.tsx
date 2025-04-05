@@ -178,7 +178,7 @@ export default function About() {
                 />
               </div>
               <div className="absolute -bottom-4 -right-4 bg-primary/10 backdrop-blur-xl rounded-lg p-4 shadow-lg border border-primary/20">
-                <p className="text-sm font-medium">The Virelio team</p>
+                <p className="text-sm font-medium">{t.about.theTeam}</p>
               </div>
             </motion.div>
           </motion.div>

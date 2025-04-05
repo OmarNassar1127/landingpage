@@ -97,6 +97,7 @@ export const translations = {
     about: {
       title: "Over Ons",
       subtitle: "Leer meer over ons team en onze missie.",
+      theTeam: "Het Virelio team",
       description:
         "Virelio is een toonaangevend technologiebedrijf dat gespecialiseerd is in het bouwen van digitale oplossingen voor bedrijven. Ons team van experts werkt nauw samen met klanten om op maat gemaakte oplossingen te leveren die voldoen aan hun behoeften.",
       missionTitle: "Onze Missie",
@@ -249,6 +250,7 @@ export const translations = {
     about: {
       title: "About Us",
       subtitle: "Learn more about our team and mission.",
+      theTeam: "The Virelio team",
       description:
         "Virelio is a leading technology company specializing in building digital solutions for businesses. Our team of experts works closely with clients to deliver tailored solutions that meet their needs.",
       missionTitle: "Our Mission",
