@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "NexBuy - Innovative Solutions",
     description: "Innovative AI solutions, SaaS platforms, KYC integrations, and shop automations",
-    url: "https://nexbuy.com",
+    url: "https://nexbuy.com", // ToDo::Replace with actual domain
     siteName: "NexBuy",
     locale: "en_US",
     type: "website",
