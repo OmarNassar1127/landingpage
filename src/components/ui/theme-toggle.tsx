@@ -5,6 +5,7 @@ import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
+import { Icon } from "@/components/ui/icon";
 
 export function ThemeToggle() {
   const { theme, setTheme } = useTheme();
@@ -22,9 +23,9 @@ export function ThemeToggle() {
         transition={{ duration: 0.3 }}
       >
         {theme === "light" ? (
-          <Moon className="h-5 w-5" />
+          <Icon icon={Moon} className="h-5 w-5" />
         ) : (
-          <Sun className="h-5 w-5" />
+          <Icon icon={Sun} className="h-5 w-5" />
         )}
       </motion.div>
       <span className="sr-only">Toggle theme</span>

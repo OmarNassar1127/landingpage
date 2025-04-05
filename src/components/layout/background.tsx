@@ -1,10 +1,16 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 // Using React.memo to prevent unnecessary re-renders
 export default React.memo(function BackgroundEffect() {
+  const [mounted, setMounted] = useState(false);
+  
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   return (
     <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none will-change-transform">
       {/* Main S shape gradient - OPTIMIZED */}
@@ -30,69 +36,75 @@ export default React.memo(function BackgroundEffect() {
         />
         
         {/* S-curve main element - SIMPLIFIED FOR PERFORMANCE */}
-        <svg 
-          width="100%" 
-          height="120%" 
-          viewBox="0 0 100 120" 
-          preserveAspectRatio="none"
-          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-40"
-        >
-          {/* Main S curve path - simplified */}
-          <path
-            d="M 50,5 
-               C 75,5 85,25 85,40 
-               C 85,60 15,60 15,80 
-               C 15,100 40,115 65,115"
-            stroke="url(#gradientLine)"
-            strokeWidth="0.8"
-            strokeLinecap="round"
-            fill="none"
-          />
-          
-          <defs>
-            <linearGradient id="gradientLine" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stopColor="rgba(139,92,246,0)" />
-              <stop offset="20%" stopColor="rgba(139,92,246,0.6)" />
-              <stop offset="50%" stopColor="rgba(139,92,246,1)" />
-              <stop offset="80%" stopColor="rgba(139,92,246,0.6)" />
-              <stop offset="100%" stopColor="rgba(139,92,246,0)" />
-            </linearGradient>
-          </defs>
-        </svg>
+        {mounted && (
+          <svg 
+            width="100%" 
+            height="120%" 
+            viewBox="0 0 100 120" 
+            preserveAspectRatio="none"
+            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-40"
+          >
+            {/* Main S curve path - simplified */}
+            <path
+              d="M 50,5 
+                 C 75,5 85,25 85,40 
+                 C 85,60 15,60 15,80 
+                 C 15,100 40,115 65,115"
+              stroke="url(#gradientLine)"
+              strokeWidth="0.8"
+              strokeLinecap="round"
+              fill="none"
+            />
+            
+            <defs>
+              <linearGradient id="gradientLine" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stopColor="rgba(139,92,246,0)" />
+                <stop offset="20%" stopColor="rgba(139,92,246,0.6)" />
+                <stop offset="50%" stopColor="rgba(139,92,246,1)" />
+                <stop offset="80%" stopColor="rgba(139,92,246,0.6)" />
+                <stop offset="100%" stopColor="rgba(139,92,246,0)" />
+              </linearGradient>
+            </defs>
+          </svg>
+        )}
         
         {/* Simplified bright point with optimized animations */}
-        <motion.div
-          className="absolute w-5 h-5 rounded-full bg-primary/90 will-change-transform"
-          style={{
-            filter: "blur(10px)",
-            boxShadow: "0 0 20px 10px rgba(139,92,246,0.5)",
-            willChange: "transform",
-          }}
-          animate={{
-            y: ["-30vh", "30vh"],
-          }}
-          transition={{
-            y: { duration: 15, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" },
-            useCompositeLayer: true
-          }}
-        />
-        
-        <motion.div
-          className="absolute w-4 h-4 rounded-full bg-blue-400/90 will-change-transform"
-          style={{
-            filter: "blur(8px)",
-            boxShadow: "0 0 18px 8px rgba(96,165,250,0.5)",
-            willChange: "transform",
-          }}
-          animate={{
-            y: ["25vh", "-25vh"],
-          }}
-          transition={{
-            y: { duration: 18, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" },
-            delay: 2,
-            useCompositeLayer: true
-          }}
-        />
+        {mounted && (
+          <>
+            <motion.div
+              className="absolute w-5 h-5 rounded-full bg-primary/90 will-change-transform"
+              style={{
+                filter: "blur(10px)",
+                boxShadow: "0 0 20px 10px rgba(139,92,246,0.5)",
+                willChange: "transform",
+              }}
+              animate={{
+                y: ["-30vh", "30vh"],
+              }}
+              transition={{
+                y: { duration: 15, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" },
+                useCompositeLayer: true
+              }}
+            />
+            
+            <motion.div
+              className="absolute w-4 h-4 rounded-full bg-blue-400/90 will-change-transform"
+              style={{
+                filter: "blur(8px)",
+                boxShadow: "0 0 18px 8px rgba(96,165,250,0.5)",
+                willChange: "transform",
+              }}
+              animate={{
+                y: ["25vh", "-25vh"],
+              }}
+              transition={{
+                y: { duration: 18, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" },
+                delay: 2,
+                useCompositeLayer: true
+              }}
+            />
+          </>
+        )}
       </div>
       
       {/* Simplified ambient glow effects - optimized for performance */}
