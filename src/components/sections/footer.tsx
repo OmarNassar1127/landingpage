@@ -55,14 +55,26 @@ export default function Footer() {
                 { name: t.footer.privacyPolicy, href: "#" },
                 { name: t.footer.termsOfService, href: "#" },
                 { name: t.footer.cookiePolicy, href: "#" },
+                { name: t.footer.sitemap, href: "/sitemap.xml" },
               ].map((link) => (
                 <li key={link.name}>
-                  <Link
-                    href={link.href}
-                    className="text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    {link.name}
-                  </Link>
+                  {link.name === t.footer.sitemap ? (
+                    <a
+                      href={link.href}
+                      className="text-muted-foreground hover:text-primary transition-colors"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {link.name}
+                    </a>
+                  ) : (
+                    <Link
+                      href={link.href}
+                      className="text-muted-foreground hover:text-primary transition-colors"
+                    >
+                      {link.name}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>
