@@ -175,7 +175,7 @@ export const translations = {
       location: "Locatie",
       followUs: "Volg Ons",
       emailAddress: "contact@Virelio.nl",
-      phoneNumber: "+31 6 1234 5678",
+      phoneNumber: "+31 6 4044 6732",
       locationText: "Amsterdam, Nederland",
     },
 
@@ -364,7 +364,7 @@ export const translations = {
       location: "Location",
       followUs: "Follow Us",
       emailAddress: "contact@Virelio.nl",
-      phoneNumber: "+31 6 1234 5678",
+      phoneNumber: "+31 6 4044 6732",
       locationText: "Amsterdam, The Netherlands",
     },
 
