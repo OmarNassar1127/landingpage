@@ -319,13 +319,13 @@ function HeroContent() {
             </Button>
           </motion.div>
           
-          {/* Button positioned higher for mobile view */}
+          {/* Button positioned with responsive bottom margin */}
           {isMounted && (
-            <div className="absolute bottom-[-150px] left-0 right-0 flex justify-center" style={{ zIndex: 100 }}>
+            <div className="absolute bottom-[-60px] sm:bottom-[-80px] md:bottom-[-120px] lg:bottom-[-150px] left-0 right-0 flex justify-center" style={{ zIndex: 100 }}>
               <motion.a 
                 href="#trusted-partners" 
                 onClick={(e) => handleScrollDown(e)}
-                className="flex flex-col items-center hover:text-primary transition-colors bg-background/50 backdrop-blur-lg px-8 py-3 rounded-full shadow-lg border border-primary/30 group"
+                className="flex flex-col items-center hover:text-primary transition-colors bg-background/50 backdrop-blur-lg px-6 py-2 sm:px-8 sm:py-3 rounded-full shadow-lg border border-primary/30 group"
                 whileHover={{ y: -3, boxShadow: "0 10px 25px -5px rgba(139,92,246,0.3)" }}
                 whileTap={{ y: 0 }}
                 initial={{ y: 20, opacity: 0 }}
