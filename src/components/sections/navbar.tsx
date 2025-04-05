@@ -5,7 +5,7 @@ import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { LanguageToggle } from "@/components/ui/language-toggle";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { scrollToSection } from "@/lib/scroll-utils";
+import { scrollToSection, navigateFromPolicyPage } from "@/lib/scroll-utils";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { Menu, X, ChevronUp } from "lucide-react";
@@ -22,6 +22,7 @@ export default function Navbar() {
     { name: t.nav.projects, href: "#projects" },
     { name: t.nav.about, href: "#about" },
     { name: t.nav.contact, href: "#contact" },
+    { name: t.nav.testimonials, href: "#testimonials" },
   ];
 
   useEffect(() => {
@@ -37,12 +38,20 @@ export default function Navbar() {
     href: string
   ) => {
     e.preventDefault();
-    if (href === "#") {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    } else {
-      const sectionId = href.replace("#", "");
-      scrollToSection(sectionId);
+    
+    // Check if we're navigating from a policy page
+    const handledPolicyNavigation = navigateFromPolicyPage(href);
+    
+    // If not handled as a policy navigation, do regular scrolling
+    if (!handledPolicyNavigation) {
+      if (href === "#") {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      } else {
+        const sectionId = href.replace("#", "");
+        scrollToSection(sectionId);
+      }
     }
+    
     if (mobileMenuOpen) setMobileMenuOpen(false);
   };
 

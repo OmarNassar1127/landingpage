@@ -22,25 +22,49 @@ const getProjects = (t: any) => [
   {
     title: t.projects.aiSolutions.title,
     description: t.projects.aiSolutions.description,
-    techStack: "Python TensorFlow Next.js MySQL Laravel OpenAI TypeScript React",
+    techStack: t.projects.aiSolutions.techStack.join(" "),
     learnMoreUrl: "#",
   },
   {
     title: t.projects.saasQuotum.title,
     description: t.projects.saasQuotum.description,
-    techStack: "React Node.js MongoDB Laravel Stripe TradingView Mailtrap",
+    techStack: t.projects.saasQuotum.techStack.join(" "),
     learnMoreUrl: "#",
   },
   {
     title: t.projects.kycIntegrations.title,
     description: t.projects.kycIntegrations.description,
-    techStack: "Laravel MySQL Onfido React-Native",
+    techStack: t.projects.kycIntegrations.techStack.join(" "),
     learnMoreUrl: "#",
   },
   {
     title: t.projects.shopAutomations.title,
     description: t.projects.shopAutomations.description,
-    techStack: "Laravel Python Bol.com AWS Marktplaats MongoDB Mailtrap",
+    techStack: t.projects.shopAutomations.techStack.join(" "),
+    learnMoreUrl: "#",
+  },
+  {
+    title: t.projects.linkedinAi.title,
+    description: t.projects.linkedinAi.description,
+    techStack: t.projects.linkedinAi.techStack.join(" "),
+    learnMoreUrl: "#",
+  },
+  {
+    title: t.projects.ahBot.title,
+    description: t.projects.ahBot.description,
+    techStack: t.projects.ahBot.techStack.join(" "),
+    learnMoreUrl: "#",
+  },
+  {
+    title: t.projects.capgeminiAi.title,
+    description: t.projects.capgeminiAi.description,
+    techStack: t.projects.capgeminiAi.techStack.join(" "),
+    learnMoreUrl: "#",
+  },
+  {
+    title: t.projects.klmCatering.title,
+    description: t.projects.klmCatering.description,
+    techStack: t.projects.klmCatering.techStack.join(" "),
     learnMoreUrl: "#",
   },
 ];
@@ -202,7 +226,7 @@ export default function Projects() {
                   </div>
                 </CardContent>
                 <CardFooter>
-                  <Button 
+                  {/* <Button 
                     variant="ghost" 
                     size="sm" 
                     className="group" 
@@ -219,7 +243,7 @@ export default function Projects() {
                         <ArrowRight className="h-4 w-4 transform transition-transform group-hover:translate-x-1" />
                       </motion.div>
                     </a>
-                  </Button>
+                  </Button> */}
                 </CardFooter>
               </Card>
             </motion.div>

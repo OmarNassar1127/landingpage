@@ -6,6 +6,13 @@ export const translations = {
       projects: "Projecten",
       about: "Over Ons",
       contact: "Contact",
+      testimonials: "Aanbevelingen",
+    },
+
+    // Testimonials section
+    testimonials: {
+      title: "Aanbevelingen",
+      subtitle: "Wat onze klanten en collega's over ons zeggen",
     },
 
     // Footer
@@ -91,6 +98,34 @@ export const translations = {
           "Mailtrap",
         ],
       },
+      linkedinAi: {
+        title: "LinkedIn AI Lead Generator",
+        description:
+          "AI-tool waarmee gebruikers automatisch leadlijsten kunnen opstellen op basis van functie, locatie en beschikbaarheid. Ontworpen voor snelheid, precisie en schaalbaarheid in sourcing.",
+        techStack: ["Python", "Node.js", "Browser Automation", "AI Filtering"],
+      },
+      ahBot: {
+        title: "Albert Heijn Bestelassistent",
+        description:
+          "Slimme AI-assistent gekoppeld aan het AH-account. Herkent koopgedrag, stelt automatisch boodschappenlijsten samen en plaatst bestellingen op basis van natuurlijke taal.",
+        techStack: ["Python", "API Integratie", "LangChain", "Prompt Logic"],
+      },
+      capgeminiAi: {
+        title: "AI Assistent – Capgemini",
+        description:
+          "Op maat gemaakte AI-chatoplossing die consultants helpt interne documenten en projectinformatie snel te doorzoeken – volledig privacyproof binnen de organisatie.",
+        techStack: ["Custom AI", "Vector DB", "Private Deployment", "RAG"],
+      },
+      klmCatering: {
+        title: "KLM Catering – Supply Chain Optimalisatie",
+        description:
+          "Optimalisatie van logistieke processen binnen KLM Catering. Inclusief ophalen van vereisten, procesanalyse en herontwerp van ketenactiviteiten.",
+        techStack: [
+          "Process Mapping",
+          "Stakeholder Interviews",
+          "Workflow Design",
+        ],
+      },
     },
 
     // About section
@@ -159,6 +194,13 @@ export const translations = {
       projects: "Projects",
       about: "About",
       contact: "Contact",
+      testimonials: "Testimonials",
+    },
+
+    // Testimonials section
+    testimonials: {
+      title: "Testimonials",
+      subtitle: "What our clients and colleagues say about us",
     },
 
     // Footer
@@ -242,6 +284,34 @@ export const translations = {
           "Marktplaats",
           "MongoDB",
           "Mailtrap",
+        ],
+      },
+      linkedinAi: {
+        title: "LinkedIn AI Lead Generator",
+        description:
+          "AI tool enabling users to automatically compile lead lists based on role, location, and availability. Designed for speed, precision, and scalability in sourcing.",
+        techStack: ["Python", "Node.js", "Browser Automation", "AI Filtering"],
+      },
+      ahBot: {
+        title: "Albert Heijn Order Assistant",
+        description:
+          "Smart AI assistant linked to AH account. Recognizes shopping behavior, automatically compiles shopping lists, and places orders based on natural language.",
+        techStack: ["Python", "API Integration", "LangChain", "Prompt Logic"],
+      },
+      capgeminiAi: {
+        title: "AI Assistant – Capgemini (internal)",
+        description:
+          "Custom AI chat solution helping consultants quickly search internal documents and project information – completely privacy-proof within the organization.",
+        techStack: ["Custom AI", "Vector DB", "Private Deployment", "RAG"],
+      },
+      klmCatering: {
+        title: "KLM Catering – Supply Chain Optimization",
+        description:
+          "Optimization of logistics processes within KLM Catering. Including requirements gathering, process analysis, and redesign of chain activities.",
+        techStack: [
+          "Process Mapping",
+          "Stakeholder Interviews",
+          "Workflow Design",
         ],
       },
     },

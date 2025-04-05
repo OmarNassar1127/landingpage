@@ -5,11 +5,12 @@ import CompanySlider from "@/components/sections/company-slider";
 import Projects from "@/components/sections/projects";
 import About from "@/components/sections/about";
 import Contact from "@/components/sections/contact";
+import Testimonials from "@/components/sections/testimonials";
 import Footer from "@/components/sections/footer";
 import { generateMetadata } from "@/lib/metadata";
 import { siteConfig } from "@/lib/config";
 import JsonLd from "@/components/seo/json-ld";
-import { faqSchema } from "@/lib/schema";
+import { faqSchema, testimonialsSchema } from "@/lib/schema";
 
 // Sample FAQ data for the landing page
 const faqData = {
@@ -32,6 +33,37 @@ const faqData = {
   ],
 };
 
+// Testimonials data for structured data
+const testimonialsData = {
+  items: [
+    {
+      author: "Azeez Bayonle Abideen",
+      role: "User Experience Designer @ Vloto",
+      text: "I have the pleasure of working with Omar, where he has consistently demonstrated exceptional skills as a backend developer, delivering efficient, maintainable code, tackling complex problems with innovative solutions, and fostering a collaborative team environment.",
+    },
+    {
+      author: "Cristian Arboleda",
+      role: ".NET Developer",
+      text: "Omar is a talented developer with a strong drive to continuously grow and improve himself. He is always willing to support his colleagues, which makes him a valuable team player.",
+    },
+    {
+      author: "Ihor Tolkachov",
+      role: "Frontend Developer",
+      text: "I had the pleasure of working with Omar at Vloto B.V., where he proved to be a reliable and skilled colleague. His communication, planning, and coding abilities were evident in all our projects.",
+    },
+    {
+      author: "Sophia Chen",
+      role: "Product Manager at TechInnovate",
+      text: "Working with Omar and his team at Virelio has transformed our product development workflow. Their AI solutions have automated processes that used to take days into minutes.",
+    },
+    {
+      author: "Jan van der Meer",
+      role: "CTO at Dutch E-commerce Solutions",
+      text: "The shop automation system developed by Virelio has revolutionized how we manage our e-commerce operations. Omar's deep understanding of both the technical and business aspects of e-commerce allowed for a solution that seamlessly integrates with our existing platforms.",
+    },
+  ],
+};
+
 export const metadata: Metadata = generateMetadata({
   title: "Innovative Solutions for Modern Challenges",
   description:
@@ -44,8 +76,9 @@ export const metadata: Metadata = generateMetadata({
 export default function Home() {
   return (
     <>
-      {/* Adding FAQ structured data for better SEO */}
+      {/* Adding structured data for better SEO */}
       <JsonLd data={faqSchema(faqData)} />
+      <JsonLd data={testimonialsSchema(testimonialsData)} />
 
       <main className="min-h-screen">
         <Navbar />
@@ -59,6 +92,9 @@ export default function Home() {
         </div>
         <div id={siteConfig.sections.contact.substring(1)}>
           <Contact />
+        </div>
+        <div id={siteConfig.sections.testimonials.substring(1)}>
+          <Testimonials />
         </div>
         <Footer />
       </main>

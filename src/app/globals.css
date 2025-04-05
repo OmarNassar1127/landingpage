@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Fix for layout shifts when opening dropdowns */
+html {
+  overflow-y: scroll;
+}
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -127,36 +131,64 @@
 }
 
 /* Technology-specific styling variations */
+
 /* Frontend technologies - Blue */
 .tech-badge[data-tech="React"],
 .tech-badge[data-tech="Next.js"],
 .tech-badge[data-tech="React Native"],
-.tech-badge[data-tech="Native"] {
+.tech-badge[data-tech="Native"],
+.tech-badge[data-tech="Tailwind"],
+.tech-badge[data-tech="CSS"],
+.tech-badge[data-tech="HTML"],
+.tech-badge[data-tech="Frontend"] {
   @apply border-blue-300 dark:border-blue-700 bg-blue-50 dark:bg-blue-950/40 text-blue-800 dark:text-blue-300;
 }
 
 /* Backend PHP technologies - Red */
 .tech-badge[data-tech="Laravel"],
-.tech-badge[data-tech="PHP"] {
+.tech-badge[data-tech="PHP"],
+.tech-badge[data-tech="Backend"],
+.tech-badge[data-tech="API"],
+.tech-badge[data-tech="REST"] {
   @apply border-red-300 dark:border-red-700 bg-red-50 dark:bg-red-950/40 text-red-800 dark:text-red-300;
 }
 
 /* AI and Python technologies - Green */
 .tech-badge[data-tech="Python"],
 .tech-badge[data-tech="TensorFlow"],
-.tech-badge[data-tech="OpenAI"] {
+.tech-badge[data-tech="OpenAI"],
+.tech-badge[data-tech="Browser Automation"],
+.tech-badge[data-tech="AI Filtering"],
+.tech-badge[data-tech="LangChain"],
+.tech-badge[data-tech="Prompt Logic"],
+.tech-badge[data-tech="Custom AI"],
+.tech-badge[data-tech="Vector DB"],
+.tech-badge[data-tech="Private Deployment"],
+.tech-badge[data-tech="RAG"],
+.tech-badge[data-tech="Machine Learning"],
+.tech-badge[data-tech="AI"],
+.tech-badge[data-tech="Selenium"],
+.tech-badge[data-tech="Puppeteer"] {
   @apply border-green-300 dark:border-green-700 bg-green-50 dark:bg-green-950/40 text-green-800 dark:text-green-300;
 }
 
 /* Database technologies - Yellow */
 .tech-badge[data-tech="MongoDB"],
-.tech-badge[data-tech="MySQL"] {
+.tech-badge[data-tech="MySQL"],
+.tech-badge[data-tech="PostgreSQL"],
+.tech-badge[data-tech="Redis"],
+.tech-badge[data-tech="Database"],
+.tech-badge[data-tech="Storage"] {
   @apply border-yellow-300 dark:border-yellow-700 bg-yellow-50 dark:bg-yellow-950/40 text-yellow-800 dark:text-yellow-300;
 }
 
 /* JavaScript technologies - Emerald */
 .tech-badge[data-tech="Node.js"],
-.tech-badge[data-tech="TypeScript"] {
+.tech-badge[data-tech="TypeScript"],
+.tech-badge[data-tech="JavaScript"],
+.tech-badge[data-tech="Express"],
+.tech-badge[data-tech="Vue"],
+.tech-badge[data-tech="Angular"] {
   @apply border-emerald-300 dark:border-emerald-700 bg-emerald-50 dark:bg-emerald-950/40 text-emerald-800 dark:text-emerald-300;
 }
 
@@ -165,12 +197,179 @@
 .tech-badge[data-tech="AWS"],
 .tech-badge[data-tech="Onfido"],
 .tech-badge[data-tech="Mailtrap"],
-.tech-badge[data-tech="TradingView"] {
+.tech-badge[data-tech="TradingView"],
+.tech-badge[data-tech="Firebase"],
+.tech-badge[data-tech="Google Cloud"],
+.tech-badge[data-tech="Azure"],
+.tech-badge[data-tech="Vercel"],
+.tech-badge[data-tech="Netlify"],
+.tech-badge[data-tech="Docker"],
+.tech-badge[data-tech="Kubernetes"] {
   @apply border-purple-300 dark:border-purple-700 bg-purple-50 dark:bg-purple-950/40 text-purple-800 dark:text-purple-300;
 }
 
 /* Dutch platforms - Orange */
 .tech-badge[data-tech="Bol.com"],
-.tech-badge[data-tech="Marktplaats"] {
+.tech-badge[data-tech="Marktplaats"],
+.tech-badge[data-tech="Albert Heijn"],
+.tech-badge[data-tech="AH"],
+.tech-badge[data-tech="Dutch"],
+.tech-badge[data-tech="Nederland"],
+.tech-badge[data-tech="KLM"] {
+  @apply border-orange-300 dark:border-orange-700 bg-orange-50 dark:bg-orange-950/40 text-orange-800 dark:text-orange-300;
+}
+
+/* Process - Indigo */
+.tech-badge[data-tech="Process"] {
+  @apply border-indigo-300 dark:border-indigo-700 bg-indigo-50 dark:bg-indigo-950/40 text-indigo-800 dark:text-indigo-300;
+}
+
+/* Mapping - Emerald */
+.tech-badge[data-tech="Mapping"] {
+  @apply border-emerald-300 dark:border-emerald-700 bg-emerald-50 dark:bg-emerald-950/40 text-emerald-800 dark:text-emerald-300;
+}
+
+/* Stakeholder - Purple */
+.tech-badge[data-tech="Stakeholder"] {
+  @apply border-purple-300 dark:border-purple-700 bg-purple-50 dark:bg-purple-950/40 text-purple-800 dark:text-purple-300;
+}
+
+/* Interviews - Orange */
+.tech-badge[data-tech="Interviews"] {
+  @apply border-orange-300 dark:border-orange-700 bg-orange-50 dark:bg-orange-950/40 text-orange-800 dark:text-orange-300;
+}
+
+/* Workflow - Cyan */
+.tech-badge[data-tech="Workflow"] {
+  @apply border-cyan-300 dark:border-cyan-700 bg-cyan-50 dark:bg-cyan-950/40 text-cyan-800 dark:text-cyan-300;
+}
+
+/* Design - Rose */
+.tech-badge[data-tech="Design"] {
+  @apply border-rose-300 dark:border-rose-700 bg-rose-50 dark:bg-rose-950/40 text-rose-800 dark:text-rose-300;
+}
+
+/* AI and ML - Green */
+.tech-badge[data-tech="Custom"],
+.tech-badge[data-tech="AI"],
+.tech-badge[data-tech="Vector"],
+.tech-badge[data-tech="DB"],
+.tech-badge[data-tech="Private"],
+.tech-badge[data-tech="Deployment"],
+.tech-badge[data-tech="RAG"],
+.tech-badge[data-tech="AI Filtering"],
+.tech-badge[data-tech="LangChain"],
+.tech-badge[data-tech="Prompt"],
+.tech-badge[data-tech="Logic"] {
+  @apply border-green-300 dark:border-green-700 bg-green-50 dark:bg-green-950/40 text-green-800 dark:text-green-300;
+}
+
+/* Programming Languages - Emerald */
+.tech-badge[data-tech="Python"],
+.tech-badge[data-tech="Node.js"] {
+  @apply border-emerald-300 dark:border-emerald-700 bg-emerald-50 dark:bg-emerald-950/40 text-emerald-800 dark:text-emerald-300;
+}
+
+/* Automation - Purple */
+.tech-badge[data-tech="Browser"],
+.tech-badge[data-tech="Automation"] {
+  @apply border-purple-300 dark:border-purple-700 bg-purple-50 dark:bg-purple-950/40 text-purple-800 dark:text-purple-300;
+}
+
+/* Integration - Cyan */
+.tech-badge[data-tech="API"],
+.tech-badge[data-tech="Integratie"] {
+  @apply border-cyan-300 dark:border-cyan-700 bg-cyan-50 dark:bg-cyan-950/40 text-cyan-800 dark:text-cyan-300;
+}
+
+/* Security & Authentication - Rose */
+.tech-badge[data-tech="Security"],
+.tech-badge[data-tech="Authentication"],
+.tech-badge[data-tech="OAuth"],
+.tech-badge[data-tech="JWT"],
+.tech-badge[data-tech="KYC"],
+.tech-badge[data-tech="Identity Verification"],
+.tech-badge[data-tech="Encryption"] {
+  @apply border-rose-300 dark:border-rose-700 bg-rose-50 dark:bg-rose-950/40 text-rose-800 dark:text-rose-300;
+}
+
+/* Testing & Quality - Fuchsia */
+.tech-badge[data-tech="Testing"],
+.tech-badge[data-tech="Quality Assurance"],
+.tech-badge[data-tech="QA"],
+.tech-badge[data-tech="Unit Testing"],
+.tech-badge[data-tech="E2E Testing"],
+.tech-badge[data-tech="Jest"],
+.tech-badge[data-tech="Cypress"] {
+  @apply border-fuchsia-300 dark:border-fuchsia-700 bg-fuchsia-50 dark:bg-fuchsia-950/40 text-fuchsia-800 dark:text-fuchsia-300;
+}
+
+/* Fallback for any uncategorized tech - Slate */
+.tech-badge {
+  @apply border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-950/40 text-slate-800 dark:text-slate-300;
+}
+
+/* Custom - Purple */
+.tech-badge[data-tech="Custom"] {
+  @apply border-purple-300 dark:border-purple-700 bg-purple-50 dark:bg-purple-950/40 text-purple-800 dark:text-purple-300;
+}
+
+/* AI - Green */
+.tech-badge[data-tech="AI"] {
+  @apply border-green-300 dark:border-green-700 bg-green-50 dark:bg-green-950/40 text-green-800 dark:text-green-300;
+}
+
+/* Vector - Blue */
+.tech-badge[data-tech="Vector"] {
+  @apply border-blue-300 dark:border-blue-700 bg-blue-50 dark:bg-blue-950/40 text-blue-800 dark:text-blue-300;
+}
+
+/* DB - Yellow */
+.tech-badge[data-tech="DB"] {
+  @apply border-yellow-300 dark:border-yellow-700 bg-yellow-50 dark:bg-yellow-950/40 text-yellow-800 dark:text-yellow-300;
+}
+
+/* Private - Rose */
+.tech-badge[data-tech="Private"] {
+  @apply border-rose-300 dark:border-rose-700 bg-rose-50 dark:bg-rose-950/40 text-rose-800 dark:text-rose-300;
+}
+
+/* Deployment - Cyan */
+.tech-badge[data-tech="Deployment"] {
+  @apply border-cyan-300 dark:border-cyan-700 bg-cyan-50 dark:bg-cyan-950/40 text-cyan-800 dark:text-cyan-300;
+}
+
+/* RAG - Emerald */
+.tech-badge[data-tech="RAG"] {
+  @apply border-emerald-300 dark:border-emerald-700 bg-emerald-50 dark:bg-emerald-950/40 text-emerald-800 dark:text-emerald-300;
+}
+
+/* Python - Blue */
+.tech-badge[data-tech="Python"] {
+  @apply border-blue-300 dark:border-blue-700 bg-blue-50 dark:bg-blue-950/40 text-blue-800 dark:text-blue-300;
+}
+
+/* API - Amber */
+.tech-badge[data-tech="API"] {
+  @apply border-amber-300 dark:border-amber-700 bg-amber-50 dark:bg-amber-950/40 text-amber-800 dark:text-amber-300;
+}
+
+/* Integratie - Violet */
+.tech-badge[data-tech="Integratie"] {
+  @apply border-violet-300 dark:border-violet-700 bg-violet-50 dark:bg-violet-950/40 text-violet-800 dark:text-violet-300;
+}
+
+/* LangChain - Teal */
+.tech-badge[data-tech="LangChain"] {
+  @apply border-teal-300 dark:border-teal-700 bg-teal-50 dark:bg-teal-950/40 text-teal-800 dark:text-teal-300;
+}
+
+/* Prompt - Fuchsia */
+.tech-badge[data-tech="Prompt"] {
+  @apply border-fuchsia-300 dark:border-fuchsia-700 bg-fuchsia-50 dark:bg-fuchsia-950/40 text-fuchsia-800 dark:text-fuchsia-300;
+}
+
+/* Logic - Orange */
+.tech-badge[data-tech="Logic"] {
   @apply border-orange-300 dark:border-orange-700 bg-orange-50 dark:bg-orange-950/40 text-orange-800 dark:text-orange-300;
 }

@@ -5,6 +5,7 @@ import CompanySlider from "@/components/sections/company-slider";
 import Projects from "@/components/sections/projects";
 import About from "@/components/sections/about";
 import Contact from "@/components/sections/contact";
+import Testimonials from "@/components/sections/testimonials";
 import Footer from "@/components/sections/footer";
 import { generateMetadata } from "@/lib/metadata";
 import { siteConfig } from "@/lib/config";
@@ -55,14 +56,15 @@ export default function EnglishHome() {
         <div id={siteConfig.sections.projects.substring(1)}>
           <Projects />
         </div>
-        <div id={siteConfig.sections.services.substring(1)}>
-          {/* Your services section would go here */}
-        </div>
+{/* Services section removed since it's not defined in siteConfig */}
         <div id={siteConfig.sections.about.substring(1)}>
           <About />
         </div>
         <div id={siteConfig.sections.contact.substring(1)}>
           <Contact />
+        </div>
+        <div id={siteConfig.sections.testimonials.substring(1)}>
+          <Testimonials />
         </div>
         <Footer />
       </main>

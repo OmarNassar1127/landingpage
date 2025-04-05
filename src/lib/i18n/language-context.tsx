@@ -61,14 +61,14 @@ export function LanguageProvider({ children }: LanguageProviderProps) {
     if (lang === "en" && !currentPath.startsWith('/en')) {
       // Switch to English - add /en to path
       if (currentPath === '/') {
-        window.location.href = '/en';
+        window.location.pathname = '/en';
       } else {
-        window.location.href = `/en${currentPath}`;
+        window.location.pathname = `/en${currentPath}`;
       }
     } else if (lang === "nl" && currentPath.startsWith('/en')) {
       // Switch to Dutch - remove /en from path
       const newPath = currentPath.replace(/^\/en/, '') || '/';
-      window.location.href = newPath;
+      window.location.pathname = newPath;
     }
   };
 

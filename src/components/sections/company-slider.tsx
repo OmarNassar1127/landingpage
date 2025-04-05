@@ -5,20 +5,21 @@ import { motion, useAnimation, useInView } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { Building2, Scale, Plane, Globe, Shield, CreditCard, Activity, Zap, Database, BadgeDollarSign } from "lucide-react";
 import { useLanguage } from "@/lib/i18n/language-context";
+import Image from "next/image";
 
-// Company data with icon placeholders for logos
-// In a production environment, you'll want to add actual company logos
+// Company data with logo images
 const companies = [
-  { id: 1, name: "Road", logo: "road", icon: <Activity className="w-6 h-6" /> },
-  { id: 2, name: "eFlux", logo: "eflux", icon: <Zap className="w-6 h-6" /> },
-  { id: 3, name: "Capgemini", logo: "capgemini", icon: <Database className="w-6 h-6" /> },
-  { id: 4, name: "Ministerie van Defensie", logo: "defensie", icon: <Shield className="w-6 h-6" /> },
-  { id: 5, name: "Hilverda de Boer", logo: "hilverda", icon: <Building2 className="w-6 h-6" /> },
-  { id: 6, name: "Fest Finance", logo: "fest", icon: <BadgeDollarSign className="w-6 h-6" /> },
-  { id: 7, name: "KLM", logo: "klm", icon: <Plane className="w-6 h-6" /> },
-  { id: 8, name: "CSDM", logo: "csdm", icon: <Scale className="w-6 h-6" /> },
-  { id: 9, name: "Vloto", logo: "vloto", icon: <Globe className="w-6 h-6" /> },
-  { id: 10, name: "Quotum", logo: "quotum", icon: <CreditCard className="w-6 h-6" /> },
+  { id: 1, name: "Road", logo: "/images/companies/road.webp", icon: <Activity className="w-6 h-6" /> },
+  { id: 2, name: "e-Flux", logo: "/images/companies/e-flux.jpeg", icon: <Zap className="w-6 h-6" /> },
+  { id: 3, name: "Capgemini", logo: "/images/companies/capgemini.webp", icon: <Database className="w-6 h-6" /> },
+  { id: 4, name: "Ministerie van Defensie", logo: "/images/companies/ministerie.png", icon: <Shield className="w-6 h-6" /> },
+  { id: 5, name: "Hilverda de Boer", logo: "/images/companies/hilverda.png", icon: <Building2 className="w-6 h-6" /> },
+  { id: 6, name: "Vesting Finance", logo: "/images/companies/vestingfinance.png", icon: <BadgeDollarSign className="w-6 h-6" /> },
+  { id: 7, name: "KLM", logo: "/images/companies/klm.png", icon: <Plane className="w-6 h-6" /> },
+  { id: 8, name: "CSDM", logo: "/images/companies/csdm.png", icon: <Scale className="w-6 h-6" /> },
+  { id: 9, name: "Vloto", logo: "/images/companies/vloto.svg", icon: <Globe className="w-6 h-6" /> },
+  { id: 10, name: "Quotum", logo: "/images/companies/quotum.png", icon: <CreditCard className="w-6 h-6" /> },
+  { id: 11, name: "WL-Bali", logo: "/images/companies/wl-bali.jpg", icon: <CreditCard className="w-6 h-6" /> },
 ];
 
 // Shuffle the companies array to display them in random order
@@ -107,7 +108,7 @@ export default function CompanySlider() {
             <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-background to-transparent z-10 backdrop-blur-sm" />
             {/* First Slider (Left to Right) */}
             <motion.div
-              className="flex space-x-16 mb-12 will-change-transform"
+              className="flex space-x-12 mb-10 will-change-transform"
               animate={{
                 x: [0, -1500],
               }}
@@ -124,15 +125,17 @@ export default function CompanySlider() {
               {[...shuffledCompanies, ...shuffledCompanies].map((company, index) => (
                 <div 
                   key={`${company.id}-${index}`} 
-                  className="flex items-center justify-center min-w-[180px] h-16"
+                  className="flex items-center justify-center min-w-[150px] h-16"
                 >
-                  {/* If you have actual logos, replace this with an Image component */}
-                  <div className="flex items-center justify-center h-full px-4 py-2 bg-background/60 backdrop-blur-md rounded-lg border border-primary/20 shadow-lg hover:border-primary/40 transition-transform duration-300 hover:scale-[1.03]">
-                    <div className="text-primary/80 mr-2">
-                      {company.icon}
-                    </div>
-                    <div className="text-base font-medium text-foreground">
-                      {company.name}
+                  <div className="flex items-center justify-center h-full px-4 py-2 bg-white dark:bg-white backdrop-blur-md rounded-lg border border-gray-200 shadow-lg hover:border-primary/30 transition-all duration-300 hover:scale-105 hover:shadow-md">
+                    <div className="relative h-10 w-28">
+                      <Image 
+                        src={company.logo}
+                        alt={`${company.name} logo`}
+                        fill
+                        className="object-contain"
+                        sizes="(max-width: 768px) 60px, 112px"
+                      />
                     </div>
                   </div>
                 </div>
@@ -141,7 +144,7 @@ export default function CompanySlider() {
             
             {/* Second Slider (Right to Left) - with shuffled array again for more variety */}
             <motion.div
-              className="flex space-x-16 will-change-transform"
+              className="flex space-x-12 will-change-transform"
               animate={{
                 x: [-1500, 0],
               }}
@@ -158,15 +161,17 @@ export default function CompanySlider() {
               {[...shuffledCompaniesReverse, ...shuffledCompaniesReverse].map((company, index) => (
                 <div 
                   key={`rev-${company.id}-${index}`} 
-                  className="flex items-center justify-center min-w-[180px] h-16"
+                  className="flex items-center justify-center min-w-[150px] h-16"
                 >
-                  {/* If you have actual logos, replace this with an Image component */}
-                  <div className="flex items-center justify-center h-full px-4 py-2 bg-background/60 backdrop-blur-md rounded-lg border border-primary/20 shadow-lg hover:border-primary/40 transition-all duration-300 hover:shadow-xl hover:shadow-primary/5 hover:scale-105">
-                    <div className="text-primary/80 mr-2">
-                      {company.icon}
-                    </div>
-                    <div className="text-base font-medium text-foreground">
-                      {company.name}
+                  <div className="flex items-center justify-center h-full px-4 py-2 bg-white dark:bg-white backdrop-blur-md rounded-lg border border-gray-200 shadow-lg hover:border-primary/30 transition-all duration-300 hover:scale-105 hover:shadow-md">
+                    <div className="relative h-10 w-28">
+                      <Image 
+                        src={company.logo}
+                        alt={`${company.name} logo`}
+                        fill
+                        className="object-contain"
+                        sizes="(max-width: 768px) 60px, 112px"
+                      />
                     </div>
                   </div>
                 </div>

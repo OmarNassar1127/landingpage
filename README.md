@@ -1,73 +1,37 @@
-# Virelio Landing Page
+# Virelio Website
 
-A modern, responsive landing page built with Next.js, TypeScript, Tailwind CSS, and Framer Motion.
+This is the source code for the Virelio corporate website, built with Next.js and deployed to GitHub Pages.
 
-## Features
+## Development
 
-- Responsive design for all screen sizes
-- Dark and light mode support
-- Smooth animations with Framer Motion
-- SEO optimized
-- Component-based architecture
-- Contact form
+```bash
+# Install dependencies
+npm install
 
-## Project Structure
-
-```
-virelio/
-├── src/
-│   ├── app/
-│   │   ├── globals.css         # Global styles
-│   │   ├── layout.tsx          # Root layout with theme provider
-│   │   └── page.tsx            # Main landing page
-│   ├── components/
-│   │   ├── layout/             # Layout components
-│   │   │   └── theme-provider.tsx
-│   │   ├── sections/           # Page sections
-│   │   │   ├── navbar.tsx
-│   │   │   ├── hero.tsx
-│   │   │   ├── projects.tsx
-│   │   │   ├── about.tsx
-│   │   │   ├── contact.tsx
-│   │   │   └── footer.tsx
-│   │   └── ui/                 # Reusable UI components
-│   │       ├── button.tsx
-│   │       ├── card.tsx
-│   │       └── theme-toggle.tsx
-│   └── lib/
-│       └── utils.ts            # Utility functions
-├── tailwind.config.js          # Tailwind configuration
-├── package.json                # Dependencies and scripts
-└── tsconfig.json               # TypeScript configuration
+# Run development server
+npm run dev
 ```
 
-## Getting Started
+The development server will be available at [http://localhost:3000](http://localhost:3000).
 
-1. Clone the repository
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-3. Run the development server:
-   ```bash
-   npm run dev
-   ```
-4. Open [http://localhost:3000](http://localhost:3000) in your browser
+## Deployment
 
-## Technologies Used
+The website is automatically deployed to GitHub Pages when changes are pushed to the main branch, using GitHub Actions.
 
-- [Next.js](https://nextjs.org/)
-- [TypeScript](https://www.typescriptlang.org/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [Framer Motion](https://www.framer.com/motion/)
-- [Lucide Icons](https://lucide.dev/)
-- [Next Themes](https://github.com/pacocoursey/next-themes)
+For manual deployment:
 
-## Custom Components
+```bash
+# Build and deploy
+npm run deploy
+```
 
-- Custom animated Button component
-- Responsive Navbar with mobile menu
-- Project cards with tech stack badges
-- Animated sections with scroll-based triggers
-- Dark/light mode toggle
-- Contact form with validation
+## Structure
+
+- `/src/app` - Next.js app router pages and layouts
+- `/src/components` - React components
+- `/src/lib` - Utility functions and configuration
+- `/public` - Static assets
+
+## Custom Domain
+
+The website is configured to deploy to [https://virelio.nl](https://virelio.nl) via GitHub Pages.

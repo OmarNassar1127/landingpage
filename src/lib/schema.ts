@@ -59,6 +59,17 @@ type FAQProps = {
   items: FAQItemProps[];
 };
 
+type TestimonialProps = {
+  author: string;
+  role: string;
+  text: string;
+  organization?: string;
+};
+
+type TestimonialsProps = {
+  items: TestimonialProps[];
+};
+
 export function organizationSchema({
   name = siteConfig.name,
   url = siteConfig.url,
@@ -213,5 +224,35 @@ export function faqSchema({ items }: FAQProps) {
         text: answer,
       },
     })),
+  };
+}
+
+export function testimonialsSchema({ items }: TestimonialsProps) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    itemListElement: items.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      item: {
+        "@type": "Review",
+        author: {
+          "@type": "Person",
+          name: item.author
+        },
+        reviewBody: item.text,
+        about: {
+          "@type": "Organization",
+          name: siteConfig.name,
+          url: siteConfig.url
+        },
+        reviewRating: {
+          "@type": "Rating",
+          bestRating: "5",
+          ratingValue: "5",
+          worstRating: "1"
+        }
+      }
+    }))
   };
 }

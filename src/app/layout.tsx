@@ -7,8 +7,25 @@ import BackgroundEffect from "@/components/layout/background";
 import JsonLd from "@/components/seo/json-ld";
 import { organizationSchema, websiteSchema } from "@/lib/schema";
 import { siteConfig } from "@/lib/config";
+import dynamic from 'next/dynamic';
 
 const inter = Inter({ subsets: ["latin"] });
+
+// Import client components with no SSR
+const ClientPolicyRoutes = dynamic(
+  () => import('@/components/hash-router/client-policy-routes'),
+  { ssr: false }
+);
+
+const ClientWhatsAppButton = dynamic(
+  () => import('@/components/ui/client-whatsapp-button').then(mod => mod.ClientWhatsAppButton),
+  { ssr: false }
+);
+
+const ClientCookieConsent = dynamic(
+  () => import('@/components/ui/client-cookie-consent').then(mod => mod.ClientCookieConsent),
+  { ssr: false }
+);
 
 export const metadata: Metadata = {
   title: "Virelio - Innovative Solutions for Modern Challenges",
@@ -115,6 +132,12 @@ export default function RootLayout({
           <LanguageProvider>
             <BackgroundEffect />
             {children}
+            {/* Hash routing for policy pages */}
+            <ClientPolicyRoutes />
+            {/* WhatsApp button */}
+            <ClientWhatsAppButton />
+            {/* Cookie consent banner */}
+            <ClientCookieConsent />
           </LanguageProvider>
         </ThemeProvider>
       </body>

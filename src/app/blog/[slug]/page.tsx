@@ -92,8 +92,8 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
     },
     {
       position: 2,
-      name: "Blog",
-      item: "https://virelio.nl/blog",
+      name: "Projects",
+      item: "https://virelio.nl/#projects",
     },
     {
       position: 3,
