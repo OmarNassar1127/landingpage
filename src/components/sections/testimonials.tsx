@@ -289,9 +289,10 @@ export default function Testimonials() {
         </motion.div>
 
         <div className="relative max-w-4xl mx-auto">
-          {/* Testimonial Carousel */}
+          {/* Testimonial Carousel - Standardized for all screen sizes */}
           <div className="relative overflow-hidden">
-            <div className="relative h-[300px] md:h-[280px]">
+            {/* Fixed height container with better mobile responsiveness */}
+            <div className="relative h-[400px] sm:h-[350px] md:h-[300px]">
               <AnimatePresence initial={false} custom={direction} mode="wait">
                 <motion.div
                   key={activeIndex}
@@ -306,19 +307,21 @@ export default function Testimonials() {
                   }}
                   className="absolute w-full"
                 >
-                  <Card className="bg-card border border-primary/5 shadow-sm mx-auto max-w-3xl">
-                    <CardContent className="p-8">
-                      <div className="mb-4 text-primary">
-                        <Quote size={32} className="opacity-80" />
+                  <Card className="bg-card border border-primary/5 shadow-sm mx-auto max-w-3xl h-full">
+                    <CardContent className="p-4 sm:p-6 md:p-8 flex flex-col justify-between h-full">
+                      <div>
+                        <div className="mb-4 text-primary">
+                          <Quote size={24} className="opacity-80" />
+                        </div>
+                        <p className="text-base md:text-lg italic text-foreground mb-6 leading-relaxed">
+                          {shuffledTestimonials.length > 0 && (language === "nl" 
+                            ? shuffledTestimonials[activeIndex].content.nl 
+                            : shuffledTestimonials[activeIndex].content.en)}
+                        </p>
                       </div>
-                      <p className="text-base md:text-lg italic text-foreground mb-6 leading-relaxed">
-                        {shuffledTestimonials.length > 0 && (language === "nl" 
-                          ? shuffledTestimonials[activeIndex].content.nl 
-                          : shuffledTestimonials[activeIndex].content.en)}
-                      </p>
-                      <div className="flex items-center">
+                      <div className="flex items-center mt-auto">
                         {shuffledTestimonials.length > 0 && shuffledTestimonials[activeIndex].image ? (
-                          <div className="w-12 h-12 rounded-full overflow-hidden">
+                          <div className="w-12 h-12 rounded-full overflow-hidden flex-shrink-0">
                             <img 
                               src={shuffledTestimonials[activeIndex].image} 
                               alt={shuffledTestimonials[activeIndex].name}
@@ -327,22 +330,22 @@ export default function Testimonials() {
                             />
                           </div>
                         ) : (
-                          <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
+                          <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
                             <span className="text-primary font-semibold text-lg">
                               {shuffledTestimonials.length > 0 ? shuffledTestimonials[activeIndex].name.charAt(0) : ""}
                             </span>
                           </div>
                         )}
-                        <div className="ml-4">
-                          <h4 className="font-semibold text-lg text-foreground">
+                        <div className="ml-4 overflow-hidden">
+                          <h4 className="font-semibold text-base sm:text-lg text-foreground truncate">
                             {shuffledTestimonials.length > 0 ? shuffledTestimonials[activeIndex].name : ""}
                           </h4>
-                          <p className="text-muted-foreground">
+                          <p className="text-muted-foreground text-sm sm:text-base truncate">
                             {shuffledTestimonials.length > 0 && (language === "nl" 
                               ? shuffledTestimonials[activeIndex].role.nl 
                               : shuffledTestimonials[activeIndex].role.en)}
                           </p>
-                          <p className="text-sm text-muted-foreground/80 mt-1">
+                          <p className="text-xs sm:text-sm text-muted-foreground/80 mt-1 truncate">
                             {shuffledTestimonials.length > 0 && (language === "nl" 
                               ? shuffledTestimonials[activeIndex].relationship.nl 
                               : shuffledTestimonials[activeIndex].relationship.en)}
@@ -354,21 +357,34 @@ export default function Testimonials() {
                 </motion.div>
               </AnimatePresence>
             </div>
+            
+            {/* Standardized Navigation Controls positioned clearly below the card */}
+            <div className="flex flex-col items-center mt-8 mb-6">
+              {/* Arrow controls on a separate row for better mobile access */}
+              <div className="flex justify-center w-full mb-4 space-x-6 sm:space-x-8">
+                <Button
+                  variant="outline"
+                  size="icon"
+                  className="rounded-full h-12 w-12 shadow-md hover:shadow-lg border-primary/20 bg-background/80 backdrop-blur-sm"
+                  onClick={prevSlide}
+                  aria-label="Previous testimonial"
+                >
+                  <ChevronLeft className="h-6 w-6" />
+                </Button>
 
-            {/* Navigation Controls - Improved for mobile */}
-            <div className="flex justify-center items-center mt-8 mb-6 space-x-4 md:space-x-6">
-              <Button
-                variant="outline"
-                size="icon"
-                className="rounded-full h-12 w-12 md:h-10 md:w-10 shadow-md hover:shadow-lg border-primary/20 bg-background/80 backdrop-blur-sm"
-                onClick={prevSlide}
-                aria-label="Previous testimonial"
-              >
-                <ChevronLeft className="h-6 w-6 md:h-5 md:w-5" />
-              </Button>
+                <Button
+                  variant="outline"
+                  size="icon"
+                  className="rounded-full h-12 w-12 shadow-md hover:shadow-lg border-primary/20 bg-background/80 backdrop-blur-sm"
+                  onClick={nextSlide}
+                  aria-label="Next testimonial"
+                >
+                  <ChevronRight className="h-6 w-6" />
+                </Button>
+              </div>
 
-              {/* Dot indicators - Improved for mobile */}
-              <div className="flex space-x-3">
+              {/* Dot indicators below the arrows */}
+              <div className="flex space-x-3 mt-2">
                 {shuffledTestimonials.map((_, index) => (
                   <button
                     key={index}
@@ -377,25 +393,15 @@ export default function Testimonials() {
                       setActiveIndex(index);
                       setIsAutoPlaying(false);
                     }}
-                    className={`h-4 md:h-3 rounded-full transition-all ${
+                    className={`h-4 rounded-full transition-all ${
                       index === activeIndex
-                        ? "bg-primary w-10 md:w-8"
-                        : "bg-muted-foreground/40 hover:bg-muted-foreground/60 w-4 md:w-3"
+                        ? "bg-primary w-10"
+                        : "bg-muted-foreground/40 hover:bg-muted-foreground/60 w-4"
                     }`}
                     aria-label={`Go to testimonial ${index + 1}`}
                   />
                 ))}
               </div>
-
-              <Button
-                variant="outline"
-                size="icon"
-                className="rounded-full h-12 w-12 md:h-10 md:w-10 shadow-md hover:shadow-lg border-primary/20 bg-background/80 backdrop-blur-sm"
-                onClick={nextSlide}
-                aria-label="Next testimonial"
-              >
-                <ChevronRight className="h-6 w-6 md:h-5 md:w-5" />
-              </Button>
             </div>
           </div>
         </div>
