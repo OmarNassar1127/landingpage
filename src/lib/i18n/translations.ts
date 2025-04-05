@@ -27,6 +27,12 @@ export const translations = {
       secondaryButton: "Neem Contact Op",
     },
     
+    // Trusted by section (company slider)
+    companies: {
+      title: "Vertrouwd door Toonaangevende Bedrijven",
+      subtitle: "Samenwerken met innovatieve organisaties over de hele wereld",
+    },
+    
     // Projects section
     projects: {
       title: "Onze Projecten",
@@ -131,6 +137,12 @@ export const translations = {
       subtitle: "We're a team of experts specialized in building digital solutions for businesses.",
       ctaButton: "View Our Projects",
       secondaryButton: "Get in Touch",
+    },
+    
+    // Trusted by section (company slider)
+    companies: {
+      title: "Trusted by Industry Leaders",
+      subtitle: "Partnering with innovative organizations around the globe",
     },
     
     // Projects section

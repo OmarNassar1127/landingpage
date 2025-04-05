@@ -4,6 +4,7 @@ import React, { useEffect, useRef } from "react";
 import { motion, useAnimation, useInView } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { Building2, Scale, Plane, Globe, Shield, CreditCard, Activity, Zap, Database, BadgeDollarSign } from "lucide-react";
+import { useLanguage } from "@/lib/i18n/language-context";
 
 // Company data with icon placeholders for logos
 // In a production environment, you'll want to add actual company logos
@@ -35,6 +36,7 @@ const shuffleArray = (array: typeof companies) => {
 };
 
 export default function CompanySlider() {
+  const { t } = useLanguage();
   const ref = useRef(null);
   const isInView = useInView(ref, { once: false, amount: 0.3 });
   const controls = useAnimation();
@@ -88,9 +90,9 @@ export default function CompanySlider() {
         >
           <motion.div variants={itemVariants} className="text-center relative">
             <div className="absolute left-1/2 -top-10 w-1 h-24 bg-gradient-to-b from-transparent via-primary/50 to-transparent transform -translate-x-1/2" />
-            <h2 className="text-2xl font-bold drop-shadow-md">Trusted by Industry Leaders</h2>
+            <h2 className="text-2xl font-bold drop-shadow-md">{t.companies.title}</h2>
             <p className="text-muted-foreground/90 backdrop-blur-sm bg-background/30 inline-block px-4 py-2 rounded-lg shadow-sm border border-primary/10 mt-2">
-              Partnering with innovative organizations around the globe
+              {t.companies.subtitle}
             </p>
             <div className="absolute left-1/2 -bottom-10 w-1 h-24 bg-gradient-to-b from-primary/50 via-transparent to-transparent transform -translate-x-1/2" />
           </motion.div>
