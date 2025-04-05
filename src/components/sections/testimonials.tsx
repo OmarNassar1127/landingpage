@@ -355,20 +355,20 @@ export default function Testimonials() {
               </AnimatePresence>
             </div>
 
-            {/* Navigation Controls */}
-            <div className="flex justify-center items-center mt-12 mb-6 space-x-6">
+            {/* Navigation Controls - Improved for mobile */}
+            <div className="flex justify-center items-center mt-8 mb-6 space-x-4 md:space-x-6">
               <Button
                 variant="outline"
                 size="icon"
-                className="rounded-full h-10 w-10 shadow-sm hover:shadow-md"
+                className="rounded-full h-12 w-12 md:h-10 md:w-10 shadow-md hover:shadow-lg border-primary/20 bg-background/80 backdrop-blur-sm"
                 onClick={prevSlide}
                 aria-label="Previous testimonial"
               >
-                <ChevronLeft className="h-5 w-5" />
+                <ChevronLeft className="h-6 w-6 md:h-5 md:w-5" />
               </Button>
 
-              {/* Dot indicators */}
-              <div className="flex space-x-2">
+              {/* Dot indicators - Improved for mobile */}
+              <div className="flex space-x-3">
                 {shuffledTestimonials.map((_, index) => (
                   <button
                     key={index}
@@ -377,10 +377,10 @@ export default function Testimonials() {
                       setActiveIndex(index);
                       setIsAutoPlaying(false);
                     }}
-                    className={`h-3 rounded-full transition-all ${
+                    className={`h-4 md:h-3 rounded-full transition-all ${
                       index === activeIndex
-                        ? "bg-primary w-8"
-                        : "bg-muted-foreground/30 hover:bg-muted-foreground/50 w-3"
+                        ? "bg-primary w-10 md:w-8"
+                        : "bg-muted-foreground/40 hover:bg-muted-foreground/60 w-4 md:w-3"
                     }`}
                     aria-label={`Go to testimonial ${index + 1}`}
                   />
@@ -390,11 +390,11 @@ export default function Testimonials() {
               <Button
                 variant="outline"
                 size="icon"
-                className="rounded-full h-10 w-10 shadow-sm hover:shadow-md"
+                className="rounded-full h-12 w-12 md:h-10 md:w-10 shadow-md hover:shadow-lg border-primary/20 bg-background/80 backdrop-blur-sm"
                 onClick={nextSlide}
                 aria-label="Next testimonial"
               >
-                <ChevronRight className="h-5 w-5" />
+                <ChevronRight className="h-6 w-6 md:h-5 md:w-5" />
               </Button>
             </div>
           </div>
