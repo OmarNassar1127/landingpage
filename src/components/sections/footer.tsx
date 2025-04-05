@@ -4,8 +4,11 @@ import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { Twitter, Linkedin, Github, ExternalLink } from "lucide-react";
+import { useLanguage } from "@/lib/i18n/language-context";
 
 export default function Footer() {
+  const { t } = useLanguage();
+  
   return (
     <footer className="bg-background py-12">
       <div className="container mx-auto px-4">
@@ -19,20 +22,19 @@ export default function Footer() {
             >
               <h3 className="text-2xl font-bold">NexBuy</h3>
               <p className="text-muted-foreground max-w-md">
-                Creating innovative solutions for modern challenges. We specialize in AI systems,
-                SaaS platforms, KYC integrations, and shop automations.
+                {t.footer.description}
               </p>
             </motion.div>
           </div>
           
           <div>
-            <h4 className="font-semibold text-lg mb-4">Quick Links</h4>
+            <h4 className="font-semibold text-lg mb-4">{t.footer.quickLinks}</h4>
             <ul className="space-y-2">
               {[
-                { name: "Home", href: "#" },
-                { name: "Projects", href: "#projects" },
-                { name: "About", href: "#about" },
-                { name: "Contact", href: "#contact" },
+                { name: t.nav.home, href: "#" },
+                { name: t.nav.projects, href: "#projects" },
+                { name: t.nav.about, href: "#about" },
+                { name: t.nav.contact, href: "#contact" },
               ].map((link) => (
                 <li key={link.name}>
                   <Link
@@ -47,12 +49,12 @@ export default function Footer() {
           </div>
           
           <div>
-            <h4 className="font-semibold text-lg mb-4">Legal</h4>
+            <h4 className="font-semibold text-lg mb-4">{t.footer.legal}</h4>
             <ul className="space-y-2">
               {[
-                { name: "Privacy Policy", href: "#" },
-                { name: "Terms of Service", href: "#" },
-                { name: "Cookie Policy", href: "#" },
+                { name: t.footer.privacyPolicy, href: "#" },
+                { name: t.footer.termsOfService, href: "#" },
+                { name: t.footer.cookiePolicy, href: "#" },
               ].map((link) => (
                 <li key={link.name}>
                   <Link
@@ -69,7 +71,7 @@ export default function Footer() {
         
         <div className="border-t border-border mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-sm text-muted-foreground">
-            &copy; {new Date().getFullYear()} NexBuy. All rights reserved.
+            &copy; {new Date().getFullYear()} NexBuy. {t.footer.rights}
           </p>
           
           <div className="flex space-x-6 mt-4 md:mt-0">

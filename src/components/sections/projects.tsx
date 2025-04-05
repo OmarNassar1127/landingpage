@@ -8,6 +8,7 @@ import { useInView } from "react-intersection-observer";
 import { formatTechStack } from "@/lib/utils";
 import { scrollToSection } from "@/lib/scroll-utils"; 
 import { ExternalLink, ArrowRight } from "lucide-react";
+import { useLanguage } from "@/lib/i18n/language-context";
 
 interface Project {
   title: string;
@@ -16,39 +17,44 @@ interface Project {
   learnMoreUrl: string;
 }
 
-const projects: Project[] = [
+// This function will be used to get project details based on current language
+const getProjects = (t: any) => [
   {
-    title: "AI Solutions",
-    description: "Developed innovative AI systems including research acceleration tools, intelligent personal assistants, and optimization engines that deliver substantial efficiency improvements and enhanced user experiences.",
+    title: t.projects.aiSolutions.title,
+    description: t.projects.aiSolutions.description,
     techStack: "Python TensorFlow Next.js MySQL Laravel OpenAI TypeScript React",
     learnMoreUrl: "#",
   },
   {
-    title: "SaaS platform - Quotum",
-    description: "Developed SaaS platform - Quotum.Cloud, a financial SaaS for investors, featuring Stripe-integrated subscriptions, TradingView charts, CRM for coins, posts management, and advanced wallet tracking via API integrations.",
+    title: t.projects.saasQuotum.title,
+    description: t.projects.saasQuotum.description,
     techStack: "React Node.js MongoDB Laravel Stripe TradingView Mailtrap",
     learnMoreUrl: "#",
   },
   {
-    title: "KYC Integrations",
-    description: "Automated secure user onboarding by integrating Onfido's KYC verification and third-party credit scoring, reducing operational time and debt risk.",
-    techStack: "Laravel MySQL Onfido React Native",
+    title: t.projects.kycIntegrations.title,
+    description: t.projects.kycIntegrations.description,
+    techStack: "Laravel MySQL Onfido React-Native",
     learnMoreUrl: "#",
   },
   {
-    title: "Shop Automations",
-    description: "Automated comprehensive e-commerce solutions for efficient order handling, smart pricing strategies, inventory management, and seamless integration with Bol.com, Amazon, and Marktplaats APIs.",
+    title: t.projects.shopAutomations.title,
+    description: t.projects.shopAutomations.description,
     techStack: "Laravel Python Bol.com AWS Marktplaats MongoDB Mailtrap",
     learnMoreUrl: "#",
   },
 ];
 
 export default function Projects() {
+  const { t } = useLanguage();
   const controls = useAnimation();
   const [ref, inView] = useInView({
     triggerOnce: false,
     threshold: 0.1,
   });
+  
+  // Get projects based on the current language
+  const projects = getProjects(t);
   
   useEffect(() => {
     if (inView) {
@@ -121,7 +127,7 @@ export default function Projects() {
             }}
             className="text-3xl md:text-4xl font-bold tracking-tight mb-4"
           >
-            Our Expertise & Experience
+            {t.projects.title}
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -141,7 +147,7 @@ export default function Projects() {
             }}
             className="text-muted-foreground max-w-2xl mx-auto"
           >
-            We've delivered transformative solutions across various domains, combining technical expertise with business insights.
+            {t.projects.subtitle}
           </motion.p>
         </div>
 
@@ -180,12 +186,14 @@ export default function Projects() {
                       <motion.span 
                         key={techIndex} 
                         className="tech-badge"
+                        data-tech={tech}
                         variants={techBadgeVariants}
                         custom={techIndex}
                         transition={{ delay: 0.1 * techIndex }}
                         whileHover={{ 
-                          scale: 1.1, 
-                          backgroundColor: "rgba(var(--primary), 0.2)" 
+                          scale: 1.05,
+                          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.2)",
+                          y: -2
                         }}
                       >
                         {tech}
@@ -201,7 +209,7 @@ export default function Projects() {
                     asChild
                   >
                     <a href={project.learnMoreUrl} className="inline-flex items-center">
-                      Learn More 
+                      {t.projects.viewProject} 
                       <motion.div
                         className="ml-1"
                         initial={{ x: 0 }}

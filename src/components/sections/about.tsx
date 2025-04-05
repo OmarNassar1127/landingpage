@@ -6,8 +6,10 @@ import { useInView } from "react-intersection-observer";
 import { Button } from "@/components/ui/button";
 import { scrollToSection } from "@/lib/scroll-utils";
 import { Star, ChevronRight, Sparkles, Layers, Users, BookOpen } from "lucide-react";
+import { useLanguage } from "@/lib/i18n/language-context";
 
 export default function About() {
+  const { t } = useLanguage();
   const controls = useAnimation();
   const [ref, inView] = useInView({
     triggerOnce: false,
@@ -89,25 +91,21 @@ export default function About() {
               className="text-3xl md:text-4xl font-bold tracking-tight"
               variants={itemVariants}
             >
-              About Our Team
+              {t.about.title}
             </motion.h2>
             
             <motion.p 
               className="text-muted-foreground"
               variants={itemVariants}
             >
-              We're a group of passionate technologists, innovators, and problem-solvers with a shared mission 
-              to build solutions that matter. Our diverse experiences span various industries and technologies, 
-              giving us a unique perspective on solving complex challenges.
+              {t.about.description}
             </motion.p>
             
             <motion.p 
               className="text-muted-foreground"
               variants={itemVariants}
             >
-              Our collective journey has taken us from building sophisticated AI systems to scaling 
-              financial SaaS platforms, from implementing secure KYC solutions to automating complex 
-              e-commerce operations.
+              {t.about.missionDescription}
             </motion.p>
             
             <motion.div 
@@ -127,7 +125,7 @@ export default function About() {
                   }}
                   className="inline-flex items-center"
                 >
-                  Get in Touch
+                  {t.hero.secondaryButton}
                   <motion.span
                     initial={{ x: 0 }}
                     whileHover={{ x: 3 }}
@@ -151,26 +149,26 @@ export default function About() {
               className="text-2xl font-semibold mb-6"
               variants={itemVariants}
             >
-              Our Core Values
+              {t.about.valuesTitle}
             </motion.h3>
             
             <ul className="space-y-6">
               {[
                 {
-                  title: "Innovation Beyond Boundaries",
-                  description: "We don't just apply existing solutions; we create new ones when needed."
+                  title: t.about.valueInnovation,
+                  description: t.about.valueInnovationDesc
                 },
                 {
-                  title: "Robust, Scalable Engineering",
-                  description: "Our solutions are built to scale and adapt as your business grows."
+                  title: t.about.valueQuality,
+                  description: t.about.valueQualityDesc
                 },
                 {
-                  title: "Human-Centered Design",
-                  description: "Technology should serve people, not the other way around."
+                  title: t.about.valueCollaboration,
+                  description: t.about.valueCollaborationDesc
                 },
                 {
-                  title: "Continuous Learning",
-                  description: "We stay at the forefront of technological advancement."
+                  title: t.about.valueIntegrity,
+                  description: t.about.valueIntegrityDesc
                 }
               ].map((value, index) => (
                 <motion.li

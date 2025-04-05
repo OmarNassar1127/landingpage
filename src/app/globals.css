@@ -119,5 +119,58 @@
 }
 
 .tech-badge {
-  @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary/10 text-primary-foreground dark:bg-primary/20 transition-all duration-300 hover:scale-105;
+  @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium 
+    bg-secondary text-secondary-foreground 
+    dark:bg-secondary dark:text-secondary-foreground
+    border border-primary/20 dark:border-primary/30
+    shadow-sm transition-all duration-300;
+}
+
+/* Technology-specific styling variations */
+/* Frontend technologies - Blue */
+.tech-badge[data-tech="React"],
+.tech-badge[data-tech="Next.js"],
+.tech-badge[data-tech="React Native"],
+.tech-badge[data-tech="Native"] {
+  @apply border-blue-300 dark:border-blue-700 bg-blue-50 dark:bg-blue-950/40 text-blue-800 dark:text-blue-300;
+}
+
+/* Backend PHP technologies - Red */
+.tech-badge[data-tech="Laravel"],
+.tech-badge[data-tech="PHP"] {
+  @apply border-red-300 dark:border-red-700 bg-red-50 dark:bg-red-950/40 text-red-800 dark:text-red-300;
+}
+
+/* AI and Python technologies - Green */
+.tech-badge[data-tech="Python"],
+.tech-badge[data-tech="TensorFlow"],
+.tech-badge[data-tech="OpenAI"] {
+  @apply border-green-300 dark:border-green-700 bg-green-50 dark:bg-green-950/40 text-green-800 dark:text-green-300;
+}
+
+/* Database technologies - Yellow */
+.tech-badge[data-tech="MongoDB"],
+.tech-badge[data-tech="MySQL"] {
+  @apply border-yellow-300 dark:border-yellow-700 bg-yellow-50 dark:bg-yellow-950/40 text-yellow-800 dark:text-yellow-300;
+}
+
+/* JavaScript technologies - Emerald */
+.tech-badge[data-tech="Node.js"],
+.tech-badge[data-tech="TypeScript"] {
+  @apply border-emerald-300 dark:border-emerald-700 bg-emerald-50 dark:bg-emerald-950/40 text-emerald-800 dark:text-emerald-300;
+}
+
+/* Third-party services - Purple */
+.tech-badge[data-tech="Stripe"],
+.tech-badge[data-tech="AWS"],
+.tech-badge[data-tech="Onfido"],
+.tech-badge[data-tech="Mailtrap"],
+.tech-badge[data-tech="TradingView"] {
+  @apply border-purple-300 dark:border-purple-700 bg-purple-50 dark:bg-purple-950/40 text-purple-800 dark:text-purple-300;
+}
+
+/* Dutch platforms - Orange */
+.tech-badge[data-tech="Bol.com"],
+.tech-badge[data-tech="Marktplaats"] {
+  @apply border-orange-300 dark:border-orange-700 bg-orange-50 dark:bg-orange-950/40 text-orange-800 dark:text-orange-300;
 }

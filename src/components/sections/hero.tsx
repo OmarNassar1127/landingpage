@@ -7,9 +7,11 @@ import { useInView } from "react-intersection-observer";
 import { ChevronDown, Zap, Globe, Code, Database } from "lucide-react";
 import { scrollToSection } from "@/lib/scroll-utils";
 import { Icon } from "@/components/ui/icon";
+import { useLanguage } from "@/lib/i18n/language-context";
 
 // Separate the actual Hero component from its wrapper to prevent hydration issues
 function HeroContent() {
+  const { t } = useLanguage();
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
@@ -291,22 +293,20 @@ function HeroContent() {
             variants={itemVariants}
             className="text-4xl md:text-6xl font-bold tracking-tight drop-shadow-md"
           >
-            Innovative Solutions for
-            <span className="text-primary block md:inline"> Modern Challenges</span>
+            {t.hero.title}
           </motion.h1>
 
           <motion.p
             variants={itemVariants}
             className="max-w-xl text-lg text-muted-foreground/90 backdrop-blur-sm bg-background/20 px-4 py-2 rounded-lg shadow-sm border border-primary/10"
           >
-            We create cutting-edge technologies and platforms that transform businesses
-            and enhance user experiences across industries.
+            {t.hero.subtitle}
           </motion.p>
 
           <motion.div variants={itemVariants} className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
             <Button size="lg" className="backdrop-blur-sm bg-primary/90 hover:bg-primary/80 shadow-lg shadow-primary/20" asChild>
               <a href="#projects" onClick={(e) => handleScrollDown(e)}>
-                Explore Projects
+                {t.hero.ctaButton}
               </a>
             </Button>
             <Button variant="outline" size="lg" className="backdrop-blur-sm bg-background/50 border-primary/30 hover:bg-background/30 shadow-lg" asChild>
@@ -314,7 +314,7 @@ function HeroContent() {
                 e.preventDefault();
                 scrollToSection("contact");
               }}>
-                Contact Us
+                {t.hero.secondaryButton}
               </a>
             </Button>
           </motion.div>
@@ -332,7 +332,7 @@ function HeroContent() {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 1, delay: 1 }}
               >
-                <span className="text-sm font-medium ">Discover Our Work</span>
+                <span className="text-sm font-medium ">{t.projects.viewMore}</span>
                 <motion.div
                   animate={{
                     y: [0, 5, 0],
@@ -358,6 +358,7 @@ function HeroContent() {
 
 // Client-side only wrapper to prevent hydration issues
 export default function Hero() {
+  const { t } = useLanguage();
   const [isClient, setIsClient] = useState(false);
   
   useEffect(() => {
@@ -377,12 +378,10 @@ export default function Hero() {
               </div>
             </div>
             <h1 className="text-4xl md:text-6xl font-bold tracking-tight drop-shadow-md">
-              Innovative Solutions for
-              <span className="text-primary block md:inline"> Modern Challenges</span>
+              {t.hero.title}
             </h1>
             <p className="max-w-xl text-lg text-muted-foreground/90 backdrop-blur-sm bg-background/20 px-4 py-2 rounded-lg shadow-sm border border-primary/10">
-              We create cutting-edge technologies and platforms that transform businesses
-              and enhance user experiences across industries.
+              {t.hero.subtitle}
             </p>
             {/* Simple placeholder buttons */}
             <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">

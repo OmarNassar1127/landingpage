@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
+import { LanguageToggle } from "@/components/ui/language-toggle";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { scrollToSection } from "@/lib/scroll-utils";
@@ -9,17 +10,19 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { Menu, X, ChevronUp } from "lucide-react";
 import { Icon } from "@/components/ui/icon";
-
-const navLinks = [
-  { name: "Home", href: "#" },
-  { name: "Projects", href: "#projects" },
-  { name: "About", href: "#about" },
-  { name: "Contact", href: "#contact" },
-];
+import { useLanguage } from "@/lib/i18n/language-context";
 
 export default function Navbar() {
+  const { t } = useLanguage();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  
+  const navLinks = [
+    { name: t.nav.home, href: "#" },
+    { name: t.nav.projects, href: "#projects" },
+    { name: t.nav.about, href: "#about" },
+    { name: t.nav.contact, href: "#contact" },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -77,11 +80,15 @@ export default function Navbar() {
               </motion.li>
             ))}
           </ul>
-          <ThemeToggle />
+          <div className="flex items-center space-x-2">
+            <LanguageToggle />
+            <ThemeToggle />
+          </div>
         </nav>
 
         {/* Mobile Navigation */}
-        <div className="flex items-center md:hidden">
+        <div className="flex items-center md:hidden space-x-2">
+          <LanguageToggle />
           <ThemeToggle />
           <Button
             variant="ghost"

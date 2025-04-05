@@ -6,8 +6,10 @@ import { useInView } from "react-intersection-observer";
 import { Button } from "@/components/ui/button";
 import { Mail, Phone, MapPin, Send, CheckCircle, Github, Linkedin, Twitter, ExternalLink } from "lucide-react";
 import { scrollToSection } from "@/lib/scroll-utils";
+import { useLanguage } from "@/lib/i18n/language-context";
 
 export default function Contact() {
+  const { t } = useLanguage();
   const controls = useAnimation();
   const [ref, inView] = useInView({
     triggerOnce: false,
@@ -146,7 +148,7 @@ export default function Contact() {
             }}
             className="text-3xl md:text-4xl font-bold tracking-tight mb-4"
           >
-            Get In Touch
+            {t.contact.title}
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -166,7 +168,7 @@ export default function Contact() {
             }}
             className="text-muted-foreground max-w-2xl mx-auto"
           >
-            Have a project in mind or want to learn more about our work? We'd love to hear from you!
+            {t.contact.subtitle}
           </motion.p>
         </div>
 
@@ -215,7 +217,7 @@ export default function Contact() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.3, duration: 0.4 }}
                   >
-                    Message Sent!
+                    {t.contact.successTitle}
                   </motion.h3>
                   <motion.p 
                     className="text-muted-foreground"
@@ -223,7 +225,7 @@ export default function Contact() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.4, duration: 0.4 }}
                   >
-                    Thank you for reaching out. We'll get back to you shortly!
+                    {t.contact.successMessage}
                   </motion.p>
                 </motion.div>
               ) : (
@@ -241,7 +243,7 @@ export default function Contact() {
                   >
                     <div className="space-y-2">
                       <label htmlFor="name" className="block text-sm font-medium">
-                        Your Name
+                        {t.contact.name}
                       </label>
                       <motion.input
                         id="name"
@@ -257,7 +259,7 @@ export default function Contact() {
                     </div>
                     <div className="space-y-2">
                       <label htmlFor="email" className="block text-sm font-medium">
-                        Email Address
+                        {t.contact.email}
                       </label>
                       <motion.input
                         id="email"
@@ -279,7 +281,7 @@ export default function Contact() {
                     custom={1}
                   >
                     <label htmlFor="subject" className="block text-sm font-medium">
-                      Subject
+                      {t.contact.subject}
                     </label>
                     <motion.input
                       id="subject"
@@ -300,7 +302,7 @@ export default function Contact() {
                     custom={2}
                   >
                     <label htmlFor="message" className="block text-sm font-medium">
-                      Message
+                      {t.contact.message}
                     </label>
                     <motion.textarea
                       id="message"
@@ -327,9 +329,9 @@ export default function Contact() {
                       size="lg"
                       isLoading={isSubmitting}
                     >
-                      {isSubmitting ? "Sending..." : (
+                      {isSubmitting ? t.contact.sending : (
                         <span className="flex items-center">
-                          Send Message
+                          {t.contact.send}
                           {!isSubmitting && (
                             <motion.span
                               className="ml-2 inline-block"
@@ -351,25 +353,25 @@ export default function Contact() {
           
           <motion.div variants={itemVariants} className="space-y-8">
             <div>
-              <h3 className="text-xl font-semibold mb-4">Contact Information</h3>
+              <h3 className="text-xl font-semibold mb-4">{t.contact.contactInfo}</h3>
               <ul className="space-y-4">
                 {[
                   {
                     icon: <Mail className="h-5 w-5 text-primary" />,
-                    title: "Email",
-                    content: "contact@nexbuy.com",
-                    href: "mailto:contact@nexbuy.com"
+                    title: t.contact.email,
+                    content: t.contact.emailAddress,
+                    href: `mailto:${t.contact.emailAddress}`
                   },
                   {
                     icon: <Phone className="h-5 w-5 text-primary" />,
-                    title: "Phone",
-                    content: "+31 6 1234 5678",
-                    href: "tel:+31612345678"
+                    title: t.contact.phone,
+                    content: t.contact.phoneNumber,
+                    href: `tel:${t.contact.phoneNumber.replace(/\s+/g, '')}`
                   },
                   {
                     icon: <MapPin className="h-5 w-5 text-primary" />,
-                    title: "Location",
-                    content: "Amsterdam, The Netherlands",
+                    title: t.contact.location,
+                    content: t.contact.locationText,
                     href: null
                   }
                 ].map((item, index) => (
@@ -409,7 +411,7 @@ export default function Contact() {
             </div>
             
             <div>
-              <h3 className="text-xl font-semibold mb-4">Follow Us</h3>
+              <h3 className="text-xl font-semibold mb-4">{t.contact.followUs}</h3>
               <div className="flex space-x-4">
                 {[
                   { name: 'twitter', icon: <Twitter className="h-5 w-5" /> },
