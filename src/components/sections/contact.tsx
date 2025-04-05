@@ -29,24 +29,46 @@ export default function Contact() {
     message: "",
   });
 
+  // Form status states
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target;
     setFormState((prev) => ({ ...prev, [name]: value }));
+    // Clear error when user starts typing again
+    if (submitError) setSubmitError(null);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmitError(null);
     
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setIsSubmitted(true);
+    try {
+      // Send form data to Formspree
+      const response = await fetch("https://formspree.io/f/xldjpybw", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: formState.name,
+          email: formState.email,
+          subject: formState.subject,
+          message: formState.message,
+          _subject: `New contact from ${formState.name}: ${formState.subject}`,
+        }),
+      });
+      
+      if (!response.ok) {
+        throw new Error(`Form submission failed: ${response.status}`);
+      }
+      
+      // Reset form fields on success
       setFormState({
         name: "",
         email: "",
@@ -54,9 +76,16 @@ export default function Contact() {
         message: "",
       });
       
-      // Reset submission status after 5 seconds
-      setTimeout(() => setIsSubmitted(false), 5000);
-    }, 1500);
+      setIsSubmitted(true);
+      
+      // Success message will remain until page refresh
+      // (removed the automatic timeout that would hide the message)
+    } catch (error) {
+      console.error("Form submission error:", error);
+      setSubmitError(error instanceof Error ? error.message : "Form submission failed");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const containerVariants = {
@@ -228,9 +257,62 @@ export default function Contact() {
                     {t.contact.successMessage}
                   </motion.p>
                 </motion.div>
+              ) : submitError ? (
+                <motion.div
+                  key="error"
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.9 }}
+                  transition={{ 
+                    type: "spring",
+                    stiffness: 200,
+                    damping: 20
+                  }}
+                  className="flex flex-col items-center justify-center h-full text-center p-8"
+                >
+                  <motion.div
+                    initial={{ scale: 0, rotate: 180 }}
+                    animate={{ scale: 1, rotate: 0 }}
+                    transition={{ 
+                      type: "spring",
+                      stiffness: 200,
+                      damping: 20,
+                      delay: 0.2
+                    }}
+                  >
+                    <svg className="h-16 w-16 text-destructive mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <circle cx="12" cy="12" r="10" strokeWidth="2" />
+                      <path d="M15 9l-6 6M9 9l6 6" strokeWidth="2" strokeLinecap="round" />
+                    </svg>
+                  </motion.div>
+                  <motion.h3 
+                    className="text-2xl font-semibold mb-2"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.3, duration: 0.4 }}
+                  >
+                    {t.contact.errorTitle}
+                  </motion.h3>
+                  <motion.p 
+                    className="text-muted-foreground mb-4"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.4, duration: 0.4 }}
+                  >
+                    {t.contact.errorMessage}
+                  </motion.p>
+                  <Button 
+                    onClick={() => setSubmitError(null)}
+                    className="mt-2"
+                  >
+                    {t.contact.retryButton}
+                  </Button>
+                </motion.div>
               ) : (
                 <motion.form 
                   key="form"
+                  action="https://formspree.io/f/xldjpybw"
+                  method="POST"
                   onSubmit={handleSubmit} 
                   className="space-y-6"
                   initial={{ opacity: 0 }}
