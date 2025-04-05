@@ -71,7 +71,13 @@ export default function Navbar() {
           transition={{ duration: 0.5 }}
           className="text-2xl font-bold text-primary"
         >
-          Virelio
+          <a 
+            href="#" 
+            onClick={(e) => handleNavClick(e, "#")}
+            className="hover:opacity-80 transition-opacity"
+          >
+            Virelio
+          </a>
         </motion.div>
 
         {/* Desktop Navigation */}

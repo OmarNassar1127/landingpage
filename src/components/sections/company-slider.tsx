@@ -103,9 +103,9 @@ export default function CompanySlider() {
             variants={itemVariants}
             className="relative overflow-hidden my-8"
           >
-            {/* Fade gradient effects on sides */}
-            <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-background to-transparent z-10 backdrop-blur-sm" />
-            <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-background to-transparent z-10 backdrop-blur-sm" />
+            {/* Fade gradient effects on sides - minimal blur */}
+            <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-background to-transparent z-10 backdrop-blur-[1px]" />
+            <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-background to-transparent z-10 backdrop-blur-[1px]" />
             {/* First Slider (Left to Right) */}
             <motion.div
               className="flex space-x-12 mb-10 will-change-transform"

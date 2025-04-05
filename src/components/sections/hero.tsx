@@ -319,9 +319,9 @@ function HeroContent() {
             </Button>
           </motion.div>
           
-          {/* Button positioned at center-bottom, 10px from bottom */}
+          {/* Button positioned higher for mobile view */}
           {isMounted && (
-            <div className="absolute bottom-[-200px] left-0 right-0 flex justify-center" style={{ zIndex: 100 }}>
+            <div className="absolute bottom-[-150px] left-0 right-0 flex justify-center" style={{ zIndex: 100 }}>
               <motion.a 
                 href="#trusted-partners" 
                 onClick={(e) => handleScrollDown(e)}
