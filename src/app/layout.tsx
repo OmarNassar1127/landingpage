@@ -8,6 +8,7 @@ import JsonLd from "@/components/seo/json-ld";
 import { organizationSchema, websiteSchema } from "@/lib/schema";
 import { siteConfig } from "@/lib/config";
 import dynamic from 'next/dynamic';
+import GoogleAnalytics from "@/components/seo/google-analytics";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -126,6 +127,7 @@ export default function RootLayout({
       <head>
         <JsonLd data={organizationSchema()} />
         <JsonLd data={websiteSchema()} />
+        <GoogleAnalytics />
       </head>
       <body className={inter.className}>
         <ThemeProvider>
