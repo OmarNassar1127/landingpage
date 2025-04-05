@@ -1,33 +1,74 @@
 import { MetadataRoute } from 'next';
+import { siteConfig } from '@/lib/config';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://nexbuy.com'; // ToDo::Replace with actual domain
+  const baseUrl = siteConfig.url;
   const lastModified = new Date();
 
+  // Main landing pages and sections for both languages
   return [
+    // Dutch (default) pages
     {
-      url: `${baseUrl}`,
+      url: baseUrl,
       lastModified,
-      changeFrequency: 'monthly',
+      changeFrequency: 'monthly' as const,
       priority: 1.0,
     },
     {
-      url: `${baseUrl}/#projects`,
+      url: `${baseUrl}${siteConfig.sections.projects}`,
       lastModified,
-      changeFrequency: 'monthly',
+      changeFrequency: 'monthly' as const,
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/#about`,
+      url: `${baseUrl}${siteConfig.sections.services}`,
       lastModified,
-      changeFrequency: 'yearly',
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}${siteConfig.sections.about}`,
+      lastModified,
+      changeFrequency: 'yearly' as const,
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/#contact`,
+      url: `${baseUrl}${siteConfig.sections.contact}`,
       lastModified,
-      changeFrequency: 'yearly',
+      changeFrequency: 'yearly' as const,
       priority: 0.7,
+    },
+    
+    // English pages
+    {
+      url: `${baseUrl}/en`,
+      lastModified,
+      changeFrequency: 'monthly' as const,
+      priority: 0.9, // Slightly lower than main Dutch page
+    },
+    {
+      url: `${baseUrl}/en${siteConfig.sections.projects}`,
+      lastModified,
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/en${siteConfig.sections.services}`,
+      lastModified,
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/en${siteConfig.sections.about}`,
+      lastModified,
+      changeFrequency: 'yearly' as const,
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/en${siteConfig.sections.contact}`,
+      lastModified,
+      changeFrequency: 'yearly' as const,
+      priority: 0.6,
     },
   ];
 }

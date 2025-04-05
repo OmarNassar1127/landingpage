@@ -11,7 +11,7 @@ import { siteConfig } from "@/lib/config";
 import JsonLd from "@/components/seo/json-ld";
 import { faqSchema } from "@/lib/schema";
 
-// Sample FAQ data for the landing page
+// Sample FAQ data for the landing page (English version)
 const faqData = {
   items: [
     {
@@ -38,10 +38,11 @@ export const metadata: Metadata = generateMetadata({
     "We specialize in AI solutions, SaaS platforms, KYC integrations, and shop automations to help businesses thrive in the digital age.",
   keywords:
     "AI solutions, SaaS development, KYC integration, e-commerce automation, web development, technology consulting, Virelio",
-  pathname: "/",
+  pathname: "/en",
+  locale: "en", // Set this explicitly for English
 });
 
-export default function Home() {
+export default function EnglishHome() {
   return (
     <>
       {/* Adding FAQ structured data for better SEO */}

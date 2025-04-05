@@ -1,11 +1,11 @@
-import { MetadataRoute } from 'next';
+import { MetadataRoute } from "next";
 
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: {
-      userAgent: '*',
-      allow: '/',
+      userAgent: "*",
+      allow: "/",
     },
-    sitemap: 'https://nexbuy.com/sitemap.xml', // ToDo::Replace with actual domain
+    sitemap: "https://virelio.nl/sitemap.xml",
   };
 }

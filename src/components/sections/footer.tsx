@@ -8,7 +8,7 @@ import { useLanguage } from "@/lib/i18n/language-context";
 
 export default function Footer() {
   const { t } = useLanguage();
-  
+
   return (
     <footer className="bg-background py-12">
       <div className="container mx-auto px-4">
@@ -20,15 +20,17 @@ export default function Footer() {
               transition={{ duration: 0.5 }}
               className="space-y-4"
             >
-              <h3 className="text-2xl font-bold">NexBuy</h3>
+              <h3 className="text-2xl font-bold">Virelio</h3>
               <p className="text-muted-foreground max-w-md">
                 {t.footer.description}
               </p>
             </motion.div>
           </div>
-          
+
           <div>
-            <h4 className="font-semibold text-lg mb-4">{t.footer.quickLinks}</h4>
+            <h4 className="font-semibold text-lg mb-4">
+              {t.footer.quickLinks}
+            </h4>
             <ul className="space-y-2">
               {[
                 { name: t.nav.home, href: "#" },
@@ -47,7 +49,7 @@ export default function Footer() {
               ))}
             </ul>
           </div>
-          
+
           <div>
             <h4 className="font-semibold text-lg mb-4">{t.footer.legal}</h4>
             <ul className="space-y-2">
@@ -80,18 +82,18 @@ export default function Footer() {
             </ul>
           </div>
         </div>
-        
+
         <div className="border-t border-border mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-sm text-muted-foreground">
-            &copy; {new Date().getFullYear()} NexBuy. {t.footer.rights}
+            &copy; {new Date().getFullYear()} Virelio. {t.footer.rights}
           </p>
-          
+
           <div className="flex space-x-6 mt-4 md:mt-0">
             {[
-              { name: 'twitter', icon: <Twitter className="h-5 w-5" /> },
-              { name: 'linkedin', icon: <Linkedin className="h-5 w-5" /> },
-              { name: 'github', icon: <Github className="h-5 w-5" /> },
-              { name: 'website', icon: <ExternalLink className="h-5 w-5" /> }
+              { name: "twitter", icon: <Twitter className="h-5 w-5" /> },
+              { name: "linkedin", icon: <Linkedin className="h-5 w-5" /> },
+              { name: "github", icon: <Github className="h-5 w-5" /> },
+              { name: "website", icon: <ExternalLink className="h-5 w-5" /> },
             ].map((social) => (
               <a
                 key={social.name}

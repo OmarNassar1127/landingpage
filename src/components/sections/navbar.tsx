@@ -16,7 +16,7 @@ export default function Navbar() {
   const { t } = useLanguage();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  
+
   const navLinks = [
     { name: t.nav.home, href: "#" },
     { name: t.nav.projects, href: "#projects" },
@@ -62,7 +62,7 @@ export default function Navbar() {
           transition={{ duration: 0.5 }}
           className="text-2xl font-bold text-primary"
         >
-          NexBuy
+          Virelio
         </motion.div>
 
         {/* Desktop Navigation */}

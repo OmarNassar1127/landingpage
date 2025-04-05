@@ -35,7 +35,17 @@ export function LanguageProvider({ children }: LanguageProviderProps) {
   useEffect(() => {
     // Get the saved language preference from localStorage if available
     const savedLanguage = localStorage.getItem("language") as Language | null;
-    if (savedLanguage && (savedLanguage === "nl" || savedLanguage === "en")) {
+    
+    // Check if URL starts with /en for English
+    const urlPathname = window.location.pathname;
+    const isEnglishPath = urlPathname.startsWith('/en');
+    
+    if (isEnglishPath) {
+      // URL path takes precedence
+      setLanguage("en");
+      setTranslations(translations["en"]);
+      localStorage.setItem("language", "en");
+    } else if (savedLanguage && (savedLanguage === "nl" || savedLanguage === "en")) {
       setLanguage(savedLanguage);
       setTranslations(translations[savedLanguage]);
     }
@@ -45,6 +55,21 @@ export function LanguageProvider({ children }: LanguageProviderProps) {
     setLanguage(lang);
     setTranslations(translations[lang]);
     localStorage.setItem("language", lang);
+    
+    // Change URL based on language
+    const currentPath = window.location.pathname;
+    if (lang === "en" && !currentPath.startsWith('/en')) {
+      // Switch to English - add /en to path
+      if (currentPath === '/') {
+        window.location.href = '/en';
+      } else {
+        window.location.href = `/en${currentPath}`;
+      }
+    } else if (lang === "nl" && currentPath.startsWith('/en')) {
+      // Switch to Dutch - remove /en from path
+      const newPath = currentPath.replace(/^\/en/, '') || '/';
+      window.location.href = newPath;
+    }
   };
 
   const value = {

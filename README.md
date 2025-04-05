@@ -1,4 +1,4 @@
-# NexBuy Landing Page
+# Virelio Landing Page
 
 A modern, responsive landing page built with Next.js, TypeScript, Tailwind CSS, and Framer Motion.
 
@@ -14,7 +14,7 @@ A modern, responsive landing page built with Next.js, TypeScript, Tailwind CSS, 
 ## Project Structure
 
 ```
-nexbuy/
+virelio/
 ├── src/
 │   ├── app/
 │   │   ├── globals.css         # Global styles
