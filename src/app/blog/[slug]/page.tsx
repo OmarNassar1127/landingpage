@@ -49,6 +49,13 @@ const blogPosts = [
   },
 ];
 
+// This is required for static export (output: 'export')
+export function generateStaticParams() {
+  return blogPosts.map((post) => ({
+    slug: post.slug,
+  }));
+}
+
 // This generates metadata for each blog post page dynamically
 export async function generateMetadata({
   params,
