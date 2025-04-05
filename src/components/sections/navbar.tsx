@@ -8,6 +8,7 @@ import { scrollToSection } from "@/lib/scroll-utils";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { Menu, X, ChevronUp } from "lucide-react";
+import { Icon } from "@/components/ui/icon";
 
 const navLinks = [
   { name: "Home", href: "#" },
@@ -89,9 +90,9 @@ export default function Navbar() {
             aria-label="Toggle menu"
           >
             {mobileMenuOpen ? (
-              <X className="h-6 w-6" />
+              <Icon icon={X} className="h-6 w-6" />
             ) : (
-              <Menu className="h-6 w-6" />
+              <Icon icon={Menu} className="h-6 w-6" />
             )}
           </Button>
         </div>

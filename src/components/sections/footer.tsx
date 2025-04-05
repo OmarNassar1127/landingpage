@@ -3,10 +3,11 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { Twitter, Linkedin, Github, ExternalLink } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="bg-muted/50 py-12">
+    <footer className="bg-background py-12">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="md:col-span-2">
@@ -72,16 +73,19 @@ export default function Footer() {
           </p>
           
           <div className="flex space-x-6 mt-4 md:mt-0">
-            {['twitter', 'linkedin', 'github', 'instagram'].map((social) => (
+            {[
+              { name: 'twitter', icon: <Twitter className="h-5 w-5" /> },
+              { name: 'linkedin', icon: <Linkedin className="h-5 w-5" /> },
+              { name: 'github', icon: <Github className="h-5 w-5" /> },
+              { name: 'website', icon: <ExternalLink className="h-5 w-5" /> }
+            ].map((social) => (
               <a
-                key={social}
-                href={`#${social}`}
+                key={social.name}
+                href={`#${social.name}`}
                 className="text-muted-foreground hover:text-primary"
-                aria-label={`${social} profile`}
+                aria-label={`${social.name} profile`}
               >
-                <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" />
-                </svg>
+                {social.icon}
               </a>
             ))}
           </div>
