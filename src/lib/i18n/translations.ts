@@ -174,7 +174,7 @@ export const translations = {
       contactInfo: "Contactgegevens",
       phone: "Telefoon",
       location: "Locatie",
-      followUs: "Chat nu met ons",
+      followUs: "WhatsApp direct",
       emailAddress: "contact@Virelio.nl",
       phoneNumber: "+31 6 4044 6732",
       locationText: "Amsterdam, Nederland",
