@@ -35,7 +35,9 @@ export default function Footer() {
               transition={{ duration: 0.5 }}
               className="space-y-4"
             >
-              <h3 className="text-2xl font-bold">Virelio</h3>
+              <a className="text-2xl font-bold tracking-widest bg-gradient-to-r from-purple-400 to-blue-400 text-transparent bg-clip-text hover:opacity-80 transition">
+                VIRELIO
+              </a>
               <p className="text-muted-foreground max-w-md">
                 {t.footer.description}
               </p>
@@ -59,7 +61,9 @@ export default function Footer() {
                     className="text-muted-foreground hover:text-primary transition-colors"
                     onClick={(e) => {
                       e.preventDefault();
-                      const handledPolicyNavigation = navigateFromPolicyPage(link.href);
+                      const handledPolicyNavigation = navigateFromPolicyPage(
+                        link.href
+                      );
                       if (!handledPolicyNavigation) {
                         if (link.href === "#") {
                           window.scrollTo({ top: 0, behavior: "smooth" });

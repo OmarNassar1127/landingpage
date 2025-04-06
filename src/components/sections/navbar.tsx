@@ -38,10 +38,10 @@ export default function Navbar() {
     href: string
   ) => {
     e.preventDefault();
-    
+
     // Check if we're navigating from a policy page
     const handledPolicyNavigation = navigateFromPolicyPage(href);
-    
+
     // If not handled as a policy navigation, do regular scrolling
     if (!handledPolicyNavigation) {
       if (href === "#") {
@@ -51,7 +51,7 @@ export default function Navbar() {
         scrollToSection(sectionId);
       }
     }
-    
+
     if (mobileMenuOpen) setMobileMenuOpen(false);
   };
 
@@ -71,12 +71,12 @@ export default function Navbar() {
           transition={{ duration: 0.5 }}
           className="text-2xl font-bold text-primary"
         >
-          <a 
-            href="#" 
+          <a
+            href="#"
             onClick={(e) => handleNavClick(e, "#")}
-            className="hover:opacity-80 transition-opacity"
+            className="text-2xl font-bold tracking-widest bg-gradient-to-r from-purple-400 to-blue-400 text-transparent bg-clip-text hover:opacity-80 transition"
           >
-            Virelio
+            VIRELIO
           </a>
         </motion.div>
 
