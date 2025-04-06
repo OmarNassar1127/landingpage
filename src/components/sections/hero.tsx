@@ -270,7 +270,7 @@ function HeroContent() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.5 }}
           >
-            <div className="relative h-16 w-16 flex items-center justify-center rounded-full bg-background/80 shadow-lg border border-primary/20">
+            <div className="relative h-16 w-16 flex items-center justify-center rounded-full bg-background/80 shadow border border-primary/20">
               {isMounted && (
                 <AnimatePresence mode="wait">
                   <motion.div
@@ -298,18 +298,18 @@ function HeroContent() {
 
           <motion.p
             variants={itemVariants}
-            className="max-w-xl text-lg text-muted-foreground/90 backdrop-blur-sm bg-background/20 px-4 py-2 rounded-lg shadow-sm border border-primary/10"
+            className="max-w-xl text-lg text-muted-foreground/90 bg-background/80 px-4 py-2 rounded-lg shadow border border-primary/10"
           >
             {t.hero.subtitle}
           </motion.p>
 
           <motion.div variants={itemVariants} className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-            <Button size="lg" className="backdrop-blur-sm bg-primary/90 hover:bg-primary/80 shadow-lg shadow-primary/20" asChild>
+            <Button size="lg" className="bg-primary/90 hover:bg-primary/80 shadow shadow-primary/20" asChild>
               <a href="#trusted-partners" onClick={(e) => handleScrollDown(e)}>
                 {t.hero.ctaButton}
               </a>
             </Button>
-            <Button variant="outline" size="lg" className="backdrop-blur-sm bg-background/50 border-primary/30 hover:bg-background/30 shadow-lg" asChild>
+            <Button variant="outline" size="lg" className="bg-background/80 border-primary/30 hover:bg-background/70 shadow" asChild>
               <a href="#contact" onClick={(e) => {
                 e.preventDefault();
                 scrollToSection("contact");
@@ -325,8 +325,8 @@ function HeroContent() {
               <motion.a 
                 href="#trusted-partners" 
                 onClick={(e) => handleScrollDown(e)}
-                className="flex flex-col items-center hover:text-primary transition-colors bg-background/50 backdrop-blur-lg px-6 py-2 sm:px-8 sm:py-3 rounded-full shadow-lg border border-primary/30 group"
-                whileHover={{ y: -3, boxShadow: "0 10px 25px -5px rgba(139,92,246,0.3)" }}
+                className="flex flex-col items-center hover:text-primary transition-colors bg-background/80 px-6 py-2 sm:px-8 sm:py-3 rounded-full shadow border border-primary/30 group"
+                whileHover={{ y: -3, boxShadow: "0 10px 25px -5px rgba(139,92,246,0.2)" }}
                 whileTap={{ y: 0 }}
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
@@ -372,7 +372,7 @@ export default function Hero() {
         <div className="container mx-auto px-4 text-center">
           <div className="flex flex-col items-center space-y-8">
             <div className="mb-6 flex justify-center">
-              <div className="relative h-16 w-16 flex items-center justify-center rounded-full bg-background/80 shadow-lg border border-primary/20">
+              <div className="relative h-16 w-16 flex items-center justify-center rounded-full bg-background/80 shadow border border-primary/20">
                 {/* Empty placeholder for the icon */}
                 <div className="h-8 w-8"></div>
               </div>
@@ -380,7 +380,7 @@ export default function Hero() {
             <h1 className="text-4xl md:text-6xl font-bold tracking-tight drop-shadow-md">
               {t.hero.title}
             </h1>
-            <p className="max-w-xl text-lg text-muted-foreground/90 backdrop-blur-sm bg-background/20 px-4 py-2 rounded-lg shadow-sm border border-primary/10">
+            <p className="max-w-xl text-lg text-muted-foreground/90 bg-background/80 px-4 py-2 rounded-lg shadow border border-primary/10">
               {t.hero.subtitle}
             </p>
             {/* Simple placeholder buttons */}
