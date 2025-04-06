@@ -31,9 +31,9 @@ export const translations = {
 
     // Hero
     hero: {
-      title: "Digitale Innovatie voor Uw Bedrijf",
+      title: "Software die Werkt zoals Jullie Werken",
       subtitle:
-        "Wij zijn een team van experts die gespecialiseerd zijn in het bouwen van digitale oplossingen voor bedrijven.",
+        "Van een webshop tot een interne tool, van automatisering tot AI-oplossing: wij bouwen wat jouw werk makkelijker maakt. Snel, efficiënt en volledig op maat.",
       ctaButton: "Bekijk Onze Projecten",
       secondaryButton: "Neem Contact Op",
     },
@@ -270,9 +270,9 @@ export const translations = {
 
     // Hero
     hero: {
-      title: "Digital Innovation for Your Business",
+      title: "Software that Works the Way You Work",
       subtitle:
-        "We're a team of experts specialized in building digital solutions for businesses.",
+        "From an e-commerce site to an internal tool, from automation to AI solution: we build what makes your work easier. Fast, efficient, and completely customized.",
       ctaButton: "View Our Projects",
       secondaryButton: "Get in Touch",
     },
