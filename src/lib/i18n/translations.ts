@@ -18,7 +18,7 @@ export const translations = {
     // Footer
     footer: {
       description:
-        "Innovatieve oplossingen voor moderne uitdagingen. Wij zijn gespecialiseerd in AI-systemen, SaaS-platforms, KYC-integraties en winkelautomatisering.",
+        "Innovatieve oplossingen voor moderne uitdagingen. Onze expertise omvat AI-systemen, SaaS-platformen, KYC-integraties, winkelautomatisering en meer. We passen ons aan aan de unieke behoeften van elk project om optimale resultaten te leveren.",
       quickLinks: "Snelle Links",
       legal: "Juridisch",
       privacyPolicy: "Privacybeleid",
@@ -206,7 +206,7 @@ export const translations = {
     // Footer
     footer: {
       description:
-        "Creating innovative solutions for modern challenges. We specialize in AI systems, SaaS platforms, KYC integrations, and shop automations.",
+        "Innovative solutions for modern challenges. Our expertise includes, AI systems, SaaS platforms, KYC integrations, shop automations and many more. We adapt to the unique needs of each project to deliver optimal results.",
       quickLinks: "Quick Links",
       legal: "Legal",
       privacyPolicy: "Privacy Policy",

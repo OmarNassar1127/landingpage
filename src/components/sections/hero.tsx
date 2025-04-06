@@ -332,7 +332,7 @@ function HeroContent() {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 1, delay: 1 }}
               >
-                <span className="text-sm font-medium ">{t.projects.viewMore}</span>
+                {/* <span className="text-sm font-medium ">{t.projects.viewMore}</span> */}
                 <motion.div
                   animate={{
                     y: [0, 5, 0],
