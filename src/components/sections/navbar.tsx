@@ -16,6 +16,7 @@ export default function Navbar() {
   const { t } = useLanguage();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("");
 
   const navLinks = [
     { name: t.nav.home, href: "#" },
@@ -29,16 +30,55 @@ export default function Navbar() {
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
+      
+      // Check which section is currently in view
+      const scrollPosition = window.scrollY + 100; // Offset for better UX
+      
+      // Check if we're at the top of the page
+      if (scrollPosition < 200) {
+        setActiveSection("");
+        return;
+      }
+      
+      // Check each section
+      const sections = navLinks
+        .filter(link => link.href !== "#")
+        .map(link => ({
+          id: link.href.replace("#", ""),
+          position: document.getElementById(link.href.replace("#", ""))?.offsetTop || 0
+        }));
+      
+      // Sort sections by position (top to bottom)
+      sections.sort((a, b) => a.position - b.position);
+      
+      // Find the current section
+      for (let i = sections.length - 1; i >= 0; i--) {
+        if (scrollPosition >= sections[i].position) {
+          setActiveSection(sections[i].id);
+          break;
+        }
+      }
     };
+    
     window.addEventListener("scroll", handleScroll);
+    // Call once on mount to set initial active section
+    handleScroll();
+    
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [navLinks]);
 
   const handleNavClick = (
     e: React.MouseEvent<HTMLAnchorElement>,
     href: string
   ) => {
     e.preventDefault();
+
+    // Update active section
+    if (href === "#") {
+      setActiveSection("");
+    } else {
+      setActiveSection(href.replace("#", ""));
+    }
 
     // Check if we're navigating from a policy page
     const handledPolicyNavigation = navigateFromPolicyPage(href);
@@ -88,10 +128,22 @@ export default function Navbar() {
               <motion.li key={link.name} whileHover={{ y: -2 }}>
                 <a
                   href={link.href}
-                  className="text-sm font-medium transition-colors hover:text-primary"
+                  className={cn(
+                    "text-sm font-medium transition-all hover:text-primary relative",
+                    (activeSection === link.href.replace("#", "") || (link.href === "#" && activeSection === "")) 
+                      ? "text-primary font-semibold" 
+                      : ""
+                  )}
                   onClick={(e) => handleNavClick(e, link.href)}
                 >
                   {link.name}
+                  {(activeSection === link.href.replace("#", "") || (link.href === "#" && activeSection === "")) && (
+                    <motion.div 
+                      className="absolute -bottom-1 left-0 w-full h-0.5 bg-primary rounded-full"
+                      layoutId="activeNavIndicator"
+                      transition={{ type: "spring", stiffness: 350, damping: 30 }}
+                    />
+                  )}
                 </a>
               </motion.li>
             ))}
@@ -135,7 +187,12 @@ export default function Navbar() {
                 <li key={link.name}>
                   <a
                     href={link.href}
-                    className="block px-4 py-2 text-sm font-medium transition-colors hover:bg-accent rounded-md"
+                    className={cn(
+                      "block px-4 py-2 text-sm font-medium transition-all hover:bg-accent rounded-md relative",
+                      (activeSection === link.href.replace("#", "") || (link.href === "#" && activeSection === "")) 
+                        ? "text-primary font-semibold bg-accent" 
+                        : ""
+                    )}
                     onClick={(e) => handleNavClick(e, link.href)}
                   >
                     {link.name}
