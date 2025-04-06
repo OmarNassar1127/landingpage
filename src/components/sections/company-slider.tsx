@@ -93,8 +93,8 @@ export default function CompanySlider() {
           <motion.div variants={itemVariants} className="text-center relative z-10">
             <div className="absolute left-1/2 -top-10 w-1 h-24 bg-gradient-to-b from-transparent via-primary/50 to-transparent transform -translate-x-1/2 z-0" />
             <div className="flex flex-col items-center gap-3 relative z-20">
-              <h2 className="text-3xl md:text-4xl font-bold drop-shadow-md px-6 py-2 backdrop-blur-lg sm:backdrop-blur-xl bg-background/20 inline-block rounded-lg">{t.companies.title}</h2>
-              <p className="text-muted-foreground/90 backdrop-blur-lg sm:backdrop-blur-xl bg-background/20 inline-block px-6 py-3 rounded-lg shadow-sm border border-primary/10">
+              <h2 className="text-3xl md:text-4xl font-bold drop-shadow-md px-6 py-2 bg-background/80 inline-block rounded-lg">{t.companies.title}</h2>
+              <p className="text-muted-foreground/90 bg-background/80 inline-block px-6 py-3 rounded-lg shadow-sm border border-primary/10">
                 {t.companies.subtitle}
               </p>
             </div>
