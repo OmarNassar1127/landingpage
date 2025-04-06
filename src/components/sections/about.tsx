@@ -114,7 +114,7 @@ export default function About() {
                 className="text-2xl font-semibold"
                 variants={itemVariants}
               >
-                {t.about.missionTitle}
+                {t.about.teamTitle}
               </motion.h3>
               
               <motion.p 
@@ -123,13 +123,24 @@ export default function About() {
               >
                 {t.about.description}
               </motion.p>
-              
-              <motion.p 
-                className="text-muted-foreground"
-                variants={itemVariants}
-              >
-                {t.about.missionDescription}
-              </motion.p>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
+                <motion.div 
+                  variants={itemVariants} 
+                  className="p-4 rounded-lg bg-primary/5 border border-primary/10"
+                >
+                  <h4 className="font-medium mb-2">{t.about.omarTitle}</h4>
+                  <p className="text-sm text-muted-foreground">{t.about.omarDescription}</p>
+                </motion.div>
+
+                <motion.div 
+                  variants={itemVariants} 
+                  className="p-4 rounded-lg bg-primary/5 border border-primary/10"
+                >
+                  <h4 className="font-medium mb-2">{t.about.robinTitle}</h4>
+                  <p className="text-sm text-muted-foreground">{t.about.robinDescription}</p>
+                </motion.div>
+              </div>
               
               <motion.div 
                 variants={itemVariants}
@@ -181,6 +192,26 @@ export default function About() {
                 <p className="text-sm font-medium">{t.about.theTeam}</p>
               </div>
             </motion.div>
+          </motion.div>
+
+          {/* Our Mission Section */}
+          <motion.div
+            variants={containerVariants}
+            className="mt-16 max-w-3xl mx-auto"
+          >
+            <motion.h3 
+              className="text-2xl font-semibold mb-6 text-center"
+              variants={itemVariants}
+            >
+              {t.about.missionTitle}
+            </motion.h3>
+            
+            <motion.p 
+              className="text-muted-foreground text-center mb-8"
+              variants={itemVariants}
+            >
+              {t.about.missionDescription}
+            </motion.p>
           </motion.div>
 
           {/* Our Values Section */}
