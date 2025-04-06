@@ -21,6 +21,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: `${baseUrl}${siteConfig.sections.services}`,
+      lastModified,
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
+    },
+    {
       url: `${baseUrl}${siteConfig.sections.about}`,
       lastModified,
       changeFrequency: 'yearly' as const,
@@ -62,6 +68,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/en${siteConfig.sections.projects}`,
+      lastModified,
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/en${siteConfig.sections.services}`,
       lastModified,
       changeFrequency: 'monthly' as const,
       priority: 0.7,

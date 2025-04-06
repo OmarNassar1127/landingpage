@@ -3,6 +3,7 @@ import Navbar from "@/components/sections/navbar";
 import Hero from "@/components/sections/hero";
 import CompanySlider from "@/components/sections/company-slider";
 import Projects from "@/components/sections/projects";
+import Services from "@/components/sections/services";
 import About from "@/components/sections/about";
 import Contact from "@/components/sections/contact";
 import Testimonials from "@/components/sections/testimonials";
@@ -10,7 +11,7 @@ import Footer from "@/components/sections/footer";
 import { generateMetadata } from "@/lib/metadata";
 import { siteConfig } from "@/lib/config";
 import JsonLd from "@/components/seo/json-ld";
-import { faqSchema } from "@/lib/schema";
+import { faqSchema, servicesSchema } from "@/lib/schema";
 
 // Sample FAQ data for the landing page (English version)
 const faqData = {
@@ -46,17 +47,20 @@ export const metadata: Metadata = generateMetadata({
 export default function EnglishHome() {
   return (
     <>
-      {/* Adding FAQ structured data for better SEO */}
+      {/* Adding structured data for better SEO */}
       <JsonLd data={faqSchema(faqData)} />
+      <JsonLd data={servicesSchema()} />
 
       <main className="min-h-screen">
         <Navbar />
         <Hero />
         <CompanySlider />
+        <div id={siteConfig.sections.services.substring(1)}>
+          <Services />
+        </div>
         <div id={siteConfig.sections.projects.substring(1)}>
           <Projects />
         </div>
-{/* Services section removed since it's not defined in siteConfig */}
         <div id={siteConfig.sections.about.substring(1)}>
           <About />
         </div>

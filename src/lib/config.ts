@@ -42,6 +42,7 @@ export const siteConfig = {
   // Add sections for the one-page layout
   sections: {
     projects: "#projects",
+    services: "#services",
     about: "#about",
     contact: "#contact",
     testimonials: "#testimonials",

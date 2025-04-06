@@ -31,9 +31,9 @@ const ClientCookieConsent = dynamic(
 export const metadata: Metadata = {
   title: "Virelio - Innovative Solutions for Modern Challenges",
   description:
-    "At Virelio, we specialize in AI Solutions, SaaS platforms, KYC integrations, and Shop Automations to help businesses thrive in the digital age.",
+    "At Virelio, we specialize in AI Solutions, SaaS platforms, KYC integrations, Web Development, E-commerce Automation and Custom AI Services to help businesses thrive in the digital age.",
   keywords:
-    "AI Solutions, SaaS platforms, Virelio, KYC integrations, shop automations, development, technology",
+    "AI Solutions, SaaS platforms, Virelio, KYC integrations, shop automations, development, technology, services, web development, AI development, e-commerce automation, custom AI solutions",
   metadataBase: new URL(siteConfig.url),
   alternates: {
     canonical: siteConfig.url,
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     siteName: "Virelio",
     title: "Virelio - Innovative Solutions for Modern Challenges",
     description:
-      "AI Solutions, SaaS platforms, KYC integrations, and shop automations to help businesses thrive in the digital age.",
+      "AI Solutions, SaaS platforms, KYC integrations, Web Development, E-commerce Automation and Custom AI Services to help businesses thrive in the digital age.",
     images: [
       {
         url: `${siteConfig.url}/og-image.jpg`,
