@@ -109,7 +109,7 @@ export default function About() {
             variants={containerVariants}
             className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center"
           >
-            <motion.div variants={itemVariants} className="space-y-6 order-2 md:order-1">
+            <motion.div variants={itemVariants} className="space-y-6 order-2 md:order-1 p-6 rounded-lg bg-primary/5 border border-primary/10 shadow-sm mt-4">
               <motion.h3 
                 className="text-2xl font-semibold"
                 variants={itemVariants}
@@ -117,30 +117,17 @@ export default function About() {
                 {t.about.teamTitle}
               </motion.h3>
               
-              <motion.p 
-                className="text-muted-foreground"
+              <motion.div 
+                className="text-muted-foreground space-y-4"
                 variants={itemVariants}
               >
-                {t.about.description}
-              </motion.p>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
-                <motion.div 
-                  variants={itemVariants} 
-                  className="p-4 rounded-lg bg-primary/5 border border-primary/10"
-                >
-                  <h4 className="font-medium mb-2">{t.about.omarTitle}</h4>
-                  <p className="text-sm text-muted-foreground">{t.about.omarDescription}</p>
-                </motion.div>
-
-                <motion.div 
-                  variants={itemVariants} 
-                  className="p-4 rounded-lg bg-primary/5 border border-primary/10"
-                >
-                  <h4 className="font-medium mb-2">{t.about.robinTitle}</h4>
-                  <p className="text-sm text-muted-foreground">{t.about.robinDescription}</p>
-                </motion.div>
-              </div>
+                <div className="text-muted-foreground space-y-4">
+                  {t.about.description.split('\n').map((paragraph, index) => (
+                    <p key={index}>{paragraph}</p>
+                  ))}
+                </div>
+              </motion.div>
+              
               
               <motion.div 
                 variants={itemVariants}

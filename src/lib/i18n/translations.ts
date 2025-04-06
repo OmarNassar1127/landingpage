@@ -135,13 +135,9 @@ export const translations = {
       subtitle: "Leer meer over ons team en onze missie.",
       theTeam: "Het Virelio team",
       description:
-        "Virelio is opgericht door Omar en Robin, twee vrienden met een gedeelde passie voor technologische innovatie. Omar, een ervaren Full Stack ontwikkelaar, bracht zijn expertise in het bouwen van digitale producten zoals Bitsliced (een NFT marktplaats) en Quotum.cloud (een financieel analyseplatform). Robin, cum laude afgestudeerd in Bedrijfskunde, voegt sterke vaardigheden toe in data-analyse, projectmanagement en procesoptimalisatie. Samen hebben we talrijke succesvolle projecten afgeleverd, van AI-oplossingen tot e-commerce automatisering en SaaS-platforms.",
+        "Wij zijn Robin en Omar. Twee nuchtere, gediplomeerde IT'ers met meer dan 5 jaar ervaring en een breed portfolio aan projecten bij grote bedrijven. In plaats van passief consumeren, bouwen we. Nieuwtje gelezen? Wij testen het. Nieuwe AI-tool? Diezelfde dag nog een werkend prototype.\nWe maken complexe technologie begrijpelijk en direct toepasbaar. Geen lange theorieën, maar slimme oplossingen die direct waarde leveren — voor zowel lokale ondernemers als grote corporates.\nVan snelle experimenten tot stabiele productiesystemen. Van slimme automatisering tot krachtige AI-toepassingen. Wij blijven bouwen. Gericht. Efficiënt. Praktisch.",
       missionTitle: "Onze Missie",
-      teamTitle: "De Oprichters",
-      omarTitle: "Omar - Tech Innovator",
-      omarDescription: "Gespecialiseerd in het ontwikkelen van geavanceerde technische oplossingen die echte problemen oplossen. Van blockchain-integraties tot AI-implementaties.",
-      robinTitle: "Robin - Business Strateeg",
-      robinDescription: "Brengt data-gedreven inzichten en procesoptimalisatie naar elk project, met bewezen vermogen om operationele efficiëntie te verhogen.",
+      teamTitle: "Over Robin & Omar",
       missionDescription:
         "Onze missie is om bedrijven te helpen groeien door middel van digitale innovatie. Wij geloven in het bouwen van hoogwaardige oplossingen die eenvoudig te gebruiken zijn en een echte impact hebben. We combineren technische expertise met zakelijk inzicht om resultaten te leveren die uw bedrijf vooruit helpen.",
       valuesTitle: "Onze Waarden",
@@ -378,13 +374,9 @@ export const translations = {
       subtitle: "Learn more about our team and mission.",
       theTeam: "The Virelio team",
       description:
-        "Virelio was founded by Omar and Robin, two friends united by a shared passion for technological innovation. Omar, an experienced Full Stack developer, brings expertise in building digital products like Bitsliced (an NFT marketplace) and Quotum.cloud (a financial analytics platform). Robin, who graduated cum laude in Business Administration, adds strong skills in data analysis, project management, and process optimization. Together, we've delivered numerous successful projects, from AI solutions to e-commerce automation and SaaS platforms.",
+        "We are Robin and Omar. Two down-to-earth, certified IT professionals with over 5 years of experience and a diverse portfolio of projects at major companies. Rather than passive consumption, we build. Read about something new? We test it. New AI tool? We have a working prototype the same day.\nWe make complex technology understandable and immediately applicable. No lengthy theories, just smart solutions that deliver immediate value — for both local entrepreneurs and large corporations.\nFrom rapid experiments to stable production systems. From clever automation to powerful AI applications. We keep building. Focused. Efficient. Practical.",
       missionTitle: "Our Mission",
-      teamTitle: "The Founders",
-      omarTitle: "Omar - Tech Innovator",
-      omarDescription: "Specialized in developing advanced technical solutions that solve real-world problems. From blockchain integrations to AI implementations.",
-      robinTitle: "Robin - Business Strategist",
-      robinDescription: "Brings data-driven insights and process optimization to every project, with a proven ability to enhance operational efficiency.",
+      teamTitle: "About Robin & Omar",
       missionDescription:
         "Our mission is to help businesses grow through digital innovation. We believe in building high-quality solutions that are easy to use and make a real impact. We combine technical expertise with business acumen to deliver results that propel your business forward.",
       valuesTitle: "Our Values",
