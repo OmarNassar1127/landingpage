@@ -106,11 +106,11 @@ export default function CompanySlider() {
             className="relative overflow-hidden my-8"
           >
             {/* Fade gradient effects on sides - minimal blur */}
-            <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-background to-transparent z-10 backdrop-blur-[1px]" />
-            <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-background to-transparent z-10 backdrop-blur-[1px]" />
+            <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-background to-transparent z-0" />
+            <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-background to-transparent z-0" />
             {/* First Slider (Left to Right) */}
             <motion.div
-              className="flex space-x-12 mb-10 will-change-transform"
+              className="flex space-x-12 mb-10 will-change-transform relative z-10"
               animate={{
                 x: [0, -1500],
               }}
@@ -127,9 +127,9 @@ export default function CompanySlider() {
               {[...shuffledCompanies, ...shuffledCompanies].map((company, index) => (
                 <div 
                   key={`${company.id}-${index}`} 
-                  className="flex items-center justify-center min-w-[150px] h-16"
+                  className="flex items-center justify-center min-w-[150px] h-16 z-10"
                 >
-                  <div className="flex items-center justify-center h-full px-4 py-2 bg-white dark:bg-white backdrop-blur-md rounded-lg border border-gray-200 shadow-lg hover:border-primary/30 transition-all duration-300 hover:scale-105 hover:shadow-md">
+                  <div className="flex items-center justify-center h-full px-4 py-2 bg-white dark:bg-white rounded-lg border border-gray-200 shadow hover:border-primary/30 transition-all duration-300 hover:scale-105 hover:shadow-md">
                     <div className="relative h-10 w-28">
                       <Image 
                         src={company.logo}
@@ -146,7 +146,7 @@ export default function CompanySlider() {
             
             {/* Second Slider (Right to Left) - with shuffled array again for more variety */}
             <motion.div
-              className="flex space-x-12 will-change-transform"
+              className="flex space-x-12 will-change-transform relative z-10"
               animate={{
                 x: [-1500, 0],
               }}
@@ -163,9 +163,9 @@ export default function CompanySlider() {
               {[...shuffledCompaniesReverse, ...shuffledCompaniesReverse].map((company, index) => (
                 <div 
                   key={`rev-${company.id}-${index}`} 
-                  className="flex items-center justify-center min-w-[150px] h-16"
+                  className="flex items-center justify-center min-w-[150px] h-16 z-10"
                 >
-                  <div className="flex items-center justify-center h-full px-4 py-2 bg-white dark:bg-white backdrop-blur-md rounded-lg border border-gray-200 shadow-lg hover:border-primary/30 transition-all duration-300 hover:scale-105 hover:shadow-md">
+                  <div className="flex items-center justify-center h-full px-4 py-2 bg-white dark:bg-white rounded-lg border border-gray-200 shadow hover:border-primary/30 transition-all duration-300 hover:scale-105 hover:shadow-md">
                     <div className="relative h-10 w-28">
                       <Image 
                         src={company.logo}
