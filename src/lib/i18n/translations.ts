@@ -35,7 +35,7 @@ export const translations = {
       subtitle:
         "Van een webshop tot een interne tool, van automatisering tot AI-oplossing: wij bouwen wat jouw werk makkelijker maakt. Snel, efficiënt en volledig op maat.",
       ctaButton: "Bekijk Onze Projecten",
-      secondaryButton: "Neem Contact Op",
+      secondaryButton: "Laten We Kennismaken",
     },
 
     // Trusted by section (company slider)
@@ -156,7 +156,7 @@ export const translations = {
 
     // Contact section
     contact: {
-      title: "Neem Contact Op",
+      title: "Laten We Kennismaken",
       subtitle:
         "Heeft u een project in gedachten of wilt u meer weten over ons werk? We horen graag van u!",
       name: "Uw Naam",
@@ -191,50 +191,57 @@ export const translations = {
     // Services section
     services: {
       title: "Onze Diensten",
-      subtitle: "Wij bieden innovatieve en schaalbare oplossingen om uw bedrijf te helpen groeien in het digitale tijdperk.",
-      ctaButton: "Neem Contact Op",
+      subtitle:
+        "Wij bieden innovatieve en schaalbare oplossingen om uw bedrijf te helpen groeien in het digitale tijdperk.",
+      ctaButton: "Laten We Kennismaken",
       aiDevelopment: {
         title: "AI Ontwikkeling",
-        description: "Custom AI-oplossingen die bedrijfsprocessen automatiseren en klantinteracties verbeteren.",
+        description:
+          "Custom AI-oplossingen die bedrijfsprocessen automatiseren en klantinteracties verbeteren.",
         feature1: "Intelligente chatbots en digitale assistenten",
         feature2: "Data-analyse en voorspellingsmodellen",
-        feature3: "Automatisering van complexe taken"
+        feature3: "Automatisering van complexe taken",
       },
       saasDevelopment: {
         title: "SaaS Ontwikkeling",
-        description: "Op maat gemaakte Software-as-a-Service oplossingen die schaalbaar, betrouwbaar en gebruiksvriendelijk zijn.",
+        description:
+          "Op maat gemaakte Software-as-a-Service oplossingen die schaalbaar, betrouwbaar en gebruiksvriendelijk zijn.",
         feature1: "Abonnementsmodellen en betalingsintegratie",
         feature2: "Multi-tenant architectuur",
-        feature3: "Uitgebreide dashboard en rapportage"
+        feature3: "Uitgebreide dashboard en rapportage",
       },
       kycIntegration: {
         title: "KYC Integratie",
-        description: "Naadloze 'Know Your Customer' integraties die voldoen aan regelgeving en gebruikersverificatie stroomlijnen.",
+        description:
+          "Naadloze 'Know Your Customer' integraties die voldoen aan regelgeving en gebruikersverificatie stroomlijnen.",
         feature1: "ID-verificatie en identiteitsbevestiging",
         feature2: "AML-compliance en risicobeoordelingen",
-        feature3: "Geautomatiseerde goedkeuringsworkflows"
+        feature3: "Geautomatiseerde goedkeuringsworkflows",
       },
       ecommerceAutomation: {
         title: "E-commerce Automatisering",
-        description: "Oplossingen die online verkoopprocessen stroomlijnen en de operationele efficiëntie verbeteren.",
+        description:
+          "Oplossingen die online verkoopprocessen stroomlijnen en de operationele efficiëntie verbeteren.",
         feature1: "Geautomatiseerd voorraadbeheer",
         feature2: "Dynamische prijsstelling en concurrentieanalyse",
-        feature3: "Marketplace-integraties (Bol.com, Amazon, etc.)"
+        feature3: "Marketplace-integraties (Bol.com, Amazon, etc.)",
       },
       customAISolutions: {
         title: "Maatwerk AI-oplossingen",
-        description: "Gepersonaliseerde AI-systemen die specifiek zijn afgestemd op de unieke uitdagingen van uw bedrijf.",
+        description:
+          "Gepersonaliseerde AI-systemen die specifiek zijn afgestemd op de unieke uitdagingen van uw bedrijf.",
         feature1: "Private AI-implementaties met uw eigen data",
         feature2: "Integratie met bestaande bedrijfssystemen",
-        feature3: "Doorlopende training en modelverbetering"
+        feature3: "Doorlopende training en modelverbetering",
       },
       webDevelopment: {
         title: "Website op maat",
-        description: "High-performance websites en webapplicaties die conversie en gebruikersbetrokkenheid verhogen.",
+        description:
+          "High-performance websites en webapplicaties die conversie en gebruikersbetrokkenheid verhogen.",
         feature1: "Responsieve en toegankelijke ontwerpen",
         feature2: "SEO-geoptimaliseerde architectuur",
-        feature3: "Integratie met CMS en marketing tools"
-      }
+        feature3: "Integratie met CMS en marketing tools",
+      },
     },
   },
 
@@ -431,50 +438,57 @@ export const translations = {
     // Services section
     services: {
       title: "Our Services",
-      subtitle: "We offer innovative and scalable solutions to help your business thrive in the digital era.",
+      subtitle:
+        "We offer innovative and scalable solutions to help your business thrive in the digital era.",
       ctaButton: "Get in Touch",
       aiDevelopment: {
         title: "AI Development",
-        description: "Custom AI solutions that automate business processes and enhance customer interactions.",
+        description:
+          "Custom AI solutions that automate business processes and enhance customer interactions.",
         feature1: "Intelligent chatbots and digital assistants",
         feature2: "Data analysis and prediction models",
-        feature3: "Automation of complex tasks"
+        feature3: "Automation of complex tasks",
       },
       saasDevelopment: {
         title: "SaaS Development",
-        description: "Tailored Software-as-a-Service solutions that are scalable, reliable, and user-friendly.",
+        description:
+          "Tailored Software-as-a-Service solutions that are scalable, reliable, and user-friendly.",
         feature1: "Subscription models and payment integration",
         feature2: "Multi-tenant architecture",
-        feature3: "Comprehensive dashboard and reporting"
+        feature3: "Comprehensive dashboard and reporting",
       },
       kycIntegration: {
         title: "KYC Integration",
-        description: "Seamless Know Your Customer integrations that meet regulations and streamline user verification.",
+        description:
+          "Seamless Know Your Customer integrations that meet regulations and streamline user verification.",
         feature1: "ID verification and identity confirmation",
         feature2: "AML compliance and risk assessments",
-        feature3: "Automated approval workflows"
+        feature3: "Automated approval workflows",
       },
       ecommerceAutomation: {
         title: "E-commerce Automation",
-        description: "Solutions that streamline online sales processes and improve operational efficiency.",
+        description:
+          "Solutions that streamline online sales processes and improve operational efficiency.",
         feature1: "Automated inventory management",
         feature2: "Dynamic pricing and competitor analysis",
-        feature3: "Marketplace integrations (Bol.com, Amazon, etc.)"
+        feature3: "Marketplace integrations (Bol.com, Amazon, etc.)",
       },
       customAISolutions: {
         title: "Custom AI Solutions",
-        description: "Personalized AI systems specifically tailored to your business's unique challenges.",
+        description:
+          "Personalized AI systems specifically tailored to your business's unique challenges.",
         feature1: "Private AI deployments with your own data",
         feature2: "Integration with existing business systems",
-        feature3: "Continuous training and model improvement"
+        feature3: "Continuous training and model improvement",
       },
       webDevelopment: {
         title: "Tailored website",
-        description: "High-performance websites and web applications that increase conversion and user engagement.",
+        description:
+          "High-performance websites and web applications that increase conversion and user engagement.",
         feature1: "Responsive and accessible designs",
         feature2: "SEO-optimized architecture",
-        feature3: "Integration with CMS and marketing tools"
-      }
+        feature3: "Integration with CMS and marketing tools",
+      },
     },
   },
 };
