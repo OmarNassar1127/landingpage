@@ -96,7 +96,7 @@ function HeroContent() {
           >
             <Button
               size="lg"
-              className="bg-primary hover:bg-primary/90 text-white shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 transition-all duration-300"
+              className="bg-primary hover:bg-primary/90 text-white dark:text-black shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 transition-all duration-300"
               asChild
             >
               <a href="#trusted-partners">
