@@ -149,7 +149,7 @@ export default function Testimonials() {
         en: "Worked with Robin",
         nl: "Werkte samen met Robin",
       },
-      image: "https://media.licdn.com/dms/image/v2/C4D03AQGkJk6PNly4Mw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1571232961900?e=1749081600&v=beta&t=ez7LJ5uCSvPdfxyUH_9hjOktsjDkfI8cvQHTTAdUNYI",
+      image: "https://media.licdn.com/dms/image/v2/D4E03AQG9xDxn2t1W3Q/profile-displayphoto-shrink_400_400/B4EZYMVNaKHUAo-/0/1743963609514?e=1749686400&v=beta&t=nWpLbCwPphuanMOqGrujcw6bttmlTvgyQUt8Ui5KTkU",
       content: {
         en: "Dedicated, helpful and reliable.",
         nl: "Toegewijd, behulpzaam en betrouwbaar.",
