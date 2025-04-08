@@ -17,24 +17,6 @@ function HeroContent() {
   const [isMounted, setIsMounted] = useState(false);
   const stableId = useId();
 
-  const icons = [
-    { icon: <Zap className="w-8 h-8" />, color: "text-yellow-500" },
-    { icon: <Globe className="w-8 h-8" />, color: "text-blue-500" },
-    { icon: <Code className="w-8 h-8" />, color: "text-green-500" },
-    { icon: <Database className="w-8 h-8" />, color: "text-purple-500" }
-  ];
-  
-  // Then add this useEffect in the HeroContent component after the other useEffect
-  useEffect(() => {
-    if (isMounted) {
-      const interval = setInterval(() => {
-        setCurrentIcon((prev) => (prev + 1) % icons.length);
-      }, 2000);
-      return () => clearInterval(interval);
-    }
-  }, [isMounted]);
-  
-
   useEffect(() => {
     setIsMounted(true);
     if (inView) controls.start("visible");
@@ -94,31 +76,6 @@ function HeroContent() {
           className="flex flex-col items-center space-y-10 text-center"
         >
           {/* Hero Content */}
-
-          <motion.div
-  className="mb-8 flex items-center justify-center h-20 w-20 rounded-full bg-background/80 shadow-lg border border-primary/20"
-  initial={{ scale: 0.5, opacity: 0 }}
-  animate={{ scale: 1, opacity: 1 }}
-  transition={{ duration: 0.5 }}
->
-  <AnimatePresence mode="wait">
-    <motion.div
-      key={currentIcon}
-      initial={{ scale: 0, rotate: -180 }}
-      animate={{ scale: 1, rotate: 0 }}
-      exit={{ scale: 0, rotate: 180 }}
-      transition={{
-        type: "spring",
-        stiffness: 200,
-        damping: 20
-      }}
-      className={icons[currentIcon].color}
-    >
-      {icons[currentIcon].icon}
-    </motion.div>
-  </AnimatePresence>
-</motion.div>
-
           <motion.h1
             variants={itemVariants}
             className="text-4xl md:text-6xl font-bold tracking-tight drop-shadow-md"
