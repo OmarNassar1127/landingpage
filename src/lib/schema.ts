@@ -307,20 +307,28 @@ export function testimonialsSchema({ items }: TestimonialsProps) {
         "@type": "Review",
         author: {
           "@type": "Person",
-          name: item.author
+          name: item.author,
+          jobTitle: item.role
         },
         reviewBody: item.text,
-        about: {
+        itemReviewed: {
           "@type": "Organization",
           name: siteConfig.name,
-          url: siteConfig.url
+          url: siteConfig.url,
+          description: "Software development and AI solutions company",
+          address: {
+            "@type": "PostalAddress",
+            addressCountry: "NL",
+            addressLocality: "Amsterdam"
+          }
         },
         reviewRating: {
           "@type": "Rating",
           bestRating: "5",
           ratingValue: "5",
           worstRating: "1"
-        }
+        },
+        datePublished: new Date().toISOString()
       }
     }))
   };
