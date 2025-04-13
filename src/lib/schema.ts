@@ -72,70 +72,76 @@ type TestimonialsProps = {
 
 export const servicesSchema = () => {
   return {
-    '@context': 'https://schema.org',
-    '@type': 'ItemList',
-    'itemListElement': [
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    itemListElement: [
       {
-        '@type': 'Service',
-        'name': 'AI Development',
-        'description': 'Custom AI solutions that automate business processes and enhance customer interactions.',
-        'provider': {
-          '@type': 'Organization',
-          'name': 'Virelio',
-          'url': siteConfig.url
-        }
+        "@type": "Service",
+        name: "AI Development",
+        description:
+          "Custom AI solutions that automate business processes and enhance customer interactions.",
+        provider: {
+          "@type": "Organization",
+          name: "Virelio",
+          url: siteConfig.url,
+        },
       },
       {
-        '@type': 'Service',
-        'name': 'SaaS Development',
-        'description': 'Tailored Software-as-a-Service solutions that are scalable, reliable, and user-friendly.',
-        'provider': {
-          '@type': 'Organization',
-          'name': 'Virelio',
-          'url': siteConfig.url
-        }
+        "@type": "Service",
+        name: "SaaS Development",
+        description:
+          "Tailored Software-as-a-Service solutions that are scalable, reliable, and user-friendly.",
+        provider: {
+          "@type": "Organization",
+          name: "Virelio",
+          url: siteConfig.url,
+        },
       },
       {
-        '@type': 'Service',
-        'name': 'KYC Integration',
-        'description': 'Seamless Know Your Customer integrations that meet regulations and streamline user verification.',
-        'provider': {
-          '@type': 'Organization',
-          'name': 'Virelio',
-          'url': siteConfig.url
-        }
+        "@type": "Service",
+        name: "KYC Integration",
+        description:
+          "Seamless Know Your Customer integrations that meet regulations and streamline user verification.",
+        provider: {
+          "@type": "Organization",
+          name: "Virelio",
+          url: siteConfig.url,
+        },
       },
       {
-        '@type': 'Service',
-        'name': 'E-commerce Automation',
-        'description': 'Solutions that streamline online sales processes and improve operational efficiency.',
-        'provider': {
-          '@type': 'Organization',
-          'name': 'Virelio',
-          'url': siteConfig.url
-        }
+        "@type": "Service",
+        name: "E-commerce Automation",
+        description:
+          "Solutions that streamline online sales processes and improve operational efficiency.",
+        provider: {
+          "@type": "Organization",
+          name: "Virelio",
+          url: siteConfig.url,
+        },
       },
       {
-        '@type': 'Service',
-        'name': 'Custom AI Solutions',
-        'description': 'Personalized AI systems specifically tailored to your business\'s unique challenges.',
-        'provider': {
-          '@type': 'Organization',
-          'name': 'Virelio',
-          'url': siteConfig.url
-        }
+        "@type": "Service",
+        name: "Custom AI Solutions",
+        description:
+          "Personalized AI systems specifically tailored to your business's unique challenges.",
+        provider: {
+          "@type": "Organization",
+          name: "Virelio",
+          url: siteConfig.url,
+        },
       },
       {
-        '@type': 'Service',
-        'name': 'Web Development',
-        'description': 'High-performance websites and web applications that increase conversion and user engagement.',
-        'provider': {
-          '@type': 'Organization',
-          'name': 'Virelio',
-          'url': siteConfig.url
-        }
-      }
-    ]
+        "@type": "Service",
+        name: "Web Development",
+        description:
+          "High-performance websites and web applications that increase conversion and user engagement.",
+        provider: {
+          "@type": "Organization",
+          name: "Virelio",
+          url: siteConfig.url,
+        },
+      },
+    ],
   };
 };
 
@@ -308,7 +314,7 @@ export function testimonialsSchema({ items }: TestimonialsProps) {
         author: {
           "@type": "Person",
           name: item.author,
-          jobTitle: item.role
+          jobTitle: item.role,
         },
         reviewBody: item.text,
         itemReviewed: {
@@ -319,17 +325,17 @@ export function testimonialsSchema({ items }: TestimonialsProps) {
           address: {
             "@type": "PostalAddress",
             addressCountry: "NL",
-            addressLocality: "Amsterdam"
-          }
+            addressLocality: "Amsterdam",
+          },
         },
         reviewRating: {
           "@type": "Rating",
           bestRating: "5",
           ratingValue: "5",
-          worstRating: "1"
+          worstRating: "1",
         },
-        datePublished: new Date().toISOString()
-      }
-    }))
+        datePublished: new Date().toISOString(),
+      },
+    })),
   };
 }
