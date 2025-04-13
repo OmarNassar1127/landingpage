@@ -46,7 +46,7 @@ export default function PolicyRoutes() {
   }
 
   return (
-    <div className="policy-container">
+    <div className="policy-container bg-background dark:bg-background min-h-screen">
       {renderPolicy()}
     </div>
   );

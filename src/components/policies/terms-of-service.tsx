@@ -8,13 +8,22 @@ export default function TermsOfService() {
   const lastUpdated = "April 5, 2025";
 
   return (
-    <>
+    <div className="min-h-screen bg-background dark:bg-background">
       {/* Hide navbar since it would be redundant with the back button */}
-      <main className="container mx-auto px-4 py-12 max-w-4xl">
-        <h1 className="text-4xl font-bold mb-6">Terms of Service</h1>
+      <main className="container mx-auto px-4 py-12 max-w-4xl bg-background dark:bg-background">
+        <div className="flex justify-between items-center mb-8">
+          <a href="/" className="flex items-center gap-2 px-4 py-2 rounded-md bg-secondary hover:bg-secondary/80 dark:bg-secondary dark:hover:bg-secondary/80 text-secondary-foreground dark:text-secondary-foreground transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-left">
+              <path d="m12 19-7-7 7-7"/>
+              <path d="M19 12H5"/>
+            </svg>
+            Back to Home
+          </a>
+        </div>
+        <h1 className="text-4xl font-bold mb-6 text-foreground dark:text-foreground">Terms of Service</h1>
         <p className="text-sm text-muted-foreground mb-8">Last Updated: {lastUpdated}</p>
 
-        <div className="prose dark:prose-invert max-w-none">
+        <div className="prose dark:prose-invert max-w-none prose-headings:text-foreground dark:prose-headings:text-foreground prose-p:text-foreground/90 dark:prose-p:text-foreground/90 prose-strong:text-foreground dark:prose-strong:text-foreground prose-a:text-blue-600 dark:prose-a:text-blue-400 prose-a:no-underline hover:prose-a:underline">
           <h2>1. Introduction</h2>
           <p>
             Welcome to Virelio ("Company", "we", "our", "us")! These Terms of Service ("Terms", "Terms of Service") govern your use of our website located at virelio.nl ("Service") operated by Virelio.
@@ -84,13 +93,13 @@ export default function TermsOfService() {
           <p>
             If you have any questions about these Terms, please contact us:
           </p>
-          <p>
-            <strong>Email:</strong> legal@virelio.nl<br />
-            <strong>Address:</strong> Amsterdam, The Netherlands
+          <p className="dark:text-white">
+            <strong className="text-foreground dark:text-foreground">Email:</strong> <a href="mailto:legal@virelio.nl" className="text-blue-600 dark:text-blue-400 hover:underline">legal@virelio.nl</a><br />
+            <strong className="text-foreground dark:text-foreground">Address:</strong> Amsterdam, The Netherlands
           </p>
         </div>
       </main>
       <Footer />
-    </>
+    </div>
   );
 }

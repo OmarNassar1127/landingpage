@@ -76,31 +76,6 @@ export default function ClientPolicyRoutes() {
     >
       {renderPolicy()}
       
-      {/* Back button */}
-      <button 
-        onClick={() => {
-          // Clear the hash and return to main page
-          window.location.hash = '';
-          // Scroll to top for better UX
-          setTimeout(() => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-          }, 50);
-        }}
-        style={{
-          position: 'fixed',
-          top: '20px',
-          right: '20px',
-          padding: '8px 16px',
-          background: '#000',
-          color: '#fff',
-          borderRadius: '4px',
-          border: 'none',
-          cursor: 'pointer',
-          zIndex: 1000
-        }}
-      >
-        Back to Home
-      </button>
     </div>
   );
 }
