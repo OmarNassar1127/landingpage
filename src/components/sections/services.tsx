@@ -2,8 +2,23 @@
 
 import React from "react";
 import { useLanguage } from "@/lib/i18n/language-context";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Check, Code, Database, Bot, ShieldCheck, BrainCircuit, Globe, CloudCog } from "lucide-react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import {
+  Check,
+  Code,
+  Database,
+  Bot,
+  ShieldCheck,
+  BrainCircuit,
+  Globe,
+  CloudCog,
+} from "lucide-react";
 
 const ServiceFeature = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -72,6 +87,17 @@ const Services = () => {
         />
 
         <ServiceCard
+          icon={ShieldCheck}
+          title={t.services.toolIntegrations.title}
+          description={t.services.toolIntegrations.description}
+          features={[
+            t.services.toolIntegrations.feature1,
+            t.services.toolIntegrations.feature2,
+            t.services.toolIntegrations.feature3,
+          ]}
+        />
+
+        <ServiceCard
           icon={CloudCog}
           title={t.services.saasDevelopment.title}
           description={t.services.saasDevelopment.description}
@@ -83,24 +109,13 @@ const Services = () => {
         />
 
         <ServiceCard
-          icon={ShieldCheck}
-          title={t.services.kycIntegration.title}
-          description={t.services.kycIntegration.description}
-          features={[
-            t.services.kycIntegration.feature1,
-            t.services.kycIntegration.feature2,
-            t.services.kycIntegration.feature3,
-          ]}
-        />
-
-        <ServiceCard
           icon={Database}
-          title={t.services.ecommerceAutomation.title}
-          description={t.services.ecommerceAutomation.description}
+          title={t.services.dataAnalytics.title}
+          description={t.services.dataAnalytics.description}
           features={[
-            t.services.ecommerceAutomation.feature1,
-            t.services.ecommerceAutomation.feature2,
-            t.services.ecommerceAutomation.feature3,
+            t.services.dataAnalytics.feature1,
+            t.services.dataAnalytics.feature2,
+            t.services.dataAnalytics.feature3,
           ]}
         />
 

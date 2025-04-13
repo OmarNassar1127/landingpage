@@ -192,55 +192,54 @@ export const translations = {
     services: {
       title: "Onze Diensten",
       subtitle:
-        "Wij bieden innovatieve en schaalbare oplossingen om uw bedrijf te helpen groeien in het digitale tijdperk.",
-      ctaButton: "Laten We Kennismaken",
+        "Slimme digitale oplossingen die processen versnellen, samenwerking verbeteren en direct tijd besparen.",
+      ctaButton: "Plan een kennismaking",
       aiDevelopment: {
-        title: "AI Ontwikkeling",
-        description:
-          "Custom AI-oplossingen die bedrijfsprocessen automatiseren en klantinteracties verbeteren.",
-        feature1: "Intelligente chatbots en digitale assistenten",
-        feature2: "Data-analyse en voorspellingsmodellen",
-        feature3: "Automatisering van complexe taken",
+        title: "AI Integratie",
+        description: "Een digitale collega die werk uit handen neemt.",
+        feature1:
+          "Kent al je interne documenten zonder dat je iets hoeft te uploaden",
+        feature2: "Zet gesprekken om in notulen en actiepunten",
+        feature3: "Beantwoordt vragen en volgt taken automatisch op",
       },
       saasDevelopment: {
-        title: "SaaS Ontwikkeling",
+        title: "Maatwerk Software",
         description:
-          "Op maat gemaakte Software-as-a-Service oplossingen die schaalbaar, betrouwbaar en gebruiksvriendelijk zijn.",
-        feature1: "Abonnementsmodellen en betalingsintegratie",
-        feature2: "Multi-tenant architectuur",
-        feature3: "Uitgebreide dashboard en rapportage",
+          "Oplossingen die precies doen wat jij nodig hebt, gebouwd op jullie manier van werken.",
+        feature1: "Dashboards, portalen of tools afgestemd op je team",
+        feature2: "Werkt samen met je bestaande systemen en accounts",
+        feature3: "Schaalt mee met je processen en groeit met je bedrijf",
       },
-      kycIntegration: {
-        title: "KYC Integratie",
-        description:
-          "Naadloze 'Know Your Customer' integraties die voldoen aan regelgeving en gebruikersverificatie stroomlijnen.",
-        feature1: "ID-verificatie en identiteitsbevestiging",
-        feature2: "AML-compliance en risicobeoordelingen",
-        feature3: "Geautomatiseerde goedkeuringsworkflows",
-      },
-      ecommerceAutomation: {
-        title: "E-commerce Automatisering",
-        description:
-          "Oplossingen die online verkoopprocessen stroomlijnen en de operationele efficiëntie verbeteren.",
-        feature1: "Geautomatiseerd voorraadbeheer",
-        feature2: "Dynamische prijsstelling en concurrentieanalyse",
-        feature3: "Marketplace-integraties (Bol.com, Amazon, etc.)",
+
+      toolIntegrations: {
+        title: "Toolintegraties",
+        description: "Eén werkplek waarin al je systemen samenwerken.",
+        feature1: "Koppelt Slack, Teams, agenda's, documenten en taken",
+        feature2: "Acties starten vanzelf op basis van wijzigingen",
+        feature3: "Overzicht zonder zoeken of schakelen",
       },
       customAISolutions: {
         title: "Maatwerk AI-oplossingen",
-        description:
-          "Gepersonaliseerde AI-systemen die specifiek zijn afgestemd op de unieke uitdagingen van uw bedrijf.",
-        feature1: "Private AI-implementaties met uw eigen data",
-        feature2: "Integratie met bestaande bedrijfssystemen",
-        feature3: "Doorlopende training en modelverbetering",
+        description: "AI die zich aanpast aan je werk en collega's.",
+        feature1: "Herkent patronen en denkt mee in je processen",
+        feature2: "Reageert per afdeling of rol anders",
+        feature3: "Neemt terugkerend werk stilletjes over",
       },
       webDevelopment: {
         title: "Website op maat",
         description:
-          "High-performance websites en webapplicaties die conversie en gebruikersbetrokkenheid verhogen.",
-        feature1: "Responsieve en toegankelijke ontwerpen",
-        feature2: "SEO-geoptimaliseerde architectuur",
-        feature3: "Integratie met CMS en marketing tools",
+          "Een professionele website of platform, volledig ingericht op jouw doel en doelgroep.",
+        feature1: "Binnen 7 dagen live met een strak en snel ontwerp",
+        feature2: "Gebouwd om te converteren – van eerste indruk tot actie",
+        feature3:
+          "SEO integratie",
+      },
+      dataAnalytics: {
+        title: "Data & Inzicht",
+        description: "Altijd direct antwoord op je cijfers, zonder zoeken.",
+        feature1: "Gekoppeld aan je database of backend",
+        feature2: "Vraag omzet, trends of teamdata op via Slack of Teams",
+        feature3: "Antwoorden in gewone taal – binnen 3 seconden",
       },
     },
   },
@@ -439,55 +438,54 @@ export const translations = {
     services: {
       title: "Our Services",
       subtitle:
-        "We offer innovative and scalable solutions to help your business thrive in the digital era.",
-      ctaButton: "Get in Touch",
+        "Smart digital solutions that accelerate processes, improve collaboration and directly save time.",
+      ctaButton: "Schedule a meeting",
       aiDevelopment: {
-        title: "AI Development",
-        description:
-          "Custom AI solutions that automate business processes and enhance customer interactions.",
-        feature1: "Intelligent chatbots and digital assistants",
-        feature2: "Data analysis and prediction models",
-        feature3: "Automation of complex tasks",
+        title: "AI Integration",
+        description: "A digital colleague that takes work off your hands.",
+        feature1:
+          "Knows all your internal documents without you having to upload anything",
+        feature2: "Converts conversations into minutes and action points",
+        feature3: "Answers questions and follows up on tasks automatically",
       },
       saasDevelopment: {
-        title: "SaaS Development",
+        title: "Custom Software",
         description:
-          "Tailored Software-as-a-Service solutions that are scalable, reliable, and user-friendly.",
-        feature1: "Subscription models and payment integration",
-        feature2: "Multi-tenant architecture",
-        feature3: "Comprehensive dashboard and reporting",
+          "Solutions that do exactly what you need, built around your way of working.",
+        feature1: "Dashboards, portals or tools tailored to your team",
+        feature2: "Works with your existing systems and accounts",
+        feature3: "Scales with your processes and grows with your company",
       },
-      kycIntegration: {
-        title: "KYC Integration",
-        description:
-          "Seamless Know Your Customer integrations that meet regulations and streamline user verification.",
-        feature1: "ID verification and identity confirmation",
-        feature2: "AML compliance and risk assessments",
-        feature3: "Automated approval workflows",
-      },
-      ecommerceAutomation: {
-        title: "E-commerce Automation",
-        description:
-          "Solutions that streamline online sales processes and improve operational efficiency.",
-        feature1: "Automated inventory management",
-        feature2: "Dynamic pricing and competitor analysis",
-        feature3: "Marketplace integrations (Bol.com, Amazon, etc.)",
+
+      toolIntegrations: {
+        title: "Tool Integrations",
+        description: "One workplace where all your systems work together.",
+        feature1: "Connects Slack, Teams, calendars, documents and tasks",
+        feature2: "Actions start automatically based on changes",
+        feature3: "Overview without searching or switching",
       },
       customAISolutions: {
         title: "Custom AI Solutions",
-        description:
-          "Personalized AI systems specifically tailored to your business's unique challenges.",
-        feature1: "Private AI deployments with your own data",
-        feature2: "Integration with existing business systems",
-        feature3: "Continuous training and model improvement",
+        description: "AI that adapts to your work and colleagues.",
+        feature1: "Recognizes patterns and thinks along in your processes",
+        feature2: "Responds differently per department or role",
+        feature3: "Quietly takes over recurring work",
       },
       webDevelopment: {
-        title: "Tailored website",
+        title: "Custom Website",
         description:
-          "High-performance websites and web applications that increase conversion and user engagement.",
-        feature1: "Responsive and accessible designs",
-        feature2: "SEO-optimized architecture",
-        feature3: "Integration with CMS and marketing tools",
+          "A professional website or platform, fully designed for your purpose and target audience.",
+        feature1: "Live within 7 days with a sleek and fast design",
+        feature2: "Built to convert – from first impression to action",
+        feature3: "SEO integration",
+      },
+      dataAnalytics: {
+        title: "Data & Insights",
+        description:
+          "Always direct answers to your figures, without searching.",
+        feature1: "Connected to your database or backend",
+        feature2: "Request revenue, trends or team data via Slack or Teams",
+        feature3: "Answers in plain language – within 3 seconds",
       },
     },
   },
