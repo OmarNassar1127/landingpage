@@ -99,11 +99,11 @@ export default function Home() {
         <div id={siteConfig.sections.testimonials.substring(1)}>
           <Testimonials />
         </div>
-        <div id={siteConfig.sections.contact.substring(1)}>
-          <Contact />
-        </div>
         <div id={siteConfig.sections.bookMeeting.substring(1)}>
           <BookMeeting />
+        </div>
+        <div id={siteConfig.sections.contact.substring(1)}>
+          <Contact />
         </div>
         <Footer />
       </main>
