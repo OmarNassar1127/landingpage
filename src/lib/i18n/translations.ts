@@ -6,8 +6,9 @@ export const translations = {
       projects: "Projecten",
       services: "Diensten",
       about: "Over Ons",
-      contact: "Contact",
       testimonials: "Aanbevelingen",
+      contact: "Contact",
+      bookMeeting: "Afspraak Maken",
     },
 
     // Testimonials section
@@ -188,6 +189,14 @@ export const translations = {
       toggle: "Taal",
     },
 
+    // Book a Meeting section
+    bookMeeting: {
+      title: "Afspraak Maken",
+      subtitle: "Plan een vrijblijvend gesprek met ons team om uw project te bespreken",
+      description: "Gebruik onze online agenda om direct een afspraak in te plannen. We kijken ernaar uit om met u te praten over uw ideeën en hoe we kunnen helpen.",
+      ctaButton: "Plan nu een gesprek",
+    },
+
     // Services section
     services: {
       title: "Onze Diensten",
@@ -251,8 +260,9 @@ export const translations = {
       projects: "Projects",
       services: "Services",
       about: "About",
-      contact: "Contact",
       testimonials: "Testimonials",
+      contact: "Contact",
+      bookMeeting: "Book a Meeting",
     },
 
     // Testimonials section
@@ -432,6 +442,14 @@ export const translations = {
       nl: "Dutch",
       en: "English",
       toggle: "Language",
+    },
+
+    // Book a Meeting section
+    bookMeeting: {
+      title: "Book a Meeting",
+      subtitle: "Schedule a no-obligation conversation with our team to discuss your project",
+      description: "Use our online calendar to schedule a meeting directly. We look forward to talking with you about your ideas and how we can help.",
+      ctaButton: "Schedule a conversation now",
     },
 
     // Services section

@@ -248,7 +248,7 @@ export default function Testimonials() {
   };
 
   return (
-    <section id="testimonials" className="py-24 bg-background relative overflow-hidden">
+    <section id="testimonials" className="py-24 relative overflow-hidden">
       {/* Background decorative elements */}
       <motion.div
         className="absolute -left-40 top-20 w-80 h-80 rounded-full bg-primary/5 dark:bg-primary/10 blur-3xl"

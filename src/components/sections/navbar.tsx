@@ -23,8 +23,9 @@ export default function Navbar() {
     { name: t.nav.services, href: "#services" },
     { name: t.nav.projects, href: "#projects" },
     { name: t.nav.about, href: "#about" },
-    { name: t.nav.contact, href: "#contact" },
     { name: t.nav.testimonials, href: "#testimonials" },
+    { name: t.nav.contact, href: "#contact" },
+    { name: t.nav.bookMeeting, href: "#book-meeting" },
   ];
 
   useEffect(() => {

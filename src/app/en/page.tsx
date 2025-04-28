@@ -5,8 +5,9 @@ import CompanySlider from "@/components/sections/company-slider";
 import Projects from "@/components/sections/projects";
 import Services from "@/components/sections/services";
 import About from "@/components/sections/about";
-import Contact from "@/components/sections/contact";
 import Testimonials from "@/components/sections/testimonials";
+import Contact from "@/components/sections/contact";
+import BookMeeting from "@/components/sections/book-meeting";
 import Footer from "@/components/sections/footer";
 import { generateMetadata } from "@/lib/metadata";
 import { siteConfig } from "@/lib/config";
@@ -64,11 +65,14 @@ export default function EnglishHome() {
         <div id={siteConfig.sections.about.substring(1)}>
           <About />
         </div>
+        <div id={siteConfig.sections.testimonials.substring(1)}>
+          <Testimonials />
+        </div>
         <div id={siteConfig.sections.contact.substring(1)}>
           <Contact />
         </div>
-        <div id={siteConfig.sections.testimonials.substring(1)}>
-          <Testimonials />
+        <div id={siteConfig.sections.bookMeeting.substring(1)}>
+          <BookMeeting />
         </div>
         <Footer />
       </main>
