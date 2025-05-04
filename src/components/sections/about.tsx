@@ -113,6 +113,7 @@ export default function About() {
               <motion.h3 
                 className="text-2xl font-semibold"
                 variants={itemVariants}
+                id="about-team"
               >
                 {t.about.teamTitle}
               </motion.h3>
@@ -144,7 +145,8 @@ export default function About() {
                       e.preventDefault();
                       scrollToSection("contact");
                     }}
-                    className="inline-flex items-center"
+                    className="inline-flex items-center min-h-[44px] min-w-[44px] px-4 py-2"
+                    aria-label={t.hero.secondaryButton}
                   >
                     {t.hero.secondaryButton}
                     <motion.span
@@ -187,11 +189,12 @@ export default function About() {
             className="mt-16 max-w-3xl mx-auto"
           >
             <motion.h3 
-              className="text-2xl font-semibold mb-6 text-center"
-              variants={itemVariants}
-            >
-              {t.about.missionTitle}
-            </motion.h3>
+                className="text-2xl font-semibold mb-6 text-center"
+                variants={itemVariants}
+                id="about-mission"
+              >
+                {t.about.missionTitle}
+              </motion.h3>
             
             <motion.p 
               className="text-muted-foreground text-center mb-8"
@@ -209,6 +212,7 @@ export default function About() {
             <motion.h3 
               className="text-2xl font-semibold mb-8 text-center"
               variants={itemVariants}
+              id="about-values"
             >
               {t.about.valuesTitle}
             </motion.h3>

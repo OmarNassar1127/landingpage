@@ -128,7 +128,7 @@ export default function DemoVideo() {
               
               {/* Controls Overlay */}
               <div className="absolute bottom-4 left-0 right-0 flex justify-center opacity-70 group-hover:opacity-100 transition-opacity">
-                <div className="px-4 py-2 bg-background/80 backdrop-blur-sm rounded-full shadow-lg flex items-center gap-3">
+                <div className="px-4 py-3 bg-background/80 backdrop-blur-sm rounded-full shadow-lg flex items-center gap-3">
                   <span className="text-xs font-medium">AI Agent Demo</span>
                 </div>
               </div>
@@ -160,11 +160,12 @@ export default function DemoVideo() {
             >
               <a 
                 href="#book-meeting" 
-                className="inline-flex items-center justify-center gap-2" 
+                className="inline-flex items-center justify-center gap-3 min-h-[44px] min-w-[44px] px-6 py-3" 
                 onClick={(e) => {
                   e.preventDefault();
                   scrollToSection("book-meeting");
                 }}
+                aria-label={t.bookMeeting.ctaButton}
               >
                 {t.bookMeeting.ctaButton}
                 <ArrowRight className="h-4 w-4 ml-1" />

@@ -99,7 +99,7 @@ function HeroContent() {
               className="bg-primary hover:bg-primary/90 text-white dark:text-black shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 transition-all duration-300"
               asChild
             >
-              <a href="#trusted-partners">
+              <a href="#trusted-partners" aria-label={t.hero.ctaButton}>
                 {t.hero.ctaButton}
               </a>
             </Button>
@@ -109,7 +109,7 @@ function HeroContent() {
               className="border-2 hover:bg-primary/5 transition-colors duration-300"
               asChild
             >
-              <a href="#contact">
+              <a href="#contact" aria-label={t.hero.secondaryButton}>
                 {t.hero.secondaryButton}
               </a>
             </Button>
@@ -121,12 +121,13 @@ function HeroContent() {
               <motion.a 
                 href="#trusted-partners" 
                 onClick={(e) => handleScrollDown(e)}
-                className="flex flex-col items-center hover:text-primary transition-colors bg-background/80 px-6 py-2 sm:px-8 sm:py-3 rounded-full shadow border border-primary/30 group"
+                className="flex flex-col items-center hover:text-primary transition-colors bg-background/80 px-6 py-2 sm:px-8 sm:py-3 rounded-full shadow border border-primary/30 group min-h-[44px]"
                 whileHover={{ y: -3, boxShadow: "0 10px 25px -5px rgba(139,92,246,0.2)" }}
                 whileTap={{ y: 0 }}
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 1, delay: 1 }}
+                aria-label="Scroll down"
               >
                 {/* <span className="text-sm font-medium ">{t.projects.viewMore}</span> */}
                 <motion.div
