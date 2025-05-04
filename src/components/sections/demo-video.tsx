@@ -17,12 +17,42 @@ export default function DemoVideo() {
   const [ref, inView] = useInView({ threshold: 0.2, triggerOnce: true });
   const controls = useAnimation();
   const [isModalOpen, setIsModalOpen] = useState(false);
+  
+  // Screen size detection for mobile/desktop
+  const [isMobile, setIsMobile] = useState(false);
 
+  // Handle animation when in view
   useEffect(() => {
     if (inView) {
       controls.start("visible");
     }
   }, [inView, controls]);
+
+  // Check if device is mobile on component mount and window resize
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const checkIsMobile = () => {
+        setIsMobile(window.innerWidth < 768); // Consider devices with width < 768px as mobile
+      };
+      
+      // Check on mount
+      checkIsMobile();
+      
+      // Check on resize
+      window.addEventListener('resize', checkIsMobile);
+      
+      // Cleanup
+      return () => window.removeEventListener('resize', checkIsMobile);
+    }
+  }, []);
+
+  // Handle video click based on device type
+  const handleVideoClick = (e: React.MouseEvent) => {
+    if (isMobile) {
+      setIsModalOpen(true);
+    }
+    // On desktop, do nothing (or could add play/pause functionality here)
+  };
 
   const containerVariants = {
     hidden: { opacity: 0, y: 50 },
@@ -84,7 +114,10 @@ export default function DemoVideo() {
             variants={itemVariants}
             className="w-full overflow-hidden rounded-xl shadow-2xl"
           >
-            <div className="relative aspect-video bg-background/10 backdrop-blur rounded-lg overflow-hidden border border-primary/10 shadow-xl group cursor-pointer" onClick={() => setIsModalOpen(true)}>
+            <div 
+              className={`relative aspect-video bg-background/10 backdrop-blur rounded-lg overflow-hidden border border-primary/10 shadow-xl group ${isMobile ? 'cursor-pointer' : ''}`} 
+              onClick={handleVideoClick}
+            >
               <AutoPlayVideo
                 src="/demo-vid.mp4"
                 containerClassName="w-full h-full"
@@ -100,12 +133,14 @@ export default function DemoVideo() {
                 </div>
               </div>
               
-              {/* Expand button overlay */}
-              <div className="absolute inset-0 flex items-center justify-center bg-black/0 group-hover:bg-black/20 transition-colors">
-                <div className="p-3 rounded-full bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity transform scale-90 group-hover:scale-100">
-                  <Expand className="w-6 h-6 text-white" />
+              {/* Expand button overlay - only show on mobile */}
+              {isMobile && (
+                <div className="absolute inset-0 flex items-center justify-center bg-black/0 group-hover:bg-black/20 transition-colors">
+                  <div className="p-3 rounded-full bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity transform scale-90 group-hover:scale-100">
+                    <Expand className="w-6 h-6 text-white" />
+                  </div>
                 </div>
-              </div>
+              )}
             </div>
             
             {/* Video Modal */}
@@ -116,11 +151,11 @@ export default function DemoVideo() {
             />
           </motion.div>
 
-            <motion.div variants={itemVariants} className="w-full bg-background/50 backdrop-blur-sm rounded-xl shadow-lg p-6 sm:p-8 border border-primary/20 text-center">
+          <motion.div variants={itemVariants} className="w-full bg-background/50 backdrop-blur-sm rounded-xl shadow-lg p-8 sm:p-10 border border-primary/20 text-center">
             <p className="mb-6 sm:mb-8 text-base sm:text-lg max-w-4xl mx-auto leading-relaxed">{t.demoVideo.description}</p>
             <Button 
               size="lg" 
-              className="mx-auto inline-flex items-center justify-center px-6 py-3 text-base font-medium rounded-full text-white bg-primary shadow-sm hover:bg-primary/90 transition-colors dark:text-black dark:bg-primary dark:hover:bg-primary/90" 
+              className="mx-auto inline-flex items-center justify-center px-6 py-3 text-base font-medium rounded-md text-white bg-primary shadow-sm hover:bg-primary/90 transition-colors dark:text-black dark:bg-primary dark:hover:bg-primary/90" 
               asChild
             >
               <a 
@@ -131,11 +166,11 @@ export default function DemoVideo() {
                   scrollToSection("book-meeting");
                 }}
               >
-              {t.bookMeeting.ctaButton}
-              <ArrowRight className="h-4 w-4 ml-1" />
+                {t.bookMeeting.ctaButton}
+                <ArrowRight className="h-4 w-4 ml-1" />
               </a>
             </Button>
-            </motion.div>
+          </motion.div>
         </motion.div>
       </div>
     </section>
