@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/layout/theme-provider";
@@ -27,6 +27,13 @@ const ClientCookieConsent = dynamic(
   () => import('@/components/ui/client-cookie-consent').then(mod => mod.ClientCookieConsent),
   { ssr: false }
 );
+
+export const viewport: Viewport = {
+  themeColor: "#ffffff",
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+};
 
 export const metadata: Metadata = {
   title: "Virelio - Innovative Solutions for Modern Challenges",
@@ -104,13 +111,11 @@ export const metadata: Metadata = {
       { rel: "manifest", url: "/manifest.json" },
     ],
   },
-  themeColor: "#ffffff",
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",
     title: "Virelio",
   },
-  viewport: "width=device-width, initial-scale=1, maximum-scale=1",
   other: {
     "msapplication-TileColor": "#ffffff",
     "msapplication-TileImage": "/ms-icon-144x144.png",
