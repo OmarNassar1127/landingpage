@@ -35,7 +35,14 @@ export default function Footer() {
               transition={{ duration: 0.5 }}
               className="space-y-4"
             >
-              <a className="text-2xl font-bold tracking-widest bg-gradient-to-r from-purple-400 to-blue-400 text-transparent bg-clip-text hover:opacity-80 transition">
+              <a 
+                href="/" 
+                className="text-2xl font-bold tracking-widest bg-gradient-to-r from-purple-400 to-blue-400 text-transparent bg-clip-text hover:opacity-80 transition"
+                onClick={(e) => {
+                  e.preventDefault();
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                }}
+              >
                 VIRELIO
               </a>
               <p className="text-muted-foreground max-w-md">
@@ -57,7 +64,7 @@ export default function Footer() {
               ].map((link) => (
                 <li key={link.name}>
                   <a
-                    href={link.href}
+                    href={link.href.startsWith('#') ? '/' + link.href : link.href}
                     className="text-muted-foreground hover:text-primary transition-colors"
                     onClick={(e) => {
                       e.preventDefault();

@@ -114,7 +114,7 @@ export default function Navbar() {
           className="text-2xl font-bold text-primary"
         >
           <a
-            href="#"
+            href="/"
             onClick={(e) => handleNavClick(e, "#")}
             className="text-2xl font-bold tracking-widest bg-gradient-to-r from-purple-400 to-blue-400 text-transparent bg-clip-text hover:opacity-80 transition"
           >
@@ -128,7 +128,7 @@ export default function Navbar() {
             {navLinks.map((link) => (
               <motion.li key={link.name} whileHover={{ y: -2 }}>
                 <a
-                  href={link.href}
+                  href={link.href.startsWith('#') ? '/' + link.href : link.href}
                   className={cn(
                     "text-sm font-medium transition-all hover:text-primary relative",
                     (activeSection === link.href.replace("#", "") || (link.href === "#" && activeSection === "")) 
@@ -187,7 +187,7 @@ export default function Navbar() {
               {navLinks.map((link) => (
                 <li key={link.name}>
                   <a
-                    href={link.href}
+                    href={link.href.startsWith('#') ? '/' + link.href : link.href}
                     className={cn(
                       "block px-4 py-2 text-sm font-medium transition-all hover:bg-accent rounded-md relative",
                       (activeSection === link.href.replace("#", "") || (link.href === "#" && activeSection === "")) 
