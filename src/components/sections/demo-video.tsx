@@ -155,7 +155,7 @@ export default function DemoVideo() {
             <p className="mb-6 sm:mb-8 text-base sm:text-lg max-w-4xl mx-auto leading-relaxed">{t.demoVideo.description}</p>
             <Button 
               size="lg" 
-              className="mx-auto inline-flex items-center justify-center px-6 py-3 text-base font-medium rounded-md text-white bg-primary shadow-sm hover:bg-primary/90 transition-colors dark:text-black dark:bg-primary dark:hover:bg-primary/90" 
+              className="mx-auto inline-flex items-center justify-center px-6 py-3 text-base font-medium rounded-full text-white bg-primary shadow-sm hover:bg-primary/90 transition-colors dark:text-black dark:bg-primary dark:hover:bg-primary/90" 
               asChild
             >
               <a 
