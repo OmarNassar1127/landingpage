@@ -201,7 +201,7 @@ export const translations = {
       title: "Afspraak Maken",
       subtitle: "Plan een vrijblijvend gesprek met ons team om uw project te bespreken",
       description: "Gebruik onze online agenda om direct een afspraak in te plannen. We kijken ernaar uit om met u te praten over uw ideeën en hoe we kunnen helpen.",
-      ctaButton: "Plan nu een gesprek",
+      ctaButton: "Plan direct een demo-call",
     },
 
     // Services section
@@ -463,7 +463,7 @@ export const translations = {
       title: "Book a Meeting",
       subtitle: "Schedule a no-obligation conversation with our team to discuss your project",
       description: "Use our online calendar to schedule a meeting directly. We look forward to talking with you about your ideas and how we can help.",
-      ctaButton: "Schedule a conversation now",
+      ctaButton: "Schedule a demo call now",
     },
 
     // Services section
