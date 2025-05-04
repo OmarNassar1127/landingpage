@@ -15,6 +15,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1.0,
     },
     {
+      url: `${baseUrl}${siteConfig.sections.demo}`,
+      lastModified,
+      changeFrequency: 'monthly' as const,
+      priority: 0.9,
+    },
+    {
       url: `${baseUrl}${siteConfig.sections.projects}`,
       lastModified,
       changeFrequency: 'monthly' as const,
@@ -65,6 +71,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified,
       changeFrequency: 'monthly' as const,
       priority: 0.9, // Slightly lower than main Dutch page
+    },
+    {
+      url: `${baseUrl}/en${siteConfig.sections.demo}`,
+      lastModified,
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
     },
     {
       url: `${baseUrl}/en${siteConfig.sections.projects}`,

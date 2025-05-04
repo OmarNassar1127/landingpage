@@ -145,6 +145,35 @@ export const servicesSchema = () => {
   };
 };
 
+export function videoSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "AI Agent Demo",
+    "description": "Watch our intelligent AI agent in action. This is one of our many AI solutions that can be customized for your specific business needs and industry.",
+    "thumbnailUrl": `${siteConfig.url}/demo-vid-thumbnail.jpg`,
+    "uploadDate": "2024-05-01T08:00:00+08:00",
+    "duration": "PT1M",
+    "contentUrl": `${siteConfig.url}/demo-vid.mp4`,
+    "embedUrl": `${siteConfig.url}/#demo`,
+    "potentialAction": {
+      "@type": "SeekToAction",
+      "target": `${siteConfig.url}/#demo{seek_to_second_number}`,
+      "startOffset-input": "required name=seek_to_second_number"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Virelio",
+      "logo": {
+        "@type": "ImageObject",
+        "url": `${siteConfig.url}/logo.png`,
+        "width": "96",
+        "height": "96"
+      }
+    }
+  };
+}
+
 export function organizationSchema({
   name = siteConfig.name,
   url = siteConfig.url,
