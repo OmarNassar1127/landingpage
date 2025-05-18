@@ -4,6 +4,7 @@ import React, { useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useLanguage } from "@/lib/i18n/language-context";
+import { scrollToSection } from "@/lib/scroll-utils";
 import Script from "next/script";
 
 export default function BookMeeting() {
@@ -19,6 +20,20 @@ export default function BookMeeting() {
       controls.start("visible");
     }
   }, [controls, inView]);
+
+  // Handle automatic scroll to section on page load with hash
+  useEffect(() => {
+    // Check if there's a hash in the URL that matches this section
+    const hash = window.location.hash;
+    if (hash === '#book-meeting') {
+      // Small delay to ensure the page is fully loaded and rendered
+      const timer = setTimeout(() => {
+        scrollToSection('book-meeting');
+      }, 500); // 500ms delay should be enough for the page to fully load
+      
+      return () => clearTimeout(timer);
+    }
+  }, []); // Empty dependency array means this runs only once on component mount
 
   // This effect will initialize the Calendly widget when the component mounts
   useEffect(() => {
