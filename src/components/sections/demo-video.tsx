@@ -1,12 +1,12 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { AutoPlayVideo } from "@/components/ui/auto-play-video";
+import { AutoPlayVideo, AutoPlayVideoRef } from "@/components/ui/auto-play-video";
 import { useLanguage } from "@/lib/i18n/language-context";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, CheckCircle, Expand } from "lucide-react";
+import { ArrowRight, CheckCircle, Expand, Volume2, VolumeX } from "lucide-react";
 import { scrollToSection } from "@/lib/scroll-utils";
 import { VideoModal } from "@/components/ui/video-modal";
 import JsonLd from "@/components/seo/json-ld";
@@ -17,6 +17,9 @@ export default function DemoVideo() {
   const [ref, inView] = useInView({ threshold: 0.2, triggerOnce: true });
   const controls = useAnimation();
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isMuted, setIsMuted] = useState(true); // Default to muted for autoplay compatibility
+  const [currentTime, setCurrentTime] = useState(0); // Track video position
+  const videoRef = useRef<AutoPlayVideoRef>(null);
   
   // Screen size detection for mobile/desktop
   const [isMobile, setIsMobile] = useState(false);
@@ -27,6 +30,20 @@ export default function DemoVideo() {
       controls.start("visible");
     }
   }, [inView, controls]);
+
+  // Handle automatic scroll to section on page load with hash
+  useEffect(() => {
+    // Check if there's a hash in the URL that matches this section
+    const hash = window.location.hash;
+    if (hash === '#demo') {
+      // Small delay to ensure the page is fully loaded and rendered
+      const timer = setTimeout(() => {
+        scrollToSection('demo');
+      }, 500); // 500ms delay should be enough for the page to fully load
+      
+      return () => clearTimeout(timer);
+    }
+  }, []); // Empty dependency array means this runs only once on component mount
 
   // Check if device is mobile on component mount and window resize
   useEffect(() => {
@@ -46,12 +63,39 @@ export default function DemoVideo() {
     }
   }, []);
 
-  // Handle video click based on device type
+  // Handle video click - allow expansion for both mobile and desktop
   const handleVideoClick = (e: React.MouseEvent) => {
-    if (isMobile) {
-      setIsModalOpen(true);
-    }
-    // On desktop, do nothing (or could add play/pause functionality here)
+    // Get current time from main video before opening modal
+    const mainVideoCurrentTime = videoRef.current?.getCurrentTime() ?? 0;
+    setCurrentTime(mainVideoCurrentTime);
+    
+    // Pause the main video
+    videoRef.current?.pause();
+    
+    // Open modal
+    setIsModalOpen(true);
+  };
+
+  // Handle audio toggle
+  const handleAudioToggle = () => {
+    setIsMuted(!isMuted);
+  };
+
+  // Handle modal close - resume main video from where modal left off
+  const handleModalClose = () => {
+    setIsModalOpen(false);
+    // Resume main video after a short delay to ensure modal is closed
+    setTimeout(() => {
+      if (videoRef.current && currentTime > 0) {
+        videoRef.current.setCurrentTime(currentTime);
+        videoRef.current.play();
+      }
+    }, 100);
+  };
+
+  // Handle time updates from modal video
+  const handleModalTimeUpdate = (time: number) => {
+    setCurrentTime(time);
   };
 
   const containerVariants = {
@@ -80,7 +124,7 @@ export default function DemoVideo() {
     <section
       id="demo"
       ref={ref}
-      className="py-20 bg-gradient-to-b from-background/80 to-background relative overflow-hidden"
+      className="py-20 bg-gradient-to-b from-background/40 to-background/50 relative overflow-hidden"
       aria-labelledby="demo-title"
     >
       {/* Add Schema.org structured data */}
@@ -115,15 +159,17 @@ export default function DemoVideo() {
             className="w-full overflow-hidden rounded-xl shadow-2xl"
           >
             <div 
-              className={`relative aspect-video bg-background/10 backdrop-blur rounded-lg overflow-hidden border border-primary/10 shadow-xl group ${isMobile ? 'cursor-pointer' : ''}`} 
+              className={`relative aspect-video bg-background/10 backdrop-blur rounded-lg overflow-hidden border border-primary/10 shadow-xl group cursor-pointer`} 
               onClick={handleVideoClick}
             >
               <AutoPlayVideo
+                ref={videoRef}
                 src="/demo-vid.mp4"
                 containerClassName="w-full h-full"
                 className="w-full h-full object-cover"
                 loop={true}
                 priority={true}
+                muted={isMuted}
               />
               
               {/* Controls Overlay */}
@@ -133,21 +179,39 @@ export default function DemoVideo() {
                 </div>
               </div>
               
-              {/* Expand button overlay - only show on mobile */}
-              {isMobile && (
-                <div className="absolute inset-0 flex items-center justify-center bg-black/0 group-hover:bg-black/20 transition-colors">
-                  <div className="p-3 rounded-full bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity transform scale-90 group-hover:scale-100">
-                    <Expand className="w-6 h-6 text-white" />
-                  </div>
+              {/* Audio Toggle Button - floating at top right */}
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  handleAudioToggle();
+                }}
+                className="absolute top-4 right-4 p-3 rounded-full bg-black/60 hover:bg-black/80 transition-all duration-200 backdrop-blur-sm border border-white/20 group-hover:opacity-100 z-10 touch-manipulation"
+                aria-label={isMuted ? "Unmute video" : "Mute video"}
+                style={{ minWidth: '48px', minHeight: '48px' }} // Ensures touch-friendly size
+              >
+                {isMuted ? (
+                  <VolumeX className="w-6 h-6 text-white" />
+                ) : (
+                  <Volume2 className="w-6 h-6 text-white" />
+                )}
+              </button>
+
+              {/* Expand button overlay - now visible for both mobile and desktop */}
+              <div className="absolute inset-0 flex items-center justify-center bg-black/0 group-hover:bg-black/20 transition-colors">
+                <div className="p-3 rounded-full bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity transform scale-90 group-hover:scale-100">
+                  <Expand className="w-6 h-6 text-white" />
                 </div>
-              )}
+              </div>
             </div>
             
             {/* Video Modal */}
             <VideoModal 
               isOpen={isModalOpen} 
-              onClose={() => setIsModalOpen(false)} 
-              videoSrc="/demo-vid.mp4" 
+              onClose={handleModalClose}
+              videoSrc="/demo-vid.mp4"
+              startTime={currentTime}
+              muted={isMuted}
+              onTimeUpdate={handleModalTimeUpdate}
             />
           </motion.div>
 

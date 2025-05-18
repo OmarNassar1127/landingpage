@@ -1,6 +1,14 @@
 "use client";
 
-import React, { useRef, useEffect, useState } from "react";
+import React, { useRef, useEffect, useState, forwardRef, useImperativeHandle } from "react";
+
+export interface AutoPlayVideoRef {
+  getCurrentTime: () => number;
+  setCurrentTime: (time: number) => void;
+  pause: () => void;
+  play: () => Promise<void>;
+  getVideoElement: () => HTMLVideoElement | null;
+}
 
 interface AutoPlayVideoProps {
   src: string;
@@ -9,20 +17,39 @@ interface AutoPlayVideoProps {
   loop?: boolean;
   priority?: boolean;
   placeholder?: string;
+  muted?: boolean;
+  onMutedChange?: (muted: boolean) => void;
 }
 
-export function AutoPlayVideo({
+export const AutoPlayVideo = forwardRef<AutoPlayVideoRef, AutoPlayVideoProps>(({
   src,
   className = "",
   containerClassName = "",
   loop = true,
   priority = false,
   placeholder = "",
-}: AutoPlayVideoProps) {
+  muted = true,
+  onMutedChange,
+}, ref) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [hasPlayedOnce, setHasPlayedOnce] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
+
+  // Expose methods via ref
+  useImperativeHandle(ref, () => ({
+    getCurrentTime: () => videoRef.current?.currentTime ?? 0,
+    setCurrentTime: (time: number) => {
+      if (videoRef.current) {
+        videoRef.current.currentTime = time;
+      }
+    },
+    pause: () => {
+      videoRef.current?.pause();
+    },
+    play: () => videoRef.current?.play() ?? Promise.resolve(),
+    getVideoElement: () => videoRef.current,
+  }), []);
 
   useEffect(() => {
     const videoElement = videoRef.current;
@@ -32,8 +59,8 @@ export function AutoPlayVideo({
     // Function to play video
     const playVideo = async () => {
       try {
-        // Always mute the video to allow autoplay
-        videoElement.muted = true;
+        // Set muted state as passed from props
+        videoElement.muted = muted;
         // Set playback rate to normal
         videoElement.playbackRate = 1.0;
         
@@ -88,7 +115,15 @@ export function AutoPlayVideo({
         observer.unobserve(videoElement);
       }
     };
-  }, [isLoaded, isVisible, priority, hasPlayedOnce]);
+  }, [isLoaded, isVisible, priority, hasPlayedOnce, muted]);
+
+  // Effect to handle muted state changes
+  useEffect(() => {
+    const videoElement = videoRef.current;
+    if (videoElement) {
+      videoElement.muted = muted;
+    }
+  }, [muted]);
 
   return (
     <div className={`relative overflow-hidden ${containerClassName}`}>
@@ -112,7 +147,7 @@ export function AutoPlayVideo({
         className={`w-full h-full object-cover ${className} ${isLoaded ? "opacity-100" : "opacity-0"}`}
         playsInline
         autoPlay={priority} // Only set autoPlay if priority is true
-        muted
+        muted={muted}
         loop={loop}
         preload={priority ? "auto" : "metadata"} // Use metadata for non-priority videos
         poster={placeholder} // Use placeholder as poster if provided
@@ -131,4 +166,6 @@ export function AutoPlayVideo({
       />
     </div>
   );
-}
+});
+
+AutoPlayVideo.displayName = "AutoPlayVideo";

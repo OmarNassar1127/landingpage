@@ -8,15 +8,22 @@ interface VideoModalProps {
   isOpen: boolean;
   onClose: () => void;
   videoSrc: string;
+  startTime?: number;
+  muted?: boolean;
+  onTimeUpdate?: (currentTime: number) => void;
 }
 
-export function VideoModal({ isOpen, onClose, videoSrc }: VideoModalProps) {
+export function VideoModal({ isOpen, onClose, videoSrc, startTime = 0, muted = true, onTimeUpdate }: VideoModalProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
 
-  // When modal opens, play the video
+  // When modal opens, set time and play the video
   useEffect(() => {
     if (isOpen && videoRef.current) {
+      // Set the starting time and muted state
+      videoRef.current.currentTime = startTime;
+      videoRef.current.muted = muted;
+      
       // Slight delay to ensure modal transition completes
       const timer = setTimeout(() => {
         if (videoRef.current) {
@@ -30,16 +37,20 @@ export function VideoModal({ isOpen, onClose, videoSrc }: VideoModalProps) {
       
       return () => clearTimeout(timer);
     }
-  }, [isOpen]);
+  }, [isOpen, startTime, muted]);
 
-  // When modal closes, reset video
+  // When modal closes, notify parent and reset video
   useEffect(() => {
     if (!isOpen && videoRef.current) {
+      // Notify parent about current time before closing
+      if (onTimeUpdate) {
+        onTimeUpdate(videoRef.current.currentTime);
+      }
       videoRef.current.pause();
-      videoRef.current.currentTime = 0;
       setIsPlaying(false);
+      // Don't reset currentTime here - let parent handle it
     }
-  }, [isOpen]);
+  }, [isOpen, onTimeUpdate]);
 
   // Handle fullscreen toggle
   const toggleFullScreen = () => {
@@ -115,7 +126,7 @@ export function VideoModal({ isOpen, onClose, videoSrc }: VideoModalProps) {
             ref={videoRef}
             className="w-full h-auto max-h-[80vh] object-contain"
             src={videoSrc}
-            muted
+            muted={muted}
             playsInline
             onClick={togglePlayPause}
             controlsList="nodownload"
