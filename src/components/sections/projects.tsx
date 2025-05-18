@@ -86,6 +86,20 @@ export default function Projects() {
     }
   }, [controls, inView]);
 
+  // Handle automatic scroll to section on page load with hash
+  useEffect(() => {
+    // Check if there's a hash in the URL that matches this section
+    const hash = window.location.hash;
+    if (hash === '#projects') {
+      // Small delay to ensure the page is fully loaded and rendered
+      const timer = setTimeout(() => {
+        scrollToSection('projects');
+      }, 500); // 500ms delay should be enough for the page to fully load
+      
+      return () => clearTimeout(timer);
+    }
+  }, []); // Empty dependency array means this runs only once on component mount
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {

@@ -36,6 +36,20 @@ export default function Contact() {
     }
   }, [controls, inView]);
 
+  // Handle automatic scroll to section on page load with hash
+  useEffect(() => {
+    // Check if there's a hash in the URL that matches this section
+    const hash = window.location.hash;
+    if (hash === '#contact') {
+      // Small delay to ensure the page is fully loaded and rendered
+      const timer = setTimeout(() => {
+        scrollToSection('contact');
+      }, 500); // 500ms delay should be enough for the page to fully load
+      
+      return () => clearTimeout(timer);
+    }
+  }, []); // Empty dependency array means this runs only once on component mount
+
   const [formState, setFormState] = useState({
     name: "",
     email: "",

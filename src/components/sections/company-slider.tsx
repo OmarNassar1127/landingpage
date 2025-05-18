@@ -3,6 +3,7 @@
 import React, { useEffect, useRef } from "react";
 import { motion, useAnimation, useInView } from "framer-motion";
 import { cn } from "@/lib/utils";
+import { scrollToSection } from "@/lib/scroll-utils";
 import { Building2, Scale, Plane, Globe, Shield, CreditCard, Activity, Zap, Database, BadgeDollarSign } from "lucide-react";
 import { useLanguage } from "@/lib/i18n/language-context";
 import Image from "next/image";
@@ -53,6 +54,20 @@ export default function CompanySlider() {
       controls.start("visible");
     }
   }, [isInView, controls]);
+
+  // Handle automatic scroll to section on page load with hash
+  useEffect(() => {
+    // Check if there's a hash in the URL that matches this section
+    const hash = window.location.hash;
+    if (hash === '#trusted-partners') {
+      // Small delay to ensure the page is fully loaded and rendered
+      const timer = setTimeout(() => {
+        scrollToSection('trusted-partners');
+      }, 500); // 500ms delay should be enough for the page to fully load
+      
+      return () => clearTimeout(timer);
+    }
+  }, []); // Empty dependency array means this runs only once on component mount
 
   const containerVariants = {
     hidden: { opacity: 0 },

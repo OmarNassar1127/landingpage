@@ -1,7 +1,8 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import { useLanguage } from "@/lib/i18n/language-context";
+import { scrollToSection } from "@/lib/scroll-utils";
 import {
   Card,
   CardContent,
@@ -31,6 +32,20 @@ const ServiceFeature = ({ children }: { children: React.ReactNode }) => {
 
 const Services = () => {
   const { language, t } = useLanguage();
+
+  // Handle automatic scroll to section on page load with hash
+  useEffect(() => {
+    // Check if there's a hash in the URL that matches this section
+    const hash = window.location.hash;
+    if (hash === '#services') {
+      // Small delay to ensure the page is fully loaded and rendered
+      const timer = setTimeout(() => {
+        scrollToSection('services');
+      }, 500); // 500ms delay should be enough for the page to fully load
+      
+      return () => clearTimeout(timer);
+    }
+  }, []); // Empty dependency array means this runs only once on component mount
 
   const ServiceCard = ({
     icon: Icon,
@@ -64,7 +79,7 @@ const Services = () => {
   };
 
   return (
-    <section className="py-20 px-4 md:px-8 max-w-7xl mx-auto">
+    <section id="services" className="py-20 px-4 md:px-8 max-w-7xl mx-auto">
       <div className="text-center mb-16">
         <h2 className="text-3xl md:text-4xl font-bold mb-4 tracking-tight">
           {t.services.title}
