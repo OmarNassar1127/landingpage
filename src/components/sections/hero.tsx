@@ -78,14 +78,14 @@ function HeroContent() {
           {/* Hero Content */}
           <motion.h1
             variants={itemVariants}
-            className="text-4xl md:text-6xl font-bold tracking-tight drop-shadow-md"
+            className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight drop-shadow-md"
           >
             {t.hero.title}
           </motion.h1>
 
           <motion.p
             variants={itemVariants}
-            className="max-w-2xl text-lg md:text-xl text-muted-foreground leading-relaxed"
+            className="max-w-2xl text-lg md:text-xl text-muted-foreground font-normal"
           >
             {t.hero.subtitle}
           </motion.p>
@@ -160,10 +160,10 @@ function HeroLoading() {
     <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-b from-background to-background/50">
       <div className="container px-4 text-center">
         <div className="space-y-8">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-primary/90">
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-primary/90">
             {t.hero.title}
           </h1>
-          <p className="max-w-2xl mx-auto text-lg text-muted-foreground/80">
+          <p className="max-w-2xl mx-auto text-lg text-muted-foreground/80 font-normal">
             {t.hero.subtitle}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
