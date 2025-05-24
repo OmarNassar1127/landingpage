@@ -116,7 +116,7 @@ export default function Navbar() {
           <a
             href="/"
             onClick={(e) => handleNavClick(e, "#")}
-            className="text-2xl font-bold tracking-widest bg-gradient-to-r from-purple-400 to-blue-400 text-transparent bg-clip-text hover:opacity-80 transition"
+            className="text-2xl font-bold tracking-tight bg-gradient-to-r from-purple-400 to-blue-400 text-transparent bg-clip-text hover:opacity-80 transition"
           >
             VIRELIO
           </a>
@@ -130,7 +130,7 @@ export default function Navbar() {
                 <a
                   href={link.href.startsWith('#') ? '/' + link.href : link.href}
                   className={cn(
-                    "text-sm font-medium transition-all hover:text-primary relative",
+                    "text-sm font-medium transition-all hover:text-primary relative tracking-tight",
                     (activeSection === link.href.replace("#", "") || (link.href === "#" && activeSection === "")) 
                       ? "text-primary font-semibold" 
                       : ""
@@ -189,7 +189,7 @@ export default function Navbar() {
                   <a
                     href={link.href.startsWith('#') ? '/' + link.href : link.href}
                     className={cn(
-                      "block px-4 py-2 text-sm font-medium transition-all hover:bg-accent rounded-md relative",
+                      "block px-4 py-2 text-sm font-medium transition-all hover:bg-accent rounded-lg relative tracking-tight",
                       (activeSection === link.href.replace("#", "") || (link.href === "#" && activeSection === "")) 
                         ? "text-primary font-semibold bg-accent" 
                         : ""

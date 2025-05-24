@@ -10,7 +10,13 @@ import { siteConfig } from "@/lib/config";
 import dynamic from 'next/dynamic';
 import GoogleAnalytics from "@/components/seo/google-analytics";
 
-const inter = Inter({ subsets: ["latin"] });
+// Using Inter font with configuration to mimic Apple's typography
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  display: "swap",
+});
 
 // Import client components with no SSR
 const ClientPolicyRoutes = dynamic(
@@ -136,7 +142,7 @@ export default function RootLayout({
         <JsonLd data={websiteSchema()} />
         <GoogleAnalytics />
       </head>
-      <body className={inter.className}>
+      <body className={`${inter.variable} font-sans antialiased`}>
         <ThemeProvider>
           <LanguageProvider>
             <BackgroundEffect />

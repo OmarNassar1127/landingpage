@@ -25,7 +25,7 @@ const ServiceFeature = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className="flex items-start gap-2 mt-2">
       <Check className="h-5 w-5 text-green-500 shrink-0 mt-0.5" />
-      <span className="text-sm text-muted-foreground">{children}</span>
+      <span className="text-sm text-muted-foreground font-normal">{children}</span>
     </div>
   );
 };
@@ -63,9 +63,9 @@ const Services = () => {
         <CardHeader className="pb-2">
           <div className="flex items-center gap-2 mb-2">
             <Icon className="h-6 w-6 text-primary" />
-            <CardTitle className="text-xl">{title}</CardTitle>
+            <CardTitle className="text-xl font-semibold">{title}</CardTitle>
           </div>
-          <CardDescription className="text-sm">{description}</CardDescription>
+          <CardDescription className="text-sm font-normal">{description}</CardDescription>
         </CardHeader>
         <CardContent>
           <div className="space-y-1">
@@ -81,10 +81,10 @@ const Services = () => {
   return (
     <section id="services" className="py-20 px-4 md:px-8 max-w-7xl mx-auto">
       <div className="text-center mb-16">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4 tracking-tight">
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight">
           {t.services.title}
         </h2>
-        <p className="text-muted-foreground max-w-3xl mx-auto">
+        <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto font-normal">
           {t.services.subtitle}
         </p>
       </div>
@@ -160,7 +160,7 @@ const Services = () => {
       <div className="mt-16 text-center">
         <a
           href="#contact"
-          className="inline-flex items-center justify-center px-6 py-3 text-base font-medium rounded-md text-white bg-primary shadow-sm hover:bg-primary/90 transition-colors dark:text-black dark:bg-primary dark:hover:bg-primary/90"
+          className="inline-flex items-center justify-center px-8 py-3 text-base font-medium rounded-lg text-white bg-primary shadow-sm hover:bg-primary/90 transition-all duration-200 dark:text-black dark:bg-primary dark:hover:bg-primary/90 tracking-tight"
         >
           {t.services.ctaButton}
         </a>
