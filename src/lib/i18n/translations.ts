@@ -204,6 +204,13 @@ export const translations = {
       ctaButton: "Plan direct een demo-call",
     },
 
+    // Automations Showcase
+    automationsShowcase: {
+      title: "200+ Automatiseringen Opgeleverd",
+      subtitle: "Bedrijven Versterken met Slimme Oplossingen",
+      centerLabel: "Automatiseringen"
+    },
+
     // Services section
     services: {
       title: "Onze Diensten",
@@ -464,6 +471,13 @@ export const translations = {
       subtitle: "Schedule a no-obligation conversation with our team to discuss your project",
       description: "Use our online calendar to schedule a meeting directly. We look forward to talking with you about your ideas and how we can help.",
       ctaButton: "Schedule a demo call now",
+    },
+
+    // Automations Showcase
+    automationsShowcase: {
+      title: "200+ Automations Delivered",
+      subtitle: "Empowering Businesses with Smart Solutions",
+      centerLabel: "Automations"
     },
 
     // Services section

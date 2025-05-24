@@ -3,6 +3,7 @@ import Navbar from "@/components/sections/navbar";
 import Hero from "@/components/sections/hero";
 import CompanySlider from "@/components/sections/company-slider";
 import DemoVideo from "@/components/sections/demo-video";
+import AutomationsShowcase from "@/components/sections/automations-showcase";
 import Projects from "@/components/sections/projects";
 import Services from "@/components/sections/services";
 import About from "@/components/sections/about";
@@ -89,6 +90,7 @@ export default function Home() {
         <Hero />
         <CompanySlider />
         <DemoVideo />
+        <AutomationsShowcase />
         <div id={siteConfig.sections.services.substring(1)}>
           <Services />
         </div>
