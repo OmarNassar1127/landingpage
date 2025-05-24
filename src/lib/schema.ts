@@ -70,6 +70,13 @@ type TestimonialsProps = {
   items: TestimonialProps[];
 };
 
+type AutomationAchievementProps = {
+  totalAutomations: number;
+  aiAutomationPercentage: number;
+  industriesServed: number;
+  uptime: number;
+};
+
 export const servicesSchema = () => {
   return {
     "@context": "https://schema.org",

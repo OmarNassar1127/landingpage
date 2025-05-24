@@ -3,6 +3,7 @@ import Navbar from "@/components/sections/navbar";
 import Hero from "@/components/sections/hero";
 import CompanySlider from "@/components/sections/company-slider";
 import DemoVideo from "@/components/sections/demo-video";
+import AutomationsShowcase from "@/components/sections/automations-showcase";
 import Projects from "@/components/sections/projects";
 import Services from "@/components/sections/services";
 import About from "@/components/sections/about";
@@ -37,11 +38,11 @@ const faqData = {
 };
 
 export const metadata: Metadata = generateMetadata({
-  title: "Innovative Solutions for Modern Challenges",
+  title: "200+ Automations Delivered | AI Solutions & Business Process Automation",
   description:
-    "We specialize in AI solutions, SaaS platforms, KYC integrations, and shop automations to help businesses thrive in the digital age.",
+    "We've delivered 200+ custom AI and traditional automation solutions. Specializing in business process automation, AI-powered systems, SaaS platforms, KYC integrations, and e-commerce automation to help businesses thrive.",
   keywords:
-    "AI solutions, SaaS development, KYC integration, e-commerce automation, web development, technology consulting, Virelio",
+    "business automation, AI automation, process automation, workflow automation, 200+ automations, artificial intelligence, AI solutions, SaaS development, KYC integration, e-commerce automation, web development, technology consulting, custom automation solutions, Virelio",
   pathname: "/en",
   locale: "en", // Set this explicitly for English
 });
@@ -58,6 +59,7 @@ export default function EnglishHome() {
         <Hero />
         <CompanySlider />
         <DemoVideo />
+        <AutomationsShowcase />
         <div id={siteConfig.sections.services.substring(1)}>
           <Services />
         </div>
