@@ -4,9 +4,10 @@ export const translations = {
     demoVideo: {
       title: "Onze AI Agent in Actie",
       subtitle: "Bekijk hoe onze AI-agent je werkervaring vereenvoudigt",
-      description: "Dit is slechts één van onze vele AI-agents. We kunnen aangepaste AI-oplossingen bouwen die volledig zijn afgestemd op jouw specifieke behoeften en branche."
+      description:
+        "Dit is slechts één van onze vele AI-agents. We kunnen aangepaste AI-oplossingen bouwen die volledig zijn afgestemd op jouw specifieke behoeften en branche.",
     },
-    
+
     // Navbar
     nav: {
       home: "Home",
@@ -184,7 +185,7 @@ export const translations = {
       phone: "Telefoon",
       location: "Locatie",
       followUs: "WhatsApp direct",
-      emailAddress: "contact@Virelio.nl",
+      emailAddress: "info@virelio.tech",
       phoneNumber: "+31 6 4044 6732",
       locationText: "Amsterdam, Nederland",
     },
@@ -199,8 +200,10 @@ export const translations = {
     // Book a Meeting section
     bookMeeting: {
       title: "Afspraak Maken",
-      subtitle: "Plan een vrijblijvend gesprek met ons team om uw project te bespreken",
-      description: "Gebruik onze online agenda om direct een afspraak in te plannen. We kijken ernaar uit om met u te praten over uw ideeën en hoe we kunnen helpen.",
+      subtitle:
+        "Plan een vrijblijvend gesprek met ons team om uw project te bespreken",
+      description:
+        "Gebruik onze online agenda om direct een afspraak in te plannen. We kijken ernaar uit om met u te praten over uw ideeën en hoe we kunnen helpen.",
       ctaButton: "Plan direct een demo-call",
     },
 
@@ -208,7 +211,7 @@ export const translations = {
     automationsShowcase: {
       title: "200+ Automatiseringen Opgeleverd",
       subtitle: "Bedrijven Versterken met Slimme Oplossingen",
-      centerLabel: "Automatiseringen"
+      centerLabel: "Automatiseringen",
     },
 
     // Services section
@@ -254,8 +257,7 @@ export const translations = {
           "Een professionele website of platform, volledig ingericht op jouw doel en doelgroep.",
         feature1: "Binnen 7 dagen live met een strak en snel ontwerp",
         feature2: "Gebouwd om te converteren – van eerste indruk tot actie",
-        feature3:
-          "SEO integratie",
+        feature3: "SEO integratie",
       },
       dataAnalytics: {
         title: "Data & Inzicht",
@@ -272,9 +274,10 @@ export const translations = {
     demoVideo: {
       title: "Our AI Agent in Action",
       subtitle: "See how our AI agent streamlines your work experience",
-      description: "This is just one of our many AI agents. We can build custom AI solutions tailored to your specific needs and industry."
+      description:
+        "This is just one of our many AI agents. We can build custom AI solutions tailored to your specific needs and industry.",
     },
-    
+
     // Navbar
     nav: {
       home: "Home",
@@ -453,7 +456,7 @@ export const translations = {
       phone: "Phone",
       location: "Location",
       followUs: "Chat with us now",
-      emailAddress: "contact@Virelio.nl",
+      emailAddress: "info@virelio.tech",
       phoneNumber: "+31 6 4044 6732",
       locationText: "Amsterdam, The Netherlands",
     },
@@ -468,8 +471,10 @@ export const translations = {
     // Book a Meeting section
     bookMeeting: {
       title: "Book a Meeting",
-      subtitle: "Schedule a no-obligation conversation with our team to discuss your project",
-      description: "Use our online calendar to schedule a meeting directly. We look forward to talking with you about your ideas and how we can help.",
+      subtitle:
+        "Schedule a no-obligation conversation with our team to discuss your project",
+      description:
+        "Use our online calendar to schedule a meeting directly. We look forward to talking with you about your ideas and how we can help.",
       ctaButton: "Schedule a demo call now",
     },
 
@@ -477,7 +482,7 @@ export const translations = {
     automationsShowcase: {
       title: "200+ Automations Delivered",
       subtitle: "Empowering Businesses with Smart Solutions",
-      centerLabel: "Automations"
+      centerLabel: "Automations",
     },
 
     // Services section
