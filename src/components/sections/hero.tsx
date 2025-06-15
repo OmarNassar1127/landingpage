@@ -75,18 +75,18 @@ function HeroContent() {
           animate={controls}
           className="flex flex-col items-center space-y-10 text-center"
         >
-          {/* Hero Content - Compact & Innovative */}
+          {/* Hero Content - Mobile Optimized */}
           <motion.div
             variants={itemVariants}
-            className="space-y-6"
+            className="space-y-4 md:space-y-6"
           >
-            {/* Main headline - more compact */}
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight max-w-4xl">
+            {/* Main headline - mobile optimized sizing */}
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight max-w-4xl px-2 sm:px-0 leading-tight">
               {t.hero.title}
             </h1>
             
-            {/* Innovative feature highlights */}
-            <div className="flex flex-wrap justify-center gap-3 md:gap-4 mt-6">
+            {/* Innovative feature highlights - mobile responsive */}
+            <div className="flex flex-wrap justify-center gap-2 sm:gap-3 md:gap-4 mt-4 px-4 sm:px-0">
               {[
                 { icon: Zap, text: "Fast", color: "from-yellow-500 to-orange-600" },
                 { icon: Code, text: "Custom", color: "from-blue-500 to-indigo-600" },
@@ -98,10 +98,10 @@ function HeroContent() {
                   initial={{ opacity: 0, scale: 0 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.4, delay: 0.8 + index * 0.1 }}
-                  className={`inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r ${item.color} text-white shadow-lg backdrop-blur-sm`}
+                  className={`inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-gradient-to-r ${item.color} text-white shadow-lg backdrop-blur-sm text-xs sm:text-sm`}
                 >
-                  <Icon icon={item.icon} className="h-4 w-4" />
-                  <span className="text-sm font-medium">{item.text}</span>
+                  <Icon icon={item.icon} className="h-3 w-3 sm:h-4 sm:w-4" />
+                  <span className="font-medium">{item.text}</span>
                 </motion.div>
               ))}
             </div>
@@ -109,7 +109,7 @@ function HeroContent() {
 
           <motion.p
             variants={itemVariants}
-            className="max-w-3xl text-lg md:text-xl text-muted-foreground font-normal leading-relaxed"
+            className="max-w-3xl text-base sm:text-lg md:text-xl text-muted-foreground font-normal leading-relaxed px-4 sm:px-0"
           >
             {t.hero.subtitle}
           </motion.p>
@@ -184,17 +184,17 @@ function HeroLoading() {
     <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-b from-background to-background/50">
       <div className="container px-4 text-center">
         <div className="space-y-8">
-          <div className="space-y-6">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary/90 max-w-4xl mx-auto">
+          <div className="space-y-4 md:space-y-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-primary/90 max-w-4xl mx-auto px-2 sm:px-0 leading-tight">
               {t.hero.title}
             </h1>
-            <div className="flex flex-wrap justify-center gap-3 md:gap-4">
+            <div className="flex flex-wrap justify-center gap-2 sm:gap-3 md:gap-4 px-4 sm:px-0">
               {[...Array(4)].map((_, i) => (
-                <div key={i} className="h-8 w-20 rounded-full bg-primary/20 animate-pulse" />
+                <div key={i} className="h-6 sm:h-8 w-16 sm:w-20 rounded-full bg-primary/20 animate-pulse" />
               ))}
             </div>
           </div>
-          <p className="max-w-3xl mx-auto text-lg text-muted-foreground/80 font-normal">
+          <p className="max-w-3xl mx-auto text-base sm:text-lg md:text-xl text-muted-foreground/80 font-normal px-4 sm:px-0">
             {t.hero.subtitle}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
