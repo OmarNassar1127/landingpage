@@ -10,26 +10,7 @@ import WorkshopContact from "./workshop-contact";
 
 export default function WorkshopCTA() {
   const { t } = useLanguage();
-  const [showCalendly, setShowCalendly] = useState(false);
-  const [showContactForm, setShowContactForm] = useState(false);
-
-  const handleScheduleClick = () => {
-    setShowCalendly(true);
-    setShowContactForm(false);
-  };
-
-  const handleContactClick = () => {
-    setShowContactForm(true);
-    setShowCalendly(false);
-  };
-
-  const handleBrochureClick = (e: React.MouseEvent) => {
-    e.preventDefault();
-    // In a real implementation, this would trigger a PDF download
-    // For now, we'll scroll to contact
-    setShowContactForm(true);
-    setShowCalendly(false);
-  };
+  const [activeTab, setActiveTab] = useState<'contact' | 'calendar'>('contact');
 
   return (
     <section id="workshop-cta" className="py-20 px-4 md:px-8 max-w-7xl mx-auto">
@@ -59,46 +40,58 @@ export default function WorkshopCTA() {
               ))}
             </div>
 
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                size="lg"
-                className="bg-primary hover:bg-primary/90 text-white dark:text-black shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 transition-all duration-300 group"
-                onClick={handleScheduleClick}
-              >
-                <Icon icon={Calendar} className="h-4 w-4 mr-2" />
-                {t.workshop.cta.primaryButton}
-                <Icon icon={ArrowRight} className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" />
-              </Button>
-              <Button
-                variant="outline"
-                size="lg"
-                className="border-2 border-primary/30 hover:bg-primary/5 transition-colors duration-300 group"
-                onClick={handleContactClick}
-              >
-                <Icon icon={Mail} className="h-4 w-4 mr-2" />
-                Contact Form
-              </Button>
+            {/* Tab Navigation */}
+            <div className="flex justify-center mb-8">
+              <div className="bg-background/50 backdrop-blur-sm rounded-lg p-1 border border-primary/20">
+                <div className="flex">
+                  <Button
+                    variant={activeTab === 'contact' ? 'default' : 'ghost'}
+                    size="sm"
+                    onClick={() => setActiveTab('contact')}
+                    className={`rounded-md px-6 py-2 transition-all duration-200 ${
+                      activeTab === 'contact' 
+                        ? 'bg-primary text-white dark:text-black shadow-sm' 
+                        : 'hover:bg-primary/10'
+                    }`}
+                  >
+                    <Icon icon={Mail} className="h-4 w-4 mr-2" />
+                    Contact Form
+                  </Button>
+                  <Button
+                    variant={activeTab === 'calendar' ? 'default' : 'ghost'}
+                    size="sm"
+                    onClick={() => setActiveTab('calendar')}
+                    className={`rounded-md px-6 py-2 transition-all duration-200 ${
+                      activeTab === 'calendar' 
+                        ? 'bg-primary text-white dark:text-black shadow-sm' 
+                        : 'hover:bg-primary/10'
+                    }`}
+                  >
+                    <Icon icon={Calendar} className="h-4 w-4 mr-2" />
+                    Quick Schedule
+                  </Button>
+                </div>
+              </div>
             </div>
 
+            {/* Contact Form - Always visible within the same container */}
+            {activeTab === 'contact' && (
+              <div className="max-w-4xl mx-auto">
+                <WorkshopContact />
+              </div>
+            )}
+
             {/* Calendly Integration */}
-            {showCalendly && (
-              <div className="mt-8">
+            {activeTab === 'calendar' && (
+              <div className="max-w-4xl mx-auto">
                 <div className="bg-background/80 backdrop-blur-sm rounded-lg p-6 border border-primary/20">
-                  <div className="flex justify-between items-center mb-4">
+                  <div className="text-center mb-4">
                     <h3 className="text-lg font-semibold">Schedule Your Workshop Consultation</h3>
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      onClick={() => setShowCalendly(false)}
-                      className="text-muted-foreground hover:text-foreground"
-                    >
-                      ✕
-                    </Button>
+                    <p className="text-sm text-muted-foreground">Book a 30-minute call to discuss your AI workshop needs</p>
                   </div>
                   <div className="w-full h-[600px] rounded-lg overflow-hidden">
                     <iframe
-                      src="https://calendly.com/omar-virelio/30min"
+                      src="https://calendly.com/quotum-consulting/30min"
                       width="100%"
                       height="100%"
                       frameBorder="0"
@@ -135,13 +128,6 @@ export default function WorkshopCTA() {
         <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-96 h-96 rounded-full bg-primary/10 blur-3xl" />
         <div className="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/2 w-96 h-96 rounded-full bg-purple-500/10 blur-3xl" />
       </Card>
-
-      {/* Contact Form Section */}
-      {showContactForm && (
-        <div className="mt-12">
-          <WorkshopContact />
-        </div>
-      )}
     </section>
   );
 }
