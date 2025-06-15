@@ -374,6 +374,87 @@ export const translations = {
         
         primaryButton: "Plan Gratis Kennismakingsgesprek",
         secondaryButton: "Download Workshop Brochure"
+      },
+
+      // Contact tabs
+      tabs: {
+        contactForm: "Contactformulier",
+        quickSchedule: "Snel Inplannen"
+      },
+
+      // Calendly section
+      calendly: {
+        title: "Plan Uw Workshop Consultatie",
+        subtitle: "Boek een 30-minuten gesprek om uw AI workshop behoeften te bespreken"
+      },
+
+      // Contact form labels
+      contactForm: {
+        title: "Vraag Uw Workshop Voorstel Aan",
+        subtitle: "Vertel ons over uw team en doelstellingen, en we nemen binnen 24 uur contact met u op om uw vereisten te bespreken en uw eerste afspraak in te plannen.",
+        formTitle: "Workshop Informatieverzoek",
+        
+        // Form fields
+        name: "Uw Naam",
+        email: "E-mailadres",
+        company: "Bedrijf/Organisatie",
+        role: "Uw Functie",
+        teamSize: "Verwacht Aantal Deelnemers",
+        workshopType: "Gewenst Workshop Format",
+        timeline: "Gewenste Planning",
+        message: "Specifieke Wensen & Doelen",
+        
+        // Placeholders
+        namePlaceholder: "Jan Jansen",
+        emailPlaceholder: "jan@bedrijf.nl",
+        companyPlaceholder: "Acme BV",
+        rolePlaceholder: "CTO, Manager, etc.",
+        messagePlaceholder: "Vertel ons over uw specifieke AI-uitdagingen, doelen en wat u hoopt te bereiken met de workshop...",
+        
+        // Select options
+        selectTeamSize: "Selecteer teamgrootte",
+        selectFormat: "Selecteer format",
+        selectTimeline: "Selecteer planning",
+        
+        teamSizeOptions: {
+          small: "5-10 personen",
+          medium: "10-20 personen", 
+          large: "20-50 personen",
+          xlarge: "50+ personen"
+        },
+        
+        formatOptions: {
+          halfDay: "Halve dag Introductie (4 uur)",
+          fullDay: "Volledige Dag Intensief (8 uur)",
+          multiDay: "Meerdaagse Programma (2-5 dagen)",
+          custom: "Op Maat Format"
+        },
+        
+        timelineOptions: {
+          asap: "Zo snel mogelijk",
+          oneMonth: "Binnen 1 maand",
+          twoThreeMonths: "2-3 maanden",
+          sixMonths: "Binnen 6 maanden",
+          flexible: "Flexibel"
+        },
+        
+        // Buttons
+        submitButton: "Workshop Voorstel Aanvragen",
+        submittingButton: "Verzoek Versturen...",
+        
+        // Success message
+        successTitle: "Workshop Aanvraag Ontvangen!",
+        successMessage: "Bedankt voor uw interesse in onze AI workshop. We nemen binnen 24 uur contact met u op om uw vereisten te bespreken en uw eerste afspraak of consultatie in te plannen.",
+        submitAnother: "Nog Een Aanvraag Indienen",
+        
+        // What happens next
+        whatNext: "Wat gebeurt er nu?",
+        nextSteps: {
+          contact: "Binnen 24 uur: We nemen contact met u op om uw behoeften te bespreken",
+          meeting: "Eerste afspraak: We begrijpen uw doelen en teamvereisten",
+          proposal: "Op maat voorstel: U ontvangt een aangepast workshop plan", 
+          scheduling: "Workshop planning: Data bevestigd op basis van uw beschikbaarheid"
+        }
       }
     },
 
@@ -825,6 +906,87 @@ export const translations = {
         
         primaryButton: "Schedule Free Introduction Call",
         secondaryButton: "Download Workshop Brochure"
+      },
+
+      // Contact tabs
+      tabs: {
+        contactForm: "Contact Form",
+        quickSchedule: "Quick Schedule"
+      },
+
+      // Calendly section
+      calendly: {
+        title: "Schedule Your Workshop Consultation",
+        subtitle: "Book a 30-minute call to discuss your AI workshop needs"
+      },
+
+      // Contact form labels
+      contactForm: {
+        title: "Request Your Custom Workshop Proposal",
+        subtitle: "Tell us about your team and objectives, and we'll contact you within 24 hours to discuss your requirements and schedule your first meeting.",
+        formTitle: "Workshop Information Request",
+        
+        // Form fields
+        name: "Your Name",
+        email: "Email Address",
+        company: "Company/Organization",
+        role: "Your Role",
+        teamSize: "Expected Participants",
+        workshopType: "Preferred Workshop Format",
+        timeline: "Preferred Timeline",
+        message: "Specific Requirements & Goals",
+        
+        // Placeholders
+        namePlaceholder: "John Doe",
+        emailPlaceholder: "john@company.com",
+        companyPlaceholder: "Acme Corp",
+        rolePlaceholder: "CTO, Manager, etc.",
+        messagePlaceholder: "Tell us about your specific AI challenges, goals, and what you hope to achieve with the workshop...",
+        
+        // Select options
+        selectTeamSize: "Select team size",
+        selectFormat: "Select format",
+        selectTimeline: "Select timeline",
+        
+        teamSizeOptions: {
+          small: "5-10 people",
+          medium: "10-20 people", 
+          large: "20-50 people",
+          xlarge: "50+ people"
+        },
+        
+        formatOptions: {
+          halfDay: "Half-day Introduction (4 hours)",
+          fullDay: "Full Day Intensive (8 hours)",
+          multiDay: "Multi-day Program (2-5 days)",
+          custom: "Custom Format"
+        },
+        
+        timelineOptions: {
+          asap: "As soon as possible",
+          oneMonth: "Within 1 month",
+          twoThreeMonths: "2-3 months",
+          sixMonths: "Within 6 months",
+          flexible: "Flexible"
+        },
+        
+        // Buttons
+        submitButton: "Request Workshop Proposal",
+        submittingButton: "Sending Request...",
+        
+        // Success message
+        successTitle: "Workshop Inquiry Received!",
+        successMessage: "Thank you for your interest in our AI workshop. We'll contact you within 24 hours to discuss your requirements and schedule your first meeting or consultation.",
+        submitAnother: "Submit Another Inquiry",
+        
+        // What happens next
+        whatNext: "What happens next?",
+        nextSteps: {
+          contact: "Within 24 hours: We'll contact you to discuss your needs",
+          meeting: "First meeting: We'll understand your goals and team requirements",
+          proposal: "Custom proposal: You'll receive a tailored workshop plan", 
+          scheduling: "Workshop scheduling: Dates confirmed based on your availability"
+        }
       }
     },
 

@@ -55,7 +55,7 @@ export default function WorkshopCTA() {
                     }`}
                   >
                     <Icon icon={Mail} className="h-4 w-4 mr-2" />
-                    Contact Form
+                    {t.workshop.tabs.contactForm}
                   </Button>
                   <Button
                     variant={activeTab === 'calendar' ? 'default' : 'ghost'}
@@ -68,7 +68,7 @@ export default function WorkshopCTA() {
                     }`}
                   >
                     <Icon icon={Calendar} className="h-4 w-4 mr-2" />
-                    Quick Schedule
+                    {t.workshop.tabs.quickSchedule}
                   </Button>
                 </div>
               </div>
@@ -86,8 +86,8 @@ export default function WorkshopCTA() {
               <div className="max-w-4xl mx-auto">
                 <div className="bg-background/80 backdrop-blur-sm rounded-lg p-6 border border-primary/20">
                   <div className="text-center mb-4">
-                    <h3 className="text-lg font-semibold">Schedule Your Workshop Consultation</h3>
-                    <p className="text-sm text-muted-foreground">Book a 30-minute call to discuss your AI workshop needs</p>
+                    <h3 className="text-lg font-semibold">{t.workshop.calendly.title}</h3>
+                    <p className="text-sm text-muted-foreground">{t.workshop.calendly.subtitle}</p>
                   </div>
                   <div className="w-full h-[600px] rounded-lg overflow-hidden">
                     <iframe

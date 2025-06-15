@@ -62,10 +62,10 @@ export default function WorkshopContact() {
           <CardContent className="space-y-4">
             <Icon icon={CheckCircle} className="h-16 w-16 text-green-500 mx-auto" />
             <h2 className="text-2xl font-bold text-green-700 dark:text-green-300">
-              {t.workshop.contactForm.successTitle}
+              Workshop Inquiry Received!
             </h2>
             <p className="text-green-600 dark:text-green-400">
-              {t.workshop.contactForm.successMessage}
+              Thank you for your interest in our AI workshop. We'll contact you within 24 hours to discuss your requirements and schedule your first meeting or consultation.
             </p>
             <Button 
               onClick={() => {
@@ -84,7 +84,7 @@ export default function WorkshopContact() {
               variant="outline"
               className="mt-4"
             >
-              {t.workshop.contactForm.submitAnother}
+              Submit Another Inquiry
             </Button>
           </CardContent>
         </Card>
@@ -116,7 +116,7 @@ export default function WorkshopContact() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium mb-2">
-                  {t.workshop.contactForm.name} *
+                  Your Name *
                 </label>
                 <input
                   type="text"
@@ -126,13 +126,13 @@ export default function WorkshopContact() {
                   onChange={handleChange}
                   required
                   className="w-full px-3 py-2 border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-primary bg-background"
-                  placeholder={t.workshop.contactForm.namePlaceholder}
+                  placeholder="John Doe"
                 />
               </div>
 
               <div>
                 <label htmlFor="email" className="block text-sm font-medium mb-2">
-                  {t.workshop.contactForm.email} *
+                  Email Address *
                 </label>
                 <input
                   type="email"
@@ -142,7 +142,7 @@ export default function WorkshopContact() {
                   onChange={handleChange}
                   required
                   className="w-full px-3 py-2 border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-primary bg-background"
-                  placeholder={t.workshop.contactForm.emailPlaceholder}
+                  placeholder="john@company.com"
                 />
               </div>
             </div>
@@ -151,7 +151,7 @@ export default function WorkshopContact() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
                 <label htmlFor="company" className="block text-sm font-medium mb-2">
-                  {t.workshop.contactForm.company} *
+                  Company/Organization *
                 </label>
                 <input
                   type="text"
@@ -161,13 +161,13 @@ export default function WorkshopContact() {
                   onChange={handleChange}
                   required
                   className="w-full px-3 py-2 border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-primary bg-background"
-                  placeholder={t.workshop.contactForm.companyPlaceholder}
+                  placeholder="Acme Corp"
                 />
               </div>
 
               <div>
                 <label htmlFor="role" className="block text-sm font-medium mb-2">
-                  {t.workshop.contactForm.role} *
+                  Your Role *
                 </label>
                 <input
                   type="text"
@@ -177,7 +177,7 @@ export default function WorkshopContact() {
                   onChange={handleChange}
                   required
                   className="w-full px-3 py-2 border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-primary bg-background"
-                  placeholder={t.workshop.contactForm.rolePlaceholder}
+                  placeholder="CTO, Manager, etc."
                 />
               </div>
             </div>
@@ -186,7 +186,7 @@ export default function WorkshopContact() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
                 <label htmlFor="teamSize" className="block text-sm font-medium mb-2">
-                  {t.workshop.contactForm.teamSize} *
+                  Expected Participants *
                 </label>
                 <select
                   id="teamSize"
@@ -196,17 +196,17 @@ export default function WorkshopContact() {
                   required
                   className="w-full px-3 py-2 border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-primary bg-background"
                 >
-                  <option value="">{t.workshop.contactForm.selectTeamSize}</option>
-                  <option value="5-10">{t.workshop.contactForm.teamSizeOptions.small}</option>
-                  <option value="10-20">{t.workshop.contactForm.teamSizeOptions.medium}</option>
-                  <option value="20-50">{t.workshop.contactForm.teamSizeOptions.large}</option>
-                  <option value="50+">{t.workshop.contactForm.teamSizeOptions.xlarge}</option>
+                  <option value="">Select team size</option>
+                  <option value="5-10">5-10 people</option>
+                  <option value="10-20">10-20 people</option>
+                  <option value="20-50">20-50 people</option>
+                  <option value="50+">50+ people</option>
                 </select>
               </div>
 
               <div>
                 <label htmlFor="workshopType" className="block text-sm font-medium mb-2">
-                  {t.workshop.contactForm.workshopType} *
+                  Preferred Workshop Format *
                 </label>
                 <select
                   id="workshopType"
@@ -216,11 +216,11 @@ export default function WorkshopContact() {
                   required
                   className="w-full px-3 py-2 border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-primary bg-background"
                 >
-                  <option value="">{t.workshop.contactForm.selectFormat}</option>
-                  <option value="half-day">{t.workshop.contactForm.formatOptions.halfDay}</option>
-                  <option value="full-day">{t.workshop.contactForm.formatOptions.fullDay}</option>
-                  <option value="multi-day">{t.workshop.contactForm.formatOptions.multiDay}</option>
-                  <option value="custom">{t.workshop.contactForm.formatOptions.custom}</option>
+                  <option value="">Select format</option>
+                  <option value="half-day">Half-day Introduction (4 hours)</option>
+                  <option value="full-day">Full Day Intensive (8 hours)</option>
+                  <option value="multi-day">Multi-day Program (2-5 days)</option>
+                  <option value="custom">Custom Format</option>
                 </select>
               </div>
             </div>
@@ -228,7 +228,7 @@ export default function WorkshopContact() {
             {/* Timeline */}
             <div>
               <label htmlFor="timeline" className="block text-sm font-medium mb-2">
-                {t.workshop.contactForm.timeline}
+                Preferred Timeline
               </label>
               <select
                 id="timeline"
@@ -237,19 +237,19 @@ export default function WorkshopContact() {
                 onChange={handleChange}
                 className="w-full px-3 py-2 border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-primary bg-background"
               >
-                <option value="">{t.workshop.contactForm.selectTimeline}</option>
-                <option value="asap">{t.workshop.contactForm.timelineOptions.asap}</option>
-                <option value="1-month">{t.workshop.contactForm.timelineOptions.oneMonth}</option>
-                <option value="2-3-months">{t.workshop.contactForm.timelineOptions.twoThreeMonths}</option>
-                <option value="6-months">{t.workshop.contactForm.timelineOptions.sixMonths}</option>
-                <option value="flexible">{t.workshop.contactForm.timelineOptions.flexible}</option>
+                <option value="">Select timeline</option>
+                <option value="asap">As soon as possible</option>
+                <option value="1-month">Within 1 month</option>
+                <option value="2-3-months">2-3 months</option>
+                <option value="6-months">Within 6 months</option>
+                <option value="flexible">Flexible</option>
               </select>
             </div>
 
             {/* Message */}
             <div>
               <label htmlFor="message" className="block text-sm font-medium mb-2">
-                {t.workshop.contactForm.message}
+                Specific Requirements & Goals
               </label>
               <textarea
                 id="message"
@@ -258,7 +258,7 @@ export default function WorkshopContact() {
                 onChange={handleChange}
                 rows={4}
                 className="w-full px-3 py-2 border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-primary bg-background"
-                placeholder={t.workshop.contactForm.messagePlaceholder}
+                placeholder="Tell us about your specific AI challenges, goals, and what you hope to achieve with the workshop..."
               />
             </div>
 
@@ -272,12 +272,12 @@ export default function WorkshopContact() {
               {isSubmitting ? (
                 <>
                   <Icon icon={Clock} className="h-4 w-4 mr-2 animate-spin" />
-                  {t.workshop.contactForm.submittingButton}
+                  Sending Request...
                 </>
               ) : (
                 <>
                   <Icon icon={Send} className="h-4 w-4 mr-2" />
-                  {t.workshop.contactForm.submitButton}
+                  Request Workshop Proposal
                 </>
               )}
             </Button>
@@ -285,12 +285,12 @@ export default function WorkshopContact() {
 
           {/* Additional Info */}
           <div className="mt-8 p-4 bg-muted/50 rounded-lg">
-            <h4 className="font-semibold mb-2">{t.workshop.contactForm.whatNext}</h4>
+            <h4 className="font-semibold mb-2">What happens next?</h4>
             <ul className="text-sm text-muted-foreground space-y-1">
-              <li>• <strong>{t.workshop.contactForm.nextSteps.contact}</strong></li>
-              <li>• <strong>{t.workshop.contactForm.nextSteps.meeting}</strong></li>
-              <li>• <strong>{t.workshop.contactForm.nextSteps.proposal}</strong></li>
-              <li>• <strong>{t.workshop.contactForm.nextSteps.scheduling}</strong></li>
+              <li>• <strong>Within 24 hours:</strong> We'll contact you to discuss your needs</li>
+              <li>• <strong>First meeting:</strong> We'll understand your goals and team requirements</li>
+              <li>• <strong>Custom proposal:</strong> You'll receive a tailored workshop plan</li>
+              <li>• <strong>Workshop scheduling:</strong> Dates confirmed based on your availability</li>
             </ul>
           </div>
         </CardContent>
