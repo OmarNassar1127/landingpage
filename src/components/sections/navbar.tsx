@@ -22,6 +22,7 @@ export default function Navbar() {
     { name: t.nav.home, href: "#" },
     { name: t.nav.services, href: "#services" },
     { name: t.nav.projects, href: "#projects" },
+    { name: t.nav.workshop, href: "/workshop" },
     { name: t.nav.about, href: "#about" },
     { name: t.nav.testimonials, href: "#testimonials" },
     { name: t.nav.bookMeeting, href: "#book-meeting" },
@@ -72,6 +73,12 @@ export default function Navbar() {
     e: React.MouseEvent<HTMLAnchorElement>,
     href: string
   ) => {
+    // If it's an external link (starts with / but not #), don't prevent default
+    if (href.startsWith('/') && !href.startsWith('#')) {
+      if (mobileMenuOpen) setMobileMenuOpen(false);
+      return; // Let the default link behavior handle the navigation
+    }
+
     e.preventDefault();
 
     // Update active section
@@ -128,7 +135,7 @@ export default function Navbar() {
             {navLinks.map((link) => (
               <motion.li key={link.name} whileHover={{ y: -2 }}>
                 <a
-                  href={link.href.startsWith('#') ? '/' + link.href : link.href}
+                  href={link.href}
                   className={cn(
                     "text-sm font-medium transition-all hover:text-primary relative tracking-tight",
                     (activeSection === link.href.replace("#", "") || (link.href === "#" && activeSection === "")) 
@@ -187,7 +194,7 @@ export default function Navbar() {
               {navLinks.map((link) => (
                 <li key={link.name}>
                   <a
-                    href={link.href.startsWith('#') ? '/' + link.href : link.href}
+                    href={link.href}
                     className={cn(
                       "block px-4 py-2 text-sm font-medium transition-all hover:bg-accent rounded-lg relative tracking-tight",
                       (activeSection === link.href.replace("#", "") || (link.href === "#" && activeSection === "")) 
