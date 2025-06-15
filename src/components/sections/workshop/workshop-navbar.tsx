@@ -118,7 +118,7 @@ export default function WorkshopNavbar() {
           
           {/* Workshop title */}
           <div className="text-xl font-bold tracking-tight bg-gradient-to-r from-purple-400 to-blue-400 text-transparent bg-clip-text">
-            AI Workshop
+            VIRELIO - AI Workshop
           </div>
         </motion.div>
 

@@ -57,7 +57,7 @@ export default function WorkshopContact() {
 
   if (submitted) {
     return (
-      <section className="py-20 px-4 md:px-8 max-w-4xl mx-auto">
+      <div className="mt-8">
         <Card className="text-center p-8 border-green-200 bg-green-50 dark:bg-green-950 dark:border-green-800">
           <CardContent className="space-y-4">
             <Icon icon={CheckCircle} className="h-16 w-16 text-green-500 mx-auto" />
@@ -88,17 +88,17 @@ export default function WorkshopContact() {
             </Button>
           </CardContent>
         </Card>
-      </section>
+      </div>
     );
   }
 
   return (
-    <section className="py-20 px-4 md:px-8 max-w-4xl mx-auto">
-      <div className="text-center mb-12">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4">
+    <div className="mt-8">
+      <div className="text-center mb-8">
+        <h3 className="text-2xl font-bold mb-4">
           Request Your Custom Workshop Proposal
-        </h2>
-        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+        </h3>
+        <p className="text-muted-foreground max-w-2xl mx-auto">
           Tell us about your team and objectives, and we'll contact you within 24 hours to discuss your requirements and schedule your first meeting.
         </p>
       </div>
@@ -295,6 +295,6 @@ export default function WorkshopContact() {
           </div>
         </CardContent>
       </Card>
-    </section>
+    </div>
   );
 }
