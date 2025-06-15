@@ -75,17 +75,41 @@ function HeroContent() {
           animate={controls}
           className="flex flex-col items-center space-y-10 text-center"
         >
-          {/* Hero Content */}
-          <motion.h1
+          {/* Hero Content - Compact & Innovative */}
+          <motion.div
             variants={itemVariants}
-            className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight drop-shadow-md"
+            className="space-y-6"
           >
-            {t.hero.title}
-          </motion.h1>
+            {/* Main headline - more compact */}
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight max-w-4xl">
+              {t.hero.title}
+            </h1>
+            
+            {/* Innovative feature highlights */}
+            <div className="flex flex-wrap justify-center gap-3 md:gap-4 mt-6">
+              {[
+                { icon: Zap, text: "Fast", color: "from-yellow-500 to-orange-600" },
+                { icon: Code, text: "Custom", color: "from-blue-500 to-indigo-600" },
+                { icon: Database, text: "Scalable", color: "from-green-500 to-emerald-600" },
+                { icon: Globe, text: "Modern", color: "from-purple-500 to-pink-600" }
+              ].map((item, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, scale: 0 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.4, delay: 0.8 + index * 0.1 }}
+                  className={`inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r ${item.color} text-white shadow-lg backdrop-blur-sm`}
+                >
+                  <Icon icon={item.icon} className="h-4 w-4" />
+                  <span className="text-sm font-medium">{item.text}</span>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
 
           <motion.p
             variants={itemVariants}
-            className="max-w-2xl text-lg md:text-xl text-muted-foreground font-normal"
+            className="max-w-3xl text-lg md:text-xl text-muted-foreground font-normal leading-relaxed"
           >
             {t.hero.subtitle}
           </motion.p>
@@ -160,10 +184,17 @@ function HeroLoading() {
     <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-b from-background to-background/50">
       <div className="container px-4 text-center">
         <div className="space-y-8">
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-primary/90">
-            {t.hero.title}
-          </h1>
-          <p className="max-w-2xl mx-auto text-lg text-muted-foreground/80 font-normal">
+          <div className="space-y-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary/90 max-w-4xl mx-auto">
+              {t.hero.title}
+            </h1>
+            <div className="flex flex-wrap justify-center gap-3 md:gap-4">
+              {[...Array(4)].map((_, i) => (
+                <div key={i} className="h-8 w-20 rounded-full bg-primary/20 animate-pulse" />
+              ))}
+            </div>
+          </div>
+          <p className="max-w-3xl mx-auto text-lg text-muted-foreground/80 font-normal">
             {t.hero.subtitle}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
