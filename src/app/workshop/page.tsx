@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import Navbar from "@/components/sections/navbar";
+import WorkshopNavbar from "@/components/sections/workshop/workshop-navbar";
 import Footer from "@/components/sections/footer";
 import { generateMetadata } from "@/lib/metadata";
 import JsonLd from "@/components/seo/json-ld";
@@ -55,14 +55,26 @@ export default function WorkshopPage() {
       <JsonLd data={servicesSchema()} />
 
       <main className="min-h-screen">
-        <Navbar />
+        <WorkshopNavbar />
         <WorkshopHero />
-        <WorkshopBenefits />
-        <WorkshopCurriculum />
-        <WorkshopAudience />
-        <WorkshopFormats />
-        <WorkshopTestimonials />
-        <WorkshopCTA />
+        <div id="workshop-benefits">
+          <WorkshopBenefits />
+        </div>
+        <div id="workshop-curriculum">
+          <WorkshopCurriculum />
+        </div>
+        <div id="workshop-audience">
+          <WorkshopAudience />
+        </div>
+        <div id="workshop-formats">
+          <WorkshopFormats />
+        </div>
+        <div id="workshop-testimonials">
+          <WorkshopTestimonials />
+        </div>
+        <div id="workshop-cta">
+          <WorkshopCTA />
+        </div>
         <Footer />
       </main>
     </>

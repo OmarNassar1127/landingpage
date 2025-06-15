@@ -1,26 +1,34 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { useLanguage } from "@/lib/i18n/language-context";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { CheckCircle, ArrowRight, Download } from "lucide-react";
+import { CheckCircle, ArrowRight, Download, Calendar, Mail } from "lucide-react";
 import { Icon } from "@/components/ui/icon";
-import { scrollToSection } from "@/lib/scroll-utils";
+import WorkshopContact from "./workshop-contact";
 
 export default function WorkshopCTA() {
   const { t } = useLanguage();
+  const [showCalendly, setShowCalendly] = useState(false);
+  const [showContactForm, setShowContactForm] = useState(false);
 
-  const handleContactClick = (e: React.MouseEvent) => {
-    e.preventDefault();
-    scrollToSection("contact");
+  const handleScheduleClick = () => {
+    setShowCalendly(true);
+    setShowContactForm(false);
+  };
+
+  const handleContactClick = () => {
+    setShowContactForm(true);
+    setShowCalendly(false);
   };
 
   const handleBrochureClick = (e: React.MouseEvent) => {
     e.preventDefault();
     // In a real implementation, this would trigger a PDF download
     // For now, we'll scroll to contact
-    scrollToSection("contact");
+    setShowContactForm(true);
+    setShowCalendly(false);
   };
 
   return (
@@ -56,8 +64,9 @@ export default function WorkshopCTA() {
               <Button
                 size="lg"
                 className="bg-primary hover:bg-primary/90 text-white dark:text-black shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 transition-all duration-300 group"
-                onClick={handleContactClick}
+                onClick={handleScheduleClick}
               >
+                <Icon icon={Calendar} className="h-4 w-4 mr-2" />
                 {t.workshop.cta.primaryButton}
                 <Icon icon={ArrowRight} className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
@@ -65,12 +74,41 @@ export default function WorkshopCTA() {
                 variant="outline"
                 size="lg"
                 className="border-2 border-primary/30 hover:bg-primary/5 transition-colors duration-300 group"
-                onClick={handleBrochureClick}
+                onClick={handleContactClick}
               >
-                <Icon icon={Download} className="h-4 w-4 mr-2 group-hover:scale-110 transition-transform" />
-                {t.workshop.cta.secondaryButton}
+                <Icon icon={Mail} className="h-4 w-4 mr-2" />
+                Contact Form
               </Button>
             </div>
+
+            {/* Calendly Integration */}
+            {showCalendly && (
+              <div className="mt-8">
+                <div className="bg-background/80 backdrop-blur-sm rounded-lg p-6 border border-primary/20">
+                  <div className="flex justify-between items-center mb-4">
+                    <h3 className="text-lg font-semibold">Schedule Your Workshop Consultation</h3>
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      onClick={() => setShowCalendly(false)}
+                      className="text-muted-foreground hover:text-foreground"
+                    >
+                      ✕
+                    </Button>
+                  </div>
+                  <div className="w-full h-[600px] rounded-lg overflow-hidden">
+                    <iframe
+                      src="https://calendly.com/omar-virelio/30min"
+                      width="100%"
+                      height="100%"
+                      frameBorder="0"
+                      title="Schedule Workshop Consultation"
+                      className="rounded-lg"
+                    />
+                  </div>
+                </div>
+              </div>
+            )}
 
             {/* Contact info */}
             <div className="text-center text-sm text-muted-foreground space-y-2">
@@ -97,6 +135,13 @@ export default function WorkshopCTA() {
         <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-96 h-96 rounded-full bg-primary/10 blur-3xl" />
         <div className="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/2 w-96 h-96 rounded-full bg-purple-500/10 blur-3xl" />
       </Card>
+
+      {/* Contact Form Section */}
+      {showContactForm && (
+        <div className="mt-12">
+          <WorkshopContact />
+        </div>
+      )}
     </section>
   );
 }
