@@ -13,19 +13,19 @@ import { Icon } from "@/components/ui/icon";
 import { useLanguage } from "@/lib/i18n/language-context";
 
 export default function WorkshopNavbar() {
-  const { t, language } = useLanguage();
+  const { language } = useLanguage();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
 
-  // Workshop-specific navigation links
+  // Workshop-specific navigation links - short and punchy
   const workshopNavLinks = [
-    { name: t.workshop.benefits.sectionTitle.split(' ')[0], href: "#workshop-benefits" }, // "Why" or "Waarom"
-    { name: t.workshop.curriculum.sectionTitle.split(' ')[0], href: "#workshop-curriculum" }, // "What" or "Wat" 
-    { name: t.workshop.audience.sectionTitle.split(' ')[0], href: "#workshop-audience" }, // "Who" or "Voor"
-    { name: t.workshop.formats.sectionTitle, href: "#workshop-formats" }, // "Formats" or "Formaten"
-    { name: t.workshop.testimonials.sectionTitle.split(' ')[0], href: "#workshop-testimonials" }, // "Testimonials" or "Wat"
-    { name: t.nav.contact, href: "#workshop-cta" },
+    { name: language === "en" ? "Benefits" : "Voordelen", href: "#workshop-benefits" },
+    { name: language === "en" ? "Program" : "Programma", href: "#workshop-curriculum" }, 
+    { name: language === "en" ? "Audience" : "Doelgroep", href: "#workshop-audience" },
+    { name: language === "en" ? "Formats" : "Formaten", href: "#workshop-formats" },
+    { name: language === "en" ? "Reviews" : "Reviews", href: "#workshop-testimonials" },
+    { name: language === "en" ? "Book" : "Boeken", href: "#workshop-cta" },
   ];
 
   useEffect(() => {

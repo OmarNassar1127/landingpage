@@ -26,11 +26,26 @@ export default function WorkshopContact() {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission - replace with actual implementation
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    setSubmitted(true);
-    setIsSubmitting(false);
+    try {
+      const response = await fetch("https://formspree.io/f/xldjpybw", {
+        method: "POST",
+        headers: {
+          "Accept": "application/json"
+        },
+        body: new FormData(e.target as HTMLFormElement)
+      });
+      
+      if (response.ok) {
+        setSubmitted(true);
+      } else {
+        throw new Error("Form submission failed");
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      // Handle error state here if needed
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -50,7 +65,7 @@ export default function WorkshopContact() {
               Workshop Inquiry Received!
             </h2>
             <p className="text-green-600 dark:text-green-400">
-              Thank you for your interest in our AI workshop. We'll review your requirements and get back to you within 24 hours with a customized proposal.
+              Thank you for your interest in our AI workshop. We'll contact you within 24 hours to discuss your requirements and schedule your first meeting or consultation.
             </p>
             <Button 
               onClick={() => {
@@ -84,7 +99,7 @@ export default function WorkshopContact() {
           Request Your Custom Workshop Proposal
         </h2>
         <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-          Tell us about your team and objectives, and we'll create a tailored workshop experience that delivers real results for your organization.
+          Tell us about your team and objectives, and we'll contact you within 24 hours to discuss your requirements and schedule your first meeting.
         </p>
       </div>
 
@@ -272,10 +287,10 @@ export default function WorkshopContact() {
           <div className="mt-8 p-4 bg-muted/50 rounded-lg">
             <h4 className="font-semibold mb-2">What happens next?</h4>
             <ul className="text-sm text-muted-foreground space-y-1">
-              <li>• We'll review your requirements within 24 hours</li>
-              <li>• You'll receive a customized workshop proposal</li>
-              <li>• We'll schedule a brief consultation to finalize details</li>
-              <li>• Workshop dates will be confirmed based on your availability</li>
+              <li>• <strong>Within 24 hours:</strong> We'll contact you to discuss your needs</li>
+              <li>• <strong>First meeting:</strong> We'll understand your goals and team requirements</li>
+              <li>• <strong>Custom proposal:</strong> You'll receive a tailored workshop plan</li>
+              <li>• <strong>Workshop scheduling:</strong> Dates confirmed based on your availability</li>
             </ul>
           </div>
         </CardContent>
