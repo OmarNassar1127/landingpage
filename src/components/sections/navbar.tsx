@@ -7,8 +7,7 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { scrollToSection, navigateFromPolicyPage } from "@/lib/scroll-utils";
 import { motion } from "framer-motion";
-import Link from "next/link";
-import { Menu, X, ChevronUp } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Icon } from "@/components/ui/icon";
 import { useLanguage } from "@/lib/i18n/language-context";
 
@@ -22,7 +21,6 @@ export default function Navbar() {
     { name: t.nav.home, href: "#" },
     { name: t.nav.services, href: "#services" },
     { name: t.nav.projects, href: "#projects" },
-    { name: t.nav.workshop, href: "/workshop" },
     { name: t.nav.about, href: "#about" },
     { name: t.nav.testimonials, href: "#testimonials" },
     { name: t.nav.bookMeeting, href: "#book-meeting" },

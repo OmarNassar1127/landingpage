@@ -528,6 +528,35 @@ export const translations = {
         feature3: "Antwoorden in gewone taal – binnen 3 seconden",
       },
     },
+
+    // Workshop Section (main page)
+    workshopSection: {
+      badge: "Workshop",
+      title: "AI Workshop voor Jouw Team",
+      subtitle: "Transformeer je team met hands-on AI training die direct toepasbaar is in jullie dagelijkse werk.",
+      ctaButton: "Bekijk Workshop Details",
+      features: {
+        handson: {
+          title: "Hands-on Leren",
+          description: "Praktische oefeningen en echte use cases uit jouw branche"
+        },
+        tailored: {
+          title: "Op Maat Gemaakt",
+          description: "Workshop aangepast aan jullie specifieke uitdagingen en doelen"
+        },
+        flexible: {
+          title: "Flexibele Formats",
+          description: "Van halve dag tot meerdaagse programma's, op locatie of online"
+        }
+      },
+      card: {
+        title: "Enterprise AI Training",
+        subtitle: "Voor teams die voorop willen lopen",
+        practical: "Praktisch",
+        interactive: "Interactief",
+        quote: "Van theorie naar toepassing in één dag"
+      }
+    },
   },
 
   en: {
@@ -1060,6 +1089,35 @@ export const translations = {
         feature2: "Request revenue, trends or team data via Slack or Teams",
         feature3: "Answers in plain language – within 3 seconds",
       },
+    },
+
+    // Workshop Section (main page)
+    workshopSection: {
+      badge: "Workshop",
+      title: "AI Workshop for Your Team",
+      subtitle: "Transform your team with hands-on AI training that's directly applicable to your daily work.",
+      ctaButton: "View Workshop Details",
+      features: {
+        handson: {
+          title: "Hands-on Learning",
+          description: "Practical exercises and real use cases from your industry"
+        },
+        tailored: {
+          title: "Tailored Content",
+          description: "Workshop adapted to your specific challenges and goals"
+        },
+        flexible: {
+          title: "Flexible Formats",
+          description: "From half-day to multi-day programs, on-site or online"
+        }
+      },
+      card: {
+        title: "Enterprise AI Training",
+        subtitle: "For teams that want to stay ahead",
+        practical: "Practical",
+        interactive: "Interactive",
+        quote: "From theory to application in one day"
+      }
     },
   },
 };
