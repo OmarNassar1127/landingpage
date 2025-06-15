@@ -7,7 +7,7 @@ const AutomationsShowcase = () => {
   const { t } = useLanguage();
 
   return (
-    <section className="py-16 md:py-20 bg-gradient-to-br from-slate-50 to-blue-50/30 dark:from-slate-950 dark:to-blue-950/30">
+    <section className="py-16 md:py-20">
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
           {/* Left side - Text */}
