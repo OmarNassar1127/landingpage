@@ -13,7 +13,7 @@ import { Icon } from "@/components/ui/icon";
 import { useLanguage } from "@/lib/i18n/language-context";
 
 export default function WorkshopNavbar() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
@@ -109,7 +109,7 @@ export default function WorkshopNavbar() {
         >
           {/* Back to main site */}
           <Link
-            href="/"
+            href={language === "en" ? "/en" : "/"}
             className="flex items-center space-x-2 text-sm text-muted-foreground hover:text-primary transition-colors"
           >
             <Icon icon={ArrowLeft} className="h-4 w-4" />
@@ -186,7 +186,7 @@ export default function WorkshopNavbar() {
             <ul className="flex flex-col space-y-4">
               <li>
                 <Link
-                  href="/"
+                  href={language === "en" ? "/en" : "/"}
                   className="flex items-center space-x-2 px-4 py-2 text-sm font-medium transition-all hover:bg-accent rounded-lg"
                   onClick={() => setMobileMenuOpen(false)}
                 >
