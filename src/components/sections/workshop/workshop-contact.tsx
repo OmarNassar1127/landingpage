@@ -25,16 +25,16 @@ export default function WorkshopContact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     try {
       const response = await fetch("https://formspree.io/f/xldjpybw", {
         method: "POST",
         headers: {
-          "Accept": "application/json"
+          Accept: "application/json",
         },
-        body: new FormData(e.target as HTMLFormElement)
+        body: new FormData(e.target as HTMLFormElement),
       });
-      
+
       if (response.ok) {
         setSubmitted(true);
       } else {
@@ -48,7 +48,11 @@ export default function WorkshopContact() {
     }
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
@@ -60,14 +64,17 @@ export default function WorkshopContact() {
       <div className="mt-8">
         <Card className="text-center p-8 border-green-200 bg-green-50 dark:bg-green-950 dark:border-green-800">
           <CardContent className="space-y-4">
-            <Icon icon={CheckCircle} className="h-16 w-16 text-green-500 mx-auto" />
+            <Icon
+              icon={CheckCircle}
+              className="h-16 w-16 text-green-500 mx-auto"
+            />
             <h2 className="text-2xl font-bold text-green-700 dark:text-green-300">
               {t.workshop.contactForm.successTitle}
             </h2>
             <p className="text-green-600 dark:text-green-400">
               {t.workshop.contactForm.successMessage}
             </p>
-            <Button 
+            <Button
               onClick={() => {
                 setSubmitted(false);
                 setFormData({
@@ -115,7 +122,10 @@ export default function WorkshopContact() {
             {/* Basic Info */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium mb-2">
+                <label
+                  htmlFor="name"
+                  className="block text-sm font-medium mb-2"
+                >
                   {t.workshop.contactForm.name} *
                 </label>
                 <input
@@ -131,7 +141,10 @@ export default function WorkshopContact() {
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-sm font-medium mb-2">
+                <label
+                  htmlFor="email"
+                  className="block text-sm font-medium mb-2"
+                >
                   {t.workshop.contactForm.email} *
                 </label>
                 <input
@@ -150,7 +163,10 @@ export default function WorkshopContact() {
             {/* Company Info */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
-                <label htmlFor="company" className="block text-sm font-medium mb-2">
+                <label
+                  htmlFor="company"
+                  className="block text-sm font-medium mb-2"
+                >
                   {t.workshop.contactForm.company} *
                 </label>
                 <input
@@ -166,7 +182,10 @@ export default function WorkshopContact() {
               </div>
 
               <div>
-                <label htmlFor="role" className="block text-sm font-medium mb-2">
+                <label
+                  htmlFor="role"
+                  className="block text-sm font-medium mb-2"
+                >
                   {t.workshop.contactForm.role} *
                 </label>
                 <input
@@ -185,7 +204,10 @@ export default function WorkshopContact() {
             {/* Workshop Details */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
-                <label htmlFor="teamSize" className="block text-sm font-medium mb-2">
+                <label
+                  htmlFor="teamSize"
+                  className="block text-sm font-medium mb-2"
+                >
                   {t.workshop.contactForm.teamSize} *
                 </label>
                 <select
@@ -196,16 +218,29 @@ export default function WorkshopContact() {
                   required
                   className="w-full px-3 py-2 border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-primary bg-background"
                 >
-                  <option value="">{t.workshop.contactForm.selectTeamSize}</option>
-                  <option value="5-10">{t.workshop.contactForm.teamSizeOptions.small}</option>
-                  <option value="10-20">{t.workshop.contactForm.teamSizeOptions.medium}</option>
-                  <option value="20-50">{t.workshop.contactForm.teamSizeOptions.large}</option>
-                  <option value="50+">{t.workshop.contactForm.teamSizeOptions.xlarge}</option>
+                  <option value="">
+                    {t.workshop.contactForm.selectTeamSize}
+                  </option>
+                  <option value="5-10">
+                    {t.workshop.contactForm.teamSizeOptions.small}
+                  </option>
+                  <option value="10-20">
+                    {t.workshop.contactForm.teamSizeOptions.medium}
+                  </option>
+                  <option value="20-50">
+                    {t.workshop.contactForm.teamSizeOptions.large}
+                  </option>
+                  <option value="50+">
+                    {t.workshop.contactForm.teamSizeOptions.xlarge}
+                  </option>
                 </select>
               </div>
 
               <div>
-                <label htmlFor="workshopType" className="block text-sm font-medium mb-2">
+                <label
+                  htmlFor="workshopType"
+                  className="block text-sm font-medium mb-2"
+                >
                   {t.workshop.contactForm.workshopType} *
                 </label>
                 <select
@@ -216,18 +251,31 @@ export default function WorkshopContact() {
                   required
                   className="w-full px-3 py-2 border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-primary bg-background"
                 >
-                  <option value="">{t.workshop.contactForm.selectFormat}</option>
-                  <option value="half-day">{t.workshop.contactForm.formatOptions.halfDay}</option>
-                  <option value="full-day">{t.workshop.contactForm.formatOptions.fullDay}</option>
-                  <option value="multi-day">{t.workshop.contactForm.formatOptions.multiDay}</option>
-                  <option value="custom">{t.workshop.contactForm.formatOptions.custom}</option>
+                  <option value="">
+                    {t.workshop.contactForm.selectFormat}
+                  </option>
+                  <option value="half-day">
+                    {t.workshop.contactForm.formatOptions.halfDay}
+                  </option>
+                  <option value="full-day">
+                    {t.workshop.contactForm.formatOptions.fullDay}
+                  </option>
+                  <option value="multi-day">
+                    {t.workshop.contactForm.formatOptions.multiDay}
+                  </option>
+                  <option value="custom">
+                    {t.workshop.contactForm.formatOptions.custom}
+                  </option>
                 </select>
               </div>
             </div>
 
             {/* Timeline */}
             <div>
-              <label htmlFor="timeline" className="block text-sm font-medium mb-2">
+              <label
+                htmlFor="timeline"
+                className="block text-sm font-medium mb-2"
+              >
                 {t.workshop.contactForm.timeline}
               </label>
               <select
@@ -237,18 +285,33 @@ export default function WorkshopContact() {
                 onChange={handleChange}
                 className="w-full px-3 py-2 border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-primary bg-background"
               >
-                <option value="">{t.workshop.contactForm.selectTimeline}</option>
-                <option value="asap">{t.workshop.contactForm.timelineOptions.asap}</option>
-                <option value="1-month">{t.workshop.contactForm.timelineOptions.oneMonth}</option>
-                <option value="2-3-months">{t.workshop.contactForm.timelineOptions.twoThreeMonths}</option>
-                <option value="6-months">{t.workshop.contactForm.timelineOptions.sixMonths}</option>
-                <option value="flexible">{t.workshop.contactForm.timelineOptions.flexible}</option>
+                <option value="">
+                  {t.workshop.contactForm.selectTimeline}
+                </option>
+                <option value="asap">
+                  {t.workshop.contactForm.timelineOptions.asap}
+                </option>
+                <option value="1-month">
+                  {t.workshop.contactForm.timelineOptions.oneMonth}
+                </option>
+                <option value="2-3-months">
+                  {t.workshop.contactForm.timelineOptions.twoThreeMonths}
+                </option>
+                <option value="6-months">
+                  {t.workshop.contactForm.timelineOptions.sixMonths}
+                </option>
+                <option value="flexible">
+                  {t.workshop.contactForm.timelineOptions.flexible}
+                </option>
               </select>
             </div>
 
             {/* Message */}
             <div>
-              <label htmlFor="message" className="block text-sm font-medium mb-2">
+              <label
+                htmlFor="message"
+                className="block text-sm font-medium mb-2"
+              >
                 {t.workshop.contactForm.message}
               </label>
               <textarea
@@ -267,17 +330,24 @@ export default function WorkshopContact() {
               type="submit"
               size="lg"
               disabled={isSubmitting}
-              className="w-full bg-primary hover:bg-primary/90 text-white dark:text-black"
+              className="w-full bg-primary hover:bg-primary/90 text-white dark:text-black text-sm sm:text-base px-3 py-2"
             >
               {isSubmitting ? (
                 <>
-                  <Icon icon={Clock} className="h-4 w-4 mr-2 animate-spin" />
-                  {t.workshop.contactForm.submittingButton}
+                  <Icon
+                    icon={Clock}
+                    className="h-4 w-4 mr-1 sm:mr-2 animate-spin"
+                  />
+                  <span className="text-sm sm:text-base">
+                    {t.workshop.contactForm.submittingButton}
+                  </span>
                 </>
               ) : (
                 <>
-                  <Icon icon={Send} className="h-4 w-4 mr-2" />
-                  {t.workshop.contactForm.submitButton}
+                  <Icon icon={Send} className="h-4 w-4 mr-1 sm:mr-2" />
+                  <span className="text-sm sm:text-base">
+                    {t.workshop.contactForm.submitButton}
+                  </span>
                 </>
               )}
             </Button>
@@ -285,12 +355,26 @@ export default function WorkshopContact() {
 
           {/* Additional Info */}
           <div className="mt-8 p-4 bg-muted/50 rounded-lg">
-            <h4 className="font-semibold mb-2">{t.workshop.contactForm.whatNext}</h4>
-            <ul className="text-sm text-muted-foreground space-y-1">
-              <li>• <strong>{t.workshop.contactForm.nextSteps.contact}</strong></li>
-              <li>• <strong>{t.workshop.contactForm.nextSteps.meeting}</strong></li>
-              <li>• <strong>{t.workshop.contactForm.nextSteps.proposal}</strong></li>
-              <li>• <strong>{t.workshop.contactForm.nextSteps.scheduling}</strong></li>
+            <h4 className="font-semibold mb-2">
+              {t.workshop.contactForm.whatNext}
+            </h4>
+            <ul className="text-sm text-muted-foreground space-y-1 list-none">
+              <li className="flex">
+                <span className="mr-2">•</span>
+                <strong>{t.workshop.contactForm.nextSteps.contact}</strong>
+              </li>
+              <li className="flex">
+                <span className="mr-2">•</span>
+                <strong>{t.workshop.contactForm.nextSteps.meeting}</strong>
+              </li>
+              <li className="flex">
+                <span className="mr-2">•</span>
+                <strong>{t.workshop.contactForm.nextSteps.proposal}</strong>
+              </li>
+              <li className="flex">
+                <span className="mr-2">•</span>
+                <strong>{t.workshop.contactForm.nextSteps.scheduling}</strong>
+              </li>
             </ul>
           </div>
         </CardContent>
