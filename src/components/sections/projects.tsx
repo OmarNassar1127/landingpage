@@ -139,14 +139,14 @@ export default function Projects() {
   };
 
   return (
-    <section id="projects" className="py-24 bg-muted/30">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
+    <section id="projects" className="py-16 sm:py-20 md:py-24 bg-muted/30">
+      <div className="container mx-auto px-2 sm:px-4">
+        <div className="text-center mb-12 sm:mb-16">
           <motion.div
             initial={{ width: "0%" }}
             animate={{ width: "100%" }}
             transition={{ duration: 1, ease: "easeInOut" }}
-            className="h-px bg-primary/20 mb-8 mx-auto max-w-md"
+            className="h-px bg-primary/20 mb-6 sm:mb-8 mx-auto max-w-md"
           />
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -163,7 +163,7 @@ export default function Projects() {
                 }
               }
             }}
-            className="text-3xl md:text-4xl font-bold tracking-tight mb-4"
+            className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight mb-4 px-2 sm:px-0"
           >
             {t.projects.title}
           </motion.h2>
@@ -183,7 +183,7 @@ export default function Projects() {
                 }
               }
             }}
-            className="text-muted-foreground max-w-2xl mx-auto"
+            className="text-muted-foreground max-w-2xl mx-auto px-2 sm:px-0"
           >
             {t.projects.subtitle}
           </motion.p>
@@ -194,7 +194,7 @@ export default function Projects() {
           variants={containerVariants}
           initial="hidden"
           animate={controls}
-          className="grid grid-cols-1 md:grid-cols-2 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8"
         >
           {projects.map((project, index) => (
             <motion.div 

@@ -6,6 +6,7 @@ import DemoVideo from "@/components/sections/demo-video";
 import AutomationsShowcase from "@/components/sections/automations-showcase";
 import Projects from "@/components/sections/projects";
 import Services from "@/components/sections/services";
+import WorkshopSection from "@/components/sections/workshop-section";
 import About from "@/components/sections/about";
 import Testimonials from "@/components/sections/testimonials";
 import Contact from "@/components/sections/contact";
@@ -94,6 +95,7 @@ export default function Home() {
         <div id={siteConfig.sections.services.substring(1)}>
           <Services />
         </div>
+        <WorkshopSection />
         <div id={siteConfig.sections.projects.substring(1)}>
           <Projects />
         </div>

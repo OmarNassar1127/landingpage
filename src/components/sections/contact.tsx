@@ -171,7 +171,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-24 bg-muted/30 relative overflow-hidden">
+    <section id="contact" className="py-24 relative overflow-hidden">
       {/* Background decorative elements */}
       <motion.div 
         className="absolute -right-40 bottom-20 w-80 h-80 rounded-full bg-primary/5 dark:bg-primary/10 blur-3xl"
@@ -331,7 +331,8 @@ export default function Contact() {
                   </motion.p>
                   <Button 
                     onClick={() => setSubmitError(null)}
-                    className="mt-2"
+                    size="mobile"
+                    className="bg-primary hover:bg-primary/90 text-white dark:text-black shadow-lg hover:shadow-xl transition-all duration-300 mt-2"
                   >
                     {t.contact.retryButton}
                   </Button>
@@ -430,26 +431,25 @@ export default function Contact() {
                   <motion.div
                     variants={formControlVariants}
                     custom={3}
-                    whileHover={{ scale: 1.02 }}
-                    transition={{ duration: 0.2 }}
+                    className="flex justify-center"
                   >
                     <Button
                       type="submit"
-                      className="w-full md:w-auto"
-                      size="lg"
+                      size="mobile"
+                      className="bg-primary hover:bg-primary/90 text-white dark:text-black shadow-lg hover:shadow-xl transition-all duration-300"
                       isLoading={isSubmitting}
                     >
                       {isSubmitting ? t.contact.sending : (
-                        <span className="flex items-center">
+                        <span className="flex items-center gap-3">
                           {t.contact.send}
                           {!isSubmitting && (
                             <motion.span
-                              className="ml-2 inline-block"
+                              className="inline-block"
                               initial={{ x: 0 }}
                               whileHover={{ x: 3 }}
                               transition={{ duration: 0.2 }}
                             >
-                              <Send className="h-4 w-4" />
+                              <Send className="h-5 w-5" />
                             </motion.span>
                           )}
                         </span>
