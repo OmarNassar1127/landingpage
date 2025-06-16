@@ -5,26 +5,27 @@ import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { LanguageToggle } from "@/components/ui/language-toggle";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { scrollToSection, navigateFromPolicyPage } from "@/lib/scroll-utils";
+import { scrollToSection } from "@/lib/scroll-utils";
 import { motion } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import Link from "next/link";
+import { Menu, X, ArrowLeft } from "lucide-react";
 import { Icon } from "@/components/ui/icon";
 import { useLanguage } from "@/lib/i18n/language-context";
 
-export default function Navbar() {
-  const { t } = useLanguage();
+export default function WorkshopNavbar() {
+  const { language } = useLanguage();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
 
-  const navLinks = [
-    { name: t.nav.home, href: "#" },
-    { name: t.nav.services, href: "#services" },
-    { name: t.nav.projects, href: "#projects" },
-    { name: t.nav.about, href: "#about" },
-    { name: t.nav.testimonials, href: "#testimonials" },
-    { name: t.nav.bookMeeting, href: "#book-meeting" },
-    { name: t.nav.contact, href: "#contact" },
+  // Workshop-specific navigation links - short and punchy
+  const workshopNavLinks = [
+    { name: language === "en" ? "Benefits" : "Voordelen", href: "#workshop-benefits" },
+    { name: language === "en" ? "Program" : "Programma", href: "#workshop-curriculum" }, 
+    { name: language === "en" ? "Audience" : "Doelgroep", href: "#workshop-audience" },
+    { name: language === "en" ? "Formats" : "Formaten", href: "#workshop-formats" },
+    { name: language === "en" ? "Reviews" : "Reviews", href: "#workshop-testimonials" },
+    { name: language === "en" ? "Book" : "Boeken", href: "#workshop-cta" },
   ];
 
   useEffect(() => {
@@ -41,7 +42,7 @@ export default function Navbar() {
       }
       
       // Check each section
-      const sections = navLinks
+      const sections = workshopNavLinks
         .filter(link => link.href !== "#")
         .map(link => ({
           id: link.href.replace("#", ""),
@@ -65,18 +66,12 @@ export default function Navbar() {
     handleScroll();
     
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [navLinks]);
+  }, [workshopNavLinks]);
 
   const handleNavClick = (
     e: React.MouseEvent<HTMLAnchorElement>,
     href: string
   ) => {
-    // If it's an external link (starts with / but not #), don't prevent default
-    if (href.startsWith('/') && !href.startsWith('#')) {
-      if (mobileMenuOpen) setMobileMenuOpen(false);
-      return; // Let the default link behavior handle the navigation
-    }
-
     e.preventDefault();
 
     // Update active section
@@ -86,17 +81,11 @@ export default function Navbar() {
       setActiveSection(href.replace("#", ""));
     }
 
-    // Check if we're navigating from a policy page
-    const handledPolicyNavigation = navigateFromPolicyPage(href);
-
-    // If not handled as a policy navigation, do regular scrolling
-    if (!handledPolicyNavigation) {
-      if (href === "#") {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      } else {
-        const sectionId = href.replace("#", "");
-        scrollToSection(sectionId);
-      }
+    if (href === "#") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      const sectionId = href.replace("#", "");
+      scrollToSection(sectionId);
     }
 
     if (mobileMenuOpen) setMobileMenuOpen(false);
@@ -105,32 +94,38 @@ export default function Navbar() {
   return (
     <header
       className={cn(
-        "fixed top-0 z-50 w-full transition-all duration-300 overflow-x-hidden",
+        "fixed top-0 z-50 w-full transition-all duration-300",
         isScrolled
           ? "bg-background/80 backdrop-blur-md shadow-sm"
           : "bg-transparent"
       )}
     >
-      <div className="container mx-auto flex h-16 items-center justify-between px-2 sm:px-4">
+      <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-lg sm:text-xl md:text-2xl font-bold text-primary flex-shrink-0"
+          className="flex items-center space-x-4"
         >
-          <a
-            href="/"
-            onClick={(e) => handleNavClick(e, "#")}
-            className="text-lg sm:text-xl md:text-2xl font-bold tracking-tight bg-gradient-to-r from-purple-400 to-blue-400 text-transparent bg-clip-text hover:opacity-80 transition"
+          {/* Back to main site */}
+          <Link
+            href={language === "en" ? "/en" : "/"}
+            className="flex items-center space-x-2 text-sm text-muted-foreground hover:text-primary transition-colors"
           >
-            VIRELIO
-          </a>
+            <Icon icon={ArrowLeft} className="h-4 w-4" />
+            <span className="hidden sm:inline">Back to main site</span>
+          </Link>
+          
+          {/* Workshop title */}
+          <div className="text-xl font-bold tracking-tight bg-gradient-to-r from-purple-400 to-blue-400 text-transparent bg-clip-text">
+            VIRELIO - AI Workshop
+          </div>
         </motion.div>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-6">
           <ul className="flex space-x-6">
-            {navLinks.map((link) => (
+            {workshopNavLinks.map((link) => (
               <motion.li key={link.name} whileHover={{ y: -2 }}>
                 <a
                   href={link.href}
@@ -146,7 +141,7 @@ export default function Navbar() {
                   {(activeSection === link.href.replace("#", "") || (link.href === "#" && activeSection === "")) && (
                     <motion.div 
                       className="absolute -bottom-1 left-0 w-full h-0.5 bg-primary rounded-full"
-                      layoutId="activeNavIndicator"
+                      layoutId="activeWorkshopNavIndicator"
                       transition={{ type: "spring", stiffness: 350, damping: 30 }}
                     />
                   )}
@@ -161,19 +156,19 @@ export default function Navbar() {
         </nav>
 
         {/* Mobile Navigation */}
-        <div className="flex items-center md:hidden space-x-1">
+        <div className="flex items-center md:hidden space-x-2">
+          <LanguageToggle />
           <ThemeToggle />
           <Button
             variant="ghost"
             size="icon"
-            className="h-9 w-9"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
           >
             {mobileMenuOpen ? (
-              <Icon icon={X} className="h-5 w-5" />
+              <Icon icon={X} className="h-6 w-6" />
             ) : (
-              <Icon icon={Menu} className="h-5 w-5" />
+              <Icon icon={Menu} className="h-6 w-6" />
             )}
           </Button>
         </div>
@@ -185,35 +180,38 @@ export default function Navbar() {
           initial={{ opacity: 0, height: 0 }}
           animate={{ opacity: 1, height: "auto" }}
           exit={{ opacity: 0, height: 0 }}
-          transition={{ duration: 0.3, ease: "easeInOut" }}
-          className="md:hidden bg-background border-b overflow-hidden relative"
-          style={{ overflow: "hidden" }}
+          className="md:hidden bg-background border-b"
         >
-          <div className="overflow-y-auto overflow-x-hidden max-h-[calc(100vh-4rem)]">
-            <nav className="container mx-auto py-4 px-2 sm:px-4">
-              <ul className="flex flex-col space-y-2">
-                {navLinks.map((link) => (
-                  <li key={link.name}>
-                    <a
-                      href={link.href}
-                      className={cn(
-                        "block px-4 py-3 text-sm font-medium transition-all hover:bg-accent rounded-lg relative tracking-tight min-h-[44px] flex items-center w-full",
-                        (activeSection === link.href.replace("#", "") || (link.href === "#" && activeSection === "")) 
-                          ? "text-primary font-semibold bg-accent" 
-                          : ""
-                      )}
-                      onClick={(e) => handleNavClick(e, link.href)}
-                    >
-                      <span className="truncate">{link.name}</span>
-                    </a>
-                  </li>
-                ))}
-              </ul>
-              <div className="flex items-center justify-center pt-4 border-t mt-4">
-                <LanguageToggle />
-              </div>
-            </nav>
-          </div>
+          <nav className="container mx-auto py-4">
+            <ul className="flex flex-col space-y-4">
+              <li>
+                <Link
+                  href={language === "en" ? "/en" : "/"}
+                  className="flex items-center space-x-2 px-4 py-2 text-sm font-medium transition-all hover:bg-accent rounded-lg"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  <Icon icon={ArrowLeft} className="h-4 w-4" />
+                  <span>Back to main site</span>
+                </Link>
+              </li>
+              {workshopNavLinks.map((link) => (
+                <li key={link.name}>
+                  <a
+                    href={link.href}
+                    className={cn(
+                      "block px-4 py-2 text-sm font-medium transition-all hover:bg-accent rounded-lg relative tracking-tight",
+                      (activeSection === link.href.replace("#", "") || (link.href === "#" && activeSection === "")) 
+                        ? "text-primary font-semibold bg-accent" 
+                        : ""
+                    )}
+                    onClick={(e) => handleNavClick(e, link.href)}
+                  >
+                    {link.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
         </motion.div>
       )}
     </header>

@@ -93,12 +93,12 @@ export default function CompanySlider() {
     <section 
       id="trusted-partners"
       ref={ref} 
-      className="py-16 relative"
+      className="py-12 sm:py-16 relative"
     >
       {/* Background gradient and blur effect */}
       <div className="absolute inset-0 bg-gradient-to-r from-background via-background/70 to-background z-[-1]" />
       <div className="absolute inset-0 border-y border-primary/10 z-[-1]" />
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-2 sm:px-4">
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -108,8 +108,8 @@ export default function CompanySlider() {
           <motion.div variants={itemVariants} className="text-center relative z-10">
             <div className="absolute left-1/2 -top-10 w-1 h-24 bg-gradient-to-b from-transparent via-primary/50 to-transparent transform -translate-x-1/2 z-0" />
             <div className="flex flex-col items-center gap-3 relative z-20">
-              <h2 className="text-3xl md:text-4xl font-bold drop-shadow-md px-6 py-2 bg-background/80 inline-block rounded-lg">{t.companies.title}</h2>
-              <p className="text-muted-foreground/90 bg-background/80 inline-block px-6 py-3 rounded-lg shadow-sm border border-primary/10">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold drop-shadow-md px-4 sm:px-6 py-2 bg-background/80 inline-block rounded-lg">{t.companies.title}</h2>
+              <p className="text-sm sm:text-base text-muted-foreground/90 bg-background/80 inline-block px-4 sm:px-6 py-2 sm:py-3 rounded-lg shadow-sm border border-primary/10">
                 {t.companies.subtitle}
               </p>
             </div>
@@ -121,11 +121,11 @@ export default function CompanySlider() {
             className="relative overflow-hidden my-8"
           >
             {/* Fade gradient effects on sides - minimal blur */}
-            <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-background to-transparent z-0" />
-            <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-background to-transparent z-0" />
+            <div className="absolute left-0 top-0 bottom-0 w-12 sm:w-24 bg-gradient-to-r from-background to-transparent z-0" />
+            <div className="absolute right-0 top-0 bottom-0 w-12 sm:w-24 bg-gradient-to-l from-background to-transparent z-0" />
             {/* First Slider (Left to Right) */}
             <motion.div
-              className="flex space-x-12 mb-10 will-change-transform relative z-10"
+              className="flex space-x-6 sm:space-x-12 mb-8 sm:mb-10 will-change-transform relative z-10"
               animate={{
                 x: [0, -1500],
               }}
@@ -142,16 +142,16 @@ export default function CompanySlider() {
               {[...shuffledCompanies, ...shuffledCompanies].map((company, index) => (
                 <div 
                   key={`${company.id}-${index}`} 
-                  className="flex items-center justify-center min-w-[150px] h-16 z-10"
+                  className="flex items-center justify-center min-w-[120px] sm:min-w-[150px] h-12 sm:h-16 z-10"
                 >
-                  <div className="flex items-center justify-center h-full px-4 py-2 bg-white dark:bg-white rounded-lg border border-gray-200 shadow hover:border-primary/30 transition-all duration-300 hover:scale-105 hover:shadow-md">
-                    <div className="relative h-10 w-28">
+                  <div className="flex items-center justify-center h-full px-3 sm:px-4 py-2 bg-white dark:bg-white rounded-lg border border-gray-200 shadow hover:border-primary/30 transition-all duration-300 hover:scale-105 hover:shadow-md">
+                    <div className="relative h-8 w-20 sm:h-10 sm:w-28">
                       <Image 
                         src={company.logo}
                         alt={`${company.name} logo`}
                         fill
                         className="object-contain"
-                        sizes="(max-width: 768px) 60px, 112px"
+                        sizes="(max-width: 640px) 80px, (max-width: 768px) 60px, 112px"
                       />
                     </div>
                   </div>
@@ -161,7 +161,7 @@ export default function CompanySlider() {
             
             {/* Second Slider (Right to Left) - with shuffled array again for more variety */}
             <motion.div
-              className="flex space-x-12 will-change-transform relative z-10"
+              className="flex space-x-6 sm:space-x-12 will-change-transform relative z-10"
               animate={{
                 x: [-1500, 0],
               }}
@@ -178,16 +178,16 @@ export default function CompanySlider() {
               {[...shuffledCompaniesReverse, ...shuffledCompaniesReverse].map((company, index) => (
                 <div 
                   key={`rev-${company.id}-${index}`} 
-                  className="flex items-center justify-center min-w-[150px] h-16 z-10"
+                  className="flex items-center justify-center min-w-[120px] sm:min-w-[150px] h-12 sm:h-16 z-10"
                 >
-                  <div className="flex items-center justify-center h-full px-4 py-2 bg-white dark:bg-white rounded-lg border border-gray-200 shadow hover:border-primary/30 transition-all duration-300 hover:scale-105 hover:shadow-md">
-                    <div className="relative h-10 w-28">
+                  <div className="flex items-center justify-center h-full px-3 sm:px-4 py-2 bg-white dark:bg-white rounded-lg border border-gray-200 shadow hover:border-primary/30 transition-all duration-300 hover:scale-105 hover:shadow-md">
+                    <div className="relative h-8 w-20 sm:h-10 sm:w-28">
                       <Image 
                         src={company.logo}
                         alt={`${company.name} logo`}
                         fill
                         className="object-contain"
-                        sizes="(max-width: 768px) 60px, 112px"
+                        sizes="(max-width: 640px) 80px, (max-width: 768px) 60px, 112px"
                       />
                     </div>
                   </div>

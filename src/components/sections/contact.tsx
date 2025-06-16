@@ -171,7 +171,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-24 bg-muted/30 relative overflow-hidden">
+    <section id="contact" className="py-24 relative overflow-hidden">
       {/* Background decorative elements */}
       <motion.div 
         className="absolute -right-40 bottom-20 w-80 h-80 rounded-full bg-primary/5 dark:bg-primary/10 blur-3xl"

@@ -124,7 +124,7 @@ export default function DemoVideo() {
     <section
       id="demo"
       ref={ref}
-      className="py-20 bg-gradient-to-b from-background/40 to-background/50 relative overflow-hidden"
+      className="py-12 sm:py-16 md:py-20 bg-gradient-to-b from-background/40 to-background/50 relative overflow-hidden"
       aria-labelledby="demo-title"
     >
       {/* Add Schema.org structured data */}
@@ -133,7 +133,7 @@ export default function DemoVideo() {
       {/* Background pattern for visual interest */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#8882_1px,transparent_1px),linear-gradient(to_bottom,#8882_1px,transparent_1px)] bg-[size:3rem_3rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)] opacity-30" />
       
-      <div className="container px-4 mx-auto" style={{ maxWidth: "1200px" }}>
+      <div className="container px-2 sm:px-4 mx-auto" style={{ maxWidth: "1200px" }}>
         {/* Hidden description for screen readers and SEO */}
         <div className="sr-only">
           <h2>AI Agent Demo Video</h2>
@@ -143,13 +143,13 @@ export default function DemoVideo() {
           variants={containerVariants}
           initial="hidden"
           animate={controls}
-          className="flex flex-col items-center space-y-10"
+          className="flex flex-col items-center space-y-8 sm:space-y-10"
         >
-          <motion.div variants={itemVariants} className="text-center max-w-3xl mx-auto">
-            <h2 id="demo-title" className="text-3xl md:text-4xl font-bold mb-4">
+          <motion.div variants={itemVariants} className="text-center max-w-3xl mx-auto px-2 sm:px-0">
+            <h2 id="demo-title" className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">
               {t.demoVideo.title}
             </h2>
-            <p className="text-muted-foreground text-lg">
+            <p className="text-muted-foreground text-base sm:text-lg">
               {t.demoVideo.subtitle}
             </p>
           </motion.div>
@@ -173,9 +173,9 @@ export default function DemoVideo() {
               />
               
               {/* Controls Overlay */}
-              <div className="absolute bottom-4 left-0 right-0 flex justify-center opacity-70 group-hover:opacity-100 transition-opacity">
-                <div className="px-4 py-3 bg-background/80 backdrop-blur-sm rounded-full shadow-lg flex items-center gap-3">
-                  <span className="text-xs font-medium">AI Agent Demo</span>
+              <div className="absolute bottom-2 sm:bottom-4 left-0 right-0 flex justify-center opacity-70 group-hover:opacity-100 transition-opacity">
+                <div className="px-3 sm:px-4 py-2 sm:py-3 bg-background/80 backdrop-blur-sm rounded-full shadow-lg flex items-center gap-3">
+                  <span className="text-xs sm:text-sm font-medium">AI Agent Demo</span>
                 </div>
               </div>
               
@@ -185,14 +185,14 @@ export default function DemoVideo() {
                   e.stopPropagation();
                   handleAudioToggle();
                 }}
-                className="absolute top-4 right-4 p-3 rounded-full bg-black/60 hover:bg-black/80 transition-all duration-200 backdrop-blur-sm border border-white/20 group-hover:opacity-100 z-10 touch-manipulation"
+                className="absolute top-2 sm:top-4 right-2 sm:right-4 p-2 sm:p-3 rounded-full bg-black/60 hover:bg-black/80 transition-all duration-200 backdrop-blur-sm border border-white/20 group-hover:opacity-100 z-10 touch-manipulation"
                 aria-label={isMuted ? "Unmute video" : "Mute video"}
-                style={{ minWidth: '48px', minHeight: '48px' }} // Ensures touch-friendly size
+                style={{ minWidth: '44px', minHeight: '44px' }} // Ensures touch-friendly size
               >
                 {isMuted ? (
-                  <VolumeX className="w-6 h-6 text-white" />
+                  <VolumeX className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                 ) : (
-                  <Volume2 className="w-6 h-6 text-white" />
+                  <Volume2 className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                 )}
               </button>
 

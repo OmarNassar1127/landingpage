@@ -13,6 +13,7 @@ export const translations = {
       home: "Home",
       projects: "Projecten",
       services: "Diensten",
+      workshop: "Workshop",
       about: "Over Ons",
       testimonials: "Aanbevelingen",
       contact: "Contact",
@@ -197,6 +198,266 @@ export const translations = {
       toggle: "Taal",
     },
 
+    // Workshop section
+    workshop: {
+      title: "AI Workshop voor Uw Organisatie",
+      subtitle: "Transformeer uw bedrijf met praktische AI-kennis en -implementatie",
+      heroDescription: "Ontsluit de kracht van AI voor uw team. Onze intensieve workshops geven u de kennis, tools en strategieën om AI succesvol te implementeren in uw organisatie.",
+      ctaButton: "Plan Uw Workshop",
+      learnMoreButton: "Meer Informatie",
+      
+      // Benefits section
+      benefits: {
+        sectionTitle: "Waarom Onze AI Workshop?",
+        sectionSubtitle: "Praktische, resultaatgerichte training die direct toepasbaar is",
+        practical: {
+          title: "Praktische Toepassing",
+          description: "Geen theorie - alleen werkende oplossingen die u direct kunt implementeren in uw dagelijkse processen"
+        },
+        customized: {
+          title: "Op Maat Gemaakt",
+          description: "Elke workshop wordt aangepast aan uw specifieke branche, uitdagingen en doelstellingen"
+        },
+        handson: {
+          title: "Hands-on Ervaring",
+          description: "Werk met echte AI-tools en bouw tijdens de workshop werkende prototypes voor uw organisatie"
+        },
+        expert: {
+          title: "Expert Begeleiding",
+          description: "Leer van professionals met 5+ jaar ervaring in AI-implementatie bij grote bedrijven"
+        }
+      },
+
+      // What you'll learn section  
+      curriculum: {
+        sectionTitle: "Wat U Leert",
+        sectionSubtitle: "Een complete roadmap voor AI-adoptie in uw organisatie",
+        
+        module1: {
+          title: "AI Fundamenten & Strategie",
+          topics: [
+            "AI-mogelijkheden voor uw specifieke branche",
+            "ROI-berekening voor AI-investeringen", 
+            "AI-strategie ontwikkelen",
+            "Risico's en ethische overwegingen"
+          ]
+        },
+        module2: {
+          title: "Praktische AI-Tools",
+          topics: [
+            "ChatGPT, Claude & andere AI-assistenten optimaal gebruiken",
+            "Workflow automatisering met AI",
+            "Document- en dataverwerking automatiseren",
+            "AI voor klantenservice en support"
+          ]
+        },
+        module3: {
+          title: "Custom AI-Oplossingen",
+          topics: [
+            "AI-chatbots voor uw website bouwen",
+            "Interne AI-assistenten ontwikkelen",
+            "AI integreren met bestaande systemen",
+            "Data-analyse en rapportage automatiseren"
+          ]
+        },
+        module4: {
+          title: "Implementatie & Schaalbaarheid",
+          topics: [
+            "Change management voor AI-adoptie",
+            "Team training en onboarding",
+            "Governance en compliance",
+            "Roadmap voor verdere AI-uitbreiding"
+          ]
+        }
+      },
+
+      // Target audience
+      audience: {
+        sectionTitle: "Voor Wie?",
+        sectionSubtitle: "Deze workshop is ontworpen voor forward-thinking organisaties",
+        
+        executives: {
+          title: "C-suite & Management",
+          description: "Strategische AI-visie ontwikkelen en implementatieplannen maken"
+        },
+        teams: {
+          title: "Teams & Afdelingen", 
+          description: "Praktische AI-skills voor dagelijkse werkprocessen en productiviteit"
+        },
+        companies: {
+          title: "Bedrijven & Organisaties",
+          description: "Van startups tot corporates - elke organisatie die concurrentievoordeel wil behalen"
+        },
+        industries: {
+          title: "Alle Sectoren",
+          description: "Finance, Healthcare, E-commerce, Consulting, Manufacturing en meer"
+        }
+      },
+
+      // Workshop formats
+      formats: {
+        sectionTitle: "Workshop Formaten",
+        sectionSubtitle: "Flexibele oplossingen die passen bij uw organisatie",
+        
+        halfDay: {
+          title: "Half-dag Introductie",
+          duration: "4 uur",
+          participants: "Tot 20 deelnemers",
+          description: "Perfect voor een eerste kennismaking met AI-mogelijkheden",
+          includes: [
+            "AI-overview en mogelijkheden",
+            "Quick wins identificeren",
+            "Demo van praktische tools",
+            "Q&A sessie"
+          ]
+        },
+        fullDay: {
+          title: "Volledige Dag Intensief",
+          duration: "8 uur",
+          participants: "Tot 15 deelnemers", 
+          description: "Diepgaande training met praktische implementatie",
+          includes: [
+            "Complete curriculum doorlopen",
+            "Hands-on workshops", 
+            "Custom AI-prototype bouwen",
+            "Implementatieplan opstellen"
+          ]
+        },
+        multiDay: {
+          title: "Meerdaagse Programma",
+          duration: "2-5 dagen",
+          participants: "Tot 12 deelnemers",
+          description: "Complete AI-transformatie voor uw organisatie",
+          includes: [
+            "Uitgebreide strategiesessies",
+            "Team-specifieke training",
+            "Custom AI-oplossingen bouwen",
+            "3 maanden follow-up support"
+          ]
+        }
+      },
+
+      // Testimonials specific to workshops
+      testimonials: {
+        sectionTitle: "Wat Deelnemers Zeggen",
+        sectionSubtitle: "Ervaring van organisaties die onze workshops hebben gevolgd",
+        
+        testimonial1: {
+          text: "Deze workshop heeft ons team volledig getransformeerd. We hebben binnen een week drie AI-tools geïmplementeerd die ons dagelijks 4+ uur besparen.",
+          author: "Sarah van Dijk",
+          role: "Operations Director, TechStart Amsterdam"
+        },
+        testimonial2: {
+          text: "Eindelijk AI-training die niet alleen theoretisch is. We gingen naar huis met werkende oplossingen die we direct konden gebruiken.",
+          author: "Mark Hendriks", 
+          role: "IT Manager, Rotterdam Finance Group"
+        },
+        testimonial3: {
+          text: "De investment in deze workshop heeft zich binnen 2 maanden terugverdiend door de efficiencywinst die we hebben behaald.",
+          author: "Lisa Chen",
+          role: "CEO, Digital Solutions BV"
+        }
+      },
+
+      // CTA section
+      cta: {
+        sectionTitle: "Klaar om te Starten?",
+        sectionSubtitle: "Transformeer uw organisatie met praktische AI-kennis",
+        description: "Neem contact met ons op voor een vrijblijvend gesprek over hoe onze AI-workshop uw team kan helpen groeien.",
+        
+        benefits: [
+          "Gratis intake-gesprek",
+          "Workshop volledig op maat",
+          "Direct toepasbare resultaten",
+          "3 maanden nazorg inbegrepen"
+        ],
+        
+        primaryButton: "Plan Gratis Kennismakingsgesprek",
+        secondaryButton: "Download Workshop Brochure"
+      },
+
+      // Contact tabs
+      tabs: {
+        contactForm: "Contactformulier",
+        quickSchedule: "Snel Inplannen"
+      },
+
+      // Calendly section
+      calendly: {
+        title: "Plan Uw Workshop Consultatie",
+        subtitle: "Boek een 30-minuten gesprek om uw AI workshop behoeften te bespreken"
+      },
+
+      // Contact form labels
+      contactForm: {
+        title: "Vraag Uw Workshop Voorstel Aan",
+        subtitle: "Vertel ons over uw team en doelstellingen, en we nemen binnen 24 uur contact met u op om uw vereisten te bespreken en uw eerste afspraak in te plannen.",
+        formTitle: "Workshop Informatieverzoek",
+        
+        // Form fields
+        name: "Uw Naam",
+        email: "E-mailadres",
+        company: "Bedrijf/Organisatie",
+        role: "Uw Functie",
+        teamSize: "Verwacht Aantal Deelnemers",
+        workshopType: "Gewenst Workshop Format",
+        timeline: "Gewenste Planning",
+        message: "Specifieke Wensen & Doelen",
+        
+        // Placeholders
+        namePlaceholder: "Jan Jansen",
+        emailPlaceholder: "jan@bedrijf.nl",
+        companyPlaceholder: "Acme BV",
+        rolePlaceholder: "CTO, Manager, etc.",
+        messagePlaceholder: "Vertel ons over uw specifieke AI-uitdagingen, doelen en wat u hoopt te bereiken met de workshop...",
+        
+        // Select options
+        selectTeamSize: "Selecteer teamgrootte",
+        selectFormat: "Selecteer format",
+        selectTimeline: "Selecteer planning",
+        
+        teamSizeOptions: {
+          small: "5-10 personen",
+          medium: "10-20 personen", 
+          large: "20-50 personen",
+          xlarge: "50+ personen"
+        },
+        
+        formatOptions: {
+          halfDay: "Halve dag Introductie (4 uur)",
+          fullDay: "Volledige Dag Intensief (8 uur)",
+          multiDay: "Meerdaagse Programma (2-5 dagen)",
+          custom: "Op Maat Format"
+        },
+        
+        timelineOptions: {
+          asap: "Zo snel mogelijk",
+          oneMonth: "Binnen 1 maand",
+          twoThreeMonths: "2-3 maanden",
+          sixMonths: "Binnen 6 maanden",
+          flexible: "Flexibel"
+        },
+        
+        // Buttons
+        submitButton: "Workshop Voorstel Aanvragen",
+        submittingButton: "Verzoek Versturen...",
+        
+        // Success message
+        successTitle: "Workshop Aanvraag Ontvangen!",
+        successMessage: "Bedankt voor uw interesse in onze AI workshop. We nemen binnen 24 uur contact met u op om uw vereisten te bespreken en uw eerste afspraak of consultatie in te plannen.",
+        submitAnother: "Nog Een Aanvraag Indienen",
+        
+        // What happens next
+        whatNext: "Wat gebeurt er nu?",
+        nextSteps: {
+          contact: "Binnen 24 uur: We nemen contact met u op om uw behoeften te bespreken",
+          meeting: "Eerste afspraak: We begrijpen uw doelen en teamvereisten",
+          proposal: "Op maat voorstel: U ontvangt een aangepast workshop plan", 
+          scheduling: "Workshop planning: Data bevestigd op basis van uw beschikbaarheid"
+        }
+      }
+    },
+
     // Book a Meeting section
     bookMeeting: {
       title: "Afspraak Maken",
@@ -267,6 +528,35 @@ export const translations = {
         feature3: "Antwoorden in gewone taal – binnen 3 seconden",
       },
     },
+
+    // Workshop Section (main page)
+    workshopSection: {
+      badge: "Workshop",
+      title: "AI Workshop voor Jouw Team",
+      subtitle: "Transformeer je team met hands-on AI training die direct toepasbaar is in jullie dagelijkse werk.",
+      ctaButton: "Bekijk Workshop Details",
+      features: {
+        handson: {
+          title: "Hands-on Leren",
+          description: "Praktische oefeningen en echte use cases uit jouw branche"
+        },
+        tailored: {
+          title: "Op Maat Gemaakt",
+          description: "Workshop aangepast aan jullie specifieke uitdagingen en doelen"
+        },
+        flexible: {
+          title: "Flexibele Formats",
+          description: "Van halve dag tot meerdaagse programma's, op locatie of online"
+        }
+      },
+      card: {
+        title: "Enterprise AI Training",
+        subtitle: "Voor teams die voorop willen lopen",
+        practical: "Praktisch",
+        interactive: "Interactief",
+        quote: "Van theorie naar toepassing in één dag"
+      }
+    },
   },
 
   en: {
@@ -283,6 +573,7 @@ export const translations = {
       home: "Home",
       projects: "Projects",
       services: "Services",
+      workshop: "Workshop",
       about: "About",
       testimonials: "Testimonials",
       contact: "Contact",
@@ -468,6 +759,266 @@ export const translations = {
       toggle: "Language",
     },
 
+    // Workshop section
+    workshop: {
+      title: "AI Workshop for Your Organization",
+      subtitle: "Transform your business with practical AI knowledge and implementation",
+      heroDescription: "Unlock the power of AI for your team. Our intensive workshops provide you with the knowledge, tools, and strategies to successfully implement AI in your organization.",
+      ctaButton: "Schedule Your Workshop",
+      learnMoreButton: "Learn More",
+      
+      // Benefits section
+      benefits: {
+        sectionTitle: "Why Our AI Workshop?",
+        sectionSubtitle: "Practical, results-oriented training that's immediately applicable",
+        practical: {
+          title: "Practical Application",
+          description: "No theory - only working solutions you can implement directly in your daily processes"
+        },
+        customized: {
+          title: "Customized",
+          description: "Every workshop is tailored to your specific industry, challenges, and objectives"
+        },
+        handson: {
+          title: "Hands-on Experience",
+          description: "Work with real AI tools and build working prototypes for your organization during the workshop"
+        },
+        expert: {
+          title: "Expert Guidance",
+          description: "Learn from professionals with 5+ years of experience in AI implementation at major companies"
+        }
+      },
+
+      // What you'll learn section  
+      curriculum: {
+        sectionTitle: "What You'll Learn",
+        sectionSubtitle: "A complete roadmap for AI adoption in your organization",
+        
+        module1: {
+          title: "AI Fundamentals & Strategy",
+          topics: [
+            "AI capabilities for your specific industry",
+            "ROI calculation for AI investments", 
+            "Developing AI strategy",
+            "Risks and ethical considerations"
+          ]
+        },
+        module2: {
+          title: "Practical AI Tools",
+          topics: [
+            "Optimally using ChatGPT, Claude & other AI assistants",
+            "Workflow automation with AI",
+            "Automating document and data processing",
+            "AI for customer service and support"
+          ]
+        },
+        module3: {
+          title: "Custom AI Solutions",
+          topics: [
+            "Building AI chatbots for your website",
+            "Developing internal AI assistants",
+            "Integrating AI with existing systems",
+            "Automating data analysis and reporting"
+          ]
+        },
+        module4: {
+          title: "Implementation & Scalability",
+          topics: [
+            "Change management for AI adoption",
+            "Team training and onboarding",
+            "Governance and compliance",
+            "Roadmap for further AI expansion"
+          ]
+        }
+      },
+
+      // Target audience
+      audience: {
+        sectionTitle: "Who Is This For?",
+        sectionSubtitle: "This workshop is designed for forward-thinking organizations",
+        
+        executives: {
+          title: "C-suite & Management",
+          description: "Develop strategic AI vision and create implementation plans"
+        },
+        teams: {
+          title: "Teams & Departments", 
+          description: "Practical AI skills for daily work processes and productivity"
+        },
+        companies: {
+          title: "Companies & Organizations",
+          description: "From startups to corporates - any organization wanting competitive advantage"
+        },
+        industries: {
+          title: "All Sectors",
+          description: "Finance, Healthcare, E-commerce, Consulting, Manufacturing and more"
+        }
+      },
+
+      // Workshop formats
+      formats: {
+        sectionTitle: "Workshop Formats",
+        sectionSubtitle: "Flexible solutions that fit your organization",
+        
+        halfDay: {
+          title: "Half-day Introduction",
+          duration: "4 hours",
+          participants: "Up to 20 participants",
+          description: "Perfect for a first introduction to AI possibilities",
+          includes: [
+            "AI overview and possibilities",
+            "Identify quick wins",
+            "Demo of practical tools",
+            "Q&A session"
+          ]
+        },
+        fullDay: {
+          title: "Full Day Intensive",
+          duration: "8 hours",
+          participants: "Up to 15 participants", 
+          description: "In-depth training with practical implementation",
+          includes: [
+            "Complete curriculum coverage",
+            "Hands-on workshops", 
+            "Build custom AI prototype",
+            "Create implementation plan"
+          ]
+        },
+        multiDay: {
+          title: "Multi-day Program",
+          duration: "2-5 days",
+          participants: "Up to 12 participants",
+          description: "Complete AI transformation for your organization",
+          includes: [
+            "Extended strategy sessions",
+            "Team-specific training",
+            "Build custom AI solutions",
+            "3 months follow-up support"
+          ]
+        }
+      },
+
+      // Testimonials specific to workshops
+      testimonials: {
+        sectionTitle: "What Participants Say",
+        sectionSubtitle: "Experience from organizations that attended our workshops",
+        
+        testimonial1: {
+          text: "This workshop completely transformed our team. We implemented three AI tools within a week that save us 4+ hours daily.",
+          author: "Sarah van Dijk",
+          role: "Operations Director, TechStart Amsterdam"
+        },
+        testimonial2: {
+          text: "Finally AI training that's not just theoretical. We went home with working solutions we could use immediately.",
+          author: "Mark Hendriks", 
+          role: "IT Manager, Rotterdam Finance Group"
+        },
+        testimonial3: {
+          text: "The investment in this workshop paid for itself within 2 months through the efficiency gains we achieved.",
+          author: "Lisa Chen",
+          role: "CEO, Digital Solutions BV"
+        }
+      },
+
+      // CTA section
+      cta: {
+        sectionTitle: "Ready to Get Started?",
+        sectionSubtitle: "Transform your organization with practical AI knowledge",
+        description: "Contact us for a no-obligation conversation about how our AI workshop can help your team grow.",
+        
+        benefits: [
+          "Free intake conversation",
+          "Workshop fully customized",
+          "Immediately applicable results",
+          "3 months aftercare included"
+        ],
+        
+        primaryButton: "Schedule Free Introduction Call",
+        secondaryButton: "Download Workshop Brochure"
+      },
+
+      // Contact tabs
+      tabs: {
+        contactForm: "Contact Form",
+        quickSchedule: "Quick Schedule"
+      },
+
+      // Calendly section
+      calendly: {
+        title: "Schedule Your Workshop Consultation",
+        subtitle: "Book a 30-minute call to discuss your AI workshop needs"
+      },
+
+      // Contact form labels
+      contactForm: {
+        title: "Request Your Custom Workshop Proposal",
+        subtitle: "Tell us about your team and objectives, and we'll contact you within 24 hours to discuss your requirements and schedule your first meeting.",
+        formTitle: "Workshop Information Request",
+        
+        // Form fields
+        name: "Your Name",
+        email: "Email Address",
+        company: "Company/Organization",
+        role: "Your Role",
+        teamSize: "Expected Participants",
+        workshopType: "Preferred Workshop Format",
+        timeline: "Preferred Timeline",
+        message: "Specific Requirements & Goals",
+        
+        // Placeholders
+        namePlaceholder: "John Doe",
+        emailPlaceholder: "john@company.com",
+        companyPlaceholder: "Acme Corp",
+        rolePlaceholder: "CTO, Manager, etc.",
+        messagePlaceholder: "Tell us about your specific AI challenges, goals, and what you hope to achieve with the workshop...",
+        
+        // Select options
+        selectTeamSize: "Select team size",
+        selectFormat: "Select format",
+        selectTimeline: "Select timeline",
+        
+        teamSizeOptions: {
+          small: "5-10 people",
+          medium: "10-20 people", 
+          large: "20-50 people",
+          xlarge: "50+ people"
+        },
+        
+        formatOptions: {
+          halfDay: "Half-day Introduction (4 hours)",
+          fullDay: "Full Day Intensive (8 hours)",
+          multiDay: "Multi-day Program (2-5 days)",
+          custom: "Custom Format"
+        },
+        
+        timelineOptions: {
+          asap: "As soon as possible",
+          oneMonth: "Within 1 month",
+          twoThreeMonths: "2-3 months",
+          sixMonths: "Within 6 months",
+          flexible: "Flexible"
+        },
+        
+        // Buttons
+        submitButton: "Request Workshop Proposal",
+        submittingButton: "Sending Request...",
+        
+        // Success message
+        successTitle: "Workshop Inquiry Received!",
+        successMessage: "Thank you for your interest in our AI workshop. We'll contact you within 24 hours to discuss your requirements and schedule your first meeting or consultation.",
+        submitAnother: "Submit Another Inquiry",
+        
+        // What happens next
+        whatNext: "What happens next?",
+        nextSteps: {
+          contact: "Within 24 hours: We'll contact you to discuss your needs",
+          meeting: "First meeting: We'll understand your goals and team requirements",
+          proposal: "Custom proposal: You'll receive a tailored workshop plan", 
+          scheduling: "Workshop scheduling: Dates confirmed based on your availability"
+        }
+      }
+    },
+
     // Book a Meeting section
     bookMeeting: {
       title: "Book a Meeting",
@@ -538,6 +1089,35 @@ export const translations = {
         feature2: "Request revenue, trends or team data via Slack or Teams",
         feature3: "Answers in plain language – within 3 seconds",
       },
+    },
+
+    // Workshop Section (main page)
+    workshopSection: {
+      badge: "Workshop",
+      title: "AI Workshop for Your Team",
+      subtitle: "Transform your team with hands-on AI training that's directly applicable to your daily work.",
+      ctaButton: "View Workshop Details",
+      features: {
+        handson: {
+          title: "Hands-on Learning",
+          description: "Practical exercises and real use cases from your industry"
+        },
+        tailored: {
+          title: "Tailored Content",
+          description: "Workshop adapted to your specific challenges and goals"
+        },
+        flexible: {
+          title: "Flexible Formats",
+          description: "From half-day to multi-day programs, on-site or online"
+        }
+      },
+      card: {
+        title: "Enterprise AI Training",
+        subtitle: "For teams that want to stay ahead",
+        practical: "Practical",
+        interactive: "Interactive",
+        quote: "From theory to application in one day"
+      }
     },
   },
 };

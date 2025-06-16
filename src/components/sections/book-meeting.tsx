@@ -58,7 +58,7 @@ export default function BookMeeting() {
   };
 
   return (
-    <section id="book-meeting" className="py-24 bg-muted/30 relative overflow-hidden">
+    <section id="book-meeting" className="py-24 relative overflow-hidden">
       {/* Calendly Script */}
       <Script
         id="calendly-script"
