@@ -194,34 +194,44 @@ export default function Navbar() {
               {/* Navigation Links */}
               <nav className="mb-8">
                 <ul className="flex flex-col space-y-2">
-                  {navLinks.map((link, index) => (
-                    <motion.li 
-                      key={link.name}
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.3, delay: index * 0.05 }}
-                    >
-                      <a
-                        href={link.href}
-                        className={cn(
-                          "flex items-center px-6 py-4 text-base font-medium transition-all hover:bg-primary/10 hover:text-primary rounded-2xl relative tracking-tight min-h-[56px] border border-transparent hover:border-primary/20 group",
-                          (activeSection === link.href.replace("#", "") || (link.href === "#" && activeSection === "")) 
-                            ? "text-primary font-semibold bg-primary/10 border-primary/30" 
-                            : "text-foreground hover:shadow-sm"
-                        )}
-                        onClick={(e) => handleNavClick(e, link.href)}
+                  {navLinks.map((link, index) => {
+                    const isActive = (activeSection === link.href.replace("#", "") || (link.href === "#" && activeSection === ""));
+                    return (
+                      <motion.li 
+                        key={`${link.href}-${index}`}
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.3, delay: index * 0.05 }}
                       >
-                        {(activeSection === link.href.replace("#", "") || (link.href === "#" && activeSection === "")) && (
-                          <motion.div 
-                            className="absolute left-3 top-1/2 -translate-y-1/2 w-1 h-6 bg-primary rounded-full"
-                            layoutId="activeMobileNavIndicator"
-                            transition={{ type: "spring", stiffness: 400, damping: 25 }}
-                          />
-                        )}
-                        <span className="truncate text-lg pl-2">{link.name}</span>
-                      </a>
-                    </motion.li>
-                  ))}
+                        <a
+                          href={link.href}
+                          className={cn(
+                            "flex items-center px-6 py-4 text-base font-medium transition-all hover:bg-primary/10 hover:text-primary rounded-2xl relative tracking-tight min-h-[56px] border border-transparent hover:border-primary/20 group",
+                            isActive
+                              ? "text-primary font-semibold bg-primary/10 border-primary/30" 
+                              : "text-foreground hover:shadow-sm"
+                          )}
+                          onClick={(e) => handleNavClick(e, link.href)}
+                        >
+                          {isActive && (
+                            <motion.div 
+                              className="absolute left-3 top-1/2 -translate-y-1/2 w-1 h-6 bg-primary rounded-full z-10"
+                              layoutId="activeMobileNavIndicator"
+                              initial={false}
+                              transition={{ 
+                                type: "spring", 
+                                stiffness: 500, 
+                                damping: 35,
+                                mass: 0.8,
+                                restDelta: 0.001
+                              }}
+                            />
+                          )}
+                          <span className="truncate text-lg pl-2 relative z-0">{link.name}</span>
+                        </a>
+                      </motion.li>
+                    );
+                  })}
                 </ul>
               </nav>
 
