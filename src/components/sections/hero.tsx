@@ -139,9 +139,12 @@ function HeroContent() {
             </Button>
           </motion.div>
 
-          {/* Scroll indicator */}
-          {isMounted && (
-            <div className="absolute bottom-8 sm:bottom-12 md:bottom-16 lg:bottom-20 left-0 right-0 flex justify-center" style={{ zIndex: 100 }}>
+          {/* Scroll indicator - positioned above bottom of hero section */}
+          <motion.div
+            variants={itemVariants}
+            className="mt-8 sm:mt-12 md:mt-16 lg:mt-20 flex justify-center"
+          >
+            {isMounted && (
               <motion.a 
                 href="#trusted-partners" 
                 onClick={(e) => handleScrollDown(e)}
@@ -168,8 +171,8 @@ function HeroContent() {
                   />
                 </motion.div>
               </motion.a>
-            </div>
-          )}
+            )}
+          </motion.div>
         </motion.div>
       </div>
     </section>
@@ -199,6 +202,10 @@ function HeroLoading() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <div className="h-11 w-36 rounded-md bg-primary/90 animate-pulse" />
             <div className="h-11 w-36 rounded-md border-2 border-primary/30 animate-pulse" />
+          </div>
+          {/* Scroll indicator placeholder */}
+          <div className="mt-8 sm:mt-12 md:mt-16 lg:mt-20 flex justify-center">
+            <div className="h-14 w-14 rounded-full bg-primary/20 animate-pulse" />
           </div>
         </div>
       </div>
