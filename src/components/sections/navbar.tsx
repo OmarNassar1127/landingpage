@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { scrollToSection, navigateFromPolicyPage } from "@/lib/scroll-utils";
 import { motion } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Phone, Mail } from "lucide-react";
 import { Icon } from "@/components/ui/icon";
 import { useLanguage } from "@/lib/i18n/language-context";
 
@@ -187,29 +187,97 @@ export default function Navbar() {
           animate={{ opacity: 1, height: "auto" }}
           exit={{ opacity: 0, height: 0 }}
           transition={{ duration: 0.3, ease: "easeInOut" }}
-          className="md:hidden bg-background/95 backdrop-blur-md border-b shadow-lg"
+          className="md:hidden bg-background/98 backdrop-blur-xl border-b shadow-xl"
         >
           <div className="max-h-[calc(100vh-4rem)] overflow-y-auto overflow-x-hidden">
-            <nav className="container mx-auto py-4 px-4 sm:px-6">
-              <ul className="flex flex-col space-y-1">
-                {navLinks.map((link) => (
-                  <li key={link.name}>
-                    <a
-                      href={link.href}
-                      className={cn(
-                        "block px-4 py-4 text-base font-medium transition-all hover:bg-accent/80 rounded-xl relative tracking-tight min-h-[48px] flex items-center w-full",
-                        (activeSection === link.href.replace("#", "") || (link.href === "#" && activeSection === "")) 
-                          ? "text-primary font-semibold bg-accent/80" 
-                          : "text-foreground"
-                      )}
-                      onClick={(e) => handleNavClick(e, link.href)}
+            <div className="container mx-auto py-6 px-4 sm:px-6">
+              {/* Navigation Links */}
+              <nav className="mb-8">
+                <ul className="flex flex-col space-y-2">
+                  {navLinks.map((link, index) => (
+                    <motion.li 
+                      key={link.name}
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.3, delay: index * 0.05 }}
                     >
-                      <span className="truncate">{link.name}</span>
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </nav>
+                      <a
+                        href={link.href}
+                        className={cn(
+                          "flex items-center px-6 py-4 text-base font-medium transition-all hover:bg-primary/10 hover:text-primary rounded-2xl relative tracking-tight min-h-[56px] border border-transparent hover:border-primary/20 group",
+                          (activeSection === link.href.replace("#", "") || (link.href === "#" && activeSection === "")) 
+                            ? "text-primary font-semibold bg-primary/10 border-primary/30" 
+                            : "text-foreground hover:shadow-sm"
+                        )}
+                        onClick={(e) => handleNavClick(e, link.href)}
+                      >
+                        {(activeSection === link.href.replace("#", "") || (link.href === "#" && activeSection === "")) && (
+                          <motion.div 
+                            className="absolute left-3 top-1/2 -translate-y-1/2 w-1 h-6 bg-primary rounded-full"
+                            layoutId="activeMobileNavIndicator"
+                            transition={{ type: "spring", stiffness: 400, damping: 25 }}
+                          />
+                        )}
+                        <span className="truncate text-lg pl-2">{link.name}</span>
+                      </a>
+                    </motion.li>
+                  ))}
+                </ul>
+              </nav>
+
+              {/* Contact Buttons Section */}
+              <motion.div 
+                className="border-t border-border/50 pt-6"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 0.2 }}
+              >
+                <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-4 px-2">
+                  {t.contact?.contactInfo || "Contact Us"}
+                </h3>
+                <div className="grid grid-cols-1 gap-3">
+                  {/* Phone Button */}
+                  <motion.a
+                    href={`tel:${t.contact?.phoneNumber?.replace(/\s+/g, '') || '+31640446732'}`}
+                    className="flex items-center gap-4 px-6 py-4 bg-gradient-to-r from-green-500/10 to-emerald-500/10 hover:from-green-500/20 hover:to-emerald-500/20 rounded-2xl border border-green-500/20 hover:border-green-500/40 transition-all duration-300 group hover:shadow-lg"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    <div className="flex items-center justify-center w-12 h-12 bg-green-500/20 rounded-full group-hover:bg-green-500/30 transition-colors">
+                      <Icon icon={Phone} className="h-5 w-5 text-green-600 dark:text-green-400" />
+                    </div>
+                    <div className="flex-1">
+                      <p className="font-semibold text-green-700 dark:text-green-300">
+                        {t.contact?.phone || "Call Us"}
+                      </p>
+                      <p className="text-sm text-green-600/80 dark:text-green-400/80">
+                        {t.contact?.phoneNumber || "+31 6 4044 6732"}
+                      </p>
+                    </div>
+                  </motion.a>
+
+                  {/* Email Button */}
+                  <motion.a
+                    href={`mailto:${t.contact?.emailAddress || 'contact@virelio.com'}`}
+                    className="flex items-center gap-4 px-6 py-4 bg-gradient-to-r from-blue-500/10 to-indigo-500/10 hover:from-blue-500/20 hover:to-indigo-500/20 rounded-2xl border border-blue-500/20 hover:border-blue-500/40 transition-all duration-300 group hover:shadow-lg"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    <div className="flex items-center justify-center w-12 h-12 bg-blue-500/20 rounded-full group-hover:bg-blue-500/30 transition-colors">
+                      <Icon icon={Mail} className="h-5 w-5 text-blue-600 dark:text-blue-400" />
+                    </div>
+                    <div className="flex-1">
+                      <p className="font-semibold text-blue-700 dark:text-blue-300">
+                        {t.contact?.email || "Email Us"}
+                      </p>
+                      <p className="text-sm text-blue-600/80 dark:text-blue-400/80 truncate">
+                        {t.contact?.emailAddress || "contact@virelio.com"}
+                      </p>
+                    </div>
+                  </motion.a>
+                </div>
+              </motion.div>
+            </div>
           </div>
         </motion.div>
       )}
