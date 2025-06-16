@@ -93,12 +93,12 @@ export default function CompanySlider() {
     <section 
       id="trusted-partners"
       ref={ref} 
-      className="py-12 sm:py-16 relative"
+      className="py-12 sm:py-16 relative overflow-hidden"
     >
       {/* Background gradient and blur effect */}
       <div className="absolute inset-0 bg-gradient-to-r from-background via-background/70 to-background z-[-1]" />
       <div className="absolute inset-0 border-y border-primary/10 z-[-1]" />
-      <div className="container mx-auto px-2 sm:px-4">
+      <div className="container mx-auto px-4 sm:px-6">
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -118,14 +118,14 @@ export default function CompanySlider() {
 
           <motion.div 
             variants={itemVariants}
-            className="relative overflow-hidden my-8"
+            className="relative overflow-hidden my-8 w-full"
           >
             {/* Fade gradient effects on sides - minimal blur */}
-            <div className="absolute left-0 top-0 bottom-0 w-12 sm:w-24 bg-gradient-to-r from-background to-transparent z-0" />
-            <div className="absolute right-0 top-0 bottom-0 w-12 sm:w-24 bg-gradient-to-l from-background to-transparent z-0" />
+            <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-24 md:w-32 bg-gradient-to-r from-background to-transparent z-10" />
+            <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-24 md:w-32 bg-gradient-to-l from-background to-transparent z-10" />
             {/* First Slider (Left to Right) */}
             <motion.div
-              className="flex space-x-6 sm:space-x-12 mb-8 sm:mb-10 will-change-transform relative z-10"
+              className="flex space-x-4 sm:space-x-8 md:space-x-12 mb-6 sm:mb-8 md:mb-10 will-change-transform relative"
               animate={{
                 x: [0, -1500],
               }}
@@ -139,19 +139,19 @@ export default function CompanySlider() {
                 useCompositeLayer: true
               }}
             >
-              {[...shuffledCompanies, ...shuffledCompanies].map((company, index) => (
+              {[...shuffledCompanies, ...shuffledCompanies, ...shuffledCompanies].map((company, index) => (
                 <div 
                   key={`${company.id}-${index}`} 
-                  className="flex items-center justify-center min-w-[120px] sm:min-w-[150px] h-12 sm:h-16 z-10"
+                  className="flex items-center justify-center min-w-[100px] sm:min-w-[120px] md:min-w-[150px] h-10 sm:h-12 md:h-16 flex-shrink-0"
                 >
-                  <div className="flex items-center justify-center h-full px-3 sm:px-4 py-2 bg-white dark:bg-white rounded-lg border border-gray-200 shadow hover:border-primary/30 transition-all duration-300 hover:scale-105 hover:shadow-md">
-                    <div className="relative h-8 w-20 sm:h-10 sm:w-28">
+                  <div className="flex items-center justify-center h-full w-full px-2 sm:px-3 md:px-4 py-1 sm:py-2 bg-white dark:bg-white rounded-lg border border-gray-200 shadow hover:border-primary/30 transition-all duration-300 hover:scale-105 hover:shadow-md">
+                    <div className="relative h-6 w-16 sm:h-8 sm:w-20 md:h-10 md:w-28">
                       <Image 
                         src={company.logo}
                         alt={`${company.name} logo`}
                         fill
                         className="object-contain"
-                        sizes="(max-width: 640px) 80px, (max-width: 768px) 60px, 112px"
+                        sizes="(max-width: 640px) 64px, (max-width: 768px) 80px, 112px"
                       />
                     </div>
                   </div>
@@ -161,7 +161,7 @@ export default function CompanySlider() {
             
             {/* Second Slider (Right to Left) - with shuffled array again for more variety */}
             <motion.div
-              className="flex space-x-6 sm:space-x-12 will-change-transform relative z-10"
+              className="flex space-x-4 sm:space-x-8 md:space-x-12 will-change-transform relative"
               animate={{
                 x: [-1500, 0],
               }}
@@ -175,19 +175,19 @@ export default function CompanySlider() {
                 useCompositeLayer: true
               }}
             >
-              {[...shuffledCompaniesReverse, ...shuffledCompaniesReverse].map((company, index) => (
+              {[...shuffledCompaniesReverse, ...shuffledCompaniesReverse, ...shuffledCompaniesReverse].map((company, index) => (
                 <div 
                   key={`rev-${company.id}-${index}`} 
-                  className="flex items-center justify-center min-w-[120px] sm:min-w-[150px] h-12 sm:h-16 z-10"
+                  className="flex items-center justify-center min-w-[100px] sm:min-w-[120px] md:min-w-[150px] h-10 sm:h-12 md:h-16 flex-shrink-0"
                 >
-                  <div className="flex items-center justify-center h-full px-3 sm:px-4 py-2 bg-white dark:bg-white rounded-lg border border-gray-200 shadow hover:border-primary/30 transition-all duration-300 hover:scale-105 hover:shadow-md">
-                    <div className="relative h-8 w-20 sm:h-10 sm:w-28">
+                  <div className="flex items-center justify-center h-full w-full px-2 sm:px-3 md:px-4 py-1 sm:py-2 bg-white dark:bg-white rounded-lg border border-gray-200 shadow hover:border-primary/30 transition-all duration-300 hover:scale-105 hover:shadow-md">
+                    <div className="relative h-6 w-16 sm:h-8 sm:w-20 md:h-10 md:w-28">
                       <Image 
                         src={company.logo}
                         alt={`${company.name} logo`}
                         fill
                         className="object-contain"
-                        sizes="(max-width: 640px) 80px, (max-width: 768px) 60px, 112px"
+                        sizes="(max-width: 640px) 64px, (max-width: 768px) 80px, 112px"
                       />
                     </div>
                   </div>

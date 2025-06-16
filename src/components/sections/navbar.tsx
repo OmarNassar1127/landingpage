@@ -111,7 +111,7 @@ export default function Navbar() {
           : "bg-transparent"
       )}
     >
-      <div className="container mx-auto flex h-16 items-center justify-between px-2 sm:px-4">
+      <div className="container mx-auto flex h-16 items-center justify-between px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
@@ -128,14 +128,14 @@ export default function Navbar() {
         </motion.div>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-6">
-          <ul className="flex space-x-6">
+        <nav className="hidden md:flex items-center space-x-4 lg:space-x-6">
+          <ul className="flex space-x-4 lg:space-x-6">
             {navLinks.map((link) => (
               <motion.li key={link.name} whileHover={{ y: -2 }}>
                 <a
                   href={link.href}
                   className={cn(
-                    "text-sm font-medium transition-all hover:text-primary relative tracking-tight",
+                    "text-sm font-medium transition-all hover:text-primary relative tracking-tight whitespace-nowrap",
                     (activeSection === link.href.replace("#", "") || (link.href === "#" && activeSection === "")) 
                       ? "text-primary font-semibold" 
                       : ""
@@ -154,19 +154,20 @@ export default function Navbar() {
               </motion.li>
             ))}
           </ul>
-          <div className="flex items-center space-x-2">
+          <div className="flex items-center space-x-3">
             <LanguageToggle />
             <ThemeToggle />
           </div>
         </nav>
 
         {/* Mobile Navigation */}
-        <div className="flex items-center md:hidden space-x-1">
+        <div className="flex items-center md:hidden space-x-2">
+          <LanguageToggle />
           <ThemeToggle />
           <Button
             variant="ghost"
             size="icon"
-            className="h-9 w-9"
+            className="h-10 w-10"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -186,21 +187,20 @@ export default function Navbar() {
           animate={{ opacity: 1, height: "auto" }}
           exit={{ opacity: 0, height: 0 }}
           transition={{ duration: 0.3, ease: "easeInOut" }}
-          className="md:hidden bg-background border-b overflow-hidden relative"
-          style={{ overflow: "hidden" }}
+          className="md:hidden bg-background/95 backdrop-blur-md border-b shadow-lg"
         >
-          <div className="overflow-y-auto overflow-x-hidden max-h-[calc(100vh-4rem)]">
-            <nav className="container mx-auto py-4 px-2 sm:px-4">
-              <ul className="flex flex-col space-y-2">
+          <div className="max-h-[calc(100vh-4rem)] overflow-y-auto overflow-x-hidden">
+            <nav className="container mx-auto py-4 px-4 sm:px-6">
+              <ul className="flex flex-col space-y-1">
                 {navLinks.map((link) => (
                   <li key={link.name}>
                     <a
                       href={link.href}
                       className={cn(
-                        "block px-4 py-3 text-sm font-medium transition-all hover:bg-accent rounded-lg relative tracking-tight min-h-[44px] flex items-center w-full",
+                        "block px-4 py-4 text-base font-medium transition-all hover:bg-accent/80 rounded-xl relative tracking-tight min-h-[48px] flex items-center w-full",
                         (activeSection === link.href.replace("#", "") || (link.href === "#" && activeSection === "")) 
-                          ? "text-primary font-semibold bg-accent" 
-                          : ""
+                          ? "text-primary font-semibold bg-accent/80" 
+                          : "text-foreground"
                       )}
                       onClick={(e) => handleNavClick(e, link.href)}
                     >
@@ -209,9 +209,6 @@ export default function Navbar() {
                   </li>
                 ))}
               </ul>
-              <div className="flex items-center justify-center pt-4 border-t mt-4">
-                <LanguageToggle />
-              </div>
             </nav>
           </div>
         </motion.div>
