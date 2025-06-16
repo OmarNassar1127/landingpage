@@ -123,7 +123,7 @@ function HeroContent() {
               className="bg-primary hover:bg-primary/90 text-white dark:text-black shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 transition-all duration-300 w-full sm:w-auto min-w-[200px]"
               asChild
             >
-              <a href="#trusted-partners" aria-label={t.hero.ctaButton}>
+              <a href="#trusted-partners" className="flex items-center justify-center text-center" aria-label={t.hero.ctaButton}>
                 {t.hero.ctaButton}
               </a>
             </Button>
@@ -133,7 +133,7 @@ function HeroContent() {
               className="border-2 hover:bg-primary/5 transition-colors duration-300 w-full sm:w-auto min-w-[200px]"
               asChild
             >
-              <a href="#contact" aria-label={t.hero.secondaryButton}>
+              <a href="#contact" className="flex items-center justify-center text-center" aria-label={t.hero.secondaryButton}>
                 {t.hero.secondaryButton}
               </a>
             </Button>

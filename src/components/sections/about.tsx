@@ -146,12 +146,12 @@ export default function About() {
               
               <motion.div 
                 variants={itemVariants}
-                className="flex flex-col sm:flex-row gap-4 pt-2"
+                className="flex justify-center pt-2"
               >
                 <Button 
-                  size="lg" 
+                  size="mobile" 
+                  className="bg-primary hover:bg-primary/90 text-white dark:text-black shadow-lg hover:shadow-xl transition-all duration-300 group"
                   asChild
-                  className="group"
                 >
                   <a 
                     href="#contact" 
@@ -159,7 +159,7 @@ export default function About() {
                       e.preventDefault();
                       scrollToSection("contact");
                     }}
-                    className="inline-flex items-center min-h-[44px] min-w-[44px] px-4 py-2"
+                    className="inline-flex items-center justify-center gap-3"
                     aria-label={t.hero.secondaryButton}
                   >
                     {t.hero.secondaryButton}
@@ -167,9 +167,8 @@ export default function About() {
                       initial={{ x: 0 }}
                       whileHover={{ x: 3 }}
                       transition={{ duration: 0.2 }}
-                      className="ml-2"
                     >
-                      <ChevronRight className="h-4 w-4" />
+                      <ChevronRight className="h-5 w-5" />
                     </motion.span>
                   </a>
                 </Button>

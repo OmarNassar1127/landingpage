@@ -215,26 +215,28 @@ export default function DemoVideo() {
             />
           </motion.div>
 
-          <motion.div variants={itemVariants} className="w-full bg-background/50 backdrop-blur-sm rounded-xl shadow-lg p-8 sm:p-10 border border-primary/20 text-center">
+          <motion.div variants={itemVariants} className="w-full bg-background/50 backdrop-blur-sm rounded-xl shadow-lg p-6 sm:p-8 md:p-10 border border-primary/20 text-center">
             <p className="mb-6 sm:mb-8 text-base sm:text-lg max-w-4xl mx-auto leading-relaxed">{t.demoVideo.description}</p>
-            <Button 
-              size="lg" 
-              className="mx-auto inline-flex items-center justify-center px-6 py-3 text-base font-medium rounded-full text-white bg-primary shadow-sm hover:bg-primary/90 transition-colors dark:text-black dark:bg-primary dark:hover:bg-primary/90" 
-              asChild
-            >
-              <a 
-                href="#book-meeting" 
-                className="inline-flex items-center justify-center gap-3 min-h-[44px] min-w-[44px] px-6 py-3" 
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection("book-meeting");
-                }}
-                aria-label={t.bookMeeting.ctaButton}
+            <div className="flex justify-center">
+              <Button 
+                size="mobile" 
+                className="bg-primary hover:bg-primary/90 text-white dark:text-black shadow-lg hover:shadow-xl transition-all duration-300" 
+                asChild
               >
-                {t.bookMeeting.ctaButton}
-                <ArrowRight className="h-4 w-4 ml-1" />
-              </a>
-            </Button>
+                <a 
+                  href="#book-meeting" 
+                  className="inline-flex items-center justify-center gap-3" 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection("book-meeting");
+                  }}
+                  aria-label={t.bookMeeting.ctaButton}
+                >
+                  {t.bookMeeting.ctaButton}
+                  <ArrowRight className="h-5 w-5" />
+                </a>
+              </Button>
+            </div>
           </motion.div>
         </motion.div>
       </div>

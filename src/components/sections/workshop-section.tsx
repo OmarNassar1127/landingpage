@@ -96,11 +96,11 @@ export default function WorkshopSection() {
           >
             <Link href="/workshop">
               <Button 
-                size="lg" 
-                className="group bg-primary hover:bg-primary/90 text-white dark:text-black px-8 py-3 text-base font-medium"
+                size="mobile" 
+                className="bg-primary hover:bg-primary/90 text-white dark:text-black shadow-lg hover:shadow-xl transition-all duration-300 group"
               >
                 {t.workshopSection.ctaButton}
-                <Icon icon={ArrowRight} className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                <Icon icon={ArrowRight} className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
             </Link>
           </motion.div>
