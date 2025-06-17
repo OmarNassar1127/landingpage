@@ -33,7 +33,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/workshop`,
+      url: `${baseUrl}${siteConfig.sections.workshop}`,
       lastModified,
       changeFrequency: 'monthly' as const,
       priority: 0.8,
@@ -97,7 +97,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/en/workshop`,
+      url: `${baseUrl}/en${siteConfig.sections.workshop}`,
       lastModified,
       changeFrequency: 'monthly' as const,
       priority: 0.7,

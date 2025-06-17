@@ -128,6 +128,17 @@ export const servicesSchema = () => {
       },
       {
         "@type": "Service",
+        name: "Workshop Training",
+        description:
+          "Expert-led workshops and training sessions on AI, SaaS development, and modern web technologies.",
+        provider: {
+          "@type": "Organization",
+          name: "Virelio",
+          url: siteConfig.url,
+        },
+      },
+      {
+        "@type": "Service",
         name: "Custom AI Solutions",
         description:
           "Personalized AI systems specifically tailored to your business's unique challenges.",
@@ -373,5 +384,54 @@ export function testimonialsSchema({ items }: TestimonialsProps) {
         datePublished: new Date().toISOString(),
       },
     })),
+  };
+}
+
+export function workshopSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "EducationalEvent",
+    name: "Virelio AI & SaaS Development Workshop",
+    description: "Expert-led workshops and training sessions on AI, SaaS development, and modern web technologies. Learn from industry professionals and get hands-on experience.",
+    url: `${siteConfig.url}${siteConfig.sections.workshop}`,
+    organizer: {
+      "@type": "Organization",
+      name: "Virelio",
+      url: siteConfig.url,
+    },
+    location: {
+      "@type": "Place",
+      name: "Online & Amsterdam",
+      address: {
+        "@type": "PostalAddress",
+        addressCountry: "NL",
+        addressLocality: "Amsterdam",
+      },
+    },
+    eventAttendanceMode: "https://schema.org/MixedEventAttendanceMode",
+    eventStatus: "https://schema.org/EventScheduled",
+    offers: {
+      "@type": "Offer",
+      availability: "https://schema.org/InStock",
+      validFrom: new Date().toISOString(),
+    },
+    about: [
+      {
+        "@type": "Thing",
+        name: "Artificial Intelligence",
+      },
+      {
+        "@type": "Thing", 
+        name: "SaaS Development",
+      },
+      {
+        "@type": "Thing",
+        name: "Web Development",
+      },
+      {
+        "@type": "Thing",
+        name: "Automation",
+      },
+    ],
   };
 }

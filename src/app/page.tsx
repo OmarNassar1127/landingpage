@@ -15,7 +15,7 @@ import Footer from "@/components/sections/footer";
 import { generateMetadata } from "@/lib/metadata";
 import { siteConfig } from "@/lib/config";
 import JsonLd from "@/components/seo/json-ld";
-import { faqSchema, testimonialsSchema, servicesSchema } from "@/lib/schema";
+import { faqSchema, testimonialsSchema, servicesSchema, workshopSchema } from "@/lib/schema";
 
 // Sample FAQ data for the landing page
 const faqData = {
@@ -85,6 +85,7 @@ export default function Home() {
       <JsonLd data={faqSchema(faqData)} />
       <JsonLd data={testimonialsSchema(testimonialsData)} />
       <JsonLd data={servicesSchema()} />
+      <JsonLd data={workshopSchema()} />
 
       <main className="min-h-screen">
         <Navbar />
