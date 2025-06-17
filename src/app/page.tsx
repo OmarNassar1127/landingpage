@@ -95,7 +95,9 @@ export default function Home() {
         <div id={siteConfig.sections.services.substring(1)}>
           <Services />
         </div>
-        <WorkshopSection />
+        <div id={siteConfig.sections.workshop.substring(1)}>
+          <WorkshopSection />
+        </div>
         <div id={siteConfig.sections.projects.substring(1)}>
           <Projects />
         </div>

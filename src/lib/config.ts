@@ -43,6 +43,7 @@ export const siteConfig = {
   sections: {
     projects: "#projects",
     services: "#services",
+    workshop: "#workshop",
     about: "#about",
     testimonials: "#testimonials",
     demo: "#demo",
