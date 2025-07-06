@@ -462,6 +462,26 @@ export default function Contact() {
           </motion.div>
           
           <motion.div variants={itemVariants} className="space-y-8">
+            {/* Robin's Image */}
+            <motion.div 
+              className="flex items-center space-x-3"
+              variants={itemVariants}
+              whileHover={{ scale: 1.02 }}
+              transition={{ duration: 0.3 }}
+            >
+              <div className="relative">
+                <img
+                  src="/images/contact/robin.jpeg"
+                  alt="Robin - Contact Person"
+                  className="w-16 h-16 rounded-full object-cover shadow-lg border-2 border-white dark:border-gray-800"
+                />
+              </div>
+              <div>
+                <h4 className="text-sm font-semibold">Robin</h4>
+                <p className="text-xs text-muted-foreground">Contact Person</p>
+              </div>
+            </motion.div>
+
             <div>
               <h3 className="text-xl font-semibold mb-4">{t.contact.contactInfo}</h3>
               <ul className="space-y-4">

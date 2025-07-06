@@ -1,10 +1,122 @@
 "use client";
 
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Button } from './button';
 import { motion } from 'framer-motion';
 
+// Declare the custom element for TypeScript
+declare global {
+  namespace JSX {
+    interface IntrinsicElements {
+      'elevenlabs-convai': {
+        'agent-id': string;
+        key?: string;
+        children?: React.ReactNode;
+      };
+    }
+  }
+}
+
 export function ClientWhatsAppButton() {
+  const [isConvAIReady, setIsConvAIReady] = useState(false);
+  const [scriptLoaded, setScriptLoaded] = useState(false);
+  const widgetRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    let mounted = true;
+
+    const initializeWidget = async () => {
+      try {
+        // Check if the custom element is already defined
+        if (customElements.get('elevenlabs-convai')) {
+          if (mounted) {
+            setIsConvAIReady(true);
+            setScriptLoaded(true);
+          }
+          return;
+        }
+
+        // Check if script is already loaded
+        const existingScript = document.querySelector('script[src="https://unpkg.com/@elevenlabs/convai-widget-embed"]');
+        if (existingScript) {
+          // Wait for custom element to be defined
+          await customElements.whenDefined('elevenlabs-convai').catch(() => {
+            console.warn('ElevenLabs ConvAI custom element not defined');
+          });
+          if (mounted) {
+            setIsConvAIReady(true);
+            setScriptLoaded(true);
+          }
+          return;
+        }
+
+        // Load ElevenLabs ConvAI widget script
+        const script = document.createElement('script');
+        script.src = 'https://unpkg.com/@elevenlabs/convai-widget-embed';
+        script.async = true;
+        script.type = 'text/javascript';
+        
+        script.onload = async () => {
+          try {
+            // Wait for the custom element to be defined
+            await customElements.whenDefined('elevenlabs-convai');
+            if (mounted) {
+              setScriptLoaded(true);
+              // Small delay to ensure widget is fully initialized
+              setTimeout(() => {
+                if (mounted) setIsConvAIReady(true);
+              }, 100);
+            }
+          } catch (error) {
+            console.warn('ElevenLabs ConvAI widget initialization failed:', error);
+          }
+        };
+        
+        script.onerror = () => {
+          console.warn('Failed to load ElevenLabs ConvAI widget script');
+        };
+        
+        document.head.appendChild(script);
+
+      } catch (error) {
+        console.warn('Error initializing ElevenLabs widget:', error);
+      }
+    };
+
+    initializeWidget();
+
+    return () => {
+      mounted = false;
+    };
+  }, []);
+
+  return (
+    <motion.div
+      initial={{ scale: 0, opacity: 0 }}
+      animate={{ scale: 1, opacity: 1 }}
+      transition={{
+        type: "spring",
+        stiffness: 260,
+        damping: 20,
+        delay: 1 
+      }}
+      className="fixed bottom-6 right-6 z-50"
+    >
+      {/* ElevenLabs ConvAI Widget Container */}
+      <div ref={widgetRef} className="elevenlabs-widget-container">
+        {scriptLoaded && isConvAIReady && (
+          <elevenlabs-convai 
+            agent-id="agent_01jzdzj0qjej0r82rdnca0qbmq"
+            key="elevenlabs-widget"
+          />
+        )}
+      </div>
+    </motion.div>
+  );
+
+  // COMMENTED OUT: WhatsApp Button Implementation
+  // Uncomment this section and comment out the ElevenLabs section above to switch back to WhatsApp
+  /*
   return (
     <motion.div
       initial={{ scale: 0, opacity: 0 }}
@@ -30,6 +142,7 @@ export function ClientWhatsAppButton() {
       </Button>
     </motion.div>
   );
+  */
 }
 
 // Official WhatsApp icon

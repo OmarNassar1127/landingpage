@@ -105,9 +105,26 @@ export default function WorkshopContact() {
         <h3 className="text-2xl font-bold mb-4">
           {t.workshop.contactForm.title}
         </h3>
-        <p className="text-muted-foreground max-w-2xl mx-auto">
+        <p className="text-muted-foreground max-w-2xl mx-auto mb-6">
           {t.workshop.contactForm.subtitle}
         </p>
+        
+        {/* Robin's Image */}
+        <div className="flex justify-center mb-6">
+          <div className="flex items-center space-x-3">
+            <div className="relative">
+              <img
+                src="/images/contact/robin.jpeg"
+                alt="Robin - Workshop Facilitator"
+                className="w-16 h-16 rounded-full object-cover shadow-lg border-2 border-white dark:border-gray-800"
+              />
+            </div>
+            <div className="text-left">
+              <h4 className="text-sm font-semibold">Robin</h4>
+              <p className="text-xs text-muted-foreground">Workshop Facilitator</p>
+            </div>
+          </div>
+        </div>
       </div>
 
       <Card className="border-primary/20">
@@ -359,21 +376,21 @@ export default function WorkshopContact() {
               {t.workshop.contactForm.whatNext}
             </h4>
             <ul className="text-sm text-muted-foreground space-y-1 list-none">
-              <li className="flex">
-                <span className="mr-2">•</span>
-                <strong>{t.workshop.contactForm.nextSteps.contact}</strong>
+              <li className="flex items-start">
+                <span className="mr-2 flex-shrink-0">•</span>
+                <span className="text-left"><strong>{t.workshop.contactForm.nextSteps.contact}</strong></span>
               </li>
-              <li className="flex">
-                <span className="mr-2">•</span>
-                <strong>{t.workshop.contactForm.nextSteps.meeting}</strong>
+              <li className="flex items-start">
+                <span className="mr-2 flex-shrink-0">•</span>
+                <span className="text-left"><strong>{t.workshop.contactForm.nextSteps.meeting}</strong></span>
               </li>
-              <li className="flex">
-                <span className="mr-2">•</span>
-                <strong>{t.workshop.contactForm.nextSteps.proposal}</strong>
+              <li className="flex items-start">
+                <span className="mr-2 flex-shrink-0">•</span>
+                <span className="text-left"><strong>{t.workshop.contactForm.nextSteps.proposal}</strong></span>
               </li>
-              <li className="flex">
-                <span className="mr-2">•</span>
-                <strong>{t.workshop.contactForm.nextSteps.scheduling}</strong>
+              <li className="flex items-start">
+                <span className="mr-2 flex-shrink-0">•</span>
+                <span className="text-left"><strong>{t.workshop.contactForm.nextSteps.scheduling}</strong></span>
               </li>
             </ul>
           </div>
