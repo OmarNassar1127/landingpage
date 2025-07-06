@@ -4,13 +4,19 @@ import React, { useState } from "react";
 import { useLanguage } from "@/lib/i18n/language-context";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { CheckCircle, ArrowRight, Download, Calendar, Mail } from "lucide-react";
+import {
+  CheckCircle,
+  ArrowRight,
+  Download,
+  Calendar,
+  Mail,
+} from "lucide-react";
 import { Icon } from "@/components/ui/icon";
 import WorkshopContact from "./workshop-contact";
 
 export default function WorkshopCTA() {
   const { t } = useLanguage();
-  const [activeTab, setActiveTab] = useState<'contact' | 'calendar'>('contact');
+  const [activeTab, setActiveTab] = useState<"contact" | "calendar">("contact");
 
   return (
     <section id="workshop-cta" className="py-20 px-4 md:px-8 max-w-7xl mx-auto">
@@ -34,8 +40,13 @@ export default function WorkshopCTA() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-2xl mx-auto">
               {t.workshop.cta.benefits.map((benefit, index) => (
                 <div key={index} className="flex items-center gap-3 text-left">
-                  <Icon icon={CheckCircle} className="h-5 w-5 text-green-500 shrink-0" />
-                  <span className="text-muted-foreground font-normal">{benefit}</span>
+                  <Icon
+                    icon={CheckCircle}
+                    className="h-5 w-5 text-green-500 shrink-0"
+                  />
+                  <span className="text-muted-foreground font-normal">
+                    {benefit}
+                  </span>
                 </div>
               ))}
             </div>
@@ -45,26 +56,26 @@ export default function WorkshopCTA() {
               <div className="bg-background/50 backdrop-blur-sm rounded-lg p-1 border border-primary/20">
                 <div className="flex">
                   <Button
-                    variant={activeTab === 'contact' ? 'default' : 'ghost'}
+                    variant={activeTab === "contact" ? "default" : "ghost"}
                     size="sm"
-                    onClick={() => setActiveTab('contact')}
+                    onClick={() => setActiveTab("contact")}
                     className={`rounded-md px-6 py-2 transition-all duration-200 ${
-                      activeTab === 'contact' 
-                        ? 'bg-primary text-white dark:text-black shadow-sm' 
-                        : 'hover:bg-primary/10'
+                      activeTab === "contact"
+                        ? "bg-primary text-white dark:text-black shadow-sm"
+                        : "hover:bg-primary/10"
                     }`}
                   >
                     <Icon icon={Mail} className="h-4 w-4 mr-2" />
                     {t.workshop.tabs.contactForm}
                   </Button>
                   <Button
-                    variant={activeTab === 'calendar' ? 'default' : 'ghost'}
+                    variant={activeTab === "calendar" ? "default" : "ghost"}
                     size="sm"
-                    onClick={() => setActiveTab('calendar')}
+                    onClick={() => setActiveTab("calendar")}
                     className={`rounded-md px-6 py-2 transition-all duration-200 ${
-                      activeTab === 'calendar' 
-                        ? 'bg-primary text-white dark:text-black shadow-sm' 
-                        : 'hover:bg-primary/10'
+                      activeTab === "calendar"
+                        ? "bg-primary text-white dark:text-black shadow-sm"
+                        : "hover:bg-primary/10"
                     }`}
                   >
                     <Icon icon={Calendar} className="h-4 w-4 mr-2" />
@@ -75,19 +86,23 @@ export default function WorkshopCTA() {
             </div>
 
             {/* Contact Form - Always visible within the same container */}
-            {activeTab === 'contact' && (
+            {activeTab === "contact" && (
               <div className="max-w-4xl mx-auto">
                 <WorkshopContact />
               </div>
             )}
 
             {/* Calendly Integration */}
-            {activeTab === 'calendar' && (
+            {activeTab === "calendar" && (
               <div className="max-w-4xl mx-auto">
                 <div className="bg-background/80 backdrop-blur-sm rounded-lg p-6 border border-primary/20">
                   <div className="text-center mb-4">
-                    <h3 className="text-lg font-semibold">{t.workshop.calendly.title}</h3>
-                    <p className="text-sm text-muted-foreground">{t.workshop.calendly.subtitle}</p>
+                    <h3 className="text-lg font-semibold">
+                      {t.workshop.calendly.title}
+                    </h3>
+                    <p className="text-sm text-muted-foreground">
+                      {t.workshop.calendly.subtitle}
+                    </p>
                   </div>
                   <div className="w-full h-[600px] rounded-lg overflow-hidden">
                     <iframe
@@ -107,14 +122,14 @@ export default function WorkshopCTA() {
             <div className="text-center text-sm text-muted-foreground space-y-2">
               <p>Contact us directly:</p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a 
-                  href="mailto:info@virelio.tech" 
+                <a
+                  href="mailto:robin.bril@gmail.com"
                   className="hover:text-primary transition-colors"
                 >
-                  info@virelio.tech
+                  robin.bril@gmail.com
                 </a>
-                <a 
-                  href="tel:+31640446732" 
+                <a
+                  href="tel:+31640446732"
                   className="hover:text-primary transition-colors"
                 >
                   +31 6 4044 6732
