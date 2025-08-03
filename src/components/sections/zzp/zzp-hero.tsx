@@ -27,7 +27,7 @@ export default function ZzpHero({ isEnglish = false }: ZzpHeroProps) {
     badge: "VIRELIO ZZP",
     title: "Expert ZZP'ers",
     subtitle: "Omar & Robin", 
-    description: "Professionele ZZP'ers gespecialiseerd in AI, backend development en innovatieve digitale oplossingen. Beschikbaar voor inhuur individueel of als team.",
+    description: "Professionele ZZP'ers gespecialiseerd in AI, backend ontwikkeling en innovatieve digitale oplossingen. Je kunt ons inhuren als duo of apart, afhankelijk van jouw projectbehoeften.",
     ctaButton: "Bekijk Onze Profielen",
     scrollText: "Ontmoet het team",
     hiringSections: {
@@ -107,16 +107,16 @@ export default function ZzpHero({ isEnglish = false }: ZzpHeroProps) {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="flex flex-wrap justify-center gap-4 mb-12"
           >
-            <Badge variant="outline" className="flex items-center gap-2 px-4 py-2 text-sm bg-white/50 backdrop-blur-sm border-primary/20">
-              <User className="h-4 w-4 text-primary" />
+            <Badge variant="outline" className="flex items-center gap-2 px-4 py-2 text-sm bg-blue-500/20 backdrop-blur-sm border-blue-400 text-blue-900 dark:text-blue-100">
+              <User className="h-4 w-4 text-blue-600 dark:text-blue-400" />
               {content.hiringSections.individual}
             </Badge>
-            <Badge variant="outline" className="flex items-center gap-2 px-4 py-2 text-sm bg-white/50 backdrop-blur-sm border-primary/20">
-              <Users className="h-4 w-4 text-primary" />
+            <Badge variant="outline" className="flex items-center gap-2 px-4 py-2 text-sm bg-green-500/20 backdrop-blur-sm border-green-400 text-green-900 dark:text-green-100">
+              <Users className="h-4 w-4 text-green-600 dark:text-green-400" />
               {content.hiringSections.team}
             </Badge>
-            <Badge variant="outline" className="flex items-center gap-2 px-4 py-2 text-sm bg-white/50 backdrop-blur-sm border-primary/20">
-              <Zap className="h-4 w-4 text-primary" />
+            <Badge variant="outline" className="flex items-center gap-2 px-4 py-2 text-sm bg-purple-500/20 backdrop-blur-sm border-purple-400 text-purple-900 dark:text-purple-100">
+              <Zap className="h-4 w-4 text-purple-600 dark:text-purple-400" />
               {content.hiringSections.flexible}
             </Badge>
           </motion.div>
