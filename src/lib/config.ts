@@ -1,8 +1,8 @@
 export const siteConfig = {
   name: "Virelio",
   description: "Innovative Solutions for Modern Challenges",
-  url: "https://Virelio.nl", // Updated domain
-  metadataBase: "https://Virelio.nl", // Updated domain
+  url: "https://virelio.nl", // Updated domain
+  metadataBase: "https://virelio.nl", // Updated domain
   logoUrl: "/logo.svg",
   ogImage: "/og-image.jpg",
   twitterHandle: "@Virelio",
@@ -10,7 +10,7 @@ export const siteConfig = {
   authors: [
     {
       name: "Virelio Team",
-      url: "https://Virelio.nl", // Landing page, no /team page
+      url: "https://virelio.nl", // Landing page, no /team page
     },
   ],
   socials: {
@@ -36,8 +36,8 @@ export const siteConfig = {
   ],
   // For language-specific URLs (better for SEO)
   alternateLanguages: {
-    nl: "https://Virelio.nl",
-    en: "https://Virelio.nl/en",
+    nl: "https://virelio.nl",
+    en: "https://virelio.nl/en",
   },
   // Add sections for the one-page layout
   sections: {

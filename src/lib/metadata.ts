@@ -38,8 +38,8 @@ export function generateMetadata({
     alternates: {
       canonical: url,
       languages: {
-        en: url,
-        nl: `${url}?lang=nl`,
+        en: pathname.startsWith('/en') ? url : `${siteConfig.url}/en${pathname || '/'}`,
+        nl: pathname.startsWith('/en') ? `${siteConfig.url}${pathname.replace('/en', '') || '/'}` : url,
       },
     },
     openGraph: {
