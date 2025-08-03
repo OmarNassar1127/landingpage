@@ -28,16 +28,17 @@ export default function ZzpProfiles({ isEnglish = false }: ZzpProfilesProps) {
         "Medical device automation & healthcare systems",
         "Machine learning algorithms for enterprise applications",
         "Advanced scraping algorithms for large companies",
-        "Mobile app development with React Native",
+        "Deep reinforcement learning for autonomous trading systems",
         "E-commerce automation solutions",
         "KYC integration systems for fintech",
         "AI-driven optimization systems"
       ],
       skills: {
+        "AI & Machine Learning": ["Machine Learning", "Convolutional Neural Networks", "Deep Learning", "Computer Vision", "Reinforcement Learning"],
         backend: ["PHP", "Laravel", "Python", "C++"],
-        frontend: ["ReactJS", "React Native", "TypeScript", "Next.js"],
+        frontend: ["ReactJS", "TypeScript", "Next.js", "Vue.js"],
         databases: ["MySQL", "PostgreSQL", "Supabase", "MongoDB"],
-        specialties: ["AI/ML", "Machine Learning", "API Integration", "Automation"]
+        specialties: ["Artificial Intelligence (AI)", "AI/ML Architecture", "AI Workshops & Training", "AI Reinforcement Learning", "API Integration", "Automation"]
       },
       companies: [
         "Vloto B.V. - Backend Developer (2023-present)",
@@ -48,29 +49,29 @@ export default function ZzpProfiles({ isEnglish = false }: ZzpProfilesProps) {
     },
     robin: {
       name: "Robin Bril",
-      role: "Business Analyst & Data Specialist",
+      role: "Artificial Intelligence Engineer & Data Consultant",
       experience: "5+ years experience",
-      bio: "Cum Laude Business Administration graduate with strong background in data analysis, project management, and process optimization. Experience with SQL, Python, machine learning, and BI dashboard development.",
+      bio: "Cum Laude graduate in Business Administration, specialized in translating business needs into innovative AI solutions. Extensive experience building AI tools, facilitating workshops and effectively connecting technical and business stakeholders.",
       highlights: [
-        "Business Intelligence dashboards (Looker, SQL, BigQuery)",
-        "Data analysis and machine learning projects",
-        "Process optimization with €40,000+ cost savings", 
-        "SQL, Python and data visualization expertise",
-        "Lean Six Sigma Green Belt certification",
-        "Project management and stakeholder communication",
-        "Winner national ROI competition Netherlands"
+        "Development and implementation of multiple AI tools for Capgemini",
+        "Realization of an AI tool for the Ministry of Defense",
+        "Bridge function between business and technology in AI projects",
+        "Facilitating AI workshops for large-scale teams (400+ participants)",
+        "AI-driven process optimization and cost savings (over €40,000)",
+        "Winner national ROI competition Netherlands (with AI project)"
       ],
       skills: {
-        backend: ["SQL", "Python", "BigQuery", "Database Management"],
-        frontend: ["Tableau", "Power BI", "Looker", "Dashboard Development"],
+        "AI & Data Science": ["Machine Learning", "AI-driven automation", "Natural Language Processing (NLP)", "Predictive Analytics"],
+        backend: ["Python", "SQL", "BigQuery", "Database Management"],
+        frontend: ["Tableau", "Power BI", "Looker", "Data Visualisation"],
         databases: ["SQL Server", "MySQL", "PostgreSQL", "MongoDB"],
-        specialties: ["Business Intelligence", "Data Analysis", "Process Optimization"]
+        specialties: ["Artificial Intelligence (AI)", "Translating Business to Technology", "AI workshops & Training", "Data analysis & Process Optimization"]
       },
       companies: [
-        "Capgemini - Business Analyst (2024-present)",
-        "Road - Business Analyst (2023-2024)",
-        "Road - Traineeship Process Management (2022-2023)",
-        "SBB - Traineeship Process Management (2021-2022)"
+        "Capgemini - AI & Business Analyst (2024-present)",
+        "Road - Data Analyst & AI Specialist (2023-2024)",
+        "Road - Traineeship Process Management & Analytics (2022-2023)",
+        "SBB - Traineeship Process Management & Data Analysis (2021-2022)"
       ]
     }
   } : {
@@ -89,16 +90,17 @@ export default function ZzpProfiles({ isEnglish = false }: ZzpProfilesProps) {
         "Medical device automatisation & healthcare systems",
         "Machine learning algoritmes voor enterprise toepassingen",
         "Advanced scraping algoritmes voor grote bedrijven",
-        "Mobile app ontwikkeling met React Native",
+        "Deep reinforcement learning voor autonome handelssystemen",
         "E-commerce automatiseringsoplossingen",
         "KYC integratiesystemen voor fintech",
         "AI-gestuurde optimalisatiesystemen"
       ],
       skills: {
+        "AI & Machine Learning": ["Machine Learning", "Convolutional Neural Networks", "Deep Learning", "Computer Vision", "Reinforcement Learning"],
         backend: ["PHP", "Laravel", "Python", "C++"],
-        frontend: ["ReactJS", "React Native", "TypeScript", "Next.js"],
+        frontend: ["ReactJS", "TypeScript", "Next.js", "Vue.js"],
         databases: ["MySQL", "PostgreSQL", "Supabase", "MongoDB"],
-        specialties: ["AI/ML", "Machine Learning", "API Integratie", "Automatisering"]
+        specialties: ["Kunstmatige Intelligentie (AI)", "AI/ML Architectuur", "AI Workshops & Training", "AI Reinforcement Learning", "API Integratie", "Automatisering"]
       },
       companies: [
         "Vloto B.V. - Backend Developer (2023-heden)",
@@ -109,29 +111,29 @@ export default function ZzpProfiles({ isEnglish = false }: ZzpProfilesProps) {
     },
     robin: {
       name: "Robin Bril",
-      role: "Business Analyst & Data Specialist",
+      role: "Artificial Intelligence Engineer & Data Consultant",
       experience: "5+ jaar ervaring",
-      bio: "Cum Laude Business Administration afgestudeerd met sterke achtergrond in data-analyse, projectmanagement en procesoptimalisatie. Ervaring met SQL, Python, machine learning en BI dashboard ontwikkeling.",
+      bio: "Cum Laude afgestudeerd in Business Administration, gespecialiseerd in het vertalen van businessbehoeften naar innovatieve AI-oplossingen. Ruime ervaring met het bouwen van AI-tools, faciliteren van workshop en het effectief verbinden van technische en business stakeholders.",
       highlights: [
-        "Business Intelligence dashboards (Looker, SQL, BigQuery)",
-        "Data-analyse en machine learning projecten",
-        "Procesoptimalisatie met €40.000+ kostenbesparingen", 
-        "SQL, Python en data visualization expertise",
-        "Lean Six Sigma Green Belt certificering",
-        "Projectmanagement en stakeholder communicatie",
-        "Winnaar nationale ROI competitie Nederland"
+        "Ontwikkeling en implementatie van meerdere AI-tools voor Capgemini",
+        "Realisatie van een AI-tool voor het Ministerie van Defensie",
+        "Brugfunctie tussen business en techniek in AI-projecten",
+        "Faciliteren van AI-workshops voor grootschalige teams (400+ deelnemers)",
+        "AI-gedreven procesoptimalisatie en kostenbesparing (meer dan €40.000)",
+        "Winnaar nationale ROI competitie Nederland (met AI-project)"
       ],
       skills: {
-        backend: ["SQL", "Python", "BigQuery", "Database Management"],
-        frontend: ["Tableau", "Power BI", "Looker", "Dashboard Development"],
+        "AI & Data Science": ["Machine Learning", "AI-gedreven automatisering", "Natural Language Processing (NLP)", "Predictive Analytics"],
+        backend: ["Python", "SQL", "BigQuery", "Database Management"],
+        frontend: ["Tableau", "Power BI", "Looker", "Data Visualisation"],
         databases: ["SQL Server", "MySQL", "PostgreSQL", "MongoDB"],
-        specialties: ["Business Intelligence", "Data Analysis", "Process Optimization"]
+        specialties: ["Kunstmatige Intelligentie (AI)", "Vertalen van Business naar Techniek", "AI-workshops & Training", "Data-analyse & Procesoptimalisatie"]
       },
       companies: [
-        "Capgemini - Business Analyst (2024-heden)",
-        "Road - Business Analyst (2023-2024)",
-        "Road - Traineeship Process Management (2022-2023)",
-        "SBB - Traineeship Process Management (2021-2022)"
+        "Capgemini - AI & Business Analyst (2024-heden)",
+        "Road - Data Analyst & AI Specialist (2023-2024)",
+        "Road - Traineeship Process Management & Analytics (2022-2023)",
+        "SBB - Traineeship Process Management & Data Analysis (2021-2022)"
       ]
     }
   };
