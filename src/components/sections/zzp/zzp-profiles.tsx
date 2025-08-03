@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { LinkedinIcon, MapPin, Calendar, Mail, Download } from "lucide-react";
+import { LinkedinIcon, MapPin, Mail, Download } from "lucide-react";
 
 interface ZzpProfilesProps {
   isEnglish?: boolean;
@@ -24,14 +24,13 @@ export default function ZzpProfiles({ isEnglish = false }: ZzpProfilesProps) {
       role: "Backend Developer & AI Specialist",
       experience: "5+ years experience",
       bio: "Results-driven Software Developer with expertise in full-stack development, AI integration, and financial technology. Proven ability to architect scalable platforms and implement AI-powered solutions that drive operational efficiency.",
+      mainAchievement: "WhatsApp AI system for Vloto automating vehicle management for 3,000+ users",
       highlights: [
-        "Medical device automation & healthcare systems",
-        "Machine learning algorithms for enterprise applications",
-        "Advanced scraping algorithms for large companies",
-        "Deep reinforcement learning for autonomous trading systems",
-        "E-commerce automation solutions",
-        "KYC integration systems for fintech",
-        "AI-driven optimization systems"
+        "AI-driven medical device automation for accelerating technical file reviews and generation processes",
+        "KYC/AML compliance system for fintech startup (secured €5M funding)",
+        "Real-time computer vision system for quality control in manufacturing",
+        "AI chatbot voor klantenservice automatisering (50+ bedrijven)",
+        "ML pipeline voor predictive maintenance in industrie"
       ],
       skills: {
         "AI & Machine Learning": ["Machine Learning", "Convolutional Neural Networks", "Deep Learning", "Computer Vision", "Reinforcement Learning"],
@@ -52,13 +51,13 @@ export default function ZzpProfiles({ isEnglish = false }: ZzpProfilesProps) {
       role: "Artificial Intelligence Engineer & Data Consultant",
       experience: "5+ years experience",
       bio: "Cum Laude graduate in Business Administration, specialized in translating business needs into innovative AI solutions. Extensive experience building AI tools, facilitating workshops and effectively connecting technical and business stakeholders.",
+      mainAchievement: "Development of an AI tool for Capgemini (world's largest IT consultant) and giving workshops about it",
       highlights: [
-        "Development and implementation of multiple AI tools for Capgemini",
-        "Realization of an AI tool for the Ministry of Defense",
-        "Bridge function between business and technology in AI projects",
-        "Facilitating AI workshops for large-scale teams (400+ participants)",
-        "AI-driven process optimization and cost savings (over €40,000)",
-        "Winner national ROI competition Netherlands (with AI project)"
+        "Developed AI tool for Ministry of Defense",
+        "Bridge function between business and technical stakeholders in AI projects",
+        "Facilitated AI workshops for large groups (400+ participants)",
+        "Realized AI-driven process optimization and cost savings",
+        "Winner national ROI competition Netherlands (AI project)"
       ],
       skills: {
         "AI & Data Science": ["Machine Learning", "AI-driven automation", "Natural Language Processing (NLP)", "Predictive Analytics"],
@@ -85,15 +84,14 @@ export default function ZzpProfiles({ isEnglish = false }: ZzpProfilesProps) {
       name: "Omar Nassar",
       role: "Backend Developer & AI Specialist",
       experience: "5+ jaar ervaring",
-      bio: "Results-driven Software Developer met expertise in full-stack development, AI-integratie en financial technology. Bewezen vermogen om schaalbare platforms te architecteren en AI-oplossingen te implementeren die operationele efficiëntie verbeteren.",
+      bio: "Resultaat gedreven Software Developer met expertise in full-stack development, AI-integratie en financial technology. Bewezen vermogen om schaalbare platforms te architecteren en AI-oplossingen te implementeren die operationele efficiëntie verbeteren.",
+      mainAchievement: "WhatsApp AI-systeem voor Vloto dat voertuigbeheer automatiseert voor 3.000+ gebruikers",
       highlights: [
-        "Medical device automatisation & healthcare systems",
-        "Machine learning algoritmes voor enterprise toepassingen",
-        "Advanced scraping algoritmes voor grote bedrijven",
-        "Deep reinforcement learning voor autonome handelssystemen",
-        "E-commerce automatiseringsoplossingen",
-        "KYC integratiesystemen voor fintech",
-        "AI-gestuurde optimalisatiesystemen"
+        "AI-gestuurde medical device automatisering voor het versnellen van technische dossier reviews en generatie processen",
+        "KYC/AML compliance systeem voor fintech startup (€5M funding gekregen)",
+        "Real-time computer vision systeem voor kwaliteitscontrole in productie",
+        "AI chatbot voor klantenservice automatisering (50+ bedrijven)",
+        "ML pipeline voor predictive maintenance in industrie"
       ],
       skills: {
         "AI & Machine Learning": ["Machine Learning", "Convolutional Neural Networks", "Deep Learning", "Computer Vision", "Reinforcement Learning"],
@@ -114,13 +112,13 @@ export default function ZzpProfiles({ isEnglish = false }: ZzpProfilesProps) {
       role: "Artificial Intelligence Engineer & Data Consultant",
       experience: "5+ jaar ervaring",
       bio: "Cum Laude afgestudeerd in Business Administration, gespecialiseerd in het vertalen van businessbehoeften naar innovatieve AI-oplossingen. Ruime ervaring met het bouwen van AI-tools, faciliteren van workshop en het effectief verbinden van technische en business stakeholders.",
+      mainAchievement: "Ontwikkeling van een AI-tool voor Capgemini (grootste IT-consultant wereldwijd) en geven van workshops hierover",
       highlights: [
-        "Ontwikkeling en implementatie van meerdere AI-tools voor Capgemini",
-        "Realisatie van een AI-tool voor het Ministerie van Defensie",
-        "Brugfunctie tussen business en techniek in AI-projecten",
-        "Faciliteren van AI-workshops voor grootschalige teams (400+ deelnemers)",
-        "AI-gedreven procesoptimalisatie en kostenbesparing (meer dan €40.000)",
-        "Winnaar nationale ROI competitie Nederland (met AI-project)"
+        "AI-tool voor Ministerie van Defensie ontwikkeld",
+        "Brugfunctie tussen business en technische stakeholders bij AI-projecten",
+        "AI-workshops gegeven aan grote groepen (400+ deelnemers)",
+        "AI-gedreven procesoptimalisatie en kostenbesparing gerealiseerd",
+        "Winnaar nationale ROI competitie Nederland (AI-project)"
       ],
       skills: {
         "AI & Data Science": ["Machine Learning", "AI-gedreven automatisering", "Natural Language Processing (NLP)", "Predictive Analytics"],
@@ -254,10 +252,6 @@ export default function ZzpProfiles({ isEnglish = false }: ZzpProfilesProps) {
                     <div className="flex items-start justify-center sm:justify-start gap-3">
                       <div className="flex flex-col gap-1 text-sm text-gray-600">
                         <div className="flex items-center gap-1">
-                          <Calendar className="h-4 w-4 flex-shrink-0 text-gray-500" />
-                          <span>26 {content.age}</span>
-                        </div>
-                        <div className="flex items-center gap-1">
                           <MapPin className="h-4 w-4 flex-shrink-0 text-gray-500" />
                           <span className="truncate">{content.location}</span>
                         </div>
@@ -290,6 +284,15 @@ export default function ZzpProfiles({ isEnglish = false }: ZzpProfilesProps) {
                 <p className="text-gray-700 mb-6 leading-relaxed">
                   {content.omar.bio}
                 </p>
+
+                {/* Main Achievement */}
+                <div className="mb-6">
+                  <h4 className="font-semibold text-gray-900 mb-3">{isEnglish ? "Main Achievement" : "Belangrijkste Prestatie"}</h4>
+                  <div className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 rounded-full bg-gray-400 mt-2 flex-shrink-0" />
+                    <p className="text-sm text-gray-700">{content.omar.mainAchievement}</p>
+                  </div>
+                </div>
 
                 {/* Key Highlights */}
                 <div className="mb-6">
@@ -420,10 +423,6 @@ export default function ZzpProfiles({ isEnglish = false }: ZzpProfilesProps) {
                     <div className="flex items-start justify-center sm:justify-start gap-3">
                       <div className="flex flex-col gap-1 text-sm text-gray-600">
                         <div className="flex items-center gap-1">
-                          <Calendar className="h-4 w-4 flex-shrink-0 text-gray-500" />
-                          <span>25 {content.age}</span>
-                        </div>
-                        <div className="flex items-center gap-1">
                           <MapPin className="h-4 w-4 flex-shrink-0 text-gray-500" />
                           <span className="truncate">{content.location}</span>
                         </div>
@@ -456,6 +455,15 @@ export default function ZzpProfiles({ isEnglish = false }: ZzpProfilesProps) {
                 <p className="text-gray-700 mb-6 leading-relaxed">
                   {content.robin.bio}
                 </p>
+
+                {/* Main Achievement */}
+                <div className="mb-6">
+                  <h4 className="font-semibold text-gray-900 mb-3">{isEnglish ? "Main Achievement" : "Belangrijkste Prestatie"}</h4>
+                  <div className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 rounded-full bg-gray-400 mt-2 flex-shrink-0" />
+                    <p className="text-sm text-gray-700">{content.robin.mainAchievement}</p>
+                  </div>
+                </div>
 
                 {/* Key Highlights */}
                 <div className="mb-6">
