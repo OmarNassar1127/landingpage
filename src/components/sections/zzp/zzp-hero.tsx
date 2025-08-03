@@ -3,7 +3,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowDown } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
+import { ArrowDown, Users, User, Zap } from "lucide-react";
 
 interface ZzpHeroProps {
   isEnglish?: boolean;
@@ -12,18 +13,28 @@ interface ZzpHeroProps {
 export default function ZzpHero({ isEnglish = false }: ZzpHeroProps) {
   const content = isEnglish ? {
     badge: "VIRELIO FREELANCE",
-    title: "Expert ZZP Developers",
+    title: "Expert Freelance Developers",
     subtitle: "Omar & Robin",
-    description: "Virelio Freelance: Experienced developers specializing in AI, backend development, and innovative digital solutions. Ready to bring your projects to life.",
+    description: "Professional freelance developers specializing in AI, backend development, and innovative digital solutions. Available for hire individually or as a team.",
     ctaButton: "View Our Profiles",
-    scrollText: "Meet the team"
+    scrollText: "Meet the team",
+    hiringSections: {
+      individual: "Hire individually",
+      team: "Hire as a team",
+      flexible: "Flexible collaboration"
+    }
   } : {
     badge: "VIRELIO ZZP",
-    title: "Expert ZZP Developers",
+    title: "Expert ZZP'ers",
     subtitle: "Omar & Robin", 
-    description: "Virelio ZZP: Ervaren freelance ontwikkelaars gespecialiseerd in AI, backend development en innovatieve digitale oplossingen. Klaar om jouw projecten tot leven te brengen.",
+    description: "Professionele ZZP'ers gespecialiseerd in AI, backend development en innovatieve digitale oplossingen. Beschikbaar voor inhuur individueel of als team.",
     ctaButton: "Bekijk Onze Profielen",
-    scrollText: "Ontmoet het team"
+    scrollText: "Ontmoet het team",
+    hiringSections: {
+      individual: "Huur individueel in",
+      team: "Huur als team in",
+      flexible: "Flexibele samenwerking"
+    }
   };
 
   const scrollToProfiles = () => {
@@ -84,16 +95,37 @@ export default function ZzpHero({ isEnglish = false }: ZzpHeroProps) {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-12 leading-relaxed"
+            className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-8 leading-relaxed"
           >
             {content.description}
           </motion.p>
+
+          {/* Hiring Options */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="flex flex-wrap justify-center gap-4 mb-12"
+          >
+            <Badge variant="outline" className="flex items-center gap-2 px-4 py-2 text-sm bg-white/50 backdrop-blur-sm border-primary/20">
+              <User className="h-4 w-4 text-primary" />
+              {content.hiringSections.individual}
+            </Badge>
+            <Badge variant="outline" className="flex items-center gap-2 px-4 py-2 text-sm bg-white/50 backdrop-blur-sm border-primary/20">
+              <Users className="h-4 w-4 text-primary" />
+              {content.hiringSections.team}
+            </Badge>
+            <Badge variant="outline" className="flex items-center gap-2 px-4 py-2 text-sm bg-white/50 backdrop-blur-sm border-primary/20">
+              <Zap className="h-4 w-4 text-primary" />
+              {content.hiringSections.flexible}
+            </Badge>
+          </motion.div>
 
           {/* CTA Button */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
             className="mb-16"
           >
             <Button
@@ -110,7 +142,7 @@ export default function ZzpHero({ isEnglish = false }: ZzpHeroProps) {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
+            transition={{ duration: 0.8, delay: 0.7 }}
             className="flex flex-col items-center cursor-pointer"
             onClick={scrollToProfiles}
           >
