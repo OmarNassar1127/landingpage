@@ -5,9 +5,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = siteConfig.url;
   const lastModified = new Date();
 
-  // Main landing pages and sections for both languages
+  // Only include real indexable routes (no hash fragments)
   return [
-    // Dutch (default) pages
+    // Dutch (default) pages - main routes only
     {
       url: baseUrl,
       lastModified,
@@ -15,48 +15,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1.0,
     },
     {
-      url: `${baseUrl}${siteConfig.sections.demo}`,
-      lastModified,
-      changeFrequency: 'monthly' as const,
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}${siteConfig.sections.projects}`,
-      lastModified,
-      changeFrequency: 'monthly' as const,
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}${siteConfig.sections.services}`,
-      lastModified,
-      changeFrequency: 'monthly' as const,
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}${siteConfig.sections.workshop}`,
-      lastModified,
-      changeFrequency: 'monthly' as const,
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}${siteConfig.sections.about}`,
-      lastModified,
-      changeFrequency: 'yearly' as const,
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}${siteConfig.sections.contact}`,
-      lastModified,
-      changeFrequency: 'yearly' as const,
-      priority: 0.7,
-    },
-    
-    // ZZP page (Dutch)
-    {
       url: `${baseUrl}/zzp`,
       lastModified,
       changeFrequency: 'monthly' as const,
       priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/workshop`,
+      lastModified,
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
     },
     
     // Policy pages
@@ -79,56 +47,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.5,
     },
     
-    // English pages
+    // English pages - main routes only
     {
       url: `${baseUrl}/en`,
       lastModified,
       changeFrequency: 'monthly' as const,
-      priority: 0.9, // Slightly lower than main Dutch page
+      priority: 0.9,
     },
-    {
-      url: `${baseUrl}/en${siteConfig.sections.demo}`,
-      lastModified,
-      changeFrequency: 'monthly' as const,
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/en${siteConfig.sections.projects}`,
-      lastModified,
-      changeFrequency: 'monthly' as const,
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/en${siteConfig.sections.services}`,
-      lastModified,
-      changeFrequency: 'monthly' as const,
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/en${siteConfig.sections.workshop}`,
-      lastModified,
-      changeFrequency: 'monthly' as const,
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/en${siteConfig.sections.about}`,
-      lastModified,
-      changeFrequency: 'yearly' as const,
-      priority: 0.6,
-    },
-    {
-      url: `${baseUrl}/en${siteConfig.sections.contact}`,
-      lastModified,
-      changeFrequency: 'yearly' as const,
-      priority: 0.6,
-    },
-    
-    // Freelancer page (English) 
     {
       url: `${baseUrl}/en/freelancer`,
       lastModified,
       changeFrequency: 'monthly' as const,
       priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/en/workshop`,
+      lastModified,
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
     },
   ];
 }

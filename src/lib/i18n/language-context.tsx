@@ -1,6 +1,7 @@
 "use client";
 
 import React, { createContext, useContext, useState, useEffect, ReactNode } from "react";
+import { useRouter } from "next/navigation";
 import { translations } from "./translations";
 
 type Language = "nl" | "en";
@@ -29,6 +30,7 @@ interface LanguageProviderProps {
 }
 
 export function LanguageProvider({ children }: LanguageProviderProps) {
+  const router = useRouter();
   const [language, setLanguage] = useState<Language>("nl");
   const [translations_copy, setTranslations] = useState<TranslationType>(translations.nl);
 
@@ -56,19 +58,19 @@ export function LanguageProvider({ children }: LanguageProviderProps) {
     setTranslations(translations[lang]);
     localStorage.setItem("language", lang);
     
-    // Change URL based on language
+    // Change URL based on language using Next.js router (no redirects)
     const currentPath = window.location.pathname;
     if (lang === "en" && !currentPath.startsWith('/en')) {
       // Switch to English - add /en to path
       if (currentPath === '/') {
-        window.location.pathname = '/en';
+        router.push('/en');
       } else {
-        window.location.pathname = `/en${currentPath}`;
+        router.push(`/en${currentPath}`);
       }
     } else if (lang === "nl" && currentPath.startsWith('/en')) {
       // Switch to Dutch - remove /en from path
       const newPath = currentPath.replace(/^\/en/, '') || '/';
-      window.location.pathname = newPath;
+      router.push(newPath);
     }
   };
 
