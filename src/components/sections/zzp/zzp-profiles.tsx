@@ -248,27 +248,26 @@ export default function ZzpProfiles({ isEnglish = false }: ZzpProfilesProps) {
                       </Button>
                     </div>
 
-                    {/* Age, location and mobile LinkedIn */}
-                    <div className="flex items-start justify-center sm:justify-start gap-3">
-                      <div className="flex flex-col gap-1 text-sm text-gray-600">
-                        <div className="flex items-center gap-1">
-                          <MapPin className="h-4 w-4 flex-shrink-0 text-gray-500" />
-                          <span className="truncate">{content.location}</span>
-                        </div>
+                    {/* Location and mobile LinkedIn */}
+                    <div className="flex flex-col items-center sm:items-start gap-2">
+                      <div className="flex items-center gap-1 text-sm text-gray-600">
+                        <MapPin className="h-4 w-4 flex-shrink-0 text-gray-500" />
+                        <span className="truncate">{content.location}</span>
                       </div>
                       <Button
                         variant="outline"
                         size="sm"
-                        className="border-gray-300 text-gray-500 bg-gray-50 sm:hidden w-8 h-8 p-0 flex items-center justify-center"
+                        className="border-gray-300 text-gray-500 bg-gray-50 sm:hidden"
                         asChild
                       >
                         <a 
                           href="https://www.linkedin.com/in/omar-nassar-93a176155/" 
                           target="_blank" 
                           rel="noopener noreferrer"
-                          className="flex items-center justify-center"
+                          className="flex items-center gap-2"
                         >
                           <LinkedinIcon className="h-4 w-4" />
+                          <span>{content.linkedinButton}</span>
                         </a>
                       </Button>
                     </div>
@@ -419,27 +418,26 @@ export default function ZzpProfiles({ isEnglish = false }: ZzpProfilesProps) {
                       </Button>
                     </div>
 
-                    {/* Age, location and mobile LinkedIn */}
-                    <div className="flex items-start justify-center sm:justify-start gap-3">
-                      <div className="flex flex-col gap-1 text-sm text-gray-600">
-                        <div className="flex items-center gap-1">
-                          <MapPin className="h-4 w-4 flex-shrink-0 text-gray-500" />
-                          <span className="truncate">{content.location}</span>
-                        </div>
+                    {/* Location and mobile LinkedIn */}
+                    <div className="flex flex-col items-center sm:items-start gap-2">
+                      <div className="flex items-center gap-1 text-sm text-gray-600">
+                        <MapPin className="h-4 w-4 flex-shrink-0 text-gray-500" />
+                        <span className="truncate">{content.location}</span>
                       </div>
                       <Button
                         variant="outline"
                         size="sm"
-                        className="border-gray-300 text-gray-500 bg-gray-50 sm:hidden w-8 h-8 p-0 flex items-center justify-center"
+                        className="border-gray-300 text-gray-500 bg-gray-50 sm:hidden"
                         asChild
                       >
                         <a 
                           href="https://www.linkedin.com/in/robin-bril" 
                           target="_blank" 
                           rel="noopener noreferrer"
-                          className="flex items-center justify-center"
+                          className="flex items-center gap-2"
                         >
                           <LinkedinIcon className="h-4 w-4" />
+                          <span>{content.linkedinButton}</span>
                         </a>
                       </Button>
                     </div>

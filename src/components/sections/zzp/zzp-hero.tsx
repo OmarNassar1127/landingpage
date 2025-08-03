@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowDown, Users, User, Zap } from "lucide-react";
+import { ThemeToggle } from "@/components/ui/theme-toggle";
 
 interface ZzpHeroProps {
   isEnglish?: boolean;
@@ -47,6 +48,13 @@ export default function ZzpHero({ isEnglish = false }: ZzpHeroProps) {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-background to-primary/5">
+      {/* Theme toggle - sticky position with Apple-style design */}
+      <div className="fixed top-4 right-4 z-50">
+        <div className="bg-white/90 dark:bg-gray-900/90 backdrop-blur-xl rounded-full p-1 shadow-lg border border-gray-200 dark:border-gray-700">
+          <ThemeToggle />
+        </div>
+      </div>
+      
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 -right-40 w-80 h-80 rounded-full bg-primary/10 blur-3xl opacity-20" />
