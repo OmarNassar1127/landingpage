@@ -72,9 +72,9 @@ export default function ZzpContact({ isEnglish = false }: ZzpContactProps) {
     contactInfo: {
       title: "Quick Contact",
       email: "Email",
-      emailAddress: "omarnassar1127@gmail.com",
+      emailAddress: "robin.bril@gmail.com",
       phone: "Phone", 
-      phoneNumber: "+31 6 87838713",
+      phoneNumber: "+31 6 4044 6732",
       location: "Location",
       locationText: "Amsterdam, Netherlands",
       availability: "Availability",
@@ -143,9 +143,9 @@ export default function ZzpContact({ isEnglish = false }: ZzpContactProps) {
     contactInfo: {
       title: "Direct Contact",
       email: "E-mail",
-      emailAddress: "omarnassar1127@gmail.com",
+      emailAddress: "robin.bril@gmail.com",
       phone: "Telefoon",
-      phoneNumber: "+31 6 87838713", 
+      phoneNumber: "+31 6 4044 6732", 
       location: "Locatie",
       locationText: "Amsterdam, Nederland",
       availability: "Beschikbaarheid",
