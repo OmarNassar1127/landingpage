@@ -51,6 +51,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     
+    // ZZP page (Dutch)
+    {
+      url: `${baseUrl}/zzp`,
+      lastModified,
+      changeFrequency: 'monthly' as const,
+      priority: 0.9,
+    },
+    
     // Policy pages
     {
       url: `${baseUrl}/privacy-policy`,
@@ -113,6 +121,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified,
       changeFrequency: 'yearly' as const,
       priority: 0.6,
+    },
+    
+    // Freelancer page (English) 
+    {
+      url: `${baseUrl}/en/freelancer`,
+      lastModified,
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
     },
   ];
 }
