@@ -75,7 +75,14 @@ export default function ZzpHero({ isEnglish = false }: ZzpHeroProps) {
             transition={{ duration: 0.8, delay: 0.1 }}
             className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-4"
           >
-            {content.title}
+            {isEnglish ? (
+              content.title
+            ) : (
+              <>
+                <span className="block sm:inline">ZZP'ers voor AI</span>{' '}
+                <span className="block sm:inline">Projecten</span>
+              </>
+            )}
           </motion.h1>
 
           {/* Subtitle */}
