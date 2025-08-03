@@ -13,11 +13,10 @@ interface ZzpHeroProps {
 export default function ZzpHero({ isEnglish = false }: ZzpHeroProps) {
   const content = isEnglish ? {
     badge: "VIRELIO FREELANCE",
-    title: "Expert Freelance Developers",
+    title: "Freelance for AI Projects",
     subtitle: "Omar & Robin",
     description: "Professional freelance developers specializing in AI, backend development, and innovative digital solutions. Available for hire individually or as a team.",
-    ctaButton: "View Our Profiles",
-    scrollText: "Meet the team",
+    ctaButton: "View Our CV's",
     hiringSections: {
       individual: "Hire individually",
       team: "Hire as a team",
@@ -25,11 +24,10 @@ export default function ZzpHero({ isEnglish = false }: ZzpHeroProps) {
     }
   } : {
     badge: "VIRELIO ZZP",
-    title: "Expert ZZP'ers",
+    title: "ZZP'ers voor AI Projecten",
     subtitle: "Omar & Robin", 
     description: "Professionele ZZP'ers gespecialiseerd in AI, backend ontwikkeling en innovatieve digitale oplossingen. Je kunt ons inhuren als duo of apart, afhankelijk van jouw projectbehoeften.",
-    ctaButton: "Bekijk Onze Profielen",
-    scrollText: "Ontmoet het team",
+    ctaButton: "Bekijk Onze CV's",
     hiringSections: {
       individual: "Huur individueel in",
       team: "Huur als team in",
@@ -147,7 +145,7 @@ export default function ZzpHero({ isEnglish = false }: ZzpHeroProps) {
             onClick={scrollToProfiles}
           >
             <p className="text-sm text-muted-foreground mb-4 uppercase tracking-wider">
-              {content.scrollText}
+              {/* {content.scrollText} */}
             </p>
             <motion.div
               animate={{ y: [0, 8, 0] }}
