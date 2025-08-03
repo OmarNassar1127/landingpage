@@ -13,7 +13,7 @@ interface ZzpProfilesProps {
 
 export default function ZzpProfiles({ isEnglish = false }: ZzpProfilesProps) {
   const content = isEnglish ? {
-    sectionTitle: "Meet Our Team",
+    sectionTitle: "Our CV's",
     sectionSubtitle: "Experienced freelance developers ready to tackle your next project",
     linkedinButton: "View LinkedIn Profile",
     contactButton: "Contact",
@@ -74,7 +74,7 @@ export default function ZzpProfiles({ isEnglish = false }: ZzpProfilesProps) {
       ]
     }
   } : {
-    sectionTitle: "Ontmoet Ons Team",
+    sectionTitle: "Onze CV's",
     sectionSubtitle: "Ervaren freelance ontwikkelaars klaar om jouw volgende project aan te pakken",
     linkedinButton: "Bekijk LinkedIn Profiel",
     contactButton: "Contact",
