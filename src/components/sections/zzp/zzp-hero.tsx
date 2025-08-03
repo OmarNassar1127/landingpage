@@ -148,7 +148,7 @@ export default function ZzpHero({ isEnglish = false }: ZzpHeroProps) {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.7 }}
-            className="flex flex-col items-center cursor-pointer"
+            className="hidden sm:flex flex-col items-center cursor-pointer"
             onClick={scrollToProfiles}
           >
             <p className="text-sm text-muted-foreground mb-4 uppercase tracking-wider">
