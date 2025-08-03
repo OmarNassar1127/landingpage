@@ -9,39 +9,39 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     // Dutch (default) pages - main routes only
     {
-      url: baseUrl,
+      url: `${baseUrl}/`,
       lastModified,
       changeFrequency: 'monthly' as const,
       priority: 1.0,
     },
     {
-      url: `${baseUrl}/zzp`,
+      url: `${baseUrl}/zzp/`,
       lastModified,
       changeFrequency: 'monthly' as const,
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/workshop`,
+      url: `${baseUrl}/workshop/`,
       lastModified,
       changeFrequency: 'monthly' as const,
       priority: 0.8,
     },
     
-    // Policy pages
+    // Policy pages (with trailing slashes for consistency)
     {
-      url: `${baseUrl}/privacy-policy`,
+      url: `${baseUrl}/privacy-policy/`,
       lastModified,
       changeFrequency: 'yearly' as const,
       priority: 0.5,
     },
     {
-      url: `${baseUrl}/terms-of-service`,
+      url: `${baseUrl}/terms-of-service/`,
       lastModified,
       changeFrequency: 'yearly' as const,
       priority: 0.5,
     },
     {
-      url: `${baseUrl}/cookie-policy`,
+      url: `${baseUrl}/cookie-policy/`,
       lastModified,
       changeFrequency: 'yearly' as const,
       priority: 0.5,
@@ -49,19 +49,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     
     // English pages - main routes only
     {
-      url: `${baseUrl}/en`,
+      url: `${baseUrl}/en/`,
       lastModified,
       changeFrequency: 'monthly' as const,
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/en/freelancer`,
+      url: `${baseUrl}/en/freelancer/`,
       lastModified,
       changeFrequency: 'monthly' as const,
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/en/workshop`,
+      url: `${baseUrl}/en/workshop/`,
       lastModified,
       changeFrequency: 'monthly' as const,
       priority: 0.7,
