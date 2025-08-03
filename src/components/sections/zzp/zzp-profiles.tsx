@@ -263,14 +263,14 @@ export default function ZzpProfiles({ isEnglish = false }: ZzpProfilesProps) {
                       <Button
                         variant="outline"
                         size="sm"
-                        className="border-gray-300 text-gray-500 bg-gray-50 sm:hidden"
+                        className="border-gray-300 text-gray-500 bg-gray-50 sm:hidden w-8 h-8 p-0 flex items-center justify-center"
                         asChild
                       >
                         <a 
                           href="https://www.linkedin.com/in/omar-nassar-93a176155/" 
                           target="_blank" 
                           rel="noopener noreferrer"
-                          className="flex items-center gap-2"
+                          className="flex items-center justify-center"
                         >
                           <LinkedinIcon className="h-4 w-4" />
                         </a>
@@ -337,14 +337,6 @@ export default function ZzpProfiles({ isEnglish = false }: ZzpProfilesProps) {
                 <div className="flex justify-center gap-3">
                   <Button
                     size="sm"
-                    onClick={scrollToContact}
-                    className="bg-gray-900 hover:bg-gray-800 text-white px-8 font-medium"
-                  >
-                    <Mail className="h-4 w-4 mr-2" />
-                    {content.contactButton}
-                  </Button>
-                  <Button
-                    size="sm"
                     variant="outline"
                     className="border-gray-300 text-gray-500 bg-gray-50"
                     asChild
@@ -355,8 +347,17 @@ export default function ZzpProfiles({ isEnglish = false }: ZzpProfilesProps) {
                       className="flex items-center gap-2"
                     >
                       <Download className="h-4 w-4" />
+                      <span className="sm:hidden">CV</span>
                       <span className="hidden sm:inline">Download CV</span>
                     </a>
+                  </Button>
+                  <Button
+                    size="sm"
+                    onClick={scrollToContact}
+                    className="bg-gray-900 hover:bg-gray-800 text-white px-8 font-medium"
+                  >
+                    <Mail className="h-4 w-4 mr-2" />
+                    {content.contactButton}
                   </Button>
                 </div>
               </CardContent>
@@ -428,14 +429,14 @@ export default function ZzpProfiles({ isEnglish = false }: ZzpProfilesProps) {
                       <Button
                         variant="outline"
                         size="sm"
-                        className="border-gray-300 text-gray-500 bg-gray-50 sm:hidden"
+                        className="border-gray-300 text-gray-500 bg-gray-50 sm:hidden w-8 h-8 p-0 flex items-center justify-center"
                         asChild
                       >
                         <a 
                           href="https://www.linkedin.com/in/robin-bril" 
                           target="_blank" 
                           rel="noopener noreferrer"
-                          className="flex items-center gap-2"
+                          className="flex items-center justify-center"
                         >
                           <LinkedinIcon className="h-4 w-4" />
                         </a>
@@ -502,14 +503,6 @@ export default function ZzpProfiles({ isEnglish = false }: ZzpProfilesProps) {
                 <div className="flex justify-center gap-3">
                   <Button
                     size="sm"
-                    onClick={scrollToContact}
-                    className="bg-gray-900 hover:bg-gray-800 text-white px-8 font-medium"
-                  >
-                    <Mail className="h-4 w-4 mr-2" />
-                    {content.contactButton}
-                  </Button>
-                  <Button
-                    size="sm"
                     variant="outline"
                     className="border-gray-300 text-gray-500 bg-gray-50"
                     asChild
@@ -520,8 +513,17 @@ export default function ZzpProfiles({ isEnglish = false }: ZzpProfilesProps) {
                       className="flex items-center gap-2"
                     >
                       <Download className="h-4 w-4" />
+                      <span className="sm:hidden">CV</span>
                       <span className="hidden sm:inline">Download CV</span>
                     </a>
+                  </Button>
+                  <Button
+                    size="sm"
+                    onClick={scrollToContact}
+                    className="bg-gray-900 hover:bg-gray-800 text-white px-8 font-medium"
+                  >
+                    <Mail className="h-4 w-4 mr-2" />
+                    {content.contactButton}
                   </Button>
                 </div>
               </CardContent>
