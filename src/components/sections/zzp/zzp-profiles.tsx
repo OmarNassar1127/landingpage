@@ -310,18 +310,28 @@ export default function ZzpProfiles({ isEnglish = false }: ZzpProfilesProps) {
                 <div className="mb-8">
                   <h4 className="font-semibold text-gray-900 mb-4">{isEnglish ? "Technical Skills" : "Technische Vaardigheden"}</h4>
                   <div className="space-y-3">
-                    {Object.entries(content.omar.skills).map(([category, skills]) => (
-                      <div key={category}>
-                        <p className="text-sm font-medium text-gray-800 mb-2 capitalize">{category}:</p>
-                        <div className="flex flex-wrap gap-2">
-                          {skills.map((skill, index) => (
-                            <Badge key={index} variant="outline" className="text-xs border-gray-300 text-gray-700">
-                              {skill}
-                            </Badge>
-                          ))}
-                        </div>
-                      </div>
-                    ))}
+                    {Object.entries(content.omar.skills).map(([category, skills]) => {
+                      const displayCategory = category === 'specialties' 
+                        ? (isEnglish ? 'Specialties' : 'Specialiteiten')
+                        : category === 'AI & Machine Learning' ? category
+                        : category === 'backend' ? 'Backend'
+                        : category === 'frontend' ? 'Frontend'
+                        : category === 'databases' ? 'Databases' 
+                        : category;
+                      
+                      return (
+                          <div key={category}>
+                            <p className="text-sm font-medium text-gray-800 mb-2">{displayCategory}:</p>
+                            <div className="flex flex-wrap gap-2">
+                              {skills.map((skill, index) => (
+                                <Badge key={index} variant="outline" className="text-xs border-gray-300 text-gray-700">
+                                  {skill}
+                                </Badge>
+                              ))}
+                            </div>
+                          </div>
+                        );
+                      })}
                   </div>
                 </div>
 
@@ -480,18 +490,28 @@ export default function ZzpProfiles({ isEnglish = false }: ZzpProfilesProps) {
                 <div className="mb-8">
                   <h4 className="font-semibold text-gray-900 mb-4">{isEnglish ? "Technical Skills" : "Technische Vaardigheden"}</h4>
                   <div className="space-y-3">
-                    {Object.entries(content.robin.skills).map(([category, skills]) => (
-                      <div key={category}>
-                        <p className="text-sm font-medium text-gray-800 mb-2 capitalize">{category}:</p>
-                        <div className="flex flex-wrap gap-2">
-                          {skills.map((skill, index) => (
-                            <Badge key={index} variant="outline" className="text-xs border-gray-300 text-gray-700">
-                              {skill}
-                            </Badge>
-                          ))}
-                        </div>
-                      </div>
-                    ))}
+                    {Object.entries(content.robin.skills).map(([category, skills]) => {
+                      const displayCategory = category === 'specialties' 
+                        ? (isEnglish ? 'Specialties' : 'Specialiteiten')
+                        : category === 'AI & Data Science' ? category
+                        : category === 'backend' ? 'Backend'
+                        : category === 'frontend' ? 'Frontend'
+                        : category === 'databases' ? 'Databases' 
+                        : category;
+                      
+                      return (
+                          <div key={category}>
+                            <p className="text-sm font-medium text-gray-800 mb-2">{displayCategory}:</p>
+                            <div className="flex flex-wrap gap-2">
+                              {skills.map((skill, index) => (
+                                <Badge key={index} variant="outline" className="text-xs border-gray-300 text-gray-700">
+                                  {skill}
+                                </Badge>
+                              ))}
+                            </div>
+                          </div>
+                        );
+                      })}
                   </div>
                 </div>
 
