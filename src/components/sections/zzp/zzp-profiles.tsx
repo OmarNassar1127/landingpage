@@ -23,54 +23,39 @@ export default function ZzpProfiles({ isEnglish = false }: ZzpProfilesProps) {
       name: "Omar Nassar",
       role: "Backend Developer & AI Specialist",
       experience: "5+ years experience",
-      bio: "Results-driven Software Developer with expertise in full-stack development, AI integration, and financial technology. Proven ability to architect scalable platforms and implement AI-powered solutions that drive operational efficiency.",
-      mainAchievement: "WhatsApp AI system for Vloto automating vehicle management for 3,000+ users",
+      mainAchievement: "WhatsApp-driven AI system for Vloto automating vehicle management for >3,000 users.",
       highlights: [
-        "AI-driven medical device automation for accelerating technical file reviews and generation processes",
-        "KYC/AML compliance system for fintech startup (secured €5M funding)",
-        "Real-time computer vision system for quality control in manufacturing",
-        "AI chatbot voor klantenservice automatisering (50+ bedrijven)",
-        "ML pipeline voor predictive maintenance in industrie"
+        "AI-driven automation for medical devices: accelerates file reviews and generation processes.",
+        "KYC/AML platform for fintech startup (funded €5 million).",
+        "Computer vision quality control system for production environments.",
+        "AI chatbot for customer service automation (50+ companies).",
+        "Machine learning pipeline for predictive maintenance in industry."
       ],
-      skills: {
-        "AI & Machine Learning": ["Machine Learning", "Convolutional Neural Networks", "Deep Learning", "Computer Vision", "Reinforcement Learning"],
-        backend: ["PHP", "Laravel", "Python", "C++"],
-        frontend: ["ReactJS", "TypeScript", "Next.js", "Vue.js"],
-        databases: ["MySQL", "PostgreSQL", "Supabase", "MongoDB"],
-        specialties: ["Artificial Intelligence (AI)", "AI/ML Architecture", "AI Workshops & Training", "AI Reinforcement Learning", "API Integration", "Automation"]
-      },
+      skills: ["PHP", "Laravel", "Python", "C++", "React", "TypeScript", "Next.js", "Machine learning", "Convolutional Neural Networks (CNN)", "Computer vision", "Reinforcement learning", "MySQL", "PostgreSQL", "MongoDB", "Supabase"],
       companies: [
-        "Vloto B.V. - Backend Developer (2023-present)",
-        "Quotum Consultancy - Founder (2023-present)", 
-        "Freelance/ZZP - Software Developer (2021-present)",
-        "CS Digital Media - Frontend Developer (2020-2021)"
+        "Vloto B.V. – Backend Developer (2023-present)",
+        "Quotum Consultancy – Founder (2023-present)",
+        "Freelance/ZZP – Software Developer (2021-present)",
+        "CS Digital Media – Frontend Developer (2020-2021)"
       ]
     },
     robin: {
       name: "Robin Bril",
-      role: "Artificial Intelligence Engineer & Data Consultant",
+      role: "AI Engineer & Data Consultant",
       experience: "5+ years experience",
-      bio: "Cum Laude graduate in Business Administration, specialized in translating business needs into innovative AI solutions. Extensive experience building AI tools, facilitating workshops and effectively connecting technical and business stakeholders.",
-      mainAchievement: "Development of an AI tool for Capgemini (world's largest IT consultant) and giving workshops about it",
+      mainAchievement: "Company-wide AI tool designed, built and implemented for Capgemini; trained 400+ consultants through interactive workshops.",
       highlights: [
-        "Developed AI tool for Ministry of Defense",
-        "Bridge function between business and technical stakeholders in AI projects",
-        "Facilitated AI workshops for large groups (400+ participants)",
-        "Realized AI-driven process optimization and cost savings",
-        "Winner national ROI competition Netherlands (AI project)"
+        "AI tool for Ministry of Defense (secure, on-premise within own infrastructure).",
+        "Bridge between business and technical teams in diverse AI projects.",
+        "AI-driven process improvements with demonstrable savings.",
+        "Winner national ROI competition Netherlands (complex algorithm)."
       ],
-      skills: {
-        "AI & Data Science": ["Machine Learning", "AI-driven automation", "Natural Language Processing (NLP)", "Predictive Analytics"],
-        backend: ["Python", "SQL", "BigQuery", "Database Management"],
-        frontend: ["Tableau", "Power BI", "Looker", "Data Visualisation"],
-        databases: ["SQL Server", "MySQL", "PostgreSQL", "MongoDB"],
-        specialties: ["Artificial Intelligence (AI)", "Translating Business to Technology", "AI workshops & Training", "Data analysis & Process Optimization"]
-      },
+      skills: ["Python", "SQL", "BigQuery", "Machine learning", "NLP", "Predictive analysis", "Tableau", "Power BI", "Looker", "Database management"],
       companies: [
-        "Capgemini - AI & Business Analyst (2024-present)",
-        "Road - Data Analyst & AI Specialist (2023-2024)",
-        "Road - Traineeship Process Management & Analytics (2022-2023)",
-        "SBB - Traineeship Process Management & Data Analysis (2021-2022)"
+        "Capgemini – AI & Business Analyst (2024-present)",
+        "Road – Data Analyst & AI Specialist (2023-2024)",
+        "Road – Traineeship Process Management & Analytics (2022-2023)",
+        "SBB – Traineeship Process Management & Data Analysis (2021-2022)"
       ]
     }
   } : {
@@ -82,56 +67,41 @@ export default function ZzpProfiles({ isEnglish = false }: ZzpProfilesProps) {
     location: "Amsterdam, Nederland",
     omar: {
       name: "Omar Nassar",
-      role: "Backend Developer & AI Specialist",
+      role: "Backend-ontwikkelaar & AI-specialist",
       experience: "5+ jaar ervaring",
-      bio: "Resultaat gedreven Software Developer met expertise in full-stack development, AI-integratie en financial technology. Bewezen vermogen om schaalbare platforms te architecteren en AI-oplossingen te implementeren die operationele efficiëntie verbeteren.",
-      mainAchievement: "WhatsApp AI-systeem voor Vloto dat voertuigbeheer automatiseert voor 3.000+ gebruikers",
+      mainAchievement: "WhatsApp-gestuurd AI-systeem voor Vloto dat voertuigbeheer automatiseert voor >3.000 gebruikers.",
       highlights: [
-        "AI-gestuurde medical device automatisering voor het versnellen van technische dossier reviews en generatie processen",
-        "KYC/AML compliance systeem voor fintech startup (€5M funding gekregen)",
-        "Real-time computer vision systeem voor kwaliteitscontrole in productie",
-        "AI chatbot voor klantenservice automatisering (50+ bedrijven)",
-        "ML pipeline voor predictive maintenance in industrie"
+        "AI-gestuurde automatisering voor medische apparatuur: versnelt dossierreviews en generatiestromen.",
+        "KYC/AML-platform voor fintech-startup (gefinancierd met €5 miljoen).",
+        "Computer-vision kwaliteitscontrolesysteem voor productieomgevingen.",
+        "AI-chatbot voor klantenservice-automatisering (50+ bedrijven).",
+        "Machine-learningpijplijn voor predictief onderhoud in de industrie."
       ],
-      skills: {
-        "AI & Machine Learning": ["Machine Learning", "Convolutional Neural Networks", "Deep Learning", "Computer Vision", "Reinforcement Learning"],
-        backend: ["PHP", "Laravel", "Python", "C++"],
-        frontend: ["ReactJS", "TypeScript", "Next.js", "Vue.js"],
-        databases: ["MySQL", "PostgreSQL", "Supabase", "MongoDB"],
-        specialties: ["Kunstmatige Intelligentie (AI)", "AI/ML Architectuur", "AI Workshops & Training", "AI Reinforcement Learning", "API Integratie", "Automatisering"]
-      },
+      skills: ["PHP", "Laravel", "Python", "C++", "React", "TypeScript", "Next.js", "Machine learning", "Convolutionele neurale netwerken (CNN)", "Computer vision", "Reinforcement learning", "MySQL", "PostgreSQL", "MongoDB", "Supabase"],
       companies: [
-        "Vloto B.V. - Backend Developer (2023-heden)",
-        "Quotum Consultancy - Oprichter (2023-heden)",
-        "Freelance/ZZP - Software Developer (2021-heden)", 
-        "CS Digital Media - Frontend Developer (2020-2021)"
+        "Vloto B.V. – Backend-ontwikkelaar (2023-heden)",
+        "Quotum Consultancy – Oprichter (2023-heden)",
+        "Freelance/ZZP – Softwareontwikkelaar (2021-heden)",
+        "CS Digital Media – Frontend-ontwikkelaar (2020-2021)"
       ]
     },
     robin: {
       name: "Robin Bril",
-      role: "Artificial Intelligence Engineer & Data Consultant",
+      role: "AI-engineer & dataconsultant",
       experience: "5+ jaar ervaring",
-      bio: "Cum Laude afgestudeerd in Business Administration, gespecialiseerd in het vertalen van businessbehoeften naar innovatieve AI-oplossingen. Ruime ervaring met het bouwen van AI-tools, faciliteren van workshop en het effectief verbinden van technische en business stakeholders.",
-      mainAchievement: "Ontwikkeling van een AI-tool voor Capgemini (grootste IT-consultant wereldwijd) en geven van workshops hierover",
+      mainAchievement: "Bedrijfsbrede AI-tool voor Capgemini ontworpen, gebouwd en geïmplementeerd; 400+ consultants getraind via interactieve workshops.",
       highlights: [
-        "AI-tool voor Ministerie van Defensie ontwikkeld",
-        "Brugfunctie tussen business en technische stakeholders bij AI-projecten",
-        "AI-workshops gegeven aan grote groepen (400+ deelnemers)",
-        "AI-gedreven procesoptimalisatie en kostenbesparing gerealiseerd",
-        "Winnaar nationale ROI competitie Nederland (AI-project)"
+        "AI-tool voor het Ministerie van Defensie (beveiligd, on-premise binnen de eigen infrastructuur).",
+        "Brug tussen bedrijfszijde en technische teams in uiteenlopende AI-trajecten.",
+        "AI-gestuurde procesverbeteringen met aantoonbare besparingen.",
+        "Winnaar nationale ROI-competitie Nederland (complex algoritme)."
       ],
-      skills: {
-        "AI & Data Science": ["Machine Learning", "AI-gedreven automatisering", "Natural Language Processing (NLP)", "Predictive Analytics"],
-        backend: ["Python", "SQL", "BigQuery", "Database Management"],
-        frontend: ["Tableau", "Power BI", "Looker", "Data Visualisation"],
-        databases: ["SQL Server", "MySQL", "PostgreSQL", "MongoDB"],
-        specialties: ["Kunstmatige Intelligentie (AI)", "Vertalen van Business naar Techniek", "AI-workshops & Training", "Data-analyse & Procesoptimalisatie"]
-      },
+      skills: ["Python", "SQL", "BigQuery", "Machine learning", "NLP", "Predictieve analyse", "Tableau", "Power BI", "Looker", "Database-beheer"],
       companies: [
-        "Capgemini - AI & Business Analyst (2024-heden)",
-        "Road - Data Analyst & AI Specialist (2023-2024)",
-        "Road - Traineeship Process Management & Analytics (2022-2023)",
-        "SBB - Traineeship Process Management & Data Analysis (2021-2022)"
+        "Capgemini – AI- & business-analist (2024-heden)",
+        "Road – Data-analist & AI-specialist (2023-2024)",
+        "Road – Traineeship Process Management & Analytics (2022-2023)",
+        "SBB – Traineeship Process Management & Data Analysis (2021-2022)"
       ]
     }
   };
@@ -201,7 +171,7 @@ export default function ZzpProfiles({ isEnglish = false }: ZzpProfilesProps) {
           {/* Omar's Profile */}
           <motion.div variants={cardVariants}>
             <Card className="h-full border-white/20 bg-white/90 backdrop-blur-xl shadow-2xl hover:shadow-3xl hover:bg-white/95 transition-all duration-500 ease-out">
-              <CardContent className="p-4 sm:p-6 lg:p-8">
+              <CardContent className="p-4 sm:p-6 lg:p-8 flex flex-col h-full">
                 {/* Profile Header */}
                 <div className="flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-6 mb-6 sm:mb-8">
                   {/* Mobile: Image centered at top */}
@@ -279,14 +249,9 @@ export default function ZzpProfiles({ isEnglish = false }: ZzpProfilesProps) {
                   {content.omar.experience}
                 </Badge>
 
-                {/* Bio */}
-                <p className="text-gray-700 mb-6 leading-relaxed">
-                  {content.omar.bio}
-                </p>
-
                 {/* Main Achievement */}
                 <div className="mb-6">
-                  <h4 className="font-semibold text-gray-900 mb-3">{isEnglish ? "Main Achievement" : "Belangrijkste Prestatie"}</h4>
+                  <h4 className="font-semibold text-gray-900 mb-3">{isEnglish ? "Top Achievement" : "Topprestatie"}</h4>
                   <div className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 rounded-full bg-gray-400 mt-2 flex-shrink-0" />
                     <p className="text-sm text-gray-700">{content.omar.mainAchievement}</p>
@@ -295,7 +260,7 @@ export default function ZzpProfiles({ isEnglish = false }: ZzpProfilesProps) {
 
                 {/* Key Highlights */}
                 <div className="mb-6">
-                  <h4 className="font-semibold text-gray-900 mb-3">{isEnglish ? "Key Projects & Achievements" : "Belangrijkste Projecten & Prestaties"}</h4>
+                  <h4 className="font-semibold text-gray-900 mb-3">{isEnglish ? "Projects & Achievements" : "Projecten & Prestaties"}</h4>
                   <ul className="space-y-2">
                     {content.omar.highlights.map((highlight, index) => (
                       <li key={index} className="flex items-start gap-2 text-sm text-gray-700">
@@ -308,30 +273,13 @@ export default function ZzpProfiles({ isEnglish = false }: ZzpProfilesProps) {
 
                 {/* Skills */}
                 <div className="mb-8">
-                  <h4 className="font-semibold text-gray-900 mb-4">{isEnglish ? "Technical Skills" : "Technische Vaardigheden"}</h4>
-                  <div className="space-y-3">
-                    {Object.entries(content.omar.skills).map(([category, skills]) => {
-                      const displayCategory = category === 'specialties' 
-                        ? (isEnglish ? 'Specialties' : 'Specialiteiten')
-                        : category === 'AI & Machine Learning' ? category
-                        : category === 'backend' ? 'Backend'
-                        : category === 'frontend' ? 'Frontend'
-                        : category === 'databases' ? 'Databases' 
-                        : category;
-                      
-                      return (
-                          <div key={category}>
-                            <p className="text-sm font-medium text-gray-800 mb-2">{displayCategory}:</p>
-                            <div className="flex flex-wrap gap-2">
-                              {skills.map((skill, index) => (
-                                <Badge key={index} variant="outline" className="text-xs border-gray-300 text-gray-700">
-                                  {skill}
-                                </Badge>
-                              ))}
-                            </div>
-                          </div>
-                        );
-                      })}
+                  <h4 className="font-semibold text-gray-900 mb-4">{isEnglish ? "Technical Skills" : "Technische vaardigheden"}</h4>
+                  <div className="flex flex-wrap gap-2">
+                    {content.omar.skills.map((skill, index) => (
+                      <Badge key={index} variant="outline" className="text-xs border-gray-300 text-gray-700">
+                        {skill}
+                      </Badge>
+                    ))}
                   </div>
                 </div>
 
@@ -348,7 +296,7 @@ export default function ZzpProfiles({ isEnglish = false }: ZzpProfilesProps) {
                 </div>
 
                 {/* Action Buttons */}
-                <div className="flex justify-center gap-3">
+                <div className="flex justify-center gap-3 mt-auto">
                   <Button
                     size="sm"
                     variant="outline"
@@ -381,7 +329,7 @@ export default function ZzpProfiles({ isEnglish = false }: ZzpProfilesProps) {
           {/* Robin's Profile */}
           <motion.div variants={cardVariants}>
             <Card className="h-full border-white/20 bg-white/90 backdrop-blur-xl shadow-2xl hover:shadow-3xl hover:bg-white/95 transition-all duration-500 ease-out">
-              <CardContent className="p-4 sm:p-6 lg:p-8">
+              <CardContent className="p-4 sm:p-6 lg:p-8 flex flex-col h-full">
                 {/* Profile Header */}
                 <div className="flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-6 mb-6 sm:mb-8">
                   {/* Mobile: Image centered at top */}
@@ -459,14 +407,9 @@ export default function ZzpProfiles({ isEnglish = false }: ZzpProfilesProps) {
                   {content.robin.experience}
                 </Badge>
 
-                {/* Bio */}
-                <p className="text-gray-700 mb-6 leading-relaxed">
-                  {content.robin.bio}
-                </p>
-
                 {/* Main Achievement */}
                 <div className="mb-6">
-                  <h4 className="font-semibold text-gray-900 mb-3">{isEnglish ? "Main Achievement" : "Belangrijkste Prestatie"}</h4>
+                  <h4 className="font-semibold text-gray-900 mb-3">{isEnglish ? "Top Achievement" : "Topprestatie"}</h4>
                   <div className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 rounded-full bg-gray-400 mt-2 flex-shrink-0" />
                     <p className="text-sm text-gray-700">{content.robin.mainAchievement}</p>
@@ -475,7 +418,7 @@ export default function ZzpProfiles({ isEnglish = false }: ZzpProfilesProps) {
 
                 {/* Key Highlights */}
                 <div className="mb-6">
-                  <h4 className="font-semibold text-gray-900 mb-3">{isEnglish ? "Key Projects & Achievements" : "Belangrijkste Projecten & Prestaties"}</h4>
+                  <h4 className="font-semibold text-gray-900 mb-3">{isEnglish ? "Projects & Achievements" : "Projecten & Prestaties"}</h4>
                   <ul className="space-y-2">
                     {content.robin.highlights.map((highlight, index) => (
                       <li key={index} className="flex items-start gap-2 text-sm text-gray-700">
@@ -488,30 +431,13 @@ export default function ZzpProfiles({ isEnglish = false }: ZzpProfilesProps) {
 
                 {/* Skills */}
                 <div className="mb-8">
-                  <h4 className="font-semibold text-gray-900 mb-4">{isEnglish ? "Technical Skills" : "Technische Vaardigheden"}</h4>
-                  <div className="space-y-3">
-                    {Object.entries(content.robin.skills).map(([category, skills]) => {
-                      const displayCategory = category === 'specialties' 
-                        ? (isEnglish ? 'Specialties' : 'Specialiteiten')
-                        : category === 'AI & Data Science' ? category
-                        : category === 'backend' ? 'Backend'
-                        : category === 'frontend' ? 'Frontend'
-                        : category === 'databases' ? 'Databases' 
-                        : category;
-                      
-                      return (
-                          <div key={category}>
-                            <p className="text-sm font-medium text-gray-800 mb-2">{displayCategory}:</p>
-                            <div className="flex flex-wrap gap-2">
-                              {skills.map((skill, index) => (
-                                <Badge key={index} variant="outline" className="text-xs border-gray-300 text-gray-700">
-                                  {skill}
-                                </Badge>
-                              ))}
-                            </div>
-                          </div>
-                        );
-                      })}
+                  <h4 className="font-semibold text-gray-900 mb-4">{isEnglish ? "Technical Skills" : "Technische vaardigheden"}</h4>
+                  <div className="flex flex-wrap gap-2">
+                    {content.robin.skills.map((skill, index) => (
+                      <Badge key={index} variant="outline" className="text-xs border-gray-300 text-gray-700">
+                        {skill}
+                      </Badge>
+                    ))}
                   </div>
                 </div>
 
@@ -528,7 +454,7 @@ export default function ZzpProfiles({ isEnglish = false }: ZzpProfilesProps) {
                 </div>
 
                 {/* Action Buttons */}
-                <div className="flex justify-center gap-3">
+                <div className="flex justify-center gap-3 mt-auto">
                   <Button
                     size="sm"
                     variant="outline"
