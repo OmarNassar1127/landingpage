@@ -245,7 +245,7 @@ export default function ZzpProfiles({ isEnglish = false }: ZzpProfilesProps) {
                 </div>
 
                 {/* Experience Badge */}
-                <Badge variant="outline" className="mb-6 text-xs border-gray-300 text-gray-700">
+                <Badge variant="outline" className="mb-6 text-xs border-gray-300 text-gray-700 w-fit">
                   {content.omar.experience}
                 </Badge>
 
@@ -403,7 +403,7 @@ export default function ZzpProfiles({ isEnglish = false }: ZzpProfilesProps) {
                 </div>
 
                 {/* Experience Badge */}
-                <Badge variant="outline" className="mb-6 text-xs border-gray-300 text-gray-700">
+                <Badge variant="outline" className="mb-6 text-xs border-gray-300 text-gray-700 w-fit">
                   {content.robin.experience}
                 </Badge>
 
