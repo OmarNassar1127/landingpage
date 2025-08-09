@@ -1,21 +1,19 @@
 "use client";
 
-import React, { useEffect, useState, useId } from "react";
-import { motion, useAnimation, AnimatePresence } from "framer-motion";
+import React, { useEffect, useState } from "react";
+import { motion, useAnimation } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { useInView } from "react-intersection-observer";
-import { ChevronDown, Zap, Globe, Code, Database } from "lucide-react";
+import { ChevronDown, Check, ArrowRight, Users, Trophy, Clock, Shield } from "lucide-react";
 import { scrollToSection } from "@/lib/scroll-utils";
 import { Icon } from "@/components/ui/icon";
 import { useLanguage } from "@/lib/i18n/language-context";
 
 function HeroContent() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [ref, inView] = useInView({ threshold: 0.1 });
   const controls = useAnimation();
-  const [currentIcon, setCurrentIcon] = useState(0);
   const [isMounted, setIsMounted] = useState(false);
-  const stableId = useId();
 
   useEffect(() => {
     setIsMounted(true);
@@ -75,44 +73,71 @@ function HeroContent() {
           animate={controls}
           className="flex flex-col items-center space-y-10 text-center"
         >
+          {/* Eyebrow text for context */}
+          <motion.div 
+            variants={itemVariants}
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 backdrop-blur-sm"
+          >
+            <span className="text-xs sm:text-sm font-medium text-primary">
+              {language === 'nl' ? 'Voor moderne bedrijven' : 'For modern businesses'}
+            </span>
+            <Icon icon={Shield} className="h-3 w-3 sm:h-4 sm:w-4 text-primary" />
+          </motion.div>
+
           {/* Hero Content - Mobile Optimized */}
           <motion.div
             variants={itemVariants}
-            className="space-y-4 md:space-y-6"
+            className="space-y-6 md:space-y-8"
           >
-            {/* Main headline - mobile optimized sizing */}
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight max-w-5xl px-2 sm:px-0 leading-tight">
-              {t.hero.title}
+            {/* Main headline - clear value proposition */}
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight max-w-5xl px-2 sm:px-0 leading-[1.1]">
+              {language === 'nl' ? (
+                <>
+                  Wij bouwen <span className="text-primary">automatiseringen</span> die<br className="hidden sm:block" />
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-600">40+ uur per maand</span> besparen
+                </>
+              ) : (
+                <>
+                  We build <span className="text-primary">automations</span> that<br className="hidden sm:block" />
+                  save <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-600">40+ hours per month</span>
+                </>
+              )}
             </h1>
-            
-            {/* Innovative feature highlights - mobile responsive */}
-            <div className="flex flex-wrap justify-center gap-2 sm:gap-3 md:gap-4 mt-6 px-2 sm:px-0 max-w-2xl mx-auto">
-              {[
-                { icon: Zap, text: "Fast", color: "from-yellow-500 to-orange-600" },
-                { icon: Code, text: "Custom", color: "from-blue-500 to-indigo-600" },
-                { icon: Database, text: "Scalable", color: "from-green-500 to-emerald-600" },
-                { icon: Globe, text: "Modern", color: "from-purple-500 to-pink-600" }
-              ].map((item, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, scale: 0 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.4, delay: 0.8 + index * 0.1 }}
-                  className={`inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-full bg-gradient-to-r ${item.color} text-white shadow-lg backdrop-blur-sm text-xs sm:text-sm font-medium`}
-                >
-                  <Icon icon={item.icon} className="h-3 w-3 sm:h-4 sm:w-4" />
-                  <span className="font-medium">{item.text}</span>
-                </motion.div>
-              ))}
-            </div>
           </motion.div>
 
           <motion.p
             variants={itemVariants}
-            className="max-w-3xl text-base sm:text-lg md:text-xl text-muted-foreground font-normal leading-relaxed px-4 sm:px-0 text-center"
+            className="max-w-2xl text-base sm:text-lg md:text-xl text-muted-foreground font-normal leading-relaxed px-4 sm:px-0 text-center"
           >
-            {t.hero.subtitle}
+            {language === 'nl' ? (
+              <>Van webshops tot AI-tools: wij bouwen software die perfect aansluit bij hoe jij werkt. <span className="font-semibold text-foreground">Geen templates, 100% maatwerk.</span></>
+            ) : (
+              <>From e-commerce to AI tools: we build software that perfectly fits how you work. <span className="font-semibold text-foreground">No templates, 100% custom.</span></>
+            )}
           </motion.p>
+
+          {/* Key benefits with checkmarks */}
+          <motion.div
+            variants={itemVariants}
+            className="flex flex-col sm:flex-row gap-4 sm:gap-8 justify-center items-center text-sm sm:text-base"
+          >
+            {(language === 'nl' ? [
+              "Gratis werkende demo",
+              "Binnen 2 weken live",
+              "Geen verborgen kosten"
+            ] : [
+              "Free working demo",
+              "Live within 2 weeks",
+              "No hidden costs"
+            ]).map((benefit, index) => (
+              <div key={index} className="flex items-center gap-2">
+                <div className="flex items-center justify-center w-5 h-5 rounded-full bg-green-500/20">
+                  <Icon icon={Check} className="h-3 w-3 text-green-500" />
+                </div>
+                <span className="text-muted-foreground">{benefit}</span>
+              </div>
+            ))}
+          </motion.div>
 
           <motion.div
             variants={itemVariants}
@@ -120,58 +145,61 @@ function HeroContent() {
           >
             <Button
               size="lg"
-              className="bg-primary hover:bg-primary/90 text-white dark:text-black shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 transition-all duration-300 w-full sm:w-auto min-w-[200px]"
+              className="bg-primary hover:bg-primary/90 text-white dark:text-black shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 transition-all duration-300 w-full sm:w-auto min-w-[200px] group"
               asChild
             >
-              <a href="#trusted-partners" className="flex items-center justify-center text-center" aria-label={t.hero.ctaButton}>
-                {t.hero.ctaButton}
+              <a 
+                href="#demo" 
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection("demo");
+                }}
+                className="flex items-center justify-center gap-2 text-center" 
+                aria-label={language === 'nl' ? "Bekijk onze demo" : "View our demo"}
+              >
+                {language === 'nl' ? 'Bekijk onze demo' : 'View our demo'}
+                <Icon icon={ArrowRight} className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </a>
             </Button>
             <Button
-              variant="outline"
+              variant="ghost"
               size="lg"
-              className="border-2 hover:bg-primary/5 transition-colors duration-300 w-full sm:w-auto min-w-[200px]"
+              className="hover:bg-primary/5 transition-colors duration-300 w-full sm:w-auto min-w-[200px]"
               asChild
             >
-              <a href="#contact" className="flex items-center justify-center text-center" aria-label={t.hero.secondaryButton}>
-                {t.hero.secondaryButton}
+              <a href="#projects" className="flex items-center justify-center text-center" aria-label={language === 'nl' ? "Bekijk voorbeelden" : "View examples"}>
+                {language === 'nl' ? 'Bekijk voorbeelden' : 'View examples'}
               </a>
             </Button>
           </motion.div>
 
-          {/* Scroll indicator - positioned above bottom of hero section */}
+          {/* Social proof */}
           <motion.div
             variants={itemVariants}
-            className="mt-8 sm:mt-12 md:mt-16 lg:mt-20 flex justify-center"
+            className="flex flex-col items-center gap-4 pt-8 border-t border-border/50"
           >
-            {isMounted && (
-              <motion.a 
-                href="#trusted-partners" 
-                onClick={(e) => handleScrollDown(e)}
-                className="flex flex-col items-center hover:text-primary transition-colors bg-background/90 backdrop-blur-sm px-4 py-3 sm:px-6 sm:py-4 rounded-full shadow-lg border border-primary/30 group min-h-[56px] sm:min-h-[64px]"
-                whileHover={{ y: -3, boxShadow: "0 10px 25px -5px rgba(139,92,246,0.2)" }}
-                whileTap={{ y: 0 }}
-                initial={{ y: 20, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 1, delay: 1 }}
-                aria-label="Scroll down"
-              >
-                <motion.div
-                  animate={{
-                    y: [0, 5, 0],
-                  }}
-                  transition={{
-                    duration: 1.5,
-                    repeat: Infinity,
-                  }}
-                >
-                  <Icon 
-                    icon={ChevronDown} 
-                    className="h-5 w-5 sm:h-6 sm:w-6 group-hover:text-primary" 
-                  />
-                </motion.div>
-              </motion.a>
-            )}
+            <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
+              <div className="flex items-center gap-2">
+                <Icon icon={Users} className="h-4 w-4 text-muted-foreground" />
+                <span className="text-sm text-muted-foreground">
+                  <span className="font-semibold text-foreground">50+</span> {language === 'nl' ? 'tevreden klanten' : 'happy clients'}
+                </span>
+              </div>
+              <div className="hidden sm:block w-px h-4 bg-border" />
+              <div className="flex items-center gap-2">
+                <Icon icon={Trophy} className="h-4 w-4 text-muted-foreground" />
+                <span className="text-sm text-muted-foreground">
+                  <span className="font-semibold text-foreground">4.9/5</span> {language === 'nl' ? 'beoordeling' : 'rating'}
+                </span>
+              </div>
+              <div className="hidden sm:block w-px h-4 bg-border" />
+              <div className="flex items-center gap-2">
+                <Icon icon={Clock} className="h-4 w-4 text-muted-foreground" />
+                <span className="text-sm text-muted-foreground">
+                  <span className="font-semibold text-foreground">24h</span> response
+                </span>
+              </div>
+            </div>
           </motion.div>
         </motion.div>
       </div>

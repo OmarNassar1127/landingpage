@@ -13,7 +13,7 @@ import JsonLd from "@/components/seo/json-ld";
 import { videoSchema } from "@/lib/schema";
 
 export default function DemoVideo() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [ref, inView] = useInView({ threshold: 0.2, triggerOnce: true });
   const controls = useAnimation();
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -217,6 +217,15 @@ export default function DemoVideo() {
 
           <motion.div variants={itemVariants} className="w-full bg-background/50 backdrop-blur-sm rounded-xl shadow-lg p-6 sm:p-8 md:p-10 border border-primary/20 text-center">
             <p className="mb-6 sm:mb-8 text-base sm:text-lg max-w-4xl mx-auto leading-relaxed">{t.demoVideo.description}</p>
+            
+            {/* Urgency element */}
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-100 dark:bg-green-900/30 border border-green-200 dark:border-green-700 mb-6">
+              <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+              <span className="text-sm text-green-700 dark:text-green-400 font-medium">
+                {language === 'nl' ? 'Start binnen 48 uur' : 'Start within 48 hours'}
+              </span>
+            </div>
+            
             <div className="flex justify-center">
               <Button 
                 size="mobile" 
