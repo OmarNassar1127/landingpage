@@ -12,8 +12,13 @@ interface Metric {
   icon: string
 }
 
-export default function SocialProofSection() {
-  const { language } = useLanguage()
+interface SocialProofSectionProps {
+  currentLang?: 'nl' | 'en';
+}
+
+export default function SocialProofSection({ currentLang }: SocialProofSectionProps) {
+  const { language: contextLanguage } = useLanguage()
+  const language = currentLang || contextLanguage
   const t = translations[language].voiceAI
 
   // Real client logos

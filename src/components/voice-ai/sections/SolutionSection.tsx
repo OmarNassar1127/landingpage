@@ -6,8 +6,13 @@ import { FiPlay, FiPause, FiVolume2, FiMic, FiMessageSquare, FiCheck } from 'rea
 import { useLanguage } from '@/lib/i18n/language-context'
 import { translations } from '@/lib/i18n/translations'
 
-export default function SolutionSection() {
-  const { language } = useLanguage()
+interface SolutionSectionProps {
+  currentLang?: 'nl' | 'en';
+}
+
+export default function SolutionSection({ currentLang }: SolutionSectionProps) {
+  const { language: contextLanguage } = useLanguage()
+  const language = currentLang || contextLanguage
   const t = translations[language].voiceAI
   const [isPlaying, setIsPlaying] = useState(false)
   const [currentDemo, setCurrentDemo] = useState(0)

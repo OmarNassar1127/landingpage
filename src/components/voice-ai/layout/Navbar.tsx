@@ -8,19 +8,37 @@ import { motion, AnimatePresence } from 'framer-motion'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 
-export default function Navbar() {
+interface NavbarProps {
+  currentLang?: 'nl' | 'en';
+}
+
+export default function Navbar({ currentLang }: NavbarProps) {
   const [isClient, setIsClient] = useState(false)
   const [activeSection, setActiveSection] = useState('')
   const [isDarkSection, setIsDarkSection] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const { language, switchLanguage } = useLanguage()
+  // Use the prop if provided, otherwise fall back to context (for backward compatibility)
+  const { language: contextLanguage } = useLanguage()
+  const language = currentLang || contextLanguage
   const t = translations[language].voiceAI
   const router = useRouter()
   
   const handleLanguageSwitch = () => {
-    const newLang = language === 'nl' ? 'en' : 'nl'
-    const newPath = newLang === 'nl' ? '/spraakassistent' : '/voiceassistant'
-    router.push(newPath)
+    // Get current path to determine which page we're on
+    const currentPath = window.location.pathname
+    
+    // Direct navigation without using switchLanguage to avoid /en prefix
+    if (currentPath.includes('spraakassistent')) {
+      // Going from Dutch to English
+      window.location.href = '/voiceassistant'
+    } else if (currentPath.includes('voiceassistant')) {
+      // Going from English to Dutch
+      window.location.href = '/spraakassistent'
+    } else {
+      // Fallback: switch based on current language context
+      const newPath = language === 'nl' ? '/voiceassistant' : '/spraakassistent'
+      window.location.href = newPath
+    }
   }
 
   const navItems = [

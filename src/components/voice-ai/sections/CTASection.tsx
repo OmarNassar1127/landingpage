@@ -6,8 +6,13 @@ import { FiCalendar, FiUser, FiMail, FiHome, FiArrowRight } from 'react-icons/fi
 import { useLanguage } from '@/lib/i18n/language-context'
 import { translations } from '@/lib/i18n/translations'
 
-export default function CTASection() {
-  const { language } = useLanguage()
+interface CTASectionProps {
+  currentLang?: 'nl' | 'en';
+}
+
+export default function CTASection({ currentLang }: CTASectionProps) {
+  const { language: contextLanguage } = useLanguage()
+  const language = currentLang || contextLanguage
   const t = translations[language].voiceAI
   const [formData, setFormData] = useState({
     name: '',

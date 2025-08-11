@@ -5,8 +5,13 @@ import { useLanguage } from '@/lib/i18n/language-context'
 import { translations } from '@/lib/i18n/translations'
 import Image from 'next/image'
 
-export default function Footer() {
-  const { language } = useLanguage()
+interface FooterProps {
+  currentLang?: 'nl' | 'en';
+}
+
+export default function Footer({ currentLang }: FooterProps) {
+  const { language: contextLanguage } = useLanguage()
+  const language = currentLang || contextLanguage
   const t = translations[language].voiceAI
   const currentYear = new Date().getFullYear()
 

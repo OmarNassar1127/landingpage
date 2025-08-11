@@ -5,8 +5,13 @@ import { FiPlay, FiUsers } from "react-icons/fi";
 import { useLanguage } from "@/lib/i18n/language-context";
 import { translations } from "@/lib/i18n/translations";
 
-export default function HeroSection() {
-  const { language } = useLanguage();
+interface HeroSectionProps {
+  currentLang?: 'nl' | 'en';
+}
+
+export default function HeroSection({ currentLang }: HeroSectionProps) {
+  const { language: contextLanguage } = useLanguage();
+  const language = currentLang || contextLanguage;
   const t = translations[language].voiceAI;
 
   const scrollToDemo = () => {

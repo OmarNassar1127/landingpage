@@ -17,8 +17,13 @@ const iconMap = {
   Zap: FiZap
 }
 
-export default function BenefitsSection() {
-  const { language } = useLanguage()
+interface BenefitsSectionProps {
+  currentLang?: 'nl' | 'en';
+}
+
+export default function BenefitsSection({ currentLang }: BenefitsSectionProps) {
+  const { language: contextLanguage } = useLanguage()
+  const language = currentLang || contextLanguage
   const t = translations[language].voiceAI
 
   return (
