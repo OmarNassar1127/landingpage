@@ -6,7 +6,19 @@ export default function robots(): MetadataRoute.Robots {
     rules: [
       {
         userAgent: "*",
-        allow: "/",
+        allow: [
+          "/", 
+          "/zzp/", 
+          "/workshop/",
+          "/spraakassistent/", 
+          "/voiceassistant/",
+          "/en/",
+          "/en/freelancer/",
+          "/en/workshop/",
+          "/privacy-policy/",
+          "/terms-of-service/",
+          "/cookie-policy/"
+        ],
         disallow: [
           "/api/", 
           "/_next/", 

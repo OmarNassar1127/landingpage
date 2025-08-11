@@ -26,6 +26,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly' as const,
       priority: 0.8,
     },
+    {
+      url: `${baseUrl}/spraakassistent/`,
+      lastModified,
+      changeFrequency: 'monthly' as const,
+      priority: 0.9,
+    },
     
     // Policy pages (with trailing slashes for consistency)
     {
@@ -65,6 +71,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified,
       changeFrequency: 'monthly' as const,
       priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/voiceassistant/`,
+      lastModified,
+      changeFrequency: 'monthly' as const,
+      priority: 0.9,
     },
   ];
 }
