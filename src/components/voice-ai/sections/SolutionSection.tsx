@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { FiPlay, FiPause, FiVolume2, FiMic, FiMessageSquare, FiCheck } from 'react-icons/fi'
 import { useLanguage } from '@/lib/i18n/language-context'
 import { translations } from '@/lib/i18n/translations'
@@ -22,6 +22,7 @@ export default function SolutionSection({ currentLang }: SolutionSectionProps) {
     {
       title: t.solution.demoScenarios[0].title,
       description: t.solution.demoScenarios[0].description,
+      audioFile: `klant-service-${language}.m4a`,
       transcript: [
         { speaker: "Klant", text: "Hallo, ik heb een vraag over mijn recente factuur. Er lijkt een extra bedrag op te staan dat ik niet begrijp." },
         { speaker: "AI", text: "Ik help je graag met die factuurvraag. Laat me direct je account opzoeken. Kun je je accountnummer of telefoonnummer bevestigen?" },
@@ -34,6 +35,7 @@ export default function SolutionSection({ currentLang }: SolutionSectionProps) {
     {
       title: t.solution.demoScenarios[1].title,
       description: t.solution.demoScenarios[1].description,
+      audioFile: `appointment-${language}.m4a`,
       transcript: [
         { speaker: "Klant", text: "Ik moet een consultatie inplannen voor volgende week." },
         { speaker: "AI", text: "Ik help je graag met het inplannen van die consultatie. Ik heb beschikbaarheid op dinsdag om 14:00, woensdag om 10:00, of vrijdag om 15:00. Welke tijd komt het beste uit?" },
@@ -43,26 +45,37 @@ export default function SolutionSection({ currentLang }: SolutionSectionProps) {
       duration: "1:45",
       outcome: "Afspraak geboekt, bevestiging verzonden"
     },
-    {
-      title: t.solution.demoScenarios[2].title,
-      description: t.solution.demoScenarios[2].description,
-      transcript: [
-        { speaker: "Klant", text: "Mijn app werkt niet goed. Hij crasht elke keer als ik probeer in te loggen." },
-        { speaker: "AI", text: "Het spijt me dat je problemen ondervindt met de app. Laten we dit snel oplossen. Kun je me eerst vertellen welk apparaat je gebruikt en wanneer dit begon?" },
-        { speaker: "Klant", text: "Ik gebruik een iPhone 14, en het begon vanmorgen." },
-        { speaker: "AI", text: "Dank je voor die informatie. Dit lijkt op een veel voorkomend probleem dat we kunnen oplossen. Laten we eerst de app herstarten - sluit hem volledig af en open hem opnieuw. Als dat niet werkt, proberen we de volgende stap." }
-      ],
-      duration: "3:12",
-      outcome: "Probleem gediagnosticeerd, oplossing geboden"
-    }
+    // {
+    //   title: t.solution.demoScenarios[2].title,
+    //   description: t.solution.demoScenarios[2].description,
+    //   transcript: [
+    //     { speaker: "Klant", text: "Mijn app werkt niet goed. Hij crasht elke keer als ik probeer in te loggen." },
+    //     { speaker: "AI", text: "Het spijt me dat je problemen ondervindt met de app. Laten we dit snel oplossen. Kun je me eerst vertellen welk apparaat je gebruikt en wanneer dit begon?" },
+    //     { speaker: "Klant", text: "Ik gebruik een iPhone 14, en het begon vanmorgen." },
+    //     { speaker: "AI", text: "Dank je voor die informatie. Dit lijkt op een veel voorkomend probleem dat we kunnen oplossen. Laten we eerst de app herstarten - sluit hem volledig af en open hem opnieuw. Als dat niet werkt, proberen we de volgende stap." }
+    //   ],
+    //   duration: "3:12",
+    //   outcome: "Probleem gediagnosticeerd, oplossing geboden"
+    // }
   ]
+
+  // Update audio source when demo changes
+  useEffect(() => {
+    if (audioRef.current) {
+      audioRef.current.pause()
+      audioRef.current.load()
+      setIsPlaying(false)
+    }
+  }, [currentDemo, language])
 
   const toggleAudio = () => {
     if (audioRef.current) {
       if (isPlaying) {
         audioRef.current.pause()
       } else {
-        audioRef.current.play()
+        audioRef.current.play().catch(err => {
+          console.error('Error playing audio:', err)
+        })
       }
       setIsPlaying(!isPlaying)
     }
@@ -184,10 +197,14 @@ export default function SolutionSection({ currentLang }: SolutionSectionProps) {
             <audio
               ref={audioRef}
               onEnded={() => setIsPlaying(false)}
+              onPlay={() => setIsPlaying(true)}
+              onPause={() => setIsPlaying(false)}
               style={{ display: 'none' }}
             >
-              {/* In a real implementation, you'd have actual audio files here */}
-              <source src="#" type="audio/mpeg" />
+              <source 
+                src={`/voice-ai/${demoScenarios[currentDemo].audioFile}`}
+                type="audio/mp4" 
+              />
             </audio>
           </motion.div>
 
