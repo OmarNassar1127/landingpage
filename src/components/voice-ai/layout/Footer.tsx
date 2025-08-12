@@ -1,6 +1,6 @@
 'use client'
 
-import { FiTwitter, FiLinkedin, FiGithub } from 'react-icons/fi'
+import { FiLinkedin } from 'react-icons/fi'
 import { useLanguage } from '@/lib/i18n/language-context'
 import { translations } from '@/lib/i18n/translations'
 import Image from 'next/image'
@@ -39,20 +39,14 @@ export default function Footer({ currentLang }: FooterProps) {
           {/* Links & Social */}
           <div className="flex items-center gap-8">
             <div className="flex items-center gap-6 text-sm">
-              <a href="#privacy" className="text-gray-600 hover:text-slate-900 transition-colors">{t.footer.links.privacy}</a>
-              <a href="#terms" className="text-gray-600 hover:text-slate-900 transition-colors">{t.footer.links.terms}</a>
-              <a href="#contact" className="text-gray-600 hover:text-slate-900 transition-colors">{t.footer.links.contact}</a>
+              <a href="/privacy-policy" className="text-gray-600 hover:text-slate-900 transition-colors">{t.footer.links.privacy}</a>
+              <a href="/terms-of-service" className="text-gray-600 hover:text-slate-900 transition-colors">{t.footer.links.terms}</a>
+              <a href="/cookie-policy" className="text-gray-600 hover:text-slate-900 transition-colors">{t.footer.links.cookies}</a>
             </div>
             
             <div className="flex items-center gap-3">
-              <a href="https://twitter.com/virelio" className="text-gray-400 hover:text-gray-600 transition-colors">
-                <FiTwitter size={18} />
-              </a>
               <a href="https://linkedin.com/company/virelio" className="text-gray-400 hover:text-gray-600 transition-colors">
                 <FiLinkedin size={18} />
-              </a>
-              <a href="https://github.com/virelio" className="text-gray-400 hover:text-gray-600 transition-colors">
-                <FiGithub size={18} />
               </a>
             </div>
           </div>

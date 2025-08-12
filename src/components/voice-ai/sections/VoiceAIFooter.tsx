@@ -40,14 +40,14 @@ export default function VoiceAIFooter() {
               </p>
               
               <div className="flex space-x-6 mt-4 md:mt-0">
-                <a href="/privacy" className="text-sm text-gray-400 hover:text-white">
+                <a href="/privacy-policy" className="text-sm text-gray-400 hover:text-white">
                   {t.footer.links.privacy}
                 </a>
-                <a href="/terms" className="text-sm text-gray-400 hover:text-white">
+                <a href="/terms-of-service" className="text-sm text-gray-400 hover:text-white">
                   {t.footer.links.terms}
                 </a>
-                <a href="/contact" className="text-sm text-gray-400 hover:text-white">
-                  {t.footer.links.contact}
+                <a href="/cookie-policy" className="text-sm text-gray-400 hover:text-white">
+                  {t.footer.links.cookies}
                 </a>
               </div>
             </div>

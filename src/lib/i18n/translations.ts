@@ -202,7 +202,7 @@ export const translations = {
         links: {
           privacy: "Privacy",
           terms: "Voorwaarden",
-          contact: "Contact"
+          cookies: "Cookies"
         }
       }
     },
@@ -995,7 +995,7 @@ export const translations = {
         links: {
           privacy: "Privacy",
           terms: "Terms",
-          contact: "Contact"
+          cookies: "Contact"
         }
       }
     },

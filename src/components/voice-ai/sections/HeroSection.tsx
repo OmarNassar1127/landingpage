@@ -21,6 +21,13 @@ export default function HeroSection({ currentLang }: HeroSectionProps) {
     }
   };
 
+  const scrollToContact = () => {
+    const element = document.querySelector('[data-section="cta"]');
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
   return (
     <section
       data-section="hero"
@@ -101,6 +108,7 @@ export default function HeroSection({ currentLang }: HeroSectionProps) {
         >
           {/* Primary CTA - Clear Benefit */}
           <motion.button
+            onClick={scrollToContact}
             className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold flex items-center gap-2 shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-105"
             whileHover={{ y: -2 }}
             whileTap={{ scale: 0.98 }}
