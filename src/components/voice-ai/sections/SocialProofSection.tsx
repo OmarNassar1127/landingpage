@@ -1,10 +1,11 @@
 'use client'
 
-import { motion } from 'framer-motion'
-import { FiStar, FiTrendingUp, FiUsers, FiClock } from 'react-icons/fi'
+import { motion, AnimatePresence } from 'framer-motion'
+import { FiStar, FiTrendingUp, FiUsers, FiClock, FiChevronLeft, FiChevronRight } from 'react-icons/fi'
 import { useLanguage } from '@/lib/i18n/language-context'
 import { translations } from '@/lib/i18n/translations'
 import Image from 'next/image'
+import { useState, useEffect, useMemo } from 'react'
 
 interface Metric {
   value: string
@@ -20,6 +21,8 @@ export default function SocialProofSection({ currentLang }: SocialProofSectionPr
   const { language: contextLanguage } = useLanguage()
   const language = currentLang || contextLanguage
   const t = translations[language].voiceAI
+  const [currentTestimonial, setCurrentTestimonial] = useState(0)
+  const [isPaused, setIsPaused] = useState(false)
 
   // Real client logos
   const clientLogos = [
@@ -32,6 +35,30 @@ export default function SocialProofSection({ currentLang }: SocialProofSectionPr
   ]
 
   const metrics: Metric[] = t.socialProof.metrics || []
+  
+  // Randomize testimonials order on mount
+  const testimonials = useMemo(() => {
+    const testimonialsArray = t.socialProof.testimonials || []
+    return [...testimonialsArray].sort(() => Math.random() - 0.5)
+  }, [t.socialProof.testimonials])
+
+  // Auto-slide testimonials
+  useEffect(() => {
+    if (!isPaused && testimonials.length > 1) {
+      const interval = setInterval(() => {
+        setCurrentTestimonial((prev) => (prev + 1) % testimonials.length)
+      }, 5000) // Change every 5 seconds
+      return () => clearInterval(interval)
+    }
+  }, [isPaused, testimonials.length])
+
+  const nextTestimonial = () => {
+    setCurrentTestimonial((prev) => (prev + 1) % testimonials.length)
+  }
+
+  const prevTestimonial = () => {
+    setCurrentTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length)
+  }
 
   return (
     <section data-section="social-proof" className="section-padding bg-white">
@@ -103,14 +130,16 @@ export default function SocialProofSection({ currentLang }: SocialProofSectionPr
           </div>
         </motion.div>
 
-        {/* Testimonial */}
+        {/* Testimonial Carousel */}
         <motion.div
-          className="bg-gradient-to-br from-slate-900 to-slate-900/90 rounded-2xl p-8 md:p-12 text-white mb-16 dark-section"
+          className="bg-gradient-to-br from-slate-900 to-slate-900/90 rounded-2xl p-8 md:p-12 text-white mb-16 dark-section relative"
           id="testimonial-dark"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
           viewport={{ once: true }}
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
         >
           <div className="max-w-4xl mx-auto">
             {/* Stars */}
@@ -128,43 +157,76 @@ export default function SocialProofSection({ currentLang }: SocialProofSectionPr
               ))}
             </div>
 
-            {/* Quote */}
-            <motion.blockquote
-              className="text-xl md:text-2xl font-medium text-center mb-8 leading-relaxed"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: 0.8, delay: 1.3 }}
-              viewport={{ once: true }}
-            >
-              &ldquo;{t.socialProof.testimonial.quote}&rdquo;
-            </motion.blockquote>
+            {/* Testimonial Content */}
+            {testimonials.length > 0 && (
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={currentTestimonial}
+                  initial={{ opacity: 0, x: 50 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -50 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  {/* Quote */}
+                  <blockquote className="text-xl md:text-2xl font-medium text-center mb-8 leading-relaxed min-h-[120px] flex items-center justify-center">
+                    &ldquo;{testimonials[currentTestimonial].quote}&rdquo;
+                  </blockquote>
 
-            {/* Author */}
-            <motion.div
-              className="flex flex-col md:flex-row items-center justify-center gap-4"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1.5 }}
-              viewport={{ once: true }}
+                  {/* Author */}
+                  <div className="flex flex-col md:flex-row items-center justify-center gap-4">
+                    <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center backdrop-blur-sm">
+                      <span className="text-2xl font-bold">
+                        {testimonials[currentTestimonial].author.split(' ').map((n: string) => n[0]).join('')}
+                      </span>
+                    </div>
+                    
+                    <div className="text-center md:text-left">
+                      <div className="font-semibold text-lg">
+                        {testimonials[currentTestimonial].author}
+                      </div>
+                      <div className="text-white/80">
+                        {testimonials[currentTestimonial].role}
+                      </div>
+                      <div className="text-white/60 text-sm">
+                        {testimonials[currentTestimonial].company}
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              </AnimatePresence>
+            )}
+
+            {/* Navigation Buttons */}
+            <button
+              onClick={prevTestimonial}
+              className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors duration-200"
+              aria-label="Previous testimonial"
             >
-              <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center backdrop-blur-sm">
-                <span className="text-2xl font-bold">
-                  {t.socialProof.testimonial.author.split(' ').map((n: string) => n[0]).join('')}
-                </span>
-              </div>
-              
-              <div className="text-center md:text-left">
-                <div className="font-semibold text-lg">
-                  {t.socialProof.testimonial.author}
-                </div>
-                <div className="text-white/80">
-                  {t.socialProof.testimonial.role}
-                </div>
-                <div className="text-white/60 text-sm">
-                  {t.socialProof.testimonial.company}
-                </div>
-              </div>
-            </motion.div>
+              <FiChevronLeft className="text-white text-xl" />
+            </button>
+            <button
+              onClick={nextTestimonial}
+              className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors duration-200"
+              aria-label="Next testimonial"
+            >
+              <FiChevronRight className="text-white text-xl" />
+            </button>
+
+            {/* Dots Indicator */}
+            <div className="flex justify-center gap-2 mt-6">
+              {testimonials.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentTestimonial(index)}
+                  className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                    index === currentTestimonial
+                      ? 'bg-white w-8'
+                      : 'bg-white/40 hover:bg-white/60'
+                  }`}
+                  aria-label={`Go to testimonial ${index + 1}`}
+                />
+              ))}
+            </div>
           </div>
         </motion.div>
 

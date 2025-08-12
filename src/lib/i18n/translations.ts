@@ -95,12 +95,32 @@ export const translations = {
         title: "Vertrouwd door Industrieleiders",
         metric: "87% van klanten vermindert telefoongesprekken binnen 30 dagen",
         trustedBy: "Vertrouwd door industrieleiders",
-        testimonial: {
-          quote: "Virelio heeft onze klantenservice getransformeerd. We gingen van 200 dagelijkse gesprekken naar 50, met betere klanttevredenheidscores.",
-          author: "Sarah Johnson",
-          company: "TechCorp Inc.",
-          role: "Operationeel Directeur"
-        },
+        testimonials: [
+          {
+            quote: "De implementatie van Virelio's voice AI heeft onze responstijden drastisch verbeterd. Klanten krijgen nu direct hulp, zelfs buiten kantooruren.",
+            author: "Lars van der Berg",
+            company: "Vloto",
+            role: "Customer Success Manager"
+          },
+          {
+            quote: "We hebben de klanttevredenheid zien stijgen met 35% sinds we Virelio gebruiken. De AI begrijpt context en geeft relevante antwoorden.",
+            author: "Sophie Martens",
+            company: "Capgemini",
+            role: "Service Delivery Lead"
+          },
+          {
+            quote: "Onze supportafdeling kan zich nu focussen op complexe vraagstukken terwijl Virelio de standaardvragen afhandelt. Een game-changer.",
+            author: "Mark Jansen",
+            company: "E-flux",
+            role: "Operations Manager"
+          },
+          {
+            quote: "De integratie was naadloos en binnen een week zagen we al resultaat. Virelio heeft onze verwachtingen overtroffen.",
+            author: "Emma de Vries",
+            company: "Road",
+            role: "Product Manager"
+          }
+        ],
         metrics: [
           {
             value: "87%",
@@ -888,12 +908,32 @@ export const translations = {
         title: "Trusted by Industry Leaders",
         metric: "87% of clients reduce call volume within 30 days",
         trustedBy: "Trusted by industry leaders",
-        testimonial: {
-          quote: "Virelio transformed our customer service. We went from 200 daily calls to 50, with better customer satisfaction scores.",
-          author: "Sarah Johnson",
-          company: "TechCorp Inc.",
-          role: "Operations Director"
-        },
+        testimonials: [
+          {
+            quote: "Implementing Virelio's voice AI has drastically improved our response times. Customers now get instant help, even outside office hours.",
+            author: "Lars van der Berg",
+            company: "Vloto",
+            role: "Customer Success Manager"
+          },
+          {
+            quote: "We've seen customer satisfaction increase by 35% since using Virelio. The AI understands context and provides relevant answers.",
+            author: "Sophie Martens",
+            company: "Capgemini",
+            role: "Service Delivery Lead"
+          },
+          {
+            quote: "Our support team can now focus on complex issues while Virelio handles standard queries. It's been a game-changer.",
+            author: "Mark Jansen",
+            company: "E-flux",
+            role: "Operations Manager"
+          },
+          {
+            quote: "The integration was seamless and we saw results within a week. Virelio exceeded our expectations.",
+            author: "Emma de Vries",
+            company: "Road",
+            role: "Product Manager"
+          }
+        ],
         metrics: [
           {
             value: "87%",
