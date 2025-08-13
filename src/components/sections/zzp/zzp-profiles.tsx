@@ -304,7 +304,7 @@ export default function ZzpProfiles({ isEnglish = false }: ZzpProfilesProps) {
                     asChild
                   >
                     <a 
-                      href="/founders/Omar Nassar Resume NL.pdf" 
+                      href="/founders/Omar Nassar Resume.pdf" 
                       download="Omar_Nassar_CV.pdf"
                       className="flex items-center gap-2"
                     >
