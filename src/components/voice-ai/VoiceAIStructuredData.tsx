@@ -1,10 +1,13 @@
 import Script from 'next/script';
+import { voiceAIServiceSchema } from '@/lib/schema';
 
 interface VoiceAIStructuredDataProps {
   lang: 'nl' | 'en';
 }
 
 export default function VoiceAIStructuredData({ lang }: VoiceAIStructuredDataProps) {
+  const serviceSchema = lang === 'nl' ? voiceAIServiceSchema() : null;
+  
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
@@ -116,6 +119,60 @@ export default function VoiceAIStructuredData({ lang }: VoiceAIStructuredDataPro
     ]
   };
 
+  const breadcrumbData = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://virelio.nl"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": lang === 'nl' ? "AI Spraakassistent" : "AI Voice Assistant",
+        "item": lang === 'nl' ? "https://virelio.nl/spraakassistent" : "https://virelio.nl/voiceassistant"
+      }
+    ]
+  };
+
+  const localBusinessData = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Virelio - AI Spraakassistent",
+    "description": lang === 'nl' 
+      ? "Virelio levert geavanceerde AI spraakassistenten voor bedrijven in Nederland. Automatiseer klantgesprekken, verhoog efficiency."
+      : "Virelio delivers advanced AI voice assistants for businesses. Automate customer calls, increase efficiency.",
+    "url": "https://virelio.nl",
+    "telephone": "+31-6-12345678",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Amsterdam",
+      "addressRegion": "Noord-Holland",
+      "addressCountry": "NL"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "52.3676",
+      "longitude": "4.9041"
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "opens": "09:00",
+      "closes": "18:00"
+    },
+    "priceRange": "€€€"
+  };
+
   return (
     <>
       <Script
@@ -127,6 +184,23 @@ export default function VoiceAIStructuredData({ lang }: VoiceAIStructuredDataPro
         id="voice-ai-faq-data"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqData) }}
+      />
+      <Script
+        id="voice-ai-breadcrumb"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbData) }}
+      />
+      {lang === 'nl' && serviceSchema && (
+        <Script
+          id="voice-ai-service-schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+        />
+      )}
+      <Script
+        id="voice-ai-local-business"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessData) }}
       />
     </>
   );

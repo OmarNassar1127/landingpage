@@ -435,3 +435,90 @@ export function workshopSchema() {
     ],
   };
 }
+
+export function voiceAIServiceSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": `${siteConfig.url}/spraakassistent#service`,
+    name: "AI Spraakassistent voor Bedrijven",
+    alternateName: ["Voice AI", "Spraakassistent", "AI Telefonie", "Voice Assistant"],
+    description: "24/7 AI spraakassistent die klantgesprekken automatiseert. Beantwoordt binnen 2 beltonen, vermindert gesprekvolume met 87%, en integreert met bestaande systemen.",
+    url: `${siteConfig.url}/spraakassistent`,
+    image: `${siteConfig.url}/images/logo.png`,
+    serviceType: "AI Voice Automation",
+    provider: {
+      "@type": "Organization",
+      "@id": `${siteConfig.url}#organization`,
+      name: "Virelio",
+      url: siteConfig.url,
+      logo: `${siteConfig.url}/images/logo.png`,
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Amsterdam",
+        addressCountry: "NL"
+      },
+      contactPoint: {
+        "@type": "ContactPoint",
+        telephone: "+31-6-12345678",
+        contactType: "sales",
+        availableLanguage: ["nl", "en"]
+      }
+    },
+    areaServed: {
+      "@type": "Country",
+      name: "Netherlands"
+    },
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "AI Spraakassistent Pakketten",
+      itemListElement: [
+        {
+          "@type": "Offer",
+          name: "Gratis Proefperiode",
+          description: "Test onze AI spraakassistent gratis",
+          price: "0",
+          priceCurrency: "EUR"
+        },
+        {
+          "@type": "Offer",
+          name: "Business Pakket",
+          description: "Voor MKB bedrijven",
+          priceSpecification: {
+            "@type": "PriceSpecification",
+            price: "Op aanvraag",
+            priceCurrency: "EUR"
+          }
+        },
+        {
+          "@type": "Offer",
+          name: "Enterprise Pakket",
+          description: "Voor grote organisaties",
+          priceSpecification: {
+            "@type": "PriceSpecification",
+            price: "Op aanvraag",
+            priceCurrency: "EUR"
+          }
+        }
+      ]
+    },
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.8",
+      reviewCount: "127",
+      bestRating: "5",
+      worstRating: "1"
+    },
+    potentialAction: {
+      "@type": "UseAction",
+      target: {
+        "@type": "EntryPoint",
+        urlTemplate: `${siteConfig.url}/spraakassistent`,
+        actionPlatform: [
+          "http://schema.org/DesktopWebPlatform",
+          "http://schema.org/MobileWebPlatform"
+        ]
+      }
+    }
+  };
+}

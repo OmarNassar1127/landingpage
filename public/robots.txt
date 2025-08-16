@@ -1,4 +1,37 @@
-User-Agent: *
-Allow: /
+# Robots.txt for virelio.nl
+# Allow all crawlers
 
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+Disallow: /out/
+Crawl-delay: 0
+
+# Specific rules for Google
+User-agent: Googlebot
+Allow: /
+Allow: /spraakassistent
+Allow: /voiceassistant
+Allow: /workshop
+Allow: /zzp
+Allow: /en/
+Crawl-delay: 0
+
+# Specific rules for Bing
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Important pages to prioritize
+Allow: /spraakassistent
+Allow: /voiceassistant
+Allow: /workshop
+Allow: /zzp
+Allow: /en/freelancer
+
+# Sitemap location
 Sitemap: https://virelio.nl/sitemap.xml
+
+# Host
+Host: https://virelio.nl

@@ -26,6 +26,9 @@ export const siteConfig = {
   themeColor: "#ffffff",
   keywords: [
     "AI Solutions",
+    "AI Spraakassistent",
+    "Voice AI",
+    "AI Telefonie",
     "SaaS platforms",
     "KYC integrations",
     "Shop Automations",
@@ -33,6 +36,9 @@ export const siteConfig = {
     "Software Development",
     "Digital Innovation",
     "Technology Solutions",
+    "Zakelijke Automatisering",
+    "Nederlandse AI",
+    "Amsterdam AI bedrijf",
   ],
   // For language-specific URLs (better for SEO)
   alternateLanguages: {

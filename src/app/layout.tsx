@@ -45,27 +45,42 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Virelio - Innovative Solutions for Modern Challenges",
+  title: {
+    default: "Virelio - AI Solutions & Software Development | Amsterdam",
+    template: "%s | Virelio"
+  },
   description:
-    "At Virelio, we specialize in AI Solutions, SaaS platforms, KYC integrations, Web Development, E-commerce Automation and Custom AI Services to help businesses thrive in the digital age.",
+    "Virelio levert AI spraakassistenten, SaaS platforms, en custom software oplossingen. 200+ automatiseringen geleverd. Gespecialiseerd in AI telefonie, KYC integraties en e-commerce.",
   keywords:
-    "AI Solutions, SaaS platforms, Virelio, KYC integrations, shop automations, development, technology, services, web development, AI development, e-commerce automation, custom AI solutions",
+    "Virelio, AI Solutions, spraakassistent, voice AI, SaaS platforms, KYC integrations, shop automations, development, technology, Amsterdam, Nederland, web development, AI development, e-commerce automation, custom AI solutions, AI telefonie, zakelijke automatisering",
+  authors: [{ name: "Virelio Team" }],
+  creator: "Virelio",
+  publisher: "Virelio",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
   metadataBase: new URL(siteConfig.url),
   alternates: {
     canonical: siteConfig.url,
     languages: {
-      nl: siteConfig.url,
-      en: `${siteConfig.url}/en`,
+      "nl-NL": siteConfig.url,
+      "en-US": `${siteConfig.url}/en`,
     },
+  },
+  verification: {
+    google: "google-site-verification-code",
   },
   openGraph: {
     type: "website",
-    locale: "nl_NL", // Changed to Dutch primary locale
+    locale: "nl_NL",
+    alternateLocale: ["en_US"],
     url: siteConfig.url,
-    siteName: "Virelio",
-    title: "Virelio - Innovative Solutions for Modern Challenges",
+    siteName: "Virelio - AI & Software Solutions",
+    title: "Virelio - AI Spraakassistent & Software Development | Amsterdam",
     description:
-      "AI Solutions, SaaS platforms, KYC integrations, Web Development, E-commerce Automation and Custom AI Services to help businesses thrive in the digital age.",
+      "Virelio: 200+ automatiseringen geleverd. AI spraakassistenten, SaaS platforms, KYC integraties. Verminder 87% van klantgesprekken. Start gratis proef.",
     images: [
       {
         url: `${siteConfig.url}/og-image.jpg`,
@@ -77,22 +92,26 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Virelio - Innovative Solutions",
-    description: "Digital Innovation for Your Business",
+    title: "Virelio - AI Spraakassistent & Software Solutions",
+    description: "200+ automatiseringen. AI telefonie die 87% gesprekken automatiseert. Voor MKB & Enterprise.",
     site: "@Virelio",
     creator: "@Virelio",
+    images: [`${siteConfig.url}/images/logo.png`],
   },
   robots: {
     index: true,
     follow: true,
-    nocache: true,
+    nocache: false,
     googleBot: {
       index: true,
       follow: true,
+      noimageindex: false,
+      "max-video-preview": -1,
       "max-image-preview": "large",
       "max-snippet": -1,
     },
   },
+  category: 'technology',
   icons: {
     icon: [
       { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
