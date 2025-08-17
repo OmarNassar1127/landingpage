@@ -248,10 +248,10 @@ export const translations = {
 
     // Demo Video
     demoVideo: {
-      title: "Onze AI Agent in Actie",
+      title: "AI‑agent in actie",
       subtitle: "Bekijk hoe onze AI-agent je werkervaring vereenvoudigt",
       description:
-        "Dit is slechts één van onze vele AI-agents. We kunnen aangepaste AI-oplossingen bouwen die volledig zijn afgestemd op jouw specifieke behoeften en branche.",
+        "Bekijk de AI‑agent in actie. In de demo laten we jouw proces en data zien.",
     },
 
     // Navbar
@@ -1079,7 +1079,7 @@ export const translations = {
       title: "Our AI Agent in Action",
       subtitle: "See how our AI agent streamlines your work experience",
       description:
-        "This is just one of our many AI agents. We can build custom AI solutions tailored to your specific needs and industry.",
+        "Watch our AI agent in action. This demonstration shows our intelligent AI solution that can be customized for your specific business needs and industry.",
     },
 
     // Navbar
