@@ -92,7 +92,7 @@ const getServices = (language: string): Service[] => {
     {
       id: "data-insights",
       title: isNL ? "Data & Inzicht" : "Data & Insights",
-      tagline: isNL ? "Altijd direct antwoord op je cijfers, zonder zoeken" : "Always instant answers to your numbers, no searching",
+      tagline: isNL ? "Direct antwoord op je cijfers, zonder zoeken" : "Always instant answers to your numbers, no searching",
       description: isNL
         ? "Gekoppeld aan je database of backend. Vraag omzet, trends of teamdata op via Slack of Teams."
         : "Connected to your database or backend. Ask for revenue, trends or team data via Slack or Teams.",
@@ -103,7 +103,7 @@ const getServices = (language: string): Service[] => {
         isNL ? "Antwoorden in gewone taal – binnen 3 seconden" : "Answers in plain language – within 3 seconds",
         isNL ? "Automatische rapportages en alerts" : "Automatic reporting and alerts"
       ],
-      highlight: isNL ? "3 sec antwoord" : "3 sec response",
+      highlight: isNL ? "Antwoord in seconden" : "3 sec response",
       gradient: "from-orange-600 via-red-600 to-pink-600"
     },
     {
