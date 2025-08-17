@@ -388,21 +388,21 @@ export const translations = {
     // About section
     about: {
       title: "Over Ons",
-      subtitle: "Leer meer over ons team en onze missie.",
+      subtitle: "Ons team en onze missie",
       theTeam: "Het Virelio team",
       description:
-        "Wij zijn Robin en Omar. Twee nuchtere, gediplomeerde IT'ers met meer dan 5 jaar ervaring en een breed portfolio aan projecten bij grote bedrijven. In plaats van passief consumeren, bouwen we. Nieuwtje gelezen? Wij testen het. Nieuwe AI-tool? Diezelfde dag nog een werkend prototype.\nWe maken complexe technologie begrijpelijk en direct toepasbaar. Geen lange theorieën, maar slimme oplossingen die direct waarde leveren — voor zowel lokale ondernemers als grote corporates.\nVan snelle experimenten tot stabiele productiesystemen. Van slimme automatisering tot krachtige AI-toepassingen. Wij blijven bouwen. Gericht. Efficiënt. Praktisch.",
+        "Wij zijn Robin en Omar. Twee nuchtere IT'ers met 5+ jaar ervaring bij grote organisaties. We bouwen en testen snel. Nieuwe tool gezien? Die dag nog een prototype.\nWe maken complexe technologie praktisch en toepasbaar. Geen lange theorie, wel oplossingen die direct waarde leveren voor MKB en enterprise.\nVan snelle experimenten tot stabiele productiesystemen. Van automatisering tot maatwerk AI. Gericht, efficiënt, praktisch.",
       missionTitle: "Onze Missie",
       teamTitle: "Over Robin & Omar",
       missionDescription:
-        "Onze missie is om bedrijven te helpen groeien door middel van digitale innovatie. Wij geloven in het bouwen van hoogwaardige oplossingen die eenvoudig te gebruiken zijn en een echte impact hebben. We combineren technische expertise met zakelijk inzicht om resultaten te leveren die uw bedrijf vooruit helpen.",
+        "Onze missie is om bedrijven te helpen groeien door digitale innovatie. We bouwen hoogwaardige oplossingen die eenvoudig te gebruiken zijn en impact maken. We combineren technische expertise met zakelijk inzicht om resultaat te leveren dat jouw bedrijf vooruit helpt.",
       valuesTitle: "Onze Waarden",
       valueQuality: "Kwaliteit",
       valueInnovation: "Innovatie",
       valueIntegrity: "Integriteit",
       valueCollaboration: "Samenwerking",
       valueQualityDesc:
-        "Onze oplossingen zijn gebouwd om te schalen en zich aan te passen naarmate uw bedrijf groeit.",
+        "Onze oplossingen zijn gebouwd om te schalen en zich aan te passen naarmate je bedrijf groeit.",
       valueInnovationDesc:
         "We passen niet alleen bestaande oplossingen toe; we creëren nieuwe wanneer dat nodig is.",
       valueIntegrityDesc:
@@ -412,7 +412,7 @@ export const translations = {
 
     // Contact section
     contact: {
-      title: "Laten We Kennismaken",
+      title: "Plan een kennismaking",
       subtitle:
         "Heeft u een project in gedachten of wilt u meer weten over ons werk? We horen graag van u!",
       name: "Uw Naam",
