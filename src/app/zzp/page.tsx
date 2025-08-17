@@ -202,11 +202,16 @@ export default function ZzpPage() {
       <JsonLd data={zzpPersonSchema()} />
       <JsonLd data={zzpServiceSchema()} />
 
-      <main className="min-h-screen">
-        <ZzpHero />
-        <ZzpProfiles />
-        <ZzpContact />
-        <ZzpFooter />
+      <main className="min-h-screen relative">
+        {/* Global grid background for entire page */}
+        <div className="fixed inset-0 bg-[linear-gradient(to_right,#8882_1px,transparent_1px),linear-gradient(to_bottom,#8882_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-50 pointer-events-none z-0" />
+        
+        <div className="relative z-10">
+          <ZzpHero />
+          <ZzpProfiles />
+          <ZzpContact />
+          <ZzpFooter />
+        </div>
       </main>
     </>
   );

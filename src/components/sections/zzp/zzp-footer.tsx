@@ -55,7 +55,7 @@ export default function ZzpFooter({ isEnglish = false }: ZzpFooterProps) {
   };
 
   return (
-    <footer className="bg-background py-12 border-t border-border">
+    <footer className="bg-transparent py-12 border-t border-border">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="md:col-span-2">

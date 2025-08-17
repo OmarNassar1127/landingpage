@@ -142,7 +142,7 @@ export default function ZzpProfiles({ isEnglish = false }: ZzpProfilesProps) {
   };
 
   return (
-    <section id="profiles" className="py-24 px-4 md:px-8 bg-gradient-to-b from-background to-muted/20">
+    <section id="profiles" className="py-24 px-4 md:px-8 bg-transparent">
       <div className="container mx-auto max-w-7xl">
         {/* Section Header */}
         <motion.div
