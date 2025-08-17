@@ -2,7 +2,6 @@
 
 import React, { useEffect, useRef } from "react";
 import { motion, useAnimation, useInView } from "framer-motion";
-import { cn } from "@/lib/utils";
 import { scrollToSection } from "@/lib/scroll-utils";
 import { Building2, Scale, Plane, Globe, Shield, CreditCard, Activity, Zap, Database, BadgeDollarSign } from "lucide-react";
 import { useLanguage } from "@/lib/i18n/language-context";

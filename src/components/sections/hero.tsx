@@ -60,9 +60,6 @@ function HeroContent() {
             <div className="absolute top-0 -left-40 w-[800px] h-[800px] rounded-full bg-purple-500/20 mix-blend-multiply blur-[128px] animate-pulse" />
             <div className="absolute bottom-0 -right-40 w-[800px] h-[800px] rounded-full bg-blue-500/20 mix-blend-multiply blur-[128px] animate-pulse" />
           </motion.div>
-
-          {/* Subtle grid overlay */}
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,#8882_1px,transparent_1px),linear-gradient(to_bottom,#8882_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_110%)]" />
         </>
       )}
 
