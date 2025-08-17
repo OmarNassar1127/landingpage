@@ -77,12 +77,12 @@ const getServices = (language: string): Service[] => {
       title: isNL ? "Maatwerk Software" : "Custom Software",
       tagline: isNL ? "Oplossingen die precies doen wat jij nodig hebt" : "Solutions that do exactly what you need",
       description: isNL
-        ? "Dashboards, portalen of tools afgestemd op je team. Werkt samen met je bestaande systemen en schaalt mee."
+        ? "Dashboards, portalen en tools afgestemd op je team. Integreert met bestaande systemen en schaalt mee."
         : "Dashboards, portals or tools tailored to your team. Works with existing systems and scales with you.",
       icon: Rocket,
       features: [
-        isNL ? "Dashboards, portalen of tools afgestemd op je team" : "Dashboards, portals or tools tailored to your team",
-        isNL ? "Werkt samen met je bestaande systemen en accounts" : "Works with your existing systems and accounts",
+        isNL ? "Dashboards, portalen en tools afgestemd op je team" : "Dashboards, portals or tools tailored to your team",
+        isNL ? "Integreert met je bestaande systemen en accounts" : "Works with your existing systems and accounts",
         isNL ? "Schaalt mee met je processen en groeit met je bedrijf" : "Scales with your processes and grows with your business",
         isNL ? "100% maatwerk, geen templates" : "100% custom, no templates"
       ],
