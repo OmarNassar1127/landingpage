@@ -276,8 +276,8 @@ const Services = () => {
           transition={{ duration: 0.5, delay: 0.7 }}
         >
           <div className="text-center">
-            <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 mb-3">
-              <Clock className="h-5 w-5 text-primary" />
+            <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-black dark:bg-white mb-3">
+              <Clock className="h-5 w-5 text-white dark:text-black" />
             </div>
             <div className="text-2xl font-bold mb-1">2-4</div>
             <div className="text-sm text-muted-foreground">
@@ -286,8 +286,8 @@ const Services = () => {
           </div>
           
           <div className="text-center">
-            <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 mb-3">
-              <Shield className="h-5 w-5 text-primary" />
+            <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-black dark:bg-white mb-3">
+              <Shield className="h-5 w-5 text-white dark:text-black" />
             </div>
             <div className="text-2xl font-bold mb-1">100%</div>
             <div className="text-sm text-muted-foreground">
@@ -296,8 +296,8 @@ const Services = () => {
           </div>
           
           <div className="text-center">
-            <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 mb-3">
-              <Users className="h-5 w-5 text-primary" />
+            <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-black dark:bg-white mb-3">
+              <Users className="h-5 w-5 text-white dark:text-black" />
             </div>
             <div className="text-2xl font-bold mb-1">50+</div>
             <div className="text-sm text-muted-foreground">
@@ -306,8 +306,8 @@ const Services = () => {
           </div>
           
           <div className="text-center">
-            <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 mb-3">
-              <Star className="h-5 w-5 text-primary" />
+            <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-black dark:bg-white mb-3">
+              <Star className="h-5 w-5 text-white dark:text-black" />
             </div>
             <div className="text-2xl font-bold mb-1">4.9/5</div>
             <div className="text-sm text-muted-foreground">
