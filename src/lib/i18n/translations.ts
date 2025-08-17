@@ -262,7 +262,7 @@ export const translations = {
       workshop: "Workshop",
       about: "Over Ons",
       testimonials: "Aanbevelingen",
-      contact: "Contact",
+      contact: "Plan een verkennend gesprek",
       bookMeeting: "Plan een kennismaking",
     },
 
@@ -751,7 +751,7 @@ export const translations = {
       ctaButton: "Plan een kennismaking",
       aiDevelopment: {
         title: "AI Integratie",
-        description: "Een digitale collega die werk uit handen neemt.",
+        description: "AI-integraties zonder ombouw van je IT-landschap.",
         feature1:
           "Kent al je interne documenten zonder dat je iets hoeft te uploaden",
         feature2: "Slaat gesprekken op als notulen en actiepunten",
