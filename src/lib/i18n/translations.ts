@@ -251,7 +251,7 @@ export const translations = {
       title: "AI‑agent in actie",
       subtitle: "Zie hoe taken automatisch worden afgehandeld",
       description:
-        "Bekijk de AI‑agent in actie. In de demo laten we jouw proces en data zien.",
+        "De demo is één voorbeeld. We richten de workflow in op jouw processen.",
     },
 
     // Navbar
@@ -733,7 +733,7 @@ export const translations = {
         "Plan een vrijblijvend gesprek met ons team om uw project te bespreken",
       description:
         "Gebruik onze online agenda om direct een afspraak in te plannen. We kijken ernaar uit om met u te praten over uw ideeën en hoe we kunnen helpen.",
-      ctaButton: "Plan direct een demo-call",
+      ctaButton: "Plan een demo",
     },
 
     // Automations Showcase
