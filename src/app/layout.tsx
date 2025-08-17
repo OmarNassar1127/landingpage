@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/layout/theme-provider";
 import { LanguageProvider } from "@/lib/i18n/language-context";
 import BackgroundEffect from "@/components/layout/background";
+import GridBackground from "@/components/layout/grid-background";
 import JsonLd from "@/components/seo/json-ld";
 import { organizationSchema, websiteSchema } from "@/lib/schema";
 import { siteConfig } from "@/lib/config";
@@ -166,7 +167,8 @@ export default function RootLayout({
       <body className={`${inter.variable} font-sans antialiased`}>
         <ThemeProvider>
           <LanguageProvider>
-            <BackgroundEffect />
+            {/* <BackgroundEffect /> */}
+            <GridBackground />
             {children}
             {/* Hash routing for policy pages */}
             <ClientPolicyRoutes />

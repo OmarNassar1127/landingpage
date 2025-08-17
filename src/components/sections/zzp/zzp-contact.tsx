@@ -226,7 +226,7 @@ export default function ZzpContact({ isEnglish = false }: ZzpContactProps) {
   };
 
   return (
-    <section id="contact" className="py-24 px-4 md:px-8 bg-gradient-to-t from-primary/5 to-background">
+    <section id="contact" className="py-24 px-4 md:px-8 bg-transparent">
       <div className="container mx-auto max-w-7xl">
         {/* Section Header */}
         <motion.div

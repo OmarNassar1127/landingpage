@@ -60,9 +60,6 @@ function HeroContent() {
             <div className="absolute top-0 -left-40 w-[800px] h-[800px] rounded-full bg-purple-500/20 mix-blend-multiply blur-[128px] animate-pulse" />
             <div className="absolute bottom-0 -right-40 w-[800px] h-[800px] rounded-full bg-blue-500/20 mix-blend-multiply blur-[128px] animate-pulse" />
           </motion.div>
-
-          {/* Subtle grid overlay */}
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,#8882_1px,transparent_1px),linear-gradient(to_bottom,#8882_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_110%)]" />
         </>
       )}
 
@@ -93,13 +90,13 @@ function HeroContent() {
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight max-w-5xl px-2 sm:px-0 leading-[1.1]">
               {language === 'nl' ? (
                 <>
-                  Wij bouwen <span className="text-primary">automatiseringen</span> die<br className="hidden sm:block" />
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-600">40+ uur per maand</span> besparen
+                  <span className="text-primary">AI‑automatiseringen</span> die direct tijd besparen<br className="hidden sm:block" />
+                  voor <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-600">jouw team</span>
                 </>
               ) : (
                 <>
-                  We build <span className="text-primary">automations</span> that<br className="hidden sm:block" />
-                  save <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-600">40+ hours per month</span>
+                  <span className="text-primary">AI-automations</span> that save time directly<br className="hidden sm:block" />
+                  for <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-600">your team</span>
                 </>
               )}
             </h1>
@@ -110,9 +107,9 @@ function HeroContent() {
             className="max-w-2xl text-base sm:text-lg md:text-xl text-muted-foreground font-normal leading-relaxed px-4 sm:px-0 text-center"
           >
             {language === 'nl' ? (
-              <>Van webshops tot AI-tools: wij bouwen software die perfect aansluit bij hoe jij werkt. <span className="font-semibold text-foreground">Geen templates, 100% maatwerk.</span></>
+              <>Van interne processen tot AI‑tool. Maatwerksoftware die past bij jullie workflow. <span className="font-semibold text-foreground">Geen templates.</span></>
             ) : (
-              <>From e-commerce to AI tools: we build software that perfectly fits how you work. <span className="font-semibold text-foreground">No templates, 100% custom.</span></>
+              <>From internal processes to AI tools. Custom software that fits your workflow. <span className="font-semibold text-foreground">No templates.</span></>
             )}
           </motion.p>
 
@@ -122,8 +119,8 @@ function HeroContent() {
             className="flex flex-col sm:flex-row gap-4 sm:gap-8 justify-center items-center text-sm sm:text-base"
           >
             {(language === 'nl' ? [
-              "Gratis werkende demo",
-              "Binnen 2 weken live",
+              "Gratis demo aanvragen",
+              "Live binnen 2 weken",
               "Geen verborgen kosten"
             ] : [
               "Free working demo",
@@ -149,15 +146,15 @@ function HeroContent() {
               asChild
             >
               <a 
-                href="#demo" 
+                href="#book-meeting" 
                 onClick={(e) => {
                   e.preventDefault();
-                  scrollToSection("demo");
+                  scrollToSection("book-meeting");
                 }}
                 className="flex items-center justify-center gap-2 text-center" 
-                aria-label={language === 'nl' ? "Bekijk onze demo" : "View our demo"}
+                aria-label={language === 'nl' ? "Gratis demo aanvragen" : "View our demo"}
               >
-                {language === 'nl' ? 'Bekijk onze demo' : 'View our demo'}
+                {language === 'nl' ? 'Gratis demo aanvragen' : 'View our demo'}
                 <Icon icon={ArrowRight} className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </a>
             </Button>
@@ -167,8 +164,16 @@ function HeroContent() {
               className="hover:bg-primary/5 transition-colors duration-300 w-full sm:w-auto min-w-[200px]"
               asChild
             >
-              <a href="#projects" className="flex items-center justify-center text-center" aria-label={language === 'nl' ? "Bekijk voorbeelden" : "View examples"}>
-                {language === 'nl' ? 'Bekijk voorbeelden' : 'View examples'}
+              <a 
+                href="#projects" 
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection("projects");
+                }}
+                className="flex items-center justify-center text-center" 
+                aria-label={language === 'nl' ? "Bekijk cases" : "View examples"}
+              >
+                {language === 'nl' ? 'Bekijk cases' : 'View examples'}
               </a>
             </Button>
           </motion.div>

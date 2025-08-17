@@ -20,8 +20,7 @@ import {
   Zap,
   Clock,
   Shield,
-  Users,
-  ChevronRight
+  Users
 } from "lucide-react";
 
 interface Service {
@@ -44,31 +43,31 @@ const getServices = (language: string): Service[] => {
       title: isNL ? "AI Integratie" : "AI Integration",
       tagline: isNL ? "Een digitale collega die werk uit handen neemt" : "A digital colleague that takes work off your hands",
       description: isNL 
-        ? "Een AI-assistent die je documenten kent, gesprekken omzet in notulen en taken automatisch opvolgt."
+        ? "AI‑assistent die je documenten kent, gesprekken samenvat en taken opvolgt."
         : "An AI assistant that knows your documents, converts conversations to minutes and automatically follows up on tasks.",
       icon: Bot,
       features: [
-        isNL ? "Kent al je interne documenten zonder uploaden" : "Knows all your internal documents without uploading",
-        isNL ? "Zet gesprekken om in notulen en actiepunten" : "Converts conversations into minutes and action items",
-        isNL ? "Beantwoordt vragen en volgt taken automatisch op" : "Answers questions and follows up on tasks automatically",
-        isNL ? "Werkt met alle bestaande systemen" : "Works with all existing systems"
+        isNL ? "Kent interne documenten zonder upload" : "Knows all your internal documents without uploading",
+        isNL ? "Slaat gesprekken op als notulen en actiepunten" : "Converts conversations into minutes and action items",
+        isNL ? "Beantwoordt vragen en volgt taken op" : "Answers questions and follows up on tasks automatically",
+        isNL ? "Werkt met bestaande systemen" : "Works with all existing systems"
       ],
       highlight: isNL ? "Meest gevraagd" : "Most requested",
       gradient: "from-violet-600 via-purple-600 to-indigo-600"
     },
     {
       id: "tool-integrations",
-      title: isNL ? "Tool Integraties" : "Tool Integrations",
+      title: isNL ? "Tool‑integraties" : "Tool Integrations",
       tagline: isNL ? "Eén werkplek waarin al je systemen samenwerken" : "One workplace where all your systems work together",
       description: isNL
-        ? "Koppelt Slack, Teams, agenda's, documenten en taken. Acties starten vanzelf op basis van wijzigingen."
+        ? "Koppelt Slack, Teams, agenda's, documenten en taken. Acties starten bij relevante wijzigingen."
         : "Links Slack, Teams, calendars, documents and tasks. Actions start automatically based on changes.",
       icon: Cog,
       features: [
         isNL ? "Koppelt Slack, Teams, agenda's, documenten en taken" : "Links Slack, Teams, calendars, documents and tasks",
-        isNL ? "Acties starten vanzelf op basis van wijzigingen" : "Actions start automatically based on changes",
+        isNL ? "Acties starten op basis van wijzigingen" : "Actions start automatically based on changes",
         isNL ? "Overzicht zonder zoeken of schakelen" : "Overview without searching or switching",
-        isNL ? "Real-time synchronisatie tussen tools" : "Real-time synchronization between tools"
+        isNL ? "Realtime synchronisatie tussen tools" : "Real-time synchronization between tools"
       ],
       highlight: isNL ? "Tijdsbesparing" : "Time saver",
       gradient: "from-blue-600 via-cyan-600 to-teal-600"
@@ -78,12 +77,12 @@ const getServices = (language: string): Service[] => {
       title: isNL ? "Maatwerk Software" : "Custom Software",
       tagline: isNL ? "Oplossingen die precies doen wat jij nodig hebt" : "Solutions that do exactly what you need",
       description: isNL
-        ? "Dashboards, portalen of tools afgestemd op je team. Werkt samen met je bestaande systemen en schaalt mee."
+        ? "Dashboards, portalen en tools afgestemd op je team. Integreert met bestaande systemen en schaalt mee."
         : "Dashboards, portals or tools tailored to your team. Works with existing systems and scales with you.",
       icon: Rocket,
       features: [
-        isNL ? "Dashboards, portalen of tools afgestemd op je team" : "Dashboards, portals or tools tailored to your team",
-        isNL ? "Werkt samen met je bestaande systemen en accounts" : "Works with your existing systems and accounts",
+        isNL ? "Dashboards, portalen en tools afgestemd op je team" : "Dashboards, portals or tools tailored to your team",
+        isNL ? "Integreert met je bestaande systemen en accounts" : "Works with your existing systems and accounts",
         isNL ? "Schaalt mee met je processen en groeit met je bedrijf" : "Scales with your processes and grows with your business",
         isNL ? "100% maatwerk, geen templates" : "100% custom, no templates"
       ],
@@ -93,7 +92,7 @@ const getServices = (language: string): Service[] => {
     {
       id: "data-insights",
       title: isNL ? "Data & Inzicht" : "Data & Insights",
-      tagline: isNL ? "Altijd direct antwoord op je cijfers, zonder zoeken" : "Always instant answers to your numbers, no searching",
+      tagline: isNL ? "Direct antwoord op je cijfers, zonder zoeken" : "Always instant answers to your numbers, no searching",
       description: isNL
         ? "Gekoppeld aan je database of backend. Vraag omzet, trends of teamdata op via Slack of Teams."
         : "Connected to your database or backend. Ask for revenue, trends or team data via Slack or Teams.",
@@ -104,39 +103,39 @@ const getServices = (language: string): Service[] => {
         isNL ? "Antwoorden in gewone taal – binnen 3 seconden" : "Answers in plain language – within 3 seconds",
         isNL ? "Automatische rapportages en alerts" : "Automatic reporting and alerts"
       ],
-      highlight: isNL ? "3 sec antwoord" : "3 sec response",
+      highlight: isNL ? "Antwoord in seconden" : "3 sec response",
       gradient: "from-orange-600 via-red-600 to-pink-600"
     },
     {
       id: "custom-ai",
-      title: isNL ? "Maatwerk AI-oplossingen" : "Custom AI Solutions",
-      tagline: isNL ? "AI die zich aanpast aan je werk en collega's" : "AI that adapts to your work and colleagues",
+      title: isNL ? "Maatwerk AI‑oplossingen" : "Custom AI Solutions",
+      tagline: isNL ? "AI die past bij je werk en teams" : "AI that adapts to your work and colleagues",
       description: isNL
-        ? "AI die patronen herkent en meedenkt in je processen. Reageert per afdeling of rol anders."
+        ? "Herkent patronen en denkt mee in processen. Reageert per afdeling of rol."
         : "AI that recognizes patterns and thinks along in your processes. Responds differently per department or role.",
       icon: TrendingUp,
       features: [
-        isNL ? "Herkent patronen en denkt mee in je processen" : "Recognizes patterns and thinks along in your processes",
-        isNL ? "Reageert per afdeling of rol anders" : "Responds differently per department or role",
+        isNL ? "Herkent patronen en denkt mee" : "Recognizes patterns and thinks along in your processes",
+        isNL ? "Reageert per afdeling of rol" : "Responds differently per department or role",
         isNL ? "Neemt terugkerend werk stilletjes over" : "Quietly takes over recurring work",
         isNL ? "Leert continue bij van je team" : "Continuously learns from your team"
       ],
-      highlight: isNL ? "Zelf-lerend" : "Self-learning",
+      highlight: isNL ? "Zelflerend" : "Self-learning",
       gradient: "from-emerald-600 via-green-600 to-teal-600"
     },
     {
       id: "custom-website",
       title: isNL ? "Website op Maat" : "Custom Website",
-      tagline: isNL ? "Een professionelle website, volledig ingericht op jouw doel en doelgroep" : "A professional website, fully tailored to your goal and target audience",
+      tagline: isNL ? "Professionele website, ingericht op jouw doel en doelgroep" : "A professional website, fully tailored to your goal and target audience",
       description: isNL
-        ? "Binnen 7 dagen live met een strak en snel ontwerp. Gebouwd om te converteren – van eerste indruk tot actie."
+        ? "Binnen 7 dagen live. Snel, strak en gebouwd om te converteren."
         : "Live within 7 days with sleek and fast design. Built to convert – from first impression to action.",
       icon: Palette,
       features: [
-        isNL ? "Binnen 7 dagen live met een strak en snel ontwerp" : "Live within 7 days with sleek and fast design",
-        isNL ? "Gebouwd om te converteren – van eerste indruk tot actie" : "Built to convert – from first impression to action",
-        isNL ? "SEO integratie inbegrepen" : "SEO integration included",
-        isNL ? "Volledig responsive op alle devices" : "Fully responsive on all devices"
+        isNL ? "Binnen 7 dagen live" : "Live within 7 days with sleek and fast design",
+        isNL ? "Ontworpen voor conversie" : "Built to convert – from first impression to action",
+        isNL ? "SEO‑integratie inbegrepen" : "SEO integration included",
+        isNL ? "Volledig responsive" : "Fully responsive on all devices"
       ],
       highlight: isNL ? "7 dagen live" : "7 days live",
       gradient: "from-pink-600 via-rose-600 to-red-600"
@@ -188,14 +187,14 @@ const Services = () => {
           
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
             {language === 'nl' 
-              ? <>Oplossingen die <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-600">transformeren</span></>
+              ? <>Oplossingen die <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-600">werken</span></>
               : <>Solutions that <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-600">transform</span></>
             }
           </h2>
           
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             {language === 'nl' 
-              ? 'Van AI-integratie tot maatwerk software: wij bouwen oplossingen die écht werken voor jouw team.'
+              ? 'Van AI‑integratie tot maatwerksoftware. Praktisch, snel live, meetbaar resultaat.'
               : 'From AI integration to custom software: we build solutions that actually work for your team.'}
           </p>
         </motion.div>
@@ -276,8 +275,8 @@ const Services = () => {
           transition={{ duration: 0.5, delay: 0.7 }}
         >
           <div className="text-center">
-            <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 mb-3">
-              <Clock className="h-5 w-5 text-primary" />
+            <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-black dark:bg-white mb-3">
+              <Clock className="h-5 w-5 text-white dark:text-black" />
             </div>
             <div className="text-2xl font-bold mb-1">2-4</div>
             <div className="text-sm text-muted-foreground">
@@ -286,8 +285,8 @@ const Services = () => {
           </div>
           
           <div className="text-center">
-            <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 mb-3">
-              <Shield className="h-5 w-5 text-primary" />
+            <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-black dark:bg-white mb-3">
+              <Shield className="h-5 w-5 text-white dark:text-black" />
             </div>
             <div className="text-2xl font-bold mb-1">100%</div>
             <div className="text-sm text-muted-foreground">
@@ -296,8 +295,8 @@ const Services = () => {
           </div>
           
           <div className="text-center">
-            <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 mb-3">
-              <Users className="h-5 w-5 text-primary" />
+            <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-black dark:bg-white mb-3">
+              <Users className="h-5 w-5 text-white dark:text-black" />
             </div>
             <div className="text-2xl font-bold mb-1">50+</div>
             <div className="text-sm text-muted-foreground">
@@ -306,8 +305,8 @@ const Services = () => {
           </div>
           
           <div className="text-center">
-            <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 mb-3">
-              <Star className="h-5 w-5 text-primary" />
+            <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-black dark:bg-white mb-3">
+              <Star className="h-5 w-5 text-white dark:text-black" />
             </div>
             <div className="text-2xl font-bold mb-1">4.9/5</div>
             <div className="text-sm text-muted-foreground">
@@ -318,27 +317,46 @@ const Services = () => {
 
         {/* CTA */}
         <motion.div
-          className="mt-20 text-center"
+          className="mt-20"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.8 }}
         >
-          <h3 className="text-2xl font-bold mb-4">
-            {language === 'nl' ? 'Klaar om te beginnen?' : 'Ready to start?'}
-          </h3>
-          <p className="text-muted-foreground mb-8 max-w-md mx-auto">
-            {language === 'nl' 
-              ? 'Laten we bespreken hoe we jouw business kunnen transformeren.'
-              : "Let's discuss how we can transform your business."}
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" onClick={() => scrollToSection('contact')}>
-              {language === 'nl' ? 'Start een project' : 'Start a project'}
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
-            <Button size="lg" variant="outline" onClick={() => scrollToSection('demo')}>
-              {language === 'nl' ? 'Bekijk demo' : 'View demo'}
-            </Button>
+          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 p-12 md:p-16 text-center border border-gray-200 dark:border-gray-700 shadow-xl">
+            {/* Background decoration */}
+            <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-blue-500/5 to-pink-500/5" />
+            <div className="absolute -top-24 -right-24 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl" />
+            <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl" />
+            
+            {/* Content */}
+            <div className="relative z-10">
+              <h3 className="text-3xl md:text-4xl font-bold mb-4">
+                {language === 'nl' ? 'Klaar om te beginnen?' : 'Ready to start?'}
+              </h3>
+              <p className="text-lg text-muted-foreground mb-10 max-w-2xl mx-auto">
+                {language === 'nl' 
+                  ? 'Laten we bespreken hoe we jouw business kunnen transformeren.'
+                  : "Let's build your next success project together"}
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button 
+                  size="lg" 
+                  onClick={() => scrollToSection('contact')}
+                  className="bg-black dark:bg-white text-white dark:text-black hover:bg-gray-800 dark:hover:bg-gray-200 px-8 py-6 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-200"
+                >
+                  {language === 'nl' ? 'Plan een kennismaking' : 'Start your project'}
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+                <Button 
+                  size="lg" 
+                  variant="outline" 
+                  onClick={() => scrollToSection('book-meeting')}
+                  className="border-2 px-8 py-6 text-lg rounded-xl hover:bg-gray-50 dark:hover:bg-gray-900 transition-all duration-200"
+                >
+                  {language === 'nl' ? 'Gratis demo aanvragen' : 'View demo'}
+                </Button>
+              </div>
+            </div>
           </div>
         </motion.div>
       </div>
@@ -423,7 +441,7 @@ const ServiceCard = ({
         <div className={`${isFullWidth ? 'lg:w-2/3' : ''} space-y-3 flex-grow`}>
           {isFullWidth && (
             <h4 className="font-semibold mb-4 text-lg">
-              {language === 'nl' ? 'Wat je krijgt:' : 'What you get:'}
+              {language === 'nl' ? 'Wat je krijgt' : 'What you get:'}
             </h4>
           )}
           <div className={`
@@ -452,7 +470,6 @@ const ServiceCard = ({
           opacity-0 group-hover:opacity-100 transition-all duration-300
           transform group-hover:translate-x-1
         `}>
-          <ChevronRight className="h-5 w-5 text-primary" />
         </div>
       </div>
     </div>

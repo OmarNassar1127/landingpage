@@ -47,7 +47,7 @@ export default function ZzpHero({ isEnglish = false }: ZzpHeroProps) {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-background to-primary/5">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white dark:bg-black">
       {/* Theme toggle - sticky position with Apple-style design */}
       <div className="fixed top-4 right-4 z-50">
         <div className="bg-white/90 dark:bg-gray-900/90 backdrop-blur-xl rounded-full p-1 shadow-lg border border-gray-200 dark:border-gray-700">
@@ -55,11 +55,22 @@ export default function ZzpHero({ isEnglish = false }: ZzpHeroProps) {
         </div>
       </div>
       
-      {/* Background decorative elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-80 h-80 rounded-full bg-primary/10 blur-3xl opacity-20" />
-        <div className="absolute top-1/2 -left-40 w-96 h-96 rounded-full bg-blue-500/10 blur-3xl opacity-20" />
-        <div className="absolute bottom-0 right-1/3 w-64 h-64 rounded-full bg-purple-500/10 blur-3xl opacity-20" />
+      {/* Beautiful Gradient Background - similar to spraakassistent */}
+      <div className="absolute inset-0 z-0">
+        {/* Primary gradient blob */}
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 rounded-full blur-3xl opacity-30 animate-pulse"></div>
+
+        {/* Secondary gradient blob */}
+        <div className="absolute top-1/3 right-1/4 w-80 h-80 bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 rounded-full blur-3xl opacity-25 animate-pulse [animation-delay:1s]"></div>
+
+        {/* Tertiary gradient blob */}
+        <div className="absolute bottom-1/4 left-1/3 w-72 h-72 bg-gradient-to-r from-orange-300 via-pink-400 to-purple-400 rounded-full blur-3xl opacity-20 animate-pulse [animation-delay:2s]"></div>
+
+        {/* Grid background pattern */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#8882_1px,transparent_1px),linear-gradient(to_bottom,#8882_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-50" />
+
+        {/* Overlay for better text readability */}
+        <div className="absolute inset-0 bg-white/60 dark:bg-black/60 backdrop-blur-sm"></div>
       </div>
 
       <div className="container mx-auto px-4 relative z-10">

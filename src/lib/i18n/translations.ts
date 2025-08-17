@@ -4,235 +4,254 @@ export const translations = {
     voiceAI: {
       company: {
         name: "Virelio",
-        tagline: "Stem AI Operaties voor Ondernemingen"
+        tagline: "Stem AI Operaties voor Ondernemingen",
       },
       contact: {
         email: "hallo@virelio.ai",
         phone: "+31 (0)20 123-4567",
-        address: "Amsterdam, Nederland"
+        address: "Amsterdam, Nederland",
       },
       navbar: {
         howItWorks: "Hoe het werkt",
         testimonials: "Ervaringen",
         benefits: "Voordelen",
-        getStarted: "Aan de slag"
+        getStarted: "Aan de slag",
       },
       hero: {
-        eyebrow: "Stem AI die daadwerkelijk werkt",
+        eyebrow: "Stem‑AI die werkt",
         headline: {
-          line1: "Jouw Bedrijf Neemt Niet Op",
-          line2: "Wanneer Klanten Je Nodig",
-          line3: "Hebben."
+          line1: "Jullie nemen niet op",
+          line2: "wanneer klanten jullie",
+          line3: "nodig hebben.",
         },
         subline: {
-          main: "doet dat wel.",
-          detail: "24/7. Binnen 2 beltonen. Elke keer."
+          main: "neemt altijd op:",
+          detail: "24/7, binnen twee beltonen.",
         },
         trustSignal: "Geen opstartkosten",
         primaryCta: "Start gratis proef",
-        secondaryCta: "Bekijk demo",
-        socialProof: "100+ bedrijven - 87% minder telefoontjes"
+        secondaryCta: "Vraag gratis demo aan",
+        socialProof: "100+ bedrijven – 87 % minder inkomende telefoontjes",
       },
       problem: {
-        title: "Jouw team besteedt 40% van hun tijd aan routinematige gesprekken",
-        subtitle: "Tijd en middelen die beter geïnvesteerd kunnen worden in groei",
+        title:
+          "Jullie team verliest 40 % van de tijd aan routinegesprekken",
+        subtitle:
+          "Die tijd kun je beter investeren in groei",
         stats: [
           {
-            value: "40%",
-            label: "Tijd besteed aan routinegesprekken",
-            description: "Jouw geschoolde team dat zich bezighoudt met herhalende vragen"
+            value: "40 %",
+            label: "van de tijd gaat naar routinegesprekken",
+            description:
+              "je team beantwoordt steeds dezelfde vragen",
           },
           {
-            value: "€45K",
-            label: "Gemiddelde jaarlijkse kosten per agent",
-            description: "Inclusief salaris, uitkeringen en overhead"
+            value: "€45 K",
+            label: "gemiddelde jaarlijkse kosten per agent",
+            description: "inclusief salaris, uitkeringen en overhead",
           },
           {
-            value: "73%",
-            label: "Van gesprekken zijn routinematige vragen",
-            description: "Dezelfde vragen, dezelfde antwoorden, elke dag"
-          }
+            value: "73 %",
+            label: "van de gesprekken zijn routinevragen",
+            description: "elke dag dezelfde vragen en antwoorden",
+          },
         ],
         visualImpact: {
-          title: "Wat als je die tijd terug kon winnen?",
-          description: "Stel je voor dat jouw team zich richt op hoogwaardige taken terwijl AI routinematige vragen afhandelt met dezelfde professionaliteit en nauwkeurigheid als je beste medewerkers."
-        }
+          title: "Wat als je die tijd kunt terugwinnen?",
+          description:
+            "Laat je team focussen op waardevol werk terwijl AI de routinegesprekken met dezelfde professionaliteit afhandelt.",
+        },
       },
       solution: {
-        title: "Zie Virelio in Actie",
-        subtitle: "Ervaar hoe menselijke AI echte klantinteracties behandelt",
+        title: "Zie Virelio in actie",
+        subtitle: "Ervaar hoe menselijke AI klantinteracties afhandelt",
         demoScenarios: [
           {
-            title: "Klantenservice Vraag",
-            description: "Factuurvragen behandelen met empathie en nauwkeurigheid"
+            title: "Klantenservice",
+            description:
+              "Factuurvragen behandelen met empathie en nauwkeurigheid",
           },
           {
-            title: "Afspraak Inplannen",
-            description: "Afspraken boeken met agenda-integratie"
+            title: "Afspraak inplannen",
+            description: "Afspraken boeken met agenda-integratie",
           },
           {
             title: "Technische Ondersteuning",
-            description: "Probleemoplossing met stap-voor-stap begeleiding"
-          }
+            description: "Probleemoplossing met stap-voor-stap begeleiding",
+          },
         ],
         liveTranscript: "Live Transcriptie",
         keyFeatures: [
           {
-            title: "Natuurlijk Gesprek",
-            description: "Contextuele antwoorden die oprecht menselijk klinken"
+            title: "Natuurlijk gesprek",
+            description: "Contextuele antwoorden die menselijk klinken",
           },
           {
-            title: "Real-time Verwerking",
-            description: "Directe begrip en passende reacties"
+            title: "Realtime verwerking",
+            description: "Direct begrip en passende reacties",
           },
           {
-            title: "Naadloze Integratie",
-            description: "Werkt met jouw bestaande telefoon- en CRM-systemen"
-          }
-        ]
+            title: "Naadloze integratie",
+            description: "Werkt met je bestaande telefoon‑ en CRM‑systemen",
+          },
+        ],
       },
       socialProof: {
         title: "Vertrouwd door Industrieleiders",
-        metric: "87% van klanten vermindert telefoongesprekken binnen 30 dagen",
+        metric: "87 % van klanten vermindert telefoongesprekken binnen 30 dagen",
         trustedBy: "Vertrouwd door industrieleiders",
         testimonials: [
           {
-            quote: "De implementatie van Virelio's voice AI heeft onze responstijden drastisch verbeterd. Klanten krijgen nu direct hulp, zelfs buiten kantooruren.",
+            quote:
+              "De implementatie van Virelio's voice AI heeft onze responstijden drastisch verbeterd. Klanten krijgen nu direct hulp, zelfs buiten kantooruren.",
             author: "Lars van der Berg",
             company: "Vloto",
-            role: "Customer Success Manager"
+            role: "Customer Success Manager",
           },
           {
-            quote: "We hebben de klanttevredenheid zien stijgen met 35% sinds we Virelio gebruiken. De AI begrijpt context en geeft relevante antwoorden.",
+            quote:
+              "We hebben de klanttevredenheid zien stijgen met 35% sinds we Virelio gebruiken. De AI begrijpt context en geeft relevante antwoorden.",
             author: "Sophie Martens",
             company: "Capgemini",
-            role: "Service Delivery Lead"
+            role: "Service Delivery Lead",
           },
           {
-            quote: "Onze supportafdeling kan zich nu focussen op complexe vraagstukken terwijl Virelio de standaardvragen afhandelt. Een game-changer.",
+            quote:
+              "Onze supportafdeling kan zich nu focussen op complexe vraagstukken terwijl Virelio de standaardvragen afhandelt. Een game-changer.",
             author: "Mark Jansen",
             company: "E-flux",
-            role: "Operations Manager"
+            role: "Operations Manager",
           },
           {
-            quote: "De integratie was naadloos en binnen een week zagen we al resultaat. Virelio heeft onze verwachtingen overtroffen.",
+            quote:
+              "De integratie was naadloos en binnen een week zagen we al resultaat. Virelio heeft onze verwachtingen overtroffen.",
             author: "Emma de Vries",
             company: "Road",
-            role: "Product Manager"
-          }
+            role: "Product Manager",
+          },
         ],
         metrics: [
           {
-            value: "87%",
-            label: "Gemiddelde vermindering van gesprekvolume",
-            icon: "TrendingUp"
+            value: "87 %",
+            label: "gemiddelde vermindering van gespreksvolume",
+            icon: "TrendingUp",
           },
           {
             value: "30",
-            label: "Dagen om significante resultaten te zien",
-            icon: "Clock"
+            label: "dagen tot meetbaar resultaat",
+            icon: "Clock",
           },
           {
             value: "100+",
-            label: "Bedrijven vertrouwen Virelio",
-            icon: "Users"
-          }
-        ]
+            label: "bedrijven vertrouwen Virelio",
+            icon: "Users",
+          },
+        ],
       },
       benefits: {
-        title: "Waarom Kiezen voor Virelio",
-        subtitle: "Drie kernvoordelen die jouw klantactiviteiten transformeren",
+        title: "Waarom kiezen voor Virelio",
+        subtitle: "Drie voordelen die je klantinteracties transformeren",
         items: [
           {
-            title: "Vermindert Werkdruk",
-            description: "Automatiseer routinegesprekken en bevrijd jouw team voor hoogwaardige taken",
-            icon: "TrendingDown"
+            title: "Vermindert werkdruk",
+            description:
+              "automatiseer routinegesprekken en maak tijd voor waardevoller werk",
+            icon: "TrendingDown",
           },
           {
-            title: "Mist Nooit een Gesprek",
-            description: "24/7 beschikbaarheid zorgt ervoor dat elke klantvraag wordt behandeld",
-            icon: "Clock"
+            title: "Mist nooit een gesprek",
+            description:
+              "24/7 beschikbaarheid zodat elke klant wordt geholpen",
+            icon: "Clock",
           },
           {
-            title: "Integreert Overal",
-            description: "Werkt met jouw bestaande CRM, helpdesk en telefoonsystemen",
-            icon: "Zap"
-          }
+            title: "Integreert overal",
+            description:
+              "werkt met je bestaande CRM, helpdesk en telefoonsystemen",
+            icon: "Zap",
+          },
         ],
         enterprise: {
-          title: "Gebouwd voor Ondernemingsschaal",
+          title: "Gebouwd voor ondernemingsschaal",
           features: [
-            "99,9% uptime garantie met enterprise SLA",
-            "SOC 2 Type II compliant beveiligingsinfrastructuur",
-            "Meertalige ondersteuning voor wereldwijde activiteiten",
-            "Geavanceerde analytics en rapportage dashboard"
+            "99,9 % uptime met enterprise‑SLA",
+            "SOC 2 Type II compliant beveiliging",
+            "Meertalige ondersteuning voor mondiale activiteiten",
+            "Geavanceerd analyse‑ en rapportagedashboard",
           ],
           stats: [
             {
-              value: "30 Dagen",
-              label: "Implementatietijd"
+              value: "Binnen 30 dagen live",
+              label: "24/7 support",
             },
             {
-              value: "24/7",
-              label: "Support Dekking"
-            }
-          ]
-        }
+              value: "",
+              label: "",
+            },
+          ],
+        },
       },
       cta: {
         title: "Klaar om te horen hoe het klinkt?",
-        subtitle: "Krijg een gepersonaliseerde demo van Virelio die jouw specifieke use case behandelt",
-        ctaText: "Boek Jouw Demo",
+        subtitle:
+          "Vraag een demo aan waarin we jouw use‑case behandelen",
+        ctaText: "Boek je demo",
         form: {
-          name: "Volledige Naam",
-          email: "Werk E-mail",
+          name: "Volledige naam",
+          email: "Zakelijk e‑mailadres",
           company: "Bedrijfsnaam",
-          phone: "Telefoonnummer (Optioneel)",
+          phone: "Telefoonnummer (optioneel)",
           submitting: "Verzenden...",
           success: {
             title: "Aanvraag Succesvol Verzonden!",
-            message: "Dank je wel {name}! We nemen binnen 24 uur contact met je op om je demo in te plannen."
-          }
+            message:
+              "Dank je wel {name}! We nemen binnen 24 uur contact met je op om je demo in te plannen.",
+          },
         },
         whatToExpect: {
           title: "Wat te verwachten in je demo:",
           items: [
             {
-              title: "Live Stem AI Interactie",
-              description: "Zie Virelio echte klantscenario's in jouw industrie behandelen"
+              title: "Live stem‑AI interactie",
+              description:
+                "zie hoe Virelio klantscenario's in jouw sector afhandelt",
             },
             {
-              title: "Aangepast Integratieplan",
-              description: "Uitleg over hoe Virelio past in jouw huidige systemen"
+              title: "Aangepast integratieplan",
+              description:
+                "hoe Virelio aansluit op je huidige systemen",
             },
             {
-              title: "ROI Calculator",
-              description: "Zie geprojecteerde besparingen en efficiëntiewinsten voor jouw team"
+              title: "ROI‑calculator",
+              description:
+                "bereken je besparingen en efficiëntiewinst",
             },
             {
-              title: "Implementatie Tijdlijn",
-              description: "Duidelijke routekaart van opzetting tot live gaan in 30 dagen"
-            }
+              title: "Implementatietijdlijn",
+              description:
+                "routekaart van setup tot live in 30 dagen",
+            },
           ],
-          footer: "30-minuten sessie • Geen verplichtingen • Vragen live beantwoord"
-        }
+          footer:
+            "30 minuten • geen verplichtingen • vragen beantwoord",
+        },
       },
       footer: {
         copyright: "Alle rechten voorbehouden.",
         links: {
-          privacy: "Privacy",
-          terms: "Voorwaarden",
-          cookies: "Cookies"
-        }
-      }
+          privacy: "Privacyverklaring",
+          terms: "Algemene voorwaarden",
+          cookies: "Cookiebeleid",
+        },
+      },
     },
 
     // Demo Video
     demoVideo: {
-      title: "Onze AI Agent in Actie",
-      subtitle: "Bekijk hoe onze AI-agent je werkervaring vereenvoudigt",
+      title: "AI‑agent in actie",
+      subtitle: "Zie hoe taken automatisch worden afgehandeld",
       description:
-        "Dit is slechts één van onze vele AI-agents. We kunnen aangepaste AI-oplossingen bouwen die volledig zijn afgestemd op jouw specifieke behoeften en branche.",
+        "De demo is één voorbeeld. We richten de workflow in op jouw processen.",
     },
 
     // Navbar
@@ -243,8 +262,8 @@ export const translations = {
       workshop: "Workshop",
       about: "Over Ons",
       testimonials: "Aanbevelingen",
-      contact: "Contact",
-      bookMeeting: "Afspraak Maken",
+      contact: "Plan een verkennend gesprek",
+      bookMeeting: "Plan een kennismaking",
     },
 
     // Testimonials section
@@ -256,8 +275,8 @@ export const translations = {
     // Footer
     footer: {
       description:
-        "Innovatieve oplossingen voor moderne uitdagingen. Onze expertise omvat AI-systemen, SaaS-platformen, KYC-integraties, winkelautomatisering en meer. We passen ons aan aan de unieke behoeften van elk project om optimale resultaten te leveren.",
-      quickLinks: "Snelle Links",
+        "Innovatieve oplossingen voor moderne uitdagingen. Expertise in AI‑systemen, SaaS‑platformen, KYC‑integraties en winkelautomatisering. Altijd afgestemd op jouw project voor optimaal resultaat.",
+      quickLinks: "Snelle links",
       legal: "Juridisch",
       privacyPolicy: "Privacybeleid",
       termsOfService: "Gebruiksvoorwaarden",
@@ -369,21 +388,21 @@ export const translations = {
     // About section
     about: {
       title: "Over Ons",
-      subtitle: "Leer meer over ons team en onze missie.",
+      subtitle: "Ons team en onze missie",
       theTeam: "Het Virelio team",
       description:
-        "Wij zijn Robin en Omar. Twee nuchtere, gediplomeerde IT'ers met meer dan 5 jaar ervaring en een breed portfolio aan projecten bij grote bedrijven. In plaats van passief consumeren, bouwen we. Nieuwtje gelezen? Wij testen het. Nieuwe AI-tool? Diezelfde dag nog een werkend prototype.\nWe maken complexe technologie begrijpelijk en direct toepasbaar. Geen lange theorieën, maar slimme oplossingen die direct waarde leveren — voor zowel lokale ondernemers als grote corporates.\nVan snelle experimenten tot stabiele productiesystemen. Van slimme automatisering tot krachtige AI-toepassingen. Wij blijven bouwen. Gericht. Efficiënt. Praktisch.",
+        "Wij zijn Robin en Omar. Twee nuchtere IT'ers met 5+ jaar ervaring bij grote organisaties. We bouwen en testen snel. Nieuwe tool gezien? Die dag nog een prototype.\nWe maken complexe technologie praktisch en toepasbaar. Geen lange theorie, wel oplossingen die direct waarde leveren voor MKB en enterprise.\nVan snelle experimenten tot stabiele productiesystemen. Van automatisering tot maatwerk AI. Gericht, efficiënt, praktisch.",
       missionTitle: "Onze Missie",
       teamTitle: "Over Robin & Omar",
       missionDescription:
-        "Onze missie is om bedrijven te helpen groeien door middel van digitale innovatie. Wij geloven in het bouwen van hoogwaardige oplossingen die eenvoudig te gebruiken zijn en een echte impact hebben. We combineren technische expertise met zakelijk inzicht om resultaten te leveren die uw bedrijf vooruit helpen.",
+        "Onze missie is om bedrijven te helpen groeien door digitale innovatie. We bouwen hoogwaardige oplossingen die eenvoudig te gebruiken zijn en impact maken. We combineren technische expertise met zakelijk inzicht om resultaat te leveren dat jouw bedrijf vooruit helpt.",
       valuesTitle: "Onze Waarden",
       valueQuality: "Kwaliteit",
       valueInnovation: "Innovatie",
       valueIntegrity: "Integriteit",
       valueCollaboration: "Samenwerking",
       valueQualityDesc:
-        "Onze oplossingen zijn gebouwd om te schalen en zich aan te passen naarmate uw bedrijf groeit.",
+        "Onze oplossingen zijn gebouwd om te schalen en zich aan te passen naarmate je bedrijf groeit.",
       valueInnovationDesc:
         "We passen niet alleen bestaande oplossingen toe; we creëren nieuwe wanneer dat nodig is.",
       valueIntegrityDesc:
@@ -393,14 +412,14 @@ export const translations = {
 
     // Contact section
     contact: {
-      title: "Laten We Kennismaken",
+      title: "Plan een kennismaking",
       subtitle:
         "Heeft u een project in gedachten of wilt u meer weten over ons werk? We horen graag van u!",
-      name: "Uw Naam",
+      name: "Jouw naam",
       email: "E-mailadres",
       subject: "Onderwerp",
       message: "Bericht",
-      send: "Bericht Versturen",
+      send: "Bericht versturen",
       sending: "Versturen...",
       successTitle: "Bericht Verzonden!",
       successMessage:
@@ -640,7 +659,7 @@ export const translations = {
         formTitle: "Workshop Informatieverzoek",
 
         // Form fields
-        name: "Uw Naam",
+        name: "Jouw naam",
         email: "E-mailadres",
         company: "Bedrijf/Organisatie",
         role: "Uw Functie",
@@ -709,12 +728,12 @@ export const translations = {
 
     // Book a Meeting section
     bookMeeting: {
-      title: "Afspraak Maken",
+      title: "Plan een kennismaking",
       subtitle:
-        "Plan een vrijblijvend gesprek met ons team om uw project te bespreken",
+        "Plan een vrijblijvend gesprek om je project te verkennen",
       description:
         "Gebruik onze online agenda om direct een afspraak in te plannen. We kijken ernaar uit om met u te praten over uw ideeën en hoe we kunnen helpen.",
-      ctaButton: "Plan direct een demo-call",
+      ctaButton: "Plan een demo",
     },
 
     // Automations Showcase
@@ -732,11 +751,11 @@ export const translations = {
       ctaButton: "Plan een kennismaking",
       aiDevelopment: {
         title: "AI Integratie",
-        description: "Een digitale collega die werk uit handen neemt.",
+        description: "AI-integraties zonder ombouw van je IT-landschap.",
         feature1:
           "Kent al je interne documenten zonder dat je iets hoeft te uploaden",
-        feature2: "Zet gesprekken om in notulen en actiepunten",
-        feature3: "Beantwoordt vragen en volgt taken automatisch op",
+        feature2: "Slaat gesprekken op als notulen en actiepunten",
+        feature3: "Beantwoordt vragen en volgt taken op",
       },
       saasDevelopment: {
         title: "Maatwerk Software",
@@ -781,33 +800,33 @@ export const translations = {
     // Workshop Section (main page)
     workshopSection: {
       badge: "Workshop",
-      title: "AI Workshop voor Jouw Team",
+      title: "AI‑workshop voor jouw team",
       subtitle:
-        "Transformeer je team met hands-on AI training die direct toepasbaar is in jullie dagelijkse werk.",
-      ctaButton: "Bekijk Workshop Details",
+        "Praktische AI‑training, direct toepasbaar in jullie werk.",
+      ctaButton: "Plan je AI‑bedrijfsworkshop",
       features: {
         handson: {
-          title: "Hands-on Leren",
+          title: "Hands‑on leren",
           description:
-            "Praktische oefeningen en echte use cases uit jouw branche",
+            "Praktische oefeningen en cases uit jullie branche",
         },
         tailored: {
-          title: "Op Maat Gemaakt",
+          title: "Op maat",
           description:
-            "Workshop aangepast aan jullie specifieke uitdagingen en doelen",
+            "Aangepast aan jullie uitdagingen en doelen",
         },
         flexible: {
-          title: "Flexibele Formats",
+          title: "Formaat naar keuze",
           description:
-            "Van halve dag tot meerdaagse programma's, op locatie of online",
+            "Van halve dag tot meerdaags, op locatie of online",
         },
       },
       card: {
-        title: "Enterprise AI Training",
-        subtitle: "Voor teams die voorop willen lopen",
+        title: "Enterprise AI‑training",
+        subtitle: "voor teams die willen versnellen",
         practical: "Praktisch",
         interactive: "Interactief",
-        quote: "Van theorie naar toepassing in één dag",
+        quote: "Van theorie naar toepassing in één dag.",
       },
     },
   },
@@ -817,34 +836,34 @@ export const translations = {
     voiceAI: {
       company: {
         name: "Virelio",
-        tagline: "Voice AI Operations for Enterprise"
+        tagline: "Voice AI Operations for Enterprise",
       },
       contact: {
         email: "hello@virelio.ai",
         phone: "+1 (555) 123-4567",
-        address: "San Francisco, CA"
+        address: "San Francisco, CA",
       },
       navbar: {
         howItWorks: "How it works",
         testimonials: "Testimonials",
         benefits: "Benefits",
-        getStarted: "Get started"
+        getStarted: "Get started",
       },
       hero: {
         eyebrow: "Voice AI that actually works",
         headline: {
           line1: "Your Business Doesn't",
           line2: "Answer When Customers",
-          line3: "Need You."
+          line3: "Need You.",
         },
         subline: {
           main: "does.",
-          detail: "24/7. In 2 rings. Every single time."
+          detail: "24/7. In 2 rings. Every single time.",
         },
         trustSignal: "No setup fees",
         primaryCta: "Start free trial",
         secondaryCta: "View demo",
-        socialProof: "100+ companies - 87% call reduction"
+        socialProof: "100+ companies - 87% call reduction",
       },
       problem: {
         title: "Your team spends 40% of time on routine calls",
@@ -853,56 +872,58 @@ export const translations = {
           {
             value: "40%",
             label: "Time spent on routine calls",
-            description: "Your skilled team handling repetitive inquiries"
+            description: "Your skilled team handling repetitive inquiries",
           },
           {
             value: "$50K",
             label: "Average annual cost per agent",
-            description: "Including salary, benefits, and overhead"
+            description: "Including salary, benefits, and overhead",
           },
           {
             value: "73%",
             label: "Of calls are routine inquiries",
-            description: "Same questions, same answers, every day"
-          }
+            description: "Same questions, same answers, every day",
+          },
         ],
         visualImpact: {
           title: "What if you could reclaim that time?",
-          description: "Imagine your team focusing on high-value work while AI handles routine inquiries with the same professionalism and accuracy as your best agents."
-        }
+          description:
+            "Imagine your team focusing on high-value work while AI handles routine inquiries with the same professionalism and accuracy as your best agents.",
+        },
       },
       solution: {
         title: "See Virelio in Action",
-        subtitle: "Experience how human-like AI handles real customer interactions",
+        subtitle:
+          "Experience how human-like AI handles real customer interactions",
         demoScenarios: [
           {
             title: "Customer Service Inquiry",
-            description: "Handling billing questions with empathy and accuracy"
+            description: "Handling billing questions with empathy and accuracy",
           },
           {
             title: "Appointment Scheduling",
-            description: "Booking appointments with calendar integration"
+            description: "Booking appointments with calendar integration",
           },
           {
             title: "Technical Support",
-            description: "Troubleshooting with step-by-step guidance"
-          }
+            description: "Troubleshooting with step-by-step guidance",
+          },
         ],
         liveTranscript: "Live Transcript",
         keyFeatures: [
           {
             title: "Natural Conversation",
-            description: "Contextual responses that sound genuinely human"
+            description: "Contextual responses that sound genuinely human",
           },
           {
             title: "Real-time Processing",
-            description: "Instant understanding and appropriate responses"
+            description: "Instant understanding and appropriate responses",
           },
           {
             title: "Seamless Integration",
-            description: "Works with your existing phone and CRM systems"
-          }
-        ]
+            description: "Works with your existing phone and CRM systems",
+          },
+        ],
       },
       socialProof: {
         title: "Trusted by Industry Leaders",
@@ -910,47 +931,51 @@ export const translations = {
         trustedBy: "Trusted by industry leaders",
         testimonials: [
           {
-            quote: "Implementing Virelio's voice AI has drastically improved our response times. Customers now get instant help, even outside office hours.",
+            quote:
+              "Implementing Virelio's voice AI has drastically improved our response times. Customers now get instant help, even outside office hours.",
             author: "Lars van der Berg",
             company: "Vloto",
-            role: "Customer Success Manager"
+            role: "Customer Success Manager",
           },
           {
-            quote: "We've seen customer satisfaction increase by 35% since using Virelio. The AI understands context and provides relevant answers.",
+            quote:
+              "We've seen customer satisfaction increase by 35% since using Virelio. The AI understands context and provides relevant answers.",
             author: "Sophie Martens",
             company: "Capgemini",
-            role: "Service Delivery Lead"
+            role: "Service Delivery Lead",
           },
           {
-            quote: "Our support team can now focus on complex issues while Virelio handles standard queries. It's been a game-changer.",
+            quote:
+              "Our support team can now focus on complex issues while Virelio handles standard queries. It's been a game-changer.",
             author: "Mark Jansen",
             company: "E-flux",
-            role: "Operations Manager"
+            role: "Operations Manager",
           },
           {
-            quote: "The integration was seamless and we saw results within a week. Virelio exceeded our expectations.",
+            quote:
+              "The integration was seamless and we saw results within a week. Virelio exceeded our expectations.",
             author: "Emma de Vries",
             company: "Road",
-            role: "Product Manager"
-          }
+            role: "Product Manager",
+          },
         ],
         metrics: [
           {
             value: "87%",
             label: "Average reduction in call volume",
-            icon: "TrendingUp"
+            icon: "TrendingUp",
           },
           {
             value: "30",
             label: "Days to see significant results",
-            icon: "Clock"
+            icon: "Clock",
           },
           {
             value: "100+",
             label: "Companies trust Virelio",
-            icon: "Users"
-          }
-        ]
+            icon: "Users",
+          },
+        ],
       },
       benefits: {
         title: "Why Choose Virelio",
@@ -958,19 +983,22 @@ export const translations = {
         items: [
           {
             title: "Reduces Workload",
-            description: "Automate routine calls and free your team for high-value tasks",
-            icon: "TrendingDown"
+            description:
+              "Automate routine calls and free your team for high-value tasks",
+            icon: "TrendingDown",
           },
           {
             title: "Never Misses Calls",
-            description: "24/7 availability ensures every customer inquiry gets handled",
-            icon: "Clock"
+            description:
+              "24/7 availability ensures every customer inquiry gets handled",
+            icon: "Clock",
           },
           {
             title: "Integrates Everywhere",
-            description: "Works with your existing CRM, helpdesk, and phone systems",
-            icon: "Zap"
-          }
+            description:
+              "Works with your existing CRM, helpdesk, and phone systems",
+            icon: "Zap",
+          },
         ],
         enterprise: {
           title: "Built for Enterprise Scale",
@@ -978,23 +1006,24 @@ export const translations = {
             "99.9% uptime guarantee with enterprise SLA",
             "SOC 2 Type II compliant security infrastructure",
             "Multi-language support for global operations",
-            "Advanced analytics and reporting dashboard"
+            "Advanced analytics and reporting dashboard",
           ],
           stats: [
             {
               value: "30 Days",
-              label: "Implementation Time"
+              label: "Implementation Time",
             },
             {
               value: "24/7",
-              label: "Support Coverage"
-            }
-          ]
-        }
+              label: "Support Coverage",
+            },
+          ],
+        },
       },
       cta: {
         title: "Ready to hear how it sounds?",
-        subtitle: "Get a personalized demo of Virelio handling your specific use case",
+        subtitle:
+          "Get a personalized demo of Virelio handling your specific use case",
         ctaText: "Book Your Demo",
         form: {
           name: "Full Name",
@@ -1004,40 +1033,45 @@ export const translations = {
           submitting: "Submitting...",
           success: {
             title: "Request Submitted Successfully!",
-            message: "Thank you! We'll contact you within 24 hours to schedule your demo."
-          }
+            message:
+              "Thank you! We'll contact you within 24 hours to schedule your demo.",
+          },
         },
         whatToExpect: {
           title: "What to expect in your demo:",
           items: [
             {
               title: "Live Voice AI Interaction",
-              description: "See Virelio handle real customer scenarios in your industry"
+              description:
+                "See Virelio handle real customer scenarios in your industry",
             },
             {
               title: "Custom Integration Plan",
-              description: "Walkthrough of how Virelio fits into your current systems"
+              description:
+                "Walkthrough of how Virelio fits into your current systems",
             },
             {
               title: "ROI Calculator",
-              description: "See projected savings and efficiency gains for your team"
+              description:
+                "See projected savings and efficiency gains for your team",
             },
             {
               title: "Implementation Timeline",
-              description: "Clear roadmap from setup to go-live in 30 days"
-            }
+              description: "Clear roadmap from setup to go-live in 30 days",
+            },
           ],
-          footer: "30-minute session • No commitment required • Questions answered live"
-        }
+          footer:
+            "30-minute session • No commitment required • Questions answered live",
+        },
       },
       footer: {
         copyright: "All rights reserved.",
         links: {
           privacy: "Privacy",
           terms: "Terms",
-          cookies: "Contact"
-        }
-      }
+          cookies: "Contact",
+        },
+      },
     },
 
     // Demo Video
@@ -1045,7 +1079,7 @@ export const translations = {
       title: "Our AI Agent in Action",
       subtitle: "See how our AI agent streamlines your work experience",
       description:
-        "This is just one of our many AI agents. We can build custom AI solutions tailored to your specific needs and industry.",
+        "Watch our AI agent in action. This demonstration shows our intelligent AI solution that can be customized for your specific business needs and industry.",
     },
 
     // Navbar
