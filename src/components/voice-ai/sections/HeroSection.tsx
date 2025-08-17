@@ -14,13 +14,6 @@ export default function HeroSection({ currentLang }: HeroSectionProps) {
   const language = currentLang || contextLanguage;
   const t = translations[language].voiceAI;
 
-  const scrollToDemo = () => {
-    const element = document.querySelector('[data-section="solution"]');
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-  };
-
   const scrollToContact = () => {
     const element = document.querySelector('[data-section="cta"]');
     if (element) {
@@ -119,7 +112,7 @@ export default function HeroSection({ currentLang }: HeroSectionProps) {
 
           {/* Secondary CTA - Reduces friction */}
           <motion.button
-            onClick={scrollToDemo}
+            onClick={scrollToContact}
             className="bg-transparent border-2 border-gray-300 text-gray-700 hover:bg-gray-50 hover:border-gray-400 px-8 py-3 rounded-lg font-semibold transition-all duration-200"
             whileHover={{ y: -2 }}
             whileTap={{ scale: 0.98 }}

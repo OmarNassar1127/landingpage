@@ -18,61 +18,61 @@ export const translations = {
         getStarted: "Aan de slag",
       },
       hero: {
-        eyebrow: "Stem AI die daadwerkelijk werkt",
+        eyebrow: "Stem‑AI die werkt",
         headline: {
-          line1: "Jouw Bedrijf Neemt Niet Op",
-          line2: "Wanneer Klanten Je Nodig",
-          line3: "Hebben.",
+          line1: "Jullie nemen niet op",
+          line2: "wanneer klanten jullie",
+          line3: "nodig hebben.",
         },
         subline: {
-          main: "doet dat wel.",
-          detail: "24/7. Binnen 2 beltonen. Elke keer.",
+          main: "neemt altijd op:",
+          detail: "24/7, binnen twee beltonen.",
         },
         trustSignal: "Geen opstartkosten",
         primaryCta: "Start gratis proef",
-        secondaryCta: "Gratis demo aanvragen",
-        socialProof: "100+ bedrijven - 87% minder telefoontjes",
+        secondaryCta: "Vraag gratis demo aan",
+        socialProof: "100+ bedrijven – 87 % minder inkomende telefoontjes",
       },
       problem: {
         title:
-          "Jouw team besteedt 40% van hun tijd aan routinematige gesprekken",
+          "Jullie team verliest 40 % van de tijd aan routinegesprekken",
         subtitle:
-          "Tijd en middelen die beter geïnvesteerd kunnen worden in groei",
+          "Die tijd kun je beter investeren in groei",
         stats: [
           {
-            value: "40%",
-            label: "Tijd besteed aan routinegesprekken",
+            value: "40 %",
+            label: "van de tijd gaat naar routinegesprekken",
             description:
-              "Jouw geschoolde team dat zich bezighoudt met herhalende vragen",
+              "je team beantwoordt steeds dezelfde vragen",
           },
           {
-            value: "€45K",
-            label: "Gemiddelde jaarlijkse kosten per agent",
-            description: "Inclusief salaris, uitkeringen en overhead",
+            value: "€45 K",
+            label: "gemiddelde jaarlijkse kosten per agent",
+            description: "inclusief salaris, uitkeringen en overhead",
           },
           {
-            value: "73%",
-            label: "Van gesprekken zijn routinematige vragen",
-            description: "Dezelfde vragen, dezelfde antwoorden, elke dag",
+            value: "73 %",
+            label: "van de gesprekken zijn routinevragen",
+            description: "elke dag dezelfde vragen en antwoorden",
           },
         ],
         visualImpact: {
-          title: "Wat als je die tijd terug kon winnen?",
+          title: "Wat als je die tijd kunt terugwinnen?",
           description:
-            "Stel je voor dat jouw team zich richt op hoogwaardige taken terwijl AI routinematige vragen afhandelt met dezelfde professionaliteit en nauwkeurigheid als je beste medewerkers.",
+            "Laat je team focussen op waardevol werk terwijl AI de routinegesprekken met dezelfde professionaliteit afhandelt.",
         },
       },
       solution: {
-        title: "Zie Virelio in Actie",
-        subtitle: "Ervaar hoe menselijke AI echte klantinteracties behandelt",
+        title: "Zie Virelio in actie",
+        subtitle: "Ervaar hoe menselijke AI klantinteracties afhandelt",
         demoScenarios: [
           {
-            title: "Klantenservice Vraag",
+            title: "Klantenservice",
             description:
               "Factuurvragen behandelen met empathie en nauwkeurigheid",
           },
           {
-            title: "Afspraak Inplannen",
+            title: "Afspraak inplannen",
             description: "Afspraken boeken met agenda-integratie",
           },
           {
@@ -83,22 +83,22 @@ export const translations = {
         liveTranscript: "Live Transcriptie",
         keyFeatures: [
           {
-            title: "Natuurlijk Gesprek",
-            description: "Contextuele antwoorden die oprecht menselijk klinken",
+            title: "Natuurlijk gesprek",
+            description: "Contextuele antwoorden die menselijk klinken",
           },
           {
-            title: "Real-time Verwerking",
-            description: "Directe begrip en passende reacties",
+            title: "Realtime verwerking",
+            description: "Direct begrip en passende reacties",
           },
           {
-            title: "Naadloze Integratie",
-            description: "Werkt met jouw bestaande telefoon- en CRM-systemen",
+            title: "Naadloze integratie",
+            description: "Werkt met je bestaande telefoon‑ en CRM‑systemen",
           },
         ],
       },
       socialProof: {
         title: "Vertrouwd door Industrieleiders",
-        metric: "87% van klanten vermindert telefoongesprekken binnen 30 dagen",
+        metric: "87 % van klanten vermindert telefoongesprekken binnen 30 dagen",
         trustedBy: "Vertrouwd door industrieleiders",
         testimonials: [
           {
@@ -132,61 +132,61 @@ export const translations = {
         ],
         metrics: [
           {
-            value: "87%",
-            label: "Gemiddelde vermindering van gesprekvolume",
+            value: "87 %",
+            label: "gemiddelde vermindering van gespreksvolume",
             icon: "TrendingUp",
           },
           {
             value: "30",
-            label: "Dagen om significante resultaten te zien",
+            label: "dagen tot meetbaar resultaat",
             icon: "Clock",
           },
           {
             value: "100+",
-            label: "Bedrijven vertrouwen Virelio",
+            label: "bedrijven vertrouwen Virelio",
             icon: "Users",
           },
         ],
       },
       benefits: {
-        title: "Waarom Kiezen voor Virelio",
-        subtitle: "Drie kernvoordelen die jouw klantactiviteiten transformeren",
+        title: "Waarom kiezen voor Virelio",
+        subtitle: "Drie voordelen die je klantinteracties transformeren",
         items: [
           {
-            title: "Vermindert Werkdruk",
+            title: "Vermindert werkdruk",
             description:
-              "Automatiseer routinegesprekken en bevrijd jouw team voor hoogwaardige taken",
+              "automatiseer routinegesprekken en maak tijd voor waardevoller werk",
             icon: "TrendingDown",
           },
           {
-            title: "Mist Nooit een Gesprek",
+            title: "Mist nooit een gesprek",
             description:
-              "24/7 beschikbaarheid zorgt ervoor dat elke klantvraag wordt behandeld",
+              "24/7 beschikbaarheid zodat elke klant wordt geholpen",
             icon: "Clock",
           },
           {
-            title: "Integreert Overal",
+            title: "Integreert overal",
             description:
-              "Werkt met jouw bestaande CRM, helpdesk en telefoonsystemen",
+              "werkt met je bestaande CRM, helpdesk en telefoonsystemen",
             icon: "Zap",
           },
         ],
         enterprise: {
-          title: "Gebouwd voor Ondernemingsschaal",
+          title: "Gebouwd voor ondernemingsschaal",
           features: [
-            "99,9% uptime garantie met enterprise SLA",
-            "SOC 2 Type II compliant beveiligingsinfrastructuur",
-            "Meertalige ondersteuning voor wereldwijde activiteiten",
-            "Geavanceerde analytics en rapportage dashboard",
+            "99,9 % uptime met enterprise‑SLA",
+            "SOC 2 Type II compliant beveiliging",
+            "Meertalige ondersteuning voor mondiale activiteiten",
+            "Geavanceerd analyse‑ en rapportagedashboard",
           ],
           stats: [
             {
-              value: "30 Dagen",
-              label: "Implementatietijd",
+              value: "Binnen 30 dagen live",
+              label: "24/7 support",
             },
             {
-              value: "24/7",
-              label: "Support Dekking",
+              value: "",
+              label: "",
             },
           ],
         },
@@ -194,13 +194,13 @@ export const translations = {
       cta: {
         title: "Klaar om te horen hoe het klinkt?",
         subtitle:
-          "Krijg een gepersonaliseerde demo van Virelio die jouw specifieke use case behandelt",
-        ctaText: "Boek Jouw Demo",
+          "Vraag een demo aan waarin we jouw use‑case behandelen",
+        ctaText: "Boek je demo",
         form: {
-          name: "Volledige Naam",
-          email: "Werk E-mail",
+          name: "Volledige naam",
+          email: "Zakelijk e‑mailadres",
           company: "Bedrijfsnaam",
-          phone: "Telefoonnummer (Optioneel)",
+          phone: "Telefoonnummer (optioneel)",
           submitting: "Verzenden...",
           success: {
             title: "Aanvraag Succesvol Verzonden!",
@@ -212,36 +212,36 @@ export const translations = {
           title: "Wat te verwachten in je demo:",
           items: [
             {
-              title: "Live Stem AI Interactie",
+              title: "Live stem‑AI interactie",
               description:
-                "Zie Virelio echte klantscenario's in jouw industrie behandelen",
+                "zie hoe Virelio klantscenario's in jouw sector afhandelt",
             },
             {
-              title: "Aangepast Integratieplan",
+              title: "Aangepast integratieplan",
               description:
-                "Uitleg over hoe Virelio past in jouw huidige systemen",
+                "hoe Virelio aansluit op je huidige systemen",
             },
             {
-              title: "ROI Calculator",
+              title: "ROI‑calculator",
               description:
-                "Zie geprojecteerde besparingen en efficiëntiewinsten voor jouw team",
+                "bereken je besparingen en efficiëntiewinst",
             },
             {
-              title: "Implementatie Tijdlijn",
+              title: "Implementatietijdlijn",
               description:
-                "Duidelijke routekaart van opzetting tot live gaan in 30 dagen",
+                "routekaart van setup tot live in 30 dagen",
             },
           ],
           footer:
-            "30-minuten sessie • Geen verplichtingen • Vragen live beantwoord",
+            "30 minuten • geen verplichtingen • vragen beantwoord",
         },
       },
       footer: {
         copyright: "Alle rechten voorbehouden.",
         links: {
-          privacy: "Privacy",
-          terms: "Voorwaarden",
-          cookies: "Cookies",
+          privacy: "Privacyverklaring",
+          terms: "Algemene voorwaarden",
+          cookies: "Cookiebeleid",
         },
       },
     },

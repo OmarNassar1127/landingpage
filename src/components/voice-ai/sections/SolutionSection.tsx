@@ -30,7 +30,7 @@ export default function SolutionSection({ currentLang }: SolutionSectionProps) {
         { speaker: "AI", text: "Dank je wel. Ik zie het bedrag waar je naar verwijst. Dat is een eenmalige installatiekosten voor de premium service upgrade die je vorige maand hebt aangevraagd. Wil je dat ik de voordelen van deze upgrade uitleg?" }
       ],
       duration: "2:34",
-      outcome: "Probleem opgelost, klant tevreden"
+      outcome: "Klant geholpen, probleem opgelost"
     },
     {
       title: t.solution.demoScenarios[1].title,
