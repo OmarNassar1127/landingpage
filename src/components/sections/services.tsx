@@ -195,7 +195,7 @@ const Services = () => {
           
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             {language === 'nl' 
-              ? 'Van AI-integratie tot maatwerk software: wij bouwen oplossingen die écht werken voor jouw team.'
+              ? 'Van AI‑integratie tot maatwerksoftware. Praktisch, snel live, meetbaar resultaat.'
               : 'From AI integration to custom software: we build solutions that actually work for your team.'}
           </p>
         </motion.div>
