@@ -166,7 +166,7 @@ export default function RootLayout({
       <body className={`${inter.variable} font-sans antialiased`}>
         <ThemeProvider>
           <LanguageProvider>
-            <BackgroundEffect />
+            {/* <BackgroundEffect /> */}
             {children}
             {/* Hash routing for policy pages */}
             <ClientPolicyRoutes />
