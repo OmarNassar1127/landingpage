@@ -119,8 +119,8 @@ function HeroContent() {
             className="flex flex-col sm:flex-row gap-4 sm:gap-8 justify-center items-center text-sm sm:text-base"
           >
             {(language === 'nl' ? [
-              "Gratis werkende demo",
-              "Binnen 2 weken live",
+              "Gratis demo aanvragen",
+              "Live binnen 2 weken",
               "Geen verborgen kosten"
             ] : [
               "Free working demo",
