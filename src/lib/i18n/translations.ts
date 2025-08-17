@@ -249,7 +249,7 @@ export const translations = {
     // Demo Video
     demoVideo: {
       title: "AI‑agent in actie",
-      subtitle: "Bekijk hoe onze AI-agent je werkervaring vereenvoudigt",
+      subtitle: "Zie hoe taken automatisch worden afgehandeld",
       description:
         "Bekijk de AI‑agent in actie. In de demo laten we jouw proces en data zien.",
     },
