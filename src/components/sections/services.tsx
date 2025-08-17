@@ -345,16 +345,16 @@ const Services = () => {
                   onClick={() => scrollToSection('contact')}
                   className="bg-black dark:bg-white text-white dark:text-black hover:bg-gray-800 dark:hover:bg-gray-200 px-8 py-6 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-200"
                 >
-                  {language === 'nl' ? 'Start uw project' : 'Start your project'}
+                  {language === 'nl' ? 'Plan een kennismaking' : 'Start your project'}
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
                 <Button 
                   size="lg" 
                   variant="outline" 
-                  onClick={() => scrollToSection('demo')}
+                  onClick={() => scrollToSection('book-meeting')}
                   className="border-2 px-8 py-6 text-lg rounded-xl hover:bg-gray-50 dark:hover:bg-gray-900 transition-all duration-200"
                 >
-                  {language === 'nl' ? 'Bekijk demo' : 'View demo'}
+                  {language === 'nl' ? 'Gratis demo aanvragen' : 'View demo'}
                 </Button>
               </div>
             </div>

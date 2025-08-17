@@ -91,12 +91,12 @@ function HeroContent() {
               {language === 'nl' ? (
                 <>
                   Wij bouwen <span className="text-primary">automatiseringen</span> die<br className="hidden sm:block" />
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-600">40+ uur per maand</span> besparen
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-600"> 40+ uur per maand</span> besparen
                 </>
               ) : (
                 <>
                   We build <span className="text-primary">automations</span> that<br className="hidden sm:block" />
-                  save <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-600">40+ hours per month</span>
+                  save <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-600"> 40+ hours per month</span>
                 </>
               )}
             </h1>
@@ -146,15 +146,15 @@ function HeroContent() {
               asChild
             >
               <a 
-                href="#demo" 
+                href="#book-meeting" 
                 onClick={(e) => {
                   e.preventDefault();
-                  scrollToSection("demo");
+                  scrollToSection("book-meeting");
                 }}
                 className="flex items-center justify-center gap-2 text-center" 
-                aria-label={language === 'nl' ? "Bekijk onze demo" : "View our demo"}
+                aria-label={language === 'nl' ? "Gratis demo aanvragen" : "View our demo"}
               >
-                {language === 'nl' ? 'Bekijk onze demo' : 'View our demo'}
+                {language === 'nl' ? 'Gratis demo aanvragen' : 'View our demo'}
                 <Icon icon={ArrowRight} className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </a>
             </Button>
@@ -164,8 +164,16 @@ function HeroContent() {
               className="hover:bg-primary/5 transition-colors duration-300 w-full sm:w-auto min-w-[200px]"
               asChild
             >
-              <a href="#projects" className="flex items-center justify-center text-center" aria-label={language === 'nl' ? "Bekijk voorbeelden" : "View examples"}>
-                {language === 'nl' ? 'Bekijk voorbeelden' : 'View examples'}
+              <a 
+                href="#projects" 
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection("projects");
+                }}
+                className="flex items-center justify-center text-center" 
+                aria-label={language === 'nl' ? "Bekijk cases" : "View examples"}
+              >
+                {language === 'nl' ? 'Bekijk cases' : 'View examples'}
               </a>
             </Button>
           </motion.div>

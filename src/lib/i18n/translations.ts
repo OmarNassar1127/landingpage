@@ -30,7 +30,7 @@ export const translations = {
         },
         trustSignal: "Geen opstartkosten",
         primaryCta: "Start gratis proef",
-        secondaryCta: "Bekijk demo",
+        secondaryCta: "Gratis demo aanvragen",
         socialProof: "100+ bedrijven - 87% minder telefoontjes"
       },
       problem: {
@@ -244,7 +244,7 @@ export const translations = {
       about: "Over Ons",
       testimonials: "Aanbevelingen",
       contact: "Contact",
-      bookMeeting: "Afspraak Maken",
+      bookMeeting: "Plan een kennismaking",
     },
 
     // Testimonials section
@@ -709,7 +709,7 @@ export const translations = {
 
     // Book a Meeting section
     bookMeeting: {
-      title: "Afspraak Maken",
+      title: "Plan een kennismaking",
       subtitle:
         "Plan een vrijblijvend gesprek met ons team om uw project te bespreken",
       description:
@@ -784,7 +784,7 @@ export const translations = {
       title: "AI Workshop voor Jouw Team",
       subtitle:
         "Transformeer je team met hands-on AI training die direct toepasbaar is in jullie dagelijkse werk.",
-      ctaButton: "Bekijk Workshop Details",
+      ctaButton: "Plan je AI‑bedrijfsworkshop",
       features: {
         handson: {
           title: "Hands-on Leren",
