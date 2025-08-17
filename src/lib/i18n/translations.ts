@@ -754,8 +754,8 @@ export const translations = {
         description: "Een digitale collega die werk uit handen neemt.",
         feature1:
           "Kent al je interne documenten zonder dat je iets hoeft te uploaden",
-        feature2: "Zet gesprekken om in notulen en actiepunten",
-        feature3: "Beantwoordt vragen en volgt taken automatisch op",
+        feature2: "Slaat gesprekken op als notulen en actiepunten",
+        feature3: "Beantwoordt vragen en volgt taken op",
       },
       saasDevelopment: {
         title: "Maatwerk Software",

@@ -20,8 +20,7 @@ import {
   Zap,
   Clock,
   Shield,
-  Users,
-  ChevronRight
+  Users
 } from "lucide-react";
 
 interface Service {
@@ -44,14 +43,14 @@ const getServices = (language: string): Service[] => {
       title: isNL ? "AI Integratie" : "AI Integration",
       tagline: isNL ? "Een digitale collega die werk uit handen neemt" : "A digital colleague that takes work off your hands",
       description: isNL 
-        ? "Een AI-assistent die je documenten kent, gesprekken omzet in notulen en taken automatisch opvolgt."
+        ? "AI‑assistent die je documenten kent, gesprekken samenvat en taken opvolgt."
         : "An AI assistant that knows your documents, converts conversations to minutes and automatically follows up on tasks.",
       icon: Bot,
       features: [
-        isNL ? "Kent al je interne documenten zonder uploaden" : "Knows all your internal documents without uploading",
-        isNL ? "Zet gesprekken om in notulen en actiepunten" : "Converts conversations into minutes and action items",
-        isNL ? "Beantwoordt vragen en volgt taken automatisch op" : "Answers questions and follows up on tasks automatically",
-        isNL ? "Werkt met alle bestaande systemen" : "Works with all existing systems"
+        isNL ? "Kent interne documenten zonder upload" : "Knows all your internal documents without uploading",
+        isNL ? "Slaat gesprekken op als notulen en actiepunten" : "Converts conversations into minutes and action items",
+        isNL ? "Beantwoordt vragen en volgt taken op" : "Answers questions and follows up on tasks automatically",
+        isNL ? "Werkt met bestaande systemen" : "Works with all existing systems"
       ],
       highlight: isNL ? "Meest gevraagd" : "Most requested",
       gradient: "from-violet-600 via-purple-600 to-indigo-600"
