@@ -415,11 +415,11 @@ export const translations = {
       title: "Plan een kennismaking",
       subtitle:
         "Heeft u een project in gedachten of wilt u meer weten over ons werk? We horen graag van u!",
-      name: "Uw Naam",
+      name: "Jouw naam",
       email: "E-mailadres",
       subject: "Onderwerp",
       message: "Bericht",
-      send: "Bericht Versturen",
+      send: "Bericht versturen",
       sending: "Versturen...",
       successTitle: "Bericht Verzonden!",
       successMessage:
@@ -659,7 +659,7 @@ export const translations = {
         formTitle: "Workshop Informatieverzoek",
 
         // Form fields
-        name: "Uw Naam",
+        name: "Jouw naam",
         email: "E-mailadres",
         company: "Bedrijf/Organisatie",
         role: "Uw Functie",
@@ -730,7 +730,7 @@ export const translations = {
     bookMeeting: {
       title: "Plan een kennismaking",
       subtitle:
-        "Plan een vrijblijvend gesprek met ons team om uw project te bespreken",
+        "Plan een vrijblijvend gesprek om je project te verkennen",
       description:
         "Gebruik onze online agenda om direct een afspraak in te plannen. We kijken ernaar uit om met u te praten over uw ideeën en hoe we kunnen helpen.",
       ctaButton: "Plan een demo",

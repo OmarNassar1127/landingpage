@@ -478,7 +478,7 @@ export default function Contact() {
               </div>
               <div>
                 <h4 className="text-sm font-semibold">Robin</h4>
-                <p className="text-xs text-muted-foreground">Contact Person</p>
+                <p className="text-xs text-muted-foreground">Contactpersoon</p>
               </div>
             </motion.div>
 
