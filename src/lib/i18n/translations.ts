@@ -262,7 +262,7 @@ export const translations = {
       workshop: "Workshop",
       about: "Over Ons",
       testimonials: "Aanbevelingen",
-      contact: "Plan een verkennend gesprek",
+      contact: "Contact",
       bookMeeting: "Plan een kennismaking",
     },
 
