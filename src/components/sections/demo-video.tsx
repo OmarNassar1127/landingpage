@@ -3,10 +3,19 @@
 import React, { useEffect, useState, useRef } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { AutoPlayVideo, AutoPlayVideoRef } from "@/components/ui/auto-play-video";
+import {
+  AutoPlayVideo,
+  AutoPlayVideoRef,
+} from "@/components/ui/auto-play-video";
 import { useLanguage } from "@/lib/i18n/language-context";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, CheckCircle, Expand, Volume2, VolumeX } from "lucide-react";
+import {
+  ArrowRight,
+  CheckCircle,
+  Expand,
+  Volume2,
+  VolumeX,
+} from "lucide-react";
 import { scrollToSection } from "@/lib/scroll-utils";
 import { VideoModal } from "@/components/ui/video-modal";
 import JsonLd from "@/components/seo/json-ld";
@@ -20,7 +29,7 @@ export default function DemoVideo() {
   const [isMuted, setIsMuted] = useState(true); // Default to muted for autoplay compatibility
   const [currentTime, setCurrentTime] = useState(0); // Track video position
   const videoRef = useRef<AutoPlayVideoRef>(null);
-  
+
   // Screen size detection for mobile/desktop
   const [isMobile, setIsMobile] = useState(false);
 
@@ -35,31 +44,31 @@ export default function DemoVideo() {
   useEffect(() => {
     // Check if there's a hash in the URL that matches this section
     const hash = window.location.hash;
-    if (hash === '#demo') {
+    if (hash === "#demo") {
       // Small delay to ensure the page is fully loaded and rendered
       const timer = setTimeout(() => {
-        scrollToSection('demo');
+        scrollToSection("demo");
       }, 500); // 500ms delay should be enough for the page to fully load
-      
+
       return () => clearTimeout(timer);
     }
   }, []); // Empty dependency array means this runs only once on component mount
 
   // Check if device is mobile on component mount and window resize
   useEffect(() => {
-    if (typeof window !== 'undefined') {
+    if (typeof window !== "undefined") {
       const checkIsMobile = () => {
         setIsMobile(window.innerWidth < 768); // Consider devices with width < 768px as mobile
       };
-      
+
       // Check on mount
       checkIsMobile();
-      
+
       // Check on resize
-      window.addEventListener('resize', checkIsMobile);
-      
+      window.addEventListener("resize", checkIsMobile);
+
       // Cleanup
-      return () => window.removeEventListener('resize', checkIsMobile);
+      return () => window.removeEventListener("resize", checkIsMobile);
     }
   }, []);
 
@@ -68,10 +77,10 @@ export default function DemoVideo() {
     // Get current time from main video before opening modal
     const mainVideoCurrentTime = videoRef.current?.getCurrentTime() ?? 0;
     setCurrentTime(mainVideoCurrentTime);
-    
+
     // Pause the main video
     videoRef.current?.pause();
-    
+
     // Open modal
     setIsModalOpen(true);
   };
@@ -106,9 +115,9 @@ export default function DemoVideo() {
       transition: {
         duration: 0.8,
         ease: [0.22, 1, 0.36, 1],
-        staggerChildren: 0.2
-      }
-    }
+        staggerChildren: 0.2,
+      },
+    },
   };
 
   const itemVariants = {
@@ -116,8 +125,8 @@ export default function DemoVideo() {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] }
-    }
+      transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
+    },
   };
 
   return (
@@ -129,15 +138,22 @@ export default function DemoVideo() {
     >
       {/* Add Schema.org structured data */}
       <JsonLd data={videoSchema()} />
-      
+
       {/* Background pattern for visual interest */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#8882_1px,transparent_1px),linear-gradient(to_bottom,#8882_1px,transparent_1px)] bg-[size:3rem_3rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)] opacity-30" />
-      
-      <div className="container px-2 sm:px-4 mx-auto" style={{ maxWidth: "1200px" }}>
+
+      <div
+        className="container px-2 sm:px-4 mx-auto"
+        style={{ maxWidth: "1200px" }}
+      >
         {/* Hidden description for screen readers and SEO */}
         <div className="sr-only">
-          <h2>AI Agent Demo Video</h2>
-          <p>Watch our AI agent in action. This demonstration shows our intelligent AI solution that can be customized for your specific business needs and industry.</p>
+          <h2>Demo: AI‑agent aan het werk</h2>
+          <p>
+            Watch our AI agent in action. This demonstration shows our
+            intelligent AI solution that can be customized for your specific
+            business needs and industry.
+          </p>
         </div>
         <motion.div
           variants={containerVariants}
@@ -145,8 +161,14 @@ export default function DemoVideo() {
           animate={controls}
           className="flex flex-col items-center space-y-8 sm:space-y-10"
         >
-          <motion.div variants={itemVariants} className="text-center max-w-3xl mx-auto px-2 sm:px-0">
-            <h2 id="demo-title" className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">
+          <motion.div
+            variants={itemVariants}
+            className="text-center max-w-3xl mx-auto px-2 sm:px-0"
+          >
+            <h2
+              id="demo-title"
+              className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4"
+            >
               {t.demoVideo.title}
             </h2>
             <p className="text-muted-foreground text-base sm:text-lg">
@@ -158,8 +180,8 @@ export default function DemoVideo() {
             variants={itemVariants}
             className="w-full overflow-hidden rounded-xl shadow-2xl"
           >
-            <div 
-              className={`relative aspect-video bg-background/10 backdrop-blur rounded-lg overflow-hidden border border-primary/10 shadow-xl group cursor-pointer`} 
+            <div
+              className={`relative aspect-video bg-background/10 backdrop-blur rounded-lg overflow-hidden border border-primary/10 shadow-xl group cursor-pointer`}
               onClick={handleVideoClick}
             >
               <AutoPlayVideo
@@ -171,14 +193,16 @@ export default function DemoVideo() {
                 priority={true}
                 muted={isMuted}
               />
-              
+
               {/* Controls Overlay */}
               <div className="absolute bottom-2 sm:bottom-4 left-0 right-0 flex justify-center opacity-70 group-hover:opacity-100 transition-opacity">
                 <div className="px-3 sm:px-4 py-2 sm:py-3 bg-background/80 backdrop-blur-sm rounded-full shadow-lg flex items-center gap-3">
-                  <span className="text-xs sm:text-sm font-medium">AI Agent Demo</span>
+                  <span className="text-xs sm:text-sm font-medium">
+                    AI Agent Demo
+                  </span>
                 </div>
               </div>
-              
+
               {/* Audio Toggle Button - floating at top right */}
               <button
                 onClick={(e) => {
@@ -187,7 +211,7 @@ export default function DemoVideo() {
                 }}
                 className="absolute top-2 sm:top-4 right-2 sm:right-4 p-2 sm:p-3 rounded-full bg-black/60 hover:bg-black/80 transition-all duration-200 backdrop-blur-sm border border-white/20 group-hover:opacity-100 z-10 touch-manipulation"
                 aria-label={isMuted ? "Unmute video" : "Mute video"}
-                style={{ minWidth: '44px', minHeight: '44px' }} // Ensures touch-friendly size
+                style={{ minWidth: "44px", minHeight: "44px" }} // Ensures touch-friendly size
               >
                 {isMuted ? (
                   <VolumeX className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
@@ -203,10 +227,10 @@ export default function DemoVideo() {
                 </div>
               </div>
             </div>
-            
+
             {/* Video Modal */}
-            <VideoModal 
-              isOpen={isModalOpen} 
+            <VideoModal
+              isOpen={isModalOpen}
               onClose={handleModalClose}
               videoSrc="/demo-vid.mp4"
               startTime={currentTime}
@@ -215,26 +239,33 @@ export default function DemoVideo() {
             />
           </motion.div>
 
-          <motion.div variants={itemVariants} className="w-full bg-background/50 backdrop-blur-sm rounded-xl shadow-lg p-6 sm:p-8 md:p-10 border border-primary/20 text-center">
-            <p className="mb-6 sm:mb-8 text-base sm:text-lg max-w-4xl mx-auto leading-relaxed">{t.demoVideo.description}</p>
-            
+          <motion.div
+            variants={itemVariants}
+            className="w-full bg-background/50 backdrop-blur-sm rounded-xl shadow-lg p-6 sm:p-8 md:p-10 border border-primary/20 text-center"
+          >
+            <p className="mb-6 sm:mb-8 text-base sm:text-lg max-w-4xl mx-auto leading-relaxed">
+              {t.demoVideo.description}
+            </p>
+
             {/* Urgency element */}
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-100 dark:bg-green-900/30 border border-green-200 dark:border-green-700 mb-6">
               <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
               <span className="text-sm text-green-700 dark:text-green-400 font-medium">
-                {language === 'nl' ? 'Start binnen 48 uur' : 'Start within 48 hours'}
+                {language === "nl"
+                  ? "Start binnen 48 uur"
+                  : "Start within 48 hours"}
               </span>
             </div>
-            
+
             <div className="flex justify-center">
-              <Button 
-                size="mobile" 
-                className="bg-primary hover:bg-primary/90 text-white dark:text-black shadow-lg hover:shadow-xl transition-all duration-300" 
+              <Button
+                size="mobile"
+                className="bg-primary hover:bg-primary/90 text-white dark:text-black shadow-lg hover:shadow-xl transition-all duration-300"
                 asChild
               >
-                <a 
-                  href="#book-meeting" 
-                  className="inline-flex items-center justify-center gap-3" 
+                <a
+                  href="#book-meeting"
+                  className="inline-flex items-center justify-center gap-3"
                   onClick={(e) => {
                     e.preventDefault();
                     scrollToSection("book-meeting");
