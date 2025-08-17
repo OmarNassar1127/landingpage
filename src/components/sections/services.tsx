@@ -188,7 +188,7 @@ const Services = () => {
           
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
             {language === 'nl' 
-              ? <>Oplossingen die <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-600">transformeren</span></>
+              ? <>Oplossingen die <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-600">werken</span></>
               : <>Solutions that <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-600">transform</span></>
             }
           </h2>
