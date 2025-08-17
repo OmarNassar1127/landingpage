@@ -90,13 +90,13 @@ function HeroContent() {
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight max-w-5xl px-2 sm:px-0 leading-[1.1]">
               {language === 'nl' ? (
                 <>
-                  Wij bouwen <span className="text-primary">automatiseringen</span> die<br className="hidden sm:block" />
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-600"> 40+ uur per maand</span> besparen
+                  <span className="text-primary">AI‑automatiseringen</span> die direct tijd besparen<br className="hidden sm:block" />
+                  voor <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-600">jouw team</span>
                 </>
               ) : (
                 <>
-                  We build <span className="text-primary">automations</span> that<br className="hidden sm:block" />
-                  save <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-600"> 40+ hours per month</span>
+                  <span className="text-primary">AI-automations</span> that save time directly<br className="hidden sm:block" />
+                  for <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-600">your team</span>
                 </>
               )}
             </h1>
@@ -107,9 +107,9 @@ function HeroContent() {
             className="max-w-2xl text-base sm:text-lg md:text-xl text-muted-foreground font-normal leading-relaxed px-4 sm:px-0 text-center"
           >
             {language === 'nl' ? (
-              <>Van webshops tot AI-tools: wij bouwen software die perfect aansluit bij hoe jij werkt. <span className="font-semibold text-foreground">Geen templates, 100% maatwerk.</span></>
+              <>Van interne processen tot AI‑tool. Maatwerksoftware die past bij jullie workflow. <span className="font-semibold text-foreground">Geen templates.</span></>
             ) : (
-              <>From e-commerce to AI tools: we build software that perfectly fits how you work. <span className="font-semibold text-foreground">No templates, 100% custom.</span></>
+              <>From internal processes to AI tools. Custom software that fits your workflow. <span className="font-semibold text-foreground">No templates.</span></>
             )}
           </motion.p>
 
