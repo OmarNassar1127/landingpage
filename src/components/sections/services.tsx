@@ -126,16 +126,16 @@ const getServices = (language: string): Service[] => {
     {
       id: "custom-website",
       title: isNL ? "Website op Maat" : "Custom Website",
-      tagline: isNL ? "Een professionelle website, volledig ingericht op jouw doel en doelgroep" : "A professional website, fully tailored to your goal and target audience",
+      tagline: isNL ? "Professionele website, ingericht op jouw doel en doelgroep" : "A professional website, fully tailored to your goal and target audience",
       description: isNL
-        ? "Binnen 7 dagen live met een strak en snel ontwerp. Gebouwd om te converteren – van eerste indruk tot actie."
+        ? "Binnen 7 dagen live. Snel, strak en gebouwd om te converteren."
         : "Live within 7 days with sleek and fast design. Built to convert – from first impression to action.",
       icon: Palette,
       features: [
-        isNL ? "Binnen 7 dagen live met een strak en snel ontwerp" : "Live within 7 days with sleek and fast design",
-        isNL ? "Gebouwd om te converteren – van eerste indruk tot actie" : "Built to convert – from first impression to action",
-        isNL ? "SEO integratie inbegrepen" : "SEO integration included",
-        isNL ? "Volledig responsive op alle devices" : "Fully responsive on all devices"
+        isNL ? "Binnen 7 dagen live" : "Live within 7 days with sleek and fast design",
+        isNL ? "Ontworpen voor conversie" : "Built to convert – from first impression to action",
+        isNL ? "SEO‑integratie inbegrepen" : "SEO integration included",
+        isNL ? "Volledig responsive" : "Fully responsive on all devices"
       ],
       highlight: isNL ? "7 dagen live" : "7 days live",
       gradient: "from-pink-600 via-rose-600 to-red-600"
@@ -441,7 +441,7 @@ const ServiceCard = ({
         <div className={`${isFullWidth ? 'lg:w-2/3' : ''} space-y-3 flex-grow`}>
           {isFullWidth && (
             <h4 className="font-semibold mb-4 text-lg">
-              {language === 'nl' ? 'Wat je krijgt:' : 'What you get:'}
+              {language === 'nl' ? 'Wat je krijgt' : 'What you get:'}
             </h4>
           )}
           <div className={`
