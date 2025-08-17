@@ -57,17 +57,17 @@ const getServices = (language: string): Service[] => {
     },
     {
       id: "tool-integrations",
-      title: isNL ? "Tool Integraties" : "Tool Integrations",
+      title: isNL ? "Tool‑integraties" : "Tool Integrations",
       tagline: isNL ? "Eén werkplek waarin al je systemen samenwerken" : "One workplace where all your systems work together",
       description: isNL
-        ? "Koppelt Slack, Teams, agenda's, documenten en taken. Acties starten vanzelf op basis van wijzigingen."
+        ? "Koppelt Slack, Teams, agenda's, documenten en taken. Acties starten bij relevante wijzigingen."
         : "Links Slack, Teams, calendars, documents and tasks. Actions start automatically based on changes.",
       icon: Cog,
       features: [
         isNL ? "Koppelt Slack, Teams, agenda's, documenten en taken" : "Links Slack, Teams, calendars, documents and tasks",
-        isNL ? "Acties starten vanzelf op basis van wijzigingen" : "Actions start automatically based on changes",
+        isNL ? "Acties starten op basis van wijzigingen" : "Actions start automatically based on changes",
         isNL ? "Overzicht zonder zoeken of schakelen" : "Overview without searching or switching",
-        isNL ? "Real-time synchronisatie tussen tools" : "Real-time synchronization between tools"
+        isNL ? "Realtime synchronisatie tussen tools" : "Real-time synchronization between tools"
       ],
       highlight: isNL ? "Tijdsbesparing" : "Time saver",
       gradient: "from-blue-600 via-cyan-600 to-teal-600"
