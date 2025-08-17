@@ -108,19 +108,19 @@ const getServices = (language: string): Service[] => {
     },
     {
       id: "custom-ai",
-      title: isNL ? "Maatwerk AI-oplossingen" : "Custom AI Solutions",
-      tagline: isNL ? "AI die zich aanpast aan je werk en collega's" : "AI that adapts to your work and colleagues",
+      title: isNL ? "Maatwerk AI‑oplossingen" : "Custom AI Solutions",
+      tagline: isNL ? "AI die past bij je werk en teams" : "AI that adapts to your work and colleagues",
       description: isNL
-        ? "AI die patronen herkent en meedenkt in je processen. Reageert per afdeling of rol anders."
+        ? "Herkent patronen en denkt mee in processen. Reageert per afdeling of rol."
         : "AI that recognizes patterns and thinks along in your processes. Responds differently per department or role.",
       icon: TrendingUp,
       features: [
-        isNL ? "Herkent patronen en denkt mee in je processen" : "Recognizes patterns and thinks along in your processes",
-        isNL ? "Reageert per afdeling of rol anders" : "Responds differently per department or role",
+        isNL ? "Herkent patronen en denkt mee" : "Recognizes patterns and thinks along in your processes",
+        isNL ? "Reageert per afdeling of rol" : "Responds differently per department or role",
         isNL ? "Neemt terugkerend werk stilletjes over" : "Quietly takes over recurring work",
         isNL ? "Leert continue bij van je team" : "Continuously learns from your team"
       ],
-      highlight: isNL ? "Zelf-lerend" : "Self-learning",
+      highlight: isNL ? "Zelflerend" : "Self-learning",
       gradient: "from-emerald-600 via-green-600 to-teal-600"
     },
     {
