@@ -800,33 +800,33 @@ export const translations = {
     // Workshop Section (main page)
     workshopSection: {
       badge: "Workshop",
-      title: "AI Workshop voor Jouw Team",
+      title: "AI‑workshop voor jouw team",
       subtitle:
-        "Transformeer je team met hands-on AI training die direct toepasbaar is in jullie dagelijkse werk.",
+        "Praktische AI‑training, direct toepasbaar in jullie werk.",
       ctaButton: "Plan je AI‑bedrijfsworkshop",
       features: {
         handson: {
-          title: "Hands-on Leren",
+          title: "Hands‑on leren",
           description:
-            "Praktische oefeningen en echte use cases uit jouw branche",
+            "Praktische oefeningen en cases uit jullie branche",
         },
         tailored: {
-          title: "Op Maat Gemaakt",
+          title: "Op maat",
           description:
-            "Workshop aangepast aan jullie specifieke uitdagingen en doelen",
+            "Aangepast aan jullie uitdagingen en doelen",
         },
         flexible: {
-          title: "Flexibele Formats",
+          title: "Formaat naar keuze",
           description:
-            "Van halve dag tot meerdaagse programma's, op locatie of online",
+            "Van halve dag tot meerdaags, op locatie of online",
         },
       },
       card: {
-        title: "Enterprise AI Training",
-        subtitle: "Voor teams die voorop willen lopen",
+        title: "Enterprise AI‑training",
+        subtitle: "voor teams die willen versnellen",
         practical: "Praktisch",
         interactive: "Interactief",
-        quote: "Van theorie naar toepassing in één dag",
+        quote: "Van theorie naar toepassing in één dag.",
       },
     },
   },

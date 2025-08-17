@@ -43,10 +43,10 @@ const getProjects = (language: string): Project[] => {
   return [
     {
       id: "ai-assistant",
-      title: isNL ? "AI Assistent voor KLM" : "AI Assistant for KLM",
-      subtitle: isNL ? "Slimme workflow automatisering" : "Smart workflow automation",
+      title: isNL ? "AI‑assistent voor KLM" : "AI Assistant for KLM",
+      subtitle: isNL ? "Automatiseert dagelijkse taken en verhoogt de productiviteit" : "Smart workflow automation",
       description: isNL 
-        ? "Intelligente assistent die dagelijkse taken automatiseert en teamproductiviteit verhoogt"
+        ? "Automatiseert dagelijkse taken en verhoogt de productiviteit"
         : "Intelligent assistant that automates daily tasks and increases team productivity",
       impact: isNL ? "80% snellere documentverwerking" : "80% faster document processing",
       category: "AI",
@@ -236,7 +236,7 @@ export default function Projects() {
             }}
             className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-4"
           >
-            {language === 'nl' ? 'Projecten die Impact Maken' : 'Projects that Make Impact'}
+            {language === 'nl' ? 'Projecten met resultaat' : 'Projects that Make Impact'}
           </motion.h2>
           
           <motion.p
@@ -252,7 +252,7 @@ export default function Projects() {
             className="text-muted-foreground text-lg max-w-2xl mx-auto"
           >
             {language === 'nl' 
-              ? 'Van startup tot enterprise: wij leveren meetbare resultaten die uw business transformeren'
+              ? 'Van startup tot enterprise: meetbaar resultaat dat jouw business vooruit helpt'
               : 'From startup to enterprise: we deliver measurable results that transform your business'}
           </motion.p>
         </div>
