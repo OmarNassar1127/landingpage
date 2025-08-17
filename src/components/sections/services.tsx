@@ -335,7 +335,7 @@ const Services = () => {
               </h3>
               <p className="text-lg text-muted-foreground mb-10 max-w-2xl mx-auto">
                 {language === 'nl' 
-                  ? 'Laten we samen uw volgende succesproject bouwen'
+                  ? 'Laten we bespreken hoe we jouw business kunnen transformeren.'
                   : "Let's build your next success project together"}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
