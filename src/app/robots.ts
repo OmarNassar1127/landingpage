@@ -6,32 +6,14 @@ export default function robots(): MetadataRoute.Robots {
     rules: [
       {
         userAgent: "*",
-        allow: [
-          "/", 
-          "/zzp/", 
-          "/workshop/",
-          "/spraakassistent/", 
-          "/voiceassistant/",
-          "/en/",
-          "/en/freelancer/",
-          "/en/workshop/",
-          "/privacy-policy/",
-          "/terms-of-service/",
-          "/cookie-policy/"
-        ],
+        allow: "/",
         disallow: [
           "/api/", 
           "/_next/", 
           "/admin/",
-          "/*#*", // Disallow all hash fragments
-          "*.woff2", // Disallow font files
-          "*.woff",
-          "*.ttf",
-          "*.otf",
-          "/manifest.json", // Disallow manifest
-          "*.ico", // Disallow icons
-          "/search", // Disallow search URLs
-          "/search?*", // Disallow search with parameters
+          "/search",
+          "/test-terms/",
+          "/blog/", // If blog is not ready yet
         ],
       }
     ],
