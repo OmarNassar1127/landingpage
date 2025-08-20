@@ -69,7 +69,7 @@ export const translations = {
           {
             title: "Klantenservice",
             description:
-              "Factuurvragen behandelen met empathie en nauwkeurigheid",
+              "Account wijzigingen met veilige verificatie afhandelen",
           },
           {
             title: "Afspraak inplannen",
@@ -898,7 +898,7 @@ export const translations = {
         demoScenarios: [
           {
             title: "Customer Service Inquiry",
-            description: "Handling billing questions with empathy and accuracy",
+            description: "Handling account changes with secure verification",
           },
           {
             title: "Appointment Scheduling",

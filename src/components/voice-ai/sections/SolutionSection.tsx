@@ -23,27 +23,37 @@ export default function SolutionSection({ currentLang }: SolutionSectionProps) {
       title: t.solution.demoScenarios[0].title,
       description: t.solution.demoScenarios[0].description,
       audioFile: `klant-service-${language}.m4a`,
-      transcript: [
-        { speaker: "Klant", text: "Hallo, ik heb een vraag over mijn recente factuur. Er lijkt een extra bedrag op te staan dat ik niet begrijp." },
-        { speaker: "AI", text: "Ik help je graag met die factuurvraag. Laat me direct je account opzoeken. Kun je je accountnummer of telefoonnummer bevestigen?" },
-        { speaker: "Klant", text: "Natuurlijk, het is 020-123-4567." },
-        { speaker: "AI", text: "Dank je wel. Ik zie het bedrag waar je naar verwijst. Dat is een eenmalige installatiekosten voor de premium service upgrade die je vorige maand hebt aangevraagd. Wil je dat ik de voordelen van deze upgrade uitleg?" }
+      transcript: language === 'nl' ? [
+        { speaker: "Klant", text: "Hallo, ik heb een vraag over mijn account. Ik wil graag mijn verzendadres wijzigen." },
+        { speaker: "AI", text: "Ik help je graag met het wijzigen van je verzendadres. Voor de veiligheid stuur ik eerst een verificatiecode naar je geregistreerde telefoonnummer. Kun je bevestigen dat het eindigt op 4567?" },
+        { speaker: "Klant", text: "Ja, dat klopt. Ik heb de code ontvangen, het is 8392." },
+        { speaker: "AI", text: "Perfect, je bent geverifieerd. Wat is je nieuwe verzendadres? Ik kan het direct voor je aanpassen in het systeem." }
+      ] : [
+        { speaker: "Customer", text: "Hi, I have a question about my account. I'd like to update my shipping address." },
+        { speaker: "AI", text: "I'd be happy to help you update your shipping address. For security, I'll first send a verification code to your registered phone number. Can you confirm it ends in 4567?" },
+        { speaker: "Customer", text: "Yes, that's correct. I received the code, it's 8392." },
+        { speaker: "AI", text: "Perfect, you're verified. What's your new shipping address? I can update it in the system right away." }
       ],
       duration: "2:34",
-      outcome: "Klant geholpen, probleem opgelost"
+      outcome: language === 'nl' ? "Klant geholpen, probleem opgelost" : "Customer helped, issue resolved"
     },
     {
       title: t.solution.demoScenarios[1].title,
       description: t.solution.demoScenarios[1].description,
       audioFile: `appointment-${language}.m4a`,
-      transcript: [
+      transcript: language === 'nl' ? [
         { speaker: "Klant", text: "Ik moet een consultatie inplannen voor volgende week." },
         { speaker: "AI", text: "Ik help je graag met het inplannen van die consultatie. Ik heb beschikbaarheid op dinsdag om 14:00, woensdag om 10:00, of vrijdag om 15:00. Welke tijd komt het beste uit?" },
         { speaker: "Klant", text: "Woensdag om 10:00 klinkt perfect." },
         { speaker: "AI", text: "Uitstekend! Ik heb je consultatie geboekt voor woensdag 15 maart om 10:00. Je ontvangt binnenkort een bevestigingsmail met alle details." }
+      ] : [
+        { speaker: "Customer", text: "I need to schedule a consultation for next week." },
+        { speaker: "AI", text: "I'd be happy to help you schedule that consultation. I have availability on Tuesday at 2:00 PM, Wednesday at 10:00 AM, or Friday at 3:00 PM. Which time works best for you?" },
+        { speaker: "Customer", text: "Wednesday at 10:00 AM sounds perfect." },
+        { speaker: "AI", text: "Excellent! I've booked your consultation for Wednesday, March 15th at 10:00 AM. You'll receive a confirmation email shortly with all the details." }
       ],
       duration: "1:45",
-      outcome: "Afspraak geboekt, bevestiging verzonden"
+      outcome: language === 'nl' ? "Afspraak geboekt, bevestiging verzonden" : "Appointment booked, confirmation sent"
     },
     // {
     //   title: t.solution.demoScenarios[2].title,
