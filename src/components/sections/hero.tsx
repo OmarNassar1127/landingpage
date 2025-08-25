@@ -90,8 +90,8 @@ function HeroContent() {
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight max-w-5xl px-2 sm:px-0 leading-[1.1]">
               {language === 'nl' ? (
                 <>
-                  <span className="text-primary">AI‑automatiseringen</span> die direct tijd besparen<br className="hidden sm:block" />
-                  voor <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-600">jouw team</span>
+                  <span className="text-primary">AI‑automatiseringen</span> die direct<br className="hidden sm:block" />
+                  tijd besparen voor <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-600">jouw team</span>
                 </>
               ) : (
                 <>
