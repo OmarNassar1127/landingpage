@@ -253,7 +253,12 @@ export default function ZzpContact({ isEnglish = false }: ZzpContactProps) {
             viewport={{ once: true }}
             className="lg:col-span-2"
           >
-            <Card className="border-primary/20 bg-card shadow-lg">
+            <Card 
+              className="bg-white dark:bg-gray-900/50 border border-gray-200 dark:border-gray-700/50 backdrop-blur-sm"
+              style={{ 
+                boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 25px 50px -12px rgba(255, 255, 255, 0.1)" 
+              }}
+            >
               <CardContent className="p-4 sm:p-6 lg:p-8">
                 <h3 className="text-2xl font-bold mb-6">{content.formTitle}</h3>
                 
@@ -301,7 +306,7 @@ export default function ZzpContact({ isEnglish = false }: ZzpContactProps) {
                       {/* Name and Email */}
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
-                          <label className="block text-sm font-medium mb-2">
+                          <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
                             {content.fields.name} *
                           </label>
                           <input
@@ -310,11 +315,11 @@ export default function ZzpContact({ isEnglish = false }: ZzpContactProps) {
                             required
                             value={formState.name}
                             onChange={handleChange}
-                            className="w-full px-4 py-3 border rounded-lg bg-background focus:border-primary/50 focus:ring-2 focus:ring-primary/20 transition-all"
+                            className="w-full px-4 py-3 border-2 rounded-lg bg-gray-50 dark:bg-gray-800/50 border-gray-300 dark:border-gray-600 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-200 text-gray-900 dark:text-gray-100"
                           />
                         </div>
                         <div>
-                          <label className="block text-sm font-medium mb-2">
+                          <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
                             {content.fields.email} *
                           </label>
                           <input
@@ -323,14 +328,14 @@ export default function ZzpContact({ isEnglish = false }: ZzpContactProps) {
                             required
                             value={formState.email}
                             onChange={handleChange}
-                            className="w-full px-4 py-3 border rounded-lg bg-background focus:border-primary/50 focus:ring-2 focus:ring-primary/20 transition-all"
+                            className="w-full px-4 py-3 border-2 rounded-lg bg-gray-50 dark:bg-gray-800/50 border-gray-300 dark:border-gray-600 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-200 text-gray-900 dark:text-gray-100"
                           />
                         </div>
                       </div>
 
                       {/* Company */}
                       <div>
-                        <label className="block text-sm font-medium mb-2">
+                        <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
                           {content.fields.company}
                         </label>
                         <input
@@ -338,14 +343,14 @@ export default function ZzpContact({ isEnglish = false }: ZzpContactProps) {
                           name="company"
                           value={formState.company}
                           onChange={handleChange}
-                          className="w-full px-4 py-3 border rounded-lg bg-background focus:border-primary/50 focus:ring-2 focus:ring-primary/20 transition-all"
+                          className="w-full px-4 py-3 border-2 rounded-lg bg-gray-50 dark:bg-gray-800/50 border-gray-300 dark:border-gray-600 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-200 text-gray-900 dark:text-gray-100"
                         />
                       </div>
 
                       {/* Project Type, Budget, Timeline */}
                       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                         <div>
-                          <label className="block text-sm font-medium mb-2">
+                          <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
                             {content.fields.projectType} *
                           </label>
                           <select
@@ -353,7 +358,7 @@ export default function ZzpContact({ isEnglish = false }: ZzpContactProps) {
                             required
                             value={formState.projectType}
                             onChange={handleChange}
-                            className="w-full px-4 py-3 border rounded-lg bg-background focus:border-primary/50 focus:ring-2 focus:ring-primary/20 transition-all"
+                            className="w-full px-4 py-3 border-2 rounded-lg bg-gray-50 dark:bg-gray-800/50 border-gray-300 dark:border-gray-600 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-200 text-gray-900 dark:text-gray-100"
                           >
                             <option value="">Select...</option>
                             {content.projectTypes.map((type) => (
@@ -362,14 +367,14 @@ export default function ZzpContact({ isEnglish = false }: ZzpContactProps) {
                           </select>
                         </div>
                         <div>
-                          <label className="block text-sm font-medium mb-2">
+                          <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
                             {content.fields.budget}
                           </label>
                           <select
                             name="budget"
                             value={formState.budget}
                             onChange={handleChange}
-                            className="w-full px-4 py-3 border rounded-lg bg-background focus:border-primary/50 focus:ring-2 focus:ring-primary/20 transition-all"
+                            className="w-full px-4 py-3 border-2 rounded-lg bg-gray-50 dark:bg-gray-800/50 border-gray-300 dark:border-gray-600 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-200 text-gray-900 dark:text-gray-100"
                           >
                             <option value="">Select...</option>
                             {content.budgetRanges.map((budget) => (
@@ -378,14 +383,14 @@ export default function ZzpContact({ isEnglish = false }: ZzpContactProps) {
                           </select>
                         </div>
                         <div>
-                          <label className="block text-sm font-medium mb-2">
+                          <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
                             {content.fields.timeline}
                           </label>
                           <select
                             name="timeline"
                             value={formState.timeline}
                             onChange={handleChange}
-                            className="w-full px-4 py-3 border rounded-lg bg-background focus:border-primary/50 focus:ring-2 focus:ring-primary/20 transition-all"
+                            className="w-full px-4 py-3 border-2 rounded-lg bg-gray-50 dark:bg-gray-800/50 border-gray-300 dark:border-gray-600 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-200 text-gray-900 dark:text-gray-100"
                           >
                             <option value="">Select...</option>
                             {content.timelines.map((timeline) => (
@@ -403,11 +408,11 @@ export default function ZzpContact({ isEnglish = false }: ZzpContactProps) {
                         <textarea
                           name="message"
                           required
-                          rows={6}
+                          rows={4}
                           value={formState.message}
                           onChange={handleChange}
                           placeholder={isEnglish ? "Tell us about your project..." : "Vertel ons over je project..."}
-                          className="w-full px-4 py-3 border rounded-lg bg-background resize-none focus:border-primary/50 focus:ring-2 focus:ring-primary/20 transition-all"
+                          className="w-full px-4 py-3 border-2 rounded-lg bg-gray-50 dark:bg-gray-800/50 border-gray-300 dark:border-gray-600 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-200 text-gray-900 dark:text-gray-100 resize-none"
                         />
                       </div>
 
@@ -441,7 +446,12 @@ export default function ZzpContact({ isEnglish = false }: ZzpContactProps) {
             className="space-y-8"
           >
             {/* Quick Contact */}
-            <Card className="border-primary/20 bg-card shadow-lg">
+            <Card 
+              className="bg-white dark:bg-gray-900/50 border border-gray-200 dark:border-gray-700/50 backdrop-blur-sm"
+              style={{ 
+                boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 25px 50px -12px rgba(255, 255, 255, 0.1)" 
+              }}
+            >
               <CardContent className="p-4 sm:p-6">
                 <h4 className="text-xl font-semibold mb-6">{content.contactInfo.title}</h4>
                 <div className="space-y-4">
@@ -495,7 +505,10 @@ export default function ZzpContact({ isEnglish = false }: ZzpContactProps) {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="flex items-center gap-3 p-4 rounded-lg bg-card border border-primary/10"
+                  className="flex items-center gap-3 p-4 rounded-lg bg-white dark:bg-gray-900/50 border border-gray-200 dark:border-gray-700/50"
+                  style={{ 
+                    boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)" 
+                  }}
                 >
                   <feature.icon className="h-8 w-8 text-primary" />
                   <div>

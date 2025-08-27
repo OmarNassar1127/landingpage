@@ -53,7 +53,7 @@ export default function Contact() {
   const [formState, setFormState] = useState({
     name: "",
     email: "",
-    subject: "",
+    phone: "",
     message: "",
   });
 
@@ -86,9 +86,9 @@ export default function Contact() {
         body: JSON.stringify({
           name: formState.name,
           email: formState.email,
-          subject: formState.subject,
+          phone: formState.phone,
           message: formState.message,
-          _subject: `New contact from ${formState.name}: ${formState.subject}`,
+          _subject: `New contact from ${formState.name}`,
         }),
       });
       
@@ -100,7 +100,7 @@ export default function Contact() {
       setFormState({
         name: "",
         email: "",
-        subject: "",
+        phone: "",
         message: "",
       });
       
@@ -238,9 +238,10 @@ export default function Contact() {
         >
           <motion.div
             variants={itemVariants}
-            className="lg:col-span-2 bg-card rounded-xl shadow-sm p-8 border border-primary/5"
-            whileHover={{ boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)" }}
-            transition={{ duration: 0.3 }}
+            className="lg:col-span-2 bg-white dark:bg-gray-900/50 rounded-xl p-8 border border-gray-200 dark:border-gray-700/50 backdrop-blur-sm"
+            style={{ 
+              boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 25px 50px -12px rgba(255, 255, 255, 0.1)" 
+            }}
           >
             <AnimatePresence mode="wait">
               {isSubmitted ? (
@@ -352,8 +353,8 @@ export default function Contact() {
                     className="grid grid-cols-1 md:grid-cols-2 gap-6"
                     variants={formControlVariants}
                   >
-                    <div className="space-y-2">
-                      <label htmlFor="name" className="block text-sm font-medium">
+                    <div className="space-y-1">
+                      <label htmlFor="name" className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
                         {t.contact.name}
                       </label>
                       <motion.input
@@ -363,13 +364,13 @@ export default function Contact() {
                         required
                         value={formState.name}
                         onChange={handleChange}
-                        className="w-full px-4 py-2 border rounded-md bg-background focus:border-primary/50 focus:ring-2 focus:ring-primary/20 transition-all duration-200"
+                        className="w-full px-4 py-3 border-2 rounded-lg bg-gray-50 dark:bg-gray-800/50 border-gray-300 dark:border-gray-600 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-200 text-gray-900 dark:text-gray-100"
                         whileFocus={{ scale: 1.01 }}
                         transition={{ duration: 0.2 }}
                       />
                     </div>
-                    <div className="space-y-2">
-                      <label htmlFor="email" className="block text-sm font-medium">
+                    <div className="space-y-1">
+                      <label htmlFor="email" className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
                         {t.contact.email}
                       </label>
                       <motion.input
@@ -379,7 +380,7 @@ export default function Contact() {
                         required
                         value={formState.email}
                         onChange={handleChange}
-                        className="w-full px-4 py-2 border rounded-md bg-background focus:border-primary/50 focus:ring-2 focus:ring-primary/20 transition-all duration-200"
+                        className="w-full px-4 py-3 border-2 rounded-lg bg-gray-50 dark:bg-gray-800/50 border-gray-300 dark:border-gray-600 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-200 text-gray-900 dark:text-gray-100"
                         whileFocus={{ scale: 1.01 }}
                         transition={{ duration: 0.2 }}
                       />
@@ -387,19 +388,19 @@ export default function Contact() {
                   </motion.div>
                   
                   <motion.div 
-                    className="space-y-2"
+                    className="space-y-1"
                     variants={formControlVariants}
                     custom={1}
                   >
-                    <label htmlFor="subject" className="block text-sm font-medium">
-                      {t.contact.subject}
+                    <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
+                      {t.contact.phone}
                     </label>
                     <motion.input
-                      id="subject"
-                      name="subject"
-                      type="text"
+                      id="phone"
+                      name="phone"
+                      type="tel"
                       required
-                      value={formState.subject}
+                      value={formState.phone}
                       onChange={handleChange}
                       className="w-full px-4 py-2 border rounded-md bg-background focus:border-primary/50 focus:ring-2 focus:ring-primary/20 transition-all duration-200"
                       whileFocus={{ scale: 1.01 }}
@@ -408,17 +409,17 @@ export default function Contact() {
                   </motion.div>
                   
                   <motion.div 
-                    className="space-y-2"
+                    className="space-y-1"
                     variants={formControlVariants}
                     custom={2}
                   >
-                    <label htmlFor="message" className="block text-sm font-medium">
+                    <label htmlFor="message" className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
                       {t.contact.message}
                     </label>
                     <motion.textarea
                       id="message"
                       name="message"
-                      rows={6}
+                      rows={4}
                       required
                       value={formState.message}
                       onChange={handleChange}
