@@ -101,13 +101,13 @@ export const translations = {
         metric: "87 % van klanten vermindert telefoongesprekken binnen 30 dagen",
         trustedBy: "Vertrouwd door industrieleiders",
         testimonials: [
-          {
-            quote:
-              "De implementatie van Virelio's voice AI heeft onze responstijden drastisch verbeterd. Klanten krijgen nu direct hulp, zelfs buiten kantooruren.",
-            author: "Lars van der Berg",
-            company: "Vloto",
-            role: "Customer Success Manager",
-          },
+          // {
+          //   quote:
+          //     "De implementatie van Virelio's voice AI heeft onze responstijden drastisch verbeterd. Klanten krijgen nu direct hulp, zelfs buiten kantooruren.",
+          //   author: "Lars van der Berg",
+          //   company: "Vloto",
+          //   role: "Customer Success Manager",
+          // },
           {
             quote:
               "We hebben de klanttevredenheid zien stijgen met 35% sinds we Virelio gebruiken. De AI begrijpt context en geeft relevante antwoorden.",
@@ -930,13 +930,13 @@ export const translations = {
         metric: "87% of clients reduce call volume within 30 days",
         trustedBy: "Trusted by industry leaders",
         testimonials: [
-          {
-            quote:
-              "Implementing Virelio's voice AI has drastically improved our response times. Customers now get instant help, even outside office hours.",
-            author: "Lars van der Berg",
-            company: "Vloto",
-            role: "Customer Success Manager",
-          },
+          // {
+          //   quote:
+          //     "Implementing Virelio's voice AI has drastically improved our response times. Customers now get instant help, even outside office hours.",
+          //   author: "Lars van der Berg",
+          //   company: "Vloto",
+          //   role: "Customer Success Manager",
+          // },
           {
             quote:
               "We've seen customer satisfaction increase by 35% since using Virelio. The AI understands context and provides relevant answers.",

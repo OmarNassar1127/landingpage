@@ -17,7 +17,7 @@ const companies = [
   { id: 6, name: "Vesting Finance", logo: "/images/companies/vestingfinance.png", icon: <BadgeDollarSign className="w-6 h-6" /> },
   { id: 7, name: "KLM", logo: "/images/companies/klm.png", icon: <Plane className="w-6 h-6" /> },
   { id: 8, name: "CSDM", logo: "/images/companies/csdm.png", icon: <Scale className="w-6 h-6" /> },
-  { id: 9, name: "Vloto", logo: "/images/companies/vloto.svg", icon: <Globe className="w-6 h-6" /> },
+  // { id: 9, name: "Vloto", logo: "/images/companies/vloto.svg", icon: <Globe className="w-6 h-6" /> },
   { id: 10, name: "Quotum", logo: "/images/companies/quotum.png", icon: <CreditCard className="w-6 h-6" /> },
   { id: 11, name: "WL-Bali", logo: "/images/companies/wl-bali.jpg", icon: <CreditCard className="w-6 h-6" /> },
 ];

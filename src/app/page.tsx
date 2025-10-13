@@ -41,9 +41,14 @@ const faqData = {
 // Testimonials data for structured data
 const testimonialsData = {
   items: [
+    // {
+    //   author: "Azeez Bayonle Abideen",
+    //   role: "User Experience Designer @ Vloto",
+    //   text: "I have the pleasure of working with Omar, where he has consistently demonstrated exceptional skills as a backend developer, delivering efficient, maintainable code, tackling complex problems with innovative solutions, and fostering a collaborative team environment.",
+    // },
     {
       author: "Azeez Bayonle Abideen",
-      role: "User Experience Designer @ Vloto",
+      role: "User Experience Designer",
       text: "I have the pleasure of working with Omar, where he has consistently demonstrated exceptional skills as a backend developer, delivering efficient, maintainable code, tackling complex problems with innovative solutions, and fostering a collaborative team environment.",
     },
     {
@@ -51,10 +56,15 @@ const testimonialsData = {
       role: ".NET Developer",
       text: "Omar is a talented developer with a strong drive to continuously grow and improve himself. He is always willing to support his colleagues, which makes him a valuable team player.",
     },
+    // {
+    //   author: "Ihor Tolkachov",
+    //   role: "Frontend Developer",
+    //   text: "I had the pleasure of working with Omar at Vloto B.V., where he proved to be a reliable and skilled colleague. His communication, planning, and coding abilities were evident in all our projects.",
+    // },
     {
       author: "Ihor Tolkachov",
       role: "Frontend Developer",
-      text: "I had the pleasure of working with Omar at Vloto B.V., where he proved to be a reliable and skilled colleague. His communication, planning, and coding abilities were evident in all our projects.",
+      text: "I had the pleasure of working with Omar where he proved to be a reliable and skilled colleague. His communication, planning, and coding abilities were evident in all our projects.",
     },
     {
       author: "Sophia Chen",
