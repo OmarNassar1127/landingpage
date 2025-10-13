@@ -31,7 +31,7 @@ export default function SocialProofSection({ currentLang }: SocialProofSectionPr
     { name: "E-Flux", logo: "/images/trusted-by/e-flux.jpeg" },
     { name: "KLM", logo: "/images/trusted-by/klm.png" },
     { name: "Road", logo: "/images/trusted-by/road.webp" },
-    { name: "Vloto", logo: "/images/trusted-by/vloto.svg" }
+    // { name: "Vloto", logo: "/images/trusted-by/vloto.svg" }
   ]
 
   const metrics: Metric[] = t.socialProof.metrics || []

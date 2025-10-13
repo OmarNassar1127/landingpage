@@ -23,7 +23,8 @@ export default function ZzpProfiles({ isEnglish = false }: ZzpProfilesProps) {
       name: "Omar Nassar",
       role: "Backend Developer & AI Specialist",
       experience: "5+ years experience",
-      mainAchievement: "WhatsApp-driven AI system for Vloto automating vehicle management for >3,000 users.",
+      // mainAchievement: "WhatsApp-driven AI system for Vloto automating vehicle management for >3,000 users.",
+      mainAchievement: "WhatsApp-driven AI system automating vehicle management for >3,000 users.",
       highlights: [
         "AI-driven automation for medical devices: accelerates file reviews and generation processes.",
         "KYC/AML platform for fintech startup (funded €5 million).",
@@ -33,7 +34,7 @@ export default function ZzpProfiles({ isEnglish = false }: ZzpProfilesProps) {
       ],
       skills: ["PHP", "Laravel", "Python", "C++", "React", "TypeScript", "Next.js", "Machine learning", "Convolutional Neural Networks (CNN)", "Computer vision", "Reinforcement learning", "MySQL", "PostgreSQL", "MongoDB", "Supabase"],
       companies: [
-        "Vloto B.V. – Backend Developer (2023-present)",
+        // "Vloto B.V. – Backend Developer (2023-present)",
         "Quotum Consultancy – Founder (2023-present)",
         "Freelance/ZZP – Software Developer (2021-present)",
         "CS Digital Media – Frontend Developer (2020-2021)"
@@ -69,7 +70,8 @@ export default function ZzpProfiles({ isEnglish = false }: ZzpProfilesProps) {
       name: "Omar Nassar",
       role: "Backend-ontwikkelaar & AI-specialist",
       experience: "5+ jaar ervaring",
-      mainAchievement: "WhatsApp-gestuurd AI-systeem voor Vloto dat voertuigbeheer automatiseert voor >3.000 gebruikers.",
+      // mainAchievement: "WhatsApp-gestuurd AI-systeem voor Vloto dat voertuigbeheer automatiseert voor >3.000 gebruikers.",
+      mainAchievement: "WhatsApp-gestuurd AI-systeem dat voertuigbeheer automatiseert voor >3.000 gebruikers.",
       highlights: [
         "AI-gestuurde automatisering voor medische apparatuur: versnelt dossierreviews en generatiestromen.",
         "KYC/AML-platform voor fintech-startup (gefinancierd met €5 miljoen).",
@@ -79,7 +81,7 @@ export default function ZzpProfiles({ isEnglish = false }: ZzpProfilesProps) {
       ],
       skills: ["PHP", "Laravel", "Python", "C++", "React", "TypeScript", "Next.js", "Machine learning", "Convolutionele neurale netwerken (CNN)", "Computer vision", "Reinforcement learning", "MySQL", "PostgreSQL", "MongoDB", "Supabase"],
       companies: [
-        "Vloto B.V. – Backend-ontwikkelaar (2023-heden)",
+        // "Vloto B.V. – Backend-ontwikkelaar (2023-heden)",
         "Quotum Consultancy – Oprichter (2023-heden)",
         "Freelance/ZZP – Softwareontwikkelaar (2021-heden)",
         "CS Digital Media – Frontend-ontwikkelaar (2020-2021)"

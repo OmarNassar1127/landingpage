@@ -56,12 +56,19 @@ export default function Testimonials() {
 
   // Define original testimonials with both English and Dutch versions
   const originalTestimonials: Testimonial[] = [
+    // {
+    //   id: 1,
+    //   name: "Azeez Bayonle Abideen",
+    //   role: {
+    //     en: "User Experience Designer @ Vloto | UI/UX Design",
+    //     nl: "User Experience Designer @ Vloto | UI/UX Design",
+    //   },
     {
       id: 1,
       name: "Azeez Bayonle Abideen",
       role: {
-        en: "User Experience Designer @ Vloto | UI/UX Design",
-        nl: "User Experience Designer @ Vloto | UI/UX Design",
+        en: "User Experience Designer | UI/UX Design",
+        nl: "User Experience Designer | UI/UX Design",
       },
       relationship: {
         en: "Worked with Omar on the same team",
@@ -102,9 +109,13 @@ export default function Testimonials() {
         nl: "Werkte met Omar in hetzelfde team",
       },
       image: "/images/references/ihor.jpeg",
+      // content: {
+      //   en: "Working with Omar at Vloto showed his reliability and skill. His communication and coding abilities shined in our projects. Together we created an automatic fine scanner that reduced a 30-minute process to just 10 seconds—truly impressive efficiency improvement.",
+      //   nl: "Het werken met Omar bij Vloto toonde zijn betrouwbaarheid en vaardigheid. Zijn communicatie en codeervaardigheden blonken uit in onze projecten. Samen creëerden we een automatische boetescanner die een proces van 30 minuten reduceerde tot slechts 10 seconden—een indrukwekkende efficiëntieverbetering.",
+      // },
       content: {
-        en: "Working with Omar at Vloto showed his reliability and skill. His communication and coding abilities shined in our projects. Together we created an automatic fine scanner that reduced a 30-minute process to just 10 seconds—truly impressive efficiency improvement.",
-        nl: "Het werken met Omar bij Vloto toonde zijn betrouwbaarheid en vaardigheid. Zijn communicatie en codeervaardigheden blonken uit in onze projecten. Samen creëerden we een automatische boetescanner die een proces van 30 minuten reduceerde tot slechts 10 seconden—een indrukwekkende efficiëntieverbetering.",
+        en: "Working with Omar showed his reliability and skill. His communication and coding abilities shined in our projects. Together we created an automatic fine scanner that reduced a 30-minute process to just 10 seconds—truly impressive efficiency improvement.",
+        nl: "Het werken met Omar toonde zijn betrouwbaarheid en vaardigheid. Zijn communicatie en codeervaardigheden blonken uit in onze projecten. Samen creëerden we een automatische boetescanner die een proces van 30 minuten reduceerde tot slechts 10 seconden—een indrukwekkende efficiëntieverbetering.",
       },
     },
     {
