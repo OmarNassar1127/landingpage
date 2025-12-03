@@ -3,7 +3,7 @@
 import React, { useEffect, useRef } from "react";
 import { motion, useAnimation, useInView } from "framer-motion";
 import { scrollToSection } from "@/lib/scroll-utils";
-import { Building2, Scale, Plane, Globe, Shield, CreditCard, Activity, Zap, Database, BadgeDollarSign } from "lucide-react";
+import { Building2, Scale, Plane, Globe, /* Shield, */ CreditCard, Activity, Zap, /* Database, */ BadgeDollarSign } from "lucide-react";
 import { useLanguage } from "@/lib/i18n/language-context";
 import Image from "next/image";
 
@@ -11,8 +11,8 @@ import Image from "next/image";
 const companies = [
   { id: 1, name: "Road", logo: "/images/companies/road.webp", icon: <Activity className="w-6 h-6" /> },
   { id: 2, name: "e-Flux", logo: "/images/companies/e-flux.jpeg", icon: <Zap className="w-6 h-6" /> },
-  { id: 3, name: "Capgemini", logo: "/images/companies/capgemini.webp", icon: <Database className="w-6 h-6" /> },
-  { id: 4, name: "Ministerie van Defensie", logo: "/images/companies/ministerie.png", icon: <Shield className="w-6 h-6" /> },
+  // { id: 3, name: "Capgemini", logo: "/images/companies/capgemini.webp", icon: <Database className="w-6 h-6" /> },
+  // { id: 4, name: "Ministerie van Defensie", logo: "/images/companies/ministerie.png", icon: <Shield className="w-6 h-6" /> },
   { id: 5, name: "Hilverda de Boer", logo: "/images/companies/hilverda.png", icon: <Building2 className="w-6 h-6" /> },
   { id: 6, name: "Vesting Finance", logo: "/images/companies/vestingfinance.png", icon: <BadgeDollarSign className="w-6 h-6" /> },
   { id: 7, name: "KLM", logo: "/images/companies/klm.png", icon: <Plane className="w-6 h-6" /> },

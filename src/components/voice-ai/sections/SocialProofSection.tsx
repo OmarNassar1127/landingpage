@@ -26,7 +26,7 @@ export default function SocialProofSection({ currentLang }: SocialProofSectionPr
 
   // Real client logos
   const clientLogos = [
-    { name: "Capgemini", logo: "/images/trusted-by/capgemini.webp" },
+    // { name: "Capgemini", logo: "/images/trusted-by/capgemini.webp" },
     { name: "CSDM", logo: "/images/trusted-by/csdm.png" },
     { name: "E-Flux", logo: "/images/trusted-by/e-flux.jpeg" },
     { name: "KLM", logo: "/images/trusted-by/klm.png" },
