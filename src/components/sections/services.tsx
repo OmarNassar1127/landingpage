@@ -132,11 +132,6 @@ const Services = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <Badge className="mb-4 bg-primary/10 text-primary border-primary/20">
-            <Zap className="h-3 w-3 mr-1" />
-            {language === 'nl' ? 'Onze Diensten' : 'Our Services'}
-          </Badge>
-
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
             {language === 'nl'
               ? <>Oplossingen die <span className="text-[#3B82F6] dark:text-[#86efac]">werken</span></>
@@ -215,15 +210,6 @@ const ServiceCard = ({
         group-hover:border-primary/50 group-hover:shadow-xl
         ${isFullWidth ? 'flex flex-col lg:flex-row items-start gap-8' : 'flex flex-col'}
       `}>
-        {/* Badge - only show if not empty */}
-        {service.highlight && (
-          <Badge
-            className="absolute top-4 right-4 bg-background/90 border-primary/20"
-            variant="outline"
-          >
-            {service.highlight}
-          </Badge>
-        )}
 
         <div className={`${isFullWidth ? 'lg:w-1/3' : ''} flex-shrink-0`}>
           <div className="inline-flex p-3 rounded-xl mb-3">
