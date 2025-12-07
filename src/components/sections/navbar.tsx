@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { LanguageToggle } from "@/components/ui/language-toggle";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -169,14 +168,12 @@ export default function Navbar() {
               {language === 'nl' ? 'Plan intake' : 'Book intake'}
             </Button>
             <LanguageToggle />
-            <ThemeToggle />
           </div>
         </nav>
 
         {/* Mobile Navigation */}
         <div className="flex items-center md:hidden space-x-2">
           <LanguageToggle />
-          <ThemeToggle />
           <Button
             variant="ghost"
             size="icon"

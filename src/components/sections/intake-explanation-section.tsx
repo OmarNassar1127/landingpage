@@ -121,6 +121,7 @@ export default function IntakeExplanationSection() {
 
                     {/* High-Impact CTA Section */}
                     <motion.div
+                        id="ready-to-start"
                         className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-3xl p-12 md:p-16 text-center shadow-2xl border border-gray-700"
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -138,16 +139,21 @@ export default function IntakeExplanationSection() {
                         </p>
 
                         {/* Primary CTA */}
-                        <div className="mb-8">
+                        <div className="mb-8 flex justify-center">
                             <Button
                                 size="lg"
-                                onClick={() => setIsModalOpen(true)}
+                                asChild
                                 className="bg-blue-600 hover:bg-blue-700 text-white px-16 py-7 text-xl rounded-xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 group"
                             >
-                                <span className="flex items-center gap-3">
+                                <a
+                                    href="https://calendly.com/quotum-consulting/30min"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="flex items-center gap-3"
+                                >
                                     {language === 'nl' ? 'Plan een gesprek' : 'Schedule a call'}
                                     <ArrowRight className="h-6 w-6 group-hover:translate-x-1 transition-transform" />
-                                </span>
+                                </a>
                             </Button>
                         </div>
 
@@ -216,6 +222,7 @@ export default function IntakeExplanationSection() {
                     </motion.div>
                 </div>
             </div>
+
 
             {/* Demo Request Modal */}
             <DemoRequestModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />

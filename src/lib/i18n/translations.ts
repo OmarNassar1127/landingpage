@@ -287,9 +287,9 @@ export const translations = {
 
     // Hero
     hero: {
-      title: "Software die Werkt zoals Jullie Werken",
+      title: "Virelio bouwt AI.",
       subtitle:
-        "Van een webshop tot een interne tool, van automatisering tot AI-oplossing: wij bouwen wat jouw werk makkelijker maakt. Snel, efficiënt en volledig op maat.",
+        "AI-chatbots, kennisbanken, automatiseringen. Maatwerk webshops en tools. Van idee naar werkend systeem in 2 weken.",
       ctaButton: "Bekijk Onze Projecten",
       secondaryButton: "Laten We Kennismaken",
     },
@@ -1076,10 +1076,10 @@ export const translations = {
 
     // Demo Video
     demoVideo: {
-      title: "Our AI Agent in Action",
-      subtitle: "See how our AI agent streamlines your work experience",
+      title: "Watch Our AI in Action",
+      subtitle: "See how tasks get automated in real-time",
       description:
-        "Watch our AI agent in action. This demonstration shows our intelligent AI solution that can be customized for your specific business needs and industry.",
+        "This demo shows one example. We'll customize the workflow to match your exact processes.",
     },
 
     // Navbar
@@ -1091,19 +1091,19 @@ export const translations = {
       about: "About",
       testimonials: "Testimonials",
       contact: "Contact",
-      bookMeeting: "Book a Meeting",
+      bookMeeting: "Schedule a Call",
     },
 
     // Testimonials section
     testimonials: {
-      title: "Testimonials",
-      subtitle: "What our clients and colleagues say about us",
+      title: "Client Testimonials",
+      subtitle: "What our clients and partners say about working with us",
     },
 
     // Footer
     footer: {
       description:
-        "Innovative solutions for modern challenges. Our expertise includes, AI systems, SaaS platforms, KYC integrations, shop automations and many more. We adapt to the unique needs of each project to deliver optimal results.",
+        "Innovative solutions for modern challenges. Expertise in AI systems, SaaS platforms, KYC integrations, and e-commerce automation. Every project tailored for optimal results.",
       quickLinks: "Quick Links",
       legal: "Legal",
       privacyPolicy: "Privacy Policy",
@@ -1115,11 +1115,11 @@ export const translations = {
 
     // Hero
     hero: {
-      title: "Software that Works the Way You Work",
+      title: "Virelio builds AI.",
       subtitle:
-        "From an e-commerce site to an internal tool, from automation to AI solution: we build what makes your work easier. Fast, efficient, and completely customized.",
-      ctaButton: "View Our Projects",
-      secondaryButton: "Get in Touch",
+        "AI chatbots, knowledge bases, automations. Custom e-commerce and internal tools. From idea to working system in 2 weeks.",
+      ctaButton: "View Our Work",
+      secondaryButton: "Let's Talk",
     },
 
     // Trusted by section (company slider)
@@ -1556,73 +1556,73 @@ export const translations = {
 
     // Book a Meeting section
     bookMeeting: {
-      title: "Book a Meeting",
+      title: "Let's Talk",
       subtitle:
-        "Schedule a no-obligation conversation with our team to discuss your project",
+        "Schedule a no-obligation call to explore your project",
       description:
-        "Use our online calendar to schedule a meeting directly. We look forward to talking with you about your ideas and how we can help.",
-      ctaButton: "Schedule a demo call now",
+        "Use our calendar to book a time that works for you. We're excited to hear about your ideas and how we can help.",
+      ctaButton: "Book your demo",
     },
 
     // Automations Showcase
     automationsShowcase: {
-      title: "200+ Automations Delivered",
-      subtitle: "Empowering Businesses with Smart Solutions",
+      title: "200+ Solutions Delivered",
+      subtitle: "Empowering Businesses Through Smart Automation",
       centerLabel: "Automations",
     },
 
     // Services section
     services: {
-      title: "Our Services",
+      title: "What We Build",
       subtitle:
-        "Smart digital solutions that accelerate processes, improve collaboration and directly save time.",
-      ctaButton: "Schedule a meeting",
+        "Smart solutions that speed up processes, improve collaboration, and save time—starting day one.",
+      ctaButton: "Let's talk",
       aiDevelopment: {
         title: "AI Integration",
-        description: "A digital colleague that takes work off your hands.",
+        description: "AI that works without rebuilding your tech stack.",
         feature1:
-          "Knows all your internal documents without you having to upload anything",
-        feature2: "Converts conversations into minutes and action points",
-        feature3: "Answers questions and follows up on tasks automatically",
+          "Knows your internal docs without manual uploads",
+        feature2: "Turns conversations into minutes and action items",
+        feature3: "Answers questions and tracks tasks automatically",
       },
       saasDevelopment: {
         title: "Custom Software",
         description:
-          "Solutions that do exactly what you need, built around your way of working.",
-        feature1: "Dashboards, portals or tools tailored to your team",
-        feature2: "Works with your existing systems and accounts",
-        feature3: "Scales with your processes and grows with your company",
+          "Solutions built around how you actually work—not the other way around.",
+        feature1: "Dashboards, portals, and tools designed for your team",
+        feature2: "Integrates with your existing systems and accounts",
+        feature3: "Scales with your business as you grow",
       },
 
       toolIntegrations: {
         title: "Tool Integrations",
-        description: "One workplace where all your systems work together.",
-        feature1: "Connects Slack, Teams, calendars, documents and tasks",
-        feature2: "Actions start automatically based on changes",
-        feature3: "Overview without searching or switching",
+        description: "One workspace where all your systems talk to each other.",
+        feature1: "Connects Slack, Teams, calendars, docs, and tasks",
+        feature2: "Triggers actions automatically when things change",
+        feature3: "No more searching or switching between apps",
       },
       customAISolutions: {
         title: "Custom AI Solutions",
-        description: "AI that adapts to your work and colleagues.",
-        feature1: "Recognizes patterns and thinks along in your processes",
-        feature2: "Responds differently per department or role",
-        feature3: "Quietly takes over recurring work",
+        description: "AI that learns your workflows and adapts to your team.",
+        feature1: "Spots patterns and anticipates what you need",
+        feature2: "Responds differently based on role or department",
+        feature3: "Handles repetitive work in the background",
       },
       webDevelopment: {
-        title: "Custom Website",
+        title: "Custom Websites",
         description:
-          "A professional website or platform, fully designed for your purpose and target audience.",
-        feature1: "Live within 7 days with a sleek and fast design",
-        feature2: "Built to convert – from first impression to action",
-        feature3: "SEO integration",
+          "Professional websites and platforms built to convert.",
+        feature1: "Live in 7 days with a sleek, fast design",
+        feature2: "Optimized for conversion from visitor to customer",
+        feature3: "SEO-ready from launch",
       },
       dataAnalytics: {
         title: "Data & Insights",
         description:
-          "Always direct answers to your figures, without searching.",
-        feature1: "Connected to your database or backend",
-        feature2: "Request revenue, trends or team data via Slack or Teams",
-        feature3: "Answers in plain language – within 3 seconds",
+          "Get instant answers to your questions—no searching required.",
+        feature1: "Connected directly to your database or backend",
+        feature2: "Ask for revenue, trends, or team data via Slack or Teams",
+        feature3: "Answers in plain English within 3 seconds",
       },
     },
 

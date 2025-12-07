@@ -21,7 +21,7 @@ export default function FloatingWhatsAppButton() {
 
             {/* WhatsApp Button - Large Circle */}
             <a
-                href="https://wa.link/0640446732"
+                href="https://wa.me/31640446732"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-16 h-16 rounded-full bg-green-500 hover:bg-green-600 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-110 flex items-center justify-center group"

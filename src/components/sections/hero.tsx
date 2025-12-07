@@ -102,7 +102,7 @@ function HeroContent() {
               </>
             ) : (
               <>
-                <span className="font-bold text-foreground">Contracting. Custom. Training.</span><br />
+                <span className="font-bold text-foreground">Hire us. Custom-built. We train you.</span><br />
                 From idea to live in 2 weeks.
               </>
             )}
@@ -119,10 +119,10 @@ function HeroContent() {
               asChild
             >
               <a
-                href="#book-meeting"
+                href="#ready-to-start"
                 onClick={(e) => {
                   e.preventDefault();
-                  scrollToSection("book-meeting");
+                  scrollToSection("ready-to-start");
                 }}
                 className="flex items-center justify-center gap-2"
                 aria-label={language === 'nl' ? "Plan gratis intake" : "Book free intake"}

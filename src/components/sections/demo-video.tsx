@@ -264,12 +264,8 @@ export default function DemoVideo() {
                 asChild
               >
                 <a
-                  href="#book-meeting"
+                  href={`mailto:robin.bril@gmail.com?subject=${encodeURIComponent(language === 'nl' ? 'Plan een gesprek - Virelio' : 'Schedule a call - Virelio')}&body=${encodeURIComponent(language === 'nl' ? 'Hoi Robin,\n\nIk wil graag een kennismakingsgesprek inplannen.\n\nMijn naam: \nBedrijf: \nTelefoonnummer: \n\nVoorkeur datum/tijd: \n\nGroet,' : 'Hi Robin,\n\nI would like to schedule an introductory call.\n\nMy name: \nCompany: \nPhone number: \n\nPreferred date/time: \n\nBest regards,')}`}
                   className="inline-flex items-center justify-center gap-3"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    scrollToSection("book-meeting");
-                  }}
                   aria-label={t.bookMeeting.ctaButton}
                 >
                   {t.bookMeeting.ctaButton}

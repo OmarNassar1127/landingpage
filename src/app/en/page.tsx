@@ -2,17 +2,17 @@ import { Metadata } from "next";
 import Navbar from "@/components/sections/navbar";
 import Hero from "@/components/sections/hero";
 import CompanySlider from "@/components/sections/company-slider";
-import DemoVideo from "@/components/sections/demo-video";
-import AutomationsShowcase from "@/components/sections/automations-showcase";
 import Projects from "@/components/sections/projects";
 import Services from "@/components/sections/services";
-import About from "@/components/sections/about";
 import Testimonials from "@/components/sections/testimonials";
 import Footer from "@/components/sections/footer";
+import FloatingWhatsAppButton from "@/components/floating-whatsapp-button";
+import IntakeExplanationSection from "@/components/sections/intake-explanation-section";
+import GuaranteeSection from "@/components/sections/guarantee-section";
 import { generateMetadata } from "@/lib/metadata";
 import { siteConfig } from "@/lib/config";
 import JsonLd from "@/components/seo/json-ld";
-import { faqSchema, servicesSchema } from "@/lib/schema";
+import { faqSchema, testimonialsSchema, servicesSchema, workshopSchema } from "@/lib/schema";
 
 // Sample FAQ data for the landing page (English version)
 const faqData = {
@@ -35,14 +35,45 @@ const faqData = {
   ],
 };
 
+// Testimonials data for structured data
+const testimonialsData = {
+  items: [
+    {
+      author: "Azeez Bayonle Abideen",
+      role: "User Experience Designer",
+      text: "I have the pleasure of working with Omar, where he has consistently demonstrated exceptional skills as a backend developer, delivering efficient, maintainable code, tackling complex problems with innovative solutions, and fostering a collaborative team environment.",
+    },
+    {
+      author: "Cristian Arboleda",
+      role: ".NET Developer",
+      text: "Omar is a talented developer with a strong drive to continuously grow and improve himself. He is always willing to support his colleagues, which makes him a valuable team player.",
+    },
+    {
+      author: "Ihor Tolkachov",
+      role: "Frontend Developer",
+      text: "I had the pleasure of working with Omar where he proved to be a reliable and skilled colleague. His communication, planning, and coding abilities were evident in all our projects.",
+    },
+    {
+      author: "Sophia Chen",
+      role: "Product Manager at TechInnovate",
+      text: "Working with Omar and his team at Virelio has transformed our product development workflow. Their AI solutions have automated processes that used to take days into minutes.",
+    },
+    {
+      author: "Jan van der Meer",
+      role: "CTO at Dutch E-commerce Solutions",
+      text: "The shop automation system developed by Virelio has revolutionized how we manage our e-commerce operations. Omar's deep understanding of both the technical and business aspects of e-commerce allowed for a solution that seamlessly integrates with our existing platforms.",
+    },
+  ],
+};
+
 export const metadata: Metadata = generateMetadata({
-  title: "200+ Automations Delivered | AI Solutions & Business Process Automation",
+  title: "Innovative Solutions for Modern Challenges",
   description:
-    "We've delivered 200+ custom AI and traditional automation solutions. Specializing in business process automation, AI-powered systems, SaaS platforms, KYC integrations, and e-commerce automation to help businesses thrive.",
+    "We specialize in AI solutions, SaaS platforms, KYC integrations, and shop automations to help businesses thrive in the digital age.",
   keywords:
-    "business automation, AI automation, process automation, workflow automation, 200+ automations, artificial intelligence, AI solutions, SaaS development, KYC integration, e-commerce automation, web development, technology consulting, custom automation solutions, Virelio",
+    "AI solutions, SaaS development, KYC integration, e-commerce automation, web development, technology consulting, Virelio",
   pathname: "/en",
-  locale: "en", // Set this explicitly for English
+  locale: "en",
 });
 
 export default function EnglishHome() {
@@ -50,29 +81,29 @@ export default function EnglishHome() {
     <>
       {/* Adding structured data for better SEO */}
       <JsonLd data={faqSchema(faqData)} />
+      <JsonLd data={testimonialsSchema(testimonialsData)} />
       <JsonLd data={servicesSchema()} />
+      <JsonLd data={workshopSchema()} />
 
       <main className="min-h-screen">
         <Navbar />
         <Hero />
         <CompanySlider />
-        <DemoVideo />
-        <AutomationsShowcase />
+        <GuaranteeSection />
         <div id={siteConfig.sections.services.substring(1)}>
           <Services />
         </div>
         <div id={siteConfig.sections.projects.substring(1)}>
           <Projects />
         </div>
-        <div id={siteConfig.sections.about.substring(1)}>
-          <About />
-        </div>
         <div id={siteConfig.sections.testimonials.substring(1)}>
           <Testimonials />
         </div>
+        <IntakeExplanationSection />
 
 
         <Footer />
+        <FloatingWhatsAppButton />
       </main>
     </>
   );

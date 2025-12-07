@@ -10,13 +10,13 @@ export default function GuaranteeSection() {
     const guarantees = [
         language === 'nl'
             ? 'Geld terug als je niet tevreden bent; geen vragen, geen gedoe'
-            : 'Money back if you\'re not satisfied; no questions, no hassle',
+            : 'Money back if you\'re not satisfied - no questions asked',
         language === 'nl'
             ? 'Binnen 4 uur persoonlijke reactie van Robin'
             : 'Personal response from Robin within 4 hours',
         language === 'nl'
             ? 'Past het niet perfect? Gratis aanpassingen tot het klopt'
-            : 'Doesn\'t fit perfectly? Free adjustments until it\'s right'
+            : 'Not perfect? Free revisions until it is'
     ];
 
     return (
@@ -29,7 +29,7 @@ export default function GuaranteeSection() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                     >
-                        {language === 'nl' ? 'Jouw tevredenheid, gegarandeerd' : 'Your satisfaction, guaranteed'}
+                        {language === 'nl' ? 'Jouw tevredenheid, gegarandeerd' : 'Your Satisfaction, Guaranteed'}
                     </motion.h2>
 
                     <motion.p
@@ -39,7 +39,7 @@ export default function GuaranteeSection() {
                         viewport={{ once: true }}
                         transition={{ delay: 0.1 }}
                     >
-                        {language === 'nl' ? 'Wij nemen het risico, niet jij.' : 'We take the risk, not you.'}
+                        {language === 'nl' ? 'Wij nemen het risico, niet jij.' : 'We take the risk. Not you.'}
                     </motion.p>
 
                     <div className="space-y-6 max-w-2xl mx-auto">
