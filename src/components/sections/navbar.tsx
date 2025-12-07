@@ -12,35 +12,38 @@ import { Icon } from "@/components/ui/icon";
 import { useLanguage } from "@/lib/i18n/language-context";
 
 export default function Navbar() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
 
   const navLinks = [
-    { name: t.nav.home, href: "#" },
     { name: t.nav.services, href: "#services" },
-    { name: t.nav.workshop, href: "#workshop" },
     { name: t.nav.projects, href: "#projects" },
     { name: t.nav.about, href: "#about" },
-    { name: t.nav.testimonials, href: "#testimonials" },
-    { name: t.nav.bookMeeting, href: "#book-meeting" },
-    { name: t.nav.contact, href: "#contact" },
   ];
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
-      
+
+      // Only calculate active section on home page
+      const isHomePage = window.location.pathname === '/' || window.location.pathname.startsWith('/en');
+
+      if (!isHomePage) {
+        setActiveSection(""); // No active state on non-home pages
+        return;
+      }
+
       // Check which section is currently in view
       const scrollPosition = window.scrollY + 100; // Offset for better UX
-      
+
       // Check if we're at the top of the page
       if (scrollPosition < 200) {
         setActiveSection("");
         return;
       }
-      
+
       // Check each section
       const sections = navLinks
         .filter(link => link.href !== "#")
@@ -48,10 +51,10 @@ export default function Navbar() {
           id: link.href.replace("#", ""),
           position: document.getElementById(link.href.replace("#", ""))?.offsetTop || 0
         }));
-      
+
       // Sort sections by position (top to bottom)
       sections.sort((a, b) => a.position - b.position);
-      
+
       // Find the current section
       for (let i = sections.length - 1; i >= 0; i--) {
         if (scrollPosition >= sections[i].position) {
@@ -60,11 +63,11 @@ export default function Navbar() {
         }
       }
     };
-    
+
     window.addEventListener("scroll", handleScroll);
     // Call once on mount to set initial active section
     handleScroll();
-    
+
     return () => window.removeEventListener("scroll", handleScroll);
   }, [navLinks]);
 
@@ -117,14 +120,16 @@ export default function Navbar() {
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-lg sm:text-xl md:text-2xl font-bold text-primary flex-shrink-0"
+          className="flex items-center flex-shrink-0"
         >
           <a
             href="/"
             onClick={(e) => handleNavClick(e, "#")}
-            className="text-lg sm:text-xl md:text-2xl font-bold tracking-tight bg-gradient-to-r from-purple-400 to-blue-400 text-transparent bg-clip-text hover:opacity-80 transition"
+            className="flex items-center hover:opacity-80 transition"
           >
-            VIRELIO
+            <span className="text-xl sm:text-2xl md:text-3xl font-black tracking-tight">
+              Virelio<span className="text-primary">.</span>
+            </span>
           </a>
         </motion.div>
 
@@ -137,15 +142,15 @@ export default function Navbar() {
                   href={link.href}
                   className={cn(
                     "text-sm font-medium transition-all hover:text-primary relative tracking-tight whitespace-nowrap",
-                    (activeSection === link.href.replace("#", "") || (link.href === "#" && activeSection === "")) 
-                      ? "text-primary font-semibold" 
+                    (activeSection === link.href.replace("#", "") || (link.href === "#" && activeSection === ""))
+                      ? "text-primary font-semibold"
                       : ""
                   )}
                   onClick={(e) => handleNavClick(e, link.href)}
                 >
                   {link.name}
                   {(activeSection === link.href.replace("#", "") || (link.href === "#" && activeSection === "")) && (
-                    <motion.div 
+                    <motion.div
                       className="absolute -bottom-1 left-0 w-full h-0.5 bg-primary rounded-full"
                       layoutId="activeNavIndicator"
                       transition={{ type: "spring", stiffness: 350, damping: 30 }}
@@ -155,7 +160,14 @@ export default function Navbar() {
               </motion.li>
             ))}
           </ul>
-          <div className="flex items-center space-x-3">
+          <div className="flex items-center gap-4">
+            <Button
+              size="sm"
+              onClick={() => scrollToSection('contact')}
+              className="bg-foreground text-background hover:bg-foreground/90 font-semibold px-5 py-2 rounded-lg shadow-sm"
+            >
+              {language === 'nl' ? 'Plan intake' : 'Book intake'}
+            </Button>
             <LanguageToggle />
             <ThemeToggle />
           </div>
@@ -198,7 +210,7 @@ export default function Navbar() {
                   {navLinks.map((link, index) => {
                     const isActive = (activeSection === link.href.replace("#", "") || (link.href === "#" && activeSection === ""));
                     return (
-                      <motion.li 
+                      <motion.li
                         key={`${link.href}-${index}`}
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
@@ -209,19 +221,19 @@ export default function Navbar() {
                           className={cn(
                             "flex items-center px-6 py-4 text-base font-medium transition-all hover:bg-primary/10 hover:text-primary rounded-2xl relative tracking-tight min-h-[56px] border border-transparent hover:border-primary/20 group",
                             isActive
-                              ? "text-primary font-semibold bg-primary/10 border-primary/30" 
+                              ? "text-primary font-semibold bg-primary/10 border-primary/30"
                               : "text-foreground hover:shadow-sm"
                           )}
                           onClick={(e) => handleNavClick(e, link.href)}
                         >
                           {isActive && (
-                            <motion.div 
+                            <motion.div
                               className="absolute left-3 top-1/2 -translate-y-1/2 w-1 h-6 bg-primary rounded-full z-10"
                               layoutId="activeMobileNavIndicator"
                               initial={false}
-                              transition={{ 
-                                type: "spring", 
-                                stiffness: 500, 
+                              transition={{
+                                type: "spring",
+                                stiffness: 500,
                                 damping: 35,
                                 mass: 0.8,
                                 restDelta: 0.001
@@ -237,7 +249,7 @@ export default function Navbar() {
               </nav>
 
               {/* Contact Buttons Section */}
-              <motion.div 
+              <motion.div
                 className="border-t border-border/50 pt-6"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}

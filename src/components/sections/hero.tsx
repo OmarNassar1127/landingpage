@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { useInView } from "react-intersection-observer";
-import { ChevronDown, Check, ArrowRight, Users, Trophy, Clock, Shield } from "lucide-react";
+import { ChevronDown, Check, ArrowRight, Users, Trophy, Clock, Shield, MessageCircle } from "lucide-react";
 import { scrollToSection } from "@/lib/scroll-utils";
 import { Icon } from "@/components/ui/icon";
 import { useLanguage } from "@/lib/i18n/language-context";
@@ -46,32 +46,23 @@ function HeroContent() {
   return (
     <section
       ref={ref}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-background to-background/50"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-blue-50/30 via-background to-background dark:from-background dark:via-background dark:to-background"
     >
-      {/* Modern gradient backgrounds */}
-      {isMounted && (
-        <>
-          <motion.div
-            className="absolute inset-0 z-0"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1 }}
-          >
-            <div className="absolute top-0 -left-40 w-[800px] h-[800px] rounded-full bg-purple-500/20 mix-blend-multiply blur-[128px] animate-pulse" />
-            <div className="absolute bottom-0 -right-40 w-[800px] h-[800px] rounded-full bg-blue-500/20 mix-blend-multiply blur-[128px] animate-pulse" />
-          </motion.div>
-        </>
-      )}
+      {/* Subtle pattern overlay */}
+      <div className="absolute inset-0 opacity-[0.02] dark:opacity-[0.03]" style={{
+        backgroundImage: `radial-gradient(circle at 1px 1px, rgb(59 130 246) 1px, transparent 0)`,
+        backgroundSize: '40px 40px'
+      }} />
 
       <div className="container relative z-10 px-4 sm:px-6 w-full max-w-7xl mx-auto">
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate={controls}
-          className="flex flex-col items-center space-y-10 text-center"
+          className="flex flex-col items-center space-y-8 md:space-y-12 text-center"
         >
           {/* Eyebrow text for context */}
-          <motion.div 
+          <motion.div
             variants={itemVariants}
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 backdrop-blur-sm"
           >
@@ -86,17 +77,15 @@ function HeroContent() {
             variants={itemVariants}
             className="space-y-6 md:space-y-8"
           >
-            {/* Main headline - clear value proposition */}
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight max-w-5xl px-2 sm:px-0 leading-[1.1]">
+            {/* Main headline - larger and more impactful */}
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black tracking-tight max-w-5xl px-2 sm:px-0 leading-[1.05]">
               {language === 'nl' ? (
                 <>
-                  <span className="text-primary">AI‑automatiseringen</span> die direct<br className="hidden sm:block" />
-                  tijd besparen voor <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-600">jouw team</span>
+                  Virelio bouwt <em className="not-italic font-black text-[#3B82F6] dark:text-[#86efac]">AI</em>.
                 </>
               ) : (
                 <>
-                  <span className="text-primary">AI-automations</span> that save time directly<br className="hidden sm:block" />
-                  for <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-600">your team</span>
+                  Virelio builds <em className="not-italic font-black text-[#3B82F6] dark:text-[#86efac]">AI</em>.
                 </>
               )}
             </h1>
@@ -104,107 +93,68 @@ function HeroContent() {
 
           <motion.p
             variants={itemVariants}
-            className="max-w-2xl text-base sm:text-lg md:text-xl text-muted-foreground font-normal leading-relaxed px-4 sm:px-0 text-center"
+            className="max-w-2xl text-lg sm:text-xl md:text-2xl text-muted-foreground font-normal leading-relaxed px-4 sm:px-0 text-center"
           >
             {language === 'nl' ? (
-              <>Van interne processen tot AI‑tool. Maatwerksoftware die past bij jullie workflow. <span className="font-semibold text-foreground">Geen templates.</span></>
+              <>
+                <span className="font-bold text-foreground">Inhuur. Maatwerk. Training.</span><br />
+                Van idee tot live in 2 weken.
+              </>
             ) : (
-              <>From internal processes to AI tools. Custom software that fits your workflow. <span className="font-semibold text-foreground">No templates.</span></>
+              <>
+                <span className="font-bold text-foreground">Contracting. Custom. Training.</span><br />
+                From idea to live in 2 weeks.
+              </>
             )}
           </motion.p>
 
-          {/* Key benefits with checkmarks */}
+          {/* Single Primary CTA */}
           <motion.div
             variants={itemVariants}
-            className="flex flex-col sm:flex-row gap-4 sm:gap-8 justify-center items-center text-sm sm:text-base"
-          >
-            {(language === 'nl' ? [
-              "Gratis demo aanvragen",
-              "Live binnen 2 weken",
-              "Geen verborgen kosten"
-            ] : [
-              "Free working demo",
-              "Live within 2 weeks",
-              "No hidden costs"
-            ]).map((benefit, index) => (
-              <div key={index} className="flex items-center gap-2">
-                <div className="flex items-center justify-center w-5 h-5 rounded-full bg-green-500/20">
-                  <Icon icon={Check} className="h-3 w-3 text-green-500" />
-                </div>
-                <span className="text-muted-foreground">{benefit}</span>
-              </div>
-            ))}
-          </motion.div>
-
-          <motion.div
-            variants={itemVariants}
-            className="flex flex-col sm:flex-row gap-4 items-center justify-center w-full"
+            className="flex flex-col items-center justify-center gap-4"
           >
             <Button
               size="lg"
-              className="bg-primary hover:bg-primary/90 text-white dark:text-black shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 transition-all duration-300 w-full sm:w-auto min-w-[200px] group"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg hover:shadow-xl transition-all duration-300 px-12 py-6 text-lg group"
               asChild
             >
-              <a 
-                href="#book-meeting" 
+              <a
+                href="#book-meeting"
                 onClick={(e) => {
                   e.preventDefault();
                   scrollToSection("book-meeting");
                 }}
-                className="flex items-center justify-center gap-2 text-center" 
-                aria-label={language === 'nl' ? "Gratis demo aanvragen" : "View our demo"}
+                className="flex items-center justify-center gap-2"
+                aria-label={language === 'nl' ? "Plan gratis intake" : "Book free intake"}
               >
-                {language === 'nl' ? 'Gratis demo aanvragen' : 'View our demo'}
-                <Icon icon={ArrowRight} className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-              </a>
-            </Button>
-            <Button
-              variant="ghost"
-              size="lg"
-              className="hover:bg-primary/5 transition-colors duration-300 w-full sm:w-auto min-w-[200px]"
-              asChild
-            >
-              <a 
-                href="#projects" 
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection("projects");
-                }}
-                className="flex items-center justify-center text-center" 
-                aria-label={language === 'nl' ? "Bekijk cases" : "View examples"}
-              >
-                {language === 'nl' ? 'Bekijk cases' : 'View examples'}
+                {language === 'nl' ? 'Plan gratis intake' : 'Book free intake'}
+                <Icon icon={ArrowRight} className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </a>
             </Button>
           </motion.div>
 
-          {/* Social proof */}
+          {/* Trust Indicators - Single Row */}
           <motion.div
             variants={itemVariants}
-            className="flex flex-col items-center gap-4 pt-8 border-t border-border/50"
+            className="flex flex-wrap items-center justify-center gap-6 sm:gap-12 pt-8 border-t border-border/30 max-w-4xl"
           >
-            <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
-              <div className="flex items-center gap-2">
-                <Icon icon={Users} className="h-4 w-4 text-muted-foreground" />
-                <span className="text-sm text-muted-foreground">
-                  <span className="font-semibold text-foreground">50+</span> {language === 'nl' ? 'tevreden klanten' : 'happy clients'}
-                </span>
-              </div>
-              <div className="hidden sm:block w-px h-4 bg-border" />
-              <div className="flex items-center gap-2">
-                <Icon icon={Trophy} className="h-4 w-4 text-muted-foreground" />
-                <span className="text-sm text-muted-foreground">
-                  <span className="font-semibold text-foreground">4.9/5</span> {language === 'nl' ? 'beoordeling' : 'rating'}
-                </span>
-              </div>
-              <div className="hidden sm:block w-px h-4 bg-border" />
-              <div className="flex items-center gap-2">
-                <Icon icon={Clock} className="h-4 w-4 text-muted-foreground" />
-                <span className="text-sm text-muted-foreground">
-                  <span className="font-semibold text-foreground">24h</span> response
-                </span>
-              </div>
-            </div>
+            {[
+              { label: language === 'nl' ? 'Binnen 4u reactie' : 'Within 4h response', icon: Clock },
+              { label: language === 'nl' ? '18 bedrijven geholpen' : '18 companies helped', icon: Users },
+              { label: language === 'nl' ? 'Geld-terug garantie' : 'Money-back guarantee', icon: Trophy }
+            ].map((stat, idx) => {
+              const StatIcon = stat.icon;
+              return (
+                <div key={idx} className="flex items-center gap-2">
+                  <div className="p-1.5 rounded-full bg-primary/10">
+                    <StatIcon className="h-4 w-4 text-primary" />
+                  </div>
+                  <span className="text-sm font-medium text-muted-foreground">
+                    {stat.label}
+                  </span>
+                </div>
+              );
+            })}
           </motion.div>
         </motion.div>
       </div>
@@ -248,10 +198,10 @@ function HeroLoading() {
 
 export default function Hero() {
   const [isClient, setIsClient] = useState(false);
-  
+
   useEffect(() => {
     setIsClient(true);
   }, []);
-  
+
   return isClient ? <HeroContent /> : <HeroLoading />;
 }

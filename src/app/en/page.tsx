@@ -6,11 +6,8 @@ import DemoVideo from "@/components/sections/demo-video";
 import AutomationsShowcase from "@/components/sections/automations-showcase";
 import Projects from "@/components/sections/projects";
 import Services from "@/components/sections/services";
-import WorkshopSection from "@/components/sections/workshop-section";
 import About from "@/components/sections/about";
 import Testimonials from "@/components/sections/testimonials";
-import Contact from "@/components/sections/contact";
-import BookMeeting from "@/components/sections/book-meeting";
 import Footer from "@/components/sections/footer";
 import { generateMetadata } from "@/lib/metadata";
 import { siteConfig } from "@/lib/config";
@@ -64,7 +61,6 @@ export default function EnglishHome() {
         <div id={siteConfig.sections.services.substring(1)}>
           <Services />
         </div>
-        <WorkshopSection />
         <div id={siteConfig.sections.projects.substring(1)}>
           <Projects />
         </div>
@@ -74,12 +70,8 @@ export default function EnglishHome() {
         <div id={siteConfig.sections.testimonials.substring(1)}>
           <Testimonials />
         </div>
-        <div id={siteConfig.sections.bookMeeting.substring(1)}>
-          <BookMeeting />
-        </div>
-        <div id={siteConfig.sections.contact.substring(1)}>
-          <Contact />
-        </div>
+
+
         <Footer />
       </main>
     </>

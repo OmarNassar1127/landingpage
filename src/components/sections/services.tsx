@@ -5,7 +5,6 @@ import { motion, useAnimation } from "framer-motion";
 import { useLanguage } from "@/lib/i18n/language-context";
 import { scrollToSection } from "@/lib/scroll-utils";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import { useInView } from "react-intersection-observer";
 import {
   Bot,
@@ -13,14 +12,21 @@ import {
   TrendingUp,
   BarChart3,
   Rocket,
-  Palette,
+  ChevronRight,
   ArrowRight,
-  Check,
-  Star,
+  Sparkles,
+  Brain,
   Zap,
   Clock,
   Shield,
-  Users
+  Users,
+  Phone,
+  Star,
+  Check,
+  Video,
+  Mail,
+  MessageCircle,
+  Calendar
 } from "lucide-react";
 
 interface Service {
@@ -36,109 +42,55 @@ interface Service {
 
 const getServices = (language: string): Service[] => {
   const isNL = language === 'nl';
-  
+
   return [
     {
-      id: "ai-integration",
-      title: isNL ? "AI Integratie" : "AI Integration",
-      tagline: isNL ? "Een digitale collega die werk uit handen neemt" : "A digital colleague that takes work off your hands",
-      description: isNL 
-        ? "AI‑assistent die je documenten kent, gesprekken samenvat en taken opvolgt."
-        : "An AI assistant that knows your documents, converts conversations to minutes and automatically follows up on tasks.",
+      id: "kennisbanken-rag",
+      title: language === 'nl' ? 'Kennisbanken' : 'Knowledge Bases',
+      tagline: language === 'nl' ? 'Antwoord in 3 seconden, niet 3 uur' : 'Answer in 3 seconds, not 3 hours',
+      description: language === 'nl'
+        ? 'Nieuw teamlid vraagt: "Hoe werkt proces X?" - AI doorzoekt 10.000 documenten en geeft het antwoord met bronvermelding. Direct productief.'
+        : 'New team member asks: "How does process X work?" - AI searches 10,000 documents and gives the answer with sources. Instantly productive.',
       icon: Bot,
       features: [
-        isNL ? "Kent interne documenten zonder upload" : "Knows all your internal documents without uploading",
-        isNL ? "Slaat gesprekken op als notulen en actiepunten" : "Converts conversations into minutes and action items",
-        isNL ? "Beantwoordt vragen en volgt taken op" : "Answers questions and follows up on tasks automatically",
-        isNL ? "Werkt met bestaande systemen" : "Works with all existing systems"
+        language === 'nl' ? '2 uur zoeken wordt 10 seconden vinden' : '2 hours searching becomes 10 seconds finding',
+        language === 'nl' ? 'Onboarding van 2 weken naar 2 dagen' : 'Onboarding from 2 weeks to 2 days',
+        language === 'nl' ? 'Met bronnen - geen hallucinaties' : 'With sources - no hallucinations'
       ],
-      highlight: isNL ? "Meest gevraagd" : "Most requested",
-      gradient: "from-violet-600 via-purple-600 to-indigo-600"
+      highlight: language === 'nl' ? 'Populair' : 'Popular',
+      gradient: "from-blue-500 to-cyan-500"
     },
     {
-      id: "tool-integrations",
-      title: isNL ? "Tool‑integraties" : "Tool Integrations",
-      tagline: isNL ? "Eén werkplek waarin al je systemen samenwerken" : "One workplace where all your systems work together",
-      description: isNL
-        ? "Koppelt Slack, Teams, agenda's, documenten en taken. Acties starten bij relevante wijzigingen."
-        : "Links Slack, Teams, calendars, documents and tasks. Actions start automatically based on changes.",
+      id: "ai-agents",
+      title: language === 'nl' ? 'AI Agents' : 'AI Agents',
+      tagline: language === 'nl' ? 'Taken die zichzelf afhandelen' : 'Tasks that handle themselves',
+      description: language === 'nl'
+        ? 'AI die zelfstandig werkt. Leest je inbox, beantwoordt vragen, plant meetings, volgt leads op, zonder dat jij ertussen zit.'
+        : 'AI that works independently. Reads your inbox, answers questions, schedules meetings, follows up on leads, without your involvement.',
       icon: Cog,
       features: [
-        isNL ? "Koppelt Slack, Teams, agenda's, documenten en taken" : "Links Slack, Teams, calendars, documents and tasks",
-        isNL ? "Acties starten op basis van wijzigingen" : "Actions start automatically based on changes",
-        isNL ? "Overzicht zonder zoeken of schakelen" : "Overview without searching or switching",
-        isNL ? "Realtime synchronisatie tussen tools" : "Real-time synchronization between tools"
+        language === 'nl' ? 'Inbox gelezen en beantwoord voordat jij wakker bent' : 'Inbox read and answered before you wake up',
+        language === 'nl' ? 'Leads automatisch gekwalificeerd en ingepland' : 'Leads automatically qualified and scheduled',
+        language === 'nl' ? 'Alleen escalaties in je inbox, geen ruis' : 'Only escalations in your inbox, no noise'
       ],
-      highlight: isNL ? "Tijdsbesparing" : "Time saver",
-      gradient: "from-blue-600 via-cyan-600 to-teal-600"
+      highlight: "",
+      gradient: "from-purple-500 to-pink-500"
     },
     {
-      id: "custom-software",
-      title: isNL ? "Maatwerk Software" : "Custom Software",
-      tagline: isNL ? "Oplossingen die precies doen wat jij nodig hebt" : "Solutions that do exactly what you need",
-      description: isNL
-        ? "Dashboards, portalen en tools afgestemd op je team. Integreert met bestaande systemen en schaalt mee."
-        : "Dashboards, portals or tools tailored to your team. Works with existing systems and scales with you.",
+      id: "automatiseringen",
+      title: language === 'nl' ? 'Automatiseringen' : 'Automations',
+      tagline: language === 'nl' ? 'Jij reviewt, AI doet de rest' : 'You review, AI does the rest',
+      description: language === 'nl'
+        ? 'Na elke meeting staat de samenvatting klaar. Actiepunten in je CRM. Rapport in draft. Jij hoeft alleen nog op "verzenden" te klikken.'
+        : 'After every meeting, the summary is ready. Action items in your CRM. Report in draft. You just need to click "send".',
       icon: Rocket,
       features: [
-        isNL ? "Dashboards, portalen en tools afgestemd op je team" : "Dashboards, portals or tools tailored to your team",
-        isNL ? "Integreert met je bestaande systemen en accounts" : "Works with your existing systems and accounts",
-        isNL ? "Schaalt mee met je processen en groeit met je bedrijf" : "Scales with your processes and grows with your business",
-        isNL ? "100% maatwerk, geen templates" : "100% custom, no templates"
+        language === 'nl' ? 'Meeting notities automatisch naar stakeholders' : 'Meeting notes automatically to stakeholders',
+        language === 'nl' ? 'Rapporten en analyses in draft, klaar voor review' : 'Reports and analyses in draft, ready for review',
+        language === 'nl' ? 'Data tussen systemen gesynchroniseerd zonder copy-paste' : 'Data synced between systems without copy-paste'
       ],
-      highlight: isNL ? "100% Op Maat" : "100% Custom",
-      gradient: "from-indigo-600 via-blue-600 to-purple-600"
-    },
-    {
-      id: "data-insights",
-      title: isNL ? "Data & Inzicht" : "Data & Insights",
-      tagline: isNL ? "Direct antwoord op je cijfers, zonder zoeken" : "Always instant answers to your numbers, no searching",
-      description: isNL
-        ? "Gekoppeld aan je database of backend. Vraag omzet, trends of teamdata op via Slack of Teams."
-        : "Connected to your database or backend. Ask for revenue, trends or team data via Slack or Teams.",
-      icon: BarChart3,
-      features: [
-        isNL ? "Gekoppeld aan je database of backend" : "Connected to your database or backend",
-        isNL ? "Vraag omzet, trends of teamdata op via Slack of Teams" : "Ask for revenue, trends or team data via Slack or Teams",
-        isNL ? "Antwoorden in gewone taal – binnen 3 seconden" : "Answers in plain language – within 3 seconds",
-        isNL ? "Automatische rapportages en alerts" : "Automatic reporting and alerts"
-      ],
-      highlight: isNL ? "Antwoord in seconden" : "3 sec response",
-      gradient: "from-orange-600 via-red-600 to-pink-600"
-    },
-    {
-      id: "custom-ai",
-      title: isNL ? "Maatwerk AI‑oplossingen" : "Custom AI Solutions",
-      tagline: isNL ? "AI die past bij je werk en teams" : "AI that adapts to your work and colleagues",
-      description: isNL
-        ? "Herkent patronen en denkt mee in processen. Reageert per afdeling of rol."
-        : "AI that recognizes patterns and thinks along in your processes. Responds differently per department or role.",
-      icon: TrendingUp,
-      features: [
-        isNL ? "Herkent patronen en denkt mee" : "Recognizes patterns and thinks along in your processes",
-        isNL ? "Reageert per afdeling of rol" : "Responds differently per department or role",
-        isNL ? "Neemt terugkerend werk stilletjes over" : "Quietly takes over recurring work",
-        isNL ? "Leert continue bij van je team" : "Continuously learns from your team"
-      ],
-      highlight: isNL ? "Zelflerend" : "Self-learning",
-      gradient: "from-emerald-600 via-green-600 to-teal-600"
-    },
-    {
-      id: "custom-website",
-      title: isNL ? "Website op Maat" : "Custom Website",
-      tagline: isNL ? "Professionele website, ingericht op jouw doel en doelgroep" : "A professional website, fully tailored to your goal and target audience",
-      description: isNL
-        ? "Binnen 7 dagen live. Snel, strak en gebouwd om te converteren."
-        : "Live within 7 days with sleek and fast design. Built to convert – from first impression to action.",
-      icon: Palette,
-      features: [
-        isNL ? "Binnen 7 dagen live" : "Live within 7 days with sleek and fast design",
-        isNL ? "Ontworpen voor conversie" : "Built to convert – from first impression to action",
-        isNL ? "SEO‑integratie inbegrepen" : "SEO integration included",
-        isNL ? "Volledig responsive" : "Fully responsive on all devices"
-      ],
-      highlight: isNL ? "7 dagen live" : "7 days live",
-      gradient: "from-pink-600 via-rose-600 to-red-600"
+      highlight: "",
+      gradient: "from-orange-500 to-red-500"
     }
   ];
 };
@@ -174,7 +126,7 @@ const Services = () => {
     <section id="services" className="py-16 sm:py-20 md:py-24 overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
         {/* Header */}
-        <motion.div 
+        <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -184,62 +136,30 @@ const Services = () => {
             <Zap className="h-3 w-3 mr-1" />
             {language === 'nl' ? 'Onze Diensten' : 'Our Services'}
           </Badge>
-          
+
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-            {language === 'nl' 
-              ? <>Oplossingen die <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-600">werken</span></>
-              : <>Solutions that <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-600">transform</span></>
+            {language === 'nl'
+              ? <>Oplossingen die <span className="text-[#3B82F6] dark:text-[#86efac]">werken</span></>
+              : <>Solutions that <span className="text-[#3B82F6] dark:text-[#86efac]">work</span></>
             }
           </h2>
-          
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            {language === 'nl' 
-              ? 'Van AI‑integratie tot maatwerksoftware. Praktisch, snel live, meetbaar resultaat.'
-              : 'From AI integration to custom software: we build solutions that actually work for your team.'}
+
+          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
+            {language === 'nl'
+              ? 'Dit zijn de meest gevraagde oplossingen. We bouwen alles op maat.'
+              : 'These are the most requested solutions. We build everything custom.'}
           </p>
         </motion.div>
 
-        {/* Services Bento Grid Style */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6" ref={ref}>
-          {/* First row - 2 large cards */}
-          <motion.div
-            className="lg:col-span-6"
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-          >
-            <ServiceCard
-              service={services[0]}
-              language={language}
-              isLarge={true}
-              onClick={() => setSelectedService(services[0].id)}
-              isSelected={selectedService === services[0].id}
-            />
-          </motion.div>
-          
-          <motion.div
-            className="lg:col-span-6"
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >
-            <ServiceCard
-              service={services[1]}
-              language={language}
-              isLarge={true}
-              onClick={() => setSelectedService(services[1].id)}
-              isSelected={selectedService === services[1].id}
-            />
-          </motion.div>
 
-          {/* Second row - 3 medium cards */}
-          {services.slice(2, 5).map((service, index) => (
+        {/* Services Clean 3-Column Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" ref={ref}>
+          {services.map((service, index) => (
             <motion.div
               key={service.id}
-              className="lg:col-span-4"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
             >
               <ServiceCard
                 service={service}
@@ -249,132 +169,23 @@ const Services = () => {
               />
             </motion.div>
           ))}
-
-          {/* Third row - 1 full width card */}
-          <motion.div
-            className="lg:col-span-12"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.6 }}
-          >
-            <ServiceCard
-              service={services[5]}
-              language={language}
-              isFullWidth={true}
-              onClick={() => setSelectedService(services[5].id)}
-              isSelected={selectedService === services[5].id}
-            />
-          </motion.div>
         </div>
-
-        {/* Trust Indicators */}
-        <motion.div
-          className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.7 }}
-        >
-          <div className="text-center">
-            <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-black dark:bg-white mb-3">
-              <Clock className="h-5 w-5 text-white dark:text-black" />
-            </div>
-            <div className="text-2xl font-bold mb-1">2-4</div>
-            <div className="text-sm text-muted-foreground">
-              {language === 'nl' ? 'Weken levertijd' : 'Weeks delivery'}
-            </div>
-          </div>
-          
-          <div className="text-center">
-            <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-black dark:bg-white mb-3">
-              <Shield className="h-5 w-5 text-white dark:text-black" />
-            </div>
-            <div className="text-2xl font-bold mb-1">100%</div>
-            <div className="text-sm text-muted-foreground">
-              {language === 'nl' ? 'Garantie' : 'Guarantee'}
-            </div>
-          </div>
-          
-          <div className="text-center">
-            <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-black dark:bg-white mb-3">
-              <Users className="h-5 w-5 text-white dark:text-black" />
-            </div>
-            <div className="text-2xl font-bold mb-1">50+</div>
-            <div className="text-sm text-muted-foreground">
-              {language === 'nl' ? 'Tevreden klanten' : 'Happy clients'}
-            </div>
-          </div>
-          
-          <div className="text-center">
-            <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-black dark:bg-white mb-3">
-              <Star className="h-5 w-5 text-white dark:text-black" />
-            </div>
-            <div className="text-2xl font-bold mb-1">4.9/5</div>
-            <div className="text-sm text-muted-foreground">
-              {language === 'nl' ? 'Beoordeling' : 'Rating'}
-            </div>
-          </div>
-        </motion.div>
-
-        {/* CTA */}
-        <motion.div
-          className="mt-20"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.8 }}
-        >
-          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 p-12 md:p-16 text-center border border-gray-200 dark:border-gray-700 shadow-xl">
-            {/* Background decoration */}
-            <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-blue-500/5 to-pink-500/5" />
-            <div className="absolute -top-24 -right-24 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl" />
-            <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl" />
-            
-            {/* Content */}
-            <div className="relative z-10">
-              <h3 className="text-3xl md:text-4xl font-bold mb-4">
-                {language === 'nl' ? 'Klaar om te beginnen?' : 'Ready to start?'}
-              </h3>
-              <p className="text-lg text-muted-foreground mb-10 max-w-2xl mx-auto">
-                {language === 'nl' 
-                  ? 'Laten we bespreken hoe we jouw business kunnen transformeren.'
-                  : "Let's build your next success project together"}
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button 
-                  size="lg" 
-                  onClick={() => scrollToSection('contact')}
-                  className="bg-black dark:bg-white text-white dark:text-black hover:bg-gray-800 dark:hover:bg-gray-200 px-8 py-6 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-200"
-                >
-                  {language === 'nl' ? 'Plan een kennismaking' : 'Start your project'}
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-                <Button 
-                  size="lg" 
-                  variant="outline" 
-                  onClick={() => scrollToSection('book-meeting')}
-                  className="border-2 px-8 py-6 text-lg rounded-xl hover:bg-gray-50 dark:hover:bg-gray-900 transition-all duration-200"
-                >
-                  {language === 'nl' ? 'Gratis demo aanvragen' : 'View demo'}
-                </Button>
-              </div>
-            </div>
-          </div>
-        </motion.div>
       </div>
     </section>
   );
 };
 
 // Service Card Component
-const ServiceCard = ({ 
-  service, 
-  language, 
-  isLarge = false, 
+const ServiceCard = ({
+  service,
+  language,
+  isLarge = false,
   isFullWidth = false,
   onClick,
-  isSelected 
-}: { 
-  service: Service; 
-  language: string; 
+  isSelected
+}: {
+  service: Service;
+  language: string;
   isLarge?: boolean;
   isFullWidth?: boolean;
   onClick?: () => void;
@@ -382,88 +193,80 @@ const ServiceCard = ({
 }) => {
   const Icon = service.icon;
   const [isHovered, setIsHovered] = useState(false);
-  
+
   return (
     <div
       className={`
         relative group cursor-pointer h-full
-        ${isFullWidth ? 'min-h-[280px]' : isLarge ? 'min-h-[420px]' : 'min-h-[360px]'}
+        ${isFullWidth ? 'min-h-[280px]' : isLarge ? 'min-h-[420px]' : 'min-h-[400px]'}
       `}
       onClick={onClick}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      {/* Background gradient */}
-      <div className={`
-        absolute inset-0 rounded-2xl bg-gradient-to-br ${service.gradient}
-        opacity-5 group-hover:opacity-10 transition-opacity duration-500
-      `} />
-      
+      {/* Background gradient - subtle */}
+      <div className="absolute inset-0 rounded-2xl bg-slate-500/5 group-hover:bg-slate-500/10 transition-opacity duration-500" />
+
       {/* Card content */}
       <div className={`
-        relative h-full p-6 sm:p-8 rounded-2xl border 
+        relative h-full p-6 rounded-2xl border 
         ${isSelected ? 'border-primary bg-primary/5' : 'border-border/50 bg-card/50'}
-        backdrop-blur-sm transition-all duration-300
+        backdrop-blur-sm transition-all duration-300 hover:border-primary/50
         group-hover:border-primary/50 group-hover:shadow-xl
-        ${isFullWidth ? 'flex flex-col lg:flex-row items-center gap-8' : 'flex flex-col'}
+        ${isFullWidth ? 'flex flex-col lg:flex-row items-start gap-8' : 'flex flex-col'}
       `}>
-        {/* Badge */}
-        <Badge 
-          className="absolute top-4 right-4 bg-background/90 border-primary/20"
-          variant="outline"
-        >
-          {service.highlight}
-        </Badge>
-        
-        {/* Icon and Title Section */}
-        <div className={`${isFullWidth ? 'lg:w-1/3' : ''}`}>
-          <div className={`
-            inline-flex p-3 rounded-xl mb-4
-            bg-gradient-to-br ${service.gradient}
-          `}>
-            <Icon className="h-6 w-6 text-white" />
+        {/* Badge - only show if not empty */}
+        {service.highlight && (
+          <Badge
+            className="absolute top-4 right-4 bg-background/90 border-primary/20"
+            variant="outline"
+          >
+            {service.highlight}
+          </Badge>
+        )}
+
+        <div className={`${isFullWidth ? 'lg:w-1/3' : ''} flex-shrink-0`}>
+          <div className="inline-flex p-3 rounded-xl mb-3">
+            <Icon className="h-10 w-10 text-primary" />
           </div>
-          
-          <h3 className="text-xl sm:text-2xl font-bold mb-2">
+
+          <h3 className="text-xl sm:text-2xl font-bold mb-2 text-foreground">
             {service.title}
           </h3>
-          
-          <p className="text-sm text-primary font-medium mb-3">
+
+          <p className="text-sm text-primary dark:text-primary/90 font-semibold mb-3">
             {service.tagline}
           </p>
-          
-          <p className="text-muted-foreground text-sm sm:text-base mb-4">
+
+          <p className="text-foreground/80 dark:text-foreground/70 text-base leading-relaxed mb-5 min-h-[60px]">
             {service.description}
           </p>
         </div>
-        
-        {/* Features */}
-        <div className={`${isFullWidth ? 'lg:w-2/3' : ''} space-y-3 flex-grow`}>
+
+        <div className={`${isFullWidth ? 'lg:w-2/3' : ''} flex-grow flex flex-col justify-start`}>
           {isFullWidth && (
-            <h4 className="font-semibold mb-4 text-lg">
+            <h4 className="font-semibold mb-4 text-lg text-foreground">
               {language === 'nl' ? 'Wat je krijgt' : 'What you get:'}
             </h4>
           )}
-          <div className={`
-            ${isFullWidth ? 'grid grid-cols-1 sm:grid-cols-2 gap-3' : 'space-y-3'}
-          `}>
-            {(isLarge || isFullWidth ? service.features : service.features.slice(0, 2)).map((feature, idx) => (
-              <motion.div 
-                key={idx} 
-                className="flex items-start gap-2"
+          <div className="space-y-3">
+            {service.features.map((feature, idx) => (
+              <motion.div
+                key={idx}
+                className="flex items-start gap-3"
                 initial={{ opacity: 0, x: -10 }}
-                animate={{ opacity: isHovered ? 1 : 0.8, x: 0 }}
+                animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: idx * 0.05 }}
               >
                 <div className="mt-0.5">
                   <Check className="h-4 w-4 text-green-500" />
                 </div>
-                <span className="text-sm text-muted-foreground">{feature}</span>
+                <span className="text-sm text-foreground/70 dark:text-foreground/60">{feature}</span>
               </motion.div>
             ))}
           </div>
         </div>
-        
+
         {/* Hover indicator */}
         <div className={`
           absolute bottom-6 ${isFullWidth ? 'right-8' : 'right-6'} 

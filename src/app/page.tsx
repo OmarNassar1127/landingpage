@@ -2,16 +2,13 @@ import { Metadata } from "next";
 import Navbar from "@/components/sections/navbar";
 import Hero from "@/components/sections/hero";
 import CompanySlider from "@/components/sections/company-slider";
-import DemoVideo from "@/components/sections/demo-video";
-import AutomationsShowcase from "@/components/sections/automations-showcase";
 import Projects from "@/components/sections/projects";
 import Services from "@/components/sections/services";
-import WorkshopSection from "@/components/sections/workshop-section";
-import About from "@/components/sections/about";
 import Testimonials from "@/components/sections/testimonials";
-import Contact from "@/components/sections/contact";
-import BookMeeting from "@/components/sections/book-meeting";
 import Footer from "@/components/sections/footer";
+import FloatingWhatsAppButton from "@/components/floating-whatsapp-button";
+import IntakeExplanationSection from "@/components/sections/intake-explanation-section";
+import GuaranteeSection from "@/components/sections/guarantee-section";
 import { generateMetadata } from "@/lib/metadata";
 import { siteConfig } from "@/lib/config";
 import JsonLd from "@/components/seo/json-ld";
@@ -101,30 +98,21 @@ export default function Home() {
         <Navbar />
         <Hero />
         <CompanySlider />
-        <DemoVideo />
-        <AutomationsShowcase />
+        <GuaranteeSection />
         <div id={siteConfig.sections.services.substring(1)}>
           <Services />
-        </div>
-        <div id={siteConfig.sections.workshop.substring(1)}>
-          <WorkshopSection />
         </div>
         <div id={siteConfig.sections.projects.substring(1)}>
           <Projects />
         </div>
-        <div id={siteConfig.sections.about.substring(1)}>
-          <About />
-        </div>
         <div id={siteConfig.sections.testimonials.substring(1)}>
           <Testimonials />
         </div>
-        <div id={siteConfig.sections.bookMeeting.substring(1)}>
-          <BookMeeting />
-        </div>
-        <div id={siteConfig.sections.contact.substring(1)}>
-          <Contact />
-        </div>
+        <IntakeExplanationSection />
+
+
         <Footer />
+        <FloatingWhatsAppButton />
       </main>
     </>
   );

@@ -1,109 +1,335 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { useLanguage } from "@/lib/i18n/language-context";
+import {
+  SiSlack,
+  SiNotion,
+  SiGoogledrive,
+  SiTrello,
+  SiAsana,
+  SiGooglesheets,
+} from "react-icons/si";
+import { Zap, Workflow, Bot, Database, Mail, Calendar } from "lucide-react";
+
+// Tool icon configuration with colors and positions
+const tools = [
+  { Icon: SiSlack, color: "from-purple-500 to-purple-600", name: "Slack", angle: 0 },
+  { Icon: SiNotion, color: "from-gray-800 to-gray-900", name: "Notion", angle: 45 },
+  { Icon: SiGoogledrive, color: "from-blue-500 to-blue-600", name: "Drive", angle: 90 },
+  { Icon: Zap, color: "from-orange-500 to-orange-600", name: "Zapier", angle: 135 },
+  { Icon: SiTrello, color: "from-blue-400 to-blue-500", name: "Trello", angle: 180 },
+  { Icon: SiAsana, color: "from-pink-500 to-rose-600", name: "Asana", angle: 225 },
+  { Icon: Bot, color: "from-emerald-500 to-green-600", name: "AI", angle: 270 },
+  { Icon: SiGooglesheets, color: "from-green-600 to-green-700", name: "Sheets", angle: 315 },
+];
+
+// Desktop-only additional tools for richer visual
+const desktopTools = [
+  { Icon: Database, color: "from-indigo-500 to-indigo-600", name: "Database", angle: 22.5, distance: 1.3 },
+  { Icon: Mail, color: "from-red-500 to-red-600", name: "Email", angle: 67.5, distance: 1.3 },
+  { Icon: Workflow, color: "from-violet-500 to-violet-600", name: "Make", angle: 112.5, distance: 1.3 },
+  { Icon: Calendar, color: "from-cyan-500 to-cyan-600", name: "Calendar", angle: 292.5, distance: 1.3 },
+];
 
 const AutomationsShowcase = () => {
   const { t } = useLanguage();
+  const shouldReduceMotion = useReducedMotion();
+
+  // Calculate position on orbital ring
+  const getOrbitPosition = (angle: number, distance: number = 1) => {
+    const radius = 180 * distance; // Base radius in pixels
+    const rad = (angle * Math.PI) / 180;
+    return {
+      x: Math.cos(rad) * radius,
+      y: Math.sin(rad) * radius,
+    };
+  };
 
   return (
-    <section className="py-8 sm:py-12 md:py-16">
-      <div className="container mx-auto px-2 sm:px-4 md:px-6">
-        {/* Compact inline stats display */}
+    <section className="relative py-16 sm:py-20 md:py-24 lg:py-32 overflow-hidden">
+      {/* Subtle background gradient */}
+      <div className="absolute inset-0 bg-gradient-radial from-primary/5 via-transparent to-transparent pointer-events-none" />
+
+      <div className="container mx-auto px-4 sm:px-6 md:px-8">
+        {/* Section header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center"
+          className="text-center mb-12 md:mb-16"
         >
-          {/* Main content in a sleek horizontal layout */}
-          <div className="inline-flex flex-col sm:flex-row items-center gap-4 sm:gap-6 md:gap-8 bg-gradient-to-r from-primary/5 via-background to-purple-500/5 border border-primary/20 rounded-2xl px-4 sm:px-6 md:px-8 py-4 sm:py-4 md:py-6 backdrop-blur-sm max-w-full">
-            
-            {/* Number badge */}
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-4">
+            {t.automationsShowcase?.title || "Turn Manual Tasks into Automations"}
+          </h2>
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
+            {t.automationsShowcase?.subtitle || "Connect your tools and automate your workflow"}
+          </p>
+        </motion.div>
+
+        {/* 3D Pipeline Animation Container */}
+        <div className="relative w-full max-w-5xl mx-auto">
+          {/* Main animation stage with 3D perspective */}
+          <div
+            className="relative h-[400px] sm:h-[500px] md:h-[600px] lg:h-[700px]"
+            style={{
+              perspective: "1200px",
+              perspectiveOrigin: "center center",
+            }}
+          >
+            {/* 3D scene container */}
             <motion.div
-              initial={{ scale: 0 }}
-              whileInView={{ scale: 1 }}
+              initial={{ opacity: 0, scale: 0.8, rotateX: 45 }}
+              whileInView={{ opacity: 1, scale: 1, rotateX: 20 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2, type: "spring" }}
-              className="relative flex-shrink-0"
+              transition={{
+                duration: 1.2,
+                ease: [0.16, 1, 0.3, 1],
+                delay: 0.2
+              }}
+              className="absolute inset-0 flex items-center justify-center"
+              style={{
+                transformStyle: "preserve-3d",
+              }}
             >
-              <div className="bg-primary text-white dark:text-black rounded-xl px-3 sm:px-4 py-2 shadow-lg">
-                <div className="text-xl sm:text-2xl md:text-3xl font-bold">200+</div>
-              </div>
-              
-              {/* Animated pulse ring */}
-              <motion.div
-                animate={{ scale: [1, 1.2, 1], opacity: [0.5, 0, 0.5] }}
-                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute inset-0 bg-primary rounded-xl -z-10"
-              />
-            </motion.div>
-
-            {/* Vertical divider - hidden on mobile */}
-            <div className="hidden sm:block h-12 w-px bg-gradient-to-b from-transparent via-primary/30 to-transparent" />
-
-            {/* Text content */}
-            <div className="text-center sm:text-left">
-              <motion.h3
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-gray-900 dark:text-white mb-1"
-              >
-                {t.automationsShowcase.title}
-              </motion.h3>
-              <motion.p
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-                className="text-xs sm:text-sm md:text-base text-primary font-medium"
-              >
-                {t.automationsShowcase.subtitle}
-              </motion.p>
-            </div>
-
-            {/* Mini floating icons */}
-            <div className="hidden lg:flex items-center gap-2">
-              {[...Array(3)].map((_, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, scale: 0 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: 0.5 + i * 0.1 }}
-                  animate={{ 
-                    y: [0, -4, 0],
-                    transition: {
-                      duration: 2 + i * 0.5,
+              {/* Central automation target */}
+              <div className="relative">
+                {/* Outer rings with depth */}
+                {[0, 1, 2, 3].map((ring) => (
+                  <motion.div
+                    key={ring}
+                    animate={shouldReduceMotion ? {} : {
+                      scale: [1, 1.05, 1],
+                      opacity: [0.6 - ring * 0.1, 0.8 - ring * 0.1, 0.6 - ring * 0.1],
+                    }}
+                    transition={{
+                      duration: 3 + ring * 0.5,
                       repeat: Infinity,
                       ease: "easeInOut",
-                      delay: i * 0.3
-                    }
+                      delay: ring * 0.2,
+                    }}
+                    className="absolute inset-0 rounded-full border-2 border-primary/30"
+                    style={{
+                      width: `${120 + ring * 40}px`,
+                      height: `${120 + ring * 40}px`,
+                      top: `50%`,
+                      left: `50%`,
+                      transform: `translate(-50%, -50%) translateZ(${-ring * 5}px)`,
+                      boxShadow: `0 ${4 + ring * 2}px ${20 + ring * 10}px rgba(var(--primary-rgb, 59, 130, 246), ${0.15 - ring * 0.03})`,
+                    }}
+                  />
+                ))}
+
+                {/* Core bullseye */}
+                <motion.div
+                  animate={shouldReduceMotion ? {} : {
+                    rotate: [0, 360],
                   }}
-                  className={`w-8 h-8 rounded-lg bg-gradient-to-br shadow-md flex items-center justify-center ${
-                    i === 0 ? 'from-blue-500 to-indigo-600' :
-                    i === 1 ? 'from-purple-500 to-pink-600' :
-                    'from-green-500 to-emerald-600'
-                  }`}
+                  transition={{
+                    duration: 20,
+                    repeat: Infinity,
+                    ease: "linear",
+                  }}
+                  className="relative w-32 h-32 rounded-full bg-gradient-to-br from-primary via-primary/90 to-primary/80 flex items-center justify-center"
+                  style={{
+                    boxShadow: `
+                      0 0 0 8px hsl(var(--primary) / 0.2),
+                      0 0 0 16px hsl(var(--primary) / 0.1),
+                      0 8px 32px rgba(var(--primary-rgb, 59, 130, 246), 0.4),
+                      inset 0 2px 8px rgba(255, 255, 255, 0.2)
+                    `,
+                    transformStyle: "preserve-3d",
+                    transform: "translateZ(20px)",
+                  }}
                 >
-                  <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    {i === 0 ? (
-                      // AI icon
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                    ) : i === 1 ? (
-                      // Gear icon
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-                    ) : (
-                      // Lightning icon
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                    )}
-                  </svg>
+                  {/* Inner concentric circles */}
+                  <div className="absolute inset-4 rounded-full bg-primary-foreground/10 flex items-center justify-center">
+                    <div className="absolute inset-3 rounded-full bg-primary-foreground/10 flex items-center justify-center">
+                      <Zap className="w-10 h-10 text-white drop-shadow-lg" strokeWidth={2.5} />
+                    </div>
+                  </div>
                 </motion.div>
-              ))}
+
+                {/* Orbiting tool icons */}
+                <div className="absolute inset-0">
+                  {tools.map((tool, index) => {
+                    const pos = getOrbitPosition(tool.angle);
+                    return (
+                      <motion.div
+                        key={tool.name}
+                        initial={{ opacity: 0, scale: 0 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        animate={shouldReduceMotion ? {} : {
+                          rotate: [0, 360],
+                          y: [0, -8, 0],
+                        }}
+                        transition={{
+                          default: {
+                            duration: 0.5,
+                            delay: 0.5 + index * 0.08,
+                            type: "spring",
+                            stiffness: 200,
+                          },
+                          rotate: {
+                            duration: 25,
+                            repeat: Infinity,
+                            ease: "linear",
+                          },
+                          y: {
+                            duration: 2 + (index % 3) * 0.5,
+                            repeat: Infinity,
+                            ease: "easeInOut",
+                            delay: index * 0.15,
+                          },
+                        }}
+                        className="absolute"
+                        style={{
+                          left: `calc(50% + ${pos.x}px)`,
+                          top: `calc(50% + ${pos.y}px)`,
+                          transform: "translate(-50%, -50%) translateZ(30px)",
+                          transformStyle: "preserve-3d",
+                        }}
+                      >
+                        {/* Icon container with glassmorphism */}
+                        <div
+                          className={`
+                            relative w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 
+                            rounded-2xl bg-gradient-to-br ${tool.color}
+                            flex items-center justify-center
+                            shadow-xl hover:scale-110 transition-transform duration-300
+                            cursor-pointer group
+                          `}
+                          style={{
+                            boxShadow: `
+                              0 4px 16px rgba(0, 0, 0, 0.1),
+                              0 8px 32px rgba(0, 0, 0, 0.08),
+                              inset 0 1px 0 rgba(255, 255, 255, 0.3)
+                            `,
+                          }}
+                        >
+                          <tool.Icon className="w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10 text-white drop-shadow-md" />
+
+                          {/* Tooltip */}
+                          <div className="absolute -top-10 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                            <div className="bg-gray-900 text-white text-xs font-medium px-3 py-1.5 rounded-lg shadow-lg">
+                              {tool.name}
+                            </div>
+                          </div>
+
+                          {/* Subtle glow on hover */}
+                          <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity bg-white/20" />
+                        </div>
+
+                        {/* Pipeline connector line to center */}
+                        <svg
+                          className="absolute top-1/2 left-1/2 pointer-events-none"
+                          style={{
+                            width: `${Math.abs(pos.x) + 100}px`,
+                            height: `${Math.abs(pos.y) + 100}px`,
+                            transform: "translate(-50%, -50%)",
+                          }}
+                        >
+                          <motion.line
+                            x1="50%"
+                            y1="50%"
+                            x2={pos.x > 0 ? "0%" : "100%"}
+                            y2={pos.y > 0 ? "0%" : "100%"}
+                            stroke="hsl(var(--primary))"
+                            strokeWidth="2"
+                            strokeDasharray="4 4"
+                            opacity="0.2"
+                            animate={shouldReduceMotion ? {} : {
+                              strokeDashoffset: [0, -8],
+                            }}
+                            transition={{
+                              duration: 1.5,
+                              repeat: Infinity,
+                              ease: "linear",
+                            }}
+                          />
+                        </svg>
+                      </motion.div>
+                    );
+                  })}
+
+                  {/* Desktop-only outer ring icons */}
+                  <div className="hidden xl:block">
+                    {desktopTools.map((tool, index) => {
+                      const pos = getOrbitPosition(tool.angle, tool.distance);
+                      return (
+                        <motion.div
+                          key={tool.name}
+                          initial={{ opacity: 0, scale: 0 }}
+                          whileInView={{ opacity: 1, scale: 1 }}
+                          viewport={{ once: true }}
+                          animate={shouldReduceMotion ? {} : {
+                            y: [0, -6, 0],
+                          }}
+                          transition={{
+                            default: {
+                              duration: 0.5,
+                              delay: 0.9 + index * 0.08,
+                              type: "spring",
+                            },
+                            y: {
+                              duration: 2.5 + (index % 2) * 0.5,
+                              repeat: Infinity,
+                              ease: "easeInOut",
+                              delay: index * 0.2,
+                            }
+                          }}
+                          className="absolute"
+                          style={{
+                            left: `calc(50% + ${pos.x}px)`,
+                            top: `calc(50% + ${pos.y}px)`,
+                            transform: "translate(-50%, -50%) translateZ(20px)",
+                            transformStyle: "preserve-3d",
+                          }}
+                        >
+                          <div
+                            className={`
+                              w-12 h-12 md:w-14 md:h-14 rounded-xl 
+                              bg-gradient-to-br ${tool.color}
+                              flex items-center justify-center shadow-lg
+                              hover:scale-110 transition-transform duration-300
+                            `}
+                            style={{
+                              boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.3)",
+                            }}
+                          >
+                            <tool.Icon className="w-6 h-6 md:w-7 md:h-7 text-white drop-shadow-md" />
+                          </div>
+                        </motion.div>
+                      );
+                    })}
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+
+        {/* Bottom stats badge - keeping the 200+ number */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 1 }}
+          className="text-center mt-12"
+        >
+          <div className="inline-flex items-center gap-3 bg-gradient-to-r from-primary/10 via-primary/5 to-transparent border border-primary/20 rounded-full px-6 py-3 backdrop-blur-sm">
+            <div className="flex items-center gap-2">
+              <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+              <span className="text-2xl font-bold bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent">
+                200+
+              </span>
             </div>
+            <div className="w-px h-6 bg-primary/20" />
+            <span className="text-sm font-medium text-muted-foreground">
+              Automations Built & Delivered
+            </span>
           </div>
         </motion.div>
       </div>

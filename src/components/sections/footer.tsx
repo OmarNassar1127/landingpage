@@ -22,7 +22,7 @@ function WhatsAppIcon({ className }: { className?: string }) {
 }
 
 export default function Footer() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   return (
     <footer className="bg-background py-12">
@@ -35,18 +35,22 @@ export default function Footer() {
               transition={{ duration: 0.5 }}
               className="space-y-4"
             >
-              <a 
-                href="/" 
-                className="text-2xl font-bold tracking-widest bg-gradient-to-r from-purple-400 to-blue-400 text-transparent bg-clip-text hover:opacity-80 transition"
+              <a
+                href="/"
+                className="flex items-center hover:opacity-80 transition"
                 onClick={(e) => {
                   e.preventDefault();
                   window.scrollTo({ top: 0, behavior: "smooth" });
                 }}
               >
-                VIRELIO
+                <span className="text-2xl font-black tracking-tight">
+                  Virelio<span className="text-primary">.</span>
+                </span>
               </a>
-              <p className="text-muted-foreground max-w-md">
-                {t.footer.description}
+              <p className="text-muted-foreground max-w-md leading-relaxed">
+                {language === 'nl'
+                  ? 'AI-oplossingen op maat. Kennisbanken, AI Agents en Automatiseringen. Van idee tot live in 2 weken.'
+                  : 'Custom AI solutions. Knowledge bases, AI Agents, and Automations. From idea to live in 2 weeks.'}
               </p>
             </motion.div>
           </div>
@@ -121,22 +125,10 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-border mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-sm text-muted-foreground">
+        <div className="border-t border-border mt-12 pt-8">
+          <p className="text-sm text-muted-foreground text-center">
             &copy; {new Date().getFullYear()} Virelio. {t.footer.rights}
           </p>
-
-          <div className="flex space-x-6 mt-4 md:mt-0">
-            <a
-              href="https://wa.me/31640446732"
-              className="text-black dark:text-white hover:text-gray-700 dark:hover:text-gray-300"
-              aria-label="WhatsApp"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <WhatsAppIcon className="h-5 w-5" />
-            </a>
-          </div>
         </div>
       </div>
     </footer>

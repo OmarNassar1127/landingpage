@@ -25,10 +25,6 @@ const ClientPolicyRoutes = dynamic(
   { ssr: false }
 );
 
-const ClientWhatsAppButton = dynamic(
-  () => import('@/components/ui/client-whatsapp-button').then(mod => mod.ClientWhatsAppButton),
-  { ssr: false }
-);
 
 const ClientCookieConsent = dynamic(
   () => import('@/components/ui/client-cookie-consent').then(mod => mod.ClientCookieConsent),
@@ -172,8 +168,7 @@ export default function RootLayout({
             {children}
             {/* Hash routing for policy pages */}
             <ClientPolicyRoutes />
-            {/* WhatsApp button */}
-            <ClientWhatsAppButton />
+
             {/* Cookie consent banner */}
             <ClientCookieConsent />
           </LanguageProvider>

@@ -7,7 +7,6 @@ import { Button } from "@/components/ui/button";
 import { scrollToSection } from "@/lib/scroll-utils";
 import { Star, ChevronRight, Sparkles, Layers, Users, BookOpen } from "lucide-react";
 import { useLanguage } from "@/lib/i18n/language-context";
-import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 export default function About() {
@@ -17,7 +16,7 @@ export default function About() {
     triggerOnce: false,
     threshold: 0.1,
   });
-  
+
   useEffect(() => {
     if (inView) {
       controls.start("visible");
@@ -33,7 +32,7 @@ export default function About() {
       const timer = setTimeout(() => {
         scrollToSection('about');
       }, 500); // 500ms delay should be enough for the page to fully load
-      
+
       return () => clearTimeout(timer);
     }
   }, []); // Empty dependency array means this runs only once on component mount
@@ -54,15 +53,15 @@ export default function About() {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { 
+      transition: {
         type: "spring",
         stiffness: 100,
         damping: 15,
-        duration: 0.6 
+        duration: 0.6
       },
     },
   };
-  
+
   const valueIcons = [
     <Sparkles key="sparkles" className="h-6 w-6 text-primary" />,
     <Layers key="layers" className="h-6 w-6 text-primary" />,
@@ -73,19 +72,19 @@ export default function About() {
   return (
     <section id="about" className="py-24 relative overflow-hidden">
       {/* Background decorative elements */}
-      <motion.div 
+      <motion.div
         className="absolute -right-40 top-20 w-80 h-80 rounded-full bg-primary/5 dark:bg-primary/10 blur-3xl"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 2 }}
       />
-      <motion.div 
+      <motion.div
         className="absolute -left-40 bottom-20 w-80 h-80 rounded-full bg-primary/5 dark:bg-primary/10 blur-3xl"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 2, delay: 0.5 }}
       />
-    
+
       <div className="container mx-auto px-4 relative z-10">
         <motion.div
           ref={ref}
@@ -97,20 +96,20 @@ export default function About() {
           {/* Header Section */}
           <div className="text-center mx-auto max-w-3xl">
             <div className="inline-block">
-              <motion.div 
+              <motion.div
                 className="w-20 h-1 bg-primary mb-4 mx-auto"
                 initial={{ width: 0 }}
                 animate={{ width: "5rem" }}
                 transition={{ duration: 0.8, delay: 0.2 }}
               />
             </div>
-            <motion.h2 
+            <motion.h2
               className="text-3xl md:text-4xl font-bold tracking-tight mb-4"
               variants={itemVariants}
             >
               {t.about.title}
             </motion.h2>
-            <motion.p 
+            <motion.p
               className="text-muted-foreground"
               variants={itemVariants}
             >
@@ -118,21 +117,21 @@ export default function About() {
             </motion.p>
           </div>
 
-          {/* About Content + Founders Image */}
+          {/* About Content - Centered Single Column */}
           <motion.div
             variants={containerVariants}
-            className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center"
+            className="max-w-3xl mx-auto"
           >
-            <motion.div variants={itemVariants} className="space-y-6 order-2 md:order-1 p-6 rounded-lg bg-primary/5 border border-primary/10 shadow-sm mt-4">
-              <motion.h3 
-                className="text-2xl font-semibold"
+            <motion.div variants={itemVariants} className="space-y-6 p-8 rounded-lg bg-card border border-primary/10 shadow-sm">
+              <motion.h3
+                className="text-2xl font-semibold text-center"
                 variants={itemVariants}
                 id="about-team"
               >
                 {t.about.teamTitle}
               </motion.h3>
-              
-              <motion.div 
+
+              <motion.div
                 className="text-muted-foreground space-y-4"
                 variants={itemVariants}
               >
@@ -142,19 +141,18 @@ export default function About() {
                   ))}
                 </div>
               </motion.div>
-              
-              
-              <motion.div 
+
+              <motion.div
                 variants={itemVariants}
-                className="flex justify-center pt-2"
+                className="flex justify-center pt-4"
               >
-                <Button 
-                  size="mobile" 
-                  className="bg-primary hover:bg-primary/90 text-white dark:text-black shadow-lg hover:shadow-xl transition-all duration-300 group"
+                <Button
+                  size="mobile"
+                  className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg hover:shadow-xl transition-all duration-300 group"
                   asChild
                 >
-                  <a 
-                    href="#contact" 
+                  <a
+                    href="#contact"
                     onClick={(e) => {
                       e.preventDefault();
                       scrollToSection("contact");
@@ -174,26 +172,6 @@ export default function About() {
                 </Button>
               </motion.div>
             </motion.div>
-            
-            {/* Founders Image */}
-            <motion.div 
-              variants={itemVariants} 
-              className="relative order-1 md:order-2"
-              whileHover={{ scale: 1.02 }}
-              transition={{ duration: 0.3 }}
-            >
-              <div className="overflow-hidden rounded-xl shadow-lg border border-primary/10 relative aspect-[3/2]">
-                <Image
-                  src="/founders/Founders.webp"
-                  alt="Virelio Founders"
-                  fill
-                  className="object-cover hover:scale-105 transition-transform duration-500"
-                />
-              </div>
-              <div className="absolute -bottom-4 -right-4 bg-primary/10 backdrop-blur-xl rounded-lg p-4 shadow-lg border border-primary/20">
-                <p className="text-sm font-medium">{t.about.theTeam}</p>
-              </div>
-            </motion.div>
           </motion.div>
 
           {/* Our Mission Section */}
@@ -201,15 +179,15 @@ export default function About() {
             variants={containerVariants}
             className="mt-16 max-w-3xl mx-auto"
           >
-            <motion.h3 
-                className="text-2xl font-semibold mb-6 text-center"
-                variants={itemVariants}
-                id="about-mission"
-              >
-                {t.about.missionTitle}
-              </motion.h3>
-            
-            <motion.p 
+            <motion.h3
+              className="text-2xl font-semibold mb-6 text-center"
+              variants={itemVariants}
+              id="about-mission"
+            >
+              {t.about.missionTitle}
+            </motion.h3>
+
+            <motion.p
               className="text-muted-foreground text-center mb-8"
               variants={itemVariants}
             >
@@ -218,18 +196,18 @@ export default function About() {
           </motion.div>
 
           {/* Our Values Section */}
-          <motion.div 
+          <motion.div
             variants={containerVariants}
             className="mt-16"
           >
-            <motion.h3 
+            <motion.h3
               className="text-2xl font-semibold mb-8 text-center"
               variants={itemVariants}
               id="about-values"
             >
               {t.about.valuesTitle}
             </motion.h3>
-            
+
             <motion.div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {[
                 {
