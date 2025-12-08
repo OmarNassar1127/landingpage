@@ -119,56 +119,56 @@ export default function IntakeExplanationSection() {
                         </div>
                     </div>
 
-                    {/* High-Impact CTA Section */}
+                    {/* Clean CTA Section */}
                     <motion.div
                         id="ready-to-start"
-                        className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-3xl p-12 md:p-16 text-center shadow-2xl border border-gray-700"
+                        className="bg-card border border-border rounded-2xl p-8 sm:p-12 text-center shadow-sm"
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.4 }}
                     >
-                        <h3 className="text-4xl md:text-5xl font-bold mb-4 text-white">
+                        <h3 className="text-2xl sm:text-3xl font-bold mb-3 text-foreground">
                             {language === 'nl' ? 'Klaar om te beginnen?' : 'Ready to start?'}
                         </h3>
 
-                        <p className="text-xl text-gray-300 mb-12">
+                        <p className="text-base sm:text-lg text-muted-foreground mb-8">
                             {language === 'nl'
                                 ? '30 minuten. Gratis. Geen verplichtingen.'
                                 : '30 minutes. Free. No commitments.'}
                         </p>
 
                         {/* Primary CTA */}
-                        <div className="mb-8 flex justify-center px-4">
+                        <div className="mb-6 flex justify-center">
                             <Button
                                 size="lg"
                                 asChild
-                                className="bg-blue-600 hover:bg-blue-700 text-white px-10 sm:px-16 py-6 sm:py-7 text-lg sm:text-xl rounded-xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 group w-full sm:w-auto"
+                                className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 sm:px-12 py-5 sm:py-6 text-base sm:text-lg rounded-xl shadow-md hover:shadow-lg transition-all duration-300 w-full sm:w-auto"
                             >
                                 <a
                                     href="https://calendly.com/quotum-consulting/30min"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="flex items-center justify-center gap-3"
+                                    className="flex items-center justify-center gap-2"
                                 >
                                     {language === 'nl' ? 'Plan een gesprek' : 'Schedule a call'}
-                                    <ArrowRight className="h-6 w-6 group-hover:translate-x-1 transition-transform" />
+                                    <ArrowRight className="h-5 w-5" />
                                 </a>
                             </Button>
                         </div>
 
                         {/* Trust Signals */}
-                        <div className="flex flex-wrap justify-center gap-6 md:gap-8 mb-10 text-gray-300 text-sm">
+                        <div className="flex flex-wrap justify-center gap-4 sm:gap-6 text-sm text-muted-foreground">
                             <div className="flex items-center gap-2">
-                                <Check className="h-5 w-5 text-green-400" strokeWidth={3} />
+                                <Check className="h-4 w-4 text-green-500" strokeWidth={2.5} />
                                 <span>{language === 'nl' ? 'Binnen 4u reactie' : 'Response within 4h'}</span>
                             </div>
                             <div className="flex items-center gap-2">
-                                <Check className="h-5 w-5 text-green-400" strokeWidth={3} />
+                                <Check className="h-4 w-4 text-green-500" strokeWidth={2.5} />
                                 <span>{language === 'nl' ? '18 bedrijven geholpen' : '18 companies helped'}</span>
                             </div>
                             <div className="flex items-center gap-2">
-                                <Check className="h-5 w-5 text-green-400" strokeWidth={3} />
+                                <Check className="h-4 w-4 text-green-500" strokeWidth={2.5} />
                                 <span>{language === 'nl' ? 'Geld-terug garantie' : 'Money-back guarantee'}</span>
                             </div>
                         </div>
