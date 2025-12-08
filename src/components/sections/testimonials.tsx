@@ -3,7 +3,6 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/lib/i18n/language-context";
-import { Quote } from "lucide-react";
 
 interface Testimonial {
   id: number;
@@ -88,18 +87,18 @@ export default function Testimonials() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-card border border-border rounded-2xl p-6 sm:p-8 hover:border-primary/50 transition-all duration-300 hover:shadow-lg"
+                className="bg-card border border-border rounded-2xl p-6 sm:p-8 hover:border-primary/50 transition-all duration-300 hover:shadow-lg relative overflow-hidden"
               >
-                {/* Quote Icon */}
-                <Quote className="h-8 w-8 text-primary/20 mb-4" />
+                {/* Subtle accent border */}
+                <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-primary/50 to-primary/20" />
 
                 {/* Quote */}
-                <blockquote className="text-base sm:text-lg text-foreground leading-relaxed mb-6">
+                <blockquote className="text-base sm:text-lg text-foreground leading-relaxed mb-6 pl-4">
                   "{language === 'nl' ? testimonial.content.nl : testimonial.content.en}"
                 </blockquote>
 
                 {/* Author */}
-                <div className="flex items-center gap-4 pt-4 border-t border-border/50">
+                <div className="flex items-center gap-4 pt-4 border-t border-border/50 pl-4">
                   <img
                     src={testimonial.image}
                     alt={testimonial.name}
