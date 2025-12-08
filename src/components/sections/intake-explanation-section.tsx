@@ -43,7 +43,7 @@ export default function IntakeExplanationSection() {
                     {/* Header */}
                     <div className="text-center mb-16">
                         <motion.h2
-                            className="text-3xl md:text-4xl font-bold mb-4"
+                            className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 px-4"
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
@@ -52,7 +52,7 @@ export default function IntakeExplanationSection() {
                         </motion.h2>
 
                         <motion.p
-                            className="text-lg text-muted-foreground"
+                            className="text-base sm:text-lg text-muted-foreground px-4"
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
@@ -139,17 +139,17 @@ export default function IntakeExplanationSection() {
                         </p>
 
                         {/* Primary CTA */}
-                        <div className="mb-8 flex justify-center">
+                        <div className="mb-8 flex justify-center px-4">
                             <Button
                                 size="lg"
                                 asChild
-                                className="bg-blue-600 hover:bg-blue-700 text-white px-16 py-7 text-xl rounded-xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 group"
+                                className="bg-blue-600 hover:bg-blue-700 text-white px-10 sm:px-16 py-6 sm:py-7 text-lg sm:text-xl rounded-xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 group w-full sm:w-auto"
                             >
                                 <a
                                     href="https://calendly.com/quotum-consulting/30min"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="flex items-center gap-3"
+                                    className="flex items-center justify-center gap-3"
                                 >
                                     {language === 'nl' ? 'Plan een gesprek' : 'Schedule a call'}
                                     <ArrowRight className="h-6 w-6 group-hover:translate-x-1 transition-transform" />

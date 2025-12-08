@@ -239,7 +239,7 @@ export default function Projects() {
                 transition: { delay: 0.1, duration: 0.5 }
               }
             }}
-            className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-4"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-4 px-4"
           >
             {language === 'nl' ? 'Projecten met resultaat' : 'Projects that Make Impact'}
           </motion.h2>
@@ -254,7 +254,7 @@ export default function Projects() {
                 transition: { delay: 0.2, duration: 0.5 }
               }
             }}
-            className="text-muted-foreground text-lg max-w-2xl mx-auto"
+            className="text-muted-foreground text-base sm:text-lg max-w-2xl mx-auto px-4"
           >
             {language === 'nl'
               ? 'Van startup tot enterprise: meetbaar resultaat dat jouw business vooruit helpt'

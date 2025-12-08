@@ -105,7 +105,7 @@ export default function Testimonials() {
           {/* Header */}
           <div className="text-center mb-16">
             <motion.h2
-              className="text-3xl md:text-5xl font-bold mb-4"
+              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 px-4"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -114,7 +114,7 @@ export default function Testimonials() {
             </motion.h2>
 
             <motion.p
-              className="text-lg text-muted-foreground"
+              className="text-base sm:text-lg text-muted-foreground px-4"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -193,7 +193,7 @@ export default function Testimonials() {
                 {duplicatedTestimonials.map((testimonial, index) => (
                   <motion.div
                     key={`${testimonial.id}-${index}`}
-                    className="flex-shrink-0 w-[600px] bg-card border border-border rounded-2xl p-8 hover:border-primary/50 transition-colors"
+                    className="flex-shrink-0 w-[90vw] sm:w-[500px] md:w-[600px] bg-card border border-border rounded-2xl p-6 sm:p-8 hover:border-primary/50 transition-colors"
                     onClick={handleCardClick}
                     whileHover={{
                       scale: 1.02,

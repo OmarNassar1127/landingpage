@@ -47,7 +47,7 @@ export default function Footer() {
                   Virelio<span className="text-primary">.</span>
                 </span>
               </a>
-              <p className="text-muted-foreground max-w-md leading-relaxed">
+              <p className="text-sm sm:text-base text-muted-foreground max-w-md leading-relaxed">
                 {language === 'nl'
                   ? 'AI-oplossingen op maat. Kennisbanken, AI Agents en Automatiseringen. Van idee tot live in 2 weken.'
                   : 'Custom AI solutions. Knowledge bases, AI Agents, and Automations. From idea to live in 2 weeks.'}

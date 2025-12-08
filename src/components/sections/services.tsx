@@ -132,14 +132,14 @@ const Services = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 px-4">
             {language === 'nl'
               ? <>Oplossingen die <span className="text-[#3B82F6] dark:text-[#86efac]">werken</span></>
               : <>Solutions that <span className="text-[#3B82F6] dark:text-[#86efac]">work</span></>
             }
           </h2>
 
-          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto px-4">
             {language === 'nl'
               ? 'Dit zijn de meest gevraagde oplossingen. We bouwen alles op maat.'
               : 'These are the most requested solutions. We build everything custom.'}
@@ -204,11 +204,11 @@ const ServiceCard = ({
 
       {/* Card content */}
       <div className={`
-        relative h-full p-6 rounded-2xl border 
+        relative h-full p-5 sm:p-6 rounded-2xl border 
         ${isSelected ? 'border-primary bg-primary/5' : 'border-border/50 bg-card/50'}
         backdrop-blur-sm transition-all duration-300 hover:border-primary/50
         group-hover:border-primary/50 group-hover:shadow-xl
-        ${isFullWidth ? 'flex flex-col lg:flex-row items-start gap-8' : 'flex flex-col'}
+        ${isFullWidth ? 'flex flex-col lg:flex-row items-start gap-6 sm:gap-8' : 'flex flex-col'}
       `}>
 
         <div className={`${isFullWidth ? 'lg:w-1/3' : ''} flex-shrink-0`}>

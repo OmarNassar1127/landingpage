@@ -78,7 +78,7 @@ function HeroContent() {
             className="space-y-6 md:space-y-8"
           >
             {/* Main headline - larger and more impactful */}
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black tracking-tight max-w-5xl px-2 sm:px-0 leading-[1.05]">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black tracking-tight max-w-5xl px-4 sm:px-0 leading-tight">
               {language === 'nl' ? (
                 <>
                   Virelio bouwt <em className="not-italic font-black text-[#3B82F6] dark:text-[#86efac]">AI</em>.
@@ -93,7 +93,7 @@ function HeroContent() {
 
           <motion.p
             variants={itemVariants}
-            className="max-w-2xl text-lg sm:text-xl md:text-2xl text-muted-foreground font-normal leading-relaxed px-4 sm:px-0 text-center"
+            className="max-w-2xl text-base sm:text-lg md:text-xl text-muted-foreground font-normal leading-relaxed px-6 sm:px-0 text-center"
           >
             {language === 'nl' ? (
               <>
@@ -115,7 +115,7 @@ function HeroContent() {
           >
             <Button
               size="lg"
-              className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg hover:shadow-xl transition-all duration-300 px-12 py-6 text-lg group"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg hover:shadow-xl transition-all duration-300 px-8 sm:px-12 py-5 sm:py-6 text-base sm:text-lg group w-full sm:w-auto"
               asChild
             >
               <a
