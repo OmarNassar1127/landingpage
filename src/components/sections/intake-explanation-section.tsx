@@ -157,19 +157,17 @@ export default function IntakeExplanationSection() {
                             </Button>
                         </div>
 
-                        {/* Alternative contact link */}
-                        <div className="mt-6">
-                            <a
-                                href="#contact"
-                                onClick={(e) => {
-                                    e.preventDefault();
-                                    scrollToSection('contact');
-                                }}
-                                className="text-sm text-muted-foreground hover:text-foreground transition-colors inline-flex items-center gap-2 group"
+                        {/* Contact Accordion */}
+                        <div className="max-w-sm mx-auto">
+                            <button
+                                onClick={() => setShowContact(!showContact)}
+                                className="flex items-center justify-center gap-2 text-foreground/70 hover:text-foreground transition-colors mx-auto group mb-4"
                             >
-                                {language === 'nl' ? 'Of neem direct contact op' : 'Or contact us directly'}
-                                <ChevronRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                            </a>
+                                <span className="text-base">{language === 'nl' ? 'Of neem direct contact op' : 'Or contact directly'}</span>
+                                <ChevronRight
+                                    className={`h-5 w-5 transition-transform ${showContact ? 'rotate-90' : ''}`}
+                                />
+                            </button>
                         </div>
 
                         {/* Trust Signals */}
