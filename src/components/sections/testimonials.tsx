@@ -126,19 +126,17 @@ export default function Testimonials() {
   );
 }
 
-
-interface Testimonial {
-  id: number;
-  name: string;
-  role: {
-    en: string;
-    nl: string;
-  };
-  image: string;
-  content: {
-    en: string;
-    nl: string;
-  };
+id: number;
+name: string;
+role: {
+  en: string;
+  nl: string;
+};
+image: string;
+content: {
+  en: string;
+  nl: string;
+};
 }
 
 export default function Testimonials() {
