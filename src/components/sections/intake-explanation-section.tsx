@@ -157,19 +157,6 @@ export default function IntakeExplanationSection() {
                             </Button>
                         </div>
 
-                        {/* Contact Accordion */}
-                        <div className="max-w-sm mx-auto">
-                            <button
-                                onClick={() => setShowContact(!showContact)}
-                                className="flex items-center justify-center gap-2 text-foreground/70 hover:text-foreground transition-colors mx-auto group mb-4"
-                            >
-                                <span className="text-base">{language === 'nl' ? 'Of neem direct contact op' : 'Or contact directly'}</span>
-                                <ChevronRight
-                                    className={`h-5 w-5 transition-transform ${showContact ? 'rotate-90' : ''}`}
-                                />
-                            </button>
-                        </div>
-
                         {/* Trust Signals */}
                         <div className="flex flex-wrap justify-center gap-4 sm:gap-6 text-sm text-muted-foreground">
                             <div className="flex items-center gap-2">
@@ -185,18 +172,60 @@ export default function IntakeExplanationSection() {
                                 <span>{language === 'nl' ? 'Geld-terug garantie' : 'Money-back guarantee'}</span>
                             </div>
                         </div>
-                    </a>
-                </motion.div>
+
+                        {/* Contact Accordion */}
+                        <div className="max-w-sm mx-auto">
+                            <button
+                                onClick={() => setShowContact(!showContact)}
+                                className="flex items-center justify-center gap-2 text-foreground/70 hover:text-foreground transition-colors mx-auto group mb-4"
+                            >
+                                <span className="text-base">{language === 'nl' ? 'Of neem direct contact op' : 'Or contact directly'}</span>
+                                <ChevronRight
+                                    className={`h-5 w-5 transition-transform ${showContact ? 'rotate-90' : ''}`}
+                                />
+                            </button>
+
+                            {/* Accordion content */}
+                            {showContact && (
+                                <motion.div
+                                    initial={{ opacity: 0, height: 0 }}
+                                    animate={{ opacity: 1, height: 'auto' }}
+                                    exit={{ opacity: 0, height: 0 }}
+                                    className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 space-y-3 border border-gray-700"
+                                >
+                                    <a
+                                        href="tel:+31640446732"
+                                        className="flex items-center gap-3 p-4 bg-gray-700/50 rounded-lg hover:bg-gray-700 transition-colors text-base"
+                                    >
+                                        <Phone className="h-5 w-5 text-blue-400 flex-shrink-0" />
+                                        <span className="text-white font-medium">06-4044 6732</span>
+                                    </a>
+                                    <a
+                                        href="mailto:robin.bril@gmail.com"
+                                        className="flex items-center gap-3 p-4 bg-gray-700/50 rounded-lg hover:bg-gray-700 transition-colors text-base"
+                                    >
+                                        <Mail className="h-5 w-5 text-blue-400 flex-shrink-0" />
+                                        <span className="text-white font-medium">robin.bril@gmail.com</span>
+                                    </a>
+                                    <a
+                                        href="https://wa.me/31640446732"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="flex items-center gap-3 p-4 bg-gray-700/50 rounded-lg hover:bg-gray-700 transition-colors text-base"
+                                    >
+                                        <MessageCircle className="h-5 w-5 text-blue-400 flex-shrink-0" />
+                                        <span className="text-white font-medium">WhatsApp</span>
+                                    </a>
+                                </motion.div>
                             )}
+                        </div>
+                    </motion.div>
+                </div>
             </div>
-        </motion.div>
-                </div >
-            </div >
 
 
-        {/* Demo Request Modal */ }
-        < DemoRequestModal isOpen = { isModalOpen } onClose = {() => setIsModalOpen(false)
-} />
-        </section >
+            {/* Demo Request Modal */}
+            <DemoRequestModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+        </section>
     );
 }
