@@ -155,6 +155,7 @@ export default function Projects() {
   const { language } = useLanguage();
   const controls = useAnimation();
   const [showAll, setShowAll] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const [ref, inView] = useInView({
     triggerOnce: false,
     threshold: 0.1,
@@ -162,8 +163,17 @@ export default function Projects() {
 
   const projects = getProjects(language);
 
-  // Show 4 projects in 2x2 grid, all when expanded
-  const displayedProjects = showAll ? projects : projects.slice(0, 4);
+  // Detect mobile
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  // Show 2 projects on mobile, 4 on desktop in 2x2 grid
+  const initialCount = isMobile ? 2 : 4;
+  const displayedProjects = showAll ? projects : projects.slice(0, initialCount);
 
   useEffect(() => {
     if (inView) {
