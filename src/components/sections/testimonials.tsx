@@ -37,6 +37,58 @@ export default function Testimonials() {
     },
     {
       id: 2,
+      name: "Cristian Arboleda",
+      role: {
+        en: ".NET Developer",
+        nl: ".NET Ontwikkelaar",
+      },
+      image: "https://media.licdn.com/dms/image/v2/D4E03AQFpSzu3OzUbsw/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1716325332651?e=1749081600&v=beta&t=B0fWr05TNfeqcZf7FU-EvHDq1foIRm8bxTMgJobmGVA",
+      content: {
+        en: "Omar is a talented developer with a strong drive to grow and improve. Always supporting colleagues, his greatest strength is quickly learning new skills and adapting to processes.",
+        nl: "Omar is een getalenteerde ontwikkelaar met een sterke drang om te groeien. Hij ondersteunt collega's en leert snel nieuwe vaardigheden. Het is een genoegen om met hem samen te werken.",
+      },
+    },
+    {
+      id: 3,
+      name: "Ihor Tolkachov",
+      role: {
+        en: "We change the world for deskless workforces🚀",
+        nl: "We veranderen de wereld voor werknemers zonder bureau🚀",
+      },
+      image: "https://media.licdn.com/dms/image/v2/D4E03AQHBTYV9e3Cehw/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1715115312907?e=1749081600&v=beta&t=CLGqT-xHCJk8sDNETLF4xjWWDSJRsev0kcySbUm6FEs",
+      content: {
+        en: "Working with Omar at Vloto showed his reliability and skill. Together we created an automatic fine scanner that reduced a 30-minute process to just 10 seconds—truly impressive efficiency improvement.",
+        nl: "Het werken met Omar bij Vloto toonde zijn betrouwbaarheid en vaardigheid. Samen creëerden we een automatische boetescanner die een proces van 30 minuten reduceerde tot slechts 10 seconden.",
+      },
+    },
+    {
+      id: 4,
+      name: "Oeds de Meer",
+      role: {
+        en: "Process & Information Manager @ SBB",
+        nl: "Proces- & informatiemanager @ SBB",
+      },
+      image: "https://media.licdn.com/dms/image/v2/C4D03AQH9Ry0bTSuBUw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1631524405789?e=1749081600&v=beta&t=mDsXjGK-Ji14bo5JFSlLtKWxkOxQAYlpFDJSw-NR2gs",
+      content: {
+        en: "Robin consistently delivered sharp analyses and worked with tools like Excel, SQL, and Looker. He recognizes patterns in data, thinks analytically, and provides visual insights.",
+        nl: "Robin leverde continu scherpe analyses en werkte met tools als Excel, SQL en Looker. Hij herkent patronen in data, denkt analytisch en levert visuele inzichten.",
+      },
+    },
+    {
+      id: 5,
+      name: "Laura Britton",
+      role: {
+        en: "Project Manager Medical Affairs @ Sedgwick",
+        nl: "Projectmanager Medische Zaken @ Sedgwick",
+      },
+      image: "https://media.licdn.com/dms/image/v2/C4D03AQGkJk6PNly4Mw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1571232961900?e=1749081600&v=beta&t=ez7LJ5uCSvPdfxyUH_9hjOktsjDkfI8cvQHTTAdUNYI",
+      content: {
+        en: "Dedicated, helpful and reliable.",
+        nl: "Toegewijd, behulpzaam en betrouwbaar.",
+      },
+    },
+    {
+      id: 6,
       name: "Sarah de Vries",
       role: {
         en: "Product Manager @ TechCorp",
