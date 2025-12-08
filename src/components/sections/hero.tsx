@@ -45,8 +45,9 @@ function HeroContent() {
 
   return (
     <section
+      id="hero"
       ref={ref}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-blue-50/30 via-background to-background dark:from-background dark:via-background dark:to-background"
+      className="relative min-h-[85vh] sm:min-h-screen flex items-center justify-center overflow-hidden py-8 sm:py-12 md:py-16 bg-gradient-to-b from-blue-50/30 via-background to-background dark:from-background dark:via-background dark:to-background"
     >
       {/* Subtle pattern overlay */}
       <div className="absolute inset-0 opacity-[0.02] dark:opacity-[0.03]" style={{
@@ -59,7 +60,7 @@ function HeroContent() {
           variants={containerVariants}
           initial="hidden"
           animate={controls}
-          className="flex flex-col items-center space-y-8 md:space-y-12 text-center"
+          className="flex flex-col items-center space-y-4 sm:space-y-6 md:space-y-8 text-center"
         >
           {/* Eyebrow text for context */}
           <motion.div

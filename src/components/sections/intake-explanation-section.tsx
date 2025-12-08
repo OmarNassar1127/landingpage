@@ -37,7 +37,7 @@ export default function IntakeExplanationSection() {
     ];
 
     return (
-        <section className="py-16 bg-background relative overflow-hidden" id="intake">
+        <section className="py-10 sm:py-16 bg-background relative overflow-hidden" id="intake">
             <div className="container mx-auto px-4 relative z-10">
                 <div className="max-w-5xl mx-auto">
                     {/* Header */}

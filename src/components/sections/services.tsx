@@ -123,7 +123,7 @@ const Services = () => {
   }, []);
 
   return (
-    <section id="services" className="py-16 sm:py-20 md:py-24 overflow-hidden">
+    <section id="services" className="py-10 sm:py-16 md:py-20 overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
         {/* Header */}
         <motion.div
