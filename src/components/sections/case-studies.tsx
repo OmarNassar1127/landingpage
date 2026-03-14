@@ -50,26 +50,26 @@ const getCaseStudies = (language: string): CaseStudy[] => {
         ? "WhatsApp AI-assistent voor bedrijven"
         : "WhatsApp AI assistant for businesses",
       description: isNL
-        ? "ZapBot is een volledig geautomatiseerde WhatsApp-bot die klantvragen beantwoordt, afspraken inplant en leads opvolgt — 24/7, zonder menselijke tussenkomst."
-        : "ZapBot is a fully automated WhatsApp bot that answers customer questions, schedules appointments and follows up on leads — 24/7, without human intervention.",
+        ? "ZapBot beantwoordt klantvragen via WhatsApp, plant afspraken in via Google Calendar en stuurt automatische herinneringen — 24/7, in de stijl van het bedrijf."
+        : "ZapBot answers customer questions via WhatsApp, schedules appointments through Google Calendar and sends automatic reminders — 24/7, in the business's own voice.",
       challenge: isNL
-        ? "Bedrijven misten 60% van hun inkomende WhatsApp-berichten buiten kantooruren. Leads gingen verloren en klanten voelden zich genegeerd."
-        : "Businesses were missing 60% of incoming WhatsApp messages outside office hours. Leads were lost and customers felt ignored.",
+        ? "Bedrijven misten berichten buiten kantooruren. Afspraken werden handmatig ingepland en no-shows kostten omzet. 's Avonds en in het weekend was niemand bereikbaar."
+        : "Businesses were missing messages outside office hours. Appointments were manually scheduled and no-shows were costing revenue. Evenings and weekends were unreachable.",
       solution: isNL
-        ? "We bouwden een AI-agent die naadloos integreert met WhatsApp Business. De bot begrijpt context, schakelt tussen talen en escaleert naar een medewerker wanneer nodig."
-        : "We built an AI agent that seamlessly integrates with WhatsApp Business. The bot understands context, switches between languages and escalates to a human when needed.",
+        ? "We bouwden een AI-assistent die naadloos integreert met WhatsApp Business en Google Calendar. De bot plant automatisch afspraken in, stuurt herinneringen en schakelt moeiteloos tussen talen."
+        : "We built an AI assistant that seamlessly integrates with WhatsApp Business and Google Calendar. The bot auto-schedules appointments, sends reminders and switches between languages effortlessly.",
       results: isNL
         ? [
-            { label: "Reactietijd", value: "<3 sec" },
-            { label: "Klanttevredenheid", value: "94%" },
-            { label: "Leads opgevangen", value: "+210%" },
-            { label: "Kosten bespaard", value: "€2.800/mnd" },
+            { label: "Reactietijd", value: "<10 sec" },
+            { label: "Minder no-shows", value: "40%" },
+            { label: "Bespaard", value: "€2.800/mnd" },
+            { label: "Beschikbaar", value: "24/7" },
           ]
         : [
-            { label: "Response time", value: "<3 sec" },
-            { label: "Satisfaction", value: "94%" },
-            { label: "Leads captured", value: "+210%" },
+            { label: "Response time", value: "<10 sec" },
+            { label: "Fewer no-shows", value: "40%" },
             { label: "Cost saved", value: "€2,800/mo" },
+            { label: "Available", value: "24/7" },
           ],
       tech: ["WhatsApp API", "AI/NLP", "Node.js", "Multi-language"],
       color: "text-emerald-500",
