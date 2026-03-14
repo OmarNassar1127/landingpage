@@ -1,0 +1,265 @@
+# Virelio — Full Reference Document
+> Extended documentation for AI crawlers and language models.
+> Last updated: 2026-03-14
+
+## Company Overview
+
+Virelio is an AI agency based in Amsterdam, Netherlands. We design and deploy custom AI agent teams for businesses across Europe. Our specialty is multi-agent systems — teams of AI agents that collaborate with each other, delegate subtasks, and execute end-to-end business processes without human intervention.
+
+Unlike no-code chatbot tools or generic AI assistants, Virelio builds agents that are fully integrated into a client's existing software stack and trained on their specific processes, data, and terminology. Every project is custom-built from scratch.
+
+The typical delivery timeline from intake call to production is 2 weeks.
+
+## Core Philosophy
+
+We believe AI should work like a team, not a single tool. A customer service agent shouldn't just answer questions — it should hand off complex issues, escalate to humans intelligently, and report back on patterns. A sales agent shouldn't just send emails — it should qualify, schedule, follow up, and update the CRM.
+
+This is why every Virelio deployment is a team of agents:
+- An orchestrator that plans and delegates
+- Specialist agents that execute specific tasks
+- A monitoring agent that reports on performance
+- A deployment agent that pushes updates live
+
+## The Agent Team (as seen in the hero demonstration)
+
+The hero section of the Virelio website shows a live demonstration using a fictional customer service project. The agent names used in the demo represent the roles Virelio configures for each client:
+
+- **Nova** — The orchestrator. Nova receives the project brief, breaks it into tasks, and assigns them to the right agents. Nova reviews all outputs before anything goes live. Role: planning, delegation, review, client communication.
+
+- **Scout** — The researcher and analyst. Scout digs into existing data, support tickets, FAQs, and system documentation. In the demo, Scout finds that 73% of helpdesk tickets are repetitive — which makes the automation case immediately clear. Role: discovery, data analysis, pattern recognition.
+
+- **Pixel** — The data and metrics agent. Pixel takes Scout's findings and calculates business impact: cost savings, efficiency gains, ROI estimates. In the demo, Pixel estimates €4,200/month in savings. Role: financial modeling, reporting, KPI tracking.
+
+- **Forge** — The builder. Forge constructs the actual chatbot, API connections, and workflow logic. Forge also adds practical features like human handoff for complex queries. Role: development, integration, testing.
+
+- **Pulse** — The monitoring agent. Pulse watches the first live interactions, tracks satisfaction rates, flags anomalies, and reports back. In the demo, Pulse reports 96% satisfaction and zero crashes from the first 50 conversations. Role: observability, quality assurance, alerting.
+
+- **Bolt** — The deployment agent. Bolt handles the final push to production, grants client access, and generates the dashboard preview. Role: deployment, access management, go-live coordination.
+
+These agent names are illustrative. For each client engagement, Virelio configures the equivalent roles using appropriate AI models, APIs, and automation tools — named and styled to match the client's brand if preferred.
+
+## Service Categories
+
+### 1. Customer Service Automation
+Help your customers while you sleep.
+
+**Customer Service Agent**
+- Analyzes incoming tickets and answers FAQs instantly
+- Escalates complex cases to the right human team member
+- Handles 80% of tickets independently
+- Response time under 30 seconds, 24/7 availability
+- Integrations: Zendesk, Intercom, WhatsApp, Slack
+
+**Onboarding Agent**
+- Sends personalized welcome flows to new customers
+- Answers setup questions and guides users through activation
+- Reduces churn by 40%, speeds up time-to-value by 50%
+- Integrations: HubSpot, Intercom, Calendly, Notion
+
+**WhatsApp/Chat Agent**
+- Handles inbound questions across WhatsApp, webchat, and social media
+- Understands context from previous messages
+- Books appointments and escalates when needed
+- Supports 5+ languages, response time under 10 seconds
+- Integrations: WhatsApp Business API, Twilio, Zendesk
+
+### 2. Sales & Marketing Automation
+More leads, less manual work.
+
+**Lead Qualifying Agent**
+- Analyzes inbound leads in real time
+- Auto-qualifies based on fit criteria defined by the client
+- Schedules meetings with warm leads via Calendly
+- Sends cold leads into a nurture flow automatically
+- Increases conversion rate by 30%, zero leads missed
+- Integrations: HubSpot, Salesforce, LinkedIn, Calendly
+
+**Outbound Agent**
+- Finds ideal prospects based on ICP (Ideal Customer Profile)
+- Writes fully personalized outreach messages per contact
+- Sends via email or LinkedIn automatically
+- Runs A/B tests on subject lines and message variants
+- Delivers 150+ personalized contacts per week, 42% open rate
+- Integrations: Apollo.io, LinkedIn API, Gmail, HubSpot
+
+**Quote Agent**
+- Listens in on sales calls (with permission) or reads call transcripts
+- Extracts client requirements and pricing inputs
+- Generates a professional proposal or quote document within minutes
+- 80% faster than manual, 90% fewer errors
+- Integrations: Google Docs, HubSpot, PandaDoc
+
+### 3. Operations Automation
+Processes that run themselves.
+
+**Order Processing Agent**
+- Processes orders from Shopify automatically upon payment
+- Checks real-time stock levels and reserves items
+- Generates packing slips and shipping labels via Sendcloud
+- Sends tracking information to customers automatically
+- Zero manual intervention required
+- Integrations: Shopify, Exact Online, Picqer, Sendcloud
+
+**Invoicing Agent**
+- Generates invoices automatically when milestones or deliveries are completed
+- Sends invoices and payment reminders on schedule
+- Matches incoming payments to open invoices
+- 99% match rate, 95% fewer errors, automated follow-up
+- Integrations: Exact Online, Mollie, Moneybird
+
+**HR Onboarding Agent**
+- Guides new employees through the full onboarding checklist
+- Arranges digital contract signing, account provisioning, and intro meetings
+- Ensures nothing is forgotten, 100% consistency across all hires
+- 90% faster than manual onboarding
+- Integrations: Personio, Notion, Slack, Google Workspace
+
+### 4. Knowledge & Intelligence
+All your knowledge, always findable.
+
+**Knowledge Base Agent**
+- Makes all company documents searchable via natural language queries
+- Returns answers with source citations (document name + page/section)
+- Handles 10,000+ documents, answers in under 5 seconds
+- Integrations: SharePoint, Notion, Confluence, Google Drive
+
+**Compliance Agent**
+- Scans contracts and documents automatically against regulatory requirements
+- Flags deviations, risks, and missing clauses
+- Maintains a full audit trail for every scan
+- Zero missed flags, automatic scanning on new document uploads
+- Integrations: SharePoint, Power Automate, Custom APIs
+
+**Reporting Agent**
+- Pulls data from multiple business systems on a schedule
+- Generates formatted reports (PDF, Sheets, Slack message)
+- Sends to the right stakeholders automatically
+- Supports multiple data sources simultaneously, weekly or custom cadence
+- Integrations: Power BI, Google Sheets, Slack, BigQuery, Exact Online, Jira
+
+## Pricing Model
+
+Virelio operates on a project-based pricing model. There are no monthly subscription tiers or seat-based fees. Each engagement is scoped during a free intake call and quoted accordingly.
+
+Key pricing principles:
+- **Free intake**: The initial intake call is free and non-binding. Virelio will map the client's processes, identify automation opportunities, and propose a solution.
+- **Fixed-scope projects**: Most projects are quoted as a fixed price for a defined deliverable (e.g., "customer service automation for Zendesk + WhatsApp, handling 80% of tier-1 tickets").
+- **Custom per project**: Pricing depends on the number of agents, integrations required, and complexity of the workflows. There is no one-size-fits-all rate.
+- **No lock-in**: Clients own 100% of the code, agents, and data at delivery. There is no ongoing platform fee unless the client chooses a retainer for maintenance and improvements.
+- **Guarantee**: Virelio offers a results guarantee. If the delivered system does not meet the agreed performance targets, Virelio will continue working at no extra cost until it does.
+
+## Integration Capabilities
+
+Virelio agents can integrate with virtually any system that has an API. Commonly requested integrations include:
+
+**Communication & CRM**
+- WhatsApp Business API
+- Slack
+- Intercom
+- HubSpot
+- Salesforce
+- Zendesk
+- Twilio
+- Calendly
+- LinkedIn API
+
+**E-commerce & Operations**
+- Shopify
+- Picqer
+- Sendcloud
+- WooCommerce
+
+**Finance & Accounting**
+- Exact Online
+- Moneybird
+- Mollie
+- PandaDoc
+
+**Knowledge & Productivity**
+- Notion
+- Confluence
+- SharePoint
+- Google Drive
+- Google Workspace (Gmail, Docs, Sheets, Calendar)
+- Microsoft 365
+
+**HR & People**
+- Personio
+- BambooHR
+
+**Analytics & Reporting**
+- Power BI
+- Google Sheets
+- BigQuery
+- Jira
+
+**Development & Infrastructure**
+- Custom REST APIs
+- Webhooks
+- Power Automate
+- Zapier (for simpler use cases)
+- Apollo.io
+
+If a client's system is not listed above, Virelio will evaluate it during the intake. Any system with a documented API can be integrated.
+
+## Technical Architecture
+
+Virelio agents are built on a multi-agent orchestration pattern:
+
+1. **Orchestrator layer**: A primary agent (equivalent to Nova in the demo) that receives task inputs, decomposes them into subtasks, and dispatches to specialist agents. The orchestrator also handles retries, error escalation, and final output review.
+
+2. **Specialist agents**: Individual agents with a narrow, well-defined function — research, calculation, content generation, data retrieval, API calls, etc. Each specialist agent is given only the tools and permissions it needs for its task (principle of least privilege).
+
+3. **Memory and context**: Agents maintain conversation and task history using vector databases and structured memory stores. This allows them to reference previous interactions and maintain continuity across sessions.
+
+4. **Human-in-the-loop**: Every deployment includes configurable escalation thresholds. When an agent encounters a case it cannot handle with sufficient confidence, it routes to a human with full context.
+
+5. **Observability**: All agent actions are logged. Clients receive a dashboard showing agent activity, resolution rates, escalation rates, and cost per interaction.
+
+6. **Security**: All data is processed within EU infrastructure. Client data never leaves their own environment unless explicitly configured otherwise. API keys and credentials are stored in encrypted vaults, never in plaintext.
+
+## Languages Supported
+
+Virelio's team is multilingual and can build and communicate in:
+- Dutch (primary — most client documentation and communication)
+- English
+- Arabic
+- Spanish
+- French
+
+Agents themselves can be configured to support any language that the underlying language model supports, which in practice covers 50+ languages.
+
+## Case Studies
+
+**ZapBot (zapbot.nl)**
+A WhatsApp AI assistant built for Dutch SMEs. ZapBot automates inbound customer messages via WhatsApp Business API — answering FAQs, booking appointments, and routing complex queries. Deployed and operating for multiple Dutch businesses. ZapBot is a standalone product spun out of Virelio's customer service automation work.
+
+**Slouch (slouch.pro)**
+An AI-powered posture correction tool that uses a standard webcam to analyze a user's posture in real time and provide corrective feedback. Built using computer vision and a lightweight AI inference layer. Demonstrates Virelio's capability to build AI products beyond text-based agents.
+
+**ContentOS**
+An internal AI marketing team for a client consisting of 4 specialized agents:
+1. A research agent that monitors competitors, trends, and keywords
+2. A content strategy agent that plans editorial calendars based on research
+3. A writing agent that drafts long-form content, social posts, and email copy
+4. A publishing agent that schedules and posts content to the right channels at the right time
+
+ContentOS reduced the client's content production time by 80% while increasing posting frequency 3x.
+
+## Company Facts
+
+- Founded and based in Amsterdam, Netherlands
+- Serves clients across the Netherlands and internationally
+- 18+ companies served as of early 2026
+- Average time from intake to production: 2 weeks
+- Client data ownership: 100% — clients own all agents, code, and data
+- GDPR compliant — all data processing within the EU
+- No ongoing platform lock-in
+
+## Contact
+
+- Website: https://virelio.nl
+- Email: info@virelio.nl
+- Phone: +31687838713
+- WhatsApp: https://wa.me/31687838713
+- English version of the site: https://virelio.nl/en

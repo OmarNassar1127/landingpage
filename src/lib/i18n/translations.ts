@@ -275,7 +275,7 @@ export const translations = {
     // Footer
     footer: {
       description:
-        "Innovatieve oplossingen voor moderne uitdagingen. Expertise in AI‑systemen, SaaS‑platformen, KYC‑integraties en winkelautomatisering. Altijd afgestemd op jouw project voor optimaal resultaat.",
+        "AI-agents die samenwerken, delegeren en uitvoeren. Van klantenservice tot sales automatisering — live in 2 weken. Op maat gebouwd voor jouw bedrijf.",
       quickLinks: "Snelle links",
       legal: "Juridisch",
       privacyPolicy: "Privacybeleid",
@@ -336,15 +336,15 @@ export const translations = {
         ],
       },
       kycIntegrations: {
-        title: "KYC Integraties",
+        title: "Kennisbank Systemen",
         description:
-          "Geautomatiseerde veilige gebruikersintegratie door integratie van Onfido's KYC-verificatie en kredietscores van derden, waardoor operationele tijd en schuldenrisico worden verminderd.",
+          "AI-doorzoekbare kennisbank voor al je interne documenten. Medewerkers stellen vragen in natuurlijke taal en krijgen antwoord met bronvermelding.",
         techStack: ["Laravel", "MySQL", "Onfido", "ReactNative"],
       },
       shopAutomations: {
-        title: "Winkel Automatisering",
+        title: "Operations Automatisering",
         description:
-          "Geautomatiseerde uitgebreide e-commerce oplossingen voor efficiënte orderverwerking, slimme prijsstrategieën, voorraadbeheer en naadloze integratie met Bol.com, Amazon en Marktplaats API's.",
+          "Geautomatiseerde workflows voor orderverwerking, facturatie, HR-onboarding en voorraadbeheer. Integraties met Shopify, Exact Online en meer.",
         techStack: [
           "Laravel",
           "Python",
@@ -1103,7 +1103,7 @@ export const translations = {
     // Footer
     footer: {
       description:
-        "Innovative solutions for modern challenges. Expertise in AI systems, SaaS platforms, KYC integrations, and e-commerce automation. Every project tailored for optimal results.",
+        "AI agents that collaborate, delegate and execute. From customer service to sales automation — live in 2 weeks. Custom-built for your business.",
       quickLinks: "Quick Links",
       legal: "Legal",
       privacyPolicy: "Privacy Policy",
@@ -1164,15 +1164,15 @@ export const translations = {
         ],
       },
       kycIntegrations: {
-        title: "KYC Integrations",
+        title: "Knowledge Base Systems",
         description:
-          "Automated secure user onboarding by integrating Onfido's KYC verification and third-party credit scoring, reducing operational time and debt risk.",
+          "AI-searchable knowledge base for all your internal documents. Employees ask questions in natural language and get answers with source citations.",
         techStack: ["Laravel", "MySQL", "Onfido", "ReactNative"],
       },
       shopAutomations: {
-        title: "Shop Automations",
+        title: "Operations Automation",
         description:
-          "Automated comprehensive e-commerce solutions for efficient order handling, smart pricing strategies, inventory management, and seamless integration with Bol.com, Amazon, and Marktplaats APIs.",
+          "Automated workflows for order processing, invoicing, HR onboarding and inventory management. Integrations with Shopify, Exact Online and more.",
         techStack: [
           "Laravel",
           "Python",

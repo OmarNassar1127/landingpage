@@ -19,7 +19,7 @@ export function generateMetadata({
   keywords,
   pathname = "",
   imageUrl = siteConfig.ogImage,
-  imageAlt = "Virelio - Digital Innovation for Your Business",
+  imageAlt = "Virelio — AI Agents op Maat voor Bedrijven",
   locale = "en_US",
   type = "website",
   noIndex = false,

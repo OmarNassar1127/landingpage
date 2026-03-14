@@ -15,23 +15,23 @@ import { siteConfig } from "@/lib/config";
 import JsonLd from "@/components/seo/json-ld";
 import { faqSchema, testimonialsSchema, servicesSchema, workshopSchema } from "@/lib/schema";
 
-// Sample FAQ data for the landing page
+// FAQ data for the landing page
 const faqData = {
   items: [
     {
-      question: "What services does Virelio offer?",
+      question: "Wat doet Virelio?",
       answer:
-        "Virelio specializes in AI solutions, SaaS development, KYC integrations, and e-commerce automation to help businesses thrive in the digital age.",
+        "Virelio bouwt op maat gemaakte AI-agent teams voor bedrijven. Onze agents verzorgen klantenservice, sales, operaties en kennisbeheer — 24/7, in de stem van jouw merk.",
     },
     {
-      question: "How can Virelio help my business?",
+      question: "Hoe snel kunnen jullie leveren?",
       answer:
-        "We provide innovative technology solutions tailored to your business needs, helping you improve efficiency, enhance customer experience, and drive growth in the digital marketplace.",
+        "De meeste AI-agents zijn live binnen 2 weken. We werken in korte sprints: intake, prototype, feedback, lancering.",
     },
     {
-      question: "Where is Virelio located?",
+      question: "Waar is Virelio gevestigd?",
       answer:
-        "Virelio is based in Amsterdam, Netherlands, but we work with clients globally.",
+        "Virelio is gevestigd in Amsterdam, Nederland, maar we werken met klanten door heel Europa.",
     },
   ],
 };
@@ -67,13 +67,17 @@ const testimonialsData = {
   ],
 };
 
+
+
 export const metadata: Metadata = generateMetadata({
-  title: "Innovative Solutions for Modern Challenges",
+  title: "AI Agents op Maat — Jouw Digitale Team",
   description:
-    "We specialize in AI solutions, SaaS platforms, KYC integrations, and shop automations to help businesses thrive in the digital age.",
+    "Virelio bouwt AI-agents die samenwerken, delegeren en uitvoeren. Van klantenservice tot sales automatisering — live in 2 weken. Gevestigd in Amsterdam.",
   keywords:
-    "AI solutions, SaaS development, KYC integration, e-commerce automation, web development, technology consulting, Virelio",
+    "AI agents, digitale medewerkers, AI automatisering, klantenservice bot, sales automatisering, Amsterdam, Nederland, Virelio",
   pathname: "/",
+  imageUrl: "/og-image.png",
+  imageAlt: "Virelio — AI Agents op Maat voor Bedrijven",
 });
 
 export default function Home() {

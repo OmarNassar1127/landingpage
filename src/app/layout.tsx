@@ -43,13 +43,13 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: {
-    default: "Virelio - AI Solutions & Software Development | Amsterdam",
+    default: "Virelio — AI Agents op Maat | Amsterdam",
     template: "%s | Virelio"
   },
   description:
-    "Virelio levert AI spraakassistenten, SaaS platforms, en custom software oplossingen. 200+ automatiseringen geleverd. Gespecialiseerd in AI telefonie, KYC integraties en e-commerce.",
+    "Virelio bouwt AI-agents die samenwerken, delegeren en uitvoeren. Van klantenservice tot sales automatisering — live in 2 weken. Gevestigd in Amsterdam.",
   keywords:
-    "Virelio, AI Solutions, spraakassistent, voice AI, SaaS platforms, KYC integrations, shop automations, development, technology, Amsterdam, Nederland, web development, AI development, e-commerce automation, custom AI solutions, AI telefonie, zakelijke automatisering",
+    "Virelio, AI agents, digitale medewerkers, AI automatisering, klantenservice bot, sales automatisering, Amsterdam, Nederland, custom AI agents, zakelijke AI",
   authors: [{ name: "Virelio Team" }],
   creator: "Virelio",
   publisher: "Virelio",
@@ -74,13 +74,13 @@ export const metadata: Metadata = {
     locale: "nl_NL",
     alternateLocale: ["en_US"],
     url: siteConfig.url,
-    siteName: "Virelio - AI & Software Solutions",
-    title: "Virelio - AI Spraakassistent & Software Development | Amsterdam",
+    siteName: "Virelio — AI Agents op Maat",
+    title: "Virelio — AI Agents op Maat | Amsterdam",
     description:
-      "Virelio: 200+ automatiseringen geleverd. AI spraakassistenten, SaaS platforms, KYC integraties. Verminder 87% van klantgesprekken. Start gratis proef.",
+      "Virelio bouwt AI-agents die samenwerken, delegeren en uitvoeren. Van klantenservice tot sales automatisering — live in 2 weken.",
     images: [
       {
-        url: `${siteConfig.url}/og-image.jpg`,
+        url: `${siteConfig.url}/og-image.png`,
         width: 1200,
         height: 630,
         alt: "Virelio - Digital Innovation for Your Business",
@@ -93,7 +93,7 @@ export const metadata: Metadata = {
     description: "200+ automatiseringen. AI telefonie die 87% gesprekken automatiseert. Voor MKB & Enterprise.",
     site: "@Virelio",
     creator: "@Virelio",
-    images: [`${siteConfig.url}/images/logo.png`],
+    images: [`${siteConfig.url}/og-image.png`],
   },
   robots: {
     index: true,

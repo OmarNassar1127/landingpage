@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 import { siteConfig } from "@/lib/config";
 
 export const metadata: Metadata = {
-  title: "Virelio - Innovative Solutions for Modern Challenges",
+  title: "Virelio — Custom AI Agents for Businesses",
   description:
-    "At Virelio, we specialize in AI Solutions, SaaS platforms, KYC integrations, and Shop Automations to help businesses thrive in the digital age.",
+    "Virelio builds AI agents that collaborate, delegate and execute. From customer service to sales automation — live in 2 weeks. Based in Amsterdam.",
   keywords:
-    "AI Solutions, SaaS platforms, Virelio, KYC integrations, shop automations, development, technology",
+    "AI agents, digital employees, AI automation, customer service bot, sales automation, Amsterdam, Netherlands, Virelio",
   metadataBase: new URL(siteConfig.url),
   alternates: {
     canonical: `${siteConfig.url}/en`,
@@ -17,25 +17,25 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    locale: "en_US", // English locale
+    locale: "en_US",
     url: `${siteConfig.url}/en`,
     siteName: "Virelio",
-    title: "Virelio - Innovative Solutions for Modern Challenges",
+    title: "Virelio — Custom AI Agents for Businesses",
     description:
-      "AI Solutions, SaaS platforms, KYC integrations, and shop automations to help businesses thrive in the digital age.",
+      "AI agents that collaborate, delegate and execute. From customer service to sales automation — live in 2 weeks.",
     images: [
       {
-        url: `${siteConfig.url}/og-image.jpg`,
+        url: `${siteConfig.url}/og-image.png`,
         width: 1200,
         height: 630,
-        alt: "Virelio - Digital Innovation for Your Business",
+        alt: "Virelio — Custom AI Agents for Businesses",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Virelio - Innovative Solutions",
-    description: "Digital Innovation for Your Business",
+    title: "Virelio — Custom AI Agents",
+    description: "AI agents that collaborate, delegate and execute — live in 2 weeks.",
     site: "@Virelio",
     creator: "@Virelio",
   },

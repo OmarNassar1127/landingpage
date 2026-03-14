@@ -15,23 +15,23 @@ import { siteConfig } from "@/lib/config";
 import JsonLd from "@/components/seo/json-ld";
 import { faqSchema, testimonialsSchema, servicesSchema, workshopSchema } from "@/lib/schema";
 
-// Sample FAQ data for the landing page (English version)
+// FAQ data for the landing page (English version)
 const faqData = {
   items: [
     {
-      question: "What services does Virelio offer?",
+      question: "What does Virelio do?",
       answer:
-        "Virelio specializes in AI solutions, SaaS development, KYC integrations, and e-commerce automation to help businesses thrive in the digital age.",
+        "Virelio builds custom AI agent teams for businesses. Our agents handle customer service, sales, operations and knowledge management — 24/7, in your brand's voice.",
     },
     {
-      question: "How can Virelio help my business?",
+      question: "How fast can you deliver?",
       answer:
-        "We provide innovative technology solutions tailored to your business needs, helping you improve efficiency, enhance customer experience, and drive growth in the digital marketplace.",
+        "Most AI agents are live within 2 weeks. We work in short sprints: intake, prototype, feedback, launch.",
     },
     {
-      question: "Where is Virelio located?",
+      question: "Where is Virelio based?",
       answer:
-        "Virelio is based in Amsterdam, Netherlands, but we work with clients globally.",
+        "Virelio is based in Amsterdam, Netherlands, but we work with clients across Europe.",
     },
   ],
 };
@@ -68,13 +68,15 @@ const testimonialsData = {
 };
 
 export const metadata: Metadata = generateMetadata({
-  title: "Innovative Solutions for Modern Challenges",
+  title: "Custom AI Agents — Your Digital Team",
   description:
-    "We specialize in AI solutions, SaaS platforms, KYC integrations, and shop automations to help businesses thrive in the digital age.",
+    "Virelio builds AI agents that collaborate, delegate and execute. From customer service to sales automation — live in 2 weeks. Based in Amsterdam.",
   keywords:
-    "AI solutions, SaaS development, KYC integration, e-commerce automation, web development, technology consulting, Virelio",
+    "AI agents, digital employees, AI automation, customer service bot, sales automation, Amsterdam, Netherlands, Virelio",
   pathname: "/en",
   locale: "en",
+  imageUrl: "/og-image.png",
+  imageAlt: "Virelio — Custom AI Agents for Businesses",
 });
 
 export default function EnglishHome() {
