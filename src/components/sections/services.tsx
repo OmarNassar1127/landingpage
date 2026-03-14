@@ -52,7 +52,7 @@ const getCategories = (language: string): Category[] => {
       id: "data-insights",
       title: isNL ? "Data & Inzichten" : "Data & Insights",
       subtitle: isNL ? "Zie wat je concurrenten niet zien" : "See what your competitors can't",
-      agentCount: "3 agents",
+      agentCount: "4 agents",
       icon: Eye,
       gradient: "from-rose-500 to-pink-400",
       agents: [
@@ -89,6 +89,17 @@ const getCategories = (language: string): Category[] => {
             ? [{ value: "-35%", label: "Churn" }, { value: "14d", label: "Voorspelling" }, { value: "Auto", label: "Retentie" }]
             : [{ value: "-35%", label: "Churn" }, { value: "14d", label: "Prediction" }, { value: "Auto", label: "Retention" }],
         },
+        {
+          name: isNL ? "Social Listening Agent" : "Social Listening Agent",
+          headline: isNL ? "Weet wat mensen over je merk zeggen — overal" : "Know what people say about your brand — everywhere",
+          description: isNL
+            ? "Monitort vermeldingen van je merk op Reddit, LinkedIn, X, reviews en forums. Classificeert sentiment en stuurt een dagelijkse digest met de highlights."
+            : "Monitors mentions of your brand on Reddit, LinkedIn, X, reviews and forums. Classifies sentiment and sends a daily digest with highlights.",
+          integrations: ["Reddit API", "LinkedIn", "X API", "Google Alerts"],
+          results: isNL
+            ? [{ value: "500+", label: "Bronnen" }, { value: "Real-time", label: "Alerts" }, { value: "AI", label: "Sentiment" }]
+            : [{ value: "500+", label: "Sources" }, { value: "Real-time", label: "Alerts" }, { value: "AI", label: "Sentiment" }],
+        },
       ],
     },
     {
@@ -97,7 +108,7 @@ const getCategories = (language: string): Category[] => {
       subtitle: isNL
         ? "Je klanten helpen terwijl jij slaapt"
         : "Help your customers while you sleep",
-      agentCount: "3 agents",
+      agentCount: "4 agents",
       icon: Headphones,
       gradient: "from-blue-500 to-cyan-400",
       agents: [
@@ -134,13 +145,24 @@ const getCategories = (language: string): Category[] => {
             ? [{ value: "24/7", label: "Alle kanalen" }, { value: "5+", label: "Talen" }, { value: "<10s", label: "Reactietijd" }]
             : [{ value: "24/7", label: "All channels" }, { value: "5+", label: "Languages" }, { value: "<10s", label: "Response" }],
         },
+        {
+          name: isNL ? "Telefoon Agent" : "Call Agent",
+          headline: isNL ? "Neemt op binnen 2 beltonen, 24/7" : "Answers within 2 rings, 24/7",
+          description: isNL
+            ? "Een AI-agent die inkomende telefoongesprekken afhandelt in natuurlijk Nederlands. Beantwoordt veelgestelde vragen, plant afspraken in je agenda en escaleert naar een medewerker wanneer nodig."
+            : "An AI agent that handles incoming phone calls in natural language. Answers FAQs, schedules appointments in your calendar and escalates to a human when needed.",
+          integrations: ["Twilio Voice", "Google Calendar", "Slack", "CRM"],
+          results: isNL
+            ? [{ value: "24/7", label: "Bereikbaar" }, { value: "<2s", label: "Opneemtijd" }, { value: "-87%", label: "Gesprekken" }]
+            : [{ value: "24/7", label: "Available" }, { value: "<2s", label: "Pickup time" }, { value: "-87%", label: "Call volume" }],
+        },
       ],
     },
     {
       id: "sales",
       title: "Sales & Marketing",
       subtitle: isNL ? "Meer leads, minder handwerk" : "More leads, less manual work",
-      agentCount: "3 agents",
+      agentCount: "4 agents",
       icon: TrendingUp,
       gradient: "from-emerald-500 to-green-400",
       agents: [
@@ -177,13 +199,24 @@ const getCategories = (language: string): Category[] => {
             ? [{ value: "80%", label: "Sneller" }, { value: "-90%", label: "Fouten" }, { value: "100%", label: "Consistent" }]
             : [{ value: "80%", label: "Faster" }, { value: "-90%", label: "Errors" }, { value: "100%", label: "Consistent" }],
         },
+        {
+          name: isNL ? "Content Agent" : "Content Agent",
+          headline: isNL ? "Social posts, blogs en e-mails op autopilot" : "Social posts, blogs and emails on autopilot",
+          description: isNL
+            ? "Schrijft content in jouw tone-of-voice op basis van je merk en doelgroep. Plant posts, A/B-test onderwerpregels en rapporteert wat werkt."
+            : "Writes content in your tone of voice based on your brand and audience. Schedules posts, A/B-tests subject lines and reports what works.",
+          integrations: ["LinkedIn API", "Mailchimp", "Buffer", "Google Docs"],
+          results: isNL
+            ? [{ value: "25+", label: "Posts/week" }, { value: "+180%", label: "Engagement" }, { value: "Auto", label: "Planning" }]
+            : [{ value: "25+", label: "Posts/week" }, { value: "+180%", label: "Engagement" }, { value: "Auto", label: "Scheduling" }],
+        },
       ],
     },
     {
       id: "operations",
       title: "Operations",
       subtitle: isNL ? "Processen die zichzelf draaien" : "Processes that run themselves",
-      agentCount: "3 agents",
+      agentCount: "4 agents",
       icon: Settings,
       gradient: "from-amber-500 to-orange-400",
       agents: [
@@ -220,13 +253,24 @@ const getCategories = (language: string): Category[] => {
             ? [{ value: "90%", label: "Sneller" }, { value: "0", label: "Vergeten" }, { value: "100%", label: "Consistent" }]
             : [{ value: "90%", label: "Faster" }, { value: "0", label: "Forgotten" }, { value: "100%", label: "Consistent" }],
         },
+        {
+          name: isNL ? "Meeting Agent" : "Meeting Agent",
+          headline: isNL ? "Notulen klaar voordat de call afloopt" : "Minutes ready before the call ends",
+          description: isNL
+            ? "Luistert mee met meetings, genereert automatisch notulen, actiepunten en follow-up taken. Stuurt alles naar Slack en je projectmanagement-tool."
+            : "Listens in on meetings, automatically generates minutes, action items and follow-up tasks. Sends everything to Slack and your project management tool.",
+          integrations: ["Google Meet", "Zoom", "Slack", "Linear"],
+          results: isNL
+            ? [{ value: "Auto", label: "Notulen" }, { value: "5u/wk", label: "Bespaard" }, { value: "100%", label: "Actiepunten" }]
+            : [{ value: "Auto", label: "Minutes" }, { value: "5h/wk", label: "Saved" }, { value: "100%", label: "Action items" }],
+        },
       ],
     },
     {
       id: "kennisbank",
       title: isNL ? "Kennisbank & Intelligence" : "Knowledge & Intelligence",
       subtitle: isNL ? "Al je kennis, altijd vindbaar" : "All your knowledge, always findable",
-      agentCount: "3 agents",
+      agentCount: "4 agents",
       icon: BookOpen,
       gradient: "from-violet-500 to-purple-400",
       agents: [
@@ -263,13 +307,24 @@ const getCategories = (language: string): Category[] => {
             ? [{ value: "Auto", label: "Delivery" }, { value: "Multi", label: "Databronnen" }, { value: "Wekelijks", label: "Updates" }]
             : [{ value: "Auto", label: "Delivery" }, { value: "Multi", label: "Sources" }, { value: "Weekly", label: "Updates" }],
         },
+        {
+          name: isNL ? "Research Agent" : "Research Agent",
+          headline: isNL ? "Marktonderzoek in minuten, niet weken" : "Market research in minutes, not weeks",
+          description: isNL
+            ? "Doorzoekt het web, analyseert publicaties en vat trends samen in een rapport met bronvermelding. Van vraag tot compleet onderzoek in één klik."
+            : "Searches the web, analyzes publications and summarizes trends into a report with citations. From question to complete research in one click.",
+          integrations: ["Web search", "Google Scholar", "Notion", "Google Docs"],
+          results: isNL
+            ? [{ value: "<10m", label: "Per rapport" }, { value: "50+", label: "Bronnen" }, { value: "AI", label: "Samenvatting" }]
+            : [{ value: "<10m", label: "Per report" }, { value: "50+", label: "Sources" }, { value: "AI", label: "Summary" }],
+        },
       ],
     },
     {
       id: "finance-legal",
       title: isNL ? "Finance & Juridisch" : "Finance & Legal",
       subtitle: isNL ? "Minder risico, meer controle" : "Less risk, more control",
-      agentCount: "3 agents",
+      agentCount: "4 agents",
       icon: Scale,
       gradient: "from-cyan-500 to-teal-400",
       agents: [
@@ -306,11 +361,22 @@ const getCategories = (language: string): Category[] => {
             ? [{ value: "Real-time", label: "Detectie" }, { value: "<5s", label: "Blokkering" }, { value: "0", label: "False negatives" }]
             : [{ value: "Real-time", label: "Detection" }, { value: "<5s", label: "Blocking" }, { value: "0", label: "False negatives" }],
         },
+        {
+          name: isNL ? "Cash Flow Agent" : "Cash Flow Agent",
+          headline: isNL ? "Voorspelt je cashflow 90 dagen vooruit" : "Predicts your cash flow 90 days ahead",
+          description: isNL
+            ? "Analyseert inkomsten, uitgaven, openstaande facturen en seizoenspatronen om je cashflow te voorspellen. Waarschuwt bij dreigend tekort zodat je op tijd kunt handelen."
+            : "Analyzes revenue, expenses, outstanding invoices and seasonal patterns to predict your cash flow. Warns of potential shortfalls so you can act in time.",
+          integrations: ["Exact Online", "Moneybird", "Stripe", "Google Sheets"],
+          results: isNL
+            ? [{ value: "90d", label: "Voorspelling" }, { value: "94%", label: "Nauwkeurig" }, { value: "Auto", label: "Alerts" }]
+            : [{ value: "90d", label: "Forecast" }, { value: "94%", label: "Accurate" }, { value: "Auto", label: "Alerts" }],
+        },
       ],
     },
   ];
-  // Order: data-insights, klantenservice, finance-legal, sales, kennisbank, operations
-  return [cats[0], cats[1], cats[5], cats[2], cats[4], cats[3]];
+  // Order: klantenservice, sales, operations, kennisbank, finance-legal, data-insights
+  return [cats[1], cats[2], cats[3], cats[4], cats[5], cats[0]];
 };
 
 // ─── UNIQUE TEMPLATES PER CATEGORY (data changes per agent) ──
@@ -338,6 +404,13 @@ function ChatTemplate({ activeAgent, agents, language }: { activeAgent: number; 
           { from: "customer", text: "Donderdag 14:30 is goed" },
           { from: "agent", text: "Staat genoteerd! Je krijgt een bevestiging via WhatsApp en een herinnering morgenochtend. Tot donderdag!" },
         ],
+        [
+          { from: "agent", text: "Goedemiddag, u spreekt met Virelio. Waarmee kan ik u helpen? 📞" },
+          { from: "customer", text: "Ik wil graag een afspraak maken voor volgende week" },
+          { from: "agent", text: "Natuurlijk! Ik zie dat dinsdag 10:00 en woensdag 14:00 beschikbaar zijn. Wat past u het beste?" },
+          { from: "customer", text: "Dinsdag 10:00 graag" },
+          { from: "agent", text: "Ingepland! U ontvangt een bevestiging per SMS. Fijne dag nog! 😊" },
+        ],
       ]
     : [
         [
@@ -358,6 +431,13 @@ function ChatTemplate({ activeAgent, agents, language }: { activeAgent: number; 
           { from: "agent", text: "Absolutely! We repair all brands. Want to book an appointment? We have slots on Wednesday 11:00 or Thursday 14:30 🔧" },
           { from: "customer", text: "Thursday 14:30 works" },
           { from: "agent", text: "Booked! You'll get a WhatsApp confirmation and a reminder tomorrow morning. See you Thursday!" },
+        ],
+        [
+          { from: "agent", text: "Good afternoon, you're speaking with Virelio. How can I help you? 📞" },
+          { from: "customer", text: "I'd like to schedule an appointment for next week" },
+          { from: "agent", text: "Of course! I see Tuesday 10:00 and Wednesday 14:00 are available. What works best?" },
+          { from: "customer", text: "Tuesday 10:00 please" },
+          { from: "agent", text: "Scheduled! You'll receive a confirmation via SMS. Have a great day! 😊" },
         ],
       ];
 
@@ -406,6 +486,12 @@ function PipelineTemplate({ activeAgent, agents, language }: { activeAgent: numb
           { label: "Goedgekeurd", count: 28, width: 74, color: "bg-emerald-500/50 text-emerald-500" },
           { label: "Ondertekend", count: 22, width: 58, color: "bg-emerald-500 text-white" },
         ],
+        [
+          { label: "Content gemaakt", count: 25, width: 100, color: "bg-emerald-500/20 text-emerald-500" },
+          { label: "Gepubliceerd", count: 22, width: 88, color: "bg-emerald-500/30 text-emerald-500" },
+          { label: "Engagement", count: 840, width: 60, color: "bg-emerald-500/50 text-emerald-500" },
+          { label: "Leads via content", count: 12, width: 30, color: "bg-emerald-500 text-white" },
+        ],
       ]
     : [
         [
@@ -425,6 +511,12 @@ function PipelineTemplate({ activeAgent, agents, language }: { activeAgent: numb
           { label: "Proposal drafted", count: 32, width: 84, color: "bg-emerald-500/30 text-emerald-500" },
           { label: "Approved", count: 28, width: 74, color: "bg-emerald-500/50 text-emerald-500" },
           { label: "Signed", count: 22, width: 58, color: "bg-emerald-500 text-white" },
+        ],
+        [
+          { label: "Content created", count: 25, width: 100, color: "bg-emerald-500/20 text-emerald-500" },
+          { label: "Published", count: 22, width: 88, color: "bg-emerald-500/30 text-emerald-500" },
+          { label: "Engagement", count: 840, width: 60, color: "bg-emerald-500/50 text-emerald-500" },
+          { label: "Leads via content", count: 12, width: 30, color: "bg-emerald-500 text-white" },
         ],
       ];
 
@@ -476,6 +568,12 @@ function WorkflowTemplate({ activeAgent, agents, language }: { activeAgent: numb
           { label: "Kennismaking met 4 teamleden gepland", status: "done", time: "Dag 2" },
           { label: "Eerste eigen taak toegewezen", status: "active", time: "Dag 3" },
         ],
+        [
+          { label: "Meeting gestart — opname actief", status: "done", time: "14:00" },
+          { label: "3 actiepunten gedetecteerd", status: "done", time: "14:32" },
+          { label: "Notulen gegenereerd", status: "done", time: "14:45" },
+          { label: "Verstuurd naar #team + Linear", status: "active", time: "14:46" },
+        ],
       ]
     : [
         [
@@ -495,6 +593,12 @@ function WorkflowTemplate({ activeAgent, agents, language }: { activeAgent: numb
           { label: "Slack, Gmail, Notion accounts active", status: "done", time: "Day 1" },
           { label: "Meet & greet with 4 team members set", status: "done", time: "Day 2" },
           { label: "First own task assigned", status: "active", time: "Day 3" },
+        ],
+        [
+          { label: "Meeting started — recording active", status: "done", time: "14:00" },
+          { label: "3 action items detected", status: "done", time: "14:32" },
+          { label: "Minutes generated", status: "done", time: "14:45" },
+          { label: "Sent to #team + Linear", status: "active", time: "14:46" },
         ],
       ];
 
@@ -554,6 +658,14 @@ function SearchTemplate({ activeAgent, agents, language }: { activeAgent: number
             { source: "Google Sheets team", page: "live", match: "Overzicht verstuurd naar #management + PDF opgeslagen" },
           ],
         },
+        {
+          query: "Analyseer AI-trends in de logistieke sector 2026",
+          results: [
+            { source: "McKinsey Report 2026", page: "p.14", match: "AI-adoptie in logistiek stijgt met 340% in 2025-2026..." },
+            { source: "TechCrunch", page: "artikel", match: "Autonomous warehousing markt bereikt $12B in 2026..." },
+            { source: "Gartner Hype Cycle", page: "2026", match: "Predictive logistics AI verschuift naar 'plateau of productivity'..." },
+          ],
+        },
       ]
     : [
         {
@@ -578,6 +690,14 @@ function SearchTemplate({ activeAgent, agents, language }: { activeAgent: number
             { source: "Exact Online", page: "live", match: "Revenue March: €87K — 8% above target" },
             { source: "Jira board", page: "live", match: "23 tickets resolved, 2 open, avg lead time 1.4 days" },
             { source: "Google Sheets team", page: "live", match: "Overview sent to #management + PDF saved" },
+          ],
+        },
+        {
+          query: "Analyze AI trends in logistics sector 2026",
+          results: [
+            { source: "McKinsey Report 2026", page: "p.14", match: "AI adoption in logistics grows 340% in 2025-2026..." },
+            { source: "TechCrunch", page: "article", match: "Autonomous warehousing market reaches $12B in 2026..." },
+            { source: "Gartner Hype Cycle", page: "2026", match: "Predictive logistics AI shifts to 'plateau of productivity'..." },
           ],
         },
       ];
@@ -634,6 +754,12 @@ function DashboardTemplate({ activeAgent, agents, language }: { activeAgent: num
           { label: "Auto-retentie actief", value: "3 campagnes", color: "text-emerald-400" },
           { label: "Gered deze maand", value: "4 klanten", color: "text-blue-400" },
         ]},
+        { title: "Social Listening", metrics: [
+          { label: "Vermeldingen vandaag", value: "23", color: "text-rose-400" },
+          { label: "Sentiment", value: "87% positief", color: "text-emerald-400" },
+          { label: "Trending topic", value: "\"AI agents\"", color: "text-amber-400" },
+          { label: "Competitor mentions", value: "4 negatief", color: "text-red-400" },
+        ]},
       ]
     : [
         { title: "Competitor Monitor", metrics: [
@@ -653,6 +779,12 @@ function DashboardTemplate({ activeAgent, agents, language }: { activeAgent: num
           { label: "Avg risk score", value: "82/100", color: "text-amber-400" },
           { label: "Auto-retention", value: "3 campaigns", color: "text-emerald-400" },
           { label: "Saved this month", value: "4 customers", color: "text-blue-400" },
+        ]},
+        { title: "Social Listening", metrics: [
+          { label: "Mentions today", value: "23", color: "text-rose-400" },
+          { label: "Sentiment", value: "87% positive", color: "text-emerald-400" },
+          { label: "Trending topic", value: "\"AI agents\"", color: "text-amber-400" },
+          { label: "Competitor mentions", value: "4 negative", color: "text-red-400" },
         ]},
       ];
 
@@ -697,6 +829,11 @@ function DocumentScanTemplate({ activeAgent, agents, language }: { activeAgent: 
           { type: "alert", text: "Bedrag €4.800 wijkt af van klantgemiddelde" },
           { type: "ok", text: "KYC-verificatie klant bevestigd" },
         ]},
+        { doc: "Cashflow_forecast_Q2_2026.pdf", findings: [
+          { type: "info", text: "Verwachte inkomsten Q2: €142K (+8% vs Q1)" },
+          { type: "alert", text: "Tekort verwacht week 22 — €4.200 onder minimum" },
+          { type: "ok", text: "Aanbeveling: vervroeg factuur #912 of stel investering uit" },
+        ]},
       ]
     : [
         { doc: "Supplier_Contract_2025.pdf", findings: [
@@ -713,6 +850,11 @@ function DocumentScanTemplate({ activeAgent, agents, language }: { activeAgent: 
           { type: "risk", text: "3 transactions from same IP in 2 minutes" },
           { type: "alert", text: "Amount €4,800 deviates from customer average" },
           { type: "ok", text: "KYC verification confirmed" },
+        ]},
+        { doc: "Cashflow_Forecast_Q2_2026.pdf", findings: [
+          { type: "info", text: "Expected revenue Q2: €142K (+8% vs Q1)" },
+          { type: "alert", text: "Shortfall expected week 22 — €4,200 below minimum" },
+          { type: "ok", text: "Recommendation: expedite invoice #912 or defer investment" },
         ]},
       ];
 
