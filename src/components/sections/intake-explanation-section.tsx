@@ -140,7 +140,7 @@ export default function IntakeExplanationSection() {
                                 className="bg-primary text-primary-foreground hover:bg-primary/90 px-6 sm:px-10 md:px-14 py-5 sm:py-6 md:py-7 text-base sm:text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 font-semibold"
                             >
                                 <a
-                                    href="https://calendly.com/quotum-consulting/30min"
+                                    href="https://calendly.com/omarnassar1127/30min"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="flex items-center justify-center gap-3"

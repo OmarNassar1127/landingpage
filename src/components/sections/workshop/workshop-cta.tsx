@@ -106,7 +106,7 @@ export default function WorkshopCTA() {
                   </div>
                   <div className="w-full h-[600px] rounded-lg overflow-hidden">
                     <iframe
-                      src="https://calendly.com/quotum-consulting/30min"
+                      src="https://calendly.com/omarnassar1127/30min"
                       width="100%"
                       height="100%"
                       frameBorder="0"
