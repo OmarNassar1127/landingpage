@@ -402,7 +402,7 @@ export default function Contact() {
                       required
                       value={formState.phone}
                       onChange={handleChange}
-                      className="w-full px-4 py-2 border rounded-md bg-background focus:border-primary/50 focus:ring-2 focus:ring-primary/20 transition-all duration-200"
+                      className="w-full px-4 py-3 border-2 rounded-lg bg-gray-50 dark:bg-gray-800/50 border-gray-300 dark:border-gray-600 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-200 text-gray-900 dark:text-gray-100"
                       whileFocus={{ scale: 1.01 }}
                       transition={{ duration: 0.2 }}
                     />
@@ -463,22 +463,20 @@ export default function Contact() {
           </motion.div>
           
           <motion.div variants={itemVariants} className="space-y-8">
-            {/* Robin's Image */}
-            <motion.div 
+            {/* Contact person */}
+            <motion.div
               className="flex items-center space-x-3"
               variants={itemVariants}
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.3 }}
             >
               <div className="relative">
-                <img
-                  src="/images/contact/robin.jpeg"
-                  alt="Robin - Contact Person"
-                  className="w-16 h-16 rounded-full object-cover shadow-lg border-2 border-white dark:border-gray-800"
-                />
+                <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center shadow-lg border-2 border-white dark:border-gray-800">
+                  <span className="text-2xl font-bold text-primary">V</span>
+                </div>
               </div>
               <div>
-                <h4 className="text-sm font-semibold">Robin</h4>
+                <h4 className="text-sm font-semibold">Virelio</h4>
                 <p className="text-xs text-muted-foreground">Contactpersoon</p>
               </div>
             </motion.div>

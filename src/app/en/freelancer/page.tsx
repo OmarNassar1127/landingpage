@@ -55,7 +55,7 @@ function freelancerPersonSchema() {
       addressLocality: "Amsterdam",
       addressCountry: "NL",
     },
-    email: "omarnassar1127@gmail.com",
+    email: "info@virelio.nl",
     telephone: "+31687838713",
     description:
       "Experienced freelance backend developer specializing in PHP/Laravel, Python, AI integrations, and machine learning technologies.",
@@ -134,14 +134,10 @@ function freelancerServiceSchema() {
   };
 }
 
-export const metadata: Metadata = generateMetadata({
-  title: "Virelio Freelance - Expert Developers Omar & Robin Netherlands",
-  description:
-    "Virelio Freelance: Experienced developers specializing in backend development, AI integrations, and web applications. Omar & Robin offer professional freelance software development services.",
-  keywords:
-    "Virelio freelance, freelance developer, freelance programmer Netherlands, freelance software developer, freelance backend developer, AI developer freelance, PHP Laravel freelancer, Python developer, Amsterdam freelance developer, business analyst freelance, data analyst contractor, BI developer freelance, SQL specialist contractor, machine learning developer, automation specialist, process optimization consultant, dashboard developer, data scientist contractor, freelance consultant, ICT contractor, IT freelancer Amsterdam, web developer contractor, app developer freelance, API developer, database specialist, e-commerce developer, medical software developer, healthcare IT specialist, fintech developer, scraping specialist, data mining expert, business intelligence consultant, lean six sigma consultant, project manager contractor, technical consultant, software architect freelance",
-  pathname: "/en/freelancer",
-});
+export const metadata: Metadata = {
+  title: "Virelio Freelance",
+  robots: { index: false, follow: false },
+};
 
 export default function FreelancerPage() {
   return (

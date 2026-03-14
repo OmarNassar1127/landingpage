@@ -15,6 +15,7 @@ export default function IntakeExplanationSection() {
     const steps = [
         {
             icon: Calendar,
+            number: "01",
             title: language === 'nl' ? '30 min kennismaken' : '30 min introduction',
             description: language === 'nl'
                 ? 'We bespreken je uitdaging, waar je nu staat, en waar je naartoe wilt.'
@@ -22,6 +23,7 @@ export default function IntakeExplanationSection() {
         },
         {
             icon: FileText,
+            number: "02",
             title: language === 'nl' ? 'Voorstel binnen 4u' : 'Proposal within 4h',
             description: language === 'nl'
                 ? 'Je krijgt een strak voorstel: wat we bouwen, hoe lang het duurt, en wat het kost.'
@@ -29,6 +31,7 @@ export default function IntakeExplanationSection() {
         },
         {
             icon: Rocket,
+            number: "03",
             title: language === 'nl' ? 'Live in 2 weken' : 'Live in 2 weeks',
             description: language === 'nl'
                 ? 'Akkoord? We beginnen direct. Binnen 2 weken heb je een werkende oplossing.'
@@ -37,119 +40,110 @@ export default function IntakeExplanationSection() {
     ];
 
     return (
-        <section className="py-10 sm:py-16 bg-background relative overflow-hidden" id="intake">
+        <section className="py-20 sm:py-28 md:py-32 bg-background relative overflow-hidden" id="intake">
             <div className="container mx-auto px-4 relative z-10">
                 <div className="max-w-5xl mx-auto">
                     {/* Header */}
-                    <div className="text-center mb-16">
-                        <motion.h2
-                            className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 px-4"
+                    <div className="text-center mb-16 sm:mb-20">
+                        <motion.p
+                            className="text-sm font-medium text-primary uppercase tracking-widest mb-6"
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                         >
-                            {language === 'nl' ? 'Hoe werkt het?' : 'How does it work?'}
+                            {language === 'nl' ? 'Zo werkt het' : 'How it works'}
+                        </motion.p>
+
+                        <motion.h2
+                            className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.05 }}
+                        >
+                            {language === 'nl' ? 'Van idee tot live' : 'From idea to live'}
                         </motion.h2>
 
                         <motion.p
-                            className="text-base sm:text-lg text-muted-foreground px-4"
+                            className="text-lg sm:text-xl text-muted-foreground"
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: 0.1 }}
                         >
                             {language === 'nl'
-                                ? 'Van kennismaking tot werkende oplossing in 3 simpele stappen'
-                                : 'From introduction to working solution in 3 simple steps'}
+                                ? 'Drie simpele stappen naar je werkende AI-oplossing'
+                                : 'Three simple steps to your working AI solution'}
                         </motion.p>
                     </div>
 
-                    {/* Steps with Progress Bar */}
-                    <div className="relative mb-32">
-                        {/* Progress bar container */}
-                        <div className="absolute top-[60px] left-0 right-0 h-1 bg-gray-200 hidden md:block">
-                            <motion.div
-                                className="h-full bg-gradient-to-r from-blue-500 to-blue-600 rounded-full"
-                                initial={{ width: "0%" }}
-                                whileInView={{ width: "100%" }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 2, delay: 0.5, ease: "easeInOut" }}
-                            />
-                        </div>
+                    {/* Steps */}
+                    <div className="grid md:grid-cols-3 gap-6 sm:gap-8 mb-20 sm:mb-24">
+                        {steps.map((step, index) => {
+                            const Icon = step.icon;
+                            return (
+                                <motion.div
+                                    key={index}
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: 0.1 * index }}
+                                    className="relative"
+                                >
+                                    <div className="h-full p-8 rounded-2xl border border-border bg-background text-center hover:border-primary/30 hover:shadow-lg transition-all duration-300">
+                                        {/* Step number */}
+                                        <span className="text-6xl font-black text-primary/10 absolute top-4 right-6">
+                                            {step.number}
+                                        </span>
 
-                        <div className="grid md:grid-cols-3 gap-8 relative">
-                            {steps.map((step, index) => {
-                                const Icon = step.icon;
-                                return (
-                                    <motion.div
-                                        key={index}
-                                        className="relative"
-                                        initial={{ opacity: 0, y: 20 }}
-                                        whileInView={{ opacity: 1, y: 0 }}
-                                        viewport={{ once: true }}
-                                        transition={{ delay: 0.1 * index }}
-                                    >
-                                        {/* Step number badge - centered at top */}
-                                        <div className="flex justify-center mb-6">
-                                            <motion.div
-                                                className="w-12 h-12 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-xl shadow-lg z-10 relative"
-                                                initial={{ scale: 0 }}
-                                                whileInView={{ scale: 1 }}
-                                                viewport={{ once: true }}
-                                                transition={{ delay: 0.2 + index * 0.1, type: "spring", stiffness: 200 }}
-                                            >
-                                                {index + 1}
-                                            </motion.div>
+                                        {/* Icon */}
+                                        <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 mx-auto">
+                                            <Icon className="h-7 w-7 text-primary" />
                                         </div>
 
-                                        {/* Card */}
-                                        <div className="bg-card border border-border rounded-xl p-6 h-full text-center">
-                                            <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-4 mx-auto">
-                                                <Icon className="h-7 w-7 text-primary" />
-                                            </div>
-
-                                            <h3 className="font-semibold text-xl mb-3">{step.title}</h3>
-                                            <p className="text-muted-foreground leading-relaxed">
-                                                {step.description}
-                                            </p>
-                                        </div>
-                                    </motion.div>
-                                );
-                            })}
-                        </div>
+                                        <h3 className="font-bold text-xl mb-3 text-foreground">
+                                            {step.title}
+                                        </h3>
+                                        <p className="text-muted-foreground leading-relaxed">
+                                            {step.description}
+                                        </p>
+                                    </div>
+                                </motion.div>
+                            );
+                        })}
                     </div>
 
-                    {/* Clean CTA Section */}
+                    {/* CTA Section */}
                     <motion.div
                         id="ready-to-start"
-                        className="bg-card border border-border rounded-2xl p-8 sm:p-12 text-center shadow-sm"
+                        className="rounded-2xl border border-border bg-muted/40 dark:bg-muted/20 p-10 sm:p-16 text-center"
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        transition={{ delay: 0.4 }}
+                        transition={{ delay: 0.2 }}
                     >
-                        <h3 className="text-2xl sm:text-3xl font-bold mb-3 text-foreground">
+                        <h3 className="text-3xl sm:text-4xl font-bold mb-4 text-foreground">
                             {language === 'nl' ? 'Klaar om te beginnen?' : 'Ready to start?'}
                         </h3>
 
-                        <p className="text-base sm:text-lg text-muted-foreground mb-8">
+                        <p className="text-lg sm:text-xl text-muted-foreground mb-10">
                             {language === 'nl'
                                 ? '30 minuten. Gratis. Geen verplichtingen.'
                                 : '30 minutes. Free. No commitments.'}
                         </p>
 
                         {/* Primary CTA */}
-                        <div className="mb-6 flex justify-center">
+                        <div className="mb-8 flex justify-center">
                             <Button
                                 size="lg"
                                 asChild
-                                className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 sm:px-12 py-5 sm:py-6 text-base sm:text-lg rounded-xl shadow-md hover:shadow-lg transition-all duration-300 w-full sm:w-auto"
+                                className="bg-primary text-primary-foreground hover:bg-primary/90 px-10 sm:px-14 py-6 sm:py-7 text-base sm:text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 font-semibold"
                             >
                                 <a
                                     href="https://calendly.com/quotum-consulting/30min"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="flex items-center justify-center gap-2"
+                                    className="flex items-center justify-center gap-3"
                                 >
                                     {language === 'nl' ? 'Plan een gesprek' : 'Schedule a call'}
                                     <ArrowRight className="h-5 w-5" />
@@ -158,63 +152,49 @@ export default function IntakeExplanationSection() {
                         </div>
 
                         {/* Trust Signals */}
-                        <div className="flex flex-wrap justify-center gap-4 sm:gap-6 text-sm text-muted-foreground">
-                            <div className="flex items-center gap-2">
-                                <Check className="h-4 w-4 text-green-500" strokeWidth={2.5} />
-                                <span>{language === 'nl' ? 'Binnen 4u reactie' : 'Response within 4h'}</span>
+                        <div className="flex flex-wrap justify-center gap-6 sm:gap-8 text-sm text-muted-foreground mb-8">
+                            {[
+                                language === 'nl' ? 'Binnen 4u reactie' : 'Response within 4h',
+                                language === 'nl' ? '18 bedrijven geholpen' : '18 companies helped',
+                                language === 'nl' ? 'Geld-terug garantie' : 'Money-back guarantee',
+                            ].map((text, idx) => (
+                                <div key={idx} className="flex items-center gap-2">
+                                    <Check className="h-4 w-4 text-green-500" strokeWidth={2.5} />
+                                    <span>{text}</span>
+                                    </div>
+                                ))}
                             </div>
-                            <div className="flex items-center gap-2">
-                                <Check className="h-4 w-4 text-green-500" strokeWidth={2.5} />
-                                <span>{language === 'nl' ? '18 bedrijven geholpen' : '18 companies helped'}</span>
-                            </div>
-                            <div className="flex items-center gap-2">
-                                <Check className="h-4 w-4 text-green-500" strokeWidth={2.5} />
-                                <span>{language === 'nl' ? 'Geld-terug garantie' : 'Money-back guarantee'}</span>
-                            </div>
-                        </div>
 
                         {/* Contact Accordion */}
                         <div className="max-w-sm mx-auto">
                             <button
                                 onClick={() => setShowContact(!showContact)}
-                                className="flex items-center justify-center gap-2 text-foreground/70 hover:text-foreground transition-colors mx-auto group mb-4"
+                                className="flex items-center justify-center gap-2 text-muted-foreground hover:text-foreground transition-colors mx-auto mb-4"
                             >
-                                <span className="text-base">{language === 'nl' ? 'Of neem direct contact op' : 'Or contact directly'}</span>
+                                <span className="text-sm">{language === 'nl' ? 'Of neem direct contact op' : 'Or contact directly'}</span>
                                 <ChevronRight
-                                    className={`h-5 w-5 transition-transform ${showContact ? 'rotate-90' : ''}`}
+                                    className={`h-4 w-4 transition-transform ${showContact ? 'rotate-90' : ''}`}
                                 />
                             </button>
 
-                            {/* Accordion content */}
                             {showContact && (
                                 <motion.div
                                     initial={{ opacity: 0, height: 0 }}
                                     animate={{ opacity: 1, height: 'auto' }}
                                     exit={{ opacity: 0, height: 0 }}
-                                    className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 space-y-3 border border-gray-700"
+                                    className="bg-background rounded-xl p-4 space-y-2 border border-border"
                                 >
-                                    <a
-                                        href="tel:+31640446732"
-                                        className="flex items-center gap-3 p-4 bg-gray-700/50 rounded-lg hover:bg-gray-700 transition-colors text-base"
-                                    >
-                                        <Phone className="h-5 w-5 text-blue-400 flex-shrink-0" />
-                                        <span className="text-white font-medium">06-4044 6732</span>
+                                    <a href="tel:+31687838713" className="flex items-center gap-3 p-3 rounded-lg hover:bg-muted transition-colors">
+                                        <Phone className="h-4 w-4 text-primary flex-shrink-0" />
+                                        <span className="text-foreground font-medium text-sm">+31 6 8783 8713</span>
                                     </a>
-                                    <a
-                                        href="mailto:robin.bril@gmail.com"
-                                        className="flex items-center gap-3 p-4 bg-gray-700/50 rounded-lg hover:bg-gray-700 transition-colors text-base"
-                                    >
-                                        <Mail className="h-5 w-5 text-blue-400 flex-shrink-0" />
-                                        <span className="text-white font-medium">robin.bril@gmail.com</span>
+                                    <a href="mailto:info@virelio.nl" className="flex items-center gap-3 p-3 rounded-lg hover:bg-muted transition-colors">
+                                        <Mail className="h-4 w-4 text-primary flex-shrink-0" />
+                                        <span className="text-foreground font-medium text-sm">info@virelio.nl</span>
                                     </a>
-                                    <a
-                                        href="https://wa.me/31640446732"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="flex items-center gap-3 p-4 bg-gray-700/50 rounded-lg hover:bg-gray-700 transition-colors text-base"
-                                    >
-                                        <MessageCircle className="h-5 w-5 text-blue-400 flex-shrink-0" />
-                                        <span className="text-white font-medium">WhatsApp</span>
+                                    <a href="https://wa.me/31687838713" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 p-3 rounded-lg hover:bg-muted transition-colors">
+                                        <MessageCircle className="h-4 w-4 text-primary flex-shrink-0" />
+                                        <span className="text-foreground font-medium text-sm">WhatsApp</span>
                                     </a>
                                 </motion.div>
                             )}
@@ -223,8 +203,6 @@ export default function IntakeExplanationSection() {
                 </div>
             </div>
 
-
-            {/* Demo Request Modal */}
             <DemoRequestModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
         </section>
     );

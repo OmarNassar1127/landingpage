@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "skills": {
+    "cloudflare": {
+      "source": "cloudflare/skills",
+      "sourceType": "github",
+      "computedHash": "02ef72b4906d295d03da15d52357babdef06a762f0374b85c89c73c9b22a7bad"
+    },
+    "frontend-design": {
+      "source": "mager/frontend-design",
+      "sourceType": "github",
+      "computedHash": "932ef23b5d0a0aa4a89e51a9bde1217fb987d35fe2c1d5fe51c3090938ac4bd8"
+    },
+    "seo-audit": {
+      "source": "coreyhaines31/marketingskills",
+      "sourceType": "github",
+      "computedHash": "ec3109d213dde1747614ad1112ef0e498e04b24e464538968e156dfbfadb2121"
+    }
+  }
+}

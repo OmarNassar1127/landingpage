@@ -85,7 +85,7 @@ export default function PrivacyPolicy() {
             If you have any questions about this privacy policy or our privacy practices, please contact us at:
           </p>
           <p className="dark:text-white">
-            <strong className="text-foreground dark:text-foreground">Email:</strong> <a href="mailto:privacy@virelio.nl" className="text-blue-600 dark:text-blue-400 hover:underline">privacy@virelio.nl</a><br />
+            <strong className="text-foreground dark:text-foreground">Email:</strong> <a href="mailto:info@virelio.nl" className="text-blue-600 dark:text-blue-400 hover:underline">info@virelio.nl</a><br />
             <strong className="text-foreground dark:text-foreground">Address:</strong> Amsterdam, The Netherlands
           </p>
         </div>

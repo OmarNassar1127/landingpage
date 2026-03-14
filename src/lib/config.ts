@@ -1,16 +1,16 @@
 export const siteConfig = {
   name: "Virelio",
-  description: "Innovative Solutions for Modern Challenges",
-  url: "https://virelio.nl", // Updated domain
-  metadataBase: "https://virelio.nl", // Updated domain
+  description: "AI-agents die samenwerken, delegeren en uitvoeren — live in 2 weken. Gevestigd in Amsterdam.",
+  url: "https://virelio.nl",
+  metadataBase: "https://virelio.nl",
   logoUrl: "/logo.svg",
-  ogImage: "/og-image.jpg",
+  ogImage: "/og-image.png",
   twitterHandle: "@Virelio",
-  locale: "nl", // Changed default locale to Dutch
+  locale: "nl",
   authors: [
     {
       name: "Virelio Team",
-      url: "https://virelio.nl", // Landing page, no /team page
+      url: "https://virelio.nl",
     },
   ],
   socials: {
@@ -19,26 +19,23 @@ export const siteConfig = {
     linkedin: "https://linkedin.com/company/Virelio",
   },
   contact: {
-    email: "info@Virelio.nl",
-    phone: "+31 (0)6 12345678",
+    email: "info@virelio.nl",
+    phone: "+31687838713",
     address: "Amsterdam, Netherlands",
   },
   themeColor: "#ffffff",
   keywords: [
-    "AI Solutions",
-    "AI Spraakassistent",
-    "Voice AI",
-    "AI Telefonie",
-    "SaaS platforms",
-    "KYC integrations",
-    "Shop Automations",
-    "Web Development",
-    "Software Development",
-    "Digital Innovation",
-    "Technology Solutions",
-    "Zakelijke Automatisering",
-    "Nederlandse AI",
+    "AI agents",
+    "digitale medewerkers",
+    "AI automatisering",
+    "klantenservice bot",
+    "sales automatisering",
+    "AI agent development",
+    "custom AI agents",
+    "zakelijke AI",
     "Amsterdam AI bedrijf",
+    "Nederlandse AI",
+    "Virelio",
   ],
   // For language-specific URLs (better for SEO)
   alternateLanguages: {

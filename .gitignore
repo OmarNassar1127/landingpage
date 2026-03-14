@@ -17,6 +17,13 @@
 .DS_Store
 *.pem
 
+# skills (installed locally)
+.agents/
+.agent/
+.claude/skills/
+.factory/
+skills-lock.json
+
 # debug
 npm-debug.log*
 yarn-debug.log*

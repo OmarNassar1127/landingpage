@@ -2,7 +2,8 @@ import { Metadata } from "next";
 import Navbar from "@/components/sections/navbar";
 import Hero from "@/components/sections/hero";
 import CompanySlider from "@/components/sections/company-slider";
-import Projects from "@/components/sections/projects";
+import CaseStudies from "@/components/sections/case-studies";
+import WhyVirelio from "@/components/sections/why-virelio";
 import Services from "@/components/sections/services";
 import Testimonials from "@/components/sections/testimonials";
 import Footer from "@/components/sections/footer";
@@ -14,23 +15,23 @@ import { siteConfig } from "@/lib/config";
 import JsonLd from "@/components/seo/json-ld";
 import { faqSchema, testimonialsSchema, servicesSchema, workshopSchema } from "@/lib/schema";
 
-// Sample FAQ data for the landing page
+// FAQ data for the landing page
 const faqData = {
   items: [
     {
-      question: "What services does Virelio offer?",
+      question: "Wat doet Virelio?",
       answer:
-        "Virelio specializes in AI solutions, SaaS development, KYC integrations, and e-commerce automation to help businesses thrive in the digital age.",
+        "Virelio bouwt op maat gemaakte AI-agent teams voor bedrijven. Onze agents verzorgen klantenservice, sales, operaties en kennisbeheer — 24/7, in de stem van jouw merk.",
     },
     {
-      question: "How can Virelio help my business?",
+      question: "Hoe snel kunnen jullie leveren?",
       answer:
-        "We provide innovative technology solutions tailored to your business needs, helping you improve efficiency, enhance customer experience, and drive growth in the digital marketplace.",
+        "De meeste AI-agents zijn live binnen 2 weken. We werken in korte sprints: intake, prototype, feedback, lancering.",
     },
     {
-      question: "Where is Virelio located?",
+      question: "Waar is Virelio gevestigd?",
       answer:
-        "Virelio is based in Amsterdam, Netherlands, but we work with clients globally.",
+        "Virelio is gevestigd in Amsterdam, Nederland, maar we werken met klanten door heel Europa.",
     },
   ],
 };
@@ -38,51 +39,45 @@ const faqData = {
 // Testimonials data for structured data
 const testimonialsData = {
   items: [
-    // {
-    //   author: "Azeez Bayonle Abideen",
-    //   role: "User Experience Designer @ Vloto",
-    //   text: "I have the pleasure of working with Omar, where he has consistently demonstrated exceptional skills as a backend developer, delivering efficient, maintainable code, tackling complex problems with innovative solutions, and fostering a collaborative team environment.",
-    // },
     {
-      author: "Azeez Bayonle Abideen",
-      role: "User Experience Designer",
-      text: "I have the pleasure of working with Omar, where he has consistently demonstrated exceptional skills as a backend developer, delivering efficient, maintainable code, tackling complex problems with innovative solutions, and fostering a collaborative team environment.",
+      author: "Giulio Piccolo",
+      role: "Lead Engineer @ Suit Supply",
+      text: "The Virelio team stood out for their rapid development and strong foundation in AI. They independently tackled complex topics and delivered valuable insights.",
     },
     {
       author: "Cristian Arboleda",
       role: ".NET Developer",
-      text: "Omar is a talented developer with a strong drive to continuously grow and improve himself. He is always willing to support his colleagues, which makes him a valuable team player.",
+      text: "A talented team with a strong drive to grow and improve. Always supporting their clients, their greatest strength is quickly learning new domains and adapting to any process.",
     },
-    // {
-    //   author: "Ihor Tolkachov",
-    //   role: "Frontend Developer",
-    //   text: "I had the pleasure of working with Omar at Vloto B.V., where he proved to be a reliable and skilled colleague. His communication, planning, and coding abilities were evident in all our projects.",
-    // },
     {
       author: "Ihor Tolkachov",
       role: "Frontend Developer",
-      text: "I had the pleasure of working with Omar where he proved to be a reliable and skilled colleague. His communication, planning, and coding abilities were evident in all our projects.",
+      text: "Working with Virelio showed their reliability and skill. Together we created an automatic fine scanner that reduced a 30-minute process to just 10 seconds.",
     },
     {
-      author: "Sophia Chen",
-      role: "Product Manager at TechInnovate",
-      text: "Working with Omar and his team at Virelio has transformed our product development workflow. Their AI solutions have automated processes that used to take days into minutes.",
+      author: "Oeds de Meer",
+      role: "Process & Information Manager @ SBB",
+      text: "Virelio consistently delivered sharp analyses and worked with tools like SQL, Looker, and Python. They recognize patterns in data and provide visual insights that drive better decisions.",
     },
     {
-      author: "Jan van der Meer",
-      role: "CTO at Dutch E-commerce Solutions",
-      text: "The shop automation system developed by Virelio has revolutionized how we manage our e-commerce operations. Omar's deep understanding of both the technical and business aspects of e-commerce allowed for a solution that seamlessly integrates with our existing platforms.",
+      author: "Laura Britton",
+      role: "Project Manager Medical Affairs @ Sedgwick",
+      text: "Dedicated, helpful and reliable. Always deliver on their promises.",
     },
   ],
 };
 
+
+
 export const metadata: Metadata = generateMetadata({
-  title: "Innovative Solutions for Modern Challenges",
+  title: "AI Agents op Maat — Jouw Digitale Team",
   description:
-    "We specialize in AI solutions, SaaS platforms, KYC integrations, and shop automations to help businesses thrive in the digital age.",
+    "Virelio bouwt AI-agents die samenwerken, delegeren en uitvoeren. Van klantenservice tot sales automatisering — live in 2 weken. Gevestigd in Amsterdam.",
   keywords:
-    "AI solutions, SaaS development, KYC integration, e-commerce automation, web development, technology consulting, Virelio",
+    "AI agents, digitale medewerkers, AI automatisering, klantenservice bot, sales automatisering, Amsterdam, Nederland, Virelio",
   pathname: "/",
+  imageUrl: "/og-image.png",
+  imageAlt: "Virelio — AI Agents op Maat voor Bedrijven",
 });
 
 export default function Home() {
@@ -102,9 +97,8 @@ export default function Home() {
         <div id={siteConfig.sections.services.substring(1)}>
           <Services />
         </div>
-        <div id={siteConfig.sections.projects.substring(1)}>
-          <Projects />
-        </div>
+        <CaseStudies />
+        <WhyVirelio />
         <div id={siteConfig.sections.testimonials.substring(1)}>
           <Testimonials />
         </div>

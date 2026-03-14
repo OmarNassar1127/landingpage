@@ -101,7 +101,7 @@ function zzpPersonSchema() {
       addressLocality: "Amsterdam",
       addressCountry: "NL",
     },
-    email: "omarnassar1127@gmail.com",
+    email: "info@virelio.nl",
     telephone: "+31687838713",
     description:
       "Ervaren ZZP backend developer gespecialiseerd in PHP/Laravel, Python, AI-integraties en machine learning technologieën.",
@@ -184,14 +184,10 @@ function zzpServiceSchema() {
   };
 }
 
-export const metadata: Metadata = generateMetadata({
-  title: "Virelio ZZP - Expert Freelance Developers Omar & Robin Nederland",
-  description:
-    "Virelio ZZP: Omar (Backend/AI Developer) en Robin (Business Analyst/Data Specialist) bieden freelance software development, data-analyse, AI-integraties en business intelligence services in Nederland.",
-  keywords:
-    "Virelio ZZP, ZZP developer, freelance programmeur Nederland, ZZP software ontwikkelaar, freelance backend developer, AI developer ZZP, PHP Laravel freelancer, Python developer ZZP, Amsterdam freelance developer, Virelio freelance, business analyst ZZP, data analist freelance, BI developer ZZP, SQL specialist freelance, machine learning developer, automatisering specialist, proces optimalisatie consultant, dashboard developer, data scientist ZZP, freelance consultant, ZZP ICT, IT freelancer Amsterdam, web developer ZZP, app developer freelance, API developer, database specialist, e-commerce developer, medische software ontwikkelaar, healthcare IT specialist, fintech developer, scraping specialist, data mining expert, business intelligence consultant, lean six sigma consultant, project manager ZZP, technical consultant, software architect freelance",
-  pathname: "/zzp",
-});
+export const metadata: Metadata = {
+  title: "Virelio ZZP",
+  robots: { index: false, follow: false },
+};
 
 export default function ZzpPage() {
   return (

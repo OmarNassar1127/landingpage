@@ -1,0 +1,32 @@
+# Virelio
+> AI agency based in Amsterdam that builds custom AI agent teams for businesses.
+
+## About
+Virelio builds AI agents that collaborate, delegate and execute. We create digital teams for customer service, sales & marketing, operations, and knowledge management. Our agents are live within 2 weeks.
+
+## Services
+- AI Agent Development: Custom AI agents for any business process
+- Customer Service Automation: 24/7 ticket handling, chat, WhatsApp bots
+- Sales & Marketing Automation: Lead qualification, outbound, quote generation
+- Operations Automation: Order processing, invoicing, HR onboarding
+- Knowledge Base Systems: AI-powered document search with source citations
+- AI Voice Assistant (virelio.nl/spraakassistent): Automates 87% of customer calls, answers within 2 rings, 24/7 available, Dutch-speaking AI that schedules appointments and handles inquiries
+
+## Key Facts
+- Based in Amsterdam, Netherlands
+- Live in 2 weeks from intake to production
+- 18+ companies served
+- 100% client data ownership
+- GDPR compliant, EU data processing
+- Multilingual team: Dutch, English, Arabic, Spanish, French
+
+## Case Studies
+- ZapBot (zapbot.nl): WhatsApp AI assistant for Dutch businesses
+- Slouch (slouch.pro): AI posture correction via webcam
+- ContentOS: AI marketing team with 4 specialized agents
+
+## Contact
+- Website: https://virelio.nl
+- Email: info@virelio.nl
+- Phone: +31687838713
+- WhatsApp: https://wa.me/31687838713

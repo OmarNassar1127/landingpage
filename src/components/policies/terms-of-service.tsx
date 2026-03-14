@@ -94,7 +94,7 @@ export default function TermsOfService() {
             If you have any questions about these Terms, please contact us:
           </p>
           <p className="dark:text-white">
-            <strong className="text-foreground dark:text-foreground">Email:</strong> <a href="mailto:legal@virelio.nl" className="text-blue-600 dark:text-blue-400 hover:underline">legal@virelio.nl</a><br />
+            <strong className="text-foreground dark:text-foreground">Email:</strong> <a href="mailto:info@virelio.nl" className="text-blue-600 dark:text-blue-400 hover:underline">info@virelio.nl</a><br />
             <strong className="text-foreground dark:text-foreground">Address:</strong> Amsterdam, The Netherlands
           </p>
         </div>

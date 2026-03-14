@@ -84,9 +84,9 @@ export const servicesSchema = () => {
     itemListElement: [
       {
         "@type": "Service",
-        name: "AI Development",
+        name: "AI Agent Development",
         description:
-          "Custom AI solutions that automate business processes and enhance customer interactions.",
+          "Custom AI agent teams built for your business — handling tasks autonomously, collaborating with each other, and integrating with your existing tools.",
         provider: {
           "@type": "Organization",
           name: "Virelio",
@@ -95,9 +95,9 @@ export const servicesSchema = () => {
       },
       {
         "@type": "Service",
-        name: "SaaS Development",
+        name: "Sales Automation",
         description:
-          "Tailored Software-as-a-Service solutions that are scalable, reliable, and user-friendly.",
+          "AI agents that qualify leads, follow up prospects, and manage your sales pipeline 24/7 — so your team closes more deals with less effort.",
         provider: {
           "@type": "Organization",
           name: "Virelio",
@@ -106,9 +106,9 @@ export const servicesSchema = () => {
       },
       {
         "@type": "Service",
-        name: "KYC Integration",
+        name: "Customer Service Automation",
         description:
-          "Seamless Know Your Customer integrations that meet regulations and streamline user verification.",
+          "AI agents that handle customer inquiries, resolve common issues, and escalate edge cases — delivering instant, consistent support around the clock.",
         provider: {
           "@type": "Organization",
           name: "Virelio",
@@ -117,9 +117,9 @@ export const servicesSchema = () => {
       },
       {
         "@type": "Service",
-        name: "E-commerce Automation",
+        name: "Knowledge Base Systems",
         description:
-          "Solutions that streamline online sales processes and improve operational efficiency.",
+          "AI-powered knowledge management agents that capture, organise and surface institutional knowledge — making information instantly accessible across your team.",
         provider: {
           "@type": "Organization",
           name: "Virelio",
@@ -128,31 +128,9 @@ export const servicesSchema = () => {
       },
       {
         "@type": "Service",
-        name: "Workshop Training",
+        name: "Operations Automation",
         description:
-          "Expert-led workshops and training sessions on AI, SaaS development, and modern web technologies.",
-        provider: {
-          "@type": "Organization",
-          name: "Virelio",
-          url: siteConfig.url,
-        },
-      },
-      {
-        "@type": "Service",
-        name: "Custom AI Solutions",
-        description:
-          "Personalized AI systems specifically tailored to your business's unique challenges.",
-        provider: {
-          "@type": "Organization",
-          name: "Virelio",
-          url: siteConfig.url,
-        },
-      },
-      {
-        "@type": "Service",
-        name: "Web Development",
-        description:
-          "High-performance websites and web applications that increase conversion and user engagement.",
+          "AI agents that automate repetitive back-office processes — from data entry and reporting to scheduling and workflow coordination.",
         provider: {
           "@type": "Organization",
           name: "Virelio",
@@ -368,7 +346,7 @@ export function testimonialsSchema({ items }: TestimonialsProps) {
           "@type": "Organization",
           name: siteConfig.name,
           url: siteConfig.url,
-          description: "Software development and AI solutions company",
+          description: "AI agency that builds custom AI agent teams for businesses — based in Amsterdam, Netherlands.",
           address: {
             "@type": "PostalAddress",
             addressCountry: "NL",
@@ -391,8 +369,8 @@ export function workshopSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "EducationalEvent",
-    name: "Virelio AI & SaaS Development Workshop",
-    description: "Expert-led workshops and training sessions on AI, SaaS development, and modern web technologies. Learn from industry professionals and get hands-on experience.",
+    name: "Virelio AI Agent Workshop",
+    description: "Expert-led workshops on building AI agents, automation workflows, and integrating AI into business processes. Hands-on experience with real use cases.",
     url: `${siteConfig.url}${siteConfig.sections.workshop}`,
     organizer: {
       "@type": "Organization",
@@ -422,7 +400,7 @@ export function workshopSchema() {
       },
       {
         "@type": "Thing", 
-        name: "SaaS Development",
+        name: "AI Agents",
       },
       {
         "@type": "Thing",
@@ -445,14 +423,14 @@ export function voiceAIServiceSchema() {
     alternateName: ["Voice AI", "Spraakassistent", "AI Telefonie", "Voice Assistant"],
     description: "24/7 AI spraakassistent die klantgesprekken automatiseert. Beantwoordt binnen 2 beltonen, vermindert gesprekvolume met 87%, en integreert met bestaande systemen.",
     url: `${siteConfig.url}/spraakassistent`,
-    image: `${siteConfig.url}/images/logo.png`,
+    image: `${siteConfig.url}/og-image.png`,
     serviceType: "AI Voice Automation",
     provider: {
       "@type": "Organization",
       "@id": `${siteConfig.url}#organization`,
       name: "Virelio",
       url: siteConfig.url,
-      logo: `${siteConfig.url}/images/logo.png`,
+      logo: `${siteConfig.url}/og-image.png`,
       address: {
         "@type": "PostalAddress",
         addressLocality: "Amsterdam",

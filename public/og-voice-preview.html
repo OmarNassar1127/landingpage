@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { width: 1200px; height: 630px; overflow: hidden; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif; }
+
+    .card {
+      width: 1200px;
+      height: 630px;
+      background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%);
+      position: relative;
+      display: flex;
+      align-items: center;
+      padding: 0 80px;
+      overflow: hidden;
+    }
+
+    /* Animated rings */
+    .ring {
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid rgba(99, 102, 241, 0.1);
+    }
+    .ring-1 { width: 600px; height: 600px; top: 50%; right: -100px; transform: translateY(-50%); }
+    .ring-2 { width: 450px; height: 450px; top: 50%; right: -25px; transform: translateY(-50%); border-color: rgba(99, 102, 241, 0.15); }
+    .ring-3 { width: 300px; height: 300px; top: 50%; right: 50px; transform: translateY(-50%); border-color: rgba(99, 102, 241, 0.2); }
+
+    /* Glow */
+    .glow {
+      position: absolute;
+      top: 50%;
+      right: 120px;
+      transform: translateY(-50%);
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(99, 102, 241, 0.25) 0%, transparent 70%);
+      filter: blur(40px);
+    }
+
+    .content {
+      position: relative;
+      z-index: 10;
+      flex: 1;
+      max-width: 620px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      border-radius: 100px;
+      background: rgba(99, 102, 241, 0.15);
+      border: 1px solid rgba(99, 102, 241, 0.25);
+      margin-bottom: 28px;
+    }
+
+    .badge .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #22c55e;
+    }
+
+    .badge span {
+      color: rgba(255,255,255,0.7);
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+    }
+
+    h1 {
+      font-size: 52px;
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.1;
+      letter-spacing: -2px;
+      margin-bottom: 18px;
+    }
+
+    h1 em {
+      font-style: normal;
+      background: linear-gradient(135deg, #818cf8, #6366f1, #a78bfa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .subtitle {
+      font-size: 20px;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.6;
+      margin-bottom: 32px;
+    }
+
+    .stats {
+      display: flex;
+      gap: 40px;
+    }
+
+    .stat {
+      text-align: left;
+    }
+
+    .stat .value {
+      font-size: 28px;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -1px;
+    }
+
+    .stat .label {
+      font-size: 11px;
+      color: rgba(255,255,255,0.35);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-top: 2px;
+    }
+
+    /* Right side: phone visualization */
+    .phone {
+      position: absolute;
+      right: 100px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 260px;
+      z-index: 10;
+    }
+
+    .phone-frame {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 28px;
+      padding: 20px 16px;
+      backdrop-filter: blur(10px);
+    }
+
+    .phone-notch {
+      width: 80px;
+      height: 6px;
+      border-radius: 3px;
+      background: rgba(255,255,255,0.1);
+      margin: 0 auto 16px;
+    }
+
+    .call-status {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .call-status .caller {
+      font-size: 18px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+
+    .call-status .time {
+      font-size: 13px;
+      color: rgba(255,255,255,0.4);
+    }
+
+    .waveform {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 3px;
+      height: 40px;
+      margin-bottom: 20px;
+    }
+
+    .wave-bar {
+      width: 4px;
+      border-radius: 2px;
+      background: linear-gradient(to top, #6366f1, #818cf8);
+    }
+
+    .transcript {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 12px;
+      padding: 12px;
+      margin-bottom: 16px;
+    }
+
+    .transcript .label {
+      font-size: 9px;
+      color: rgba(255,255,255,0.3);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 6px;
+    }
+
+    .transcript p {
+      font-size: 12px;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.5;
+    }
+
+    .action-badge {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 12px;
+      border-radius: 8px;
+      background: rgba(34, 197, 94, 0.1);
+      border: 1px solid rgba(34, 197, 94, 0.2);
+    }
+
+    .action-badge .check {
+      color: #22c55e;
+      font-size: 14px;
+    }
+
+    .action-badge span {
+      font-size: 11px;
+      color: rgba(255,255,255,0.6);
+    }
+
+    /* Bottom bar */
+    .bottom-bar {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 50px;
+      background: rgba(0,0,0,0.3);
+      border-top: 1px solid rgba(255,255,255,0.05);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 80px;
+      z-index: 10;
+    }
+
+    .bottom-bar .logo {
+      font-size: 18px;
+      font-weight: 900;
+      color: rgba(255,255,255,0.6);
+      letter-spacing: -0.5px;
+    }
+
+    .bottom-bar .logo span { color: #6366f1; }
+
+    .bottom-bar .url {
+      font-size: 13px;
+      color: rgba(255,255,255,0.25);
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="ring ring-1"></div>
+    <div class="ring ring-2"></div>
+    <div class="ring ring-3"></div>
+    <div class="glow"></div>
+
+    <div class="content">
+      <div class="badge">
+        <div class="dot"></div>
+        <span>AI Spraakassistent</span>
+      </div>
+
+      <h1>Jouw telefoon<br>beantwoord door <em>AI</em></h1>
+
+      <p class="subtitle">24/7 bereikbaar. Beantwoordt binnen 2 beltonen.<br>In jouw stijl, zonder dat je opneemt.</p>
+
+      <div class="stats">
+        <div class="stat">
+          <div class="value">87%</div>
+          <div class="label">Minder gesprekken</div>
+        </div>
+        <div class="stat">
+          <div class="value">&lt;2s</div>
+          <div class="label">Reactietijd</div>
+        </div>
+        <div class="stat">
+          <div class="value">24/7</div>
+          <div class="label">Bereikbaar</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="phone">
+      <div class="phone-frame">
+        <div class="phone-notch"></div>
+
+        <div class="call-status">
+          <div class="caller">Klant belt...</div>
+          <div class="time">0:12</div>
+        </div>
+
+        <div class="waveform">
+          <div class="wave-bar" style="height: 12px;"></div>
+          <div class="wave-bar" style="height: 24px;"></div>
+          <div class="wave-bar" style="height: 18px;"></div>
+          <div class="wave-bar" style="height: 32px;"></div>
+          <div class="wave-bar" style="height: 28px;"></div>
+          <div class="wave-bar" style="height: 36px;"></div>
+          <div class="wave-bar" style="height: 20px;"></div>
+          <div class="wave-bar" style="height: 30px;"></div>
+          <div class="wave-bar" style="height: 16px;"></div>
+          <div class="wave-bar" style="height: 38px;"></div>
+          <div class="wave-bar" style="height: 22px;"></div>
+          <div class="wave-bar" style="height: 14px;"></div>
+          <div class="wave-bar" style="height: 26px;"></div>
+          <div class="wave-bar" style="height: 34px;"></div>
+          <div class="wave-bar" style="height: 18px;"></div>
+        </div>
+
+        <div class="transcript">
+          <div class="label">Live transcript</div>
+          <p>"Goedemiddag, u spreekt met Virelio. Hoe kan ik u helpen?"</p>
+        </div>
+
+        <div class="action-badge">
+          <span class="check">✓</span>
+          <span>Afspraak ingepland — 14:30</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="bottom-bar">
+      <div class="logo">Virelio<span>.</span></div>
+      <div class="url">virelio.nl/spraakassistent</div>
+    </div>
+  </div>
+</body>
+</html>

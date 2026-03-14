@@ -17,12 +17,12 @@ export default function VoiceAIStructuredData({ lang }: VoiceAIStructuredDataPro
     "description": lang === 'nl' 
       ? "AI spraakassistent voor bedrijven die 24/7 klantgesprekken automatiseert"
       : "AI voice assistant for businesses that automates customer calls 24/7",
-    "url": lang === 'nl' ? "https://nexbuy.com/spraakassistent" : "https://nexbuy.com/voiceassistant",
+    "url": lang === 'nl' ? "https://virelio.nl/spraakassistent" : "https://virelio.nl/voiceassistant",
     "provider": {
       "@type": "Organization",
       "name": "Virelio",
-      "url": "https://nexbuy.com",
-      "logo": "https://nexbuy.com/images/logo.png",
+      "url": "https://virelio.nl",
+      "logo": "https://virelio.nl/og-image.png",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Amsterdam",
@@ -146,7 +146,7 @@ export default function VoiceAIStructuredData({ lang }: VoiceAIStructuredDataPro
       ? "Virelio levert geavanceerde AI spraakassistenten voor bedrijven in Nederland. Automatiseer klantgesprekken, verhoog efficiency."
       : "Virelio delivers advanced AI voice assistants for businesses. Automate customer calls, increase efficiency.",
     "url": "https://virelio.nl",
-    "telephone": "+31-6-12345678",
+    "telephone": "+31687838713",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Amsterdam",
