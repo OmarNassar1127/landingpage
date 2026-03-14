@@ -495,7 +495,7 @@ function CaseStudyCard({
         className={`grid lg:grid-cols-2 gap-8 lg:gap-12 items-center ${isReversed ? "lg:direction-rtl" : ""}`}
       >
         {/* Content side */}
-        <div className={`space-y-6 ${isReversed ? "lg:order-2" : ""}`}>
+        <div className={`space-y-4 sm:space-y-6 px-2 sm:px-0 ${isReversed ? "lg:order-2" : ""}`}>
           {/* Logo + name */}
           <div className="flex items-center gap-3">
             <div className={`w-12 h-12 rounded-2xl overflow-hidden shrink-0 ${study.logoBg} flex items-center justify-center`}>
@@ -510,35 +510,35 @@ function CaseStudyCard({
               )}
             </div>
             <div>
-              <h3 className="text-2xl font-bold text-foreground">
+              <h3 className="text-xl sm:text-2xl font-bold text-foreground">
                 {study.name}
               </h3>
-              <p className="text-sm text-muted-foreground">{study.tagline}</p>
+              <p className="text-xs sm:text-sm text-muted-foreground">{study.tagline}</p>
             </div>
           </div>
 
           {/* Challenge & Solution */}
-          <div className="space-y-4">
+          <div className="space-y-3 sm:space-y-4">
             <div>
-              <h4 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">
+              <h4 className="text-[10px] sm:text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-1 sm:mb-2">
                 {isNL ? "De uitdaging" : "The challenge"}
               </h4>
-              <p className="text-sm text-foreground/70 leading-relaxed">
+              <p className="text-xs sm:text-sm text-foreground/70 leading-relaxed">
                 {study.challenge}
               </p>
             </div>
             <div>
-              <h4 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">
+              <h4 className="text-[10px] sm:text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-1 sm:mb-2">
                 {isNL ? "Onze oplossing" : "Our solution"}
               </h4>
-              <p className="text-sm text-foreground/70 leading-relaxed">
+              <p className="text-xs sm:text-sm text-foreground/70 leading-relaxed">
                 {study.solution}
               </p>
             </div>
           </div>
 
           {/* Results grid */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3">
             {study.results.map((r, i) => (
               <motion.div
                 key={i}
@@ -546,9 +546,9 @@ function CaseStudyCard({
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.3 + i * 0.08 }}
-                className="text-center p-3 rounded-xl bg-muted/30 border border-border/30"
+                className="text-center p-2.5 sm:p-3 rounded-lg sm:rounded-xl bg-muted/30 border border-border/30"
               >
-                <div className={`text-lg font-bold ${study.color}`}>
+                <div className={`text-base sm:text-lg font-bold ${study.color}`}>
                   {r.value}
                 </div>
                 <div className="text-[10px] text-muted-foreground uppercase tracking-wider mt-0.5">
@@ -624,7 +624,7 @@ export default function CaseStudies() {
 
   return (
     <section id="case-studies" className="py-20 sm:py-28 md:py-32">
-      <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
+      <div className="container mx-auto px-6 sm:px-6 max-w-7xl">
         {/* Header */}
         <div className="text-center mb-16 sm:mb-20">
           <motion.p
@@ -658,7 +658,7 @@ export default function CaseStudies() {
         </div>
 
         {/* Case studies */}
-        <div className="space-y-20 sm:space-y-28">
+        <div className="space-y-16 sm:space-y-20 lg:space-y-28">
           {studies.map((study, i) => (
             <CaseStudyCard
               key={study.name}
