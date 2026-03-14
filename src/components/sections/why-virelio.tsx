@@ -141,7 +141,7 @@ export default function WhyVirelio() {
                   {reason.description}
                 </p>
 
-                <div className="inline-flex items-center px-3 py-1 rounded-full bg-primary/5 border border-primary/10 mt-5">
+                <div className="inline-flex items-center px-3 py-1 rounded-full bg-primary/5 border border-primary/10 mt-5 self-start">
                   <span className="text-xs font-medium text-primary">
                     {reason.highlight}
                   </span>
