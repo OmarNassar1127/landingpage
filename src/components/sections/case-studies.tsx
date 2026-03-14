@@ -147,7 +147,7 @@ const getCaseStudies = (language: string): CaseStudy[] => {
             { label: "Time saved", value: "30 hrs/wk" },
             { label: "Cost vs. team", value: "-75%" },
           ],
-      tech: ["AI/GPT", "Social APIs", "Analytics", "Automation"],
+      tech: ["AI Agents", "Social APIs", "Analytics", "Automation"],
       color: "text-orange-500",
       gradient: "from-orange-500/10 to-pink-500/5",
       icon: TrendingUp,
