@@ -72,9 +72,9 @@ export default function ZzpContact({ isEnglish = false }: ZzpContactProps) {
     contactInfo: {
       title: "Quick Contact",
       email: "Email",
-      emailAddress: "robin.bril@gmail.com",
+      emailAddress: "info@virelio.nl",
       phone: "Phone", 
-      phoneNumber: "+31 6 4044 6732",
+      phoneNumber: "+31 6 8783 8713",
       location: "Location",
       locationText: "Amsterdam, Netherlands",
       availability: "Availability",
@@ -143,9 +143,9 @@ export default function ZzpContact({ isEnglish = false }: ZzpContactProps) {
     contactInfo: {
       title: "Direct Contact",
       email: "E-mail",
-      emailAddress: "robin.bril@gmail.com",
+      emailAddress: "info@virelio.nl",
       phone: "Telefoon",
-      phoneNumber: "+31 6 4044 6732", 
+      phoneNumber: "+31 6 8783 8713", 
       location: "Locatie",
       locationText: "Amsterdam, Nederland",
       availability: "Beschikbaarheid",

@@ -432,8 +432,8 @@ export const translations = {
       phone: "Telefoon",
       location: "Locatie",
       followUs: "WhatsApp direct",
-      emailAddress: "robin.bril@gmail.com",
-      phoneNumber: "+31 6 4044 6732",
+      emailAddress: "info@virelio.nl",
+      phoneNumber: "+31 6 8783 8713",
       locationText: "Amsterdam, Nederland",
     },
 
@@ -1261,8 +1261,8 @@ export const translations = {
       phone: "Phone",
       location: "Location",
       followUs: "Chat with us now",
-      emailAddress: "robin.bril@gmail.com",
-      phoneNumber: "+31 6 4044 6732",
+      emailAddress: "info@virelio.nl",
+      phoneNumber: "+31 6 8783 8713",
       locationText: "Amsterdam, The Netherlands",
     },
 

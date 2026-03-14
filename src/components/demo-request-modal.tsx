@@ -46,7 +46,7 @@ ${formData.goals}
     `);
 
         // Open mailto
-        window.location.href = `mailto:contact@virelio.com?subject=${subject}&body=${body}`;
+        window.location.href = `mailto:info@virelio.nl?subject=${subject}&body=${body}`;
 
         setTimeout(() => {
             setIsSubmitting(false);

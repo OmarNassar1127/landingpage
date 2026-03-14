@@ -184,15 +184,15 @@ export default function IntakeExplanationSection() {
                                     exit={{ opacity: 0, height: 0 }}
                                     className="bg-background rounded-xl p-4 space-y-2 border border-border"
                                 >
-                                    <a href="tel:+31687837135" className="flex items-center gap-3 p-3 rounded-lg hover:bg-muted transition-colors">
+                                    <a href="tel:+31687838713" className="flex items-center gap-3 p-3 rounded-lg hover:bg-muted transition-colors">
                                         <Phone className="h-4 w-4 text-primary flex-shrink-0" />
-                                        <span className="text-foreground font-medium text-sm">+31 6 8783 7135</span>
+                                        <span className="text-foreground font-medium text-sm">+31 6 8783 8713</span>
                                     </a>
-                                    <a href="mailto:contact@virelio.com" className="flex items-center gap-3 p-3 rounded-lg hover:bg-muted transition-colors">
+                                    <a href="mailto:info@virelio.nl" className="flex items-center gap-3 p-3 rounded-lg hover:bg-muted transition-colors">
                                         <Mail className="h-4 w-4 text-primary flex-shrink-0" />
-                                        <span className="text-foreground font-medium text-sm">contact@virelio.com</span>
+                                        <span className="text-foreground font-medium text-sm">info@virelio.nl</span>
                                     </a>
-                                    <a href="https://wa.me/31687837135" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 p-3 rounded-lg hover:bg-muted transition-colors">
+                                    <a href="https://wa.me/31687838713" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 p-3 rounded-lg hover:bg-muted transition-colors">
                                         <MessageCircle className="h-4 w-4 text-primary flex-shrink-0" />
                                         <span className="text-foreground font-medium text-sm">WhatsApp</span>
                                     </a>

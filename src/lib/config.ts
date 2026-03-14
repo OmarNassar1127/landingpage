@@ -20,7 +20,7 @@ export const siteConfig = {
   },
   contact: {
     email: "info@Virelio.nl",
-    phone: "+31 (0)6 12345678",
+    phone: "+31 6 8783 8713",
     address: "Amsterdam, Netherlands",
   },
   themeColor: "#ffffff",
