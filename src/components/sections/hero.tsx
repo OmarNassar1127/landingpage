@@ -652,7 +652,7 @@ function HeroContent() {
               <Button
                 size="lg"
                 variant="outline"
-                className="border-border hover:border-primary/30 px-8 sm:px-10 py-6 text-base rounded-xl"
+                className="border-border hover:border-primary/30 px-8 sm:px-10 py-3 sm:py-6 text-base rounded-xl"
                 asChild
               >
                 <a
@@ -661,6 +661,7 @@ function HeroContent() {
                     e.preventDefault();
                     scrollToSection("services");
                   }}
+                  className="flex items-center justify-center"
                 >
                   {language === "nl" ? "Bekijk agents" : "View agents"}
                 </a>

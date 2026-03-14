@@ -559,7 +559,7 @@ function CategoryDetail({
         onClick={(e) => e.stopPropagation()}
       >
         {/* Gradient header */}
-        <div className={`relative px-6 sm:px-8 pt-8 pb-6 bg-gradient-to-br ${category.gradient} overflow-hidden`}>
+        <div className={`relative px-4 sm:px-6 md:px-8 pt-6 sm:pt-8 pb-5 sm:pb-6 bg-gradient-to-br ${category.gradient} overflow-hidden`}>
           <div className="absolute top-0 right-0 w-40 h-40 rounded-full bg-white/5 -translate-y-1/2 translate-x-1/2" />
           <div className="absolute bottom-0 left-1/3 w-24 h-24 rounded-full bg-white/5 translate-y-1/2" />
 
@@ -581,14 +581,14 @@ function CategoryDetail({
           </div>
         </div>
 
-        <div className="px-6 sm:px-8 py-6">
+        <div className="px-4 sm:px-6 md:px-8 py-5 sm:py-6">
           {/* Agent tabs */}
-          <div className="flex gap-2 mb-6 overflow-x-auto scrollbar-hide pb-1">
+          <div className="grid grid-cols-3 gap-2 mb-6">
             {category.agents.map((a, i) => (
               <button
                 key={i}
                 onClick={() => setActiveAgent(i)}
-                className={`px-4 py-2 rounded-xl text-sm font-medium whitespace-nowrap transition-all ${
+                className={`px-2 sm:px-4 py-2.5 rounded-xl text-[11px] sm:text-sm font-medium transition-all text-center leading-tight ${
                   activeAgent === i
                     ? "bg-foreground text-background"
                     : "bg-muted/40 text-muted-foreground hover:bg-muted/60"
@@ -623,19 +623,19 @@ function CategoryDetail({
                 {/* Left: Results + integrations */}
                 <div className="space-y-5">
                   {/* Results */}
-                  <div className="grid grid-cols-3 gap-2">
+                  <div className="grid grid-cols-3 gap-1.5 sm:gap-2">
                     {agent.results.map((r, i) => (
                       <motion.div
                         key={i}
                         initial={{ opacity: 0, y: 8 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.1 + i * 0.06 }}
-                        className="text-center p-3 rounded-xl bg-muted/30 border border-border/30"
+                        className="text-center p-2 sm:p-3 rounded-xl bg-muted/30 border border-border/30"
                       >
-                        <div className="text-lg font-bold text-foreground">
+                        <div className="text-base sm:text-lg font-bold text-foreground">
                           {r.value}
                         </div>
-                        <div className="text-[9px] text-muted-foreground uppercase tracking-wider mt-0.5">
+                        <div className="text-[8px] sm:text-[9px] text-muted-foreground uppercase tracking-wider mt-0.5">
                           {r.label}
                         </div>
                       </motion.div>
@@ -733,9 +733,7 @@ const Services = () => {
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.08 }}
                 onClick={() => setSelectedCategory(cat)}
-                className="text-left group relative overflow-hidden rounded-2xl border border-border/50 bg-background p-6 sm:p-8 hover:border-primary/20 transition-all duration-300"
-                whileHover={{ y: -4 }}
-                whileTap={{ scale: 0.98 }}
+                className="text-left group relative overflow-hidden rounded-2xl border border-border/50 bg-background p-6 sm:p-8 hover:border-primary/20 transition-all duration-300 active:scale-[0.98]"
               >
                 {/* Gradient hover glow */}
                 <div className={`absolute inset-0 opacity-0 group-hover:opacity-[0.04] transition-opacity duration-500 bg-gradient-to-br ${cat.gradient} pointer-events-none`} />
