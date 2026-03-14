@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import Navbar from "@/components/sections/navbar";
 import Hero from "@/components/sections/hero";
 import CompanySlider from "@/components/sections/company-slider";
-// import Projects from "@/components/sections/projects";
+import CaseStudies from "@/components/sections/case-studies";
 import Services from "@/components/sections/services";
 import Testimonials from "@/components/sections/testimonials";
 import Footer from "@/components/sections/footer";
@@ -92,7 +92,7 @@ export default function Home() {
         <div id={siteConfig.sections.services.substring(1)}>
           <Services />
         </div>
-        {/* Projects section removed - testimonials provide social proof */}
+        <CaseStudies />
         <div id={siteConfig.sections.testimonials.substring(1)}>
           <Testimonials />
         </div>

@@ -18,6 +18,7 @@ export default function Navbar() {
 
   const navLinks = [
     { name: t.nav.services, href: "#services" },
+    { name: language === 'nl' ? 'Klantresultaten' : 'Case studies', href: "#case-studies" },
     { name: language === 'nl' ? 'Aanbevelingen' : 'Testimonials', href: "#testimonials" },
   ];
 
