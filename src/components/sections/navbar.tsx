@@ -5,8 +5,8 @@ import { LanguageToggle } from "@/components/ui/language-toggle";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { scrollToSection, navigateFromPolicyPage } from "@/lib/scroll-utils";
-import { motion } from "framer-motion";
-import { Menu, X, Phone, Mail } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Menu, X, Phone, Mail, ArrowRight } from "lucide-react";
 import { Icon } from "@/components/ui/icon";
 import { useLanguage } from "@/lib/i18n/language-context";
 
@@ -22,28 +22,26 @@ export default function Navbar() {
     { name: language === 'nl' ? 'Aanbevelingen' : 'Testimonials', href: "#testimonials" },
   ];
 
+  // Lock body scroll when menu is open
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => { document.body.style.overflow = ""; };
+  }, [mobileMenuOpen]);
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
 
-      // Only calculate active section on home page
       const isHomePage = window.location.pathname === '/' || window.location.pathname.startsWith('/en');
+      if (!isHomePage) { setActiveSection(""); return; }
 
-      if (!isHomePage) {
-        setActiveSection(""); // No active state on non-home pages
-        return;
-      }
+      const scrollPosition = window.scrollY + 100;
+      if (scrollPosition < 200) { setActiveSection(""); return; }
 
-      // Check which section is currently in view
-      const scrollPosition = window.scrollY + 100; // Offset for better UX
-
-      // Check if we're at the top of the page
-      if (scrollPosition < 200) {
-        setActiveSection("");
-        return;
-      }
-
-      // Check each section
       const sections = navLinks
         .filter(link => link.href !== "#")
         .map(link => ({
@@ -51,10 +49,8 @@ export default function Navbar() {
           position: document.getElementById(link.href.replace("#", ""))?.offsetTop || 0
         }));
 
-      // Sort sections by position (top to bottom)
       sections.sort((a, b) => a.position - b.position);
 
-      // Find the current section
       for (let i = sections.length - 1; i >= 0; i--) {
         if (scrollPosition >= sections[i].position) {
           setActiveSection(sections[i].id);
@@ -64,9 +60,7 @@ export default function Navbar() {
     };
 
     window.addEventListener("scroll", handleScroll);
-    // Call once on mount to set initial active section
     handleScroll();
-
     return () => window.removeEventListener("scroll", handleScroll);
   }, [navLinks]);
 
@@ -74,25 +68,21 @@ export default function Navbar() {
     e: React.MouseEvent<HTMLAnchorElement>,
     href: string
   ) => {
-    // If it's an external link (starts with / but not #), don't prevent default
     if (href.startsWith('/') && !href.startsWith('#')) {
       if (mobileMenuOpen) setMobileMenuOpen(false);
-      return; // Let the default link behavior handle the navigation
+      return;
     }
 
     e.preventDefault();
 
-    // Update active section
     if (href === "#") {
       setActiveSection("");
     } else {
       setActiveSection(href.replace("#", ""));
     }
 
-    // Check if we're navigating from a policy page
     const handledPolicyNavigation = navigateFromPolicyPage(href);
 
-    // If not handled as a policy navigation, do regular scrolling
     if (!handledPolicyNavigation) {
       if (href === "#") {
         window.scrollTo({ top: 0, behavior: "smooth" });
@@ -106,138 +96,153 @@ export default function Navbar() {
   };
 
   return (
-    <header
-      className={cn(
-        "fixed top-0 z-50 w-full transition-all duration-300 overflow-x-hidden",
-        isScrolled
-          ? "bg-background/80 backdrop-blur-md shadow-sm"
-          : "bg-transparent"
-      )}
-    >
-      <div className="container mx-auto flex h-16 items-center justify-between px-4 sm:px-6">
-        <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5 }}
-          className="flex items-center flex-shrink-0"
-        >
-          <a
-            href="/"
-            onClick={(e) => handleNavClick(e, "#")}
-            className="flex items-center hover:opacity-80 transition"
+    <>
+      <header
+        className={cn(
+          "fixed top-0 z-50 w-full transition-all duration-300",
+          isScrolled || mobileMenuOpen
+            ? "bg-background/95 backdrop-blur-xl shadow-sm border-b border-border/50"
+            : "bg-background/60 backdrop-blur-sm md:bg-transparent md:backdrop-blur-none"
+        )}
+      >
+        <div className="container mx-auto flex h-16 items-center justify-between px-4 sm:px-6">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+            className="flex items-center flex-shrink-0"
           >
-            <span className="text-xl sm:text-2xl md:text-3xl font-black tracking-tight">
-              Virelio<span className="text-primary">.</span>
-            </span>
-          </a>
-        </motion.div>
-
-        {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-4 lg:space-x-6">
-          <ul className="flex space-x-4 lg:space-x-6">
-            {navLinks.map((link) => (
-              <motion.li key={link.name} whileHover={{ y: -2 }}>
-                <a
-                  href={link.href}
-                  className={cn(
-                    "text-sm font-medium transition-all hover:text-primary relative tracking-tight whitespace-nowrap",
-                    (activeSection === link.href.replace("#", "") || (link.href === "#" && activeSection === ""))
-                      ? "text-primary font-semibold"
-                      : ""
-                  )}
-                  onClick={(e) => handleNavClick(e, link.href)}
-                >
-                  {link.name}
-                  {(activeSection === link.href.replace("#", "") || (link.href === "#" && activeSection === "")) && (
-                    <motion.div
-                      className="absolute -bottom-1 left-0 w-full h-0.5 bg-primary rounded-full"
-                      layoutId="activeNavIndicator"
-                      transition={{ type: "spring", stiffness: 350, damping: 30 }}
-                    />
-                  )}
-                </a>
-              </motion.li>
-            ))}
-          </ul>
-          <div className="flex items-center gap-4">
-            <Button
-              size="sm"
-              onClick={() => scrollToSection('contact')}
-              className="bg-foreground text-background hover:bg-foreground/90 font-semibold px-5 py-2 rounded-lg shadow-sm"
+            <a
+              href="/"
+              onClick={(e) => handleNavClick(e, "#")}
+              className="flex items-center hover:opacity-80 transition"
             >
-              {language === 'nl' ? 'Plan intake' : 'Book intake'}
-            </Button>
+              <span className="text-xl sm:text-2xl md:text-3xl font-black tracking-tight">
+                Virelio<span className="text-primary">.</span>
+              </span>
+            </a>
+          </motion.div>
+
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex items-center space-x-4 lg:space-x-6">
+            <ul className="flex space-x-4 lg:space-x-6">
+              {navLinks.map((link) => (
+                <motion.li key={link.name} whileHover={{ y: -2 }}>
+                  <a
+                    href={link.href}
+                    className={cn(
+                      "text-sm font-medium transition-all hover:text-primary relative tracking-tight whitespace-nowrap",
+                      (activeSection === link.href.replace("#", "") || (link.href === "#" && activeSection === ""))
+                        ? "text-primary font-semibold"
+                        : ""
+                    )}
+                    onClick={(e) => handleNavClick(e, link.href)}
+                  >
+                    {link.name}
+                    {(activeSection === link.href.replace("#", "") || (link.href === "#" && activeSection === "")) && (
+                      <motion.div
+                        className="absolute -bottom-1 left-0 w-full h-0.5 bg-primary rounded-full"
+                        layoutId="activeNavIndicator"
+                        transition={{ type: "spring", stiffness: 350, damping: 30 }}
+                      />
+                    )}
+                  </a>
+                </motion.li>
+              ))}
+            </ul>
+            <div className="flex items-center gap-4">
+              <Button
+                size="sm"
+                onClick={() => scrollToSection('contact')}
+                className="bg-foreground text-background hover:bg-foreground/90 font-semibold px-5 py-2 rounded-lg shadow-sm"
+              >
+                {language === 'nl' ? 'Plan intake' : 'Book intake'}
+              </Button>
+              <LanguageToggle />
+            </div>
+          </nav>
+
+          {/* Mobile: language + hamburger */}
+          <div className="flex items-center md:hidden gap-2">
             <LanguageToggle />
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="relative w-10 h-10 flex items-center justify-center rounded-lg hover:bg-muted/50 transition-colors"
+              aria-label="Toggle menu"
+            >
+              <AnimatePresence mode="wait">
+                {mobileMenuOpen ? (
+                  <motion.div
+                    key="close"
+                    initial={{ rotate: -90, opacity: 0 }}
+                    animate={{ rotate: 0, opacity: 1 }}
+                    exit={{ rotate: 90, opacity: 0 }}
+                    transition={{ duration: 0.15 }}
+                  >
+                    <X className="h-5 w-5" />
+                  </motion.div>
+                ) : (
+                  <motion.div
+                    key="menu"
+                    initial={{ rotate: 90, opacity: 0 }}
+                    animate={{ rotate: 0, opacity: 1 }}
+                    exit={{ rotate: -90, opacity: 0 }}
+                    transition={{ duration: 0.15 }}
+                  >
+                    <Menu className="h-5 w-5" />
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </button>
           </div>
-        </nav>
-
-        {/* Mobile Navigation */}
-        <div className="flex items-center md:hidden space-x-2">
-          <LanguageToggle />
-          <Button
-            variant="ghost"
-            size="icon"
-            className="h-10 w-10"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label="Toggle menu"
-          >
-            {mobileMenuOpen ? (
-              <Icon icon={X} className="h-5 w-5" />
-            ) : (
-              <Icon icon={Menu} className="h-5 w-5" />
-            )}
-          </Button>
         </div>
-      </div>
+      </header>
 
-      {/* Mobile Menu */}
-      {mobileMenuOpen && (
-        <motion.div
-          initial={{ opacity: 0, height: 0 }}
-          animate={{ opacity: 1, height: "auto" }}
-          exit={{ opacity: 0, height: 0 }}
-          transition={{ duration: 0.3, ease: "easeInOut" }}
-          className="md:hidden bg-background/98 backdrop-blur-xl border-b shadow-xl"
-        >
-          <div className="max-h-[calc(100vh-4rem)] overflow-y-auto overflow-x-hidden">
-            <div className="container mx-auto py-6 px-4 sm:px-6">
-              {/* Navigation Links */}
-              <nav className="mb-8">
-                <ul className="flex flex-col space-y-2">
+      {/* Full-screen mobile menu */}
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 z-40 md:hidden"
+          >
+            {/* Backdrop */}
+            <div className="absolute inset-0 bg-background" />
+
+            {/* Content */}
+            <div className="relative h-full flex flex-col pt-20 pb-24 px-6">
+              {/* Nav links — large, centered feel */}
+              <nav className="flex-1 flex flex-col justify-center -mt-16">
+                <ul className="space-y-2">
                   {navLinks.map((link, index) => {
-                    const isActive = (activeSection === link.href.replace("#", "") || (link.href === "#" && activeSection === ""));
+                    const isActive = activeSection === link.href.replace("#", "");
                     return (
                       <motion.li
-                        key={`${link.href}-${index}`}
-                        initial={{ opacity: 0, x: -20 }}
+                        key={link.href}
+                        initial={{ opacity: 0, x: -30 }}
                         animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.3, delay: index * 0.05 }}
+                        exit={{ opacity: 0, x: -20 }}
+                        transition={{ delay: index * 0.06, duration: 0.25 }}
                       >
                         <a
                           href={link.href}
-                          className={cn(
-                            "flex items-center px-4 sm:px-6 py-3 sm:py-4 text-base font-medium transition-all hover:bg-primary/10 hover:text-primary rounded-2xl relative tracking-tight min-h-[48px] sm:min-h-[56px] border border-transparent hover:border-primary/20 group",
-                            isActive
-                              ? "text-primary font-semibold bg-primary/10 border-primary/30"
-                              : "text-foreground hover:shadow-sm"
-                          )}
                           onClick={(e) => handleNavClick(e, link.href)}
+                          className={cn(
+                            "block py-4 text-3xl font-bold tracking-tight transition-colors",
+                            isActive
+                              ? "text-primary"
+                              : "text-foreground/70 active:text-foreground"
+                          )}
                         >
+                          {link.name}
                           {isActive && (
                             <motion.div
-                              className="absolute left-3 top-1/2 -translate-y-1/2 w-1 h-6 bg-primary rounded-full z-10"
-                              layoutId="activeMobileNavIndicator"
-                              initial={false}
-                              transition={{
-                                type: "spring",
-                                stiffness: 500,
-                                damping: 35,
-                                mass: 0.8,
-                                restDelta: 0.001
-                              }}
+                              layoutId="activeMobileNav"
+                              className="h-[3px] w-12 bg-primary rounded-full mt-1"
                             />
                           )}
-                          <span className="truncate text-lg pl-2 relative z-0">{link.name}</span>
                         </a>
                       </motion.li>
                     );
@@ -245,62 +250,53 @@ export default function Navbar() {
                 </ul>
               </nav>
 
-              {/* Contact Buttons Section */}
+              {/* Bottom section */}
               <motion.div
-                className="border-t border-border/50 pt-6"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: 0.2 }}
+                exit={{ opacity: 0 }}
+                transition={{ delay: 0.15, duration: 0.25 }}
+                className="space-y-4"
               >
-                <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-4 px-2">
-                  {t.contact?.contactInfo || "Contact Us"}
-                </h3>
-                <div className="grid grid-cols-1 gap-3">
-                  {/* Phone Button */}
-                  <motion.a
-                    href={`tel:${t.contact?.phoneNumber?.replace(/\s+/g, '') || '+31687838713'}`}
-                    className="flex items-center gap-4 px-6 py-4 bg-gradient-to-r from-green-500/10 to-emerald-500/10 hover:from-green-500/20 hover:to-emerald-500/20 rounded-2xl border border-green-500/20 hover:border-green-500/40 transition-all duration-300 group hover:shadow-lg"
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                  >
-                    <div className="flex items-center justify-center w-12 h-12 bg-green-500/20 rounded-full group-hover:bg-green-500/30 transition-colors">
-                      <Icon icon={Phone} className="h-5 w-5 text-green-600 dark:text-green-400" />
-                    </div>
-                    <div className="flex-1">
-                      <p className="font-semibold text-green-700 dark:text-green-300">
-                        {t.contact?.phone || "Call Us"}
-                      </p>
-                      <p className="text-sm text-green-600/80 dark:text-green-400/80">
-                        {t.contact?.phoneNumber || "+31 6 8783 8713"}
-                      </p>
-                    </div>
-                  </motion.a>
+                {/* Main CTA */}
+                <button
+                  onClick={() => {
+                    scrollToSection("ready-to-start");
+                    setMobileMenuOpen(false);
+                  }}
+                  className="w-full flex items-center justify-center gap-2 bg-foreground text-background font-semibold py-4 rounded-2xl text-base active:scale-[0.98] transition-transform"
+                >
+                  {language === "nl" ? "Plan gratis intake" : "Book free intake"}
+                  <ArrowRight className="w-4 h-4" />
+                </button>
 
-                  {/* Email Button */}
-                  <motion.a
-                    href={`mailto:${t.contact?.emailAddress || 'info@virelio.nl'}`}
-                    className="flex items-center gap-4 px-6 py-4 bg-gradient-to-r from-blue-500/10 to-indigo-500/10 hover:from-blue-500/20 hover:to-indigo-500/20 rounded-2xl border border-blue-500/20 hover:border-blue-500/40 transition-all duration-300 group hover:shadow-lg"
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
+                {/* Contact row */}
+                <div className="flex gap-3">
+                  <a
+                    href={`tel:${t.contact?.phoneNumber?.replace(/\s+/g, '') || '+31687838713'}`}
+                    className="flex-1 flex items-center justify-center gap-2 py-3.5 rounded-2xl border border-border/50 text-sm font-medium text-foreground/70 active:bg-muted/50 transition-colors"
                   >
-                    <div className="flex items-center justify-center w-12 h-12 bg-blue-500/20 rounded-full group-hover:bg-blue-500/30 transition-colors">
-                      <Icon icon={Mail} className="h-5 w-5 text-blue-600 dark:text-blue-400" />
-                    </div>
-                    <div className="flex-1">
-                      <p className="font-semibold text-blue-700 dark:text-blue-300">
-                        {t.contact?.email || "Email Us"}
-                      </p>
-                      <p className="text-sm text-blue-600/80 dark:text-blue-400/80 truncate">
-                        {t.contact?.emailAddress || "info@virelio.nl"}
-                      </p>
-                    </div>
-                  </motion.a>
+                    <Phone className="h-4 w-4" />
+                    {language === "nl" ? "Bel ons" : "Call us"}
+                  </a>
+                  <a
+                    href={`mailto:${t.contact?.emailAddress || 'info@virelio.nl'}`}
+                    className="flex-1 flex items-center justify-center gap-2 py-3.5 rounded-2xl border border-border/50 text-sm font-medium text-foreground/70 active:bg-muted/50 transition-colors"
+                  >
+                    <Mail className="h-4 w-4" />
+                    Email
+                  </a>
                 </div>
+
+                {/* Subtle branding */}
+                <p className="text-center text-xs text-muted-foreground/40 pt-2">
+                  Virelio — Amsterdam, NL
+                </p>
               </motion.div>
             </div>
-          </div>
-        </motion.div>
-      )}
-    </header>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
   );
 }
