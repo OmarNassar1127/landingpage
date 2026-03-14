@@ -15,13 +15,13 @@ export default function FloatingWhatsAppButton() {
                     <div className="absolute inset-0 w-2 sm:w-3 h-2 sm:h-3 bg-green-500 rounded-full animate-ping"></div>
                 </div>
                 <span className="font-semibold text-foreground text-xs sm:text-sm">
-                    {language === 'nl' ? 'Robin is online!' : 'Robin is online!'}
+                    {language === 'nl' ? 'We zijn online!' : "We're online!"}
                 </span>
             </div>
 
             {/* WhatsApp Button - Large Circle */}
             <a
-                href="https://wa.me/31640446732"
+                href="https://wa.me/31687837135"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-green-500 hover:bg-green-600 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-110 flex items-center justify-center group"

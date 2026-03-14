@@ -1,267 +1,364 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { motion, useAnimation } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { useLanguage } from "@/lib/i18n/language-context";
 import { scrollToSection } from "@/lib/scroll-utils";
-import { Button } from "@/components/ui/button";
 import { useInView } from "react-intersection-observer";
 import {
-  Bot,
-  Cog,
+  Headphones,
   TrendingUp,
+  Settings,
+  BookOpen,
+  ChevronDown,
+  MessageSquare,
+  UserPlus,
+  FileSearch,
   BarChart3,
-  Rocket,
-  ChevronRight,
-  ArrowRight,
-  Sparkles,
-  Brain,
+  FileText,
+  Receipt,
+  Users2,
+  Search,
+  ShieldCheck,
+  LineChart,
   Zap,
-  Clock,
-  Shield,
-  Users,
-  Phone,
-  Star,
-  Check,
-  Video,
-  Mail,
-  MessageCircle,
-  Calendar
 } from "lucide-react";
 
-interface Service {
-  id: string;
-  title: string;
-  tagline: string;
+interface Agent {
+  name: string;
   description: string;
-  icon: any;
-  features: string[];
-  highlight: string;
-  gradient: string;
+  integrations: string;
+  price: string;
 }
 
-const getServices = (language: string): Service[] => {
-  const isNL = language === 'nl';
+interface AgentCategory {
+  id: string;
+  title: string;
+  subtitle: string;
+  icon: any;
+  agents: Agent[];
+}
 
+const getCategories = (language: string): AgentCategory[] => {
+  const isNL = language === "nl";
   return [
     {
-      id: "kennisbanken-rag",
-      title: language === 'nl' ? 'Kennisbanken' : 'Knowledge Bases',
-      tagline: language === 'nl' ? 'Antwoord in 3 seconden, niet 3 uur' : 'Answer in 3 seconds, not 3 hours',
-      description: language === 'nl'
-        ? 'Nieuw teamlid vraagt: "Hoe werkt proces X?" - AI doorzoekt 10.000 documenten en geeft het antwoord met bronvermelding. Direct productief.'
-        : 'New team member asks: "How does process X work?" - AI searches 10,000 documents and gives the answer with sources. Instantly productive.',
-      icon: Bot,
-      features: [
-        language === 'nl' ? '2 uur zoeken wordt 10 seconden vinden' : '2 hours searching becomes 10 seconds finding',
-        language === 'nl' ? 'Onboarding van 2 weken naar 2 dagen' : 'Onboarding from 2 weeks to 2 days',
-        language === 'nl' ? 'Met bronnen - geen hallucinaties' : 'With sources - no hallucinations'
+      id: "klantenservice",
+      title: isNL ? "Klantenservice" : "Customer Service",
+      subtitle: isNL
+        ? "Tickets, onboarding, reviews, chat"
+        : "Tickets, onboarding, reviews, chat",
+      icon: Headphones,
+      agents: [
+        {
+          name: isNL ? "Klantenservice Agent" : "Customer Service Agent",
+          description: isNL
+            ? "Beantwoordt 80% van tickets zelfstandig, escaleert de rest"
+            : "Handles 80% of tickets independently, escalates the rest",
+          integrations: "Zendesk, Intercom, WhatsApp, Slack",
+          price: "€5.000+",
+        },
+        {
+          name: isNL ? "Onboarding Agent" : "Onboarding Agent",
+          description: isNL
+            ? "Begeleidt nieuwe klanten stap-voor-stap door setup"
+            : "Guides new customers step-by-step through setup",
+          integrations: "HubSpot, Intercom, Calendly, Notion",
+          price: "€5.000+",
+        },
+        {
+          name: "WhatsApp/Chat Agent",
+          description: isNL
+            ? "24/7 beschikbaar op alle kanalen"
+            : "24/7 available on all channels",
+          integrations: "WhatsApp Business API, Twilio, Zendesk",
+          price: "€5.000+",
+        },
       ],
-      highlight: language === 'nl' ? 'Populair' : 'Popular',
-      gradient: "from-blue-500 to-cyan-500"
     },
     {
-      id: "ai-agents",
-      title: language === 'nl' ? 'AI Agents' : 'AI Agents',
-      tagline: language === 'nl' ? 'Taken die zichzelf afhandelen' : 'Tasks that handle themselves',
-      description: language === 'nl'
-        ? 'AI die zelfstandig werkt. Leest je inbox, beantwoordt vragen, plant meetings, volgt leads op, zonder dat jij ertussen zit.'
-        : 'AI that works independently. Reads your inbox, answers questions, schedules meetings, follows up on leads, without your involvement.',
-      icon: Cog,
-      features: [
-        language === 'nl' ? 'Inbox gelezen en beantwoord voordat jij wakker bent' : 'Inbox read and answered before you wake up',
-        language === 'nl' ? 'Leads automatisch gekwalificeerd en ingepland' : 'Leads automatically qualified and scheduled',
-        language === 'nl' ? 'Alleen escalaties in je inbox, geen ruis' : 'Only escalations in your inbox, no noise'
+      id: "sales-marketing",
+      title: "Sales & Marketing",
+      subtitle: isNL
+        ? "Leads, outreach, offertes, content"
+        : "Leads, outreach, quotes, content",
+      icon: TrendingUp,
+      agents: [
+        {
+          name: isNL ? "Lead Kwalificatie Agent" : "Lead Qualifying Agent",
+          description: isNL
+            ? "Scoort en kwalificeert inbound leads, plant meetings"
+            : "Scores and qualifies inbound leads, schedules meetings",
+          integrations: "HubSpot, Salesforce, LinkedIn API, Calendly",
+          price: "€5.000+",
+        },
+        {
+          name: isNL ? "Outbound Agent" : "Outbound Agent",
+          description: isNL
+            ? "Gepersonaliseerde outreach op schaal"
+            : "Personalized outreach at scale",
+          integrations: "Apollo.io, LinkedIn API, Gmail API, HubSpot",
+          price: "€5.000+",
+        },
+        {
+          name: isNL ? "Offerte Agent" : "Quote Agent",
+          description: isNL
+            ? "Genereert offertes op basis van klantgesprek"
+            : "Generates quotes based on client conversations",
+          integrations: "Google Docs API, HubSpot, PandaDoc",
+          price: "€8.000+",
+        },
       ],
-      highlight: "",
-      gradient: "from-purple-500 to-pink-500"
     },
     {
-      id: "automatiseringen",
-      title: language === 'nl' ? 'Automatiseringen' : 'Automations',
-      tagline: language === 'nl' ? 'Jij reviewt, AI doet de rest' : 'You review, AI does the rest',
-      description: language === 'nl'
-        ? 'Na elke meeting staat de samenvatting klaar. Actiepunten in je CRM. Rapport in draft. Jij hoeft alleen nog op "verzenden" te klikken.'
-        : 'After every meeting, the summary is ready. Action items in your CRM. Report in draft. You just need to click "send".',
-      icon: Rocket,
-      features: [
-        language === 'nl' ? 'Meeting notities automatisch naar stakeholders' : 'Meeting notes automatically to stakeholders',
-        language === 'nl' ? 'Rapporten en analyses in draft, klaar voor review' : 'Reports and analyses in draft, ready for review',
-        language === 'nl' ? 'Data tussen systemen gesynchroniseerd zonder copy-paste' : 'Data synced between systems without copy-paste'
+      id: "operations",
+      title: "Operations",
+      subtitle: isNL
+        ? "Orders, facturen, HR, meetings, data"
+        : "Orders, invoices, HR, meetings, data",
+      icon: Settings,
+      agents: [
+        {
+          name: isNL ? "Order Processing Agent" : "Order Processing Agent",
+          description: isNL
+            ? "Verwerkt orders, checkt voorraad, stuurt bevestigingen"
+            : "Processes orders, checks stock, sends confirmations",
+          integrations: "Shopify API, Exact Online, Picqer, Sendcloud",
+          price: "€10.000+",
+        },
+        {
+          name: isNL ? "Facturatie Agent" : "Invoicing Agent",
+          description: isNL
+            ? "Facturen, herinneringen, betalingen matchen"
+            : "Invoices, reminders, payment matching",
+          integrations: "Exact Online, Mollie, Twinfield, Moneybird",
+          price: "€5.000+",
+        },
+        {
+          name: isNL ? "HR Onboarding Agent" : "HR Onboarding Agent",
+          description: isNL
+            ? "Begeleidt nieuwe medewerkers door documenten en accounts"
+            : "Guides new employees through documents and accounts",
+          integrations: "Personio, Notion, Slack, Google Workspace",
+          price: "€5.000+",
+        },
       ],
-      highlight: "",
-      gradient: "from-orange-500 to-red-500"
-    }
+    },
+    {
+      id: "kennisbank",
+      title: isNL ? "Kennisbank & Intelligence" : "Knowledge & Intelligence",
+      subtitle: isNL
+        ? "Zoeken, compliance, rapportage, research"
+        : "Search, compliance, reporting, research",
+      icon: BookOpen,
+      agents: [
+        {
+          name: isNL ? "Kennisbank Agent" : "Knowledge Base Agent",
+          description: isNL
+            ? "Doorzoekt 10.000+ documenten, geeft antwoord met bronnen"
+            : "Searches 10,000+ documents, answers with sources",
+          integrations: "Pinecone, OpenAI API, SharePoint, Notion",
+          price: "€5.000+",
+        },
+        {
+          name: isNL ? "Compliance Agent" : "Compliance Agent",
+          description: isNL
+            ? "Checkt documenten tegen regelgeving, signaleert risico's"
+            : "Checks documents against regulations, flags risks",
+          integrations: "SharePoint, OpenAI API, Power Automate",
+          price: "€10.000+",
+        },
+        {
+          name: isNL ? "Rapportage Agent" : "Reporting Agent",
+          description: isNL
+            ? "Genereert wekelijkse en maandelijkse rapporten"
+            : "Generates weekly and monthly reports",
+          integrations: "Power BI, Google Sheets, Slack, BigQuery",
+          price: "€5.000+",
+        },
+      ],
+    },
   ];
 };
 
+// Agent icons mapping for visual variety
+const agentIcons: Record<string, any> = {
+  "Klantenservice Agent": MessageSquare,
+  "Customer Service Agent": MessageSquare,
+  "Onboarding Agent": UserPlus,
+  "WhatsApp/Chat Agent": MessageSquare,
+  "Lead Kwalificatie Agent": FileSearch,
+  "Lead Qualifying Agent": FileSearch,
+  "Outbound Agent": TrendingUp,
+  "Offerte Agent": FileText,
+  "Quote Agent": FileText,
+  "Order Processing Agent": Receipt,
+  "Facturatie Agent": Receipt,
+  "Invoicing Agent": Receipt,
+  "HR Onboarding Agent": Users2,
+  "Kennisbank Agent": Search,
+  "Knowledge Base Agent": Search,
+  "Compliance Agent": ShieldCheck,
+  "Rapportage Agent": LineChart,
+  "Reporting Agent": LineChart,
+};
+
+function CategoryCard({
+  category,
+  language,
+}: {
+  category: AgentCategory;
+  language: string;
+}) {
+  const [expanded, setExpanded] = useState(false);
+  const CategoryIcon = category.icon;
+  const visibleAgents = expanded ? category.agents : category.agents.slice(0, 3);
+  const hasMore = category.agents.length > 3;
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      className="rounded-2xl border border-border bg-background hover:border-primary/20 transition-all duration-300"
+    >
+      {/* Category header */}
+      <div className="p-6 sm:p-8 pb-4">
+        <div className="flex items-center gap-3 mb-1">
+          <CategoryIcon className="w-5 h-5 text-primary" />
+          <h3 className="text-xl font-bold text-foreground">{category.title}</h3>
+        </div>
+        <p className="text-sm text-muted-foreground ml-8">
+          {category.subtitle}
+        </p>
+      </div>
+
+      {/* Agent list */}
+      <div className="px-6 sm:px-8 pb-6 sm:pb-8 space-y-1">
+        {visibleAgents.map((agent, idx) => {
+          const AgentIcon = agentIcons[agent.name] || Zap;
+          return (
+            <div
+              key={idx}
+              className="group flex items-start gap-4 p-4 -mx-2 rounded-xl hover:bg-muted/50 transition-colors cursor-pointer"
+              onClick={() => scrollToSection("ready-to-start")}
+            >
+              <div className="flex-1 min-w-0">
+                <div className="flex items-center justify-between gap-2 mb-1">
+                  <h4 className="font-semibold text-foreground text-sm sm:text-base truncate">
+                    {agent.name}
+                  </h4>
+                  <span className="text-sm font-bold text-foreground whitespace-nowrap">
+                    {agent.price}
+                  </span>
+                </div>
+                <p className="text-sm text-muted-foreground leading-relaxed truncate">
+                  {agent.description}
+                </p>
+                <p className="text-xs text-primary/70 mt-1 truncate">
+                  {agent.integrations}
+                </p>
+              </div>
+            </div>
+          );
+        })}
+
+        {hasMore && (
+          <button
+            onClick={() => setExpanded(!expanded)}
+            className="flex items-center gap-1 text-sm font-medium text-primary hover:text-primary/80 transition-colors pt-2 ml-2"
+          >
+            {expanded
+              ? language === "nl"
+                ? "Toon minder"
+                : "Show less"
+              : `+${category.agents.length - 3} ${
+                  language === "nl" ? "meer" : "more"
+                }`}
+            <ChevronDown
+              className={`w-4 h-4 transition-transform ${
+                expanded ? "rotate-180" : ""
+              }`}
+            />
+          </button>
+        )}
+      </div>
+    </motion.div>
+  );
+}
+
 const Services = () => {
   const { language } = useLanguage();
-  const controls = useAnimation();
-  const [selectedService, setSelectedService] = useState<string | null>(null);
-  const [ref, inView] = useInView({
-    triggerOnce: false,
-    threshold: 0.1,
-  });
-
-  const services = getServices(language);
-
-  useEffect(() => {
-    if (inView) {
-      controls.start("visible");
-    }
-  }, [controls, inView]);
+  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
+  const categories = getCategories(language);
 
   useEffect(() => {
     const hash = window.location.hash;
-    if (hash === '#services') {
-      const timer = setTimeout(() => {
-        scrollToSection('services');
-      }, 500);
+    if (hash === "#services") {
+      const timer = setTimeout(() => scrollToSection("services"), 500);
       return () => clearTimeout(timer);
     }
   }, []);
 
   return (
-    <section id="services" className="py-10 sm:py-16 md:py-20 overflow-hidden">
-      <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
+    <section id="services" className="py-20 sm:py-28 md:py-32 overflow-hidden">
+      <div className="container mx-auto px-4 sm:px-6 max-w-6xl" ref={ref}>
         {/* Header */}
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-16 sm:mb-20"
           initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
         >
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 px-4">
-            {language === 'nl'
-              ? <>Oplossingen die <span className="text-[#3B82F6] dark:text-[#86efac]">werken</span></>
-              : <>Solutions that <span className="text-[#3B82F6] dark:text-[#86efac]">work</span></>
-            }
+          <p className="text-sm font-medium text-primary uppercase tracking-widest mb-4">
+            {language === "nl"
+              ? `${categories.reduce((acc, c) => acc + c.agents.length, 0)} digitale medewerkers`
+              : `${categories.reduce((acc, c) => acc + c.agents.length, 0)} digital employees`}
+          </p>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+            {language === "nl" ? (
+              <>
+                Welke agent past{" "}
+                <span className="text-primary">bij jou</span>?
+              </>
+            ) : (
+              <>
+                Which agent fits{" "}
+                <span className="text-primary">your team</span>?
+              </>
+            )}
           </h2>
-
-          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto px-4">
-            {language === 'nl'
-              ? 'Dit zijn de meest gevraagde oplossingen. We bouwen alles op maat.'
-              : 'These are the most requested solutions. We build everything custom.'}
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            {language === "nl"
+              ? "Klik op een agent om je besparing te berekenen. Prijs na een gratis intake."
+              : "Click an agent to calculate your savings. Pricing after a free intake."}
           </p>
         </motion.div>
 
-
-        {/* Services Clean 3-Column Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" ref={ref}>
-          {services.map((service, index) => (
-            <motion.div
-              key={service.id}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-            >
-              <ServiceCard
-                service={service}
-                language={language}
-                onClick={() => setSelectedService(service.id)}
-                isSelected={selectedService === service.id}
-              />
-            </motion.div>
+        {/* Categories grid - 2x2 */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+          {categories.map((category) => (
+            <CategoryCard
+              key={category.id}
+              category={category}
+              language={language}
+            />
           ))}
         </div>
+
+        {/* Disclaimer */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          className="text-center text-xs text-muted-foreground/60 mt-10"
+        >
+          {language === "nl"
+            ? "Alle prijzen zijn indicatief. De exacte prijs bepalen we samen na een gratis intake."
+            : "All prices are indicative. We determine the exact price together after a free intake."}
+        </motion.p>
       </div>
     </section>
-  );
-};
-
-// Service Card Component
-const ServiceCard = ({
-  service,
-  language,
-  isLarge = false,
-  isFullWidth = false,
-  onClick,
-  isSelected
-}: {
-  service: Service;
-  language: string;
-  isLarge?: boolean;
-  isFullWidth?: boolean;
-  onClick?: () => void;
-  isSelected?: boolean;
-}) => {
-  const Icon = service.icon;
-  const [isHovered, setIsHovered] = useState(false);
-
-  return (
-    <div
-      className={`
-        relative group cursor-pointer h-full
-        ${isFullWidth ? 'min-h-[280px]' : isLarge ? 'min-h-[420px]' : 'min-h-[400px]'}
-      `}
-      onClick={onClick}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
-      {/* Background gradient - subtle */}
-      <div className="absolute inset-0 rounded-2xl bg-slate-500/5 group-hover:bg-slate-500/10 transition-opacity duration-500" />
-
-      {/* Card content */}
-      <div className={`
-        relative h-full p-5 sm:p-6 rounded-2xl border 
-        ${isSelected ? 'border-primary bg-primary/5' : 'border-border/50 bg-card/50'}
-        backdrop-blur-sm transition-all duration-300 hover:border-primary/50
-        group-hover:border-primary/50 group-hover:shadow-xl
-        ${isFullWidth ? 'flex flex-col lg:flex-row items-start gap-6 sm:gap-8' : 'flex flex-col'}
-      `}>
-
-        <div className={`${isFullWidth ? 'lg:w-1/3' : ''} flex-shrink-0`}>
-          <div className="inline-flex p-3 rounded-xl mb-3">
-            <Icon className="h-10 w-10 text-primary" />
-          </div>
-
-          <h3 className="text-xl sm:text-2xl font-bold mb-2 text-foreground">
-            {service.title}
-          </h3>
-
-          <p className="text-sm text-primary dark:text-primary/90 font-semibold mb-3">
-            {service.tagline}
-          </p>
-
-          <p className="text-foreground/80 dark:text-foreground/70 text-base leading-relaxed mb-5 min-h-[60px]">
-            {service.description}
-          </p>
-        </div>
-
-        <div className={`${isFullWidth ? 'lg:w-2/3' : ''} flex-grow flex flex-col justify-start`}>
-          {isFullWidth && (
-            <h4 className="font-semibold mb-4 text-lg text-foreground">
-              {language === 'nl' ? 'Wat je krijgt' : 'What you get:'}
-            </h4>
-          )}
-          <div className="space-y-3">
-            {service.features.map((feature, idx) => (
-              <motion.div
-                key={idx}
-                className="flex items-start gap-3"
-                initial={{ opacity: 0, x: -10 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: idx * 0.05 }}
-              >
-                <div className="mt-0.5">
-                  <Check className="h-4 w-4 text-green-500" />
-                </div>
-                <span className="text-sm text-foreground/70 dark:text-foreground/60">{feature}</span>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-
-        {/* Hover indicator */}
-        <div className={`
-          absolute bottom-6 ${isFullWidth ? 'right-8' : 'right-6'} 
-          opacity-0 group-hover:opacity-100 transition-all duration-300
-          transform group-hover:translate-x-1
-        `}>
-        </div>
-      </div>
-    </div>
   );
 };
 

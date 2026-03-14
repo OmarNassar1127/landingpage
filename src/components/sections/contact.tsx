@@ -402,7 +402,7 @@ export default function Contact() {
                       required
                       value={formState.phone}
                       onChange={handleChange}
-                      className="w-full px-4 py-2 border rounded-md bg-background focus:border-primary/50 focus:ring-2 focus:ring-primary/20 transition-all duration-200"
+                      className="w-full px-4 py-3 border-2 rounded-lg bg-gray-50 dark:bg-gray-800/50 border-gray-300 dark:border-gray-600 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-200 text-gray-900 dark:text-gray-100"
                       whileFocus={{ scale: 1.01 }}
                       transition={{ duration: 0.2 }}
                     />

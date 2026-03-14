@@ -18,7 +18,7 @@ export default function Navbar() {
 
   const navLinks = [
     { name: t.nav.services, href: "#services" },
-    { name: t.nav.projects, href: "#projects" },
+    { name: language === 'nl' ? 'Aanbevelingen' : 'Testimonials', href: "#testimonials" },
   ];
 
   useEffect(() => {
@@ -257,7 +257,7 @@ export default function Navbar() {
                 <div className="grid grid-cols-1 gap-3">
                   {/* Phone Button */}
                   <motion.a
-                    href={`tel:${t.contact?.phoneNumber?.replace(/\s+/g, '') || '+31640446732'}`}
+                    href={`tel:${t.contact?.phoneNumber?.replace(/\s+/g, '') || '+31687837135'}`}
                     className="flex items-center gap-4 px-6 py-4 bg-gradient-to-r from-green-500/10 to-emerald-500/10 hover:from-green-500/20 hover:to-emerald-500/20 rounded-2xl border border-green-500/20 hover:border-green-500/40 transition-all duration-300 group hover:shadow-lg"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
@@ -270,7 +270,7 @@ export default function Navbar() {
                         {t.contact?.phone || "Call Us"}
                       </p>
                       <p className="text-sm text-green-600/80 dark:text-green-400/80">
-                        {t.contact?.phoneNumber || "+31 6 4044 6732"}
+                        {t.contact?.phoneNumber || "+31 6 8783 7135"}
                       </p>
                     </div>
                   </motion.a>
