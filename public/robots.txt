@@ -31,5 +31,7 @@ Allow: /
 Disallow: /api/
 Disallow: /_next/
 Disallow: /admin/
+Disallow: /zzp/
+Disallow: /en/freelancer/
 
 Sitemap: https://virelio.nl/sitemap.xml

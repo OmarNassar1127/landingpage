@@ -10,6 +10,7 @@ Virelio builds AI agents that collaborate, delegate and execute. We create digit
 - Sales & Marketing Automation: Lead qualification, outbound, quote generation
 - Operations Automation: Order processing, invoicing, HR onboarding
 - Knowledge Base Systems: AI-powered document search with source citations
+- AI Voice Assistant (virelio.nl/spraakassistent): Automates 87% of customer calls, answers within 2 rings, 24/7 available, Dutch-speaking AI that schedules appointments and handles inquiries
 
 ## Key Facts
 - Based in Amsterdam, Netherlands

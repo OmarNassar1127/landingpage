@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/images/logo.png",
+        url: "/og-voice.png",
         width: 1200,
         height: 630,
         alt: "Virelio AI Voice Assistant - Automate Customer Calls",
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "AI Voice Assistant | 24/7 Business Calls | Virelio",
     description: "Reduce call volume by 87% with enterprise AI. Answers in 2 rings, 24/7 availability. Start free.",
-    images: ["/images/logo.png"],
+    images: ["/og-voice.png"],
   },
   robots: {
     index: true,

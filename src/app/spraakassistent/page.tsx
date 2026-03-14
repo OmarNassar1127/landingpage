@@ -28,12 +28,12 @@ export const metadata: Metadata = {
     title: "AI Spraakassistent voor Bedrijven | 24/7 Automatisering | Virelio",
     description: "Automatiseer 87% van klantgesprekken. Nederlandse AI spraakassistent die binnen 2 beltonen opneemt, 24/7. Geen opstartkosten. Start vandaag.",
     url: "https://virelio.nl/spraakassistent",
-    siteName: "Virelio - AI Solutions",
+    siteName: "Virelio — AI Agents op Maat",
     locale: "nl_NL",
     type: "website",
     images: [
       {
-        url: "/images/logo.png",
+        url: "/og-voice.png",
         width: 1200,
         height: 630,
         alt: "Virelio AI Spraakassistent - Automatiseer klantgesprekken",
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "AI Spraakassistent | 24/7 Klantgesprekken | Virelio",
     description: "Automatiseer 87% van klantgesprekken met Nederlandse AI. Binnen 2 beltonen, 24/7 bereikbaar. Start gratis.",
-    images: ["/images/logo.png"],
+    images: ["/og-voice.png"],
   },
   robots: {
     index: true,

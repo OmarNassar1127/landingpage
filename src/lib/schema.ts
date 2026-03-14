@@ -423,14 +423,14 @@ export function voiceAIServiceSchema() {
     alternateName: ["Voice AI", "Spraakassistent", "AI Telefonie", "Voice Assistant"],
     description: "24/7 AI spraakassistent die klantgesprekken automatiseert. Beantwoordt binnen 2 beltonen, vermindert gesprekvolume met 87%, en integreert met bestaande systemen.",
     url: `${siteConfig.url}/spraakassistent`,
-    image: `${siteConfig.url}/images/logo.png`,
+    image: `${siteConfig.url}/og-image.png`,
     serviceType: "AI Voice Automation",
     provider: {
       "@type": "Organization",
       "@id": `${siteConfig.url}#organization`,
       name: "Virelio",
       url: siteConfig.url,
-      logo: `${siteConfig.url}/images/logo.png`,
+      logo: `${siteConfig.url}/og-image.png`,
       address: {
         "@type": "PostalAddress",
         addressLocality: "Amsterdam",
