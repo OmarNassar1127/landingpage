@@ -17,12 +17,12 @@ export default function VoiceAIStructuredData({ lang }: VoiceAIStructuredDataPro
     "description": lang === 'nl' 
       ? "AI spraakassistent voor bedrijven die 24/7 klantgesprekken automatiseert"
       : "AI voice assistant for businesses that automates customer calls 24/7",
-    "url": lang === 'nl' ? "https://nexbuy.com/spraakassistent" : "https://nexbuy.com/voiceassistant",
+    "url": lang === 'nl' ? "https://virelio.nl/spraakassistent" : "https://virelio.nl/voiceassistant",
     "provider": {
       "@type": "Organization",
       "name": "Virelio",
-      "url": "https://nexbuy.com",
-      "logo": "https://nexbuy.com/images/logo.png",
+      "url": "https://virelio.nl",
+      "logo": "https://virelio.nl/images/logo.png",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Amsterdam",

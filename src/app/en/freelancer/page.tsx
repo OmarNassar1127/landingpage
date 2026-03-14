@@ -55,7 +55,7 @@ function freelancerPersonSchema() {
       addressLocality: "Amsterdam",
       addressCountry: "NL",
     },
-    email: "omarnassar1127@gmail.com",
+    email: "info@virelio.nl",
     telephone: "+31687838713",
     description:
       "Experienced freelance backend developer specializing in PHP/Laravel, Python, AI integrations, and machine learning technologies.",

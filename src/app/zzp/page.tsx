@@ -101,7 +101,7 @@ function zzpPersonSchema() {
       addressLocality: "Amsterdam",
       addressCountry: "NL",
     },
-    email: "omarnassar1127@gmail.com",
+    email: "info@virelio.nl",
     telephone: "+31687838713",
     description:
       "Ervaren ZZP backend developer gespecialiseerd in PHP/Laravel, Python, AI-integraties en machine learning technologieën.",

@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description: "Reduce call volume by 87% with enterprise-grade AI voice assistant. Answers in 2 rings, 24/7 availability. No setup fees. Trusted by 100+ companies. Start free trial today.",
   keywords: "voice assistant, AI voice, voice AI, business phone automation, virtual assistant, enterprise voice solutions, call automation, AI customer service, voice bot, conversational AI, phone automation, business AI assistant, 24/7 availability, AI receptionist, automated phone system, natural language processing, NLP, speech recognition, voice recognition, phone bot, virtual receptionist, AI call center, voice automation, digital assistant, artificial intelligence phone, AI for business, SMB automation, enterprise voice AI, SaaS telephony, cloud phone system, VoIP AI, telecommunications AI, customer service automation, AI solutions, voice technology, Virelio, Amsterdam AI company, Netherlands tech, European AI, call handling, inbound call automation, outbound calling AI, voice response system, IVR replacement, intelligent voice response, contact center AI, customer experience automation, CX automation, voice analytics, sentiment analysis, multilingual voice AI, omnichannel support, API integration, CRM integration, real-time transcription, voice to text, automated scheduling, appointment booking AI",
   alternates: {
-    canonical: "https://nexbuy.com/voiceassistant",
+    canonical: "https://virelio.nl/voiceassistant",
     languages: {
       nl: "/spraakassistent",
       en: "/voiceassistant",
