@@ -17,6 +17,10 @@ import {
   Sparkles,
   Shield,
   Eye,
+  PenTool,
+  Target,
+  Mail,
+  Calendar,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { scrollToSection } from "@/lib/scroll-utils";
@@ -112,6 +116,42 @@ const getCaseStudies = (language: string): CaseStudy[] => {
       gradient: "from-teal-500/10 to-teal-500/5",
       icon: Activity,
       screenshotBg: "bg-gradient-to-br from-slate-950 to-slate-900",
+    },
+    {
+      name: "ContentOS",
+      url: "",
+      logo: "",
+      logoBg: "bg-gradient-to-br from-orange-500 to-pink-500",
+      tagline: isNL
+        ? "AI-marketingteam dat content maakt terwijl jij slaapt"
+        : "AI marketing team that creates content while you sleep",
+      description: isNL
+        ? "Een team van AI-agents dat samen social media posts schrijft, e-mailcampagnes verstuurt, blogs produceert en advertentieteksten optimaliseert — allemaal in jouw tone-of-voice."
+        : "A team of AI agents that collaboratively writes social media posts, sends email campaigns, produces blogs and optimizes ad copy — all in your tone of voice.",
+      challenge: isNL
+        ? "Een groeiend e-commerce merk produceerde 3 posts per week en had geen budget voor een volledig marketingteam. Content was inconsistent en campagnes werden te laat gelanceerd."
+        : "A growing e-commerce brand was producing 3 posts per week with no budget for a full marketing team. Content was inconsistent and campaigns launched too late.",
+      solution: isNL
+        ? "We bouwden een team van 4 AI-agents: een Strateeg die de contentkalender plant, een Schrijver die posts en blogs maakt, een Designer die visuals genereert, en een Analist die prestaties meet en de strategie bijstuurt."
+        : "We built a team of 4 AI agents: a Strategist that plans the content calendar, a Writer that creates posts and blogs, a Designer that generates visuals, and an Analyst that measures performance and adjusts strategy.",
+      results: isNL
+        ? [
+            { label: "Content/week", value: "25+" },
+            { label: "Engagement", value: "+180%" },
+            { label: "Tijd bespaard", value: "30 uur/wk" },
+            { label: "Kosten vs. team", value: "-75%" },
+          ]
+        : [
+            { label: "Content/week", value: "25+" },
+            { label: "Engagement", value: "+180%" },
+            { label: "Time saved", value: "30 hrs/wk" },
+            { label: "Cost vs. team", value: "-75%" },
+          ],
+      tech: ["AI/GPT", "Social APIs", "Analytics", "Automation"],
+      color: "text-orange-500",
+      gradient: "from-orange-500/10 to-pink-500/5",
+      icon: TrendingUp,
+      screenshotBg: "bg-gradient-to-br from-orange-950 to-pink-950",
     },
   ];
 };
@@ -297,6 +337,139 @@ function SlouchPreview({ language }: { language: string }) {
   );
 }
 
+// Fake browser preview for ContentOS
+function ContentOSPreview({ language }: { language: string }) {
+  const isNL = language === "nl";
+
+  const agents = [
+    {
+      name: isNL ? "Strateeg" : "Strategist",
+      icon: Target,
+      color: "text-orange-400",
+      bg: "bg-orange-500/10",
+      status: isNL ? "Contentkalender bijgewerkt" : "Content calendar updated",
+    },
+    {
+      name: isNL ? "Schrijver" : "Writer",
+      icon: PenTool,
+      color: "text-pink-400",
+      bg: "bg-pink-500/10",
+      status: isNL ? "3 posts geschreven" : "3 posts written",
+    },
+    {
+      name: isNL ? "E-mail" : "Email",
+      icon: Mail,
+      color: "text-blue-400",
+      bg: "bg-blue-500/10",
+      status: isNL ? "Campagne verstuurd" : "Campaign sent",
+    },
+    {
+      name: isNL ? "Analist" : "Analyst",
+      icon: BarChart3,
+      color: "text-emerald-400",
+      bg: "bg-emerald-500/10",
+      status: isNL ? "Rapport klaar" : "Report ready",
+    },
+  ];
+
+  return (
+    <div className="space-y-2.5">
+      {/* Content calendar header */}
+      <div className="flex items-center justify-between">
+        <div className="flex items-center gap-2">
+          <Calendar className="w-3.5 h-3.5 text-orange-400" />
+          <span className="text-[10px] font-semibold text-foreground/80">
+            {isNL ? "Deze week" : "This week"}
+          </span>
+        </div>
+        <span className="text-[9px] text-emerald-400 font-medium">
+          25 {isNL ? "items gepland" : "items scheduled"}
+        </span>
+      </div>
+
+      {/* Mini calendar grid */}
+      <div className="grid grid-cols-5 gap-1">
+        {[
+          { day: isNL ? "Ma" : "Mon", items: 5 },
+          { day: isNL ? "Di" : "Tue", items: 6 },
+          { day: isNL ? "Wo" : "Wed", items: 4 },
+          { day: isNL ? "Do" : "Thu", items: 5 },
+          { day: isNL ? "Vr" : "Fri", items: 5 },
+        ].map((d, i) => (
+          <div
+            key={i}
+            className="rounded-md bg-muted/30 p-1.5 text-center"
+          >
+            <div className="text-[8px] text-muted-foreground/50 mb-0.5">
+              {d.day}
+            </div>
+            <div className="text-[10px] font-bold text-foreground/70">
+              {d.items}
+            </div>
+            <div className="flex justify-center gap-[2px] mt-0.5">
+              <div className="w-1 h-1 rounded-full bg-orange-400/60" />
+              <div className="w-1 h-1 rounded-full bg-pink-400/60" />
+              <div className="w-1 h-1 rounded-full bg-blue-400/60" />
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Agent status list */}
+      <div className="space-y-1.5">
+        {agents.map((agent, i) => {
+          const AgentIcon = agent.icon;
+          return (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, x: -6 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 + i * 0.1 }}
+              className="flex items-center gap-2 rounded-lg bg-muted/20 px-2 py-1.5"
+            >
+              <div
+                className={`w-5 h-5 rounded flex items-center justify-center ${agent.bg}`}
+              >
+                <AgentIcon className={`w-2.5 h-2.5 ${agent.color}`} />
+              </div>
+              <span className="text-[10px] font-semibold text-foreground/70 w-[60px]">
+                {agent.name}
+              </span>
+              <span className="text-[9px] text-muted-foreground/60 flex-1 truncate">
+                {agent.status}
+              </span>
+              <div className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+            </motion.div>
+          );
+        })}
+      </div>
+
+      {/* Performance snippet */}
+      <div className="rounded-lg bg-orange-500/5 border border-orange-500/15 p-2">
+        <div className="flex items-center justify-between mb-1">
+          <span className="text-[9px] font-semibold text-orange-400">
+            {isNL ? "Resultaat deze week" : "This week's results"}
+          </span>
+          <span className="text-[9px] text-emerald-400">+180%</span>
+        </div>
+        <div className="flex items-end gap-[3px] h-6">
+          {[30, 42, 38, 55, 62, 58, 78, 72, 85, 90].map((h, i) => (
+            <motion.div
+              key={i}
+              className="flex-1 rounded-sm bg-gradient-to-t from-orange-500/50 to-pink-500/50"
+              initial={{ height: 0 }}
+              whileInView={{ height: `${h}%` }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.5 + i * 0.04, duration: 0.3 }}
+            />
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function CaseStudyCard({
   study,
   index,
@@ -325,12 +498,16 @@ function CaseStudyCard({
         <div className={`space-y-6 ${isReversed ? "lg:order-2" : ""}`}>
           {/* Logo + name */}
           <div className="flex items-center gap-3">
-            <div className={`w-12 h-12 rounded-2xl overflow-hidden shrink-0 ${study.logoBg}`}>
-              <img
-                src={study.logo}
-                alt={`${study.name} logo`}
-                className="w-full h-full object-cover scale-125"
-              />
+            <div className={`w-12 h-12 rounded-2xl overflow-hidden shrink-0 ${study.logoBg} flex items-center justify-center`}>
+              {study.logo ? (
+                <img
+                  src={study.logo}
+                  alt={`${study.name} logo`}
+                  className="w-full h-full object-cover scale-125"
+                />
+              ) : (
+                <StudyIcon className="w-6 h-6 text-white" />
+              )}
             </div>
             <div>
               <h3 className="text-2xl font-bold text-foreground">
@@ -391,15 +568,21 @@ function CaseStudyCard({
                 {t}
               </span>
             ))}
-            <a
-              href={study.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`ml-auto inline-flex items-center gap-1 text-sm font-medium ${study.color} hover:underline underline-offset-4`}
-            >
-              {isNL ? "Bekijk live" : "View live"}
-              <ArrowUpRight className="w-3.5 h-3.5" />
-            </a>
+            {study.url ? (
+              <a
+                href={study.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`ml-auto inline-flex items-center gap-1 text-sm font-medium ${study.color} hover:underline underline-offset-4`}
+              >
+                {isNL ? "Bekijk live" : "View live"}
+                <ArrowUpRight className="w-3.5 h-3.5" />
+              </a>
+            ) : (
+              <span className={`ml-auto inline-flex items-center gap-1 text-sm font-medium ${study.color}`}>
+                {isNL ? "Op maat gebouwd" : "Custom built"}
+              </span>
+            )}
           </div>
         </div>
 
@@ -421,8 +604,10 @@ function CaseStudyCard({
             <div className="p-5">
               {index === 0 ? (
                 <ZapBotPreview language={language} />
-              ) : (
+              ) : index === 1 ? (
                 <SlouchPreview language={language} />
+              ) : (
+                <ContentOSPreview language={language} />
               )}
             </div>
           </div>
