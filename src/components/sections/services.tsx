@@ -16,6 +16,14 @@ import {
   MessageSquare,
   Search,
   ChevronRight,
+  Eye,
+  Scale,
+  BarChart3,
+  FileCheck,
+  Radar,
+  ShieldCheck,
+  DollarSign,
+  AlertTriangle,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -39,7 +47,50 @@ interface Category {
 
 const getCategories = (language: string): Category[] => {
   const isNL = language === "nl";
-  return [
+  const cats = [
+    {
+      id: "data-insights",
+      title: isNL ? "Data & Inzichten" : "Data & Insights",
+      subtitle: isNL ? "Zie wat je concurrenten niet zien" : "See what your competitors can't",
+      agentCount: "3 agents",
+      icon: Eye,
+      gradient: "from-rose-500 to-pink-400",
+      agents: [
+        {
+          name: isNL ? "Concurrentie Monitor" : "Competitor Monitor",
+          headline: isNL ? "Weet wat je concurrent doet voordat zij het weten" : "Know what your competitor does before they do",
+          description: isNL
+            ? "Volgt dagelijks prijzen, productlanceringen, vacatures en reviews van je concurrenten. Stuurt een alert als er iets verandert dat impact heeft op jouw markt."
+            : "Tracks daily prices, product launches, job postings and reviews from your competitors. Sends an alert when something changes that impacts your market.",
+          integrations: ["Web scraping", "Google Alerts", "Slack", "Notion"],
+          results: isNL
+            ? [{ value: "24/7", label: "Monitoring" }, { value: "15+", label: "Bronnen" }, { value: "<1u", label: "Alert-tijd" }]
+            : [{ value: "24/7", label: "Monitoring" }, { value: "15+", label: "Sources" }, { value: "<1h", label: "Alert time" }],
+        },
+        {
+          name: isNL ? "Prijs Optimalisatie Agent" : "Price Optimization Agent",
+          headline: isNL ? "De perfecte prijs, berekend door AI" : "The perfect price, calculated by AI",
+          description: isNL
+            ? "Analyseert marktdata, seizoenspatronen en klantgedrag om je prijzen dynamisch aan te passen. Maximaliseert marge zonder klanten te verliezen."
+            : "Analyzes market data, seasonal patterns and customer behavior to dynamically adjust your prices. Maximizes margin without losing customers.",
+          integrations: ["Shopify", "WooCommerce", "Google Analytics", "Stripe"],
+          results: isNL
+            ? [{ value: "+18%", label: "Marge" }, { value: "Real-time", label: "Aanpassing" }, { value: "AI", label: "Voorspelling" }]
+            : [{ value: "+18%", label: "Margin" }, { value: "Real-time", label: "Adjustment" }, { value: "AI", label: "Prediction" }],
+        },
+        {
+          name: isNL ? "Churn Voorspeller" : "Churn Predictor",
+          headline: isNL ? "Red klanten voordat ze vertrekken" : "Save customers before they leave",
+          description: isNL
+            ? "Detecteert signalen van afhakende klanten — minder logins, onbeantwoorde mails, dalend gebruik. Triggert automatisch een persoonlijk retentie-aanbod."
+            : "Detects signals of churning customers — fewer logins, unanswered emails, declining usage. Automatically triggers a personalized retention offer.",
+          integrations: ["HubSpot", "Mixpanel", "Intercom", "Stripe"],
+          results: isNL
+            ? [{ value: "-35%", label: "Churn" }, { value: "14d", label: "Voorspelling" }, { value: "Auto", label: "Retentie" }]
+            : [{ value: "-35%", label: "Churn" }, { value: "14d", label: "Prediction" }, { value: "Auto", label: "Retention" }],
+        },
+      ],
+    },
     {
       id: "klantenservice",
       title: isNL ? "Klantenservice" : "Customer Service",
@@ -214,7 +265,52 @@ const getCategories = (language: string): Category[] => {
         },
       ],
     },
+    {
+      id: "finance-legal",
+      title: isNL ? "Finance & Juridisch" : "Finance & Legal",
+      subtitle: isNL ? "Minder risico, meer controle" : "Less risk, more control",
+      agentCount: "3 agents",
+      icon: Scale,
+      gradient: "from-cyan-500 to-teal-400",
+      agents: [
+        {
+          name: isNL ? "Contract Review Agent" : "Contract Review Agent",
+          headline: isNL ? "Contracten gescand in seconden, niet uren" : "Contracts scanned in seconds, not hours",
+          description: isNL
+            ? "Upload een contract en de AI markeert risicoclausules, ontbrekende voorwaarden en afwijkingen van je standaard. Bespaart juridische uren en voorkomt verrassingen."
+            : "Upload a contract and the AI flags risk clauses, missing terms and deviations from your standard. Saves legal hours and prevents surprises.",
+          integrations: ["Google Drive", "DocuSign", "Notion", "Slack"],
+          results: isNL
+            ? [{ value: "<60s", label: "Scan-tijd" }, { value: "99%", label: "Nauwkeurig" }, { value: "-80%", label: "Juridische uren" }]
+            : [{ value: "<60s", label: "Scan time" }, { value: "99%", label: "Accurate" }, { value: "-80%", label: "Legal hours" }],
+        },
+        {
+          name: isNL ? "Uitgaven Bewaker" : "Expense Guardian",
+          headline: isNL ? "Elke euro verantwoord, automatisch" : "Every euro accounted for, automatically",
+          description: isNL
+            ? "Categoriseert uitgaven automatisch, signaleert dubbele facturen, herkent afwijkingen van budgetten en stuurt wekelijkse spend-reports naar het management."
+            : "Automatically categorizes expenses, flags duplicate invoices, detects budget deviations and sends weekly spend reports to management.",
+          integrations: ["Exact Online", "Moneybird", "Stripe", "Slack"],
+          results: isNL
+            ? [{ value: "Auto", label: "Categorisatie" }, { value: "0", label: "Dubbele facturen" }, { value: "Wekelijks", label: "Rapportage" }]
+            : [{ value: "Auto", label: "Categorization" }, { value: "0", label: "Duplicate invoices" }, { value: "Weekly", label: "Reporting" }],
+        },
+        {
+          name: isNL ? "Fraude Detectie Agent" : "Fraud Detection Agent",
+          headline: isNL ? "Verdachte transacties geblokkeerd voordat het escaleert" : "Suspicious transactions blocked before they escalate",
+          description: isNL
+            ? "Monitort transactiepatronen in real-time, herkent anomalieën en blokkeert verdachte activiteit. Stuurt een alert naar je team met context en aanbevolen actie."
+            : "Monitors transaction patterns in real-time, detects anomalies and blocks suspicious activity. Sends an alert to your team with context and recommended action.",
+          integrations: ["Stripe", "Mollie", "Adyen", "Custom APIs"],
+          results: isNL
+            ? [{ value: "Real-time", label: "Detectie" }, { value: "<5s", label: "Blokkering" }, { value: "0", label: "False negatives" }]
+            : [{ value: "Real-time", label: "Detection" }, { value: "<5s", label: "Blocking" }, { value: "0", label: "False negatives" }],
+        },
+      ],
+    },
   ];
+  // Order: data-insights, klantenservice, finance-legal, sales, kennisbank, operations
+  return [cats[0], cats[1], cats[5], cats[2], cats[4], cats[3]];
 };
 
 // ─── UNIQUE TEMPLATES PER CATEGORY (data changes per agent) ──
@@ -515,6 +611,147 @@ function SearchTemplate({ activeAgent, agents, language }: { activeAgent: number
   );
 }
 
+// Data & Insights: Dashboard with live metrics
+function DashboardTemplate({ activeAgent, agents, language }: { activeAgent: number; agents: Agent[]; language: string }) {
+  const isNL = language === "nl";
+  const allData = isNL
+    ? [
+        { title: "Concurrentie Monitor", metrics: [
+          { label: "Prijswijzigingen", value: "3 vandaag", color: "text-rose-400" },
+          { label: "Nieuwe features", value: "1 gelanceerd", color: "text-amber-400" },
+          { label: "Review score", value: "4.2 → 3.8 ↓", color: "text-red-400" },
+          { label: "Vacatures", value: "+5 dev rollen", color: "text-blue-400" },
+        ]},
+        { title: "Prijs Optimalisatie", metrics: [
+          { label: "Huidige marge", value: "34.2%", color: "text-emerald-400" },
+          { label: "Aanbevolen prijs", value: "€49.90 → €54.90", color: "text-rose-400" },
+          { label: "Verwachte impact", value: "+€2.1K/maand", color: "text-amber-400" },
+          { label: "Seizoensfactor", value: "Hoog (Q1)", color: "text-blue-400" },
+        ]},
+        { title: "Churn Voorspeller", metrics: [
+          { label: "Risico klanten", value: "7 van 240", color: "text-red-400" },
+          { label: "Gem. risicoscore", value: "82/100", color: "text-amber-400" },
+          { label: "Auto-retentie actief", value: "3 campagnes", color: "text-emerald-400" },
+          { label: "Gered deze maand", value: "4 klanten", color: "text-blue-400" },
+        ]},
+      ]
+    : [
+        { title: "Competitor Monitor", metrics: [
+          { label: "Price changes", value: "3 today", color: "text-rose-400" },
+          { label: "New features", value: "1 launched", color: "text-amber-400" },
+          { label: "Review score", value: "4.2 → 3.8 ↓", color: "text-red-400" },
+          { label: "Job posts", value: "+5 dev roles", color: "text-blue-400" },
+        ]},
+        { title: "Price Optimization", metrics: [
+          { label: "Current margin", value: "34.2%", color: "text-emerald-400" },
+          { label: "Recommended", value: "€49.90 → €54.90", color: "text-rose-400" },
+          { label: "Expected impact", value: "+€2.1K/month", color: "text-amber-400" },
+          { label: "Season factor", value: "High (Q1)", color: "text-blue-400" },
+        ]},
+        { title: "Churn Predictor", metrics: [
+          { label: "At-risk customers", value: "7 of 240", color: "text-red-400" },
+          { label: "Avg risk score", value: "82/100", color: "text-amber-400" },
+          { label: "Auto-retention", value: "3 campaigns", color: "text-emerald-400" },
+          { label: "Saved this month", value: "4 customers", color: "text-blue-400" },
+        ]},
+      ];
+
+  const data = allData[activeAgent] || allData[0];
+
+  return (
+    <div className="rounded-xl border border-border/40 bg-muted/20 overflow-hidden">
+      <div className="flex items-center gap-2 px-4 py-2.5 border-b border-border/30 bg-muted/30">
+        <Radar className="w-3.5 h-3.5 text-rose-500" />
+        <span className="text-xs font-medium text-foreground/70">{agents[activeAgent]?.name}</span>
+        <motion.div className="w-1.5 h-1.5 rounded-full bg-emerald-400 ml-auto" animate={{ opacity: [1, 0.3, 1] }} transition={{ duration: 2, repeat: Infinity }} />
+      </div>
+      <div className="p-4 space-y-2">
+        {data.metrics.map((m, i) => (
+          <motion.div key={`${activeAgent}-${i}`} initial={{ opacity: 0, x: -8 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.2 + i * 0.12 }} className="flex items-center justify-between py-1.5 px-2 rounded-lg bg-background/40">
+            <span className="text-[11px] text-muted-foreground">{m.label}</span>
+            <span className={`text-[11px] font-semibold ${m.color}`}>{m.value}</span>
+          </motion.div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+// Finance & Legal: Document scan visualization
+function DocumentScanTemplate({ activeAgent, agents, language }: { activeAgent: number; agents: Agent[]; language: string }) {
+  const isNL = language === "nl";
+  const allData = isNL
+    ? [
+        { doc: "Leverancierscontract_2025.pdf", findings: [
+          { type: "risk", text: "Betalingstermijn 90 dagen — standaard is 30" },
+          { type: "missing", text: "Verwerkersovereenkomst ontbreekt" },
+          { type: "ok", text: "Aansprakelijkheidsclausule conform" },
+        ]},
+        { doc: "Maandrapport_uitgaven_maart.xlsx", findings: [
+          { type: "alert", text: "Dubbele factuur #4421 gedetecteerd — €1.240" },
+          { type: "info", text: "Marketing budget 12% boven limiet" },
+          { type: "ok", text: "Alle overige categorieën binnen budget" },
+        ]},
+        { doc: "Transactie_batch_14032026.csv", findings: [
+          { type: "risk", text: "3 transacties van zelfde IP in 2 minuten" },
+          { type: "alert", text: "Bedrag €4.800 wijkt af van klantgemiddelde" },
+          { type: "ok", text: "KYC-verificatie klant bevestigd" },
+        ]},
+      ]
+    : [
+        { doc: "Supplier_Contract_2025.pdf", findings: [
+          { type: "risk", text: "Payment term 90 days — standard is 30" },
+          { type: "missing", text: "Data processing agreement missing" },
+          { type: "ok", text: "Liability clause compliant" },
+        ]},
+        { doc: "Monthly_Expenses_March.xlsx", findings: [
+          { type: "alert", text: "Duplicate invoice #4421 detected — €1,240" },
+          { type: "info", text: "Marketing budget 12% over limit" },
+          { type: "ok", text: "All other categories within budget" },
+        ]},
+        { doc: "Transaction_Batch_14032026.csv", findings: [
+          { type: "risk", text: "3 transactions from same IP in 2 minutes" },
+          { type: "alert", text: "Amount €4,800 deviates from customer average" },
+          { type: "ok", text: "KYC verification confirmed" },
+        ]},
+      ];
+
+  const data = allData[activeAgent] || allData[0];
+  const icons: Record<string, { icon: string; color: string }> = {
+    risk: { icon: "⚠️", color: "border-red-500/20 bg-red-500/5" },
+    missing: { icon: "❌", color: "border-amber-500/20 bg-amber-500/5" },
+    alert: { icon: "🔔", color: "border-amber-500/20 bg-amber-500/5" },
+    info: { icon: "ℹ️", color: "border-blue-500/20 bg-blue-500/5" },
+    ok: { icon: "✅", color: "border-emerald-500/20 bg-emerald-500/5" },
+  };
+
+  return (
+    <div className="rounded-xl border border-border/40 bg-muted/20 overflow-hidden">
+      <div className="flex items-center gap-2 px-4 py-2.5 border-b border-border/30 bg-muted/30">
+        <FileCheck className="w-3.5 h-3.5 text-cyan-500" />
+        <span className="text-xs font-medium text-foreground/70">{agents[activeAgent]?.name}</span>
+      </div>
+      <div className="p-4 space-y-2.5">
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex items-center gap-2 px-3 py-2 rounded-lg bg-background border border-border/50">
+          <span className="text-[10px]">📄</span>
+          <span className="text-[11px] text-foreground/50 font-mono truncate">{data.doc}</span>
+        </motion.div>
+        {data.findings.map((f, i) => {
+          const style = icons[f.type] || icons.ok;
+          return (
+            <motion.div key={`${activeAgent}-${i}`} initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 + i * 0.2 }} className={`rounded-lg border p-2.5 ${style.color}`}>
+              <div className="flex items-start gap-2">
+                <span className="text-[10px] mt-0.5">{style.icon}</span>
+                <p className="text-[11px] text-foreground/60">{f.text}</p>
+              </div>
+            </motion.div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
 // ─── CATEGORY DETAIL MODAL ───────────────────────────────────
 
 function CategoryDetail({
@@ -538,6 +775,8 @@ function CategoryDetail({
       case "sales": return <PipelineTemplate {...props} />;
       case "operations": return <WorkflowTemplate {...props} />;
       case "kennisbank": return <SearchTemplate {...props} />;
+      case "data-insights": return <DashboardTemplate {...props} />;
+      case "finance-legal": return <DocumentScanTemplate {...props} />;
       default: return null;
     }
   };
