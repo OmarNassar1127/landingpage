@@ -33,8 +33,7 @@ const testimonials: Testimonial[] = [
     id: 2,
     name: "Cristian Arboleda",
     role: { en: ".NET Developer", nl: ".NET Ontwikkelaar" },
-    image:
-      "https://media.licdn.com/dms/image/v2/D4E03AQFpSzu3OzUbsw/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1716325332651?e=1749081600&v=beta&t=B0fWr05TNfeqcZf7FU-EvHDq1foIRm8bxTMgJobmGVA",
+    image: "/images/references/cris.jpeg",
     content: {
       en: "A talented team with a strong drive to grow and improve. Always supporting their clients, their greatest strength is quickly learning new domains and adapting to any process.",
       nl: "Een getalenteerd team met een sterke drang om te groeien en verbeteren. Ze ondersteunen hun klanten altijd, en hun grootste kracht is het snel leren van nieuwe domeinen en aanpassen aan elk proces.",
@@ -48,8 +47,7 @@ const testimonials: Testimonial[] = [
       en: "Frontend Developer @ Mobility Platform",
       nl: "Frontend Developer @ Mobiliteitsplatform",
     },
-    image:
-      "https://media.licdn.com/dms/image/v2/D4E03AQHBTYV9e3Cehw/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1715115312907?e=1749081600&v=beta&t=CLGqT-xHCJk8sDNETLF4xjWWDSJRsev0kcySbUm6FEs",
+    image: "/images/references/ihor.jpeg",
     content: {
       en: "Working with Virelio showed their reliability and skill. Together we created an automatic fine scanner that reduced a 30-minute process to just 10 seconds — truly impressive efficiency improvement.",
       nl: "Het werken met Virelio toonde hun betrouwbaarheid en vaardigheid. Samen creëerden we een automatische boetescanner die een proces van 30 minuten reduceerde tot slechts 10 seconden — indrukwekkend.",
@@ -63,8 +61,7 @@ const testimonials: Testimonial[] = [
       en: "Process & Information Manager @ SBB",
       nl: "Proces- & informatiemanager @ SBB",
     },
-    image:
-      "https://media.licdn.com/dms/image/v2/C4D03AQH9Ry0bTSuBUw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1631524405789?e=1749081600&v=beta&t=mDsXjGK-Ji14bo5JFSlLtKWxkOxQAYlpFDJSw-NR2gs",
+    image: "/images/references/oeds.jpeg",
     content: {
       en: "Virelio consistently delivered sharp analyses and worked with tools like SQL, Looker, and Python. They recognize patterns in data, think analytically, and provide visual insights that drive better decisions.",
       nl: "Virelio leverde continu scherpe analyses en werkte met tools als SQL, Looker en Python. Ze herkennen patronen in data, denken analytisch en leveren visuele inzichten die bijdragen aan betere beslissingen.",
@@ -73,15 +70,15 @@ const testimonials: Testimonial[] = [
   },
   {
     id: 5,
-    name: "Sarah de Vries",
+    name: "Azeez Bayonle",
     role: {
-      en: "Product Manager @ TechCorp",
-      nl: "Product Manager @ TechCorp",
+      en: "UX Designer",
+      nl: "UX Designer",
     },
-    image: "/images/references/default-avatar.jpg",
+    image: "/images/references/azeez.jpeg",
     content: {
-      en: "Working with Virelio transformed our workflow. The AI agent they built handles our customer inquiries 24/7, saving us countless hours. Professional, fast, and exactly what we needed.",
-      nl: "Samenwerken met Virelio transformeerde onze workflow. De AI agent die ze bouwden behandelt 24/7 onze klantvragen en bespaart ons ontelbare uren. Professioneel, snel, en precies wat we nodig hadden.",
+      en: "Impressive backend skills and creative problem-solving. The team delivers clean, well-structured solutions and communicates clearly throughout the process.",
+      nl: "Indrukwekkende backend-vaardigheden en creatieve probleemoplossing. Het team levert schone, goed gestructureerde oplossingen en communiceert duidelijk door het hele proces.",
     },
     rating: 5,
   },
@@ -92,8 +89,7 @@ const testimonials: Testimonial[] = [
       en: "Project Manager Medical Affairs @ Sedgwick",
       nl: "Projectmanager Medische Zaken @ Sedgwick",
     },
-    image:
-      "https://media.licdn.com/dms/image/v2/C4D03AQGkJk6PNly4Mw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1571232961900?e=1749081600&v=beta&t=ez7LJ5uCSvPdfxyUH_9hjOktsjDkfI8cvQHTTAdUNYI",
+    image: "/images/references/laura.jpeg",
     content: {
       en: "Dedicated, helpful and reliable. Always deliver on their promises.",
       nl: "Toegewijd, behulpzaam en betrouwbaar. Komen altijd hun beloftes na.",
