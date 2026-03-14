@@ -463,22 +463,20 @@ export default function Contact() {
           </motion.div>
           
           <motion.div variants={itemVariants} className="space-y-8">
-            {/* Robin's Image */}
-            <motion.div 
+            {/* Contact person */}
+            <motion.div
               className="flex items-center space-x-3"
               variants={itemVariants}
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.3 }}
             >
               <div className="relative">
-                <img
-                  src="/images/contact/robin.jpeg"
-                  alt="Robin - Contact Person"
-                  className="w-16 h-16 rounded-full object-cover shadow-lg border-2 border-white dark:border-gray-800"
-                />
+                <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center shadow-lg border-2 border-white dark:border-gray-800">
+                  <span className="text-2xl font-bold text-primary">V</span>
+                </div>
               </div>
               <div>
-                <h4 className="text-sm font-semibold">Robin</h4>
+                <h4 className="text-sm font-semibold">Virelio</h4>
                 <p className="text-xs text-muted-foreground">Contactpersoon</p>
               </div>
             </motion.div>

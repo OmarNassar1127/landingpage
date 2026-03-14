@@ -123,7 +123,7 @@ export default function BookMeeting() {
 
             {/* Gmail */}
             <motion.a
-              href="mailto:robin.bril@gmail.com"
+              href="mailto:info@virelio.nl"
               variants={itemVariants}
               whileHover={{ y: -4 }}
               className="group"
@@ -134,7 +134,7 @@ export default function BookMeeting() {
                 </div>
                 <h3 className="text-xl font-semibold mb-2 text-center">Email</h3>
                 <p className="text-sm text-muted-foreground text-center mb-4">
-                  robin.bril@gmail.com
+                  info@virelio.nl
                 </p>
                 <Button
                   variant="outline"

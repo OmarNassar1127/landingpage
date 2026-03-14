@@ -391,9 +391,9 @@ export const translations = {
       subtitle: "Ons team en onze missie",
       theTeam: "Het Virelio team",
       description:
-        "Wij zijn Robin en Omar. Twee nuchtere IT'ers met 5+ jaar ervaring bij grote organisaties. We bouwen en testen snel. Nieuwe tool gezien? Die dag nog een prototype.\nWe maken complexe technologie praktisch en toepasbaar. Geen lange theorie, wel oplossingen die direct waarde leveren voor MKB en enterprise.\nVan snelle experimenten tot stabiele productiesystemen. Van automatisering tot maatwerk AI. Gericht, efficiënt, praktisch.",
+        "Wij zijn Virelio. Een team van nuchtere IT'ers met 5+ jaar ervaring bij grote organisaties. We bouwen en testen snel. Nieuwe tool gezien? Die dag nog een prototype.\nWe maken complexe technologie praktisch en toepasbaar. Geen lange theorie, wel oplossingen die direct waarde leveren voor MKB en enterprise.\nVan snelle experimenten tot stabiele productiesystemen. Van automatisering tot maatwerk AI. Gericht, efficiënt, praktisch.",
       missionTitle: "Onze Missie",
-      teamTitle: "Over Robin & Omar",
+      teamTitle: "Over Virelio",
       missionDescription:
         "Onze missie is om bedrijven te helpen groeien door digitale innovatie. We bouwen hoogwaardige oplossingen die eenvoudig te gebruiken zijn en impact maken. We combineren technische expertise met zakelijk inzicht om resultaat te leveren dat jouw bedrijf vooruit helpt.",
       valuesTitle: "Onze Waarden",
@@ -1219,9 +1219,9 @@ export const translations = {
       subtitle: "Learn more about our team and mission.",
       theTeam: "The Virelio team",
       description:
-        "We are Robin and Omar. Two down-to-earth, certified IT professionals with over 5 years of experience and a diverse portfolio of projects at major companies. Rather than passive consumption, we build. Read about something new? We test it. New AI tool? We have a working prototype the same day.\nWe make complex technology understandable and immediately applicable. No lengthy theories, just smart solutions that deliver immediate value — for both local entrepreneurs and large corporations.\nFrom rapid experiments to stable production systems. From clever automation to powerful AI applications. We keep building. Focused. Efficient. Practical.",
+        "We are Virelio. A team of down-to-earth IT professionals with over 5 years of experience and a diverse portfolio of projects at major companies. Rather than passive consumption, we build. Read about something new? We test it. New AI tool? We have a working prototype the same day.\nWe make complex technology understandable and immediately applicable. No lengthy theories, just smart solutions that deliver immediate value — for both local entrepreneurs and large corporations.\nFrom rapid experiments to stable production systems. From clever automation to powerful AI applications. We keep building. Focused. Efficient. Practical.",
       missionTitle: "Our Mission",
-      teamTitle: "About Robin & Omar",
+      teamTitle: "About Virelio",
       missionDescription:
         "Our mission is to help businesses grow through digital innovation. We believe in building high-quality solutions that are easy to use and make a real impact. We combine technical expertise with business acumen to deliver results that propel your business forward.",
       valuesTitle: "Our Values",

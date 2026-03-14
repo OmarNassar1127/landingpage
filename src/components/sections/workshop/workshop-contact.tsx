@@ -109,18 +109,16 @@ export default function WorkshopContact() {
           {t.workshop.contactForm.subtitle}
         </p>
         
-        {/* Robin's Image */}
+        {/* Contact person */}
         <div className="flex justify-center mb-6">
           <div className="flex items-center space-x-3">
             <div className="relative">
-              <img
-                src="/images/contact/robin.jpeg"
-                alt="Robin - Workshop Facilitator"
-                className="w-16 h-16 rounded-full object-cover shadow-lg border-2 border-white dark:border-gray-800"
-              />
+              <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center shadow-lg border-2 border-white dark:border-gray-800">
+                <span className="text-2xl font-bold text-primary">V</span>
+              </div>
             </div>
             <div className="text-left">
-              <h4 className="text-sm font-semibold">Robin</h4>
+              <h4 className="text-sm font-semibold">Virelio</h4>
               <p className="text-xs text-muted-foreground">Workshop Facilitator</p>
             </div>
           </div>
