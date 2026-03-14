@@ -116,7 +116,7 @@ export default function IntakeExplanationSection() {
                     {/* CTA Section */}
                     <motion.div
                         id="ready-to-start"
-                        className="rounded-2xl border border-border bg-muted/40 dark:bg-muted/20 p-10 sm:p-16 text-center"
+                        className="rounded-2xl border border-border bg-muted/40 dark:bg-muted/20 p-6 sm:p-10 md:p-16 text-center"
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
@@ -137,7 +137,7 @@ export default function IntakeExplanationSection() {
                             <Button
                                 size="lg"
                                 asChild
-                                className="bg-primary text-primary-foreground hover:bg-primary/90 px-10 sm:px-14 py-6 sm:py-7 text-base sm:text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 font-semibold"
+                                className="bg-primary text-primary-foreground hover:bg-primary/90 px-6 sm:px-10 md:px-14 py-5 sm:py-6 md:py-7 text-base sm:text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 font-semibold"
                             >
                                 <a
                                     href="https://calendly.com/quotum-consulting/30min"

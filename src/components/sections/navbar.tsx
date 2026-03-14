@@ -216,7 +216,7 @@ export default function Navbar() {
                         <a
                           href={link.href}
                           className={cn(
-                            "flex items-center px-6 py-4 text-base font-medium transition-all hover:bg-primary/10 hover:text-primary rounded-2xl relative tracking-tight min-h-[56px] border border-transparent hover:border-primary/20 group",
+                            "flex items-center px-4 sm:px-6 py-3 sm:py-4 text-base font-medium transition-all hover:bg-primary/10 hover:text-primary rounded-2xl relative tracking-tight min-h-[48px] sm:min-h-[56px] border border-transparent hover:border-primary/20 group",
                             isActive
                               ? "text-primary font-semibold bg-primary/10 border-primary/30"
                               : "text-foreground hover:shadow-sm"

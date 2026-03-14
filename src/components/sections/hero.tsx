@@ -293,7 +293,7 @@ function AgentChat({ language }: { language: string }) {
   }, [visibleCount, messages.length]);
 
   return (
-    <div className="relative w-full max-w-[480px] mx-auto">
+    <div className="relative w-full max-w-[480px] mx-auto px-1 sm:px-0">
       <div className="rounded-2xl border border-border/60 bg-background overflow-hidden shadow-2xl shadow-black/10">
         {/* Chat header */}
         <div className="flex items-center gap-3 px-5 py-4 border-b border-border/50 bg-muted/30">
