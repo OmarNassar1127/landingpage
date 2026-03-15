@@ -23,7 +23,7 @@ export default function Footer({ currentLang }: FooterProps) {
           <div className="flex items-center gap-6">
             <div className="flex items-center gap-3">
               <Image 
-                src="/images/logo.png" 
+                src="/ico-square.png" 
                 alt={`${t.company.name} Logo`}
                 width={32}
                 height={32}

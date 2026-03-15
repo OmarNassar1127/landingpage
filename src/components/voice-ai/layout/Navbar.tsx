@@ -135,11 +135,11 @@ export default function Navbar({ currentLang }: NavbarProps) {
           className="ml-2.5 md:ml-4 flex items-center gap-3 outline-none focus:outline-none cursor-pointer group"
         >
           <Image 
-            src="/images/logo.png" 
+            src="/ico-square.png" 
             alt={`${t.company.name} Logo`}
             width={32}
             height={32}
-            className="h-6 w-auto md:h-8 transition-transform duration-200 group-hover:scale-105"
+            className="h-5 w-auto md:h-7 rounded-lg transition-transform duration-200 group-hover:scale-105"
             priority
           />
           <span className={`font-semibold text-base md:text-lg transition-colors duration-300 ${

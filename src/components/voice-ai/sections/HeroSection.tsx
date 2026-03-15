@@ -41,7 +41,7 @@ export default function HeroSection({ currentLang }: HeroSectionProps) {
         <div className="absolute inset-0 bg-white/60 backdrop-blur-sm"></div>
       </div>
 
-      <div className="container-custom relative z-10 text-center px-4 py-8 md:py-0">
+      <div className="container-custom relative z-10 text-center px-4 pt-20 pb-8 md:pt-24 md:pb-0">
         {/* Eyebrow Text - Context */}
         <motion.div
           className="inline-flex items-center gap-2 bg-blue-50 text-blue-600 px-4 py-2 rounded-full text-sm font-medium mb-6"
