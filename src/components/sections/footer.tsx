@@ -30,7 +30,7 @@ export default function Footer() {
                 }}
               >
                 <span className="flex items-center gap-2.5 text-2xl font-black tracking-tight">
-                  <img src="/ico-square.png" alt="Virelio logo" className="h-8 w-8 rounded-lg" />
+                  <img src="/favicon-96x96.png" alt="Virelio logo" className="h-8 w-8 rounded-lg" />
                   Virelio<span className="text-primary">.</span>
                 </span>
               </a>
