@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description:
     "Virelio builds AI agents that collaborate, delegate and execute. From customer service to sales automation — live in 2 weeks. Based in Amsterdam.",
   keywords:
-    "AI agents, digital employees, AI automation, customer service bot, sales automation, Amsterdam, Netherlands, Virelio",
+    "custom AI agents, AI agent development, digital employees, AI automation agency, RAG development, LLM integration, on-premise AI, customer service automation, sales automation, AI chatbot, WhatsApp bot, knowledge base AI, business process automation, Virelio, Amsterdam, Netherlands, Europe",
   metadataBase: new URL(siteConfig.url),
   alternates: {
     canonical: `${siteConfig.url}/en`,

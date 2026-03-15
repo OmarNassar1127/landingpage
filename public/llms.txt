@@ -1,32 +1,64 @@
 # Virelio
-> AI agency based in Amsterdam that builds custom AI agent teams for businesses.
+> AI agent development agency in Amsterdam. We build custom AI agents, RAG systems, voice agents, WhatsApp AI agents, and LLM integrations for businesses — on-premise or cloud.
 
 ## About
-Virelio builds AI agents that collaborate, delegate and execute. We create digital teams for customer service, sales & marketing, operations, and knowledge management. Our agents are live within 2 weeks.
+Virelio is an AI agent development company based in Amsterdam, Netherlands. We build custom AI agent teams that automate business processes end-to-end. From WhatsApp AI agents for customer communication to voice agents that answer phone calls 24/7, from RAG-powered knowledge bases to intelligent sales agents that qualify leads automatically. We integrate with your existing systems and deliver within 2 weeks. For MKB (SMB), scale-ups, and enterprise.
 
-## Services
-- AI Agent Development: Custom AI agents for any business process
-- Customer Service Automation: 24/7 ticket handling, chat, WhatsApp bots
-- Sales & Marketing Automation: Lead qualification, outbound, quote generation
-- Operations Automation: Order processing, invoicing, HR onboarding
-- Knowledge Base Systems: AI-powered document search with source citations
-- AI Voice Assistant (virelio.nl/spraakassistent): Automates 87% of customer calls, answers within 2 rings, 24/7 available, Dutch-speaking AI that schedules appointments and handles inquiries
+## AI Agents We Build
+- WhatsApp AI Agent: Handles customer conversations on WhatsApp Business 24/7, books appointments, sends reminders, switches languages
+- Voice Agent / AI Telefoon Agent: Answers incoming calls in natural Dutch/English, schedules appointments, handles FAQs, escalates to humans
+- Klantenservice Agent: Resolves 80% of support tickets automatically, integrates with Zendesk, Intercom, Freshdesk
+- Onboarding Agent: Guides new customers or employees through setup steps, creates accounts, schedules intro calls
+- Lead Kwalificatie Agent: Scores and qualifies inbound leads, auto-schedules meetings with warm prospects via Calendly
+- Outbound Sales Agent: Finds prospects, writes personalized outreach, sends via LinkedIn or email, tracks open rates
+- Offerte Agent: Listens to sales calls, extracts requirements, generates professional quotes in your brand style
+- Content Agent: Creates social media posts, blog articles, email campaigns in your tone-of-voice on autopilot
+- Order Processing Agent: Processes orders from Shopify/WooCommerce, checks stock, creates shipping labels via Sendcloud
+- Facturatie Agent: Generates invoices automatically, sends payment reminders, matches incoming payments
+- HR Onboarding Agent: Guides new employees through contracts, account setup, and team introductions
+- Meeting Agent: Joins video calls, generates minutes, extracts action items, posts to Slack and Linear
+- Kennisbank Agent (RAG): AI-powered document search across SharePoint, Notion, Confluence — answers with source citations
+- Compliance Agent: Scans contracts and documents against regulations, flags risks, maintains audit trail
+- Rapportage Agent: Pulls data from multiple systems, generates weekly/monthly reports, sends automatically
+- Research Agent: Conducts market research from web sources, summarizes trends with citations
+- Concurrentie Monitor: Tracks competitor prices, features, reviews, job postings — alerts on changes
+- Prijs Optimalisatie Agent: Dynamically adjusts pricing based on market data, seasonality, customer behavior
+- Churn Voorspeller: Detects at-risk customers 14 days ahead, triggers personalized retention offers
+- Social Listening Agent: Monitors brand mentions on Reddit, LinkedIn, X, reviews — classifies sentiment
+- Contract Review Agent: Scans PDFs for risk clauses, missing terms, deviations from standard in seconds
+- Uitgaven Bewaker: Categorizes expenses, catches duplicate invoices, flags budget overruns
+- Fraude Detectie Agent: Real-time transaction monitoring, blocks suspicious activity in <5 seconds
+- Cash Flow Agent: Predicts cash flow 90 days ahead, warns of potential shortfalls
+
+## Technology
+- AI Models: OpenAI GPT-4o, Anthropic Claude, Google Gemini 2.5 Flash, Mistral, custom fine-tuned models
+- RAG Stack: Pinecone, Weaviate, ChromaDB, Qdrant, LangChain, LlamaIndex
+- Voice: Twilio Voice, Google Speech-to-Text, ElevenLabs, Deepgram
+- Messaging: WhatsApp Business API, Twilio, Slack API, Microsoft Teams
+- CRM/ERP: HubSpot, Salesforce, Pipedrive, Exact Online, Moneybird, Twinfield
+- E-commerce: Shopify, WooCommerce, Bol.com, Sendcloud, Picqer
+- Deployment: On-premise, AWS, Google Cloud, Azure, Cloudflare Workers, Docker
 
 ## Key Facts
 - Based in Amsterdam, Netherlands
 - Live in 2 weeks from intake to production
+- 24 specialized AI agents across 6 categories
 - 18+ companies served
-- 100% client data ownership
+- 100% client data ownership — no vendor lock-in
 - GDPR compliant, EU data processing
-- Multilingual team: Dutch, English, Arabic, Spanish, French
+- On-premise deployment available for sensitive data
+- Multilingual: Dutch, English, Arabic, Spanish, French
+- Free intake — no obligations
 
 ## Case Studies
-- ZapBot (zapbot.nl): WhatsApp AI assistant for Dutch businesses
-- Slouch (slouch.pro): AI posture correction via webcam
-- ContentOS: AI marketing team with 4 specialized agents
+- ZapBot (zapbot.nl): WhatsApp AI agent automating customer support for Dutch businesses — <10s response, 40% fewer no-shows, €2,800/month saved
+- Slouch (slouch.pro): AI posture correction via webcam using MediaPipe/TensorFlow.js — 2,800+ users, 100% privacy, runs locally in browser
+- ContentOS: AI marketing team with 4 agents (Strategist, Writer, Email, Analyst) producing 25+ content pieces per week
 
 ## Contact
 - Website: https://virelio.nl
 - Email: info@virelio.nl
 - Phone: +31687838713
 - WhatsApp: https://wa.me/31687838713
+- Calendly: https://calendly.com/omarnassar1127/30min
+- Location: Amsterdam, Netherlands

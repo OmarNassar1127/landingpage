@@ -49,7 +49,7 @@ export const metadata: Metadata = {
   description:
     "Virelio bouwt AI-agents die samenwerken, delegeren en uitvoeren. Van klantenservice tot sales automatisering — live in 2 weken. Gevestigd in Amsterdam.",
   keywords:
-    "Virelio, AI agents, digitale medewerkers, AI automatisering, klantenservice bot, sales automatisering, Amsterdam, Nederland, custom AI agents, zakelijke AI",
+    "Virelio, AI agents op maat, custom AI agents, AI automatisering bedrijven, digitale medewerkers, AI bureau Amsterdam, klantenservice AI agent, klantenservice automatiseren, sales automatisering, lead kwalificatie AI, AI agent bouwen, RAG development, retrieval augmented generation, LLM integratie, AI chatbot bouwen, WhatsApp AI agent voor bedrijven, AI spraakassistent, voice agent, AI telefoon agent, kennisbank AI, RAG systeem bouwen, facturatie automatiseren, contract review AI, on-premise AI, AI oplossingen MKB, bedrijfsprocessen automatiseren, AI integratie bestaande systemen, AI agent development company, custom agents voor klanten, AI onboarding agent, compliance agent, data analyse AI, Nederland, Amsterdam",
   authors: [{ name: "Virelio Team" }],
   creator: "Virelio",
   publisher: "Virelio",

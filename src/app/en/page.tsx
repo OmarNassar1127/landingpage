@@ -21,17 +21,27 @@ const faqData = {
     {
       question: "What does Virelio do?",
       answer:
-        "Virelio builds custom AI agent teams for businesses. Our agents handle customer service, sales, operations and knowledge management — 24/7, in your brand's voice.",
+        "Virelio is an AI agent development company based in Amsterdam. We build custom AI agents including WhatsApp AI agents, voice agents, customer service agents, sales agents, knowledge base agents (RAG), compliance agents, and more. 24 specialized agents available, custom-built for your processes.",
     },
     {
       question: "How fast can you deliver?",
       answer:
-        "Most AI agents are live within 2 weeks. We work in short sprints: intake, prototype, feedback, launch.",
+        "Most custom AI agents are live within 2 weeks. We work in short sprints: free intake, prototype, feedback, launch. No month-long timelines.",
+    },
+    {
+      question: "Do you offer on-premise AI solutions?",
+      answer:
+        "Yes. We offer both cloud and on-premise AI deployments. Your data never leaves your servers if preferred. Fully GDPR compliant with EU data processing.",
+    },
+    {
+      question: "What AI technologies do you use?",
+      answer:
+        "We work with OpenAI, Anthropic Claude, Google Gemini and custom fine-tuned models. For knowledge bases we use RAG (Retrieval Augmented Generation) with vector databases. We integrate with existing systems like HubSpot, Zendesk, Shopify and Exact Online.",
     },
     {
       question: "Where is Virelio based?",
       answer:
-        "Virelio is based in Amsterdam, Netherlands, but we work with clients across Europe.",
+        "Virelio is based in Amsterdam, Netherlands. We work with clients across Europe, both remote and on-site.",
     },
   ],
 };
@@ -72,7 +82,7 @@ export const metadata: Metadata = generateMetadata({
   description:
     "Virelio builds AI agents that collaborate, delegate and execute. From customer service to sales automation — live in 2 weeks. Based in Amsterdam.",
   keywords:
-    "AI agents, digital employees, AI automation, customer service bot, sales automation, Amsterdam, Netherlands, Virelio",
+    "custom AI agents, AI agent development company, digital employees, AI automation agency, customer service AI agent, sales automation agent, voice agent, AI phone agent, build AI agents for business, RAG development, retrieval augmented generation, LLM integration, AI chatbot development, WhatsApp AI agent for business, knowledge base AI, RAG system, invoice automation, contract review AI, on-premise AI solutions, AI for SMB, custom agents for clients, AI onboarding agent, compliance agent, lead qualification agent, churn prediction AI, business process automation, Virelio, Amsterdam, Netherlands, Europe",
   pathname: "/en",
   locale: "en",
   imageUrl: "/og-image.png",

@@ -21,17 +21,27 @@ const faqData = {
     {
       question: "Wat doet Virelio?",
       answer:
-        "Virelio bouwt op maat gemaakte AI-agent teams voor bedrijven. Onze agents verzorgen klantenservice, sales, operaties en kennisbeheer — 24/7, in de stem van jouw merk.",
+        "Virelio is een AI-bureau in Amsterdam dat custom AI-agents bouwt voor bedrijven. Van WhatsApp AI agents en voice agents tot klantenservice agents, sales agents, kennisbank agents (RAG), compliance agents en meer. 24 gespecialiseerde agents beschikbaar, op maat gebouwd voor jouw processen.",
     },
     {
       question: "Hoe snel kunnen jullie leveren?",
       answer:
-        "De meeste AI-agents zijn live binnen 2 weken. We werken in korte sprints: intake, prototype, feedback, lancering.",
+        "De meeste AI-agents zijn live binnen 2 weken. We werken in korte sprints: gratis intake, prototype, feedback, lancering. Geen maandenlange trajecten.",
+    },
+    {
+      question: "Kunnen jullie AI on-premise draaien?",
+      answer:
+        "Ja. We bieden zowel cloud- als on-premise AI-oplossingen. Je data verlaat nooit je eigen servers als je dat wenst. Volledig AVG-compliant met EU-dataverwerking.",
+    },
+    {
+      question: "Wat voor AI-technologieën gebruiken jullie?",
+      answer:
+        "We werken met OpenAI, Anthropic Claude, Google Gemini en custom fine-tuned modellen. Voor kennisbanken gebruiken we RAG (Retrieval Augmented Generation) met vectordatabases. We integreren met bestaande systemen zoals HubSpot, Zendesk, Shopify en Exact Online.",
     },
     {
       question: "Waar is Virelio gevestigd?",
       answer:
-        "Virelio is gevestigd in Amsterdam, Nederland, maar we werken met klanten door heel Europa.",
+        "Virelio is gevestigd in Amsterdam, Nederland. We werken met klanten door heel Europa, zowel remote als on-site.",
     },
   ],
 };
@@ -74,7 +84,7 @@ export const metadata: Metadata = generateMetadata({
   description:
     "Virelio bouwt AI-agents die samenwerken, delegeren en uitvoeren. Van klantenservice tot sales automatisering — live in 2 weken. Gevestigd in Amsterdam.",
   keywords:
-    "AI agents, digitale medewerkers, AI automatisering, klantenservice bot, sales automatisering, Amsterdam, Nederland, Virelio",
+    "AI agents op maat, custom AI agents, digitale medewerkers, AI automatisering bedrijven, klantenservice AI agent, klantenservice automatiseren, sales automatisering, AI agent bouwen, RAG development, RAG systeem, LLM integratie, AI chatbot bouwen, WhatsApp AI agent voor bedrijven, voice agent, AI telefoon agent, AI spraakassistent zakelijk, kennisbank AI, facturatie automatiseren, AI bureau Amsterdam, on-premise AI, AI oplossingen MKB, custom agents voor klanten, AI onboarding agent, compliance agent, lead kwalificatie agent, bedrijfsprocessen automatiseren, Virelio, Nederland",
   pathname: "/",
   imageUrl: "/og-image.png",
   imageAlt: "Virelio — AI Agents op Maat voor Bedrijven",
