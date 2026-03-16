@@ -62,6 +62,11 @@ Team certified by leading AI companies:
 - Slouch (slouch.pro): AI posture correction via webcam using MediaPipe/TensorFlow.js — 2,800+ users, 100% privacy, runs locally in browser
 - ContentOS: AI marketing team with 4 agents (Strategist, Writer, Email, Analyst) producing 25+ content pieces per week
 
+## Diensten
+- https://virelio.nl/diensten/ai-agent-bouwen — AI Agent Laten Bouwen: maatwerk AI agent development, types agents (klantenservice, sales, operations, kennisbank), proces (prototype in 1 week, live in 2 weken), prijzen €2.000–€15.000+
+- https://virelio.nl/diensten/digitale-medewerker — Digitale Medewerker: multi-agent AI systeem dat een volledige rol vervult in HR, finance, operations of klantenservice, 24/7 beschikbaar, ROI-vergelijking vs. menselijke FTE
+- https://virelio.nl/diensten/ai-automatisering-mkb — AI Automatisering voor MKB: betaalbare AI automatisering voor het Nederlandse midden- en kleinbedrijf, WBSO-subsidie (35%), integraties met Exact Online/HubSpot/Shopify/Zendesk, vanaf €2.000
+
 ## Blog
 Practical Dutch-language articles on AI agents, automation, and AI implementation for Dutch businesses. All posts include concrete pricing in EUR and actionable advice.
 
