@@ -39,6 +39,13 @@ Virelio is an AI agent development company based in Amsterdam, Netherlands. We b
 - E-commerce: Shopify, WooCommerce, Bol.com, Sendcloud, Picqer
 - Deployment: On-premise, AWS, Google Cloud, Azure, Cloudflare Workers, Docker
 
+## Certifications
+Team certified by leading AI companies:
+- Anthropic: Model Context Protocol Advanced Topics, Agent Skills, Claude Code in Action
+- Google: Gemini Multimodal RAG, Prompt Design Vertex AI, MLOps for GenAI, Advanced GenAI for Developers, AI Agents with LangChain, Multi-Agent Systems, Responsible AI, Cloud Functions Automation
+- Microsoft: Azure AI Fundamentals (AI-900), Azure Data Fundamentals (DP-900), Azure AI Engineer Associate (AI-102), Azure Solutions Architect Expert (AZ-305), AI Agents with Semantic Kernel, Copilot AI Agents with Azure AI Studio
+- Oracle: OCI Generative AI Professional
+
 ## Key Facts
 - Based in Amsterdam, Netherlands
 - Live in 2 weeks from intake to production

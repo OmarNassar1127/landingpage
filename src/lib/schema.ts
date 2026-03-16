@@ -414,6 +414,34 @@ export function workshopSchema() {
   };
 }
 
+export function certificationsSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Team Certifications",
+    description: "Professional AI and cloud certifications held by the Virelio team",
+    numberOfItems: 19,
+    itemListElement: [
+      { "@type": "ListItem", position: 1, item: { "@type": "EducationalOccupationalCredential", name: "Model Context Protocol: Advanced Topics", credentialCategory: "AI Agent Development", recognizedBy: { "@type": "Organization", name: "Anthropic" } } },
+      { "@type": "ListItem", position: 2, item: { "@type": "EducationalOccupationalCredential", name: "Certificate of Completion: Agent Skills", credentialCategory: "Autonomous AI Agents", recognizedBy: { "@type": "Organization", name: "Anthropic" } } },
+      { "@type": "ListItem", position: 3, item: { "@type": "EducationalOccupationalCredential", name: "Claude Code in Action", credentialCategory: "AI-Powered Development", recognizedBy: { "@type": "Organization", name: "Anthropic" } } },
+      { "@type": "ListItem", position: 4, item: { "@type": "EducationalOccupationalCredential", name: "Gemini Multimodality and Multimodal RAG", credentialCategory: "Retrieval Augmented Generation", recognizedBy: { "@type": "Organization", name: "Google" } } },
+      { "@type": "ListItem", position: 5, item: { "@type": "EducationalOccupationalCredential", name: "Prompt Design in Vertex AI", credentialCategory: "Prompt Engineering", recognizedBy: { "@type": "Organization", name: "Google" } } },
+      { "@type": "ListItem", position: 6, item: { "@type": "EducationalOccupationalCredential", name: "MLOps for Generative AI", credentialCategory: "Machine Learning Operations", recognizedBy: { "@type": "Organization", name: "Google" } } },
+      { "@type": "ListItem", position: 7, item: { "@type": "EducationalOccupationalCredential", name: "Advanced: Generative AI for Developers", credentialCategory: "Generative AI", recognizedBy: { "@type": "Organization", name: "Google" } } },
+      { "@type": "ListItem", position: 8, item: { "@type": "EducationalOccupationalCredential", name: "Building AI Agents with Vertex AI and LangChain", credentialCategory: "AI Agent Development", recognizedBy: { "@type": "Organization", name: "Google" } } },
+      { "@type": "ListItem", position: 9, item: { "@type": "EducationalOccupationalCredential", name: "Multi-Agent Systems with Vertex AI", credentialCategory: "Multi-Agent Orchestration", recognizedBy: { "@type": "Organization", name: "Google" } } },
+      { "@type": "ListItem", position: 10, item: { "@type": "EducationalOccupationalCredential", name: "Azure AI Fundamentals (AI-900)", credentialCategory: "Azure AI", recognizedBy: { "@type": "Organization", name: "Microsoft" } } },
+      { "@type": "ListItem", position: 11, item: { "@type": "EducationalOccupationalCredential", name: "Azure Data Fundamentals (DP-900)", credentialCategory: "Azure Data", recognizedBy: { "@type": "Organization", name: "Microsoft" } } },
+      { "@type": "ListItem", position: 12, item: { "@type": "EducationalOccupationalCredential", name: "Azure AI Engineer Associate (AI-102)", credentialCategory: "Azure AI Engineering", recognizedBy: { "@type": "Organization", name: "Microsoft" } } },
+      { "@type": "ListItem", position: 13, item: { "@type": "EducationalOccupationalCredential", name: "Azure Solutions Architect Expert (AZ-305)", credentialCategory: "Cloud Architecture", recognizedBy: { "@type": "Organization", name: "Microsoft" } } },
+      { "@type": "ListItem", position: 14, item: { "@type": "EducationalOccupationalCredential", name: "Develop AI Agents using Azure OpenAI and Semantic Kernel", credentialCategory: "AI Agent Development", recognizedBy: { "@type": "Organization", name: "Microsoft" } } },
+      { "@type": "ListItem", position: 15, item: { "@type": "EducationalOccupationalCredential", name: "Build Copilot AI Agents with Azure AI Studio", credentialCategory: "Copilot Development", recognizedBy: { "@type": "Organization", name: "Microsoft" } } },
+      { "@type": "ListItem", position: 16, item: { "@type": "EducationalOccupationalCredential", name: "OCI Generative AI Professional", credentialCategory: "Cloud AI Deployment", recognizedBy: { "@type": "Organization", name: "Oracle" } } },
+    ],
+  };
+}
+
 export function voiceAIServiceSchema() {
   return {
     "@context": "https://schema.org",

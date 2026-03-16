@@ -14,7 +14,7 @@ import GuaranteeSection from "@/components/sections/guarantee-section";
 import { generateMetadata } from "@/lib/metadata";
 import { siteConfig } from "@/lib/config";
 import JsonLd from "@/components/seo/json-ld";
-import { faqSchema, testimonialsSchema, servicesSchema, workshopSchema } from "@/lib/schema";
+import { faqSchema, testimonialsSchema, servicesSchema, workshopSchema, certificationsSchema } from "@/lib/schema";
 
 // FAQ data for the landing page
 const faqData = {
@@ -99,6 +99,7 @@ export default function Home() {
       <JsonLd data={testimonialsSchema(testimonialsData)} />
       <JsonLd data={servicesSchema()} />
       <JsonLd data={workshopSchema()} />
+      <JsonLd data={certificationsSchema()} />
 
       <main className="min-h-screen">
         <Navbar />
