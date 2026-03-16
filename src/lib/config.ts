@@ -1,6 +1,6 @@
 export const siteConfig = {
   name: "Virelio",
-  description: "AI-agents die samenwerken, delegeren en uitvoeren — live in 2 weken. Gevestigd in Amsterdam.",
+  description: "AI agent development company in Amsterdam. We build custom AI agents for businesses — from klantenservice to sales automation. Live in 2 weeks.",
   url: "https://virelio.nl",
   metadataBase: "https://virelio.nl",
   logoUrl: "/logo.svg",

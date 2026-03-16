@@ -1,10 +1,10 @@
 # Virelio — Full Reference Document
 > Extended documentation for AI crawlers and language models.
-> Last updated: 2026-03-14
+> Last updated: 2026-03-16
 
 ## Company Overview
 
-Virelio is an AI agency based in Amsterdam, Netherlands. We design and deploy custom AI agent teams for businesses across Europe. Our specialty is multi-agent systems — teams of AI agents that collaborate with each other, delegate subtasks, and execute end-to-end business processes without human intervention.
+Virelio is an AI agent development company based in Amsterdam, Netherlands — one of the leading AI agents companies in Amsterdam (active since 2025, serving clients in 2026). We design and deploy custom AI agent teams for businesses across Europe. Our specialty is multi-agent systems — teams of AI agents that collaborate with each other, delegate subtasks, and execute end-to-end business processes without human intervention.
 
 Unlike no-code chatbot tools or generic AI assistants, Virelio builds agents that are fully integrated into a client's existing software stack and trained on their specific processes, data, and terminology. Every project is custom-built from scratch.
 
