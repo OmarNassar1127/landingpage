@@ -27,9 +27,7 @@ export const blogPosts: BlogPost[] = [
       "AI agent investering",
       "AI bureau tarieven",
     ],
-    content: `<h2>Wat kost een AI agent laten bouwen in 2026?</h2>
-
-<p>Een van de eerste vragen die ondernemers stellen is: "Wat kost een AI agent eigenlijk?" Het eerlijke antwoord is dat het sterk afhangt van de complexiteit — maar in dit artikel geven we je concrete cijfers zodat je een weloverwogen beslissing kunt nemen.</p>
+    content: `<p>Een van de eerste vragen die ondernemers stellen is: "Wat kost een AI agent eigenlijk?" Het eerlijke antwoord is dat het sterk afhangt van de complexiteit — maar in dit artikel geven we je concrete cijfers zodat je een weloverwogen beslissing kunt nemen.</p>
 
 <p>Bij Virelio hanteren we transparante prijzen. Geen vage "neem contact op voor een offerte" zonder enige indicatie. Hieronder vind je een eerlijk overzicht van de werkelijke kosten in 2026.</p>
 
@@ -177,9 +175,7 @@ export const blogPosts: BlogPost[] = [
       "AI automatisering",
       "intelligente automatisering bedrijf",
     ],
-    content: `<h2>AI agent vs chatbot: hoe zit het écht?</h2>
-
-<p>In gesprekken met ondernemers horen we het regelmatig: "We hebben al een chatbot, hebben we dan nog een AI agent nodig?" Het antwoord hangt sterk af van wat je bedoelt met "chatbot" — en wat je wilt bereiken. In dit artikel leggen we het verschil helder uit, zonder technisch jargon.</p>
+    content: `<p>In gesprekken met ondernemers horen we het regelmatig: "We hebben al een chatbot, hebben we dan nog een AI agent nodig?" Het antwoord hangt sterk af van wat je bedoelt met "chatbot" — en wat je wilt bereiken. In dit artikel leggen we het verschil helder uit, zonder technisch jargon.</p>
 
 <h2>Wat is een chatbot?</h2>
 
@@ -323,9 +319,7 @@ export const blogPosts: BlogPost[] = [
       "klantenservice besparing",
       "support tickets automatiseren",
     ],
-    content: `<h2>Klantenservice automatiseren met AI: wat werkt en wat niet</h2>
-
-<p>Klantenservice is voor veel bedrijven de grootste kostenpost na salarissen. Twee medewerkers klantenservice kosten al snel <strong>€80.000 per jaar</strong> — inclusief salariskosten, training, ziekteverzuim en management overhead. En toch loopt de wachttijd voor klanten op, zijn medewerkers gefrustreerd door repetitieve vragen, en is de klanttevredenheid wisselend.</p>
+    content: `<p>Klantenservice is voor veel bedrijven de grootste kostenpost na salarissen. Twee medewerkers klantenservice kosten al snel <strong>€80.000 per jaar</strong> — inclusief salariskosten, training, ziekteverzuim en management overhead. En toch loopt de wachttijd voor klanten op, zijn medewerkers gefrustreerd door repetitieve vragen, en is de klanttevredenheid wisselend.</p>
 
 <p>AI-automatisering lost dit niet volledig op — maar het verandert de situatie fundamenteel. In deze gids leggen we uit hoe, met concrete cijfers.</p>
 
@@ -461,9 +455,7 @@ export const blogPosts: BlogPost[] = [
       "bedrijfskennis doorzoekbaar",
       "AI kennismanagement",
     ],
-    content: `<h2>RAG: de technologie achter slimme bedrijfskennisbanken</h2>
-
-<p>Stel je voor: een medewerker kan elke vraag over jullie producten, processen of beleid beantwoord krijgen in seconden — met bronvermelding. Of een klant die aan een chatbot vraagt naar een specifieke clausule in zijn contract en direct een nauwkeurig antwoord krijgt. Dit is wat RAG mogelijk maakt.</p>
+    content: `<p>Stel je voor: een medewerker kan elke vraag over jullie producten, processen of beleid beantwoord krijgen in seconden — met bronvermelding. Of een klant die aan een chatbot vraagt naar een specifieke clausule in zijn contract en direct een nauwkeurig antwoord krijgt. Dit is wat RAG mogelijk maakt.</p>
 
 <p>RAG staat voor <strong>Retrieval Augmented Generation</strong>. Het is de technologie die AI-modellen in staat stelt om te zoeken in jouw specifieke documenten, in plaats van alleen te vertrouwen op hun algemene trainingsdata. In dit artikel leggen we uit hoe het werkt, wanneer je het nodig hebt, en hoe je ermee begint.</p>
 
@@ -585,9 +577,7 @@ export const blogPosts: BlogPost[] = [
       "AI volwassenheid bedrijf",
       "AI strategie MKB",
     ],
-    content: `<h2>Is jouw bedrijf klaar voor AI? Stop met wachten op perfecte omstandigheden</h2>
-
-<p>In gesprekken met ondernemers horen we steeds dezelfde redenen om AI-implementatie uit te stellen: "Onze data is nog niet op orde", "We hebben eerst een betere CRM nodig", "We moeten wachten tot het personeel klaar is". Allemaal begrijpelijk. En bijna allemaal geen reden om niet te beginnen.</p>
+    content: `<p>In gesprekken met ondernemers horen we steeds dezelfde redenen om AI-implementatie uit te stellen: "Onze data is nog niet op orde", "We hebben eerst een betere CRM nodig", "We moeten wachten tot het personeel klaar is". Allemaal begrijpelijk. En bijna allemaal geen reden om niet te beginnen.</p>
 
 <p>In dit artikel gaan we door een eerlijke 7-punts checklist waarmee je snel kunt bepalen waar je staat — en wat je echte blokkades zijn.</p>
 
@@ -718,9 +708,7 @@ export const blogPosts: BlogPost[] = [
       "WhatsApp afspraken bot",
       "AI WhatsApp integratie",
     ],
-    content: `<h2>WhatsApp AI agent voor bedrijven: de complete gids 2026</h2>
-
-<p>WhatsApp is het meest gebruikte communicatiekanaal in Nederland. Meer dan 13 miljoen Nederlanders gebruiken het dagelijks — ook voor zakelijke communicatie. Klanten verwachten antwoord via WhatsApp, sneller dan via e-mail en informeler dan via telefoon. Een AI agent op WhatsApp pakt dat verwachtingspatroon op en maakt er een schaalbaar voordeel van.</p>
+    content: `<p>WhatsApp is het meest gebruikte communicatiekanaal in Nederland. Meer dan 13 miljoen Nederlanders gebruiken het dagelijks — ook voor zakelijke communicatie. Klanten verwachten antwoord via WhatsApp, sneller dan via e-mail en informeler dan via telefoon. Een AI agent op WhatsApp pakt dat verwachtingspatroon op en maakt er een schaalbaar voordeel van.</p>
 
 <p>In dit artikel leggen we alles uit: hoe het werkt, wat het kost, en wat je er realistisch van kunt verwachten. Inclusief een echte case study.</p>
 
