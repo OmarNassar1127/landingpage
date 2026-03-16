@@ -62,6 +62,16 @@ Team certified by leading AI companies:
 - Slouch (slouch.pro): AI posture correction via webcam using MediaPipe/TensorFlow.js — 2,800+ users, 100% privacy, runs locally in browser
 - ContentOS: AI marketing team with 4 agents (Strategist, Writer, Email, Analyst) producing 25+ content pieces per week
 
+## Blog
+Practical Dutch-language articles on AI agents, automation, and AI implementation for Dutch businesses. All posts include concrete pricing in EUR and actionable advice.
+
+- https://virelio.nl/blog/wat-kost-ai-agent — Wat kost een AI agent? Eerlijk kostenoverzicht 2026: transparante prijzen (€2.000–€15.000+), maandelijkse kosten, ROI-berekeningen en WBSO-subsidie uitgelegd
+- https://virelio.nl/blog/ai-agent-vs-chatbot — AI agent vs chatbot: wat is het verschil?: duidelijke uitleg van beide technologieën, vergelijkingstabel, en wanneer je welke kiest
+- https://virelio.nl/blog/klantenservice-automatiseren-ai — Klantenservice automatiseren met AI: hoe AI agents 80% van tickets afhandelen, integraties met Zendesk/Intercom/WhatsApp, besparing 2 FTE = €80.000/jaar
+- https://virelio.nl/blog/rag-systeem-bouwen — RAG systeem bouwen: wat is RAG, hoe werkt het, vector databases vergeleken, use cases voor kennisbank/compliance/onboarding
+- https://virelio.nl/blog/ai-readiness-check-mkb — Is jouw bedrijf klaar voor AI? De eerlijke check: 7-punts readiness checklist voor MKB, veelvoorkomende barrières en oplossingen
+- https://virelio.nl/blog/whatsapp-ai-agent-bedrijven — WhatsApp AI agent voor bedrijven: WhatsApp Business API + AI uitgelegd, kosten setup €2.000–€8.000, ZapBot case study met 40% minder no-shows en €2.800/maand bespaard
+
 ## Contact
 - Website: https://virelio.nl
 - Email: info@virelio.nl

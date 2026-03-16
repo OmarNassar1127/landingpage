@@ -77,7 +77,7 @@ export default function CookiePolicyPage() {
             If you have any questions about our Cookie Policy, please contact us:
           </p>
           <p>
-            <strong>Email:</strong> privacy@virelio.nl<br />
+            <strong>Email:</strong> info@virelio.nl<br />
             <strong>Address:</strong> Amsterdam, The Netherlands
           </p>
         </div>

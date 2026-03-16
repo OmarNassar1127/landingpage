@@ -149,7 +149,7 @@ export default function ZzpFooter({ isEnglish = false }: ZzpFooterProps) {
 
           <div className="flex space-x-6 mt-4 md:mt-0">
             <a
-              href="https://wa.me/31640446732"
+              href="https://wa.me/31687838713"
               className="text-black dark:text-white hover:text-gray-700 dark:hover:text-gray-300 transition-colors"
               aria-label="WhatsApp"
               target="_blank"

@@ -91,7 +91,7 @@ export default function TermsOfServicePage() {
             If you have any questions about these Terms, please contact us:
           </p>
           <p>
-            <strong>Email:</strong> legal@virelio.nl<br />
+            <strong>Email:</strong> info@virelio.nl<br />
             <strong>Address:</strong> Amsterdam, The Netherlands
           </p>
         </div>

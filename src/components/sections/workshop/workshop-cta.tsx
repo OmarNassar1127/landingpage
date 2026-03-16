@@ -129,10 +129,10 @@ export default function WorkshopCTA() {
                   info@virelio.nl
                 </a>
                 <a
-                  href="tel:+31640446732"
+                  href="tel:+31687838713"
                   className="hover:text-primary transition-colors"
                 >
-                  +31 6 4044 6732
+                  +31687838713
                 </a>
               </div>
             </div>

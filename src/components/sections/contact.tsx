@@ -543,7 +543,7 @@ export default function Contact() {
               <h3 className="text-xl font-semibold mb-4">{t.contact.followUs}</h3>
               <div className="flex">
                 <motion.a
-                  href="https://wa.me/31640446732"
+                  href="https://wa.me/31687838713"
                   className="h-10 w-10 rounded-full bg-white dark:bg-black flex items-center justify-center hover:bg-gray-100 dark:hover:bg-gray-900 transition-colors border border-gray-200 dark:border-gray-700"
                   whileHover={{ 
                     scale: 1.1,

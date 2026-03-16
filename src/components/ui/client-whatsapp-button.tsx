@@ -134,7 +134,7 @@ export function ClientWhatsAppButton() {
       <Button
         size="icon"
         className="rounded-full w-14 h-14 shadow-lg bg-white hover:bg-gray-100 dark:bg-black dark:hover:bg-gray-900 border-2 border-white dark:border-gray-800 p-0 flex items-center justify-center"
-        onClick={() => window.open('https://wa.me/31640446732', '_blank')}
+        onClick={() => window.open('https://wa.me/31687838713', '_blank')}
         aria-label="Contact us on WhatsApp"
       >
         <WhatsAppIcon className="h-7 w-7 text-black dark:text-white" />

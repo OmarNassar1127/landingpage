@@ -24,9 +24,9 @@ export default function BookMeeting() {
 
   useEffect(() => {
     const hash = window.location.hash;
-    if (hash === '#book-meeting') {
+    if (hash === "#book-meeting") {
       const timer = setTimeout(() => {
-        scrollToSection('book-meeting');
+        scrollToSection("book-meeting");
       }, 500);
 
       return () => clearTimeout(timer);
@@ -51,9 +51,9 @@ export default function BookMeeting() {
       transition: {
         type: "spring",
         stiffness: 100,
-        damping: 20
-      }
-    }
+        damping: 20,
+      },
+    },
   };
 
   return (
@@ -72,7 +72,7 @@ export default function BookMeeting() {
             variants={itemVariants}
             className="text-3xl md:text-4xl font-bold tracking-tight mb-4"
           >
-            {language === 'nl' ? 'Plan een kennismaking' : 'Book a meeting'}
+            {language === "nl" ? "Plan een kennismaking" : "Book a meeting"}
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -80,9 +80,9 @@ export default function BookMeeting() {
             variants={itemVariants}
             className="text-muted-foreground max-w-2xl mx-auto mb-8"
           >
-            {language === 'nl'
-              ? 'Kies hoe je contact wilt maken. Gratis en vrijblijvend.'
-              : 'Choose how you want to connect. Free and non-binding.'}
+            {language === "nl"
+              ? "Kies hoe je contact wilt maken. Gratis en vrijblijvend."
+              : "Choose how you want to connect. Free and non-binding."}
           </motion.p>
         </div>
 
@@ -108,15 +108,19 @@ export default function BookMeeting() {
                 <div className="w-16 h-16 mx-auto mb-6 rounded-xl bg-blue-500/10 flex items-center justify-center group-hover:scale-110 transition-transform">
                   <Video className="w-8 h-8 text-blue-500" />
                 </div>
-                <h3 className="text-xl font-semibold mb-2 text-center">Google Meet</h3>
+                <h3 className="text-xl font-semibold mb-2 text-center">
+                  Google Meet
+                </h3>
                 <p className="text-sm text-muted-foreground text-center mb-4">
-                  {language === 'nl' ? 'Start direct een videocall' : 'Start a video call immediately'}
+                  {language === "nl"
+                    ? "Start direct een videocall"
+                    : "Start a video call immediately"}
                 </p>
                 <Button
                   variant="outline"
                   className="w-full group-hover:bg-blue-500 group-hover:text-white group-hover:border-blue-500 transition-all"
                 >
-                  {language === 'nl' ? 'Start call →' : 'Start call →'}
+                  {language === "nl" ? "Start call →" : "Start call →"}
                 </Button>
               </div>
             </motion.a>
@@ -132,7 +136,9 @@ export default function BookMeeting() {
                 <div className="w-16 h-16 mx-auto mb-6 rounded-xl bg-red-500/10 flex items-center justify-center group-hover:scale-110 transition-transform">
                   <Mail className="w-8 h-8 text-red-500" />
                 </div>
-                <h3 className="text-xl font-semibold mb-2 text-center">Email</h3>
+                <h3 className="text-xl font-semibold mb-2 text-center">
+                  Email
+                </h3>
                 <p className="text-sm text-muted-foreground text-center mb-4">
                   info@virelio.nl
                 </p>
@@ -140,14 +146,14 @@ export default function BookMeeting() {
                   variant="outline"
                   className="w-full group-hover:bg-red-500 group-hover:text-white group-hover:border-red-500 transition-all"
                 >
-                  {language === 'nl' ? 'Stuur email →' : 'Send email →'}
+                  {language === "nl" ? "Stuur email →" : "Send email →"}
                 </Button>
               </div>
             </motion.a>
 
             {/* WhatsApp */}
             <motion.a
-              href="https://wa.me/31640446732"
+              href="https://wa.me/31687838713"
               target="_blank"
               rel="noopener noreferrer"
               variants={itemVariants}
@@ -158,15 +164,17 @@ export default function BookMeeting() {
                 <div className="w-16 h-16 mx-auto mb-6 rounded-xl bg-green-500/10 flex items-center justify-center group-hover:scale-110 transition-transform">
                   <MessageCircle className="w-8 h-8 text-green-500" />
                 </div>
-                <h3 className="text-xl font-semibold mb-2 text-center">WhatsApp</h3>
+                <h3 className="text-xl font-semibold mb-2 text-center">
+                  WhatsApp
+                </h3>
                 <p className="text-sm text-muted-foreground text-center mb-4">
-                  +31 6 4044 6732
+                  +31687838713
                 </p>
                 <Button
                   variant="outline"
                   className="w-full group-hover:bg-green-500 group-hover:text-white group-hover:border-green-500 transition-all"
                 >
-                  {language === 'nl' ? 'Open chat →' : 'Open chat →'}
+                  {language === "nl" ? "Open chat →" : "Open chat →"}
                 </Button>
               </div>
             </motion.a>
@@ -177,11 +185,9 @@ export default function BookMeeting() {
             variants={itemVariants}
             className="text-center text-sm text-muted-foreground mt-8"
           >
-            {language === 'nl'
-              ? 'Of bel direct: '
-              : 'Or call directly: '}
+            {language === "nl" ? "Of bel direct: " : "Or call directly: "}
             <a
-              href="tel:+31640446732"
+              href="tel:+31687838713"
               className="font-medium text-foreground hover:text-primary transition-colors"
             >
               06-4044 6732

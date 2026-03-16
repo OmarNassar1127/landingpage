@@ -14,7 +14,7 @@ export default function Footer() {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           {/* Brand */}
-          <div className="md:col-span-2">
+          <div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -61,6 +61,10 @@ export default function Footer() {
                     className="text-sm text-muted-foreground hover:text-primary transition-colors"
                     onClick={(e) => {
                       e.preventDefault();
+                      if (window.location.pathname !== "/" && window.location.pathname !== "/en" && window.location.pathname !== "/en/") {
+                        window.location.href = link.href === "#" ? "/" : "/" + link.href;
+                        return;
+                      }
                       const handled = navigateFromPolicyPage(link.href);
                       if (!handled) {
                         if (link.href === "#") {
@@ -70,6 +74,29 @@ export default function Footer() {
                         }
                       }
                     }}
+                  >
+                    {link.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Resources */}
+          <div>
+            <h4 className="font-semibold text-sm uppercase tracking-widest text-foreground mb-5">
+              {language === "nl" ? "Kennisbank" : "Resources"}
+            </h4>
+            <ul className="space-y-3">
+              {[
+                { name: "Blog", href: "/blog" },
+                { name: "AI Agent Workshop", href: "/workshop" },
+                { name: language === "nl" ? "Spraakassistent" : "Voice Assistant", href: language === "nl" ? "/spraakassistent" : "/voiceassistant" },
+              ].map((link) => (
+                <li key={link.name}>
+                  <a
+                    href={link.href}
+                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
                   >
                     {link.name}
                   </a>

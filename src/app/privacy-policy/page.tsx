@@ -82,7 +82,7 @@ export default function PrivacyPolicyPage() {
             If you have any questions about this privacy policy or our privacy practices, please contact us at:
           </p>
           <p>
-            <strong>Email:</strong> privacy@virelio.nl<br />
+            <strong>Email:</strong> info@virelio.nl<br />
             <strong>Address:</strong> Amsterdam, The Netherlands
           </p>
         </div>

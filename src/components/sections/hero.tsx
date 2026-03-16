@@ -586,8 +586,9 @@ function HeroContent() {
           >
             <motion.div
               variants={item}
-              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/5 border border-primary/10 mb-8"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/5 border border-primary/10 mb-8"
             >
+              <Brain className="w-4 h-4 text-primary" />
               <span className="text-xs sm:text-sm font-medium text-primary">
                 {language === "nl"
                   ? "AI-team op aanvraag"

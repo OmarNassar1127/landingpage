@@ -466,7 +466,7 @@ export function voiceAIServiceSchema() {
       },
       contactPoint: {
         "@type": "ContactPoint",
-        telephone: "+31-6-12345678",
+        telephone: "+31687838713",
         contactType: "sales",
         availableLanguage: ["nl", "en"]
       }
