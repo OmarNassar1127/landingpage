@@ -24,11 +24,35 @@ import {
   ShieldCheck,
   DollarSign,
   AlertTriangle,
+  // Agent-specific icons
+  Tags,
+  UserMinus,
+  Globe,
+  Bot,
+  UserPlus,
+  Phone,
+  Target,
+  Send,
+  FileText,
+  PenTool,
+  Package,
+  Receipt,
+  Users,
+  ClipboardList,
+  Database,
+  Shield,
+  FileBarChart,
+  Microscope,
+  ScanLine,
+  Wallet,
+  Fingerprint,
+  CircleDollarSign,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 interface Agent {
   name: string;
+  icon: any;
   headline: string;
   description: string;
   integrations: string[];
@@ -58,6 +82,7 @@ const getCategories = (language: string): Category[] => {
       agents: [
         {
           name: isNL ? "Concurrentie Monitor" : "Competitor Monitor",
+          icon: Radar,
           headline: isNL ? "Weet wat je concurrent doet voordat zij het weten" : "Know what your competitor does before they do",
           description: isNL
             ? "Volgt dagelijks prijzen, productlanceringen, vacatures en reviews van je concurrenten. Stuurt een alert als er iets verandert dat impact heeft op jouw markt."
@@ -69,6 +94,7 @@ const getCategories = (language: string): Category[] => {
         },
         {
           name: isNL ? "Prijs Optimalisatie Agent" : "Price Optimization Agent",
+          icon: Tags,
           headline: isNL ? "De perfecte prijs, berekend door AI" : "The perfect price, calculated by AI",
           description: isNL
             ? "Analyseert marktdata, seizoenspatronen en klantgedrag om je prijzen dynamisch aan te passen. Maximaliseert marge zonder klanten te verliezen."
@@ -80,6 +106,7 @@ const getCategories = (language: string): Category[] => {
         },
         {
           name: isNL ? "Churn Voorspeller" : "Churn Predictor",
+          icon: UserMinus,
           headline: isNL ? "Red klanten voordat ze vertrekken" : "Save customers before they leave",
           description: isNL
             ? "Detecteert signalen van afhakende klanten — minder logins, onbeantwoorde mails, dalend gebruik. Triggert automatisch een persoonlijk retentie-aanbod."
@@ -91,6 +118,7 @@ const getCategories = (language: string): Category[] => {
         },
         {
           name: isNL ? "Social Listening Agent" : "Social Listening Agent",
+          icon: Globe,
           headline: isNL ? "Weet wat mensen over je merk zeggen — overal" : "Know what people say about your brand — everywhere",
           description: isNL
             ? "Monitort vermeldingen van je merk op Reddit, LinkedIn, X, reviews en forums. Classificeert sentiment en stuurt een dagelijkse digest met de highlights."
@@ -114,6 +142,7 @@ const getCategories = (language: string): Category[] => {
       agents: [
         {
           name: isNL ? "Klantenservice Agent" : "Customer Service Agent",
+          icon: Bot,
           headline: isNL ? "Beantwoordt 80% van tickets zelfstandig" : "Handles 80% of tickets independently",
           description: isNL
             ? "Analyseert binnenkomende tickets, beantwoordt veelgestelde vragen direct en escaleert complexe cases naar het juiste teamlid."
@@ -125,6 +154,7 @@ const getCategories = (language: string): Category[] => {
         },
         {
           name: isNL ? "Onboarding Agent" : "Onboarding Agent",
+          icon: UserPlus,
           headline: isNL ? "Nieuwe klanten productief in uren" : "New customers productive in hours",
           description: isNL
             ? "Stuurt gepersonaliseerde welkomstflows, beantwoordt setup-vragen en zorgt dat nieuwe klanten snel productief zijn."
@@ -136,6 +166,7 @@ const getCategories = (language: string): Category[] => {
         },
         {
           name: "WhatsApp/Chat Agent",
+          icon: MessageSquare,
           headline: isNL ? "Elk kanaal, elke taal, altijd beschikbaar" : "Every channel, every language, always on",
           description: isNL
             ? "Beantwoordt klantvragen via WhatsApp, webchat en social media. Begrijpt context en plant afspraken."
@@ -147,6 +178,7 @@ const getCategories = (language: string): Category[] => {
         },
         {
           name: isNL ? "Telefoon Agent" : "Call Agent",
+          icon: Phone,
           headline: isNL ? "Neemt op binnen 2 beltonen, 24/7" : "Answers within 2 rings, 24/7",
           description: isNL
             ? "Een AI-agent die inkomende telefoongesprekken afhandelt in natuurlijk Nederlands. Beantwoordt veelgestelde vragen, plant afspraken in je agenda en escaleert naar een medewerker wanneer nodig."
@@ -168,6 +200,7 @@ const getCategories = (language: string): Category[] => {
       agents: [
         {
           name: isNL ? "Lead Kwalificatie Agent" : "Lead Qualifying Agent",
+          icon: Target,
           headline: isNL ? "Warme leads direct bij sales" : "Warm leads to sales instantly",
           description: isNL
             ? "Analyseert inkomende leads, kwalificeert automatisch en plant meetings met warme leads. Koude leads krijgen een nurture-flow."
@@ -179,6 +212,7 @@ const getCategories = (language: string): Category[] => {
         },
         {
           name: isNL ? "Outbound Agent" : "Outbound Agent",
+          icon: Send,
           headline: isNL ? "150+ gepersonaliseerde contacten per week" : "150+ personalized contacts per week",
           description: isNL
             ? "Vindt ideale prospects, schrijft gepersonaliseerde berichten en verstuurt via e-mail of LinkedIn."
@@ -190,6 +224,7 @@ const getCategories = (language: string): Category[] => {
         },
         {
           name: isNL ? "Offerte Agent" : "Quote Agent",
+          icon: FileText,
           headline: isNL ? "Van call naar offerte in minuten" : "From call to quote in minutes",
           description: isNL
             ? "Luistert mee met sales calls, haalt wensen eruit en genereert een professionele offerte."
@@ -201,6 +236,7 @@ const getCategories = (language: string): Category[] => {
         },
         {
           name: isNL ? "Content Agent" : "Content Agent",
+          icon: PenTool,
           headline: isNL ? "Social posts, blogs en e-mails op autopilot" : "Social posts, blogs and emails on autopilot",
           description: isNL
             ? "Schrijft content in jouw tone-of-voice op basis van je merk en doelgroep. Plant posts, A/B-test onderwerpregels en rapporteert wat werkt."
@@ -222,6 +258,7 @@ const getCategories = (language: string): Category[] => {
       agents: [
         {
           name: isNL ? "Order Processing Agent" : "Order Processing Agent",
+          icon: Package,
           headline: isNL ? "Bestelling tot verzending, zero handmatig" : "Order to shipment, zero manual",
           description: isNL
             ? "Verwerkt orders automatisch, checkt voorraad in real-time en stuurt tracking-info naar klanten."
@@ -233,6 +270,7 @@ const getCategories = (language: string): Category[] => {
         },
         {
           name: isNL ? "Facturatie Agent" : "Invoicing Agent",
+          icon: Receipt,
           headline: isNL ? "Nooit meer achter betalingen aanbellen" : "Never chase payments again",
           description: isNL
             ? "Genereert facturen automatisch, stuurt herinneringen en matcht betalingen met je boekhouding."
@@ -244,6 +282,7 @@ const getCategories = (language: string): Category[] => {
         },
         {
           name: isNL ? "HR Onboarding Agent" : "HR Onboarding Agent",
+          icon: Users,
           headline: isNL ? "Nieuwe medewerker productief in dagen" : "New employee productive in days",
           description: isNL
             ? "Stuurt nieuwe medewerkers door alle stappen: documenten, accounts en introductiegesprekken."
@@ -255,6 +294,7 @@ const getCategories = (language: string): Category[] => {
         },
         {
           name: isNL ? "Meeting Agent" : "Meeting Agent",
+          icon: ClipboardList,
           headline: isNL ? "Notulen klaar voordat de call afloopt" : "Minutes ready before the call ends",
           description: isNL
             ? "Luistert mee met meetings, genereert automatisch notulen, actiepunten en follow-up taken. Stuurt alles naar Slack en je projectmanagement-tool."
@@ -276,6 +316,7 @@ const getCategories = (language: string): Category[] => {
       agents: [
         {
           name: isNL ? "Kennisbank Agent" : "Knowledge Base Agent",
+          icon: Database,
           headline: isNL ? "Stel een vraag, krijg antwoord met bronnen" : "Ask a question, get answers with sources",
           description: isNL
             ? "Maakt al je documenten doorzoekbaar met AI. Vragen in natuurlijke taal, antwoord met bronvermelding."
@@ -287,6 +328,7 @@ const getCategories = (language: string): Category[] => {
         },
         {
           name: isNL ? "Compliance Agent" : "Compliance Agent",
+          icon: Shield,
           headline: isNL ? "Altijd compliant, zonder handmatige checks" : "Always compliant, no manual checks",
           description: isNL
             ? "Scant documenten automatisch tegen regelgeving. Signaleert risico's en houdt een audit trail bij."
@@ -298,6 +340,7 @@ const getCategories = (language: string): Category[] => {
         },
         {
           name: isNL ? "Rapportage Agent" : "Reporting Agent",
+          icon: FileBarChart,
           headline: isNL ? "Rapporten die zichzelf schrijven" : "Reports that write themselves",
           description: isNL
             ? "Haalt data uit al je systemen, genereert rapporten en stuurt ze automatisch naar de juiste mensen."
@@ -309,6 +352,7 @@ const getCategories = (language: string): Category[] => {
         },
         {
           name: isNL ? "Research Agent" : "Research Agent",
+          icon: Microscope,
           headline: isNL ? "Marktonderzoek in minuten, niet weken" : "Market research in minutes, not weeks",
           description: isNL
             ? "Doorzoekt het web, analyseert publicaties en vat trends samen in een rapport met bronvermelding. Van vraag tot compleet onderzoek in één klik."
@@ -330,6 +374,7 @@ const getCategories = (language: string): Category[] => {
       agents: [
         {
           name: isNL ? "Contract Review Agent" : "Contract Review Agent",
+          icon: ScanLine,
           headline: isNL ? "Contracten gescand in seconden, niet uren" : "Contracts scanned in seconds, not hours",
           description: isNL
             ? "Upload een contract en de AI markeert risicoclausules, ontbrekende voorwaarden en afwijkingen van je standaard. Bespaart juridische uren en voorkomt verrassingen."
@@ -341,6 +386,7 @@ const getCategories = (language: string): Category[] => {
         },
         {
           name: isNL ? "Uitgaven Bewaker" : "Expense Guardian",
+          icon: Wallet,
           headline: isNL ? "Elke euro verantwoord, automatisch" : "Every euro accounted for, automatically",
           description: isNL
             ? "Categoriseert uitgaven automatisch, signaleert dubbele facturen, herkent afwijkingen van budgetten en stuurt wekelijkse spend-reports naar het management."
@@ -352,6 +398,7 @@ const getCategories = (language: string): Category[] => {
         },
         {
           name: isNL ? "Fraude Detectie Agent" : "Fraud Detection Agent",
+          icon: Fingerprint,
           headline: isNL ? "Verdachte transacties geblokkeerd voordat het escaleert" : "Suspicious transactions blocked before they escalate",
           description: isNL
             ? "Monitort transactiepatronen in real-time, herkent anomalieën en blokkeert verdachte activiteit. Stuurt een alert naar je team met context en aanbevolen actie."
@@ -363,6 +410,7 @@ const getCategories = (language: string): Category[] => {
         },
         {
           name: isNL ? "Cash Flow Agent" : "Cash Flow Agent",
+          icon: CircleDollarSign,
           headline: isNL ? "Voorspelt je cashflow 90 dagen vooruit" : "Predicts your cash flow 90 days ahead",
           description: isNL
             ? "Analyseert inkomsten, uitgaven, openstaande facturen en seizoenspatronen om je cashflow te voorspellen. Waarschuwt bij dreigend tekort zodat je op tijd kunt handelen."
@@ -928,117 +976,144 @@ function CategoryDetail({
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm"
+      className="fixed inset-0 z-50 flex items-end sm:items-center justify-center bg-black/50 backdrop-blur-md"
       onClick={onClose}
     >
       <motion.div
-        initial={{ opacity: 0, y: 40, scale: 0.96 }}
+        initial={{ opacity: 0, y: 100, scale: 0.95 }}
         animate={{ opacity: 1, y: 0, scale: 1 }}
-        exit={{ opacity: 0, y: 20, scale: 0.98 }}
-        transition={{ type: "spring", stiffness: 350, damping: 30 }}
-        className="relative w-full max-w-3xl max-h-[90vh] overflow-y-auto bg-background rounded-3xl shadow-2xl scrollbar-hide"
+        exit={{ opacity: 0, y: 60, scale: 0.97 }}
+        transition={{ type: "spring", stiffness: 300, damping: 30 }}
+        className="relative w-full sm:max-w-3xl max-h-[92vh] sm:max-h-[88vh] overflow-y-auto bg-background rounded-t-[2rem] sm:rounded-[2rem] shadow-2xl scrollbar-hide"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Gradient header */}
-        <div className={`relative px-4 sm:px-6 md:px-8 pt-6 sm:pt-8 pb-5 sm:pb-6 bg-gradient-to-br ${category.gradient} overflow-hidden`}>
-          <div className="absolute top-0 right-0 w-40 h-40 rounded-full bg-white/5 -translate-y-1/2 translate-x-1/2" />
-          <div className="absolute bottom-0 left-1/3 w-24 h-24 rounded-full bg-white/5 translate-y-1/2" />
+        {/* Drag handle (mobile) */}
+        <div className="sm:hidden flex justify-center pt-3 pb-1">
+          <div className="w-10 h-1 rounded-full bg-muted-foreground/20" />
+        </div>
+
+        {/* Compact gradient header with floating close */}
+        <div className={`relative px-5 sm:px-8 pt-5 sm:pt-7 pb-20 bg-gradient-to-br ${category.gradient} overflow-hidden`}>
+          {/* Decorative shapes */}
+          <div className="absolute top-0 right-0 w-64 h-64 rounded-full bg-white/[0.04] -translate-y-1/2 translate-x-1/3" />
+          <div className="absolute bottom-0 left-0 w-32 h-32 rounded-full bg-white/[0.06] translate-y-1/2 -translate-x-1/4" />
+          <div className="absolute top-1/2 right-1/4 w-2 h-2 rounded-full bg-white/20" />
+          <div className="absolute top-1/3 right-1/3 w-1.5 h-1.5 rounded-full bg-white/15" />
 
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+            className="absolute top-4 right-4 p-2.5 rounded-xl bg-white/10 hover:bg-white/20 backdrop-blur-sm transition-all hover:scale-105 active:scale-95"
           >
             <X className="w-4 h-4 text-white" />
           </button>
 
-          <div className="relative">
-            <div className="w-12 h-12 rounded-2xl bg-white/15 backdrop-blur flex items-center justify-center mb-4">
-              <CategoryIcon className="w-6 h-6 text-white" />
+          <div className="relative flex items-center gap-4">
+            <motion.div
+              initial={{ rotate: -10, scale: 0.8 }}
+              animate={{ rotate: 0, scale: 1 }}
+              transition={{ type: "spring", stiffness: 200 }}
+              className="w-14 h-14 rounded-2xl bg-white/15 backdrop-blur-sm flex items-center justify-center shadow-lg"
+            >
+              <CategoryIcon className="w-7 h-7 text-white" />
+            </motion.div>
+            <div>
+              <h3 className="text-2xl font-bold text-white">
+                {category.title}
+              </h3>
+              <p className="text-white/60 text-sm">{category.subtitle}</p>
             </div>
-            <h3 className="text-2xl font-bold text-white mb-1">
-              {category.title}
-            </h3>
-            <p className="text-white/70 text-sm">{category.subtitle}</p>
           </div>
         </div>
 
-        <div className="px-4 sm:px-6 md:px-8 py-5 sm:py-6">
-          {/* Agent tabs */}
-          <div className="grid grid-cols-3 gap-2 mb-6">
-            {category.agents.map((a, i) => (
-              <button
-                key={i}
-                onClick={() => setActiveAgent(i)}
-                className={`px-2 sm:px-4 py-2.5 rounded-xl text-[11px] sm:text-sm font-medium transition-all text-center leading-tight ${
-                  activeAgent === i
-                    ? "bg-foreground text-background"
-                    : "bg-muted/40 text-muted-foreground hover:bg-muted/60"
-                }`}
-              >
-                {a.name}
-              </button>
-            ))}
+        {/* Agent selector */}
+        <div className="px-5 sm:px-8 -mt-10 mb-6 relative z-10">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+            {category.agents.map((a, i) => {
+              const AgentIcon = a.icon;
+              return (
+                <motion.button
+                  key={i}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.1 + i * 0.05 }}
+                  onClick={() => setActiveAgent(i)}
+                  className={`flex flex-col items-center gap-1.5 px-3 py-3 rounded-2xl text-xs font-medium transition-all duration-300 ${
+                    activeAgent === i
+                      ? `bg-gradient-to-br ${category.gradient} text-white shadow-lg scale-[1.02]`
+                      : "bg-background text-muted-foreground hover:text-foreground shadow-md hover:shadow-lg"
+                  }`}
+                >
+                  <AgentIcon className="w-5 h-5" />
+                  <span className="text-center leading-tight">{a.name}</span>
+                </motion.button>
+              );
+            })}
           </div>
+        </div>
 
-          {/* Active agent content */}
+        {/* Content */}
+        <div className="px-5 sm:px-8 pb-6 sm:pb-8">
           <AnimatePresence mode="wait">
             <motion.div
               key={activeAgent}
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -20 }}
               transition={{ duration: 0.25 }}
               className="space-y-6"
             >
               {/* Headline + description */}
               <div>
-                <h4 className="text-lg font-bold text-foreground mb-2">
+                <h4 className="text-xl font-bold text-foreground mb-2">
                   {agent.headline}
                 </h4>
-                <p className="text-sm text-foreground/60 leading-relaxed">
+                <p className="text-sm text-foreground/55 leading-relaxed">
                   {agent.description}
                 </p>
               </div>
 
-              <div className="grid sm:grid-cols-2 gap-5">
-                {/* Left: Results + integrations */}
-                <div className="space-y-5">
-                  {/* Results */}
-                  <div className="grid grid-cols-3 gap-1.5 sm:gap-2">
-                    {agent.results.map((r, i) => (
-                      <motion.div
-                        key={i}
-                        initial={{ opacity: 0, y: 8 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.1 + i * 0.06 }}
-                        className="text-center p-2 sm:p-3 rounded-xl bg-muted/30 border border-border/30"
-                      >
-                        <div className="text-base sm:text-lg font-bold text-foreground">
-                          {r.value}
-                        </div>
-                        <div className="text-[8px] sm:text-[9px] text-muted-foreground uppercase tracking-wider mt-0.5">
-                          {r.label}
-                        </div>
-                      </motion.div>
-                    ))}
-                  </div>
-
-                  {/* Integrations */}
-                  <div>
-                    <h5 className="text-[10px] font-semibold text-muted-foreground uppercase tracking-wider mb-2">
-                      <Plug className="w-3 h-3 inline mr-1" />
-                      {isNL ? "Werkt met" : "Works with"}
-                    </h5>
-                    <div className="flex flex-wrap gap-1.5">
-                      {agent.integrations.map((int, i) => (
-                        <span
-                          key={i}
-                          className="px-2.5 py-1 rounded-md bg-muted/40 border border-border/30 text-[11px] text-foreground/60"
-                        >
-                          {int}
-                        </span>
-                      ))}
+              {/* Results as horizontal scroll cards */}
+              <div className="flex gap-3 overflow-x-auto scrollbar-hide pb-1">
+                {agent.results.map((r, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: 0.1 + i * 0.08 }}
+                    className={`shrink-0 flex-1 min-w-[100px] text-center p-4 rounded-2xl bg-gradient-to-br ${category.gradient} relative overflow-hidden`}
+                  >
+                    <div className="absolute inset-0 bg-background/90" />
+                    <div className="relative">
+                      <div className="text-2xl font-bold text-foreground">
+                        {r.value}
+                      </div>
+                      <div className="text-[9px] text-muted-foreground uppercase tracking-wider mt-1 font-medium">
+                        {r.label}
+                      </div>
                     </div>
+                  </motion.div>
+                ))}
+              </div>
+
+              <div className="grid sm:grid-cols-2 gap-5">
+                {/* Left: Integrations */}
+                <div>
+                  <h5 className="text-[10px] font-semibold text-muted-foreground uppercase tracking-wider mb-3 flex items-center gap-1.5">
+                    <Plug className="w-3 h-3" />
+                    {isNL ? "Werkt met" : "Works with"}
+                  </h5>
+                  <div className="flex flex-wrap gap-2">
+                    {agent.integrations.map((int, i) => (
+                      <motion.span
+                        key={i}
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ delay: 0.2 + i * 0.04 }}
+                        className="px-3 py-1.5 rounded-lg bg-muted/30 text-xs text-foreground/60 font-medium"
+                      >
+                        {int}
+                      </motion.span>
+                    ))}
                   </div>
                 </div>
 
@@ -1047,16 +1122,24 @@ function CategoryDetail({
               </div>
 
               {/* CTA */}
-              <Button
-                className="w-full bg-foreground text-background hover:bg-foreground/90 rounded-xl py-5 text-base font-semibold group"
-                onClick={() => {
-                  onClose();
-                  scrollToSection("ready-to-start");
-                }}
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3 }}
               >
-                {isNL ? "Bespreek deze agent" : "Discuss this agent"}
-                <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-              </Button>
+                <Button
+                  className={`w-full rounded-2xl py-6 text-base font-semibold group relative overflow-hidden bg-gradient-to-r ${category.gradient} text-white hover:shadow-lg hover:scale-[1.01] active:scale-[0.99] transition-all duration-300`}
+                  onClick={() => {
+                    onClose();
+                    scrollToSection("ready-to-start");
+                  }}
+                >
+                  <span className="relative z-10 flex items-center justify-center gap-2">
+                    {isNL ? "Bespreek deze agent" : "Discuss this agent"}
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </span>
+                </Button>
+              </motion.div>
             </motion.div>
           </AnimatePresence>
         </div>
@@ -1102,56 +1185,75 @@ const Services = () => {
           </p>
         </motion.div>
 
-        {/* 4 Category cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+        {/* Category cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {categories.map((cat, i) => {
             const CatIcon = cat.icon;
             return (
               <motion.button
                 key={cat.id}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.08 }}
+                transition={{ delay: i * 0.08, type: "spring", stiffness: 200 }}
                 onClick={() => setSelectedCategory(cat)}
-                className="text-left group relative overflow-hidden rounded-2xl bg-background shadow-sm hover:shadow-xl transition-all duration-500 active:scale-[0.98]"
+                className="text-left group relative overflow-hidden rounded-3xl active:scale-[0.97] transition-transform duration-200"
               >
-                {/* Top gradient accent bar */}
-                <div className={`h-1 w-full bg-gradient-to-r ${cat.gradient} group-hover:h-1.5 transition-all duration-300`} />
+                {/* Gradient border that's always subtly visible */}
+                <div className={`absolute -inset-[1px] rounded-3xl bg-gradient-to-br ${cat.gradient} opacity-20 group-hover:opacity-100 transition-opacity duration-500`} />
+                <div className="absolute inset-[1px] rounded-[22px] bg-background z-[1]" />
 
-                {/* Background glow on hover */}
-                <div className={`absolute inset-0 opacity-0 group-hover:opacity-[0.06] transition-opacity duration-500 bg-gradient-to-br ${cat.gradient} pointer-events-none`} />
+                {/* Large gradient wash across the card */}
+                <div className={`absolute inset-0 bg-gradient-to-br ${cat.gradient} opacity-[0.04] group-hover:opacity-[0.1] transition-opacity duration-500 z-[2]`} />
 
-                <div className="relative p-6 sm:p-8">
-                  <div className="flex items-start justify-between mb-5">
-                    <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${cat.gradient} flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:shadow-xl transition-all duration-300`}>
-                      <CatIcon className="w-7 h-7 text-white" />
+                {/* Floating orb - bigger and brighter */}
+                <div className={`absolute -top-16 -right-16 w-48 h-48 rounded-full bg-gradient-to-br ${cat.gradient} opacity-[0.12] group-hover:opacity-[0.22] group-hover:scale-110 transition-all duration-700 blur-3xl z-[2]`} />
+
+                <div className="relative z-[3] p-6 sm:p-7">
+                  {/* Icon + explore CTA */}
+                  <div className="flex items-center justify-between mb-5">
+                    <div className="relative">
+                      <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${cat.gradient} flex items-center justify-center shadow-lg group-hover:rotate-3 group-hover:scale-110 transition-all duration-500`}>
+                        <CatIcon className="w-7 h-7 text-white" />
+                      </div>
+                      <motion.div
+                        className={`absolute -top-0.5 -right-0.5 w-3 h-3 rounded-full bg-gradient-to-br ${cat.gradient} ring-2 ring-background`}
+                        animate={{ scale: [1, 1.3, 1], opacity: [0.7, 1, 0.7] }}
+                        transition={{ duration: 2, repeat: Infinity, delay: i * 0.3 }}
+                      />
                     </div>
-                    <div className="flex items-center gap-2">
-                      <span className="px-2.5 py-1 rounded-full bg-muted/50 text-[11px] font-medium text-muted-foreground">
-                        {cat.agents.length} agents
-                      </span>
-                      <ChevronRight className="w-5 h-5 text-muted-foreground/30 group-hover:text-foreground group-hover:translate-x-1 transition-all duration-300" />
+                    <div className="flex items-center gap-1.5 opacity-0 group-hover:opacity-100 translate-x-2 group-hover:translate-x-0 transition-all duration-300">
+                      <span className="text-xs font-medium text-foreground/60">{isNL ? "Ontdek" : "Explore"}</span>
+                      <ArrowRight className="w-3.5 h-3.5 text-foreground/60" />
                     </div>
                   </div>
 
-                  <h3 className="text-xl font-bold text-foreground mb-1.5">
+                  {/* Title & subtitle */}
+                  <h3 className="text-lg font-bold text-foreground mb-1">
                     {cat.title}
                   </h3>
-                  <p className="text-sm text-muted-foreground mb-5">
+                  <p className="text-[13px] text-muted-foreground mb-5 leading-relaxed">
                     {cat.subtitle}
                   </p>
 
-                  {/* Agent names preview */}
-                  <div className="flex flex-wrap gap-1.5">
-                    {cat.agents.map((a, ai) => (
-                      <span
-                        key={ai}
-                        className="px-2.5 py-1 rounded-lg bg-muted/30 text-[11px] font-medium text-muted-foreground group-hover:bg-muted/50 transition-colors duration-300"
-                      >
-                        {a.name}
-                      </span>
-                    ))}
+                  {/* Agent avatars with unique icons */}
+                  <div className="flex items-center gap-3">
+                    <div className="flex -space-x-2">
+                      {cat.agents.map((a, ai) => {
+                        const AgentIcon = a.icon;
+                        return (
+                          <div
+                            key={ai}
+                            className={`w-7 h-7 rounded-full bg-gradient-to-br ${cat.gradient} flex items-center justify-center ring-2 ring-background`}
+                          >
+                            <AgentIcon className="w-3 h-3 text-white" />
+                          </div>
+                        );
+                      })}
+                    </div>
+                    <span className="text-[11px] text-muted-foreground font-medium">
+                      {cat.agents.length} agents
+                    </span>
                   </div>
                 </div>
               </motion.button>

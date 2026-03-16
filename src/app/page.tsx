@@ -81,7 +81,7 @@ const testimonialsData = {
 
 
 export const metadata: Metadata = generateMetadata({
-  title: "AI Agents op Maat — Jouw Digitale Team",
+  title: "Digitale Medewerkers & AI Agents voor bedrijven",
   description:
     "Virelio bouwt AI-agents die samenwerken, delegeren en uitvoeren. Van klantenservice tot sales automatisering — live in 2 weken. Gevestigd in Amsterdam.",
   keywords:

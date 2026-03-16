@@ -43,7 +43,7 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: {
-    default: "Virelio — AI Agents op Maat | Amsterdam",
+    default: "Virelio | Digitale Medewerkers & AI Agents voor bedrijven",
     template: "%s | Virelio"
   },
   description:
@@ -74,8 +74,8 @@ export const metadata: Metadata = {
     locale: "nl_NL",
     alternateLocale: ["en_US"],
     url: siteConfig.url,
-    siteName: "Virelio — AI Agents op Maat",
-    title: "Virelio — AI Agents op Maat | Amsterdam",
+    siteName: "Virelio",
+    title: "Virelio | Digitale Medewerkers & AI Agents voor bedrijven",
     description:
       "Virelio bouwt AI-agents die samenwerken, delegeren en uitvoeren. Van klantenservice tot sales automatisering — live in 2 weken.",
     images: [
@@ -89,7 +89,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Virelio - AI Spraakassistent & Software Solutions",
+    title: "Virelio | Digitale Medewerkers & AI Agents voor bedrijven",
     description: "200+ automatiseringen. AI telefonie die 87% gesprekken automatiseert. Voor MKB & Enterprise.",
     site: "@Virelio",
     creator: "@Virelio",
