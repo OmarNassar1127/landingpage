@@ -4,6 +4,7 @@ import Hero from "@/components/sections/hero";
 import CompanySlider from "@/components/sections/company-slider";
 import CaseStudies from "@/components/sections/case-studies";
 import WhyVirelio from "@/components/sections/why-virelio";
+import Certifications from "@/components/sections/certifications";
 import Services from "@/components/sections/services";
 import Testimonials from "@/components/sections/testimonials";
 import Footer from "@/components/sections/footer";
@@ -108,6 +109,7 @@ export default function EnglishHome() {
         </div>
         <CaseStudies />
         <WhyVirelio />
+        <Certifications />
         <div id={siteConfig.sections.testimonials.substring(1)}>
           <Testimonials />
         </div>
