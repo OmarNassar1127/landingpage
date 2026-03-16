@@ -184,11 +184,24 @@ export function organizationSchema({
   return {
     "@context": "https://schema.org",
     "@type": "Organization",
+    "@id": `${url}#organization`,
     name,
     url,
     logo,
     description,
     sameAs,
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Amsterdam",
+      addressCountry: "NL",
+    },
+    contactPoint: {
+      "@type": "ContactPoint",
+      telephone: "+31687838713",
+      email: "info@virelio.nl",
+      contactType: "sales",
+      availableLanguage: ["nl", "en"],
+    },
   };
 }
 
@@ -258,6 +271,7 @@ export function blogPostSchema({
         url: "https://virelio.nl/logo.png",
       },
     },
+    inLanguage: "nl-NL",
     mainEntityOfPage: {
       "@type": "WebPage",
       "@id": url,

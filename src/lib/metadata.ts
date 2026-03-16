@@ -20,7 +20,7 @@ export function generateMetadata({
   pathname = "",
   imageUrl = siteConfig.ogImage,
   imageAlt = "Virelio — AI Agents op Maat voor Bedrijven",
-  locale = "en_US",
+  locale = "nl_NL",
   type = "website",
   noIndex = false,
 }: MetadataProps): Metadata {

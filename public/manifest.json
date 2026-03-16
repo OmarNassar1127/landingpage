@@ -1,5 +1,5 @@
 {
-  "name": "Virelio - Innovative Solutions",
+  "name": "Virelio — Digitale Medewerkers & AI Agents",
   "short_name": "Virelio",
   "theme_color": "#ffffff",
   "background_color": "#ffffff",
@@ -7,7 +7,7 @@
   "orientation": "portrait",
   "scope": "/",
   "start_url": "/",
-  "description": "Digital innovation for your business with AI Solutions, SaaS platforms, KYC integrations, and shop automations.",
+  "description": "AI agents die samenwerken, delegeren en uitvoeren. Van kennisbank tot automatisering — live in 2 weken.",
   "icons": [
     {
       "src": "/android-icon-36x36.png",
