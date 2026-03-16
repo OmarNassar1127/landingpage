@@ -1114,35 +1114,45 @@ const Services = () => {
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.08 }}
                 onClick={() => setSelectedCategory(cat)}
-                className="text-left group relative overflow-hidden rounded-2xl border border-border/50 bg-background p-6 sm:p-8 hover:border-primary/20 transition-all duration-300 active:scale-[0.98]"
+                className="text-left group relative overflow-hidden rounded-2xl bg-background shadow-sm hover:shadow-xl transition-all duration-500 active:scale-[0.98]"
               >
-                {/* Gradient hover glow */}
-                <div className={`absolute inset-0 opacity-0 group-hover:opacity-[0.04] transition-opacity duration-500 bg-gradient-to-br ${cat.gradient} pointer-events-none`} />
+                {/* Top gradient accent bar */}
+                <div className={`h-1 w-full bg-gradient-to-r ${cat.gradient} group-hover:h-1.5 transition-all duration-300`} />
 
-                <div className="relative flex items-start justify-between">
-                  <div className="flex-1">
-                    <div className={`w-12 h-12 rounded-2xl bg-gradient-to-br ${cat.gradient} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                      <CatIcon className="w-6 h-6 text-white" />
+                {/* Background glow on hover */}
+                <div className={`absolute inset-0 opacity-0 group-hover:opacity-[0.06] transition-opacity duration-500 bg-gradient-to-br ${cat.gradient} pointer-events-none`} />
+
+                <div className="relative p-6 sm:p-8">
+                  <div className="flex items-start justify-between mb-5">
+                    <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${cat.gradient} flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:shadow-xl transition-all duration-300`}>
+                      <CatIcon className="w-7 h-7 text-white" />
                     </div>
-                    <h3 className="text-xl font-bold text-foreground mb-1.5">
-                      {cat.title}
-                    </h3>
-                    <p className="text-sm text-muted-foreground mb-4">
-                      {cat.subtitle}
-                    </p>
-                    {/* Agent names preview */}
-                    <div className="flex flex-wrap gap-1.5">
-                      {cat.agents.map((a, ai) => (
-                        <span
-                          key={ai}
-                          className="px-2 py-0.5 rounded-md bg-muted/40 text-[11px] text-muted-foreground"
-                        >
-                          {a.name}
-                        </span>
-                      ))}
+                    <div className="flex items-center gap-2">
+                      <span className="px-2.5 py-1 rounded-full bg-muted/50 text-[11px] font-medium text-muted-foreground">
+                        {cat.agents.length} agents
+                      </span>
+                      <ChevronRight className="w-5 h-5 text-muted-foreground/30 group-hover:text-foreground group-hover:translate-x-1 transition-all duration-300" />
                     </div>
                   </div>
-                  <ChevronRight className="w-5 h-5 text-muted-foreground/20 group-hover:text-primary group-hover:translate-x-1 transition-all mt-2 shrink-0" />
+
+                  <h3 className="text-xl font-bold text-foreground mb-1.5">
+                    {cat.title}
+                  </h3>
+                  <p className="text-sm text-muted-foreground mb-5">
+                    {cat.subtitle}
+                  </p>
+
+                  {/* Agent names preview */}
+                  <div className="flex flex-wrap gap-1.5">
+                    {cat.agents.map((a, ai) => (
+                      <span
+                        key={ai}
+                        className="px-2.5 py-1 rounded-lg bg-muted/30 text-[11px] font-medium text-muted-foreground group-hover:bg-muted/50 transition-colors duration-300"
+                      >
+                        {a.name}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </motion.button>
             );
