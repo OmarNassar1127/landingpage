@@ -172,7 +172,13 @@ export default function AIAgentBouwenPage() {
       />
 
       <main className="min-h-screen bg-background">
-        <Navbar />
+        <Navbar customNavLinks={[
+          { name: "Wat is een AI agent", href: "#wat-is-ai-agent" },
+          { name: "Onze agents", href: "#onze-agents" },
+          { name: "Proces", href: "#proces" },
+          { name: "Prijzen", href: "#prijzen" },
+          { name: "FAQ", href: "#faq" },
+        ]} />
 
         {/* Hero */}
         <section className="pt-24 sm:pt-32 md:pt-40 pb-12 sm:pb-16 md:pb-20">
@@ -231,7 +237,7 @@ export default function AIAgentBouwenPage() {
         </section>
 
         {/* What is an AI agent */}
-        <section className="py-12 sm:py-16 md:py-20 border-t border-border/50">
+        <section id="wat-is-ai-agent" className="py-12 sm:py-16 md:py-20 border-t border-border/50">
           <div className="container mx-auto px-6 sm:px-8 max-w-4xl">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-4 sm:mb-6">
               Wat is een AI agent — en waarom is het geen chatbot?
@@ -288,7 +294,7 @@ export default function AIAgentBouwenPage() {
         </section>
 
         {/* Agent types */}
-        <section className="py-12 sm:py-16 md:py-20 border-t border-border/50 bg-muted/20">
+        <section id="onze-agents" className="py-12 sm:py-16 md:py-20 border-t border-border/50 bg-muted/20">
           <div className="container mx-auto px-6 sm:px-8 max-w-5xl">
             <div className="mb-8 sm:mb-12 text-center">
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-3 sm:mb-4">
@@ -342,7 +348,7 @@ export default function AIAgentBouwenPage() {
         </section>
 
         {/* Process */}
-        <section className="py-12 sm:py-16 md:py-20 border-t border-border/50">
+        <section id="proces" className="py-12 sm:py-16 md:py-20 border-t border-border/50">
           <div className="container mx-auto px-6 sm:px-8 max-w-4xl">
             <div className="mb-8 sm:mb-12 text-center">
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-3 sm:mb-4">
@@ -386,7 +392,7 @@ export default function AIAgentBouwenPage() {
         </section>
 
         {/* Pricing */}
-        <section className="py-12 sm:py-16 md:py-20 border-t border-border/50 bg-muted/20">
+        <section id="prijzen" className="py-12 sm:py-16 md:py-20 border-t border-border/50 bg-muted/20">
           <div className="container mx-auto px-6 sm:px-8 max-w-5xl">
             <div className="mb-8 sm:mb-12 text-center">
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-3 sm:mb-4">
@@ -478,7 +484,7 @@ export default function AIAgentBouwenPage() {
         </section>
 
         {/* FAQ */}
-        <section className="py-12 sm:py-16 md:py-20 border-t border-border/50">
+        <section id="faq" className="py-12 sm:py-16 md:py-20 border-t border-border/50">
           <div className="container mx-auto px-6 sm:px-8 max-w-3xl">
             <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-8 sm:mb-10">
               Veelgestelde vragen

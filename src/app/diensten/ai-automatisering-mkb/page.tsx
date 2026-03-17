@@ -152,7 +152,12 @@ export default function AIAutomatiseringMKBPage() {
       />
 
       <main className="min-h-screen bg-background">
-        <Navbar />
+        <Navbar customNavLinks={[
+          { name: "Waarom MKB", href: "#waarom-mkb" },
+          { name: "Scenario's", href: "#scenarios" },
+          { name: "Integraties", href: "#integraties" },
+          { name: "FAQ", href: "#faq" },
+        ]} />
 
         {/* Hero */}
         <section className="pt-24 sm:pt-32 md:pt-40 pb-12 sm:pb-16 md:pb-20">
@@ -213,7 +218,7 @@ export default function AIAutomatiseringMKBPage() {
         </section>
 
         {/* Why MKB */}
-        <section className="py-12 sm:py-16 md:py-20 border-t border-border/50 bg-muted/20">
+        <section id="waarom-mkb" className="py-12 sm:py-16 md:py-20 border-t border-border/50 bg-muted/20">
           <div className="container mx-auto px-6 sm:px-8 max-w-5xl">
             <div className="mb-8 sm:mb-12 text-center">
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-3 sm:mb-4">
@@ -247,7 +252,7 @@ export default function AIAutomatiseringMKBPage() {
         </section>
 
         {/* Scenarios with ROI */}
-        <section className="py-12 sm:py-16 md:py-20 border-t border-border/50">
+        <section id="scenarios" className="py-12 sm:py-16 md:py-20 border-t border-border/50">
           <div className="container mx-auto px-6 sm:px-8 max-w-5xl">
             <div className="mb-8 sm:mb-12 text-center">
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-3 sm:mb-4">
@@ -383,7 +388,7 @@ export default function AIAutomatiseringMKBPage() {
         </section>
 
         {/* Integrations */}
-        <section className="py-12 sm:py-16 md:py-20 border-t border-border/50">
+        <section id="integraties" className="py-12 sm:py-16 md:py-20 border-t border-border/50">
           <div className="container mx-auto px-6 sm:px-8 max-w-5xl">
             <div className="mb-8 sm:mb-10 text-center">
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-3 sm:mb-4">
@@ -434,7 +439,7 @@ export default function AIAutomatiseringMKBPage() {
         </section>
 
         {/* FAQ */}
-        <section className="py-12 sm:py-16 md:py-20 border-t border-border/50 bg-muted/20">
+        <section id="faq" className="py-12 sm:py-16 md:py-20 border-t border-border/50 bg-muted/20">
           <div className="container mx-auto px-6 sm:px-8 max-w-3xl">
             <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-8 sm:mb-10">
               Veelgestelde vragen

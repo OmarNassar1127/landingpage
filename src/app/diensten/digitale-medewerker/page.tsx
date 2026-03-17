@@ -192,7 +192,12 @@ export default function DigitaleMedewerkerPage() {
       />
 
       <main className="min-h-screen bg-background">
-        <Navbar />
+        <Navbar customNavLinks={[
+          { name: "Hoe het werkt", href: "#hoe-het-werkt" },
+          { name: "Afdelingen", href: "#afdelingen" },
+          { name: "ROI", href: "#roi" },
+          { name: "FAQ", href: "#faq" },
+        ]} />
 
         {/* Hero */}
         <section className="pt-24 sm:pt-32 md:pt-40 pb-12 sm:pb-16 md:pb-20">
@@ -255,7 +260,7 @@ export default function DigitaleMedewerkerPage() {
         </section>
 
         {/* How it works */}
-        <section className="py-12 sm:py-16 md:py-20 border-t border-border/50 bg-muted/20">
+        <section id="hoe-het-werkt" className="py-12 sm:py-16 md:py-20 border-t border-border/50 bg-muted/20">
           <div className="container mx-auto px-6 sm:px-8 max-w-4xl">
             <div className="mb-8 sm:mb-12 text-center">
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-3 sm:mb-4">
@@ -290,7 +295,7 @@ export default function DigitaleMedewerkerPage() {
         </section>
 
         {/* Departments */}
-        <section className="py-12 sm:py-16 md:py-20 border-t border-border/50">
+        <section id="afdelingen" className="py-12 sm:py-16 md:py-20 border-t border-border/50">
           <div className="container mx-auto px-6 sm:px-8 max-w-5xl">
             <div className="mb-8 sm:mb-12 text-center">
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-3 sm:mb-4">
@@ -343,7 +348,7 @@ export default function DigitaleMedewerkerPage() {
         </section>
 
         {/* ROI comparison */}
-        <section className="py-12 sm:py-16 md:py-20 border-t border-border/50 bg-muted/20">
+        <section id="roi" className="py-12 sm:py-16 md:py-20 border-t border-border/50 bg-muted/20">
           <div className="container mx-auto px-6 sm:px-8 max-w-3xl">
             <div className="mb-8 sm:mb-10 text-center">
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-3 sm:mb-4">
@@ -406,7 +411,7 @@ export default function DigitaleMedewerkerPage() {
         </section>
 
         {/* FAQ */}
-        <section className="py-12 sm:py-16 md:py-20 border-t border-border/50">
+        <section id="faq" className="py-12 sm:py-16 md:py-20 border-t border-border/50">
           <div className="container mx-auto px-6 sm:px-8 max-w-3xl">
             <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-8 sm:mb-10">
               Veelgestelde vragen

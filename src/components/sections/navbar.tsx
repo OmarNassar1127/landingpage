@@ -10,17 +10,28 @@ import { Menu, X, Phone, Mail, ArrowRight } from "lucide-react";
 import { Icon } from "@/components/ui/icon";
 import { useLanguage } from "@/lib/i18n/language-context";
 
-export default function Navbar() {
+interface NavLink {
+  name: string;
+  href: string;
+}
+
+interface NavbarProps {
+  customNavLinks?: NavLink[];
+}
+
+export default function Navbar({ customNavLinks }: NavbarProps = {}) {
   const { t, language } = useLanguage();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
 
-  const navLinks = [
+  const defaultNavLinks = [
     { name: t.nav.services, href: "#services" },
     { name: language === 'nl' ? 'Klantresultaten' : 'Case studies', href: "#case-studies" },
     { name: language === 'nl' ? 'Aanbevelingen' : 'Testimonials', href: "#testimonials" },
   ];
+
+  const navLinks = customNavLinks || defaultNavLinks;
 
   // Lock body scroll when menu is open
   useEffect(() => {
