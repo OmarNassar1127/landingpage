@@ -1164,9 +1164,10 @@ const Services = () => {
         {/* Header */}
         <motion.div
           className="text-center mb-16 sm:mb-20"
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
+          transition={{ duration: 0.4, ease: "easeOut" }}
         >
           <p className="text-sm font-medium text-primary uppercase tracking-widest mb-4">
             {isNL ? `${totalAgents} digitale medewerkers` : `${totalAgents} digital employees`}
@@ -1192,10 +1193,10 @@ const Services = () => {
             return (
               <motion.button
                 key={cat.id}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 12 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.08, type: "spring", stiffness: 200 }}
+                transition={{ delay: i * 0.06, duration: 0.4, ease: "easeOut" }}
                 onClick={() => setSelectedCategory(cat)}
                 className="text-left group relative overflow-hidden rounded-3xl active:scale-[0.97] transition-transform duration-200"
               >
@@ -1263,9 +1264,10 @@ const Services = () => {
 
         {/* Custom agent CTA */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
+          transition={{ duration: 0.4, ease: "easeOut" }}
           className="mt-8 rounded-2xl border border-dashed border-primary/30 bg-primary/[0.02] p-8 sm:p-10 text-center"
         >
           <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
