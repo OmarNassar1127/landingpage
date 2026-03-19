@@ -294,9 +294,9 @@ function AgentChat({ language }: { language: string }) {
 
   return (
     <div className="relative w-full max-w-[480px] mx-auto px-1 sm:px-0">
-      <div className="rounded-2xl border border-border/60 bg-background overflow-hidden shadow-2xl shadow-black/10">
+      <div className="rounded-2xl border border-border/60 bg-background overflow-hidden shadow-2xl shadow-black/10 h-[480px] sm:h-[500px] flex flex-col">
         {/* Chat header */}
-        <div className="flex items-center gap-3 px-5 py-4 border-b border-border/50 bg-muted/30">
+        <div className="flex items-center gap-3 px-5 py-4 border-b border-border/50 bg-muted/30 shrink-0">
           <div className="relative">
             <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
               <Brain className="w-5 h-5 text-primary-foreground" />
@@ -350,11 +350,11 @@ function AgentChat({ language }: { language: string }) {
           </div>
         </div>
 
-        {/* Chat body — fixed height */}
+        {/* Chat body — fills remaining space */}
         <div
           ref={scrollRef}
           onScroll={handleScroll}
-          className="relative p-4 h-[360px] space-y-3 overflow-y-auto chat-scrollbar"
+          className="relative p-4 flex-1 min-h-0 space-y-3 overflow-y-auto chat-scrollbar"
         >
           <AnimatePresence mode="popLayout">
             {messages.slice(0, visibleCount).map((msg, i) => {
@@ -518,7 +518,7 @@ function AgentChat({ language }: { language: string }) {
         </AnimatePresence>
 
         {/* Chat footer */}
-        <div className="px-4 py-3 border-t border-border/50 bg-muted/20 flex items-center gap-2">
+        <div className="px-4 py-3 border-t border-border/50 bg-muted/20 flex items-center gap-2 shrink-0">
           <div className="flex-1 px-4 py-2.5 rounded-xl bg-muted/40 border border-border/30">
             <span className="text-xs text-muted-foreground/50">
               {isNL
@@ -723,7 +723,7 @@ function HeroLoading() {
             <div className="h-16 w-full max-w-md rounded-lg bg-muted animate-pulse mx-auto lg:mx-0" />
             <div className="h-6 w-80 max-w-full rounded-lg bg-muted/60 animate-pulse mx-auto lg:mx-0" />
           </div>
-          <div className="aspect-[4/5] max-w-[480px] mx-auto bg-muted/20 rounded-2xl animate-pulse" />
+          <div className="h-[480px] sm:h-[500px] max-w-[480px] mx-auto bg-muted/20 rounded-2xl animate-pulse" />
         </div>
       </div>
     </section>
