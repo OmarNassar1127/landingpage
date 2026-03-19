@@ -92,18 +92,29 @@ export default function Navbar({ customNavLinks }: NavbarProps = {}) {
       setActiveSection(href.replace("#", ""));
     }
 
-    const handledPolicyNavigation = navigateFromPolicyPage(href);
+    // Close mobile menu first so body overflow is restored before scrolling
+    const wasMobileOpen = mobileMenuOpen;
+    if (wasMobileOpen) setMobileMenuOpen(false);
 
-    if (!handledPolicyNavigation) {
-      if (href === "#") {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      } else {
-        const sectionId = href.replace("#", "");
-        scrollToSection(sectionId);
+    const doScroll = () => {
+      const handledPolicyNavigation = navigateFromPolicyPage(href);
+
+      if (!handledPolicyNavigation) {
+        if (href === "#") {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        } else {
+          const sectionId = href.replace("#", "");
+          scrollToSection(sectionId);
+        }
       }
-    }
+    };
 
-    if (mobileMenuOpen) setMobileMenuOpen(false);
+    // If mobile menu was open, wait for overflow:hidden to be removed before scrolling
+    if (wasMobileOpen) {
+      setTimeout(doScroll, 50);
+    } else {
+      doScroll();
+    }
   };
 
   return (
@@ -270,16 +281,29 @@ export default function Navbar({ customNavLinks }: NavbarProps = {}) {
                 className="space-y-4"
               >
                 {/* Main CTA */}
-                <button
-                  onClick={() => {
-                    scrollToSection("ready-to-start");
-                    setMobileMenuOpen(false);
-                  }}
-                  className="w-full flex items-center justify-center gap-2 bg-foreground text-background font-semibold py-4 rounded-2xl text-base active:scale-[0.98] transition-transform"
-                >
-                  {language === "nl" ? "Plan gratis intake" : "Book free intake"}
-                  <ArrowRight className="w-4 h-4" />
-                </button>
+                {customNavLinks ? (
+                  <a
+                    href="https://calendly.com/omarnassar1127/30min"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="w-full flex items-center justify-center gap-2 bg-foreground text-background font-semibold py-4 rounded-2xl text-base active:scale-[0.98] transition-transform"
+                  >
+                    {language === "nl" ? "Plan gratis intake" : "Book free intake"}
+                    <ArrowRight className="w-4 h-4" />
+                  </a>
+                ) : (
+                  <button
+                    onClick={() => {
+                      setMobileMenuOpen(false);
+                      setTimeout(() => scrollToSection("ready-to-start"), 50);
+                    }}
+                    className="w-full flex items-center justify-center gap-2 bg-foreground text-background font-semibold py-4 rounded-2xl text-base active:scale-[0.98] transition-transform"
+                  >
+                    {language === "nl" ? "Plan gratis intake" : "Book free intake"}
+                    <ArrowRight className="w-4 h-4" />
+                  </button>
+                )}
 
                 {/* Contact row */}
                 <div className="flex gap-3">
