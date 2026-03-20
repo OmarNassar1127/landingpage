@@ -106,7 +106,7 @@ export default function WorkshopContact() {
         </p>
       </div>
 
-      <Card className="border-primary/20">
+      <Card className="border-primary/20 text-left">
         <CardContent className="pt-6">
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
