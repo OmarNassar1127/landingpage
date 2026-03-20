@@ -4,8 +4,9 @@ import React, { useState } from "react";
 import { useLanguage } from "@/lib/i18n/language-context";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { CheckCircle, Send, Building, Users, Clock } from "lucide-react";
+import { CheckCircle, Send, Building, Clock } from "lucide-react";
 import { Icon } from "@/components/ui/icon";
+import Image from "next/image";
 
 export default function WorkshopContact() {
   const { t } = useLanguage();
@@ -13,11 +14,7 @@ export default function WorkshopContact() {
     name: "",
     email: "",
     company: "",
-    role: "",
     teamSize: "",
-    workshopType: "",
-    timeline: "",
-    message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
@@ -81,11 +78,7 @@ export default function WorkshopContact() {
                   name: "",
                   email: "",
                   company: "",
-                  role: "",
                   teamSize: "",
-                  workshopType: "",
-                  timeline: "",
-                  message: "",
                 });
               }}
               variant="outline"
@@ -113,9 +106,13 @@ export default function WorkshopContact() {
         <div className="flex justify-center mb-6">
           <div className="flex items-center space-x-3">
             <div className="relative">
-              <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center shadow-lg border-2 border-white dark:border-gray-800">
-                <span className="text-2xl font-bold text-primary">V</span>
-              </div>
+              <Image
+                src="/virelio-logo.png"
+                alt="Virelio"
+                width={64}
+                height={64}
+                className="w-16 h-16 rounded-full shadow-lg border-2 border-white dark:border-gray-800 object-cover"
+              />
             </div>
             <div className="text-left">
               <h4 className="text-sm font-semibold">Virelio</h4>
@@ -175,7 +172,7 @@ export default function WorkshopContact() {
               </div>
             </div>
 
-            {/* Company Info */}
+            {/* Company & Team Size */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
                 <label
@@ -196,28 +193,6 @@ export default function WorkshopContact() {
                 />
               </div>
 
-              <div>
-                <label
-                  htmlFor="role"
-                  className="block text-sm font-medium mb-2"
-                >
-                  {t.workshop.contactForm.role} *
-                </label>
-                <input
-                  type="text"
-                  id="role"
-                  name="role"
-                  value={formData.role}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-3 py-2 border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-primary bg-background"
-                  placeholder={t.workshop.contactForm.rolePlaceholder}
-                />
-              </div>
-            </div>
-
-            {/* Workshop Details */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
                 <label
                   htmlFor="teamSize"
@@ -250,94 +225,6 @@ export default function WorkshopContact() {
                   </option>
                 </select>
               </div>
-
-              <div>
-                <label
-                  htmlFor="workshopType"
-                  className="block text-sm font-medium mb-2"
-                >
-                  {t.workshop.contactForm.workshopType} *
-                </label>
-                <select
-                  id="workshopType"
-                  name="workshopType"
-                  value={formData.workshopType}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-3 py-2 border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-primary bg-background"
-                >
-                  <option value="">
-                    {t.workshop.contactForm.selectFormat}
-                  </option>
-                  <option value="half-day">
-                    {t.workshop.contactForm.formatOptions.halfDay}
-                  </option>
-                  <option value="full-day">
-                    {t.workshop.contactForm.formatOptions.fullDay}
-                  </option>
-                  <option value="multi-day">
-                    {t.workshop.contactForm.formatOptions.multiDay}
-                  </option>
-                  <option value="custom">
-                    {t.workshop.contactForm.formatOptions.custom}
-                  </option>
-                </select>
-              </div>
-            </div>
-
-            {/* Timeline */}
-            <div>
-              <label
-                htmlFor="timeline"
-                className="block text-sm font-medium mb-2"
-              >
-                {t.workshop.contactForm.timeline}
-              </label>
-              <select
-                id="timeline"
-                name="timeline"
-                value={formData.timeline}
-                onChange={handleChange}
-                className="w-full px-3 py-2 border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-primary bg-background"
-              >
-                <option value="">
-                  {t.workshop.contactForm.selectTimeline}
-                </option>
-                <option value="asap">
-                  {t.workshop.contactForm.timelineOptions.asap}
-                </option>
-                <option value="1-month">
-                  {t.workshop.contactForm.timelineOptions.oneMonth}
-                </option>
-                <option value="2-3-months">
-                  {t.workshop.contactForm.timelineOptions.twoThreeMonths}
-                </option>
-                <option value="6-months">
-                  {t.workshop.contactForm.timelineOptions.sixMonths}
-                </option>
-                <option value="flexible">
-                  {t.workshop.contactForm.timelineOptions.flexible}
-                </option>
-              </select>
-            </div>
-
-            {/* Message */}
-            <div>
-              <label
-                htmlFor="message"
-                className="block text-sm font-medium mb-2"
-              >
-                {t.workshop.contactForm.message}
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                rows={4}
-                className="w-full px-3 py-2 border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-primary bg-background"
-                placeholder={t.workshop.contactForm.messagePlaceholder}
-              />
             </div>
 
             {/* Submit Button */}
