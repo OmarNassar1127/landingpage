@@ -92,34 +92,22 @@ export default function WorkshopContact() {
   }
 
   return (
-    <div className="mt-8">
+    <div className="mt-8 max-w-lg mx-auto">
+      {/* Logo + title */}
       <div className="text-center mb-8">
-        <h3 className="text-2xl font-bold mb-4">
+        <div className="flex justify-center mb-4">
+          <img src="/favicon-96x96.png" alt="Virelio logo" className="h-12 w-12 rounded-lg" />
+        </div>
+        <h3 className="text-2xl font-bold mb-2">
           {t.workshop.contactForm.title}
         </h3>
-        <p className="text-muted-foreground max-w-2xl mx-auto mb-6">
+        <p className="text-muted-foreground text-sm">
           {t.workshop.contactForm.subtitle}
         </p>
-        
-        {/* Logo */}
-        <div className="flex justify-center mb-6">
-          <div className="flex items-center gap-2.5">
-            <img src="/favicon-96x96.png" alt="Virelio logo" className="h-12 w-12 rounded-lg" />
-            <span className="text-2xl font-black tracking-tight">
-              Virelio<span className="text-primary">.</span>
-            </span>
-          </div>
-        </div>
       </div>
 
       <Card className="border-primary/20">
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2">
-            <Icon icon={Building} className="h-5 w-5 text-primary" />
-            {t.workshop.contactForm.formTitle}
-          </CardTitle>
-        </CardHeader>
-        <CardContent>
+        <CardContent className="pt-6">
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
               <label
