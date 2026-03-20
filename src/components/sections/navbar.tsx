@@ -175,10 +175,12 @@ export default function Navbar({ customNavLinks }: NavbarProps = {}) {
             <div className="flex items-center gap-4">
               <Button
                 size="sm"
-                onClick={() => scrollToSection('contact')}
+                asChild
                 className="bg-foreground text-background hover:bg-foreground/90 font-semibold px-5 py-2 rounded-lg shadow-sm"
               >
-                {language === 'nl' ? 'Plan intake' : 'Book intake'}
+                <a href="https://calendly.com/omarnassar1127/30min" target="_blank" rel="noopener noreferrer">
+                  {language === 'nl' ? 'Plan intake' : 'Book intake'}
+                </a>
               </Button>
               <LanguageToggle />
             </div>
@@ -281,29 +283,16 @@ export default function Navbar({ customNavLinks }: NavbarProps = {}) {
                 className="space-y-4"
               >
                 {/* Main CTA */}
-                {customNavLinks ? (
-                  <a
-                    href="https://calendly.com/omarnassar1127/30min"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="w-full flex items-center justify-center gap-2 bg-foreground text-background font-semibold py-4 rounded-2xl text-base active:scale-[0.98] transition-transform"
-                  >
-                    {language === "nl" ? "Plan gratis intake" : "Book free intake"}
-                    <ArrowRight className="w-4 h-4" />
-                  </a>
-                ) : (
-                  <button
-                    onClick={() => {
-                      setMobileMenuOpen(false);
-                      setTimeout(() => scrollToSection("ready-to-start"), 50);
-                    }}
-                    className="w-full flex items-center justify-center gap-2 bg-foreground text-background font-semibold py-4 rounded-2xl text-base active:scale-[0.98] transition-transform"
-                  >
-                    {language === "nl" ? "Plan gratis intake" : "Book free intake"}
-                    <ArrowRight className="w-4 h-4" />
-                  </button>
-                )}
+                <a
+                  href="https://calendly.com/omarnassar1127/30min"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="w-full flex items-center justify-center gap-2 bg-foreground text-background font-semibold py-4 rounded-2xl text-base active:scale-[0.98] transition-transform"
+                >
+                  {language === "nl" ? "Plan gratis intake" : "Book free intake"}
+                  <ArrowRight className="w-4 h-4" />
+                </a>
 
                 {/* Contact row */}
                 <div className="flex gap-3">
