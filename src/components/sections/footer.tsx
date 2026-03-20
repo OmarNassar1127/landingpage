@@ -1,13 +1,16 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { HashLink } from "@/components/hash-router/hash-router";
 import { useLanguage } from "@/lib/i18n/language-context";
 import { scrollToSection, navigateFromPolicyPage } from "@/lib/scroll-utils";
+import { ChevronDown } from "lucide-react";
 
 export default function Footer() {
   const { t, language } = useLanguage();
+  const [whatNextOpen, setWhatNextOpen] = useState(false);
+  const isWorkshopPage = typeof window !== "undefined" && window.location.pathname.includes("/workshop");
 
   return (
     <footer className="bg-background border-t border-border/50 py-16 sm:py-20">
@@ -163,6 +166,44 @@ export default function Footer() {
             </ul>
           </div>
         </div>
+
+        {/* Workshop: What happens next? (collapsible) */}
+        {isWorkshopPage && (
+          <div className="border-t border-border/50 mt-12 pt-8">
+            <div className="max-w-xl mx-auto bg-muted/50 rounded-lg overflow-hidden">
+              <button
+                type="button"
+                onClick={() => setWhatNextOpen(!whatNextOpen)}
+                className="w-full flex items-center justify-between p-4 font-semibold text-left hover:bg-muted/70 transition-colors"
+              >
+                {t.workshop.contactForm.whatNext}
+                <ChevronDown
+                  className={`h-5 w-5 transition-transform duration-200 ${whatNextOpen ? "rotate-180" : ""}`}
+                />
+              </button>
+              {whatNextOpen && (
+                <ul className="px-4 pb-4 text-sm text-muted-foreground space-y-1 list-none">
+                  <li className="flex items-start">
+                    <span className="mr-2 flex-shrink-0">•</span>
+                    <span className="text-left"><strong>{t.workshop.contactForm.nextSteps.contact}</strong></span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="mr-2 flex-shrink-0">•</span>
+                    <span className="text-left"><strong>{t.workshop.contactForm.nextSteps.meeting}</strong></span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="mr-2 flex-shrink-0">•</span>
+                    <span className="text-left"><strong>{t.workshop.contactForm.nextSteps.proposal}</strong></span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="mr-2 flex-shrink-0">•</span>
+                    <span className="text-left"><strong>{t.workshop.contactForm.nextSteps.scheduling}</strong></span>
+                  </li>
+                </ul>
+              )}
+            </div>
+          </div>
+        )}
 
         {/* Bottom */}
         <div className="border-t border-border/50 mt-16 pt-8">

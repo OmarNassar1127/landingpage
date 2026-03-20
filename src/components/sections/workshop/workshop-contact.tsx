@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { useLanguage } from "@/lib/i18n/language-context";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { CheckCircle, Send, Building, Clock, ChevronDown } from "lucide-react";
+import { CheckCircle, Send, Building, Clock } from "lucide-react";
 import { Icon } from "@/components/ui/icon";
 
 export default function WorkshopContact() {
@@ -17,7 +17,6 @@ export default function WorkshopContact() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
-  const [whatNextOpen, setWhatNextOpen] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -102,10 +101,13 @@ export default function WorkshopContact() {
           {t.workshop.contactForm.subtitle}
         </p>
         
-        {/* Logo matching navbar */}
+        {/* Logo */}
         <div className="flex justify-center mb-6">
-          <div className="text-2xl font-bold tracking-tight bg-gradient-to-r from-purple-400 to-blue-400 text-transparent bg-clip-text">
-            VIRELIO - AI Workshop
+          <div className="flex items-center gap-2.5">
+            <img src="/favicon-96x96.png" alt="Virelio logo" className="h-12 w-12 rounded-lg" />
+            <span className="text-2xl font-black tracking-tight">
+              Virelio<span className="text-primary">.</span>
+            </span>
           </div>
         </div>
       </div>
@@ -237,40 +239,7 @@ export default function WorkshopContact() {
             </Button>
           </form>
 
-          {/* Collapsible Additional Info */}
-          <div className="mt-8 bg-muted/50 rounded-lg overflow-hidden">
-            <button
-              type="button"
-              onClick={() => setWhatNextOpen(!whatNextOpen)}
-              className="w-full flex items-center justify-between p-4 font-semibold text-left hover:bg-muted/70 transition-colors"
-            >
-              {t.workshop.contactForm.whatNext}
-              <Icon
-                icon={ChevronDown}
-                className={`h-5 w-5 transition-transform duration-200 ${whatNextOpen ? "rotate-180" : ""}`}
-              />
-            </button>
-            {whatNextOpen && (
-              <ul className="px-4 pb-4 text-sm text-muted-foreground space-y-1 list-none">
-                <li className="flex items-start">
-                  <span className="mr-2 flex-shrink-0">•</span>
-                  <span className="text-left"><strong>{t.workshop.contactForm.nextSteps.contact}</strong></span>
-                </li>
-                <li className="flex items-start">
-                  <span className="mr-2 flex-shrink-0">•</span>
-                  <span className="text-left"><strong>{t.workshop.contactForm.nextSteps.meeting}</strong></span>
-                </li>
-                <li className="flex items-start">
-                  <span className="mr-2 flex-shrink-0">•</span>
-                  <span className="text-left"><strong>{t.workshop.contactForm.nextSteps.proposal}</strong></span>
-                </li>
-                <li className="flex items-start">
-                  <span className="mr-2 flex-shrink-0">•</span>
-                  <span className="text-left"><strong>{t.workshop.contactForm.nextSteps.scheduling}</strong></span>
-                </li>
-              </ul>
-            )}
-          </div>
+
         </CardContent>
       </Card>
     </div>
