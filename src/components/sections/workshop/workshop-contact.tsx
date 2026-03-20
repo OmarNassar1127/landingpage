@@ -4,9 +4,8 @@ import React, { useState } from "react";
 import { useLanguage } from "@/lib/i18n/language-context";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { CheckCircle, Send, Building, Clock } from "lucide-react";
+import { CheckCircle, Send, Building, Clock, ChevronDown } from "lucide-react";
 import { Icon } from "@/components/ui/icon";
-import Image from "next/image";
 
 export default function WorkshopContact() {
   const { t } = useLanguage();
@@ -18,6 +17,7 @@ export default function WorkshopContact() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [whatNextOpen, setWhatNextOpen] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -102,22 +102,10 @@ export default function WorkshopContact() {
           {t.workshop.contactForm.subtitle}
         </p>
         
-        {/* Contact person */}
+        {/* Logo matching navbar */}
         <div className="flex justify-center mb-6">
-          <div className="flex items-center space-x-3">
-            <div className="relative">
-              <Image
-                src="/virelio-logo.png"
-                alt="Virelio"
-                width={64}
-                height={64}
-                className="w-16 h-16 rounded-full shadow-lg border-2 border-white dark:border-gray-800 object-cover"
-              />
-            </div>
-            <div className="text-left">
-              <h4 className="text-sm font-semibold">Virelio</h4>
-              <p className="text-xs text-muted-foreground">Workshop Facilitator</p>
-            </div>
+          <div className="text-2xl font-bold tracking-tight bg-gradient-to-r from-purple-400 to-blue-400 text-transparent bg-clip-text">
+            VIRELIO - AI Workshop
           </div>
         </div>
       </div>
@@ -130,101 +118,95 @@ export default function WorkshopContact() {
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <form onSubmit={handleSubmit} className="space-y-6">
-            {/* Basic Info */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div>
-                <label
-                  htmlFor="name"
-                  className="block text-sm font-medium mb-2"
-                >
-                  {t.workshop.contactForm.name} *
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-3 py-2 border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-primary bg-background"
-                  placeholder={t.workshop.contactForm.namePlaceholder}
-                />
-              </div>
-
-              <div>
-                <label
-                  htmlFor="email"
-                  className="block text-sm font-medium mb-2"
-                >
-                  {t.workshop.contactForm.email} *
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-3 py-2 border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-primary bg-background"
-                  placeholder={t.workshop.contactForm.emailPlaceholder}
-                />
-              </div>
+          <form onSubmit={handleSubmit} className="space-y-4">
+            <div>
+              <label
+                htmlFor="name"
+                className="block text-sm font-medium mb-2"
+              >
+                {t.workshop.contactForm.name} *
+              </label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                required
+                className="w-full px-3 py-2 border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-primary bg-background"
+                placeholder={t.workshop.contactForm.namePlaceholder}
+              />
             </div>
 
-            {/* Company & Team Size */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div>
-                <label
-                  htmlFor="company"
-                  className="block text-sm font-medium mb-2"
-                >
-                  {t.workshop.contactForm.company} *
-                </label>
-                <input
-                  type="text"
-                  id="company"
-                  name="company"
-                  value={formData.company}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-3 py-2 border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-primary bg-background"
-                  placeholder={t.workshop.contactForm.companyPlaceholder}
-                />
-              </div>
+            <div>
+              <label
+                htmlFor="email"
+                className="block text-sm font-medium mb-2"
+              >
+                {t.workshop.contactForm.email} *
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+                className="w-full px-3 py-2 border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-primary bg-background"
+                placeholder={t.workshop.contactForm.emailPlaceholder}
+              />
+            </div>
 
-              <div>
-                <label
-                  htmlFor="teamSize"
-                  className="block text-sm font-medium mb-2"
-                >
-                  {t.workshop.contactForm.teamSize} *
-                </label>
-                <select
-                  id="teamSize"
-                  name="teamSize"
-                  value={formData.teamSize}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-3 py-2 border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-primary bg-background"
-                >
-                  <option value="">
-                    {t.workshop.contactForm.selectTeamSize}
-                  </option>
-                  <option value="5-10">
-                    {t.workshop.contactForm.teamSizeOptions.small}
-                  </option>
-                  <option value="10-20">
-                    {t.workshop.contactForm.teamSizeOptions.medium}
-                  </option>
-                  <option value="20-50">
-                    {t.workshop.contactForm.teamSizeOptions.large}
-                  </option>
-                  <option value="50+">
-                    {t.workshop.contactForm.teamSizeOptions.xlarge}
-                  </option>
-                </select>
-              </div>
+            <div>
+              <label
+                htmlFor="company"
+                className="block text-sm font-medium mb-2"
+              >
+                {t.workshop.contactForm.company} *
+              </label>
+              <input
+                type="text"
+                id="company"
+                name="company"
+                value={formData.company}
+                onChange={handleChange}
+                required
+                className="w-full px-3 py-2 border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-primary bg-background"
+                placeholder={t.workshop.contactForm.companyPlaceholder}
+              />
+            </div>
+
+            <div>
+              <label
+                htmlFor="teamSize"
+                className="block text-sm font-medium mb-2"
+              >
+                {t.workshop.contactForm.teamSize} *
+              </label>
+              <select
+                id="teamSize"
+                name="teamSize"
+                value={formData.teamSize}
+                onChange={handleChange}
+                required
+                className="w-full px-3 py-2 border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-primary bg-background"
+              >
+                <option value="">
+                  {t.workshop.contactForm.selectTeamSize}
+                </option>
+                <option value="5-10">
+                  {t.workshop.contactForm.teamSizeOptions.small}
+                </option>
+                <option value="10-20">
+                  {t.workshop.contactForm.teamSizeOptions.medium}
+                </option>
+                <option value="20-50">
+                  {t.workshop.contactForm.teamSizeOptions.large}
+                </option>
+                <option value="50+">
+                  {t.workshop.contactForm.teamSizeOptions.xlarge}
+                </option>
+              </select>
             </div>
 
             {/* Submit Button */}
@@ -255,29 +237,39 @@ export default function WorkshopContact() {
             </Button>
           </form>
 
-          {/* Additional Info */}
-          <div className="mt-8 p-4 bg-muted/50 rounded-lg">
-            <h4 className="font-semibold mb-2">
+          {/* Collapsible Additional Info */}
+          <div className="mt-8 bg-muted/50 rounded-lg overflow-hidden">
+            <button
+              type="button"
+              onClick={() => setWhatNextOpen(!whatNextOpen)}
+              className="w-full flex items-center justify-between p-4 font-semibold text-left hover:bg-muted/70 transition-colors"
+            >
               {t.workshop.contactForm.whatNext}
-            </h4>
-            <ul className="text-sm text-muted-foreground space-y-1 list-none">
-              <li className="flex items-start">
-                <span className="mr-2 flex-shrink-0">•</span>
-                <span className="text-left"><strong>{t.workshop.contactForm.nextSteps.contact}</strong></span>
-              </li>
-              <li className="flex items-start">
-                <span className="mr-2 flex-shrink-0">•</span>
-                <span className="text-left"><strong>{t.workshop.contactForm.nextSteps.meeting}</strong></span>
-              </li>
-              <li className="flex items-start">
-                <span className="mr-2 flex-shrink-0">•</span>
-                <span className="text-left"><strong>{t.workshop.contactForm.nextSteps.proposal}</strong></span>
-              </li>
-              <li className="flex items-start">
-                <span className="mr-2 flex-shrink-0">•</span>
-                <span className="text-left"><strong>{t.workshop.contactForm.nextSteps.scheduling}</strong></span>
-              </li>
-            </ul>
+              <Icon
+                icon={ChevronDown}
+                className={`h-5 w-5 transition-transform duration-200 ${whatNextOpen ? "rotate-180" : ""}`}
+              />
+            </button>
+            {whatNextOpen && (
+              <ul className="px-4 pb-4 text-sm text-muted-foreground space-y-1 list-none">
+                <li className="flex items-start">
+                  <span className="mr-2 flex-shrink-0">•</span>
+                  <span className="text-left"><strong>{t.workshop.contactForm.nextSteps.contact}</strong></span>
+                </li>
+                <li className="flex items-start">
+                  <span className="mr-2 flex-shrink-0">•</span>
+                  <span className="text-left"><strong>{t.workshop.contactForm.nextSteps.meeting}</strong></span>
+                </li>
+                <li className="flex items-start">
+                  <span className="mr-2 flex-shrink-0">•</span>
+                  <span className="text-left"><strong>{t.workshop.contactForm.nextSteps.proposal}</strong></span>
+                </li>
+                <li className="flex items-start">
+                  <span className="mr-2 flex-shrink-0">•</span>
+                  <span className="text-left"><strong>{t.workshop.contactForm.nextSteps.scheduling}</strong></span>
+                </li>
+              </ul>
+            )}
           </div>
         </CardContent>
       </Card>
