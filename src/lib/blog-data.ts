@@ -14,7 +14,7 @@ export const blogPosts: BlogPost[] = [
     slug: "wat-kost-ai-agent",
     title: "Wat kost een AI agent? Eerlijk kostenoverzicht 2026",
     description:
-      "Transparante prijzen voor AI agent ontwikkeling in 2026. Van eenvoudige bots (€2.000) tot enterprise systemen (€15.000+). Inclusief maandelijkse kosten, ROI-berekeningen en WBSO-subsidie.",
+      "Wat kost een AI agent in 2026? Van eenvoudige bots (€2.000) tot enterprise systemen (€15.000+), inclusief maandelijkse kosten, ROI en WBSO-subsidie.",
     publishedAt: "2026-02-10",
     author: "Virelio Team",
     readingTime: 7,
@@ -27,13 +27,13 @@ export const blogPosts: BlogPost[] = [
       "AI agent investering",
       "AI bureau tarieven",
     ],
-    content: `<p>Een van de eerste vragen die ondernemers stellen is: "Wat kost een AI agent eigenlijk?" Het eerlijke antwoord is dat het sterk afhangt van de complexiteit — maar in dit artikel geven we je concrete cijfers zodat je een weloverwogen beslissing kunt nemen.</p>
+    content: `<p>Een van de eerste vragen die ondernemers stellen is: "Wat kost een AI agent eigenlijk?" Het eerlijke antwoord is dat het sterk afhangt van de complexiteit. In dit artikel geven we je wel concrete cijfers zodat je een weloverwogen beslissing kunt nemen.</p>
 
 <p>Bij Virelio hanteren we transparante prijzen. Geen vage "neem contact op voor een offerte" zonder enige indicatie. Hieronder vind je een eerlijk overzicht van de werkelijke kosten in 2026.</p>
 
 <h2>Ontwikkelkosten: wat betaal je eenmalig?</h2>
 
-<h3>Eenvoudige AI agents: €2.000 – €5.000</h3>
+<h3>Eenvoudige AI agents: €2.000 tot €5.000</h3>
 
 <p>In deze categorie vallen agents met één duidelijke taak en beperkte integraties. Denk aan:</p>
 <ul>
@@ -44,7 +44,7 @@ export const blogPosts: BlogPost[] = [
 
 <p>De looptijd is doorgaans 1 tot 2 weken. Je krijgt een werkend product dat direct productierijp is, inclusief testperiode en documentatie.</p>
 
-<h3>Medium complexiteit: €5.000 – €15.000</h3>
+<h3>Medium complexiteit: €5.000 tot €15.000</h3>
 
 <p>Dit segment omvat agents die meerdere taken combineren en integreren met bestaande systemen. Voorbeelden:</p>
 <ul>
@@ -66,30 +66,30 @@ export const blogPosts: BlogPost[] = [
   <li>Custom AI-modellen die getraind zijn op bedrijfsspecifieke data</li>
 </ul>
 
-<p>Bij enterprise trajecten starten we altijd met een betaalde discovery fase van €1.500 – €3.000 om de architectuur goed te doordenken voor we code schrijven.</p>
+<p>Bij enterprise trajecten starten we altijd met een betaalde discovery fase van €1.500 tot €3.000 om de architectuur goed te doordenken voor we code schrijven.</p>
 
 <h2>Maandelijkse kosten: wat betaal je structureel?</h2>
 
 <p>De ontwikkelkosten zijn eenmalig, maar een AI agent draait op infrastructuur die geld kost. Reken op het volgende:</p>
 
-<h3>Hosting en infrastructuur: €50 – €500/maand</h3>
+<h3>Hosting en infrastructuur: €50 tot €500/maand</h3>
 <ul>
-  <li><strong>Basis setup (Vercel + database):</strong> €50 – €100/maand</li>
-  <li><strong>Medium (eigen server, Redis cache, monitoring):</strong> €100 – €250/maand</li>
-  <li><strong>Enterprise (on-premise of dedicated cloud):</strong> €250 – €500+/maand</li>
+  <li><strong>Basis setup (Vercel + database):</strong> €50 tot €100/maand</li>
+  <li><strong>Medium (eigen server, Redis cache, monitoring):</strong> €100 tot €250/maand</li>
+  <li><strong>Enterprise (on-premise of dedicated cloud):</strong> €250 tot €500+/maand</li>
 </ul>
 
-<h3>API-kosten voor taalmodellen: €100 – €2.000/maand</h3>
+<h3>API-kosten voor taalmodellen: €100 tot €2.000/maand</h3>
 
 <p>Dit is de variabele kostenpost die het meest schommelt. API-kosten hangen af van het aantal berichten dat je agent verwerkt en welk model je gebruikt.</p>
 
 <ul>
   <li><strong><a href="https://openai.com/api/" target="_blank" rel="noopener">GPT-4o (OpenAI)</a>:</strong> ca. €2,50 per 1.000 input-tokens, €10 per 1.000 output-tokens</li>
   <li><strong><a href="https://www.anthropic.com/" target="_blank" rel="noopener">Claude Sonnet (Anthropic)</a>:</strong> ca. €3 per 1.000 input-tokens</li>
-  <li><strong>Gemini 2.5 Flash (Google):</strong> ca. €0,075 per 1.000 input-tokens — de meest kostenefficiënte optie</li>
+  <li><strong>Gemini 2.5 Flash (Google):</strong> ca. €0,075 per 1.000 input-tokens, de meest kostenefficiënte optie</li>
 </ul>
 
-<p>Een klantenservice agent die 1.000 gesprekken per maand afhandelt kost doorgaans €100 – €400 aan API-kosten, afhankelijk van de gemiddelde gesprekslengte en het gekozen model.</p>
+<p>Een klantenservice agent die 1.000 gesprekken per maand afhandelt kost doorgaans €100 tot €400 aan API-kosten, afhankelijk van de gemiddelde gesprekslengte en het gekozen model.</p>
 
 <h2>ROI: wanneer verdient een AI agent zichzelf terug?</h2>
 
@@ -130,11 +130,11 @@ export const blogPosts: BlogPost[] = [
 
 <h2>WBSO-subsidie: 35% teruggave op R&D kosten</h2>
 
-<p>Dit is een kostenpost die veel ondernemers over het hoofd zien: de <strong><a href="https://www.rvo.nl/subsidies-financiering/wbso" target="_blank" rel="noopener">WBSO (Wet Bevordering Speur- en Ontwikkelingswerk)</a></strong>. Als je een AI agent laat ontwikkelen die technisch innovatief is — wat bij maatwerk vrijwel altijd het geval is — kun je via RVO 35% van de loonkosten teruggeven.</p>
+<p>Dit is een kostenpost die veel ondernemers over het hoofd zien: de <strong><a href="https://www.rvo.nl/subsidies-financiering/wbso" target="_blank" rel="noopener">WBSO (Wet Bevordering Speur- en Ontwikkelingswerk)</a></strong>. Laat je een AI agent ontwikkelen die technisch innovatief is? Bij maatwerk is dat vrijwel altijd zo. Dan krijg je via RVO 35% van de loonkosten terug.</p>
 
 <p>Concreet: als jouw medewerkers tijd besteden aan het definiëren van de AI-requirements, testen en valideren, dan zijn die uren WBSO-aftrekbaar. Voor een traject van €10.000 waarbij 40% van de kosten kwalificeren als R&D, praat je over €1.400 subsidie.</p>
 
-<p>Wij helpen je met de WBSO-aanvraag en zorgen voor de juiste urenregistratie. <strong>Vraag het aan bij de start van het project — niet achteraf.</strong></p>
+<p>Wij helpen je met de WBSO-aanvraag en zorgen voor de juiste urenregistratie. <strong>Vraag het aan bij de start van het project, niet achteraf.</strong></p>
 
 <h2>Wat krijg je voor dit geld?</h2>
 
@@ -147,7 +147,7 @@ export const blogPosts: BlogPost[] = [
   <li>Overdracht van alle API-keys en credentials</li>
 </ul>
 
-<p><strong>Je bent volledig eigenaar — geen vendor lock-in, geen maandelijkse licentievergoeding aan ons.</strong></p>
+<p><strong>Je bent volledig eigenaar. Je zit nergens aan vast en betaalt ons geen maandelijkse licentie.</strong></p>
 
 <h2>Veelgestelde vragen over kosten</h2>
 
@@ -155,14 +155,14 @@ export const blogPosts: BlogPost[] = [
 
 <p><strong>Zijn er verborgen kosten?</strong> Nee. We werken altijd met een vaste offerte. Scopewijzigingen facturen we als meerwerk en communiceren we van tevoren.</p>
 
-<p><strong>Wat als de agent niet presteert zoals verwacht?</strong> We definiëren succes metrics voor livegang. Als die niet gehaald worden, blijven we werken totdat ze gehaald zijn — zonder extra kosten. Bekijk ook onze pagina over <a href="/diensten/ai-agent-bouwen">AI agent bouwen</a> of lees hoe we <a href="/blog/klantenservice-automatiseren-ai">klantenservice automatiseren met AI</a>.</p>`,
+<p><strong>Wat als de agent niet presteert zoals verwacht?</strong> Voor de livegang leggen we vast wanneer de agent succesvol is. Halen we die doelen niet, dan werken we door tot het wel lukt, zonder extra kosten. Bekijk ook onze pagina over <a href="/diensten/ai-agent-bouwen">AI agent bouwen</a> of lees hoe we <a href="/blog/klantenservice-automatiseren-ai">klantenservice automatiseren met AI</a>.</p>`,
   },
 
   {
     slug: "ai-agent-vs-chatbot",
     title: "AI agent vs chatbot: wat is het verschil?",
     description:
-      "Een chatbot volgt scripts. Een AI agent denkt, plant en handelt zelfstandig. Ontdek het praktische verschil en wanneer je welke oplossing kiest voor jouw bedrijf.",
+      "Een chatbot volgt scripts. Een AI agent denkt, plant en handelt zelfstandig. Lees het praktische verschil en wanneer je welke oplossing kiest.",
     publishedAt: "2026-02-18",
     author: "Virelio Team",
     readingTime: 6,
@@ -175,7 +175,7 @@ export const blogPosts: BlogPost[] = [
       "AI automatisering",
       "intelligente automatisering bedrijf",
     ],
-    content: `<p>In gesprekken met ondernemers horen we het regelmatig: "We hebben al een chatbot, hebben we dan nog een AI agent nodig?" Het antwoord hangt sterk af van wat je bedoelt met "chatbot" — en wat je wilt bereiken. In dit artikel leggen we het verschil helder uit, zonder technisch jargon.</p>
+    content: `<p>In gesprekken met ondernemers horen we het regelmatig: "We hebben al een chatbot, hebben we dan nog een AI agent nodig?" Het antwoord hangt sterk af van wat je bedoelt met "chatbot" en wat je wilt bereiken. In dit artikel leggen we het verschil helder uit, zonder technisch jargon.</p>
 
 <h2>Wat is een chatbot?</h2>
 
@@ -190,11 +190,11 @@ export const blogPosts: BlogPost[] = [
   <li>Faalt bij onverwachte vragen of taalvariaties</li>
 </ul>
 
-<p>Er zijn ook modernere chatbots die gebruikmaken van LLMs (Large Language Models). Die zijn slimmer in conversatie, maar kunnen alsnog geen acties ondernemen — ze kunnen alleen praten. Volgens <a href="https://www.mckinsey.com/capabilities/mckinsey-digital/our-insights" target="_blank" rel="noopener">McKinsey</a> verwacht meer dan 70% van de bedrijven AI te integreren in hun klantenservice voor 2027.</p>
+<p>Er zijn ook modernere chatbots die gebruikmaken van LLMs (Large Language Models). Die zijn slimmer in conversatie, maar kunnen nog steeds geen acties ondernemen. Ze kunnen alleen praten. Volgens <a href="https://www.mckinsey.com/capabilities/mckinsey-digital/our-insights" target="_blank" rel="noopener">McKinsey</a> verwacht meer dan 70% van de bedrijven AI te integreren in hun klantenservice voor 2027.</p>
 
 <h2>Wat is een AI agent?</h2>
 
-<p>Een AI agent is fundamenteel anders van opzet. In plaats van een script te volgen, <strong>begrijpt een agent het doel</strong>, plant stappen om dat doel te bereiken, en voert die stappen autonoom uit — inclusief het aanroepen van externe tools en systemen.</p>
+<p>Een AI agent is fundamenteel anders van opzet. In plaats van een script te volgen, <strong>begrijpt een agent het doel</strong>, plant stappen om dat doel te bereiken, en voert die stappen zelfstandig uit, inclusief het aanroepen van externe tools en systemen.</p>
 
 <p>Een AI agent kan:</p>
 <ul>
@@ -204,7 +204,7 @@ export const blogPosts: BlogPost[] = [
   <li>Meerdere acties achter elkaar uitvoeren, fouten zelf afhandelen, en bij twijfel escaleren</li>
 </ul>
 
-<p>Het sleutelwoord is <strong>autonomie</strong>. Een agent handelt niet alleen — hij handelt ook. En hij doet dat op basis van redenering, niet op basis van een vooraf geschreven script. De <a href="https://openai.com/api/" target="_blank" rel="noopener">OpenAI API</a> en vergelijkbare platforms maken dit niveau van redenering vandaag al toegankelijk voor MKB-bedrijven.</p>
+<p>Het sleutelwoord is <strong>autonomie</strong>. Een agent praat niet alleen, hij handelt ook. En hij doet dat op basis van redenering, niet op basis van een vooraf geschreven script. De <a href="https://openai.com/api/" target="_blank" rel="noopener">OpenAI API</a> en vergelijkbare platforms maken dit niveau van redenering vandaag al toegankelijk voor MKB-bedrijven.</p>
 
 <h2>Vergelijkingstabel: chatbot vs AI agent</h2>
 
@@ -249,8 +249,8 @@ export const blogPosts: BlogPost[] = [
     </tr>
     <tr>
       <td>Kosten</td>
-      <td>€500 – €5.000 eenmalig</td>
-      <td>€2.000 – €15.000+ eenmalig</td>
+      <td>€500 tot €5.000 eenmalig</td>
+      <td>€2.000 tot €15.000+ eenmalig</td>
     </tr>
     <tr>
       <td>Onderhoud</td>
@@ -297,7 +297,7 @@ export const blogPosts: BlogPost[] = [
 
 <h2>Conclusie</h2>
 
-<p>Een chatbot praat. Een AI agent handelt. Als jouw doel is om echt operationele last te verminderen en processen te automatiseren, heb je vrijwel altijd een AI agent nodig. De investering is hoger, maar de terugverdientijd ook aanzienlijk sneller — omdat de impact op je bedrijfsvoering fundamenteel anders is.</p>
+<p>Een chatbot praat. Een AI agent handelt. Als jouw doel is om echt operationele last te verminderen en processen te automatiseren, heb je vrijwel altijd een AI agent nodig. De investering is hoger, maar de terugverdientijd ook aanzienlijk sneller, omdat de impact op je bedrijfsvoering veel groter is.</p>
 
 <p>Twijfel je welke aanpak past bij jouw situatie? Plan een gratis intake via onze website en we denken mee. Bekijk ook <a href="/blog/wat-kost-ai-agent">wat een AI agent kost</a>, hoe we <a href="/blog/klantenservice-automatiseren-ai">klantenservice automatiseren</a>, of ontdek onze <a href="/diensten/digitale-medewerker">digitale medewerker dienst</a>.</p>`,
   },
@@ -319,9 +319,9 @@ export const blogPosts: BlogPost[] = [
       "klantenservice besparing",
       "support tickets automatiseren",
     ],
-    content: `<p>Klantenservice is voor veel bedrijven de grootste kostenpost na salarissen. Twee medewerkers klantenservice kosten al snel <strong>€80.000 per jaar</strong> — inclusief salariskosten, training, ziekteverzuim en management overhead. En toch loopt de wachttijd voor klanten op, zijn medewerkers gefrustreerd door repetitieve vragen, en is de klanttevredenheid wisselend.</p>
+    content: `<p>Klantenservice is voor veel bedrijven de grootste kostenpost na salarissen. Twee medewerkers klantenservice kosten al snel <strong>€80.000 per jaar</strong>, inclusief salariskosten, training, ziekteverzuim en management overhead. En toch loopt de wachttijd voor klanten op, zijn medewerkers gefrustreerd door repetitieve vragen, en is de klanttevredenheid wisselend.</p>
 
-<p>AI-automatisering lost dit niet volledig op — maar het verandert de situatie fundamenteel. In deze gids leggen we uit hoe, met concrete cijfers.</p>
+<p>AI-automatisering lost dit niet volledig op, maar het verandert de situatie wel fundamenteel. In deze gids leggen we uit hoe, met concrete cijfers.</p>
 
 <h2>Het 80/20-principe van klantenservice</h2>
 
@@ -334,7 +334,7 @@ export const blogPosts: BlogPost[] = [
   <li>"Ik heb een defect product ontvangen"</li>
 </ul>
 
-<p>Deze 80% is precies wat een AI agent kan afhandelen — volledig zelfstandig, 24/7, in minder dan 5 seconden. Jouw menselijke medewerkers houden dan tijd over voor de 20% die echt aandacht nodig heeft: complexe klachten, grote accounts, emotioneel geladen situaties.</p>
+<p>Deze 80% kan een AI agent afhandelen: volledig zelfstandig, 24/7 en in minder dan 5 seconden. Jouw menselijke medewerkers houden dan tijd over voor de 20% die echt aandacht nodig heeft: complexe klachten, grote accounts, emotioneel geladen situaties.</p>
 
 <h2>Hoe een AI klantenservice agent werkt</h2>
 
@@ -353,7 +353,7 @@ export const blogPosts: BlogPost[] = [
 </ul>
 
 <h3>Laag 3: Escalatie</h3>
-<p>Als de agent een situatie herkent die menselijke tussenkomst vereist — een emotioneel gesprek, een hoog-risico situatie, of een vraag buiten zijn kennisdomein — escaleert hij naar een menselijke medewerker, inclusief een samenvatting van het gesprek en de klanthistorie.</p>
+<p>Herkent de agent een situatie die een mens vraagt, zoals een emotioneel gesprek, een situatie met hoog risico of een vraag buiten zijn kennisdomein? Dan schakelt hij een menselijke medewerker in, inclusief een samenvatting van het gesprek en de klanthistorie.</p>
 
 <h2>Integraties: werkt het met jouw systemen?</h2>
 
@@ -386,8 +386,8 @@ export const blogPosts: BlogPost[] = [
 
 <h3>Investeringsoverzicht</h3>
 <ul>
-  <li><strong>Ontwikkeling AI klantenservice agent:</strong> €4.000 – €10.000 eenmalig</li>
-  <li><strong>Maandelijkse kosten (hosting + API):</strong> €150 – €400/maand</li>
+  <li><strong>Ontwikkeling AI klantenservice agent:</strong> €4.000 tot €10.000 eenmalig</li>
+  <li><strong>Maandelijkse kosten (hosting + API):</strong> €150 tot €400/maand</li>
   <li><strong>Implementatietijd:</strong> 2 tot 4 weken</li>
 </ul>
 
@@ -401,7 +401,7 @@ export const blogPosts: BlogPost[] = [
   <li><strong>Totaal 2 FTE: €88.080/jaar</strong></li>
 </ul>
 
-<p>Als de AI agent 80% van de tickets overneemt, heb je nog 0,4 FTE aan menselijke capaciteit nodig. Dat betekent een besparing van <strong>1,6 FTE = €70.000+ per jaar</strong> — dat is <strong>bijna €6.000 per maand</strong>. De investering van €6.000 verdient zichzelf terug in de eerste maand. Na jaar 1 bespaar je netto <strong>€64.000+</strong> (investering eraf). Jaar 2 en verder: de volledige €70.000 per jaar is pure winst.</p>
+<p>Als de AI agent 80% van de tickets overneemt, heb je nog 0,4 FTE aan menselijke capaciteit nodig. Dat betekent een besparing van <strong>1,6 FTE = €70.000+ per jaar</strong>. Dat is <strong>bijna €6.000 per maand</strong>. De investering van €6.000 verdient zichzelf terug in de eerste maand. Na jaar 1 bespaar je netto <strong>€64.000+</strong> (investering eraf). Jaar 2 en verder: de volledige €70.000 per jaar is pure winst.</p>
 
 <h2>Implementatiestrategie: zo doe je het goed</h2>
 
@@ -431,7 +431,7 @@ export const blogPosts: BlogPost[] = [
 
 <h2>Veelgestelde bezwaren</h2>
 
-<p><strong>"Mijn klanten willen een echte persoon spreken."</strong> Dat klopt — voor complexe zaken. Maar voor "waar is mijn pakket" om 23:00 willen klanten gewoon snel een antwoord. Responstijd heeft meer impact op tevredenheid dan de vraag of het een AI of mens is, mits de agent goed werkt.</p>
+<p><strong>"Mijn klanten willen een echte persoon spreken."</strong> Dat klopt, voor complexe zaken. Maar voor "waar is mijn pakket" om 23:00 willen klanten gewoon snel een antwoord. Responstijd heeft meer impact op tevredenheid dan de vraag of het een AI of mens is, mits de agent goed werkt.</p>
 
 <p><strong>"Onze producten zijn te complex voor een AI."</strong> Wij bouwen agents specifiek voor jouw kennisdomein, gekoppeld aan jouw documentatie. Een agent die in jouw Notion, SharePoint of PDF-bibliotheek zoekt, weet meer over je producten dan de meeste junior medewerkers. Onderzoek van <a href="https://www.gartner.com/" target="_blank" rel="noopener">Gartner</a> toont aan dat AI klantenservice de gemiddelde afhandelingstijd met 40% kan verlagen.</p>
 
@@ -440,9 +440,9 @@ export const blogPosts: BlogPost[] = [
 
   {
     slug: "rag-systeem-bouwen",
-    title: "RAG systeem bouwen: zo maak je je bedrijfskennis doorzoekbaar",
+    title: "RAG-systeem bouwen voor je bedrijfskennis",
     description:
-      "Wat is RAG, hoe werkt het en wanneer heb je het nodig? Praktische uitleg over vector databases, embeddings en use cases voor kennisbank, compliance en onboarding.",
+      "Wat is RAG, hoe werkt het en wanneer heb je het nodig? Uitleg over vector databases, embeddings en toepassingen voor kennisbank, compliance en onboarding.",
     publishedAt: "2026-03-05",
     author: "Virelio Team",
     readingTime: 9,
@@ -455,7 +455,7 @@ export const blogPosts: BlogPost[] = [
       "bedrijfskennis doorzoekbaar",
       "AI kennismanagement",
     ],
-    content: `<p>Stel je voor: een medewerker kan elke vraag over jullie producten, processen of beleid beantwoord krijgen in seconden — met bronvermelding. Of een klant die aan een chatbot vraagt naar een specifieke clausule in zijn contract en direct een nauwkeurig antwoord krijgt. Dit is wat RAG mogelijk maakt.</p>
+    content: `<p>Stel je voor: een medewerker kan elke vraag over jullie producten, processen of beleid beantwoord krijgen in seconden, met bronvermelding. Of een klant die aan een chatbot vraagt naar een specifieke clausule in zijn contract en direct een nauwkeurig antwoord krijgt. Dit is wat RAG mogelijk maakt.</p>
 
 <p>RAG staat voor <strong>Retrieval Augmented Generation</strong>. Het is de technologie die AI-modellen in staat stelt om te zoeken in jouw specifieke documenten, in plaats van alleen te vertrouwen op hun algemene trainingsdata. In dit artikel leggen we uit hoe het werkt, wanneer je het nodig hebt, en hoe je ermee begint.</p>
 
@@ -477,14 +477,14 @@ export const blogPosts: BlogPost[] = [
 <p>Een RAG-systeem werkt in drie stappen:</p>
 
 <h3>Stap 1: Indexeren van je documenten</h3>
-<p>Je laadt je documenten — PDF's, Word-bestanden, webpagina's, Notion-pagina's, SharePoint-documenten — in het systeem. Het systeem verdeelt deze in kleinere stukken (chunks) van ongeveer 500-1000 tekens en zet elk stuk om in een wiskundige vector: een reeks getallen die de <em>betekenis</em> van de tekst vastlegt. Dit heet een <strong>embedding</strong>.</p>
+<p>Je laadt je documenten in het systeem: PDF's, Word-bestanden, webpagina's, Notion-pagina's en SharePoint-documenten. Het systeem verdeelt deze in kleinere stukken (chunks) van ongeveer 500 tot 1000 tekens en zet elk stuk om in een wiskundige vector: een reeks getallen die de <em>betekenis</em> van de tekst vastlegt. Dit heet een <strong>embedding</strong>.</p>
 
 <p>Die embeddings worden opgeslagen in een speciale database: een <strong>vector database</strong>. Bekende opties zijn <a href="https://pinecone.io/" target="_blank" rel="noopener">Pinecone</a>, Weaviate, ChromaDB en Qdrant.</p>
 
 <h3>Stap 2: Zoeken op betekenis</h3>
 <p>Wanneer een gebruiker een vraag stelt, zet het systeem die vraag ook om in een embedding. Vervolgens zoekt het in de vector database naar de stukken tekst waarvan de embedding het meest lijkt op die van de vraag. Dit heet <strong>semantic search</strong>: zoeken op betekenis in plaats van op exacte trefwoorden.</p>
 
-<p>Het resultaat zijn de 3-10 meest relevante stukken uit jouw documentatie — de "context" die nodig is om de vraag te beantwoorden.</p>
+<p>Het resultaat zijn de 3-10 meest relevante stukken uit jouw documentatie. Dat is de "context" die nodig is om de vraag te beantwoorden.</p>
 
 <h3>Stap 3: Antwoord genereren</h3>
 <p>Die relevante stukken worden samen met de originele vraag naar het AI-model gestuurd. Het model genereert dan een antwoord dat gebaseerd is op jouw specifieke bronnen. Optioneel voeg je bronvermelding toe, zodat de gebruiker precies kan zien welk document het antwoord ondersteunt.</p>
@@ -492,7 +492,7 @@ export const blogPosts: BlogPost[] = [
 <h2>Vector databases vergeleken</h2>
 
 <h3>Pinecone</h3>
-<p>De meest volwassen cloud-optie. Schaalbaar, snel, gemakkelijk te integreren via de <a href="https://pinecone.io/" target="_blank" rel="noopener">Pinecone API</a>. Kosten: gratis tier voor kleine volumes, daarna ca. €25 – €100/maand afhankelijk van schaal. Beste keuze als je snel wilt starten en geen eigen infrastructuur wilt beheren.</p>
+<p>De meest volwassen cloud-optie. Schaalbaar, snel, gemakkelijk te integreren via de <a href="https://pinecone.io/" target="_blank" rel="noopener">Pinecone API</a>. Kosten: gratis tier voor kleine volumes, daarna ca. €25 tot €100/maand afhankelijk van schaal. Beste keuze als je snel wilt starten en geen eigen infrastructuur wilt beheren.</p>
 
 <h3>Weaviate</h3>
 <p>Open-source én cloud beschikbaar. Meer configuratie-opties, inclusief hybride search (semantic + trefwoord). Ideaal voor on-premise deployments bij bedrijven met strenge databeveiligingseisen. Gratis zelf te hosten.</p>
@@ -536,10 +536,10 @@ export const blogPosts: BlogPost[] = [
 <h2>Wat kost een RAG-systeem?</h2>
 
 <ul>
-  <li><strong>Eenvoudig RAG-systeem (1 databron, intern gebruik):</strong> €3.000 – €6.000</li>
-  <li><strong>Medium RAG (meerdere bronnen, integraties, UI):</strong> €7.000 – €15.000</li>
-  <li><strong>Enterprise RAG (on-premise, multi-tenant, RBAC):</strong> €15.000 – €30.000+</li>
-  <li><strong>Maandelijkse kosten:</strong> €100 – €500 (vector database + embedding API + hosting)</li>
+  <li><strong>Eenvoudig RAG-systeem (1 databron, intern gebruik):</strong> €3.000 tot €6.000</li>
+  <li><strong>Medium RAG (meerdere bronnen, integraties, UI):</strong> €7.000 tot €15.000</li>
+  <li><strong>Enterprise RAG (on-premise, multi-tenant, RBAC):</strong> €15.000 tot €30.000+</li>
+  <li><strong>Maandelijkse kosten:</strong> €100 tot €500 (vector database + embedding API + hosting)</li>
 </ul>
 
 <h2>Belangrijke technische overwegingen</h2>
@@ -548,7 +548,7 @@ export const blogPosts: BlogPost[] = [
 <p>Hoe je documenten opdeelt heeft grote invloed op de kwaliteit. Te grote chunks bevatten te veel irrelevante informatie. Te kleine chunks missen context. De optimale chunk-grootte hangt af van je documenttype en usecase.</p>
 
 <h3>Hybride search</h3>
-<p>Puur semantisch zoeken werkt uitstekend voor conceptuele vragen, maar mist soms bij exacte termen (productnummers, namen, codes). Hybride search — een combinatie van semantic search en BM25 trefwoordzoeken — geeft in de praktijk betere resultaten.</p>
+<p>Puur semantisch zoeken werkt uitstekend voor conceptuele vragen, maar mist soms bij exacte termen (productnummers, namen, codes). Hybride zoeken, een combinatie van semantisch zoeken en BM25-trefwoordzoeken, geeft in de praktijk betere resultaten.</p>
 
 <h3>Re-ranking</h3>
 <p>Na de initiële zoekfase kun je een re-ranker model inzetten om de gevonden stukken nog eens te sorteren op relevantie. Dit verhoogt de nauwkeurigheid significant, zeker bij complexere vragen.</p>
@@ -557,7 +557,7 @@ export const blogPosts: BlogPost[] = [
 
 <p>Start klein. Kies één databron (je FAQ-documentatie, één SharePoint-bibliotheek, je producthandleidingen) en bouw daar een eerste RAG-agent omheen. Frameworks zoals <a href="https://www.langchain.com/" target="_blank" rel="noopener">LangChain</a> versnellen de ontwikkeling aanzienlijk. Meet de kwaliteit, verzamel feedback, en breid daarna uit naar meer bronnen.</p>
 
-<p>De technologie is volwassen genoeg voor productiegebruik. Het risico zit niet in de techniek — het zit in scope creep en onrealistische verwachtingen. Met een goed afgebakende eerste use case heb je binnen 2 weken een werkend systeem. Bekijk ook hoe we <a href="/blog/klantenservice-automatiseren-ai">klantenservice automatiseren met AI</a>, lees onze <a href="/blog/ai-readiness-check-mkb">AI readiness check voor MKB</a>, of ontdek onze dienst <a href="/diensten/ai-agent-bouwen">AI agent bouwen</a>.</p>`,
+<p>De technologie is volwassen genoeg voor productiegebruik. Het risico zit niet in de techniek, maar in scope creep en onrealistische verwachtingen. Met een goed afgebakende eerste use case heb je binnen 2 weken een werkend systeem. Bekijk ook hoe we <a href="/blog/klantenservice-automatiseren-ai">klantenservice automatiseren met AI</a>, lees onze <a href="/blog/ai-readiness-check-mkb">AI readiness check voor MKB</a>, of ontdek onze dienst <a href="/diensten/ai-agent-bouwen">AI agent bouwen</a>.</p>`,
   },
 
   {
@@ -579,7 +579,7 @@ export const blogPosts: BlogPost[] = [
     ],
     content: `<p>In gesprekken met ondernemers horen we steeds dezelfde redenen om AI-implementatie uit te stellen: "Onze data is nog niet op orde", "We hebben eerst een betere CRM nodig", "We moeten wachten tot het personeel klaar is". Allemaal begrijpelijk. En bijna allemaal geen reden om niet te beginnen. Volgens <a href="https://www.mckinsey.com/capabilities/mckinsey-digital/our-insights" target="_blank" rel="noopener">McKinsey</a> haalt slechts 20% van de bedrijven die wachten op "perfecte omstandigheden" ooit een AI-project van de grond.</p>
 
-<p>In dit artikel gaan we door een eerlijke 7-punts checklist waarmee je snel kunt bepalen waar je staat — en wat je echte blokkades zijn.</p>
+<p>In dit artikel gaan we door een eerlijke 7-punts checklist waarmee je snel kunt bepalen waar je staat en wat je echte blokkades zijn.</p>
 
 <h2>De 7-punts AI readiness check</h2>
 
@@ -593,11 +593,11 @@ export const blogPosts: BlogPost[] = [
 
 <h3>2. Is er digitale data beschikbaar over dat proces?</h3>
 
-<p><strong>Ja:</strong> Het proces laat een digitale spoor achter — e-mails, tickets, formulieren, spreadsheets, PDF's.</p>
+<p><strong>Ja:</strong> Het proces laat een digitaal spoor achter: e-mails, tickets, formulieren, spreadsheets, PDF's.</p>
 
 <p><strong>Nee:</strong> Het proces is volledig analoog of mondelinge communicatie.</p>
 
-<p><strong>Wat dit betekent:</strong> AI werkt op data. Als het proces digitaal is (zelfs als het een rommelige mailbox is), kun je beginnen. Volledig analoge processen vereisen eerst een digitaliseringsstap — maar die hoeft niet lang te duren.</p>
+<p><strong>Wat dit betekent:</strong> AI werkt op data. Als het proces digitaal is (zelfs als het een rommelige mailbox is), kun je beginnen. Volledig analoge processen vereisen eerst een digitaliseringsstap, maar die hoeft niet lang te duren.</p>
 
 <h3>3. Heb je toegang tot de systemen waar de data in zit?</h3>
 
@@ -613,11 +613,11 @@ export const blogPosts: BlogPost[] = [
 
 <p><strong>Nee:</strong> De directeur wil AI, maar niemand in de organisatie heeft tijd of mandaat om het te begeleiden.</p>
 
-<p><strong>Wat dit betekent:</strong> Dit is de meest onderschatte succesfactor. Technisch kunnen wij alles bouwen — maar als er niemand intern is die de agent adopteert en het team meeneemt, mislukt de implementatie. Plan minimaal 2 uur per week intern begeleidingstijd in.</p>
+<p><strong>Wat dit betekent:</strong> Dit is de meest onderschatte succesfactor. Technisch kunnen wij alles bouwen. Maar als er intern niemand is die de agent adopteert en het team meeneemt, mislukt de implementatie. Plan minimaal 2 uur per week intern begeleidingstijd in.</p>
 
 <h3>5. Is het budget realistisch gepland?</h3>
 
-<p><strong>Ja:</strong> Je hebt €2.000 – €15.000 beschikbaar voor een eerste traject en begrijpt dat dit een investering is met terugverdientijd. Zie ons <a href="/blog/wat-kost-ai-agent">eerlijk kostenoverzicht</a> voor concrete cijfers.</p>
+<p><strong>Ja:</strong> Je hebt €2.000 tot €15.000 beschikbaar voor een eerste traject en begrijpt dat dit een investering is met terugverdientijd. Zie ons <a href="/blog/wat-kost-ai-agent">eerlijk kostenoverzicht</a> voor concrete cijfers.</p>
 
 <p><strong>Nee:</strong> Je verwacht dat een AI agent gratis of voor €500 te bouwen is, of je hebt geen budget gereserveerd.</p>
 
@@ -637,7 +637,7 @@ export const blogPosts: BlogPost[] = [
 
 <p><strong>Nee:</strong> Er is scepsis of angst in de organisatie die constructieve adoptie in de weg staat.</p>
 
-<p><strong>Wat dit betekent:</strong> Scepsis is gezond — AI is geen wondermiddel. Maar als er fundamentele weerstand is, begin dan met een interne presentatie of workshop om verwachtingen te kalibreren. Wij geven gratis AI awareness sessies voor management teams.</p>
+<p><strong>Wat dit betekent:</strong> Scepsis is gezond. AI is geen wondermiddel. Maar als er fundamentele weerstand is, begin dan met een interne presentatie of workshop om verwachtingen te kalibreren. Wij geven gratis AI awareness sessies voor management teams.</p>
 
 <h2>Je score interpreteren</h2>
 
@@ -649,7 +649,7 @@ export const blogPosts: BlogPost[] = [
 
 <p><strong>0-1 groen:</strong> Focus eerst op basale digitalisering van processen. AI is een laag bovenop een functionerend digitaal fundament.</p>
 
-<h2>De meest voorkomende barrières — en hoe je ze doorbreekt</h2>
+<h2>De meest voorkomende barrières en hoe je ze doorbreekt</h2>
 
 <h3>Barrière 1: "Onze data is niet op orde"</h3>
 
@@ -693,9 +693,9 @@ export const blogPosts: BlogPost[] = [
 
   {
     slug: "whatsapp-ai-agent-bedrijven",
-    title: "WhatsApp AI agent voor bedrijven: alles wat je moet weten",
+    title: "WhatsApp AI agent voor bedrijven: zo werkt het",
     description:
-      "WhatsApp Business API + AI: hoe het werkt, wat het kost (setup €2.000–€8.000) en wat het oplevert. Inclusief ZapBot case study: 40% minder no-shows, €2.800/maand bespaard.",
+      "WhatsApp Business API met AI: hoe het werkt, wat het kost en wat het oplevert. Met de ZapBot case study: 40% minder no-shows en €2.800 per maand bespaard.",
     publishedAt: "2026-03-14",
     author: "Virelio Team",
     readingTime: 8,
@@ -708,13 +708,13 @@ export const blogPosts: BlogPost[] = [
       "WhatsApp afspraken bot",
       "AI WhatsApp integratie",
     ],
-    content: `<p>WhatsApp is het meest gebruikte communicatiekanaal in Nederland. Meer dan 13 miljoen Nederlanders gebruiken het dagelijks — ook voor zakelijke communicatie. Klanten verwachten antwoord via WhatsApp, sneller dan via e-mail en informeler dan via telefoon. Een AI agent op WhatsApp pakt dat verwachtingspatroon op en maakt er een schaalbaar voordeel van.</p>
+    content: `<p>WhatsApp is het meest gebruikte communicatiekanaal in Nederland. Meer dan 13 miljoen Nederlanders gebruiken het dagelijks, ook voor zakelijke communicatie. Klanten verwachten antwoord via WhatsApp, sneller dan via e-mail en informeler dan via telefoon. Een AI agent op WhatsApp pakt dat verwachtingspatroon op en maakt er een schaalbaar voordeel van.</p>
 
 <p>In dit artikel leggen we alles uit: hoe het werkt, wat het kost, en wat je er realistisch van kunt verwachten. Inclusief een echte case study.</p>
 
 <h2>Hoe werkt een WhatsApp AI agent technisch?</h2>
 
-<p>Een WhatsApp AI agent werkt via de <strong><a href="https://business.whatsapp.com/" target="_blank" rel="noopener">WhatsApp Business API</a></strong> — de zakelijke variant van WhatsApp die Meta aanbiedt voor bedrijven met meer dan een handvol gesprekken per dag. De standaard WhatsApp Business-app (de gratis versie) is te beperkt voor geautomatiseerde AI-responses.</p>
+<p>Een WhatsApp AI agent werkt via de <strong><a href="https://business.whatsapp.com/" target="_blank" rel="noopener">WhatsApp Business API</a></strong>. Dat is de zakelijke variant van WhatsApp die Meta aanbiedt voor bedrijven met meer dan een handvol gesprekken per dag. De standaard WhatsApp Business-app (de gratis versie) is te beperkt voor geautomatiseerde AI-responses.</p>
 
 <p>De technische architectuur in het kort:</p>
 
@@ -723,10 +723,10 @@ export const blogPosts: BlogPost[] = [
   <li>Meta stuurt dit bericht via webhook naar jouw server</li>
   <li>De AI agent verwerkt het bericht: hij begrijpt de intentie, raadpleegt relevante databronnen (CRM, agenda, kennisbank), en formuleert een antwoord</li>
   <li>Het antwoord wordt via de API teruggestuurd naar WhatsApp</li>
-  <li>Klant ontvangt het antwoord — gemiddeld binnen 3-10 seconden</li>
+  <li>Klant ontvangt het antwoord, gemiddeld binnen 3-10 seconden</li>
 </ol>
 
-<p>Als de agent iets wil uitvoeren — een afspraak inplannen, een ticket aanmaken, een order opzoeken — doet hij dat via integraties met je backoffice systemen, voordat hij antwoord geeft.</p>
+<p>Moet de agent iets uitvoeren, zoals een afspraak inplannen, een ticket aanmaken of een order opzoeken? Dan doet hij dat via koppelingen met je backofficesystemen, voordat hij antwoord geeft.</p>
 
 <h2>Mogelijkheden van een WhatsApp AI agent</h2>
 
@@ -743,7 +743,7 @@ export const blogPosts: BlogPost[] = [
 <p>Inkomende leads via WhatsApp worden direct gekwalificeerd. De agent stelt de juiste vragen (budget, timeline, use case), scoort de lead, en stuurt gekwalificeerde leads direct door naar een salesmedewerker met een volledige samenvatting.</p>
 
 <h3>Meertalige communicatie</h3>
-<p>Een WhatsApp AI agent kan automatisch detecteren in welke taal de klant schrijft en in die taal antwoorden — Nederlands, Engels, Arabisch, Spaans. Dit is met name waardevol voor internationale klantenbases.</p>
+<p>Een WhatsApp AI agent kan automatisch detecteren in welke taal de klant schrijft en in die taal antwoorden: Nederlands, Engels, Arabisch, Spaans. Dit is met name waardevol voor internationale klantenbases.</p>
 
 <h2>WhatsApp Business API: kosten en vereisten</h2>
 
@@ -752,39 +752,39 @@ export const blogPosts: BlogPost[] = [
 <h3>Gesprekstarief Meta</h3>
 <p>Meta berekent kosten per gesprek (24-uurs venster), niet per bericht. De tarieven voor Nederland zijn:</p>
 <ul>
-  <li><strong>Service gesprekken</strong> (klant begint het gesprek): €0,04 – €0,06 per gesprek</li>
-  <li><strong>Marketing gesprekken</strong> (jij begint het gesprek, promotioneel): €0,08 – €0,12 per gesprek</li>
-  <li><strong>Utility gesprekken</strong> (transactioneel, bestellingsbevestigingen): €0,03 – €0,05 per gesprek</li>
+  <li><strong>Service gesprekken</strong> (klant begint het gesprek): €0,04 tot €0,06 per gesprek</li>
+  <li><strong>Marketing gesprekken</strong> (jij begint het gesprek, promotioneel): €0,08 tot €0,12 per gesprek</li>
+  <li><strong>Utility gesprekken</strong> (transactioneel, bestellingsbevestigingen): €0,03 tot €0,05 per gesprek</li>
   <li><strong>Authenticatie gesprekken</strong> (OTP): €0,02 per gesprek</li>
 </ul>
 
-<p>Voor een bedrijf met 500 klantgesprekken per maand zijn de Meta-kosten €20 – €50/maand. Dit is een kleine post in het totaalplaatje.</p>
+<p>Voor een bedrijf met 500 klantgesprekken per maand zijn de Meta-kosten €20 tot €50/maand. Dit is een kleine post in het totaalplaatje.</p>
 
 <h3>Business Service Provider (BSP)</h3>
-<p>Je hebt een geautoriseerde BSP nodig om de API te gebruiken. De technische documentatie vind je op de <a href="https://developers.facebook.com/docs/whatsapp" target="_blank" rel="noopener">WhatsApp API developer documentatie</a>. Populaire opties: Twilio, 360dialog, MessageBird. Kosten variëren, maar reken op €50 – €200/maand voor een middelgroot volume.</p>
+<p>Je hebt een geautoriseerde BSP nodig om de API te gebruiken. De technische documentatie vind je op de <a href="https://developers.facebook.com/docs/whatsapp" target="_blank" rel="noopener">WhatsApp API developer documentatie</a>. Populaire opties: Twilio, 360dialog, MessageBird. Kosten variëren, maar reken op €50 tot €200/maand voor een middelgroot volume.</p>
 
 <h2>Wat kost een WhatsApp AI agent laten bouwen?</h2>
 
 <ul>
-  <li><strong>Eenvoudige WhatsApp agent</strong> (FAQ + afspraken): €2.000 – €4.000 eenmalig</li>
-  <li><strong>Medium agent</strong> (meerdere integraties, lead kwalificatie, CRM-koppeling): €4.000 – €8.000 eenmalig</li>
-  <li><strong>Enterprise agent</strong> (multi-locatie, meerdere nummers, geavanceerde flows): €8.000 – €15.000+</li>
+  <li><strong>Eenvoudige WhatsApp agent</strong> (FAQ + afspraken): €2.000 tot €4.000 eenmalig</li>
+  <li><strong>Medium agent</strong> (meerdere integraties, lead kwalificatie, CRM-koppeling): €4.000 tot €8.000 eenmalig</li>
+  <li><strong>Enterprise agent</strong> (multi-locatie, meerdere nummers, geavanceerde flows): €8.000 tot €15.000+</li>
 </ul>
 
 <p>Maandelijkse kosten (alles inbegrepen):</p>
 <ul>
-  <li>Hosting server: €30 – €100/maand</li>
-  <li>API-kosten AI model: €100 – €500/maand</li>
-  <li>WhatsApp/BSP kosten: €50 – €200/maand</li>
-  <li><strong>Totaal: €180 – €800/maand</strong></li>
+  <li>Hosting server: €30 tot €100/maand</li>
+  <li>API-kosten AI model: €100 tot €500/maand</li>
+  <li>WhatsApp/BSP kosten: €50 tot €200/maand</li>
+  <li><strong>Totaal: €180 tot €800/maand</strong></li>
 </ul>
 
-<h2>Case study: ZapBot — WhatsApp AI agent voor Nederlandse bedrijven</h2>
+<h2>Case study: ZapBot, een WhatsApp AI agent voor Nederlandse bedrijven</h2>
 
 <p>ZapBot (zapbot.nl) is een WhatsApp AI agent die Virelio heeft gebouwd voor de Nederlandse MKB-markt. De agent richt zich specifiek op bedrijven met een hoge afspraakfrequentie: klinieken, kappers, schoonheidssalons, fysiotherapeuten, tandartsen, autogarages.</p>
 
 <h3>Het probleem voor de klant</h3>
-<p>Een van de vroege ZapBot-klanten — een fysiotherapiepraktijk in Amsterdam met 4 therapeuten — had een no-show rate van 22%. Bij gemiddeld 120 afspraken per week en een behandelprijs van €65, betekende dit een omisderving van:</p>
+<p>Een van de eerste ZapBot-klanten, een fysiotherapiepraktijk in Amsterdam met 4 therapeuten, had een no-show rate van 22%. Bij gemiddeld 120 afspraken per week en een behandelprijs van €65, betekende dit een omzetderving van:</p>
 <p><strong>120 × 22% × €65 = €1.716/week = €6.864/maand aan gemiste omzet.</strong></p>
 
 <p>Bovendien besteedde de receptie 1,5 uur per dag aan het bevestigen van afspraken, het herplannen van annuleringen, en het beantwoorden van WhatsApp-berichten buiten kantooruren.</p>
@@ -801,7 +801,7 @@ export const blogPosts: BlogPost[] = [
 
 <h3>De resultaten na 3 maanden</h3>
 <ul>
-  <li><strong>No-show rate:</strong> gedaald van 22% naar 13% — een verbetering van 40%</li>
+  <li><strong>No-show rate:</strong> gedaald van 22% naar 13%, een verbetering van 40%</li>
   <li><strong>Omzetwinst per maand:</strong> €2.808</li>
   <li><strong>Omzetwinst per jaar: €33.696</strong></li>
   <li><strong>Tijdbesparing receptie:</strong> van 1,5 uur naar 20 minuten per dag</li>
@@ -819,7 +819,7 @@ export const blogPosts: BlogPost[] = [
   <li><strong>Toestemming:</strong> Klanten moeten opt-in geven voor zakelijke WhatsApp-communicatie. De eerste outbound bericht vereist een template dat door Meta goedgekeurd is.</li>
   <li><strong>Dataopslag:</strong> Gesprekslogs mogen niet langer bewaard worden dan noodzakelijk. Wij implementeren standaard een 90-dagen retentiebeleid, aan te passen op wens.</li>
   <li><strong>Meta's datacenter locatie:</strong> WhatsApp-data kan buiten de EU worden verwerkt door Meta. Als dit een bezwaar is, gebruik je een BSP die EU-dataverwerking garandeert.</li>
-  <li><strong>Transparantie:</strong> Klanten moeten weten dat ze met een AI spreken. We implementeren altijd een introductietekst die dit duidelijk maakt — dit is ook wettelijk vereist in toenemende mate.</li>
+  <li><strong>Transparantie:</strong> Klanten moeten weten dat ze met een AI spreken. We implementeren altijd een introductietekst die dit duidelijk maakt. Dit wordt ook steeds vaker wettelijk verplicht.</li>
 </ul>
 
 <h2>Is een WhatsApp AI agent geschikt voor jouw bedrijf?</h2>

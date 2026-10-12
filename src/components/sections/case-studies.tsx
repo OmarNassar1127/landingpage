@@ -54,8 +54,8 @@ const getCaseStudies = (language: string): CaseStudy[] => {
         ? "WhatsApp AI-assistent voor bedrijven"
         : "WhatsApp AI assistant for businesses",
       description: isNL
-        ? "ZapBot beantwoordt klantvragen via WhatsApp, plant afspraken in via Google Calendar en stuurt automatische herinneringen — 24/7, in de stijl van het bedrijf."
-        : "ZapBot answers customer questions via WhatsApp, schedules appointments through Google Calendar and sends automatic reminders — 24/7, in the business's own voice.",
+        ? "ZapBot beantwoordt klantvragen via WhatsApp, plant afspraken in via Google Calendar en stuurt automatische herinneringen. 24/7, in de stijl van het bedrijf."
+        : "ZapBot answers customer questions via WhatsApp, schedules appointments through Google Calendar and sends automatic reminders. 24/7, in the business's own voice.",
       challenge: isNL
         ? "Bedrijven misten berichten buiten kantooruren. Afspraken werden handmatig ingepland en no-shows kostten omzet. 's Avonds en in het weekend was niemand bereikbaar."
         : "Businesses were missing messages outside office hours. Appointments were manually scheduled and no-shows were costing revenue. Evenings and weekends were unreachable.",
@@ -90,14 +90,14 @@ const getCaseStudies = (language: string): CaseStudy[] => {
         ? "AI-houdingscorrectie via je webcam"
         : "AI posture correction via your webcam",
       description: isNL
-        ? "Slouch.pro detecteert je houding in real-time via de webcam en geeft subtiele nudges wanneer je slecht zit — volledig privé, alles draait lokaal in de browser."
-        : "Slouch.pro detects your posture in real-time via webcam and gives gentle nudges when you slouch — fully private, everything runs locally in the browser.",
+        ? "Slouch.pro detecteert je houding in real-time via de webcam en geeft je een subtiel seintje wanneer je slecht zit. Volledig privé: alles draait lokaal in de browser."
+        : "Slouch.pro detects your posture in real-time via webcam and gives gentle nudges when you slouch. Fully private: everything runs locally in the browser.",
       challenge: isNL
         ? "Remote workers zitten 10+ uur per dag achter een scherm. Bestaande oplossingen zoals wearables kosten €80+, zijn onhandig en vereisen opladen."
         : "Remote workers sit 10+ hours a day behind a screen. Existing solutions like wearables cost €80+, are clunky, and require charging.",
       solution: isNL
-        ? "We bouwden een AI-app die Google MediaPipe gebruikt om via je bestaande webcam je houding te analyseren. Geen hardware, geen data die je apparaat verlaat — 100% privacy-first."
-        : "We built an AI app using Google MediaPipe to analyze your posture via your existing webcam. No hardware, no data leaving your device — 100% privacy-first.",
+        ? "We bouwden een AI-app die Google MediaPipe gebruikt om via je bestaande webcam je houding te analyseren. Geen hardware nodig en er verlaat geen data je apparaat. 100% privacy-first."
+        : "We built an AI app using Google MediaPipe to analyze your posture via your existing webcam. No hardware needed and no data leaves your device. 100% privacy-first.",
       results: isNL
         ? [
             { label: "Actieve gebruikers", value: "2.800+" },
@@ -126,8 +126,8 @@ const getCaseStudies = (language: string): CaseStudy[] => {
         ? "AI-marketingteam dat content maakt terwijl jij slaapt"
         : "AI marketing team that creates content while you sleep",
       description: isNL
-        ? "Een team van AI-agents dat samen social media posts schrijft, e-mailcampagnes verstuurt, blogs produceert en advertentieteksten optimaliseert — allemaal in jouw tone-of-voice."
-        : "A team of AI agents that collaboratively writes social media posts, sends email campaigns, produces blogs and optimizes ad copy — all in your tone of voice.",
+        ? "Een team van AI-agents dat samen social media posts schrijft, e-mailcampagnes verstuurt, blogs produceert en advertentieteksten optimaliseert. Allemaal in jouw tone-of-voice."
+        : "A team of AI agents that collaboratively writes social media posts, sends email campaigns, produces blogs and optimizes ad copy, all in your tone of voice.",
       challenge: isNL
         ? "Een groeiend e-commerce merk produceerde 3 posts per week en had geen budget voor een volledig marketingteam. Content was inconsistent en campagnes werden te laat gelanceerd."
         : "A growing e-commerce brand was producing 3 posts per week with no budget for a full marketing team. Content was inconsistent and campaigns launched too late.",
@@ -652,8 +652,8 @@ export default function CaseStudies() {
             className="text-muted-foreground text-lg sm:text-xl max-w-2xl mx-auto"
           >
             {isNL
-              ? "Bekijk hoe we AI-oplossingen bouwen die écht werken — van concept tot product."
-              : "See how we build AI solutions that actually work — from concept to product."}
+              ? "Bekijk hoe we AI-oplossingen bouwen die écht werken, van concept tot product."
+              : "See how we build AI solutions that actually work, from concept to product."}
           </motion.p>
         </div>
 

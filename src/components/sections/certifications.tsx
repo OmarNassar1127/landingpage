@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useMemo } from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Award } from "lucide-react";
 import { useLanguage } from "@/lib/i18n/language-context";
@@ -234,7 +234,10 @@ function CertCard({ cert }: { cert: Certification }) {
 export default function Certifications() {
   const { language } = useLanguage();
   const isNL = language === "nl";
-  const shuffledCerts = useMemo(() => shuffleArray(certifications), []);
+  // Shuffle after mount: a random order during render differs between the
+  // server HTML and the browser and breaks hydration.
+  const [shuffledCerts, setShuffledCerts] = useState(certifications);
+  useEffect(() => setShuffledCerts(shuffleArray(certifications)), []);
 
   return (
     <section className="py-16 sm:py-20 overflow-hidden">

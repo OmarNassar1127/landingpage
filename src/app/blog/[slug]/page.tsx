@@ -163,7 +163,7 @@ export default async function BlogPostPage({ params }: Props) {
               <p className="mt-1 sm:mt-1.5 text-sm leading-relaxed text-muted-foreground">
                 Virelio is een AI agent development bureau in Amsterdam. We
                 bouwen maatwerk AI-oplossingen voor het Nederlandse MKB en
-                enterprise — live in 2 weken.
+                enterprise, live in 2 weken.
               </p>
               <Link
                 href="/"

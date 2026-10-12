@@ -19,7 +19,7 @@ export function generateMetadata({
   keywords,
   pathname = "",
   imageUrl = siteConfig.ogImage,
-  imageAlt = "Virelio — AI Agents op Maat voor Bedrijven",
+  imageAlt = "Virelio: AI agents op maat voor bedrijven",
   locale = "nl_NL",
   type = "website",
   noIndex = false,
@@ -31,7 +31,8 @@ export function generateMetadata({
   const metaDescription = description || siteConfig.description;
 
   return {
-    title: fullTitle,
+    // absolute: the root layout's "%s | Virelio" template would add the suffix a second time
+    title: { absolute: fullTitle },
     description: metaDescription,
     keywords: keywords,
     metadataBase: new URL(siteConfig.url),

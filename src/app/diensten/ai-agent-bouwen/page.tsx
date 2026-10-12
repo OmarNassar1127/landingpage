@@ -6,9 +6,9 @@ import Footer from "@/components/sections/footer";
 import { ArrowRight, Bot, Zap, Users, BookOpen, TrendingUp, CheckCircle, Clock, MessageSquare } from "lucide-react";
 
 export const metadata = genMeta({
-  title: "AI Agent Laten Bouwen — Maatwerk AI Agents",
+  title: "AI agent laten bouwen: maatwerk, live in 2 weken",
   description:
-    "Laat een maatwerk AI agent bouwen door Virelio. Van klantenservice tot sales: wij leveren werkende AI agents in 2 weken. Prijzen vanaf €2.000. GDPR-compliant, Amsterdam.",
+    "Laat een AI agent op maat bouwen door Virelio. Voor klantenservice, sales en operations. Live in 2 weken, vanaf €2.000 en AVG-conform. Gevestigd in Amsterdam.",
   keywords:
     "AI agent laten bouwen, maatwerk AI agent, AI agent ontwikkeling, AI agent bouwen Nederland, custom AI agent, AI automatisering, AI bureau Amsterdam, AI agent kosten, klantenservice AI, sales agent AI",
   pathname: "/diensten/ai-agent-bouwen",
@@ -19,12 +19,12 @@ const faqItems = [
   {
     question: "Wat kost een AI agent laten bouwen?",
     answer:
-      "Een eenvoudige AI agent kost vanaf €2.000 (eenmalig). Een complete bedrijfsoplossing met meerdere geïntegreerde agents ligt tussen de €5.000 en €15.000+. Daarbovenop zijn er maandelijkse kosten voor API-gebruik en hosting, doorgaans €200–€800 per maand afhankelijk van het volume.",
+      "Een eenvoudige AI agent kost vanaf €2.000 (eenmalig). Een complete bedrijfsoplossing met meerdere geïntegreerde agents ligt tussen de €5.000 en €15.000+. Daarbovenop zijn er maandelijkse kosten voor API-gebruik en hosting, doorgaans €200 tot €800 per maand afhankelijk van het volume.",
   },
   {
     question: "Hoe lang duurt het om een AI agent te bouwen?",
     answer:
-      "Wij leveren een werkende prototype binnen 1 week na de intake. De volledige productieversie staat live binnen 2 weken. Complexere multi-agent systemen kunnen 3–4 weken in beslag nemen.",
+      "Binnen 1 week na de intake leveren wij een werkend prototype. De volledige productieversie staat live binnen 2 weken. Complexere multi-agent systemen kunnen 3 tot 4 weken duren.",
   },
   {
     question: "Wat is het verschil tussen een AI agent en een chatbot?",
@@ -39,7 +39,7 @@ const faqItems = [
   {
     question: "Is mijn data veilig bij een AI agent van Virelio?",
     answer:
-      "Absoluut. Wij werken GDPR-compliant en al uw data wordt verwerkt binnen de EU. On-premise deployment is mogelijk als u data uw bedrijfsnetwerk niet wilt verlaten. U behoudt altijd 100% eigenaarschap van uw data — geen vendor lock-in.",
+      "Ja. Wij werken volgens de AVG en verwerken al uw data binnen de EU. Wilt u dat uw data uw bedrijfsnetwerk niet verlaat? Dan draaien wij de agent on-premise. U blijft altijd 100% eigenaar van uw data en zit nergens aan vast.",
   },
 ];
 
@@ -62,7 +62,7 @@ const agentTypes = [
     icon: Zap,
     title: "Operations Agent",
     description:
-      "Verwerkt orders, maakt facturen aan, koppelt met Exact Online of Moneybird — volledig automatisch.",
+      "Verwerkt orders, maakt facturen aan, koppelt met Exact Online of Moneybird. Volledig automatisch.",
     saving: "90% minder handwerk",
   },
   {
@@ -120,10 +120,10 @@ const pricingTiers = [
   },
   {
     name: "Business",
-    price: "€5.000 – €8.000",
+    price: "€5.000 - €8.000",
     description: "Meerdere agents die samenwerken",
     features: [
-      "2–4 samenwerkende agents",
+      "2-4 samenwerkende agents",
       "Tot 3 integraties (CRM, ERP, support)",
       "Fijn afgestemd op uw tone-of-voice",
       "Dashboard met analytics",
@@ -185,7 +185,7 @@ export default function AIAgentBouwenPage() {
           <div className="container mx-auto px-6 sm:px-8 max-w-4xl text-center">
             <div className="inline-flex items-center gap-2 rounded-full bg-muted/60 border border-border/60 px-4 py-1.5 text-xs sm:text-sm text-muted-foreground mb-6">
               <Bot className="h-3.5 w-3.5 text-primary" />
-              Maatwerk AI Agent Development — Amsterdam
+              Maatwerk AI agents uit Amsterdam
             </div>
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight text-foreground mb-5 sm:mb-6">
               AI Agent Laten Bouwen
@@ -240,14 +240,14 @@ export default function AIAgentBouwenPage() {
         <section id="wat-is-ai-agent" className="py-12 sm:py-16 md:py-20 border-t border-border/50">
           <div className="container mx-auto px-6 sm:px-8 max-w-4xl">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-4 sm:mb-6">
-              Wat is een AI agent — en waarom is het geen chatbot?
+              Wat is een AI agent, en waarom is het geen chatbot?
             </h2>
             <div className="grid md:grid-cols-2 gap-6 sm:gap-8">
               <div>
                 <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-4">
                   Een AI agent is software die zelfstandig een doel nastreeft.
-                  Het systeem percipieert informatie uit zijn omgeving (e-mail,
-                  CRM, documenten), neemt beslissingen en voert acties uit —
+                  Het systeem haalt informatie uit zijn omgeving (e-mail,
+                  CRM, documenten), neemt beslissingen en voert acties uit,
                   zonder dat een mens elke stap hoeft te bevestigen.
                 </p>
                 <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
@@ -302,7 +302,7 @@ export default function AIAgentBouwenPage() {
               </h2>
               <p className="text-sm sm:text-base text-muted-foreground max-w-xl mx-auto">
                 Wij hebben gespecialiseerde agents gebouwd voor elk type
-                bedrijfstaak — elk volledig maatwerk op uw proces.
+                bedrijfstaak. Elke agent bouwen wij op maat voor uw proces.
               </p>
             </div>
             <div className="grid sm:grid-cols-2 gap-4 sm:gap-5">
@@ -342,7 +342,7 @@ export default function AIAgentBouwenPage() {
               >
                 Vertel ons uw situatie
               </a>{" "}
-              — wij denken graag mee.
+              en wij denken graag mee.
             </p>
           </div>
         </section>
@@ -355,8 +355,8 @@ export default function AIAgentBouwenPage() {
                 Van intake naar live in 2 weken
               </h2>
               <p className="text-sm sm:text-base text-muted-foreground max-w-xl mx-auto">
-                Ons proces is snel, transparant en gericht op resultaat — niet
-                op eindeloze analysefases.
+                Ons proces is snel, transparant en gericht op resultaat. Geen
+                eindeloze analysefases.
               </p>
             </div>
             <div className="relative">
@@ -401,7 +401,7 @@ export default function AIAgentBouwenPage() {
               <p className="text-sm sm:text-base text-muted-foreground max-w-xl mx-auto">
                 Geen verrassingen achteraf. Alle prijzen zijn eenmalige
                 ontwikkelkosten. Maandelijkse API- en hostingkosten zijn
-                doorgaans €200–€800.
+                doorgaans €200 tot €800 per maand.
               </p>
             </div>
             <div className="grid sm:grid-cols-3 gap-4 sm:gap-5">
@@ -514,7 +514,7 @@ export default function AIAgentBouwenPage() {
               Klaar om uw eerste AI agent te bouwen?
             </h2>
             <p className="mb-6 sm:mb-8 text-sm sm:text-base text-muted-foreground max-w-lg mx-auto">
-              Plan een gratis intake van 30 minuten. Geen verkoopverhaal — wij
+              Plan een gratis intake van 30 minuten. Geen verkooppraatje. Wij
               luisteren naar uw situatie en vertellen u eerlijk wat mogelijk is.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
@@ -535,7 +535,7 @@ export default function AIAgentBouwenPage() {
               </a>
             </div>
             <p className="mt-5 text-xs text-muted-foreground">
-              Virelio — AI Agent Bureau · Amsterdam ·{" "}
+              Virelio · AI Agent Bureau · Amsterdam ·{" "}
               <a
                 href="tel:+31687838713"
                 className="hover:text-foreground transition-colors"

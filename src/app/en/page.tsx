@@ -79,15 +79,15 @@ const testimonialsData = {
 };
 
 export const metadata: Metadata = generateMetadata({
-  title: "Custom AI Agents — Your Digital Team",
+  title: "Custom AI Agents for Business: Your Digital Team",
   description:
-    "Virelio builds AI agents that collaborate, delegate and execute. From customer service to sales automation — live in 2 weeks. Based in Amsterdam.",
+    "Virelio builds AI agents that collaborate, delegate and execute. From customer service to sales automation, live in 2 weeks. Based in Amsterdam.",
   keywords:
     "custom AI agents, AI agent development company, digital employees, AI automation agency, customer service AI agent, sales automation agent, voice agent, AI phone agent, build AI agents for business, RAG development, retrieval augmented generation, LLM integration, AI chatbot development, WhatsApp AI agent for business, knowledge base AI, RAG system, invoice automation, contract review AI, on-premise AI solutions, AI for SMB, custom agents for clients, AI onboarding agent, compliance agent, lead qualification agent, churn prediction AI, business process automation, Virelio, Amsterdam, Netherlands, Europe",
   pathname: "/en",
   locale: "en",
   imageUrl: "/og-image.png",
-  imageAlt: "Virelio — Custom AI Agents for Businesses",
+  imageAlt: "Virelio: custom AI agents for businesses",
 });
 
 export default function EnglishHome() {

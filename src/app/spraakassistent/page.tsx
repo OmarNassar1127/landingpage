@@ -2,8 +2,8 @@ import { Metadata } from "next";
 import VoiceAIPage from "@/components/voice-ai/VoiceAIPage";
 
 export const metadata: Metadata = {
-  title: "AI Spraakassistent voor Bedrijven | 24/7 Klantgesprekken Automatiseren | Virelio",
-  description: "Automatiseer 87% van klantgesprekken met onze Nederlandse AI spraakassistent. Beantwoordt binnen 2 beltonen, 24/7 bereikbaar. Geen opstartkosten. Voor MKB en enterprise. Start gratis proef.",
+  title: "AI spraakassistent voor bedrijven, 24/7 bereikbaar",
+  description: "Automatiseer 87% van uw klantgesprekken met onze Nederlandse AI spraakassistent. Neemt op binnen 2 beltonen, 24/7 bereikbaar en zonder opstartkosten.",
   keywords: "spraakassistent, stem AI, voice AI, AI telefonie, virtuele assistent, zakelijke telefonie, klantgesprekken automatiseren, AI klantenservice, voice bot, spraaktechnologie, telefoon automatisering, Nederlandse AI, zakelijke spraakassistent, 24/7 bereikbaarheid, AI receptionist, automatische telefooncentrale, conversational AI, natural language processing, NLP Nederlands, speech recognition, spraakherkenning, telefoonbot, virtuele receptionist, AI callcenter, voice automation, stem automatisering, digitale assistent, kunstmatige intelligentie telefoon, AI voor bedrijven, MKB automatisering, enterprise voice AI, SaaS telefonie, cloud telefonie, VoIP AI, telecommunicatie AI, customer service automation, klantenservice automatisering, AI oplossingen Nederland, Nederlandse spraaktechnologie, Virelio, Amsterdam AI bedrijf",
   authors: [{ name: "Virelio", url: "https://virelio.nl" }],
   creator: "Virelio",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     title: "AI Spraakassistent voor Bedrijven | 24/7 Automatisering | Virelio",
     description: "Automatiseer 87% van klantgesprekken. Nederlandse AI spraakassistent die binnen 2 beltonen opneemt, 24/7. Geen opstartkosten. Start vandaag.",
     url: "https://virelio.nl/spraakassistent",
-    siteName: "Virelio — AI Agents op Maat",
+    siteName: "Virelio: AI agents op maat",
     locale: "nl_NL",
     type: "website",
     images: [

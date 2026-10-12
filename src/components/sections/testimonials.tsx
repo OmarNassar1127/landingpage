@@ -49,8 +49,8 @@ const testimonials: Testimonial[] = [
     },
     image: "/images/references/ihor.jpeg",
     content: {
-      en: "Working with Virelio showed their reliability and skill. Together we created an automatic fine scanner that reduced a 30-minute process to just 10 seconds — truly impressive efficiency improvement.",
-      nl: "Het werken met Virelio toonde hun betrouwbaarheid en vaardigheid. Samen creëerden we een automatische boetescanner die een proces van 30 minuten reduceerde tot slechts 10 seconden — indrukwekkend.",
+      en: "Working with Virelio showed their reliability and skill. Together we created an automatic fine scanner that reduced a 30-minute process to just 10 seconds, truly impressive efficiency improvement.",
+      nl: "Het werken met Virelio toonde hun betrouwbaarheid en vaardigheid. Samen creëerden we een automatische boetescanner die een proces van 30 minuten reduceerde tot slechts 10 seconden. Indrukwekkend.",
     },
     rating: 5,
   },
@@ -210,7 +210,7 @@ export default function Testimonials() {
             </motion.h2>
           </div>
 
-          {/* Navigation arrows — desktop */}
+          {/* Navigation arrows (desktop) */}
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}

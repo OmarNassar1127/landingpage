@@ -24,7 +24,7 @@ const getProjects = (language: string): Project[] => {
   return [
     {
       id: "kennisbank-luchtvaart",
-      title: isNL ? "Kennisbank — Luchtvaart" : "Knowledge Base — Aviation",
+      title: isNL ? "Kennisbank voor de luchtvaart" : "Knowledge base for aviation",
       quote: isNL
         ? "Onze engineers zochten gemiddeld 2 uur per dag naar informatie. Nu vinden ze alles in seconden."
         : "Our engineers spent 2 hours daily searching for information. Now they find everything in seconds.",
@@ -37,7 +37,7 @@ const getProjects = (language: string): Project[] => {
     },
     {
       id: "meeting-automation",
-      title: isNL ? "Meeting Automatisering — Consultancy" : "Meeting Automation — Consultancy",
+      title: isNL ? "Meetingautomatisering voor consultancy" : "Meeting automation for consultancy",
       quote: isNL
         ? "We besparen 40 uur per maand op meeting follow-ups. Notulen zijn klaar voordat de call afloopt."
         : "We save 40 hours monthly on meeting follow-ups. Minutes are ready before the call ends.",
@@ -50,7 +50,7 @@ const getProjects = (language: string): Project[] => {
     },
     {
       id: "research-agent",
-      title: isNL ? "Research Agent — Fintech" : "Research Agent — Fintech",
+      title: isNL ? "Research agent voor fintech" : "Research agent for fintech",
       quote: isNL
         ? "Marktonderzoek dat voorheen een week kostte, hebben we nu in 10 minuten."
         : "Market research that used to take a week, we now have in 10 minutes.",
@@ -63,7 +63,7 @@ const getProjects = (language: string): Project[] => {
     },
     {
       id: "linkedin-outreach",
-      title: isNL ? "LinkedIn Tool — B2B SaaS" : "LinkedIn Tool — B2B SaaS",
+      title: isNL ? "LinkedIn-tool voor B2B SaaS" : "LinkedIn tool for B2B SaaS",
       quote: isNL
         ? "We gingen van 0 naar 150+ relevante connecties per week. Allemaal gepersonaliseerd."
         : "We went from 0 to 150+ relevant connections per week. All personalized.",
@@ -76,7 +76,7 @@ const getProjects = (language: string): Project[] => {
     },
     {
       id: "inventory-bot",
-      title: isNL ? "Voorraadbot — Groothandel" : "Inventory Bot — Wholesale",
+      title: isNL ? "Voorraadbot voor een groothandel" : "Inventory bot for wholesale",
       quote: isNL
         ? "Zero voorraadtekorten in 6 maanden. De bot bestelt automatisch voordat we uitverkocht raken."
         : "Zero stock shortages in 6 months. The bot orders automatically before we run out.",
@@ -89,7 +89,7 @@ const getProjects = (language: string): Project[] => {
     },
     {
       id: "onboarding-ai",
-      title: isNL ? "Onboarding Assistent — HR Tech" : "Onboarding Assistant — HR Tech",
+      title: isNL ? "Onboarding-assistent voor HR tech" : "Onboarding assistant for HR tech",
       quote: isNL
         ? "Nieuwe medewerkers zijn nu in 2 dagen productief in plaats van 2 weken."
         : "New employees are now productive in 2 days instead of 2 weeks.",
@@ -102,7 +102,7 @@ const getProjects = (language: string): Project[] => {
     },
     {
       id: "lead-qualification",
-      title: isNL ? "Lead Kwalificatie — B2B SaaS" : "Lead Qualification — B2B SaaS",
+      title: isNL ? "Leadkwalificatie voor B2B SaaS" : "Lead qualification for B2B SaaS",
       quote: isNL
         ? "Sales besteedt nu alleen tijd aan warme leads. Cold leads krijgen automatisch follow-up."
         : "Sales only spends time on warm leads now. Cold leads get automatic follow-up.",
@@ -180,8 +180,8 @@ export default function Projects() {
             className="text-muted-foreground text-lg sm:text-xl max-w-2xl mx-auto"
           >
             {language === "nl"
-              ? "Van startup tot enterprise — meetbaar resultaat"
-              : "From startup to enterprise — measurable results"}
+              ? "Van startup tot enterprise: meetbaar resultaat"
+              : "From startup to enterprise: measurable results"}
           </motion.p>
         </div>
 

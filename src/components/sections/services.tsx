@@ -109,8 +109,8 @@ const getCategories = (language: string): Category[] => {
           icon: UserMinus,
           headline: isNL ? "Red klanten voordat ze vertrekken" : "Save customers before they leave",
           description: isNL
-            ? "Detecteert signalen van afhakende klanten — minder logins, onbeantwoorde mails, dalend gebruik. Triggert automatisch een persoonlijk retentie-aanbod."
-            : "Detects signals of churning customers — fewer logins, unanswered emails, declining usage. Automatically triggers a personalized retention offer.",
+            ? "Detecteert signalen van afhakende klanten: minder logins, onbeantwoorde mails, dalend gebruik. Triggert automatisch een persoonlijk retentie-aanbod."
+            : "Detects signals of churning customers: fewer logins, unanswered emails, declining usage. Automatically triggers a personalized retention offer.",
           integrations: ["HubSpot", "Mixpanel", "Intercom", "Stripe"],
           results: isNL
             ? [{ value: "-35%", label: "Churn" }, { value: "14d", label: "Voorspelling" }, { value: "Auto", label: "Retentie" }]
@@ -119,7 +119,7 @@ const getCategories = (language: string): Category[] => {
         {
           name: isNL ? "Social Listening Agent" : "Social Listening Agent",
           icon: Globe,
-          headline: isNL ? "Weet wat mensen over je merk zeggen — overal" : "Know what people say about your brand — everywhere",
+          headline: isNL ? "Weet wat mensen overal over je merk zeggen" : "Know what people say about your brand, everywhere",
           description: isNL
             ? "Monitort vermeldingen van je merk op Reddit, LinkedIn, X, reviews en forums. Classificeert sentiment en stuurt een dagelijkse digest met de highlights."
             : "Monitors mentions of your brand on Reddit, LinkedIn, X, reviews and forums. Classifies sentiment and sends a daily digest with highlights.",
@@ -605,10 +605,10 @@ function WorkflowTemplate({ activeAgent, agents, language }: { activeAgent: numb
           { label: "Track & trace naar klant gestuurd", status: "active", time: "11:24" },
         ],
         [
-          { label: "Milestone bereikt — factuur aangemaakt", status: "done", time: "Ma 09:00" },
+          { label: "Mijlpaal bereikt, factuur aangemaakt", status: "done", time: "Ma 09:00" },
           { label: "PDF verstuurd via Moneybird", status: "done", time: "Ma 09:01" },
-          { label: "Geen betaling na 14d — herinnering", status: "done", time: "Di 09:00" },
-          { label: "Betaling binnen — automatisch geboekt", status: "active", time: "Wo 14:12" },
+          { label: "Geen betaling na 14d, herinnering verstuurd", status: "done", time: "Di 09:00" },
+          { label: "Betaling binnen en automatisch geboekt", status: "active", time: "Wo 14:12" },
         ],
         [
           { label: "Arbeidsovereenkomst digitaal getekend", status: "done", time: "Dag 1" },
@@ -617,7 +617,7 @@ function WorkflowTemplate({ activeAgent, agents, language }: { activeAgent: numb
           { label: "Eerste eigen taak toegewezen", status: "active", time: "Dag 3" },
         ],
         [
-          { label: "Meeting gestart — opname actief", status: "done", time: "14:00" },
+          { label: "Meeting gestart, opname actief", status: "done", time: "14:00" },
           { label: "3 actiepunten gedetecteerd", status: "done", time: "14:32" },
           { label: "Notulen gegenereerd", status: "done", time: "14:45" },
           { label: "Verstuurd naar #team + Linear", status: "active", time: "14:46" },
@@ -631,10 +631,10 @@ function WorkflowTemplate({ activeAgent, agents, language }: { activeAgent: numb
           { label: "Track & trace sent to customer", status: "active", time: "11:24" },
         ],
         [
-          { label: "Milestone hit — invoice created", status: "done", time: "Mon 09:00" },
+          { label: "Milestone hit, invoice created", status: "done", time: "Mon 09:00" },
           { label: "PDF sent via Moneybird", status: "done", time: "Mon 09:01" },
-          { label: "No payment after 14d — reminder sent", status: "done", time: "Tue 09:00" },
-          { label: "Payment received — auto-booked", status: "active", time: "Wed 14:12" },
+          { label: "No payment after 14d, reminder sent", status: "done", time: "Tue 09:00" },
+          { label: "Payment received and auto-booked", status: "active", time: "Wed 14:12" },
         ],
         [
           { label: "Employment contract signed digitally", status: "done", time: "Day 1" },
@@ -643,7 +643,7 @@ function WorkflowTemplate({ activeAgent, agents, language }: { activeAgent: numb
           { label: "First own task assigned", status: "active", time: "Day 3" },
         ],
         [
-          { label: "Meeting started — recording active", status: "done", time: "14:00" },
+          { label: "Meeting started, recording active", status: "done", time: "14:00" },
           { label: "3 action items detected", status: "done", time: "14:32" },
           { label: "Minutes generated", status: "done", time: "14:45" },
           { label: "Sent to #team + Linear", status: "active", time: "14:46" },
@@ -686,7 +686,7 @@ function SearchTemplate({ activeAgent, agents, language }: { activeAgent: number
           query: "Hoe werkt de garantie op maatwerkprojecten?",
           results: [
             { source: "Servicevoorwaarden 2025", page: "§7.1", match: "Maatwerkprojecten vallen onder 12 maanden garantie op..." },
-            { source: "Intern wiki — Garanties", page: "p.4", match: "Bij maatwerkoplossingen geldt een SLA van 48 uur voor..." },
+            { source: "Interne wiki: Garanties", page: "p.4", match: "Bij maatwerkoplossingen geldt een SLA van 48 uur voor..." },
             { source: "Klant-onboarding doc", page: "#22", match: "Leg bij oplevering de garantievoorwaarden vast in het..." },
           ],
         },
@@ -701,7 +701,7 @@ function SearchTemplate({ activeAgent, agents, language }: { activeAgent: number
         {
           query: "Maak maandoverzicht operatie maart",
           results: [
-            { source: "Exact Online", page: "live", match: "Omzet maart: €87K — 8% boven target" },
+            { source: "Exact Online", page: "live", match: "Omzet maart: €87K, 8% boven target" },
             { source: "Jira board", page: "live", match: "23 tickets opgelost, 2 open, gem. doorlooptijd 1.4 dag" },
             { source: "Google Sheets team", page: "live", match: "Overzicht verstuurd naar #management + PDF opgeslagen" },
           ],
@@ -720,7 +720,7 @@ function SearchTemplate({ activeAgent, agents, language }: { activeAgent: number
           query: "How does warranty work on custom projects?",
           results: [
             { source: "Service Terms 2025", page: "§7.1", match: "Custom projects are covered by 12 months warranty on..." },
-            { source: "Internal wiki — Warranties", page: "p.4", match: "For custom solutions, a 48-hour SLA applies for..." },
+            { source: "Internal wiki: Warranties", page: "p.4", match: "For custom solutions, a 48-hour SLA applies for..." },
             { source: "Client onboarding doc", page: "#22", match: "Document warranty terms at delivery in the project..." },
           ],
         },
@@ -735,7 +735,7 @@ function SearchTemplate({ activeAgent, agents, language }: { activeAgent: number
         {
           query: "Generate monthly ops overview March",
           results: [
-            { source: "Exact Online", page: "live", match: "Revenue March: €87K — 8% above target" },
+            { source: "Exact Online", page: "live", match: "Revenue March: €87K, 8% above target" },
             { source: "Jira board", page: "live", match: "23 tickets resolved, 2 open, avg lead time 1.4 days" },
             { source: "Google Sheets team", page: "live", match: "Overview sent to #management + PDF saved" },
           ],
@@ -863,12 +863,12 @@ function DocumentScanTemplate({ activeAgent, agents, language }: { activeAgent: 
   const allData = isNL
     ? [
         { doc: "Leverancierscontract_2025.pdf", findings: [
-          { type: "risk", text: "Betalingstermijn 90 dagen — standaard is 30" },
+          { type: "risk", text: "Betalingstermijn 90 dagen, standaard is 30" },
           { type: "missing", text: "Verwerkersovereenkomst ontbreekt" },
           { type: "ok", text: "Aansprakelijkheidsclausule conform" },
         ]},
         { doc: "Maandrapport_uitgaven_maart.xlsx", findings: [
-          { type: "alert", text: "Dubbele factuur #4421 gedetecteerd — €1.240" },
+          { type: "alert", text: "Dubbele factuur #4421 gedetecteerd: €1.240" },
           { type: "info", text: "Marketing budget 12% boven limiet" },
           { type: "ok", text: "Alle overige categorieën binnen budget" },
         ]},
@@ -879,18 +879,18 @@ function DocumentScanTemplate({ activeAgent, agents, language }: { activeAgent: 
         ]},
         { doc: "Cashflow_forecast_Q2_2026.pdf", findings: [
           { type: "info", text: "Verwachte inkomsten Q2: €142K (+8% vs Q1)" },
-          { type: "alert", text: "Tekort verwacht week 22 — €4.200 onder minimum" },
+          { type: "alert", text: "Tekort verwacht in week 22: €4.200 onder minimum" },
           { type: "ok", text: "Aanbeveling: vervroeg factuur #912 of stel investering uit" },
         ]},
       ]
     : [
         { doc: "Supplier_Contract_2025.pdf", findings: [
-          { type: "risk", text: "Payment term 90 days — standard is 30" },
+          { type: "risk", text: "Payment term 90 days, standard is 30" },
           { type: "missing", text: "Data processing agreement missing" },
           { type: "ok", text: "Liability clause compliant" },
         ]},
         { doc: "Monthly_Expenses_March.xlsx", findings: [
-          { type: "alert", text: "Duplicate invoice #4421 detected — €1,240" },
+          { type: "alert", text: "Duplicate invoice #4421 detected: €1,240" },
           { type: "info", text: "Marketing budget 12% over limit" },
           { type: "ok", text: "All other categories within budget" },
         ]},
@@ -901,7 +901,7 @@ function DocumentScanTemplate({ activeAgent, agents, language }: { activeAgent: 
         ]},
         { doc: "Cashflow_Forecast_Q2_2026.pdf", findings: [
           { type: "info", text: "Expected revenue Q2: €142K (+8% vs Q1)" },
-          { type: "alert", text: "Shortfall expected week 22 — €4,200 below minimum" },
+          { type: "alert", text: "Shortfall expected in week 22: €4,200 below minimum" },
           { type: "ok", text: "Recommendation: expedite invoice #912 or defer investment" },
         ]},
       ];
@@ -1280,8 +1280,8 @@ const Services = () => {
           </h3>
           <p className="text-sm text-muted-foreground max-w-md mx-auto mb-6">
             {isNL
-              ? "Geen probleem. Wij bouwen agents volledig op maat — afgestemd op jouw processen, systemen en wensen. Vertel ons wat je nodig hebt."
-              : "No problem. We build fully custom agents — tailored to your processes, systems and needs. Tell us what you're looking for."}
+              ? "Geen probleem. Wij bouwen agents volledig op maat, afgestemd op jouw processen, systemen en wensen. Vertel ons wat je nodig hebt."
+              : "No problem. We build fully custom agents, tailored to your processes, systems and needs. Tell us what you're looking for."}
           </p>
           <Button
             className="bg-foreground text-background hover:bg-foreground/90 rounded-xl px-8 py-5 text-base font-semibold group"

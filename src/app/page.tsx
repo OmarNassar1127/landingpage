@@ -83,12 +83,12 @@ const testimonialsData = {
 export const metadata: Metadata = generateMetadata({
   title: "Digitale Medewerkers & AI Agents voor bedrijven",
   description:
-    "Virelio bouwt AI-agents die samenwerken, delegeren en uitvoeren. Van klantenservice tot sales automatisering — live in 2 weken. Gevestigd in Amsterdam.",
+    "Virelio bouwt AI-agents die samenwerken, delegeren en uitvoeren. Van klantenservice tot sales automatisering, live in 2 weken. Gevestigd in Amsterdam.",
   keywords:
     "AI agents op maat, custom AI agents, digitale medewerkers, AI automatisering bedrijven, klantenservice AI agent, klantenservice automatiseren, sales automatisering, AI agent bouwen, RAG development, RAG systeem, LLM integratie, AI chatbot bouwen, WhatsApp AI agent voor bedrijven, voice agent, AI telefoon agent, AI spraakassistent zakelijk, kennisbank AI, facturatie automatiseren, AI bureau Amsterdam, on-premise AI, AI oplossingen MKB, custom agents voor klanten, AI onboarding agent, compliance agent, lead kwalificatie agent, bedrijfsprocessen automatiseren, Virelio, Nederland",
   pathname: "/",
   imageUrl: "/og-image.png",
-  imageAlt: "Virelio — AI Agents op Maat voor Bedrijven",
+  imageAlt: "Virelio: AI agents op maat voor bedrijven",
 });
 
 export default function Home() {

@@ -237,7 +237,7 @@ export default function Navbar({ customNavLinks }: NavbarProps = {}) {
 
             {/* Content */}
             <div className="relative h-full flex flex-col pt-20 pb-24 px-6">
-              {/* Nav links — large, centered feel */}
+              {/* Nav links: large, centered feel */}
               <nav className="flex-1 flex flex-col justify-center -mt-16">
                 <ul className="space-y-2">
                   {navLinks.map((link, index) => {
@@ -314,7 +314,7 @@ export default function Navbar({ customNavLinks }: NavbarProps = {}) {
 
                 {/* Subtle branding */}
                 <p className="text-center text-xs text-muted-foreground/40 pt-2">
-                  Virelio — Amsterdam, NL
+                  Virelio · Amsterdam, NL
                 </p>
               </motion.div>
             </div>

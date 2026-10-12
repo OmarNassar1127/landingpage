@@ -31,7 +31,7 @@ export const translations = {
         trustSignal: "Geen opstartkosten",
         primaryCta: "Start gratis proef",
         secondaryCta: "Vraag gratis demo aan",
-        socialProof: "100+ bedrijven – 87 % minder inkomende telefoontjes",
+        socialProof: "100+ bedrijven, 87% minder inkomende telefoontjes",
       },
       problem: {
         title:
@@ -275,7 +275,7 @@ export const translations = {
     // Footer
     footer: {
       description:
-        "AI-agents die samenwerken, delegeren en uitvoeren. Van klantenservice tot sales automatisering — live in 2 weken. Op maat gebouwd voor jouw bedrijf.",
+        "AI-agents die samenwerken, delegeren en uitvoeren. Van klantenservice tot sales automatisering, live in 2 weken. Op maat gebouwd voor jouw bedrijf.",
       quickLinks: "Snelle links",
       legal: "Juridisch",
       privacyPolicy: "Privacybeleid",
@@ -368,13 +368,13 @@ export const translations = {
         techStack: ["Python", "API Integratie", "LangChain", "Prompt Logic"],
       },
       capgeminiAi: {
-        title: "AI Assistent – Capgemini",
+        title: "AI-assistent voor Capgemini",
         description:
-          "Op maat gemaakte AI-chatoplossing die consultants helpt interne documenten en projectinformatie snel te doorzoeken – volledig privacyproof binnen de organisatie.",
+          "Op maat gemaakte AI-chatoplossing die consultants helpt interne documenten en projectinformatie snel te doorzoeken. Alles blijft privé binnen de organisatie.",
         techStack: ["Custom AI", "Vector DB", "Private Deployment", "RAG"],
       },
       klmCatering: {
-        title: "KLM Catering – Supply Chain Optimalisatie",
+        title: "KLM Catering: supply chain optimalisatie",
         description:
           "Optimalisatie van logistieke processen binnen KLM Catering. Inclusief ophalen van vereisten, procesanalyse en herontwerp van ketenactiviteiten.",
         techStack: [
@@ -785,7 +785,7 @@ export const translations = {
         description:
           "Een professionele website of platform, volledig ingericht op jouw doel en doelgroep.",
         feature1: "Binnen 7 dagen live met een strak en snel ontwerp",
-        feature2: "Gebouwd om te converteren – van eerste indruk tot actie",
+        feature2: "Gebouwd om te converteren, van eerste indruk tot actie",
         feature3: "SEO integratie",
       },
       dataAnalytics: {
@@ -793,7 +793,7 @@ export const translations = {
         description: "Altijd direct antwoord op je cijfers, zonder zoeken.",
         feature1: "Gekoppeld aan je database of backend",
         feature2: "Vraag omzet, trends of teamdata op via Slack of Teams",
-        feature3: "Antwoorden in gewone taal – binnen 3 seconden",
+        feature3: "Antwoorden in gewone taal, binnen 3 seconden",
       },
     },
 
@@ -1103,7 +1103,7 @@ export const translations = {
     // Footer
     footer: {
       description:
-        "AI agents that collaborate, delegate and execute. From customer service to sales automation — live in 2 weeks. Custom-built for your business.",
+        "AI agents that collaborate, delegate and execute. From customer service to sales automation, live in 2 weeks. Custom-built for your business.",
       quickLinks: "Quick Links",
       legal: "Legal",
       privacyPolicy: "Privacy Policy",
@@ -1196,13 +1196,13 @@ export const translations = {
         techStack: ["Python", "API Integration", "LangChain", "Prompt Logic"],
       },
       capgeminiAi: {
-        title: "AI Assistant – Capgemini (internal)",
+        title: "AI Assistant for Capgemini (internal)",
         description:
-          "Custom AI chat solution helping consultants quickly search internal documents and project information – completely privacy-proof within the organization.",
+          "Custom AI chat solution helping consultants quickly search internal documents and project information. Everything stays private within the organization.",
         techStack: ["Custom AI", "Vector DB", "Private Deployment", "RAG"],
       },
       klmCatering: {
-        title: "KLM Catering – Supply Chain Optimization",
+        title: "KLM Catering: Supply Chain Optimization",
         description:
           "Optimization of logistics processes within KLM Catering. Including requirements gathering, process analysis, and redesign of chain activities.",
         techStack: [
@@ -1219,7 +1219,7 @@ export const translations = {
       subtitle: "Learn more about our team and mission.",
       theTeam: "The Virelio team",
       description:
-        "We are Virelio. A team of down-to-earth IT professionals with over 5 years of experience and a diverse portfolio of projects at major companies. Rather than passive consumption, we build. Read about something new? We test it. New AI tool? We have a working prototype the same day.\nWe make complex technology understandable and immediately applicable. No lengthy theories, just smart solutions that deliver immediate value — for both local entrepreneurs and large corporations.\nFrom rapid experiments to stable production systems. From clever automation to powerful AI applications. We keep building. Focused. Efficient. Practical.",
+        "We are Virelio. A team of down-to-earth IT professionals with over 5 years of experience and a diverse portfolio of projects at major companies. Rather than passive consumption, we build. Read about something new? We test it. New AI tool? We have a working prototype the same day.\nWe make complex technology understandable and immediately applicable. No lengthy theories, just smart solutions that deliver immediate value, for local entrepreneurs and large corporations alike.\nFrom rapid experiments to stable production systems. From clever automation to powerful AI applications. We keep building. Focused. Efficient. Practical.",
       missionTitle: "Our Mission",
       teamTitle: "About Virelio",
       missionDescription:
@@ -1575,7 +1575,7 @@ export const translations = {
     services: {
       title: "What We Build",
       subtitle:
-        "Smart solutions that speed up processes, improve collaboration, and save time—starting day one.",
+        "Smart solutions that speed up processes, improve collaboration, and save time from day one.",
       ctaButton: "Let's talk",
       aiDevelopment: {
         title: "AI Integration",
@@ -1588,7 +1588,7 @@ export const translations = {
       saasDevelopment: {
         title: "Custom Software",
         description:
-          "Solutions built around how you actually work—not the other way around.",
+          "Solutions built around how you actually work, not the other way around.",
         feature1: "Dashboards, portals, and tools designed for your team",
         feature2: "Integrates with your existing systems and accounts",
         feature3: "Scales with your business as you grow",
@@ -1619,7 +1619,7 @@ export const translations = {
       dataAnalytics: {
         title: "Data & Insights",
         description:
-          "Get instant answers to your questions—no searching required.",
+          "Get instant answers to your questions without searching.",
         feature1: "Connected directly to your database or backend",
         feature2: "Ask for revenue, trends, or team data via Slack or Teams",
         feature3: "Answers in plain English within 3 seconds",

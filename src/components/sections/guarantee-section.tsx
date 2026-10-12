@@ -9,8 +9,8 @@ export default function GuaranteeSection() {
 
     const guarantees = [
         language === 'nl'
-            ? 'Geld terug als je niet tevreden bent — geen vragen, geen gedoe'
-            : 'Money back if you\'re not satisfied — no questions asked',
+            ? 'Geld terug als je niet tevreden bent. Geen vragen, geen gedoe.'
+            : 'Money back if you\'re not satisfied. No questions asked.',
         language === 'nl'
             ? 'Binnen 4 uur persoonlijke reactie van ons team'
             : 'Personal response from our team within 4 hours',

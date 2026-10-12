@@ -16,9 +16,9 @@ import {
 } from "lucide-react";
 
 export const metadata = genMeta({
-  title: "AI Automatisering voor MKB — Betaalbaar & Schaalbaar",
+  title: "Betaalbare AI-automatisering voor het MKB",
   description:
-    "AI automatisering speciaal voor het Nederlandse MKB. Betaalbaar vanaf €2.000, live in 2 weken, geen IT-afdeling nodig. Inclusief WBSO-subsidie van 35%. Virelio, Amsterdam.",
+    "AI-automatisering voor het Nederlandse MKB. Vanaf €2.000, live in 2 weken en geen IT-afdeling nodig. Inclusief hulp bij de WBSO-subsidie van 35%.",
   keywords:
     "AI automatisering MKB, AI voor MKB, AI agent MKB, automatisering midden klein bedrijf, betaalbare AI, WBSO subsidie AI, AI HubSpot integratie, Shopify AI automatisering, Exact Online AI, AI bureau MKB Nederland, klantenservice automatisering MKB",
   pathname: "/diensten/ai-automatisering-mkb",
@@ -29,17 +29,17 @@ const faqItems = [
   {
     question: "Is AI automatisering ook betaalbaar voor kleine bedrijven?",
     answer:
-      "Absoluut. Onze eenvoudige AI agents starten vanaf €2.000 eenmalig. Maandelijkse kosten liggen doorgaans tussen €200 en €500. Bij een besparing van €2.000 per maand is de ROI al in de eerste maand positief. We bouwen bewust schaalbaar: u begint klein en breidt uit zodra de ROI bewezen is.",
+      "Ja. Onze eenvoudige AI agents starten vanaf €2.000 eenmalig. Maandelijkse kosten liggen doorgaans tussen €200 en €500. Bij een besparing van €2.000 per maand is de ROI al in de eerste maand positief. We bouwen bewust schaalbaar: u begint klein en breidt uit zodra de ROI bewezen is.",
   },
   {
     question: "Heb ik een IT-afdeling nodig voor AI automatisering?",
     answer:
-      "Nee. Wij verzorgen de volledige implementatie, integratie en lancering. Na oplevering beheer u de agent via een eenvoudig dashboard zonder technische kennis. Heeft u een vraag of wilt u iets aanpassen? U belt ons — geen IT-kennis vereist.",
+      "Nee. Wij verzorgen de volledige implementatie, integratie en lancering. Na oplevering beheert u de agent via een eenvoudig dashboard zonder technische kennis. Heeft u een vraag of wilt u iets aanpassen? Dan belt u ons. IT-kennis is niet nodig.",
   },
   {
     question: "Wat is de WBSO-subsidie en hoe werkt dat?",
     answer:
-      "WBSO (Wet Bevordering Speur- en Ontwikkelingswerk) is een Nederlandse subsidieregeling voor bedrijven die R&D uitvoeren, inclusief AI-ontwikkeling. U ontvangt 32–40% van uw R&D-loonkosten terug. Wij helpen u bij de aanvraag en zorgen voor de juiste documentatie. Dit kan de effectieve kosten van een AI-project aanzienlijk verlagen.",
+      "WBSO (Wet Bevordering Speur- en Ontwikkelingswerk) is een Nederlandse subsidieregeling voor bedrijven die R&D uitvoeren, inclusief AI-ontwikkeling. U ontvangt 32 tot 40% van uw R&D-loonkosten terug. Wij helpen u bij de aanvraag en zorgen voor de juiste documentatie. Dit kan de effectieve kosten van een AI-project aanzienlijk verlagen.",
   },
   {
     question: "Welke software integreert u met?",
@@ -94,7 +94,7 @@ const whyMKB = [
     icon: CreditCard,
     title: "Betaalbaar vanaf €2.000",
     description:
-      "Geen enterprise-prijzen. Wij bouwen gerichte oplossingen die snel rendement opleveren — niet overengineered.",
+      "Geen enterprise-prijzen. Wij bouwen gerichte oplossingen die snel rendement opleveren, zonder overbodige toeters en bellen.",
   },
   {
     icon: Zap,
@@ -106,13 +106,13 @@ const whyMKB = [
     icon: ShieldCheck,
     title: "Geen IT-team nodig",
     description:
-      "Wij verzorgen alles: bouw, integratie, lancering en onderhoud. U runt uw business, wij runnen de techniek.",
+      "Wij verzorgen alles: bouw, integratie, lancering en onderhoud. U runt uw bedrijf, wij regelen de techniek.",
   },
   {
     icon: TrendingUp,
     title: "Schaalbaar met uw groei",
     description:
-      "Begin met één agent voor één taak. Voeg agents toe zodra de ROI bewezen is — zonder dure herimplementaties.",
+      "Begin met één agent voor één taak. Voeg agents toe zodra de ROI bewezen is. Zonder dure herimplementaties.",
   },
 ];
 
@@ -175,7 +175,7 @@ export default function AIAutomatiseringMKBPage() {
             <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed mb-8 sm:mb-10">
               Klaar met handmatig facturen versturen, dezelfde e-mails
               beantwoorden en orders nakijken? Virelio bouwt AI agents die deze
-              taken volledig overnemen — betaalbaar, snel en zonder IT-afdeling.
+              taken volledig overnemen. Betaalbaar, snel en zonder IT-afdeling.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <a
@@ -226,7 +226,7 @@ export default function AIAutomatiseringMKBPage() {
               </h2>
               <p className="text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto">
                 Grote bedrijven hebben IT-teams, budgetten en consultants.
-                Het MKB heeft dat niet — maar heeft wel dezelfde repetitieve
+                Het MKB heeft dat niet, maar wel dezelfde repetitieve
                 processen. Wij bouwen AI die werkt zonder enterprise-overhead.
               </p>
             </div>
@@ -259,8 +259,8 @@ export default function AIAutomatiseringMKBPage() {
                 3 concrete scenario's met ROI
               </h2>
               <p className="text-sm sm:text-base text-muted-foreground max-w-xl mx-auto">
-                Elke berekening is gebaseerd op gemiddeld MKB-bedrijf met
-                5–50 medewerkers. Uw situatie kan gunstiger zijn.
+                Elke berekening is gebaseerd op een gemiddeld MKB-bedrijf met
+                5 tot 50 medewerkers. Uw situatie kan gunstiger zijn.
               </p>
             </div>
             <div className="space-y-5 sm:space-y-6">
@@ -357,7 +357,7 @@ export default function AIAutomatiseringMKBPage() {
                 <div className="space-y-3">
                   {[
                     ["Projectkosten", "€8.000"],
-                    ["WBSO-teruggave (35%)", "– €2.800"],
+                    ["WBSO-teruggave (35%)", "-€2.800"],
                     ["Effectieve investering", "€5.200"],
                     ["Maandelijkse besparing", "€3.000"],
                     ["Terugverdientijd", "< 2 maanden"],
@@ -395,7 +395,7 @@ export default function AIAutomatiseringMKBPage() {
                 Integreert met uw bestaande software
               </h2>
               <p className="text-sm sm:text-base text-muted-foreground max-w-xl mx-auto">
-                Geen vervanging van uw huidige systemen — wij bouwen er
+                Uw huidige systemen blijven gewoon staan. Wij bouwen er
                 bovenop. De AI agent werkt samen met de tools die u al gebruikt.
               </p>
             </div>
@@ -433,7 +433,7 @@ export default function AIAutomatiseringMKBPage() {
               >
                 Vraag het ons
               </a>{" "}
-              — als er een API is, kunnen wij koppelen.
+              Als er een API is, kunnen wij koppelen.
             </p>
           </div>
         </section>
@@ -491,7 +491,7 @@ export default function AIAutomatiseringMKBPage() {
               </a>
             </div>
             <p className="mt-5 text-xs text-muted-foreground">
-              Virelio — AI Agent Bureau · Amsterdam ·{" "}
+              Virelio · AI Agent Bureau · Amsterdam ·{" "}
               <a
                 href="tel:+31687838713"
                 className="hover:text-foreground transition-colors"

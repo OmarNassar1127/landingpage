@@ -86,7 +86,7 @@ export const servicesSchema = () => {
         "@type": "Service",
         name: "AI Agent Development",
         description:
-          "Custom AI agent teams built for your business — handling tasks autonomously, collaborating with each other, and integrating with your existing tools.",
+          "Custom AI agent teams built for your business. They handle tasks on their own, work together and connect to your existing tools.",
         provider: {
           "@type": "Organization",
           name: "Virelio",
@@ -97,7 +97,7 @@ export const servicesSchema = () => {
         "@type": "Service",
         name: "Sales Automation",
         description:
-          "AI agents that qualify leads, follow up prospects, and manage your sales pipeline 24/7 — so your team closes more deals with less effort.",
+          "AI agents that qualify leads, follow up prospects, and manage your sales pipeline 24/7, so your team closes more deals with less effort.",
         provider: {
           "@type": "Organization",
           name: "Virelio",
@@ -108,7 +108,7 @@ export const servicesSchema = () => {
         "@type": "Service",
         name: "Customer Service Automation",
         description:
-          "AI agents that handle customer inquiries, resolve common issues, and escalate edge cases — delivering instant, consistent support around the clock.",
+          "AI agents that handle customer inquiries, resolve common issues, and escalate edge cases. Instant, consistent support around the clock.",
         provider: {
           "@type": "Organization",
           name: "Virelio",
@@ -119,7 +119,7 @@ export const servicesSchema = () => {
         "@type": "Service",
         name: "Knowledge Base Systems",
         description:
-          "AI-powered knowledge management agents that capture, organise and surface institutional knowledge — making information instantly accessible across your team.",
+          "AI-powered knowledge management agents that capture, organise and surface company knowledge, so your whole team finds information instantly.",
         provider: {
           "@type": "Organization",
           name: "Virelio",
@@ -130,7 +130,7 @@ export const servicesSchema = () => {
         "@type": "Service",
         name: "Operations Automation",
         description:
-          "AI agents that automate repetitive back-office processes — from data entry and reporting to scheduling and workflow coordination.",
+          "AI agents that automate repetitive back-office processes, from data entry and reporting to scheduling and workflow coordination.",
         provider: {
           "@type": "Organization",
           name: "Virelio",
@@ -360,7 +360,7 @@ export function testimonialsSchema({ items }: TestimonialsProps) {
           "@type": "Organization",
           name: siteConfig.name,
           url: siteConfig.url,
-          description: "AI agency that builds custom AI agent teams for businesses — based in Amsterdam, Netherlands.",
+          description: "AI agency in Amsterdam, Netherlands, that builds custom AI agent teams for businesses.",
           address: {
             "@type": "PostalAddress",
             addressCountry: "NL",
