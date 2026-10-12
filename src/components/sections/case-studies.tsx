@@ -2,11 +2,11 @@
 
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { AnimatePresence, MotionConfig, animate, motion, useInView, useReducedMotion } from "framer-motion";
-import { ArrowUpRight, TrendingUp } from "lucide-react";
+import { ArrowUpRight, ShieldCheck, TrendingUp, type LucideIcon } from "lucide-react";
 import { useLanguage } from "@/lib/i18n/language-context";
 import { Button } from "@/components/ui/button";
 import { scrollToSection } from "@/lib/scroll-utils";
-import { ContentOSPreview, SlouchPreview, ZapBotPreview } from "./case-studies/mocks";
+import { ContentOSScene, FraudScene, ZapBotScene } from "./case-studies/scenes";
 
 /**
  * Client results as a scroll story. Desktop: a sticky browser frame on the left
@@ -25,6 +25,7 @@ interface CaseStudy {
   solution: string;
   results: { label: string; value: string }[];
   tech: string[];
+  Icon?: LucideIcon;
   Preview: React.ComponentType<{ language: string }>;
 }
 
@@ -58,36 +59,37 @@ const getCaseStudies = (language: string): CaseStudy[] => {
             { label: "Available", value: "24/7" },
           ],
       tech: ["WhatsApp API", "AI/NLP", "Node.js", "Multi-language"],
-      Preview: ZapBotPreview,
+      Preview: ZapBotScene,
     },
     {
-      name: "Slouch",
-      url: "https://slouch.pro",
-      logo: "/images/clients/slouch-logo-round.png",
-      logoBg: "bg-[#1a2332]",
-      brand: "#14b8a6",
-      tagline: isNL ? "AI-houdingscorrectie via je webcam" : "AI posture correction via your webcam",
+      name: "Fraud Guard",
+      url: "",
+      logo: "",
+      logoBg: "bg-zinc-900",
+      brand: "#4637d2",
+      Icon: ShieldCheck,
+      tagline: isNL ? "Fraudepreventie en risicoscores voor facturatie" : "Fraud prevention and risk scoring for invoicing",
       challenge: isNL
-        ? "Remote workers zitten 10+ uur per dag achter een scherm. Bestaande oplossingen zoals wearables kosten €80+, zijn onhandig en vereisen opladen."
-        : "Remote workers sit 10+ hours a day behind a screen. Existing solutions like wearables cost €80+, are clunky, and require charging.",
+        ? "Een snelgroeiend mobiliteitsplatform kampte met oplopende betalingsachterstanden. Risicoklanten werden pas zichtbaar als de factuur al openstond."
+        : "A fast-growing mobility platform was facing rising payment defaults. Risky customers only became visible once the invoice was already overdue.",
       solution: isNL
-        ? "We bouwden een AI-app die Google MediaPipe gebruikt om via je bestaande webcam je houding te analyseren. Geen hardware nodig en er verlaat geen data je apparaat. 100% privacy-first."
-        : "We built an AI app using Google MediaPipe to analyze your posture via your existing webcam. No hardware needed and no data leaves your device. 100% privacy-first.",
+        ? "We bouwden een systeem dat betaalgedrag en transactiegeschiedenis analyseert en elke klant een dynamisch risicoprofiel geeft, nog vóór de facturatie. Klanten met een hoog risico krijgen kleinere, periodieke micro-facturen in plaats van één grote maandfactuur."
+        : "We built a system that analyses payment behaviour and transaction history and gives every customer a dynamic risk profile before they are invoiced. High-risk customers get smaller, periodic micro-invoices instead of one large monthly invoice.",
       results: isNL
         ? [
-            { label: "Actieve gebruikers", value: "2.800+" },
-            { label: "Verbetering", value: "2 weken" },
-            { label: "Privacygarantie", value: "100%" },
-            { label: "Setup-tijd", value: "10 sec" },
+            { label: "Minder wanbetalingen", value: "73%" },
+            { label: "Openstaand teruggehaald", value: "€2M+" },
+            { label: "Betere cashflow", value: "45%" },
+            { label: "Risicocheck vóór facturatie", value: "Vooraf" },
           ]
         : [
-            { label: "Active users", value: "2,800+" },
-            { label: "Improvement", value: "2 weeks" },
-            { label: "Privacy guarantee", value: "100%" },
-            { label: "Setup time", value: "10 sec" },
+            { label: "Fewer payment defaults", value: "73%" },
+            { label: "Outstanding recovered", value: "€2M+" },
+            { label: "Better cash flow", value: "45%" },
+            { label: "Risk check before invoicing", value: "Upfront" },
           ],
-      tech: ["MediaPipe", "TensorFlow.js", "React", "Supabase"],
-      Preview: SlouchPreview,
+      tech: ["Laravel", "Risk scoring", "Mollie", "MySQL"],
+      Preview: FraudScene,
     },
     {
       name: "ContentOS",
@@ -116,7 +118,7 @@ const getCaseStudies = (language: string): CaseStudy[] => {
             { label: "Cost vs. team", value: "-75%" },
           ],
       tech: ["AI Agents", "Social APIs", "Analytics", "Automation"],
-      Preview: ContentOSPreview,
+      Preview: ContentOSScene,
     },
   ];
 };
@@ -170,25 +172,26 @@ function Logo({ study, size = "h-10 w-10" }: { study: CaseStudy; size?: string }
         // eslint-disable-next-line @next/next/no-img-element
         <img src={study.logo} alt="" className="h-full w-full scale-125 object-cover" />
       ) : (
-        <TrendingUp className="h-5 w-5 text-white" aria-hidden="true" />
+        React.createElement(study.Icon ?? TrendingUp, { className: "h-5 w-5 text-white", "aria-hidden": true })
       )}
     </div>
   );
 }
 
-function BrowserFrame({ study, children }: { study: CaseStudy; children: React.ReactNode }) {
+/** The scenes are composed at 540x420; on narrow screens they scale down as one piece. */
+function ScaledScene({ children }: { children: React.ReactNode }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [k, setK] = useState(1);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const ro = new ResizeObserver(([e]) => setK(Math.min(1, e.contentRect.width / 540)));
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, []);
   return (
-    <div className={`overflow-hidden rounded-2xl border ${HAIRLINE} bg-white shadow-[0_30px_70px_-35px_rgba(70,55,210,0.35),0_2px_6px_-2px_rgba(23,23,28,0.06)]`}>
-      <div className={`flex items-center gap-3 border-b ${HAIRLINE} bg-zinc-50/70 px-4 py-2.5`}>
-        <div className="flex gap-1.5" aria-hidden="true">
-          {[0, 1, 2].map((i) => <span key={i} className="h-2.5 w-2.5 rounded-full bg-zinc-200" />)}
-        </div>
-        <div className={`flex min-w-0 flex-1 items-center gap-2 rounded-md border ${HAIRLINE} bg-white px-3 py-1`}>
-          <span className="h-1.5 w-1.5 shrink-0 rounded-full" style={{ background: study.brand }} aria-hidden="true" />
-          <span className="truncate font-mono text-[11px] text-zinc-500">{study.url ? study.url.replace("https://", "") : study.name}</span>
-        </div>
-      </div>
-      {children}
+    <div ref={ref} className="relative w-full overflow-hidden" style={{ height: 420 * k }}>
+      <div className="absolute left-0 top-0 w-[540px] origin-top-left" style={{ transform: `scale(${k})` }}>{children}</div>
     </div>
   );
 }
@@ -204,9 +207,7 @@ function Story({ study, language, index, setRef }: { study: CaseStudy; language:
     >
       {/* mobile: the mock sits inline above its story */}
       <div className="mb-8 lg:hidden">
-        <BrowserFrame study={study}>
-          <div className="p-4 sm:p-5"><Preview language={language} /></div>
-        </BrowserFrame>
+        <ScaledScene><Preview language={language} /></ScaledScene>
       </div>
 
       <div className="flex items-center gap-3">
@@ -364,8 +365,7 @@ export default function CaseStudies() {
                     </button>
                   ))}
                 </nav>
-                <BrowserFrame study={current}>
-                  <div className="grid min-h-[400px] items-center p-6">
+                <div className="mt-2 grid min-h-[440px] items-center">
                     <AnimatePresence initial={false}>
                       <motion.div
                         key={current.name}
@@ -378,8 +378,7 @@ export default function CaseStudies() {
                         <ActivePreview language={language} />
                       </motion.div>
                     </AnimatePresence>
-                  </div>
-                </BrowserFrame>
+                </div>
               </div>
             </div>
 
