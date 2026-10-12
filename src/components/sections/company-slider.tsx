@@ -12,7 +12,6 @@ const CompanySlider = () => {
     { name: "E-Flux", logo: "/images/companies/e-flux.jpeg" },
     { name: "ZapBot", logo: "/images/clients/whatsapp.svg" },
     { name: "CSDM Amsterdam", logo: "/images/companies/csdm.png" },
-    { name: "Slouch", logo: "/images/clients/og-image.png" },
     { name: "Hilverda De Boer", logo: "/images/companies/hilverda.png" },
     { name: "Vesting Finance", logo: "/images/companies/vestingfinance.png" },
   ];

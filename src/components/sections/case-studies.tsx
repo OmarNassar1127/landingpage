@@ -68,13 +68,13 @@ const getCaseStudies = (language: string): CaseStudy[] => {
       logoBg: "bg-zinc-900",
       brand: "#4637d2",
       Icon: ShieldCheck,
-      tagline: isNL ? "Fraudepreventie voor facturatie · gebouwd door onze oprichter" : "Invoice fraud prevention · built by our founder",
+      tagline: isNL ? "Fraudepreventie voor facturatie · gebouwd door ervaren mensen" : "Invoice fraud prevention · built by experienced people",
       challenge: isNL
-        ? "Bij het mobiliteitsplatform waar onze oprichter Omar werkt, liepen de betalingsachterstanden op. Risicoklanten werden pas zichtbaar als de factuur al openstond."
-        : "At the mobility platform where our founder Omar works, payment defaults were rising. Risky customers only became visible once the invoice was already overdue.",
+        ? "Bij een snelgroeiend mobiliteitsplatform liepen de betalingsachterstanden op. Risicoklanten werden pas zichtbaar als de factuur al openstond."
+        : "At a fast-growing mobility platform, payment defaults were rising. Risky customers only became visible once the invoice was already overdue.",
       solution: isNL
-        ? "Omar bouwde een systeem dat betaalgedrag en transactiegeschiedenis analyseert en elke klant een dynamisch risicoprofiel geeft, nog vóór de facturatie. Klanten met een hoog risico krijgen kleinere, periodieke micro-facturen in plaats van één grote maandfactuur."
-        : "Omar built a system that analyses payment behaviour and transaction history and gives every customer a dynamic risk profile before they are invoiced. High-risk customers get smaller, periodic micro-invoices instead of one large monthly invoice.",
+        ? "Ervaren mensen uit ons team bouwden een systeem dat betaalgedrag en transactiegeschiedenis analyseert en elke klant een dynamisch risicoprofiel geeft, nog vóór de facturatie. Klanten met een hoog risico krijgen kleinere, periodieke micro-facturen in plaats van één grote maandfactuur."
+        : "Experienced people from our team built a system that analyses payment behaviour and transaction history and gives every customer a dynamic risk profile before they are invoiced. High-risk customers get smaller, periodic micro-invoices instead of one large monthly invoice.",
       results: isNL
         ? [
             { label: "Minder wanbetalingen", value: "73%" },
