@@ -6,9 +6,9 @@ import Footer from "@/components/sections/footer";
 import { ArrowRight, Bot, Zap, Users, BookOpen, TrendingUp, CheckCircle, Clock, MessageSquare } from "lucide-react";
 
 export const metadata = genMeta({
-  title: "AI agent laten bouwen: maatwerk, live in 2 weken",
+  title: "AI agent laten bouwen: maatwerk, live in 1 week",
   description:
-    "Laat een AI agent op maat bouwen door Virelio. Voor klantenservice, sales en operations. Live in 2 weken, vanaf €2.000 en AVG-conform. Gevestigd in Amsterdam.",
+    "Laat een AI agent op maat bouwen door Virelio. Voor klantenservice, sales en operations. Live in 1 week, vanaf €2.000 en AVG-conform. Gevestigd in Amsterdam.",
   keywords:
     "AI agent laten bouwen, maatwerk AI agent, AI agent ontwikkeling, AI agent bouwen Nederland, custom AI agent, AI automatisering, AI bureau Amsterdam, AI agent kosten, klantenservice AI, sales agent AI",
   pathname: "/diensten/ai-agent-bouwen",
@@ -24,7 +24,7 @@ const faqItems = [
   {
     question: "Hoe lang duurt het om een AI agent te bouwen?",
     answer:
-      "Binnen 1 week na de intake leveren wij een werkend prototype. De volledige productieversie staat live binnen 2 weken. Complexere multi-agent systemen kunnen 3 tot 4 weken duren.",
+      "Binnen enkele dagen na de intake staat er een werkend prototype. De volledige productieversie staat live binnen 1 week. Complexere multi-agent systemen kunnen 3 tot 4 weken duren.",
   },
   {
     question: "Wat is het verschil tussen een AI agent en een chatbot?",
@@ -114,7 +114,7 @@ const pricingTiers = [
       "1 AI agent",
       "1 integratie (bijv. Slack of e-mail)",
       "Standaard LLM (GPT-4o of Claude)",
-      "2 weken oplevering",
+      "1 week oplevering",
       "1 maand support",
     ],
   },
@@ -194,7 +194,7 @@ export default function AIAgentBouwenPage() {
             <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed mb-8 sm:mb-10">
               Virelio bouwt maatwerk AI agents die zelfstandig taken uitvoeren,
               beslissingen nemen en integreren met uw bestaande software.
-              Prototype in 1 week. Live in 2 weken. Vanaf €2.000.
+              Prototype binnen enkele dagen. Live in 1 week. Vanaf €2.000.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <a
@@ -222,7 +222,7 @@ export default function AIAgentBouwenPage() {
               </span>
               <span className="flex items-center gap-1.5">
                 <CheckCircle className="h-4 w-4 text-primary" />
-                Live in 2 weken
+                Live in 1 week
               </span>
               <span className="flex items-center gap-1.5">
                 <CheckCircle className="h-4 w-4 text-primary" />
@@ -352,7 +352,7 @@ export default function AIAgentBouwenPage() {
           <div className="container mx-auto px-6 sm:px-8 max-w-4xl">
             <div className="mb-8 sm:mb-12 text-center">
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-3 sm:mb-4">
-                Van intake naar live in 2 weken
+                Van intake naar live in 1 week
               </h2>
               <p className="text-sm sm:text-base text-muted-foreground max-w-xl mx-auto">
                 Ons proces is snel, transparant en gericht op resultaat. Geen

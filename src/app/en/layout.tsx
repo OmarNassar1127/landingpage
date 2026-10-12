@@ -4,7 +4,7 @@ import { siteConfig } from "@/lib/config";
 export const metadata: Metadata = {
   title: "Custom AI Agents for Businesses | Virelio",
   description:
-    "Virelio builds AI agents that collaborate, delegate and execute. From customer service to sales automation, live in 2 weeks. Based in Amsterdam.",
+    "Virelio builds AI agents that collaborate, delegate and execute. From customer service to sales automation, live in 1 week. Based in Amsterdam.",
   keywords:
     "custom AI agents, AI agent development, digital employees, AI automation agency, RAG development, LLM integration, on-premise AI, customer service automation, sales automation, AI chatbot, WhatsApp bot, knowledge base AI, business process automation, Virelio, Amsterdam, Netherlands, Europe",
   metadataBase: new URL(siteConfig.url),
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     siteName: "Virelio",
     title: "Custom AI Agents for Businesses | Virelio",
     description:
-      "AI agents that collaborate, delegate and execute. From customer service to sales automation, live in 2 weeks.",
+      "AI agents that collaborate, delegate and execute. From customer service to sales automation, live in 1 week.",
     images: [
       {
         url: `${siteConfig.url}/og-image.png`,
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Custom AI Agents | Virelio",
-    description: "AI agents that collaborate, delegate and execute. Live in 2 weeks.",
+    description: "AI agents that collaborate, delegate and execute. Live in 1 week.",
     site: "@Virelio",
     creator: "@Virelio",
   },

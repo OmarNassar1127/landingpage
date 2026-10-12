@@ -42,7 +42,7 @@ export const blogPosts: BlogPost[] = [
   <li>Een eenvoudige WhatsApp bot voor afsprakenbeheer</li>
 </ul>
 
-<p>De looptijd is doorgaans 1 tot 2 weken. Je krijgt een werkend product dat direct productierijp is, inclusief testperiode en documentatie.</p>
+<p>De looptijd is doorgaans 1 week. Je krijgt een werkend product dat direct productierijp is, inclusief testperiode en documentatie.</p>
 
 <h3>Medium complexiteit: €5.000 tot €15.000</h3>
 
@@ -557,7 +557,7 @@ export const blogPosts: BlogPost[] = [
 
 <p>Start klein. Kies één databron (je FAQ-documentatie, één SharePoint-bibliotheek, je producthandleidingen) en bouw daar een eerste RAG-agent omheen. Frameworks zoals <a href="https://www.langchain.com/" target="_blank" rel="noopener">LangChain</a> versnellen de ontwikkeling aanzienlijk. Meet de kwaliteit, verzamel feedback, en breid daarna uit naar meer bronnen.</p>
 
-<p>De technologie is volwassen genoeg voor productiegebruik. Het risico zit niet in de techniek, maar in scope creep en onrealistische verwachtingen. Met een goed afgebakende eerste use case heb je binnen 2 weken een werkend systeem. Bekijk ook hoe we <a href="/blog/klantenservice-automatiseren-ai">klantenservice automatiseren met AI</a>, lees onze <a href="/blog/ai-readiness-check-mkb">AI readiness check voor MKB</a>, of ontdek onze dienst <a href="/diensten/ai-agent-bouwen">AI agent bouwen</a>.</p>`,
+<p>De technologie is volwassen genoeg voor productiegebruik. Het risico zit niet in de techniek, maar in scope creep en onrealistische verwachtingen. Met een goed afgebakende eerste use case heb je binnen 1 week een werkend systeem. Bekijk ook hoe we <a href="/blog/klantenservice-automatiseren-ai">klantenservice automatiseren met AI</a>, lees onze <a href="/blog/ai-readiness-check-mkb">AI readiness check voor MKB</a>, of ontdek onze dienst <a href="/diensten/ai-agent-bouwen">AI agent bouwen</a>.</p>`,
   },
 
   {

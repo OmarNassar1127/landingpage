@@ -27,7 +27,7 @@ const faqData = {
     {
       question: "Hoe snel kunnen jullie leveren?",
       answer:
-        "De meeste AI-agents zijn live binnen 2 weken. We werken in korte sprints: gratis intake, prototype, feedback, lancering. Geen maandenlange trajecten.",
+        "De meeste AI-agents zijn live binnen 1 week. We werken in korte sprints: gratis intake, prototype, feedback, lancering. Geen maandenlange trajecten.",
     },
     {
       question: "Kunnen jullie AI on-premise draaien?",
@@ -83,7 +83,7 @@ const testimonialsData = {
 export const metadata: Metadata = generateMetadata({
   title: "Digitale Medewerkers & AI Agents voor bedrijven",
   description:
-    "Virelio bouwt AI-agents die samenwerken, delegeren en uitvoeren. Van klantenservice tot sales automatisering, live in 2 weken. Gevestigd in Amsterdam.",
+    "Virelio bouwt AI-agents die samenwerken, delegeren en uitvoeren. Van klantenservice tot sales automatisering, live in 1 week. Gevestigd in Amsterdam.",
   keywords:
     "AI agents op maat, custom AI agents, digitale medewerkers, AI automatisering bedrijven, klantenservice AI agent, klantenservice automatiseren, sales automatisering, AI agent bouwen, RAG development, RAG systeem, LLM integratie, AI chatbot bouwen, WhatsApp AI agent voor bedrijven, voice agent, AI telefoon agent, AI spraakassistent zakelijk, kennisbank AI, facturatie automatiseren, AI bureau Amsterdam, on-premise AI, AI oplossingen MKB, custom agents voor klanten, AI onboarding agent, compliance agent, lead kwalificatie agent, bedrijfsprocessen automatiseren, Virelio, Nederland",
   pathname: "/",

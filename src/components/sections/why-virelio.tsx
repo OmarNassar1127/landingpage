@@ -1,155 +1,173 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { useLanguage } from "@/lib/i18n/language-context";
 import {
-  Rocket,
-  Shield,
-  Globe2,
-  Users,
-  Lock,
-  Zap,
-} from "lucide-react";
+  BlendVisual,
+  CancelVisual,
+  EuShieldVisual,
+  LanguageVisual,
+  OwnershipVisual,
+  SprintVisual,
+} from "@/components/sections/why/visuals";
 
-const getReasons = (language: string) => {
-  const isNL = language === "nl";
+type Lang = "nl" | "en";
+
+type Reason = {
+  key: string;
+  title: string;
+  description: string;
+  highlight: string;
+  visual: React.ReactNode;
+  span?: string;
+};
+
+const getReasons = (lang: Lang): Reason[] => {
+  const isNL = lang === "nl";
   return [
     {
-      icon: Users,
-      title: isNL ? "Jong & ervaren" : "Young & experienced",
-      description: isNL
-        ? "Ons team combineert frisse kennis van de nieuwste AI-technologie met jarenlange ervaring bij grote organisaties. Je krijgt het beste van twee werelden: up-to-date tools én bewezen werkwijzen."
-        : "Our team combines fresh knowledge of the latest AI tech with years of experience at major organizations. You get the best of both worlds: cutting-edge tools and proven practices.",
-      highlight: isNL ? "Nieuwste tech + bewezen aanpak" : "Latest tech + proven approach",
-    },
-    {
-      icon: Shield,
+      key: "data",
       title: isNL ? "Jouw data, jouw eigendom" : "Your data, your ownership",
       description: isNL
-        ? "Alles wat we bouwen is 100% van jou. Geen vendor lock-in, geen verborgen licenties. Je krijgt de broncode, de documentatie en volledige controle over je systemen."
-        : "Everything we build is 100% yours. No vendor lock-in, no hidden licenses. You get the source code, the documentation and full control over your systems.",
+        ? "Alles wat we bouwen is 100% van jou. Je krijgt de broncode, de documentatie en volledige controle over je systemen. Geen verborgen licenties."
+        : "Everything we build is 100% yours. You get the source code, the documentation and full control over your systems. No hidden licenses.",
       highlight: isNL ? "Volledige broncode + documentatie" : "Full source code + documentation",
+      visual: <OwnershipVisual lang={lang} />,
+      span: "sm:col-span-2 lg:row-span-2",
     },
     {
-      icon: Lock,
-      title: isNL ? "Privacy-first" : "Privacy-first",
+      key: "fast",
+      title: isNL ? "Live in 1 week" : "Live in 1 week",
       description: isNL
-        ? "We bouwen met privacy als uitgangspunt, niet als bijzaak. AVG-compliant, data verwerking binnen de EU en transparant over welke AI-modellen we inzetten."
-        : "We build with privacy as a starting point, not an afterthought. GDPR-compliant, data processing within the EU and transparent about which AI models we use.",
-      highlight: isNL ? "AVG-compliant · EU data" : "GDPR-compliant · EU data",
-    },
-    {
-      icon: Rocket,
-      title: isNL ? "Live in 2 weken" : "Live in 2 weeks",
-      description: isNL
-        ? "Geen maandenlange trajecten. We werken in korte sprints: intake, prototype, feedback, live. Je ziet binnen dagen de eerste resultaten en bent binnen 2 weken operationeel."
-        : "No month-long timelines. We work in short sprints: intake, prototype, feedback, live. You see first results within days and are operational within 2 weeks.",
+        ? "Geen trajecten van maanden. Intake, prototype, feedback, live. Je ziet binnen dagen resultaat en draait binnen 1 week."
+        : "No month-long timelines. Intake, prototype, feedback, live. You see results within days and are running within 1 week.",
       highlight: isNL ? "Sprint-based · snel resultaat" : "Sprint-based · fast results",
+      visual: <SprintVisual lang={lang} />,
     },
     {
-      icon: Globe2,
+      key: "privacy",
+      title: "Privacy-first",
+      description: isNL
+        ? "Privacy is ons uitgangspunt, geen bijzaak. AVG-compliant, dataverwerking binnen de EU en open over welke AI-modellen we inzetten."
+        : "Privacy is our starting point, not an afterthought. GDPR-compliant, data processing within the EU and open about which AI models we use.",
+      highlight: isNL ? "AVG-compliant · EU data" : "GDPR-compliant · EU data",
+      visual: <EuShieldVisual />,
+    },
+    {
+      key: "team",
+      title: isNL ? "Jong & ervaren" : "Young & experienced",
+      description: isNL
+        ? "Frisse kennis van de nieuwste AI-tools, samen met jaren ervaring bij grote organisaties. Je krijgt allebei."
+        : "Fresh knowledge of the latest AI tools, together with years of experience at large organisations. You get both.",
+      highlight: isNL ? "Nieuwste tech + bewezen aanpak" : "Latest tech + proven approach",
+      visual: <BlendVisual lang={lang} />,
+    },
+    {
+      key: "languages",
       title: isNL ? "Meertalig team" : "Multilingual team",
       description: isNL
-        ? "Nederlands is onze thuisbasis, maar we werken net zo makkelijk in het Engels, Arabisch, Spaans of Frans. Internationaal schalen? Geen probleem."
-        : "Dutch is our home base, but we work just as easily in English, Arabic, Spanish or French. Scaling internationally? No problem.",
-      highlight: isNL ? "NL · EN · AR · ES · FR" : "NL · EN · AR · ES · FR",
+        ? "Nederlands is onze basis, maar we werken net zo makkelijk in het Engels, Arabisch, Spaans of Frans. Handig als je internationaal groeit."
+        : "Dutch is our base, but we work just as easily in English, Arabic, Spanish or French. Useful when you grow internationally.",
+      highlight: "NL · EN · AR · ES · FR",
+      visual: <LanguageVisual />,
     },
     {
-      icon: Zap,
+      key: "lockin",
       title: isNL ? "Geen lock-in" : "No lock-in",
       description: isNL
-        ? "Niet tevreden? Je kunt op elk moment stoppen. We geloven dat je bij ons blijft omdat het werkt, niet omdat je vastzit aan een contract."
-        : "Not satisfied? You can stop at any time. We believe you stay with us because it works, not because you're stuck in a contract.",
+        ? "Niet tevreden? Je stopt wanneer je wilt. Je blijft omdat het werkt, niet omdat een contract je vasthoudt."
+        : "Not satisfied? You stop whenever you want. You stay because it works, not because a contract holds you.",
       highlight: isNL ? "Maandelijks opzegbaar" : "Cancel anytime",
+      visual: <CancelVisual lang={lang} />,
+      span: "sm:col-span-2 lg:col-span-1",
     },
   ];
 };
 
+const CARD =
+  "group relative flex h-full flex-col rounded-2xl border border-black/[0.07] bg-white p-5 sm:p-6 shadow-[0_1px_2px_rgba(23,23,28,0.04),0_16px_40px_-28px_rgba(70,55,210,0.28)] transition-shadow duration-300 hover:shadow-[0_1px_2px_rgba(23,23,28,0.04),0_22px_48px_-26px_rgba(70,55,210,0.4)] dark:border-white/10 dark:bg-background";
+
+const STAGE =
+  "rounded-xl border border-black/[0.05] bg-[#fafafb] dark:border-white/10 dark:bg-white/[0.03]";
+
+function Tag({ children }: { children: React.ReactNode }) {
+  return (
+    <span className="inline-flex items-center self-start rounded-full border border-primary/10 bg-primary/[0.05] px-3 py-1 text-xs font-medium text-primary">
+      {children}
+    </span>
+  );
+}
+
 export default function WhyVirelio() {
   const { language } = useLanguage();
-  const isNL = language === "nl";
-  const reasons = getReasons(language);
+  const lang: Lang = language === "nl" ? "nl" : "en";
+  const isNL = lang === "nl";
+  const reasons = getReasons(lang);
+  const reduce = useReducedMotion();
+
+  const rise = (delay = 0) =>
+    reduce
+      ? {}
+      : {
+          initial: { opacity: 0, y: 16 },
+          whileInView: { opacity: 1, y: 0 },
+          viewport: { once: true, amount: 0.3 },
+          transition: { duration: 0.5, delay, ease: [0.22, 1, 0.36, 1] },
+        };
+
+  const [lead, ...rest] = reasons;
 
   return (
-    <section className="py-20 sm:py-28 md:py-32 bg-muted/20 dark:bg-muted/5">
-      <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
+    <section aria-labelledby="why-virelio-title" className="bg-background py-20 sm:py-28 md:py-32">
+      <div className="container mx-auto max-w-6xl px-4 sm:px-6">
         {/* Header */}
-        <div className="text-center mb-16 sm:mb-20">
-          <motion.p
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-sm font-medium text-primary uppercase tracking-widest mb-4"
-          >
+        <div className="mx-auto mb-12 max-w-2xl text-center sm:mb-16">
+          <motion.p {...rise()} className="mb-5 inline-flex items-center rounded-full border border-primary/10 bg-primary/[0.05] px-3.5 py-1.5 text-xs font-medium text-primary sm:text-sm">
             {isNL ? "Waarom Virelio" : "Why Virelio"}
           </motion.p>
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.05 }}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6"
-          >
+          <motion.h2 {...rise(0.05)} id="why-virelio-title" className="mb-5 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
             {isNL ? (
-              <>
-                Gebouwd op{" "}
-                <span className="text-primary">vertrouwen</span>
-              </>
+              <>Gebouwd op <span className="text-primary">vertrouwen</span></>
             ) : (
-              <>
-                Built on{" "}
-                <span className="text-primary">trust</span>
-              </>
+              <>Built on <span className="text-primary">trust</span></>
             )}
           </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-muted-foreground text-lg sm:text-xl max-w-2xl mx-auto"
-          >
+          <motion.p {...rise(0.1)} className="text-lg text-muted-foreground sm:text-xl">
             {isNL
               ? "Geen verrassingen, geen kleine lettertjes. Dit is hoe wij werken."
               : "No surprises, no fine print. This is how we work."}
           </motion.p>
         </div>
 
-        {/* Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {reasons.map((reason, i) => {
-            const ReasonIcon = reason.icon;
-            return (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.06 }}
-                className="group p-6 sm:p-8 rounded-2xl border border-border/50 bg-background hover:border-primary/20 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 h-full flex flex-col"
-              >
-                <div className="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
-                  <ReasonIcon className="w-5 h-5 text-primary" />
+        {/* Bento */}
+        <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3">
+          <motion.li {...rise()} className={lead.span}>
+            <article className={`${CARD} sm:p-8`}>
+              <div className="max-w-md">
+                <h3 className="mb-2 text-xl font-bold text-foreground sm:text-2xl">{lead.title}</h3>
+                <p className="mb-5 text-sm leading-relaxed text-muted-foreground sm:text-base">{lead.description}</p>
+                <Tag>{lead.highlight}</Tag>
+              </div>
+              <div className={`${STAGE} mt-6 flex-1 p-4 sm:p-6`}>
+                {lead.visual}
+              </div>
+            </article>
+          </motion.li>
+
+          {rest.map((r, i) => (
+            <motion.li key={r.key} {...rise(0.05 + i * 0.05)} className={r.span}>
+              <article className={CARD}>
+                <div className={`${STAGE} mb-5 flex h-28 items-center justify-center overflow-hidden px-4`}>
+                  {r.visual}
                 </div>
-
-                <h3 className="text-lg font-bold text-foreground mb-2">
-                  {reason.title}
-                </h3>
-
-                <p className="text-sm text-muted-foreground leading-relaxed flex-1">
-                  {reason.description}
-                </p>
-
-                <div className="inline-flex items-center px-3 py-1 rounded-full bg-primary/5 border border-primary/10 mt-5 self-start">
-                  <span className="text-xs font-medium text-primary">
-                    {reason.highlight}
-                  </span>
-                </div>
-              </motion.div>
-            );
-          })}
-        </div>
+                <h3 className="mb-1.5 text-lg font-bold text-foreground">{r.title}</h3>
+                <p className="mb-5 flex-1 text-sm leading-relaxed text-muted-foreground">{r.description}</p>
+                <Tag>{r.highlight}</Tag>
+              </article>
+            </motion.li>
+          ))}
+        </ul>
       </div>
     </section>
   );

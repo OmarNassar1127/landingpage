@@ -275,7 +275,7 @@ export const translations = {
     // Footer
     footer: {
       description:
-        "AI-agents die samenwerken, delegeren en uitvoeren. Van klantenservice tot sales automatisering, live in 2 weken. Op maat gebouwd voor jouw bedrijf.",
+        "AI-agents die samenwerken, delegeren en uitvoeren. Van klantenservice tot sales automatisering, live in 1 week. Op maat gebouwd voor jouw bedrijf.",
       quickLinks: "Snelle links",
       legal: "Juridisch",
       privacyPolicy: "Privacybeleid",
@@ -289,7 +289,7 @@ export const translations = {
     hero: {
       title: "Virelio bouwt AI.",
       subtitle:
-        "AI-chatbots, kennisbanken, automatiseringen. Maatwerk webshops en tools. Van idee naar werkend systeem in 2 weken.",
+        "AI-chatbots, kennisbanken, automatiseringen. Maatwerk webshops en tools. Van idee naar werkend systeem in 1 week.",
       ctaButton: "Bekijk Onze Projecten",
       secondaryButton: "Laten We Kennismaken",
     },
@@ -1103,7 +1103,7 @@ export const translations = {
     // Footer
     footer: {
       description:
-        "AI agents that collaborate, delegate and execute. From customer service to sales automation, live in 2 weeks. Custom-built for your business.",
+        "AI agents that collaborate, delegate and execute. From customer service to sales automation, live in 1 week. Custom-built for your business.",
       quickLinks: "Quick Links",
       legal: "Legal",
       privacyPolicy: "Privacy Policy",
@@ -1117,7 +1117,7 @@ export const translations = {
     hero: {
       title: "Virelio builds AI.",
       subtitle:
-        "AI chatbots, knowledge bases, automations. Custom e-commerce and internal tools. From idea to working system in 2 weeks.",
+        "AI chatbots, knowledge bases, automations. Custom e-commerce and internal tools. From idea to working system in 1 week.",
       ctaButton: "View Our Work",
       secondaryButton: "Let's Talk",
     },
