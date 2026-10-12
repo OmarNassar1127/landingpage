@@ -66,7 +66,7 @@ export const blogPosts: BlogPost[] = [
   <li>Custom AI-modellen die getraind zijn op bedrijfsspecifieke data</li>
 </ul>
 
-<p>Bij enterprise trajecten starten we altijd met een betaalde discovery fase van €1.500 tot €3.000 om de architectuur goed te doordenken voor we code schrijven.</p>
+<p>Bij enterprise trajecten starten we altijd met een betaalde discovery fase van €750 tot €1.500 om de architectuur goed te doordenken voor we code schrijven.</p>
 
 <h2>Maandelijkse kosten: wat betaal je structureel?</h2>
 
@@ -151,7 +151,7 @@ export const blogPosts: BlogPost[] = [
 
 <h2>Veelgestelde vragen over kosten</h2>
 
-<p><strong>Kan ik beginnen met een klein budget?</strong> Ja. We raden aan om te starten met één agent op één specifiek pijnpunt. Zodra de ROI bewezen is, schaal je uit. Een eerste werkende agent is haalbaar vanaf €2.000. Meer weten over welke oplossing past? Lees ons artikel over het <a href="/blog/ai-agent-vs-chatbot">verschil tussen een AI agent en chatbot</a>.</p>
+<p><strong>Kan ik beginnen met een klein budget?</strong> Ja. We raden aan om te starten met één agent op één specifiek pijnpunt. Zodra de ROI bewezen is, schaal je uit. Een eerste werkende agent is haalbaar vanaf €1.000. Meer weten over welke oplossing past? Lees ons artikel over het <a href="/blog/ai-agent-vs-chatbot">verschil tussen een AI agent en chatbot</a>.</p>
 
 <p><strong>Zijn er verborgen kosten?</strong> Nee. We werken altijd met een vaste offerte. Scopewijzigingen facturen we als meerwerk en communiceren we van tevoren.</p>
 

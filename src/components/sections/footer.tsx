@@ -92,9 +92,9 @@ export default function Footer() {
             </h4>
             <ul className="space-y-3">
               {[
-                { name: language === "nl" ? "AI Agent Bouwen" : "Build AI Agent", href: "/diensten/ai-agent-bouwen" },
-                { name: language === "nl" ? "Digitale Medewerker" : "Digital Employee", href: "/diensten/digitale-medewerker" },
-                { name: language === "nl" ? "AI voor MKB" : "AI for SMBs", href: "/diensten/ai-automatisering-mkb" },
+                { name: language === "nl" ? "AI agent bouwen" : "Build AI agent", href: "/diensten/ai-agent-bouwen" },
+                { name: language === "nl" ? "Digitale medewerker" : "Digital employee", href: "/diensten/digitale-medewerker" },
+                { name: language === "nl" ? "AI voor het MKB" : "AI for SMBs", href: "/diensten/ai-automatisering-mkb" },
               ].map((link) => (
                 <li key={link.name}>
                   <a

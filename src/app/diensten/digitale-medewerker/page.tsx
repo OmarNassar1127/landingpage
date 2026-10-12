@@ -3,18 +3,8 @@ import { faqSchema, breadcrumbSchema } from "@/lib/schema";
 import { siteConfig } from "@/lib/config";
 import Navbar from "@/components/sections/navbar";
 import Footer from "@/components/sections/footer";
-import {
-  ArrowRight,
-  Users,
-  Layers,
-  BarChart3,
-  CheckCircle,
-  Building2,
-  HeartPulse,
-  Calculator,
-  Headphones,
-  TrendingUp,
-} from "lucide-react";
+import { ArrowRight, Check, HeartPulse, Calculator, Building2, Headphones, Plug, Brain, UserRound, Network } from "lucide-react";
+import NightDesk from "./night-desk";
 
 export const metadata = genMeta({
   title: "Digitale medewerker: AI die zelf werk overneemt",
@@ -26,11 +16,32 @@ export const metadata = genMeta({
   locale: "nl_NL",
 });
 
+const CALENDLY = "https://calendly.com/omarnassar1127/30min";
+const eur = (n: number) => `€${n.toLocaleString("nl-NL")}`;
+
+// Pricing: Virelio setup and usage, plus the maintenance plans.
+const SETUP = { from: 2500, to: 7500, typical: 4000 };
+const USAGE = { from: 150, to: 500, typical: 350 };
+const MAINTENANCE = [
+  { name: "Onderhoud Basis", price: 99, body: "Hosting, monitoring, updates en support." },
+  { name: "Onderhoud Plus", price: 249, body: "Alles van Basis plus maandelijkse verbeteringen en nieuwe functies." },
+];
+
+// Comparison, year one: typical setup + 12 months of usage + Onderhoud Plus,
+// against an average FTE including overhead (market figure, not a Virelio price).
+const HUMAN_YEAR = 50000;
+const DIGITAL_MONTH = USAGE.typical + MAINTENANCE[1].price; // 350 + 249 = 599
+const DIGITAL_RUN_YEAR = DIGITAL_MONTH * 12; // 7.188
+const DIGITAL_YEAR_ONE = SETUP.typical + DIGITAL_RUN_YEAR; // 11.188
+const SAVED_YEAR_ONE = HUMAN_YEAR - DIGITAL_YEAR_ONE; // 38.812
+const SAVED_LATER = HUMAN_YEAR - DIGITAL_RUN_YEAR; // 42.812
+const PAYBACK_WEEKS = Math.ceil((SETUP.typical / (HUMAN_YEAR / 12 - DIGITAL_MONTH)) * (52 / 12)); // 4.000 / 3.568 = 1,12 mnd, 5 weken
+
 const faqItems = [
   {
     question: "Wat is een digitale medewerker precies?",
     answer:
-      "Een digitale medewerker is een AI-systeem dat zelfstandig een rol vervult binnen uw organisatie. Net als een menselijke medewerker, maar dan 24/7, foutloos en zonder ziekteverlof. Het systeem bestaat uit meerdere samenwerkende AI agents die samen een takenpakket beheren: van het beantwoorden van klantvragen tot het verwerken van facturen.",
+      "Een digitale medewerker is een AI-systeem dat zelfstandig een rol vervult binnen uw organisatie. Net als een menselijke medewerker, maar dan 24/7 en zonder ziekteverlof. Het systeem bestaat uit meerdere samenwerkende AI agents die samen een takenpakket beheren: van het beantwoorden van klantvragen tot het verwerken van facturen.",
   },
   {
     question: "Hoe verschilt een digitale medewerker van gewone automatisering?",
@@ -44,8 +55,7 @@ const faqItems = [
   },
   {
     question: "Wat zijn de kosten van een digitale medewerker?",
-    answer:
-      "De eenmalige implementatiekosten liggen tussen €5.000 en €15.000, afhankelijk van de complexiteit. De maandelijkse kosten voor API-gebruik en hosting zijn €300 tot €1.000. Ter vergelijking: een menselijke FTE kost gemiddeld €40.000 tot €60.000 per jaar inclusief overhead.",
+    answer: `De eenmalige opzet kost ${eur(SETUP.from)} tot ${eur(SETUP.to)}, afhankelijk van het aantal taken en koppelingen. Daarnaast betaalt u ${eur(USAGE.from)} tot ${eur(USAGE.to)} per maand aan verbruik van de AI-modellen en kiest u een onderhoudsabonnement: Onderhoud Basis ${eur(99)}/mnd (hosting, monitoring, updates en support) of Onderhoud Plus ${eur(249)}/mnd (alles van Basis plus maandelijkse verbeteringen en nieuwe functies). Ter vergelijking: een menselijke FTE kost gemiddeld €40.000 tot €60.000 per jaar inclusief overhead.`,
   },
   {
     question: "Kan een digitale medewerker complexe vragen of uitzonderingen aan?",
@@ -55,115 +65,60 @@ const faqItems = [
 ];
 
 const departments = [
-  {
-    icon: HeartPulse,
-    name: "HR",
-    tasks: [
-      "Onboarding nieuwe medewerkers (accounts, documenten, intro's)",
-      "Beantwoorden van HR-vragen (verlof, beleid, salarisstroken)",
-      "Contractscreening en administratie",
-      "Exit-interviews automatisch verwerken",
-    ],
-    saving: "€30.000/jaar bespaard",
-    savingMonthly: "€2.500/maand",
-  },
-  {
-    icon: Calculator,
-    name: "Finance",
-    tasks: [
-      "Facturen automatisch aanmaken en versturen",
-      "Betalingsherinneringen op de juiste momenten",
-      "Inkomende betalingen matchen met openstaande facturen",
-      "Maandelijkse financiële rapportages genereren",
-    ],
-    saving: "€24.000/jaar bespaard",
-    savingMonthly: "€2.000/maand",
-  },
-  {
-    icon: Building2,
-    name: "Operations",
-    tasks: [
-      "Orders verwerken vanuit Shopify, e-mail of formulieren",
-      "Voorraad controleren en leveranciers informeren",
-      "Logistieke planning en track & trace updates",
-      "Rapportages over operationele KPI's",
-    ],
-    saving: "€36.000/jaar bespaard",
-    savingMonthly: "€3.000/maand",
-  },
-  {
-    icon: Headphones,
-    name: "Klantenservice",
-    tasks: [
-      "80% van inkomende tickets automatisch afhandelen",
-      "24/7 reageren op WhatsApp, e-mail en chat",
-      "Complexe vragen escaleren naar de juiste medewerker",
-      "Klanttevredenheidsscores bijhouden",
-    ],
-    saving: "€80.000/jaar bespaard",
-    savingMonthly: "€6.700/maand",
-  },
+  { icon: Headphones, name: "Klantenservice", tasks: ["80% van de tickets automatisch afgehandeld", "24/7 antwoord via WhatsApp, e-mail en chat", "Complexe vragen naar de juiste collega"] },
+  { icon: Calculator, name: "Finance", tasks: ["Facturen aanmaken en versturen", "Betalingsherinneringen op het juiste moment", "Betalingen matchen met openstaande facturen"] },
+  { icon: Building2, name: "Operations", tasks: ["Orders uit Shopify, e-mail of formulieren", "Voorraad bewaken en leveranciers informeren", "Track & trace updates en KPI-rapportages"] },
+  { icon: HeartPulse, name: "HR", tasks: ["Onboarding: accounts, documenten, intro's", "Vragen over verlof, beleid en salarisstroken", "Contractscreening en administratie"] },
 ];
 
-const roiItems = [
-  {
-    label: "Gemiddelde FTE-kosten",
-    human: "€50.000/jaar",
-    digital: "€8.400/jaar",
-    highlight: false,
-  },
-  {
-    label: "Beschikbaarheid",
-    human: "40 uur/week",
-    digital: "168 uur/week (24/7)",
-    highlight: true,
-  },
-  {
-    label: "Foutpercentage",
-    human: "5-15%",
-    digital: "<1%",
-    highlight: false,
-  },
-  {
-    label: "Opstarttijd",
-    human: "3-6 maanden",
-    digital: "1 week",
-    highlight: true,
-  },
-  {
-    label: "Schaalbaar",
-    human: "Nee (nieuwe FTE nodig)",
-    digital: "Direct, geen extra kosten",
-    highlight: false,
-  },
+const traits = [
+  { icon: Network, title: "Een team van agents", body: "Een orchestrator verdeelt het werk over agents die lezen, beslissen en uitvoeren." },
+  { icon: Plug, title: "Gekoppeld aan uw systemen", body: "CRM, ERP, e-mail, agenda en helpdesk. Hij leest, schrijft en start acties." },
+  { icon: Brain, title: "Onthoudt en leert", body: "Bouwt kennis op over uw klanten, producten en processen." },
+  { icon: UserRound, title: "Schakelt een mens in", body: "Bij twijfel, klachten of risico gaat het via Slack, e-mail of telefoon naar de juiste persoon." },
 ];
 
-const howItWorks = [
-  {
-    step: "01",
-    title: "Multi-agent architectuur",
-    description:
-      "Een digitale medewerker bestaat niet uit één agent, maar uit een team van gespecialiseerde sub-agents. Een orchestrator verdeelt het werk: een leesagent verwerkt inkomende informatie, een beslisagent bepaalt de actie, een uitvoeringsagent voert de taak uit.",
-  },
-  {
-    step: "02",
-    title: "Integraties met uw systemen",
-    description:
-      "De digitale medewerker heeft toegang tot uw tools: CRM, ERP, e-mail, agenda, klantenservice platform. Hij leest, schrijft en start acties, precies zoals een menselijke medewerker dat doet.",
-  },
-  {
-    step: "03",
-    title: "Geheugen en leren",
-    description:
-      "De agent onthoudt eerdere interacties en bouwt kennis op over uw klanten, producten en processen. Hoe langer hij actief is, hoe beter de antwoorden worden.",
-  },
-  {
-    step: "04",
-    title: "Escalatie naar mensen",
-    description:
-      "U bepaalt wanneer de agent een mens inschakelt. Bij twijfel, klachten of hoog-risico beslissingen wordt automatisch doorgezet naar de juiste persoon via Slack, e-mail of telefoon.",
-  },
+const compare = [
+  { label: "Beschikbaar", human: "40 uur per week", digital: "168 uur per week" },
+  { label: "Inzetbaar na", human: "3 tot 6 maanden werving en inwerken", digital: "1 week" },
+  { label: "Meer volume", human: "Nieuwe vacature", digital: "Schaalt mee, zonder vacature" },
 ];
+
+const CARD = "rounded-2xl border border-black/[0.07] bg-white shadow-[0_1px_2px_rgba(23,23,28,0.04)]";
+const SECTION = "border-t border-black/[0.07] py-16 sm:py-20 md:py-24";
+const EYEBROW = "mb-3 flex items-center gap-2 text-sm font-medium text-primary";
+const H2 = "text-3xl font-bold tracking-tight text-zinc-900 sm:text-4xl";
+
+function Eyebrow({ children }: { children: React.ReactNode }) {
+  return (
+    <p className={EYEBROW}>
+      <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+      {children}
+    </p>
+  );
+}
+
+function Ctas({ secondary }: { secondary: string }) {
+  return (
+    <div className="flex flex-col gap-3 sm:flex-row">
+      <a
+        href={CALENDLY}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-center justify-center gap-2 rounded-xl bg-zinc-900 px-7 py-3.5 text-sm font-medium text-white transition-all hover:bg-zinc-800 active:scale-[0.98]"
+      >
+        Plan gratis intake
+        <ArrowRight className="h-4 w-4" />
+      </a>
+      <a
+        href="mailto:info@virelio.nl"
+        className="inline-flex items-center justify-center gap-2 rounded-xl border border-black/[0.1] bg-white px-7 py-3.5 text-sm font-medium text-zinc-900 transition-colors hover:border-primary/40 hover:text-primary active:scale-[0.98]"
+      >
+        {secondary}
+      </a>
+    </div>
+  );
+}
 
 export default function DigitaleMedewerkerPage() {
   const faqSchemaData = faqSchema({ items: faqItems });
@@ -182,292 +137,211 @@ export default function DigitaleMedewerkerPage() {
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchemaData) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbData) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchemaData) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbData) }} />
 
-      <main className="min-h-screen bg-background">
-        <Navbar customNavLinks={[
-          { name: "Hoe het werkt", href: "#hoe-het-werkt" },
-          { name: "Afdelingen", href: "#afdelingen" },
-          { name: "ROI", href: "#roi" },
-          { name: "FAQ", href: "#faq" },
-        ]} />
+      <main className="min-h-screen bg-white">
+        <Navbar
+          customNavLinks={[
+            { name: "Wat hij doet", href: "#wat-hij-doet" },
+            { name: "Vergelijking", href: "#roi" },
+            { name: "Prijzen", href: "#prijzen" },
+            { name: "FAQ", href: "#faq" },
+          ]}
+        />
 
         {/* Hero */}
-        <section className="pt-24 sm:pt-32 md:pt-40 pb-12 sm:pb-16 md:pb-20">
-          <div className="container mx-auto px-6 sm:px-8 max-w-4xl text-center">
-            <div className="inline-flex items-center gap-2 rounded-full bg-muted/60 border border-border/60 px-4 py-1.5 text-xs sm:text-sm text-muted-foreground mb-6">
-              <Users className="h-3.5 w-3.5 text-primary" />
-              Multi-agent AI die werkt als een volwaardige medewerker
-            </div>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight text-foreground mb-5 sm:mb-6">
-              Digitale Medewerker
-              <span className="block text-primary mt-1">
-                AI die Zelfstandig Werk Overneemt
-              </span>
-            </h1>
-            <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed mb-8 sm:mb-10">
-              Een digitale medewerker werkt 24/7, maakt geen fouten en kost een
-              fractie van een menselijke FTE. Virelio implementeert multi-agent
-              systemen die een volledige rol vervullen binnen uw organisatie.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <a
-                href="https://calendly.com/omarnassar1127/30min"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-xl bg-foreground px-7 py-3.5 text-sm font-medium text-background transition-all hover:bg-foreground/90 active:scale-[0.98]"
-              >
-                Plan gratis intake
-                <ArrowRight className="h-4 w-4" />
-              </a>
-              <a
-                href="mailto:info@virelio.nl"
-                className="inline-flex items-center justify-center gap-2 rounded-xl border border-border/60 bg-background px-7 py-3.5 text-sm font-medium text-foreground transition-all hover:bg-muted/40 active:scale-[0.98]"
-              >
-                Stel een vraag
-              </a>
-            </div>
-
-            {/* Stats */}
-            <div className="mt-10 sm:mt-12 grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 max-w-3xl mx-auto">
-              {[
-                { value: "24/7", label: "Beschikbaar" },
-                { value: "€50k+", label: "Jaarlijkse besparing" },
-                { value: "<1%", label: "Foutpercentage" },
-                { value: "2 wkn", label: "Live" },
-              ].map((stat) => (
-                <div
-                  key={stat.label}
-                  className="rounded-2xl bg-muted/40 border border-border/60 p-4 text-center"
-                >
-                  <p className="text-xl sm:text-2xl font-bold text-foreground">
-                    {stat.value}
-                  </p>
-                  <p className="text-xs text-muted-foreground mt-0.5">
-                    {stat.label}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* How it works */}
-        <section id="hoe-het-werkt" className="py-12 sm:py-16 md:py-20 border-t border-border/50 bg-muted/20">
-          <div className="container mx-auto px-6 sm:px-8 max-w-4xl">
-            <div className="mb-8 sm:mb-12 text-center">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-3 sm:mb-4">
-                Hoe werkt een digitale medewerker?
-              </h2>
-              <p className="text-sm sm:text-base text-muted-foreground max-w-xl mx-auto">
-                Achter de schermen is een digitale medewerker een
-                georkestreerd netwerk van AI agents met toegang tot uw systemen.
+        <section className="overflow-hidden pb-12 pt-28 sm:pb-16 sm:pt-32 md:pt-40">
+          <div className="container mx-auto grid max-w-6xl items-center gap-10 px-6 sm:px-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,520px)] lg:gap-6">
+            <div>
+              <Eyebrow>Multi-agent AI die een hele rol vervult</Eyebrow>
+              <h1 className="mb-5 text-4xl font-bold leading-[1.08] tracking-tight text-zinc-900 sm:text-5xl lg:text-[56px]">
+                Digitale medewerker
+                <span className="mt-1 block text-primary">AI die zelfstandig werk overneemt</span>
+              </h1>
+              <p className="mb-8 max-w-xl text-base leading-relaxed text-zinc-500 sm:text-lg">
+                Hij werkt dag en nacht door, kent uw systemen en schakelt een collega in als het nodig is.
+                Voor een fractie van de kosten van een FTE, live in 1 week.
               </p>
-            </div>
-            <div className="grid sm:grid-cols-2 gap-4 sm:gap-5">
-              {howItWorks.map((item) => (
-                <div
-                  key={item.step}
-                  className="rounded-2xl bg-muted/40 border border-border/60 shadow-sm p-5 sm:p-6"
-                >
-                  <div className="flex items-center gap-3 mb-3">
-                    <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-foreground text-background text-xs font-bold shrink-0">
-                      {item.step}
-                    </span>
-                    <h3 className="font-bold text-foreground text-sm sm:text-base">
-                      {item.title}
-                    </h3>
+              <Ctas secondary="Stel een vraag" />
+              <dl className="mt-8 flex flex-wrap gap-x-8 gap-y-3 text-sm">
+                {[
+                  ["24/7", "beschikbaar"],
+                  ["1 week", "tot live"],
+                  [`vanaf ${eur(SETUP.from)}`, "eenmalig"],
+                ].map(([v, l]) => (
+                  <div key={l} className="flex items-baseline gap-1.5">
+                    <dt className="font-semibold tabular-nums text-zinc-900">{v}</dt>
+                    <dd className="text-zinc-500">{l}</dd>
                   </div>
-                  <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-                    {item.description}
-                  </p>
-                </div>
-              ))}
+                ))}
+              </dl>
             </div>
+            <NightDesk />
           </div>
         </section>
 
-        {/* Departments */}
-        <section id="afdelingen" className="py-12 sm:py-16 md:py-20 border-t border-border/50">
-          <div className="container mx-auto px-6 sm:px-8 max-w-5xl">
-            <div className="mb-8 sm:mb-12 text-center">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-3 sm:mb-4">
-                Inzetbaar in elke afdeling
-              </h2>
-              <p className="text-sm sm:text-base text-muted-foreground max-w-xl mx-auto">
-                Elke afdeling met repetitieve kennistaken is een kandidaat.
-                Hieronder de vier meest gevraagde implementaties.
-              </p>
+        {/* What it does */}
+        <section id="wat-hij-doet" className={`${SECTION} bg-zinc-50/60`}>
+          <div className="container mx-auto max-w-6xl px-6 sm:px-8">
+            <div className="mb-10 max-w-2xl">
+              <Eyebrow>Wat hij doet</Eyebrow>
+              <h2 className={H2}>Inzetbaar in elke afdeling met repetitief kenniswerk</h2>
             </div>
-            <div className="grid sm:grid-cols-2 gap-5 sm:gap-6">
-              {departments.map((dept) => (
-                <div
-                  key={dept.name}
-                  className="rounded-2xl bg-muted/40 border border-border/60 shadow-sm p-5 sm:p-6"
-                >
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="flex items-center gap-3">
-                      <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10 text-primary shrink-0">
-                        <dept.icon className="h-5 w-5" />
-                      </div>
-                      <h3 className="font-bold text-foreground text-base sm:text-lg">
-                        {dept.name}
-                      </h3>
-                    </div>
-                    <div className="text-right">
-                      <p className="text-base sm:text-lg font-bold text-foreground">
-                        {dept.savingMonthly}
-                      </p>
-                      <p className="text-[11px] text-muted-foreground">
-                        {dept.saving}
-                      </p>
-                    </div>
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              {departments.map((d) => (
+                <div key={d.name} className={`${CARD} p-5`}>
+                  <div className="mb-4 flex items-center gap-3">
+                    <span className="flex h-9 w-9 items-center justify-center rounded-xl border border-black/[0.07] bg-zinc-50">
+                      <d.icon className="h-[18px] w-[18px] text-primary" strokeWidth={2} />
+                    </span>
+                    <h3 className="text-[15px] font-semibold text-zinc-900">{d.name}</h3>
                   </div>
                   <ul className="space-y-2">
-                    {dept.tasks.map((task) => (
-                      <li
-                        key={task}
-                        className="flex items-start gap-2 text-xs sm:text-sm text-muted-foreground"
-                      >
-                        <CheckCircle className="h-3.5 w-3.5 text-primary mt-0.5 shrink-0" />
-                        {task}
+                    {d.tasks.map((t) => (
+                      <li key={t} className="flex items-start gap-2 text-[13px] leading-snug text-zinc-600">
+                        <Check className="mt-0.5 h-3.5 w-3.5 shrink-0 text-primary" />
+                        {t}
                       </li>
                     ))}
                   </ul>
                 </div>
               ))}
             </div>
-          </div>
-        </section>
-
-        {/* ROI comparison */}
-        <section id="roi" className="py-12 sm:py-16 md:py-20 border-t border-border/50 bg-muted/20">
-          <div className="container mx-auto px-6 sm:px-8 max-w-3xl">
-            <div className="mb-8 sm:mb-10 text-center">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-3 sm:mb-4">
-                ROI: Digitale medewerker vs. menselijke FTE
-              </h2>
-              <p className="text-sm sm:text-base text-muted-foreground max-w-xl mx-auto">
-                Een eerlijke vergelijking. Bij een gemiddeld MKB-bedrijf is de
-                terugverdientijd minder dan 3 maanden.
-              </p>
-            </div>
-            <div className="rounded-2xl bg-muted/40 border border-border/60 shadow-sm overflow-hidden">
-              <div className="grid grid-cols-3 bg-muted/60 text-foreground text-xs sm:text-sm font-semibold">
-                <div className="p-3 sm:p-4">Maatstaf</div>
-                <div className="p-3 sm:p-4 border-l border-border/30">
-                  Menselijke FTE
-                </div>
-                <div className="p-3 sm:p-4 border-l border-border/30 text-primary">
-                  Digitale Medewerker
-                </div>
-              </div>
-              {roiItems.map((item, i) => (
-                <div
-                  key={item.label}
-                  className={`grid grid-cols-3 text-xs sm:text-sm ${
-                    i % 2 === 0 ? "bg-background/40" : ""
-                  }`}
-                >
-                  <div className="p-3 sm:p-4 font-medium text-foreground">
-                    {item.label}
-                  </div>
-                  <div className="p-3 sm:p-4 border-l border-border/40 text-muted-foreground">
-                    {item.human}
-                  </div>
-                  <div
-                    className={`p-3 sm:p-4 border-l border-border/40 font-semibold ${
-                      item.highlight ? "text-primary" : "text-foreground"
-                    }`}
-                  >
-                    {item.digital}
-                  </div>
+            <div className="mt-4 grid gap-px overflow-hidden rounded-2xl border border-black/[0.07] bg-black/[0.07] sm:grid-cols-2 lg:grid-cols-4">
+              {traits.map((t) => (
+                <div key={t.title} className="bg-white p-5">
+                  <t.icon className="mb-3 h-4 w-4 text-primary" />
+                  <h3 className="mb-1 text-sm font-semibold text-zinc-900">{t.title}</h3>
+                  <p className="text-[13px] leading-snug text-zinc-500">{t.body}</p>
                 </div>
               ))}
             </div>
-            <div className="mt-6 rounded-2xl bg-primary/5 border border-primary/20 p-4 sm:p-5">
-              <div className="flex items-start gap-3">
-                <TrendingUp className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                <div>
-                  <p className="font-bold text-foreground text-sm sm:text-base">
-                    Terugverdientijd: gemiddeld 8 weken
-                  </p>
-                  <p className="text-xs sm:text-sm text-muted-foreground mt-1">
-                    Bij een implementatie van €8.000 en een maandelijkse besparing
-                    van €3.000 verdient u de investering in minder dan 3 maanden
-                    terug. Over een jaar: <strong className="text-foreground">€36.000 netto bespaard</strong>.
-                  </p>
-                </div>
+          </div>
+        </section>
+
+        {/* Human vs digital */}
+        <section id="roi" className={SECTION}>
+          <div className="container mx-auto max-w-5xl px-6 sm:px-8">
+            <div className="mb-10 max-w-2xl">
+              <Eyebrow>De vergelijking</Eyebrow>
+              <h2 className={H2}>Een medewerker of een digitale medewerker</h2>
+            </div>
+
+            <div className="grid gap-4 md:grid-cols-2">
+              <div className={`${CARD} p-6 sm:p-8`}>
+                <p className="text-sm font-medium text-zinc-500">Menselijke FTE</p>
+                <p className="mt-2 text-4xl font-bold tabular-nums tracking-tight text-zinc-400 sm:text-5xl">{eur(HUMAN_YEAR)}</p>
+                <p className="mt-1 text-sm text-zinc-500">per jaar, inclusief overhead</p>
+                <dl className="mt-6 space-y-3 border-t border-black/[0.07] pt-5">
+                  {compare.map((c) => (
+                    <div key={c.label} className="flex justify-between gap-4 text-sm">
+                      <dt className="text-zinc-500">{c.label}</dt>
+                      <dd className="text-right text-zinc-700">{c.human}</dd>
+                    </div>
+                  ))}
+                </dl>
               </div>
+              <div className="rounded-2xl border border-primary/25 bg-white p-6 shadow-[0_30px_60px_-30px_rgba(70,55,210,0.45)] sm:p-8">
+                <p className="text-sm font-medium text-primary">Digitale medewerker</p>
+                <p className="mt-2 text-4xl font-bold tabular-nums tracking-tight text-zinc-900 sm:text-5xl">{eur(DIGITAL_YEAR_ONE)}</p>
+                <p className="mt-1 text-sm text-zinc-500">in het eerste jaar, alles inbegrepen</p>
+                <dl className="mt-6 space-y-3 border-t border-black/[0.07] pt-5">
+                  {compare.map((c) => (
+                    <div key={c.label} className="flex justify-between gap-4 text-sm">
+                      <dt className="text-zinc-500">{c.label}</dt>
+                      <dd className="text-right font-semibold text-zinc-900">{c.digital}</dd>
+                    </div>
+                  ))}
+                </dl>
+              </div>
+            </div>
+
+            <div className="mt-4 rounded-2xl border border-black/[0.07] bg-zinc-50/60 p-6 text-center sm:p-10">
+              <p className="text-sm font-medium text-zinc-500">U bespaart in het eerste jaar</p>
+              <p className="mt-2 text-5xl font-bold tabular-nums tracking-tight text-primary sm:text-7xl">{eur(SAVED_YEAR_ONE)}</p>
+              <p className="mx-auto mt-4 max-w-2xl text-[13px] leading-relaxed text-zinc-500 sm:text-sm">
+                {eur(SETUP.typical)} opzet + 12 × ({eur(USAGE.typical)} verbruik + {eur(MAINTENANCE[1].price)} Onderhoud Plus) ={" "}
+                {eur(SETUP.typical)} + {eur(DIGITAL_RUN_YEAR)} = {eur(DIGITAL_YEAR_ONE)}. Vanaf jaar twee vervalt de opzet en
+                bespaart u {eur(SAVED_LATER)} per jaar. De opzet is binnen {PAYBACK_WEEKS} weken terugverdiend.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Pricing */}
+        <section id="prijzen" className={`${SECTION} bg-zinc-50/60`}>
+          <div className="container mx-auto max-w-5xl px-6 sm:px-8">
+            <div className="mb-10 max-w-2xl">
+              <Eyebrow>Prijzen</Eyebrow>
+              <h2 className={H2}>Eenmalige opzet, daarna een maandbedrag</h2>
+            </div>
+            <div className="grid gap-4 md:grid-cols-2">
+              <div className={`${CARD} p-6`}>
+                <p className="text-sm font-medium text-zinc-500">Opzet, eenmalig</p>
+                <p className="mt-2 text-3xl font-bold tabular-nums tracking-tight text-zinc-900">
+                  {eur(SETUP.from)} tot {eur(SETUP.to)}
+                </p>
+                <p className="mt-2 text-sm leading-relaxed text-zinc-500">
+                  Afhankelijk van het aantal taken en koppelingen. Een gemiddeld traject kost {eur(SETUP.typical)}. Live in 1 week.
+                </p>
+              </div>
+              <div className={`${CARD} p-6`}>
+                <p className="text-sm font-medium text-zinc-500">Verbruik, per maand</p>
+                <p className="mt-2 text-3xl font-bold tabular-nums tracking-tight text-zinc-900">
+                  {eur(USAGE.from)} tot {eur(USAGE.to)}
+                </p>
+                <p className="mt-2 text-sm leading-relaxed text-zinc-500">
+                  De kosten van de AI-modellen, afhankelijk van het volume dat uw digitale medewerker verwerkt.
+                </p>
+              </div>
+              {MAINTENANCE.map((m, i) => (
+                <div
+                  key={m.name}
+                  className={i === 1 ? "rounded-2xl border border-primary/25 bg-white p-6 shadow-[0_30px_60px_-30px_rgba(70,55,210,0.45)]" : `${CARD} p-6`}
+                >
+                  <p className={`text-sm font-medium ${i === 1 ? "text-primary" : "text-zinc-500"}`}>{m.name}</p>
+                  <p className="mt-2 text-3xl font-bold tabular-nums tracking-tight text-zinc-900">
+                    {eur(m.price)}
+                    <span className="text-base font-medium text-zinc-500">/mnd</span>
+                  </p>
+                  <p className="mt-2 text-sm leading-relaxed text-zinc-500">{m.body}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>
 
         {/* FAQ */}
-        <section id="faq" className="py-12 sm:py-16 md:py-20 border-t border-border/50">
-          <div className="container mx-auto px-6 sm:px-8 max-w-3xl">
-            <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-8 sm:mb-10">
-              Veelgestelde vragen
-            </h2>
-            <div className="space-y-4 sm:space-y-5">
+        <section id="faq" className={SECTION}>
+          <div className="container mx-auto max-w-3xl px-6 sm:px-8">
+            <h2 className={`${H2} mb-8`}>Veelgestelde vragen</h2>
+            <div className="divide-y divide-black/[0.07] rounded-2xl border border-black/[0.07] bg-white">
               {faqItems.map((item) => (
-                <div
-                  key={item.question}
-                  className="rounded-2xl bg-muted/40 border border-border/60 shadow-sm p-5 sm:p-6"
-                >
-                  <h3 className="font-bold text-foreground text-sm sm:text-base mb-2 sm:mb-3">
+                <details key={item.question} className="group p-5 sm:p-6">
+                  <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-[15px] font-semibold text-zinc-900 [&::-webkit-details-marker]:hidden">
                     {item.question}
-                  </h3>
-                  <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-                    {item.answer}
-                  </p>
-                </div>
+                    <span className="text-xl leading-none text-zinc-400 transition-transform group-open:rotate-45">+</span>
+                  </summary>
+                  <p className="mt-3 text-sm leading-relaxed text-zinc-500">{item.answer}</p>
+                </details>
               ))}
             </div>
           </div>
         </section>
 
         {/* Bottom CTA */}
-        <section className="border-t border-border/50 bg-muted/20">
-          <div className="container mx-auto px-6 sm:px-8 max-w-4xl py-12 sm:py-16 md:py-20 text-center">
-            <h2 className="mb-3 sm:mb-4 text-2xl sm:text-3xl md:text-4xl font-bold text-foreground">
-              Welke afdeling automatiseren we als eerste?
-            </h2>
-            <p className="mb-6 sm:mb-8 text-sm sm:text-base text-muted-foreground max-w-lg mx-auto">
-              Plan een gratis gesprek van 30 minuten. Wij analyseren uw
-              processen en adviseren welke digitale medewerker de hoogste ROI
-              oplevert.
+        <section className={`${SECTION} bg-zinc-50/60`}>
+          <div className="container mx-auto flex max-w-3xl flex-col items-center px-6 text-center sm:px-8">
+            <h2 className={`${H2} mb-4`}>Welke afdeling automatiseren we als eerste?</h2>
+            <p className="mb-8 max-w-lg text-base text-zinc-500">
+              Plan een gratis gesprek van 30 minuten. Wij analyseren uw processen en adviseren welke digitale medewerker
+              de hoogste ROI oplevert.
             </p>
-            <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <a
-                href="https://calendly.com/omarnassar1127/30min"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-xl bg-foreground px-8 py-4 text-sm font-medium text-background transition-all hover:bg-foreground/90 active:scale-[0.98]"
-              >
-                Plan gratis intake
-                <ArrowRight className="h-4 w-4" />
-              </a>
-              <a
-                href="mailto:info@virelio.nl"
-                className="inline-flex items-center justify-center gap-2 rounded-xl border border-border/60 bg-background px-8 py-4 text-sm font-medium text-foreground transition-all hover:bg-muted/40 active:scale-[0.98]"
-              >
-                Mail ons direct
-              </a>
-            </div>
-            <p className="mt-5 text-xs text-muted-foreground">
+            <Ctas secondary="Mail ons direct" />
+            <p className="mt-6 text-xs text-zinc-500">
               Virelio · AI Agent Bureau · Amsterdam ·{" "}
-              <a
-                href="tel:+31687838713"
-                className="hover:text-foreground transition-colors"
-              >
+              <a href="tel:+31687838713" className="transition-colors hover:text-zinc-900">
                 +31 6 87838713
               </a>
             </p>

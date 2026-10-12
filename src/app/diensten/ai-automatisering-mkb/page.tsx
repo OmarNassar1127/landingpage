@@ -3,501 +3,286 @@ import { faqSchema, breadcrumbSchema } from "@/lib/schema";
 import { siteConfig } from "@/lib/config";
 import Navbar from "@/components/sections/navbar";
 import Footer from "@/components/sections/footer";
-import {
-  ArrowRight,
-  Zap,
-  CheckCircle,
-  TrendingUp,
-  ShieldCheck,
-  Package,
-  CreditCard,
-  Users,
-  Puzzle,
-} from "lucide-react";
+import ShopFloor from "@/components/diensten/mkb/shop-floor";
+import RoiExample from "@/components/diensten/mkb/roi-example";
+import { MAINTENANCE, SETUP_FROM, USE_CASES, WBSO, eur, roi } from "@/components/diensten/mkb/data";
+import { ArrowRight, Check, ChevronDown, MessagesSquare, Package, Plus, Receipt, type LucideIcon } from "lucide-react";
 
 export const metadata = genMeta({
   title: "Betaalbare AI-automatisering voor het MKB",
   description:
-    "AI-automatisering voor het Nederlandse MKB. Vanaf €2.000, live in 1 week en geen IT-afdeling nodig. Inclusief hulp bij de WBSO-subsidie van 35%.",
+    "AI-automatisering voor het Nederlandse MKB. Vanaf €1.000 eenmalig, onderhoud vanaf €99 per maand. Live in 1 week, zonder IT-afdeling. Met hulp bij WBSO.",
   keywords:
     "AI automatisering MKB, AI voor MKB, AI agent MKB, automatisering midden klein bedrijf, betaalbare AI, WBSO subsidie AI, AI HubSpot integratie, Shopify AI automatisering, Exact Online AI, AI bureau MKB Nederland, klantenservice automatisering MKB",
   pathname: "/diensten/ai-automatisering-mkb",
   locale: "nl_NL",
 });
 
+const CALENDLY = "https://calendly.com/omarnassar1127/30min";
+const [BASIS, PLUS] = MAINTENANCE;
+const CARD = "rounded-[24px] border border-black/[0.07] bg-white shadow-[0_24px_48px_-36px_rgba(70,55,210,0.35)]";
+const RING = "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2";
+
 const faqItems = [
   {
     question: "Is AI automatisering ook betaalbaar voor kleine bedrijven?",
-    answer:
-      "Ja. Onze eenvoudige AI agents starten vanaf €2.000 eenmalig. Maandelijkse kosten liggen doorgaans tussen €200 en €500. Bij een besparing van €2.000 per maand is de ROI al in de eerste maand positief. We bouwen bewust schaalbaar: u begint klein en breidt uit zodra de ROI bewezen is.",
+    answer: `Ja. Een eenvoudige AI agent start vanaf ${eur(SETUP_FROM)} eenmalig. Daarna kiest u ${BASIS.name} (${eur(BASIS.price)} per maand) of ${PLUS.name} (${eur(PLUS.price)} per maand). Bespaart de agent ${eur(2000)} per maand, dan is de setup binnen de eerste maand terugverdiend. U begint klein en breidt uit zodra de besparing bewezen is.`,
+  },
+  {
+    question: "Wat zit er in het onderhoud?",
+    answer: `${BASIS.name} (${eur(BASIS.price)} per maand): hosting, monitoring, updates en support. ${PLUS.name} (${eur(PLUS.price)} per maand): alles van Basis plus maandelijkse verbeteringen en nieuwe functies.`,
   },
   {
     question: "Heb ik een IT-afdeling nodig voor AI automatisering?",
     answer:
-      "Nee. Wij verzorgen de volledige implementatie, integratie en lancering. Na oplevering beheert u de agent via een eenvoudig dashboard zonder technische kennis. Heeft u een vraag of wilt u iets aanpassen? Dan belt u ons. IT-kennis is niet nodig.",
+      "Nee. Wij verzorgen de volledige implementatie, integratie en lancering. Na oplevering beheert u de agent via een eenvoudig dashboard zonder technische kennis. Heeft u een vraag of wilt u iets aanpassen? Dan belt u ons.",
   },
   {
     question: "Wat is de WBSO-subsidie en hoe werkt dat?",
-    answer:
-      "WBSO (Wet Bevordering Speur- en Ontwikkelingswerk) is een Nederlandse subsidieregeling voor bedrijven die R&D uitvoeren, inclusief AI-ontwikkeling. U ontvangt 32 tot 40% van uw R&D-loonkosten terug. Wij helpen u bij de aanvraag en zorgen voor de juiste documentatie. Dit kan de effectieve kosten van een AI-project aanzienlijk verlagen.",
+    answer: `WBSO (Wet Bevordering Speur- en Ontwikkelingswerk) is een Nederlandse regeling voor bedrijven die R&D uitvoeren, inclusief AI-ontwikkeling. U ontvangt 32 tot 40% van uw R&D-loonkosten terug. Wij helpen bij de aanvraag en de documentatie. Voorbeeld: een project van ${eur(WBSO.project)} kost na 35% teruggave effectief ${eur(WBSO.effective)}.`,
   },
   {
     question: "Welke software integreert u met?",
     answer:
-      "Wij integreren met vrijwel alle gangbare MKB-software: Exact Online, Moneybird, Twinfield (boekhouding), HubSpot, Pipedrive, Salesforce (CRM), Zendesk, Intercom (support), Shopify, WooCommerce, Bol.com (e-commerce), Slack, Teams, WhatsApp Business, en meer. Heeft u een maatwerksysteem? Via een API of webhook koppelen wij ook daarop.",
+      "Vrijwel alle gangbare MKB-software: Exact Online, Moneybird, Twinfield (boekhouding), HubSpot, Pipedrive, Salesforce (CRM), Zendesk, Intercom (support), Shopify, WooCommerce, Bol.com (e-commerce), Slack, Teams, WhatsApp Business en meer. Heeft u een maatwerksysteem? Via een API of webhook koppelen wij ook daarop.",
   },
   {
     question: "Hoe snel zien we resultaat?",
     answer:
-      "De eerste resultaten zijn zichtbaar zodra de agent live gaat, doorgaans 1 week na de intake. Wij meten samen met u de impact: minder handmatig werk, snellere responstijden, hogere klanttevredenheid. In de eerste maand rapporteren wij de besparingen zodat u zwart op wit ziet wat de investering oplevert.",
+      "Zodra de agent live gaat, doorgaans 1 week na de intake. In de eerste maand rapporteren wij de besparing, zodat u zwart op wit ziet wat de investering oplevert.",
   },
 ];
 
-const scenarios = [
-  {
-    icon: Users,
-    title: "Klantenservice automatisering",
-    problem:
-      "Uw support-medewerkers besteden 60% van hun tijd aan dezelfde 20 vragen: levertijden, retouren, factuurvragen.",
-    solution:
-      "Een AI klantenservice agent beantwoordt 80% van inkomende tickets automatisch via e-mail, WhatsApp en chat. De resterende 20% wordt slim doorgestuurd naar de juiste collega.",
-    monthly: "€3.500/maand",
-    yearly: "€42.000/jaar",
-    investment: "Investering: €4.000 eenmalig",
-  },
-  {
-    icon: CreditCard,
-    title: "Facturatie & betalingsherinneringen",
-    problem:
-      "Facturen worden te laat verstuurd, betalingsherinneringen vergeten, en het bijhouden van openstaande posten kost uren per week.",
-    solution:
-      "Een finance agent koppelt met Exact Online of Moneybird, maakt facturen automatisch aan na een order, verstuurt herinneringen op dag 14 en 30, en matcht inkomende betalingen.",
-    monthly: "€1.800/maand",
-    yearly: "€21.600/jaar",
-    investment: "Investering: €2.500 eenmalig",
-  },
-  {
-    icon: Package,
-    title: "Orderverwerking & logistiek",
-    problem:
-      "Bestellingen uit Shopify, e-mail en telefoon worden handmatig verwerkt. Fouten in orders, verkeerde adressen en gemiste leveringen kosten klanten en reputatie.",
-    solution:
-      "Een operations agent pakt orders op uit alle kanalen, controleert voorraad, maakt verzenddocumenten aan via Sendcloud, en stuurt de klant automatisch een track & trace-link.",
-    monthly: "€2.200/maand",
-    yearly: "€26.400/jaar",
-    investment: "Investering: €3.500 eenmalig",
-  },
-];
+const ICONS: Record<string, LucideIcon> = { klantenservice: MessagesSquare, facturatie: Receipt, orders: Package };
+// asymmetric bento: wide, narrow / narrow, wide
+const SPAN = ["lg:col-span-2", "", ""];
 
-const whyMKB = [
-  {
-    icon: CreditCard,
-    title: "Betaalbaar vanaf €2.000",
-    description:
-      "Geen enterprise-prijzen. Wij bouwen gerichte oplossingen die snel rendement opleveren, zonder overbodige toeters en bellen.",
-  },
-  {
-    icon: Zap,
-    title: "Live in 1 week",
-    description:
-      "Geen maandenlange implementatietrajecten. Prototype in week 1, productie in week 2.",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Geen IT-team nodig",
-    description:
-      "Wij verzorgen alles: bouw, integratie, lancering en onderhoud. U runt uw bedrijf, wij regelen de techniek.",
-  },
-  {
-    icon: TrendingUp,
-    title: "Schaalbaar met uw groei",
-    description:
-      "Begin met één agent voor één taak. Voeg agents toe zodra de ROI bewezen is. Zonder dure herimplementaties.",
-  },
-];
+const TOOLS = ["Exact Online", "Moneybird", "HubSpot", "Shopify", "Zendesk", "WhatsApp Business", "Sendcloud", "Teams"];
 
-const integrations = [
-  { category: "Boekhouding", tools: ["Exact Online", "Moneybird", "Twinfield", "Snelstart"] },
-  { category: "CRM & Sales", tools: ["HubSpot", "Pipedrive", "Salesforce", "Zoho"] },
-  { category: "Klantenservice", tools: ["Zendesk", "Intercom", "Freshdesk", "Crisp"] },
-  { category: "E-commerce", tools: ["Shopify", "WooCommerce", "Bol.com", "Lightspeed"] },
-  { category: "Communicatie", tools: ["Slack", "Teams", "WhatsApp Business", "Gmail"] },
-  { category: "Logistiek", tools: ["Sendcloud", "MyParcel", "DHL API", "PostNL API"] },
-];
+function Eyebrow({ children }: { children: React.ReactNode }) {
+  return (
+    <p className="mb-3 flex items-center gap-2 text-sm font-medium text-primary">
+      <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+      {children}
+    </p>
+  );
+}
 
 export default function AIAutomatiseringMKBPage() {
   const faqSchemaData = faqSchema({ items: faqItems });
-
   const breadcrumbData = breadcrumbSchema({
     items: [
       { position: 1, name: "Home", item: siteConfig.url },
       { position: 2, name: "Diensten", item: `${siteConfig.url}/diensten` },
-      {
-        position: 3,
-        name: "AI Automatisering voor MKB",
-        item: `${siteConfig.url}/diensten/ai-automatisering-mkb`,
-      },
+      { position: 3, name: "AI automatisering voor MKB", item: `${siteConfig.url}/diensten/ai-automatisering-mkb` },
     ],
   });
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchemaData) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbData) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchemaData) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbData) }} />
 
-      <main className="min-h-screen bg-background">
+      <main className="min-h-screen overflow-x-hidden bg-white">
         <Navbar customNavLinks={[
-          { name: "Waarom MKB", href: "#waarom-mkb" },
-          { name: "Scenario's", href: "#scenarios" },
-          { name: "Integraties", href: "#integraties" },
+          { name: "Toepassingen", href: "#toepassingen" },
+          { name: "Rekenvoorbeeld", href: "#rekenvoorbeeld" },
+          { name: "Prijzen", href: "#prijzen" },
           { name: "FAQ", href: "#faq" },
         ]} />
 
         {/* Hero */}
-        <section className="pt-24 sm:pt-32 md:pt-40 pb-12 sm:pb-16 md:pb-20">
-          <div className="container mx-auto px-6 sm:px-8 max-w-4xl text-center">
-            <div className="inline-flex items-center gap-2 rounded-full bg-muted/60 border border-border/60 px-4 py-1.5 text-xs sm:text-sm text-muted-foreground mb-6">
-              <Zap className="h-3.5 w-3.5 text-primary" />
-              Speciaal voor het Nederlandse MKB
-            </div>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight text-foreground mb-5 sm:mb-6">
-              AI Automatisering voor MKB
-              <span className="block text-primary mt-1">
-                Betaalbaar & Schaalbaar
-              </span>
-            </h1>
-            <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed mb-8 sm:mb-10">
-              Klaar met handmatig facturen versturen, dezelfde e-mails
-              beantwoorden en orders nakijken? Virelio bouwt AI agents die deze
-              taken volledig overnemen. Betaalbaar, snel en zonder IT-afdeling.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <a
-                href="https://calendly.com/omarnassar1127/30min"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-xl bg-foreground px-7 py-3.5 text-sm font-medium text-background transition-all hover:bg-foreground/90 active:scale-[0.98]"
-              >
-                Plan gratis intake
-                <ArrowRight className="h-4 w-4" />
-              </a>
-              <a
-                href="mailto:info@virelio.nl"
-                className="inline-flex items-center justify-center gap-2 rounded-xl border border-border/60 bg-background px-7 py-3.5 text-sm font-medium text-foreground transition-all hover:bg-muted/40 active:scale-[0.98]"
-              >
-                Stel een vraag
-              </a>
-            </div>
-
-            {/* Social proof */}
-            <div className="mt-10 sm:mt-12 flex flex-wrap justify-center gap-x-8 gap-y-3 text-xs sm:text-sm text-muted-foreground">
-              <span className="flex items-center gap-1.5">
-                <CheckCircle className="h-4 w-4 text-primary" />
-                Vanaf €2.000 eenmalig
-              </span>
-              <span className="flex items-center gap-1.5">
-                <CheckCircle className="h-4 w-4 text-primary" />
-                Live in 1 week
-              </span>
-              <span className="flex items-center gap-1.5">
-                <CheckCircle className="h-4 w-4 text-primary" />
-                WBSO-subsidie mogelijk (35%)
-              </span>
-              <span className="flex items-center gap-1.5">
-                <CheckCircle className="h-4 w-4 text-primary" />
-                Geen IT-kennis nodig
-              </span>
-            </div>
-          </div>
-        </section>
-
-        {/* Why MKB */}
-        <section id="waarom-mkb" className="py-12 sm:py-16 md:py-20 border-t border-border/50 bg-muted/20">
-          <div className="container mx-auto px-6 sm:px-8 max-w-5xl">
-            <div className="mb-8 sm:mb-12 text-center">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-3 sm:mb-4">
-                Waarom AI speciaal voor het MKB?
-              </h2>
-              <p className="text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto">
-                Grote bedrijven hebben IT-teams, budgetten en consultants.
-                Het MKB heeft dat niet, maar wel dezelfde repetitieve
-                processen. Wij bouwen AI die werkt zonder enterprise-overhead.
+        <section className="pb-12 pt-28 sm:pb-16 sm:pt-32 md:pt-36">
+          <div className="container mx-auto grid max-w-7xl items-center gap-8 px-5 sm:px-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,520px)] lg:gap-12">
+            <div>
+              <Eyebrow>Voor het Nederlandse MKB</Eyebrow>
+              <h1 className="mb-5 text-4xl font-bold leading-[1.06] tracking-tight text-zinc-900 sm:text-5xl lg:text-[58px]">
+                AI automatisering voor MKB
+                <span className="block text-primary">betaalbaar en schaalbaar</span>
+              </h1>
+              <p className="mb-8 max-w-xl text-base leading-relaxed text-zinc-500 sm:text-lg">
+                Facturen, dezelfde mails en de telefoon. Virelio bouwt AI agents die dat werk overnemen,
+                zodat u en uw team tijd overhouden voor klanten.
               </p>
-            </div>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
-              {whyMKB.map((item) => (
-                <div
-                  key={item.title}
-                  className="rounded-2xl bg-muted/40 border border-border/60 shadow-sm p-5 sm:p-6"
-                >
-                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10 text-primary mb-3">
-                    <item.icon className="h-5 w-5" />
-                  </div>
-                  <h3 className="font-bold text-foreground text-sm sm:text-base mb-2">
-                    {item.title}
-                  </h3>
-                  <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-                    {item.description}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Scenarios with ROI */}
-        <section id="scenarios" className="py-12 sm:py-16 md:py-20 border-t border-border/50">
-          <div className="container mx-auto px-6 sm:px-8 max-w-5xl">
-            <div className="mb-8 sm:mb-12 text-center">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-3 sm:mb-4">
-                3 concrete scenario's met ROI
-              </h2>
-              <p className="text-sm sm:text-base text-muted-foreground max-w-xl mx-auto">
-                Elke berekening is gebaseerd op een gemiddeld MKB-bedrijf met
-                5 tot 50 medewerkers. Uw situatie kan gunstiger zijn.
-              </p>
-            </div>
-            <div className="space-y-5 sm:space-y-6">
-              {scenarios.map((scenario, index) => (
-                <div
-                  key={scenario.title}
-                  className="rounded-2xl bg-muted/40 border border-border/60 shadow-sm p-5 sm:p-6"
-                >
-                  <div className="flex flex-col sm:flex-row sm:items-start gap-5 sm:gap-6">
-                    <div className="flex-1">
-                      <div className="flex items-center gap-3 mb-3">
-                        <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary/10 text-primary shrink-0">
-                          <scenario.icon className="h-4.5 w-4.5 h-[18px] w-[18px]" />
-                        </div>
-                        <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
-                          Scenario {index + 1}
-                        </span>
-                      </div>
-                      <h3 className="font-bold text-foreground text-base sm:text-lg mb-3">
-                        {scenario.title}
-                      </h3>
-                      <div className="space-y-2.5">
-                        <div>
-                          <p className="text-[11px] font-semibold text-muted-foreground uppercase tracking-wide mb-1">
-                            Het probleem
-                          </p>
-                          <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-                            {scenario.problem}
-                          </p>
-                        </div>
-                        <div>
-                          <p className="text-[11px] font-semibold text-muted-foreground uppercase tracking-wide mb-1">
-                            De oplossing
-                          </p>
-                          <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-                            {scenario.solution}
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="sm:w-48 shrink-0">
-                      <div className="rounded-xl bg-primary/10 border border-primary/20 text-foreground p-4 text-center">
-                        <p className="text-[11px] font-medium text-primary mb-1">
-                          Besparing
-                        </p>
-                        <p className="text-xl sm:text-2xl font-bold text-foreground mb-0.5">
-                          {scenario.monthly}
-                        </p>
-                        <p className="text-sm font-semibold text-primary">
-                          {scenario.yearly}
-                        </p>
-                        <div className="mt-3 pt-3 border-t border-border/30">
-                          <p className="text-[11px] text-muted-foreground">
-                            {scenario.investment}
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* WBSO */}
-        <section className="py-12 sm:py-16 md:py-20 border-t border-border/50 bg-muted/20">
-          <div className="container mx-auto px-6 sm:px-8 max-w-4xl">
-            <div className="grid md:grid-cols-2 gap-6 sm:gap-8 items-center">
-              <div>
-                <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 border border-primary/20 px-3 py-1 text-xs font-semibold text-primary mb-4">
-                  <ShieldCheck className="h-3.5 w-3.5" />
-                  WBSO Subsidie
-                </div>
-                <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-4">
-                  Tot 35% subsidie op uw AI-investering
-                </h2>
-                <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-4">
-                  De WBSO (Wet Bevordering Speur- en Ontwikkelingswerk) vergoedt
-                  een significant deel van R&D-loonkosten voor bedrijven die
-                  innovatieve AI-systemen ontwikkelen. Maatwerk AI agents vallen
-                  doorgaans onder deze regeling.
-                </p>
-                <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                  Dit betekent dat een project van €8.000 effectief nog maar
-                  <strong className="text-foreground"> €5.200 kost</strong> na
-                  WBSO-teruggave. Wij helpen u bij de aanvraag en documentatie.
-                </p>
+              <div className="flex flex-col gap-3 sm:flex-row">
+                <a href={CALENDLY} target="_blank" rel="noopener noreferrer"
+                  className={`group inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-7 py-3.5 text-sm font-semibold text-white shadow-[0_12px_28px_-12px_rgba(70,55,210,0.6)] transition-colors hover:bg-primary/90 ${RING}`}>
+                  Plan gratis intake
+                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+                </a>
+                <a href="mailto:info@virelio.nl"
+                  className={`inline-flex items-center justify-center rounded-xl border border-black/[0.1] bg-white px-7 py-3.5 text-sm font-semibold text-zinc-900 transition-colors hover:border-primary/40 hover:text-primary ${RING}`}>
+                  Stel een vraag
+                </a>
               </div>
-              <div className="rounded-2xl bg-muted/40 border border-border/60 shadow-sm p-5 sm:p-6">
-                <h3 className="font-bold text-foreground mb-4 text-sm sm:text-base">
-                  WBSO in de praktijk
-                </h3>
-                <div className="space-y-3">
-                  {[
-                    ["Projectkosten", "€8.000"],
-                    ["WBSO-teruggave (35%)", "-€2.800"],
-                    ["Effectieve investering", "€5.200"],
-                    ["Maandelijkse besparing", "€3.000"],
-                    ["Terugverdientijd", "< 2 maanden"],
-                    ["Besparing jaar 1 (netto)", "€30.800"],
-                  ].map(([label, value], i) => (
-                    <div
-                      key={label}
-                      className={`flex justify-between items-center text-sm ${
-                        i === 5
-                          ? "pt-3 border-t border-border/40 font-bold text-foreground"
-                          : "text-muted-foreground"
-                      }`}
-                    >
-                      <span>{label}</span>
-                      <span
-                        className={
-                          i === 4 || i === 5 ? "text-primary font-semibold" : ""
-                        }
-                      >
-                        {value}
-                      </span>
+              <ul className="mt-8 grid grid-cols-2 gap-x-6 gap-y-2.5 text-sm text-zinc-600 sm:flex sm:flex-wrap">
+                {[`Vanaf ${eur(SETUP_FROM)} eenmalig`, "Live in 1 week", `Onderhoud vanaf ${eur(BASIS.price)}/mnd`, "WBSO-subsidie mogelijk"].map((t) => (
+                  <li key={t} className="flex items-center gap-1.5">
+                    <Check className="h-4 w-4 shrink-0 text-primary" strokeWidth={2.5} />
+                    {t}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <ShopFloor />
+          </div>
+        </section>
+
+        {/* Use cases */}
+        <section id="toepassingen" className="scroll-mt-24 border-t border-black/[0.07] py-16 sm:py-24">
+          <div className="container mx-auto max-w-6xl px-5 sm:px-8">
+            <div className="mb-10 max-w-2xl">
+              <Eyebrow>Toepassingen</Eyebrow>
+              <h2 className="mb-3 text-3xl font-bold tracking-tight text-zinc-900 sm:text-4xl">Hier begint het meeste MKB mee</h2>
+              <p className="text-base text-zinc-500">Gerekend voor een bedrijf met 5 tot 50 medewerkers. Uw situatie kan gunstiger zijn.</p>
+            </div>
+            <div className="grid gap-4 lg:grid-cols-3">
+              {USE_CASES.map((u, i) => {
+                const Icon = ICONS[u.id];
+                const r = roi(u.saving, u.setup, BASIS.price);
+                const wide = i === 0;
+                return (
+                  <article key={u.id} className={`${CARD} flex flex-col p-6 sm:p-7 ${SPAN[i]}`}>
+                    <div className="mb-5 flex h-10 w-10 items-center justify-center rounded-xl border border-black/[0.07] bg-zinc-50">
+                      <Icon className="h-[18px] w-[18px] text-zinc-700" />
                     </div>
+                    <div className={wide ? "grid gap-6 sm:grid-cols-[minmax(0,1fr)_200px]" : ""}>
+                      <div>
+                        <h3 className="mb-2 text-lg font-semibold tracking-tight text-zinc-900 sm:text-xl">{u.title}</h3>
+                        <p className="mb-2 text-sm leading-relaxed text-zinc-500">{u.problem}</p>
+                        <p className="text-sm leading-relaxed text-zinc-700">{u.solution}</p>
+                      </div>
+                      <dl className={`grid grid-cols-3 gap-3 border-t border-black/[0.07] pt-4 text-sm ${wide ? "sm:grid-cols-1 sm:content-start sm:border-l sm:border-t-0 sm:pl-6 sm:pt-0" : "mt-5"}`}>
+                        <div>
+                          <dt className="text-xs text-zinc-500">Bespaart</dt>
+                          <dd className="font-semibold tabular-nums text-zinc-900">{eur(u.saving)}/mnd</dd>
+                        </div>
+                        <div>
+                          <dt className="text-xs text-zinc-500">Setup</dt>
+                          <dd className="font-semibold tabular-nums text-zinc-900">{eur(u.setup)}</dd>
+                        </div>
+                        <div>
+                          <dt className="text-xs text-zinc-500">Terug in</dt>
+                          <dd className="font-semibold tabular-nums text-primary">{r.paybackWeeks} weken</dd>
+                        </div>
+                      </dl>
+                    </div>
+                  </article>
+                );
+              })}
+              <article className={`${CARD} flex flex-col p-6 sm:p-7 lg:col-span-2`}>
+                <div className="mb-5 flex h-10 w-10 items-center justify-center rounded-xl border border-black/[0.07] bg-zinc-50">
+                  <Plus className="h-[18px] w-[18px] text-zinc-700" />
+                </div>
+                <h3 className="mb-2 text-lg font-semibold tracking-tight text-zinc-900 sm:text-xl">Uw eigen proces</h3>
+                <p className="mb-5 max-w-lg text-sm leading-relaxed text-zinc-500">
+                  Ander repeterend werk? Wij koppelen aan de software die u al gebruikt. Als er een API is, kunnen wij erop aansluiten.
+                </p>
+                <ul className="mt-auto flex flex-wrap gap-2">
+                  {TOOLS.map((t) => (
+                    <li key={t} className="rounded-full border border-black/[0.07] bg-zinc-50 px-3 py-1 text-xs font-medium text-zinc-600">{t}</li>
                   ))}
-                </div>
-              </div>
+                </ul>
+              </article>
             </div>
           </div>
         </section>
 
-        {/* Integrations */}
-        <section id="integraties" className="py-12 sm:py-16 md:py-20 border-t border-border/50">
-          <div className="container mx-auto px-6 sm:px-8 max-w-5xl">
-            <div className="mb-8 sm:mb-10 text-center">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-3 sm:mb-4">
-                Integreert met uw bestaande software
-              </h2>
-              <p className="text-sm sm:text-base text-muted-foreground max-w-xl mx-auto">
-                Uw huidige systemen blijven gewoon staan. Wij bouwen er
-                bovenop. De AI agent werkt samen met de tools die u al gebruikt.
-              </p>
+        {/* ROI example */}
+        <section id="rekenvoorbeeld" className="scroll-mt-24 border-t border-black/[0.07] bg-zinc-50/60 py-16 sm:py-24">
+          <div className="container mx-auto max-w-4xl px-5 sm:px-8">
+            <div className="mb-8 max-w-2xl">
+              <Eyebrow>Rekenvoorbeeld</Eyebrow>
+              <h2 className="mb-3 text-3xl font-bold tracking-tight text-zinc-900 sm:text-4xl">Wanneer heeft u het terugverdiend?</h2>
+              <p className="text-base text-zinc-500">Kies een toepassing en een onderhoudspakket. Besparing min onderhoud betaalt de setup terug.</p>
             </div>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-5">
-              {integrations.map((group) => (
-                <div
-                  key={group.category}
-                  className="rounded-2xl bg-muted/40 border border-border/60 shadow-sm p-4 sm:p-5"
-                >
-                  <div className="flex items-center gap-2 mb-3">
-                    <Puzzle className="h-4 w-4 text-primary shrink-0" />
-                    <h3 className="font-bold text-foreground text-xs sm:text-sm">
-                      {group.category}
-                    </h3>
-                  </div>
-                  <ul className="space-y-1.5">
-                    {group.tools.map((tool) => (
-                      <li
-                        key={tool}
-                        className="text-[11px] sm:text-xs text-muted-foreground flex items-center gap-1.5"
-                      >
-                        <span className="h-1 w-1 rounded-full bg-border flex-shrink-0" />
-                        {tool}
-                      </li>
-                    ))}
-                  </ul>
+            <RoiExample />
+          </div>
+        </section>
+
+        {/* Pricing */}
+        <section id="prijzen" className="scroll-mt-24 border-t border-black/[0.07] py-16 sm:py-24">
+          <div className="container mx-auto max-w-6xl px-5 sm:px-8">
+            <div className="mb-10 max-w-2xl">
+              <Eyebrow>Prijzen</Eyebrow>
+              <h2 className="mb-3 text-3xl font-bold tracking-tight text-zinc-900 sm:text-4xl">Eenmalig bouwen, maandelijks onderhoud</h2>
+              <p className="text-base text-zinc-500">Eenmalige setup, daarna een vast bedrag per maand.</p>
+            </div>
+            <div className="grid gap-4 md:grid-cols-3">
+              <div className={`${CARD} p-6 sm:p-7`}>
+                <h3 className="text-sm font-semibold text-zinc-500">Setup</h3>
+                <p className="mt-2 text-4xl font-bold tracking-tight text-zinc-900">
+                  <span className="text-base font-medium text-zinc-500">vanaf </span>{eur(SETUP_FROM)}
+                </p>
+                <p className="mt-1 text-sm text-zinc-500">eenmalig, live in 1 week</p>
+                <ul className="mt-6 space-y-2.5 border-t border-black/[0.07] pt-5 text-sm">
+                  {[...USE_CASES].sort((a, b) => a.setup - b.setup).map((u) => (
+                    <li key={u.id} className="flex justify-between gap-3">
+                      <span className="text-zinc-600">{u.title}</span>
+                      <span className="font-semibold tabular-nums text-zinc-900">{eur(u.setup)}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              {MAINTENANCE.map((m, i) => (
+                <div key={m.id} className={`${CARD} relative p-6 sm:p-7 ${i === 1 ? "border-primary/30 shadow-[0_30px_60px_-34px_rgba(70,55,210,0.55)]" : ""}`}>
+                  {i === 1 && <span className="absolute right-5 top-5 rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-semibold text-primary">Groeit mee</span>}
+                  <h3 className="text-sm font-semibold text-zinc-500">{m.name}</h3>
+                  <p className="mt-2 text-4xl font-bold tracking-tight text-zinc-900">
+                    {eur(m.price)}<span className="text-base font-medium text-zinc-500">/mnd</span>
+                  </p>
+                  <p className="mt-6 border-t border-black/[0.07] pt-5 text-sm leading-relaxed text-zinc-700">{m.text}.</p>
                 </div>
               ))}
             </div>
-            <p className="mt-5 text-center text-xs sm:text-sm text-muted-foreground">
-              Uw software staat er niet bij?{" "}
-              <a
-                href="mailto:info@virelio.nl"
-                className="text-primary hover:underline font-medium"
-              >
-                Vraag het ons
-              </a>{" "}
-              Als er een API is, kunnen wij koppelen.
+            <p className="mt-6 max-w-3xl text-sm leading-relaxed text-zinc-500">
+              <span className="font-semibold text-zinc-900">Met WBSO-subsidie.</span>{" "}
+              Een project van {eur(WBSO.project)} met 35% teruggave ({eur(WBSO.refund)}) kost effectief {eur(WBSO.effective)}.
+              Bij {eur(WBSO.saving)} besparing per maand en {BASIS.name} is dat in {WBSO.paybackWeeks} weken terugverdiend,
+              met netto {eur(WBSO.netYear1)} in het eerste jaar. Wij helpen bij de aanvraag.
             </p>
           </div>
         </section>
 
         {/* FAQ */}
-        <section id="faq" className="py-12 sm:py-16 md:py-20 border-t border-border/50 bg-muted/20">
-          <div className="container mx-auto px-6 sm:px-8 max-w-3xl">
-            <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-8 sm:mb-10">
-              Veelgestelde vragen
-            </h2>
-            <div className="space-y-4 sm:space-y-5">
+        <section id="faq" className="scroll-mt-24 border-t border-black/[0.07] bg-zinc-50/60 py-16 sm:py-24">
+          <div className="container mx-auto max-w-3xl px-5 sm:px-8">
+            <h2 className="mb-8 text-3xl font-bold tracking-tight text-zinc-900 sm:text-4xl">Veelgestelde vragen</h2>
+            <div className="divide-y divide-black/[0.07] rounded-[24px] border border-black/[0.07] bg-white">
               {faqItems.map((item) => (
-                <div
-                  key={item.question}
-                  className="rounded-2xl bg-muted/40 border border-border/60 shadow-sm p-5 sm:p-6"
-                >
-                  <h3 className="font-bold text-foreground text-sm sm:text-base mb-2 sm:mb-3">
+                <details key={item.question} className="group px-5 sm:px-6">
+                  <summary className={`flex cursor-pointer list-none items-center justify-between gap-4 py-5 text-[15px] font-semibold text-zinc-900 [&::-webkit-details-marker]:hidden ${RING}`}>
                     {item.question}
-                  </h3>
-                  <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-                    {item.answer}
-                  </p>
-                </div>
+                    <ChevronDown className="h-4 w-4 shrink-0 text-zinc-400 transition-transform group-open:rotate-180" />
+                  </summary>
+                  <p className="pb-5 text-sm leading-relaxed text-zinc-500">{item.answer}</p>
+                </details>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Bottom CTA */}
-        <section className="border-t border-border/50">
-          <div className="container mx-auto px-6 sm:px-8 max-w-4xl py-12 sm:py-16 md:py-20 text-center">
-            <h2 className="mb-3 sm:mb-4 text-2xl sm:text-3xl md:text-4xl font-bold text-foreground">
-              Welk proces automatiseren we als eerste?
-            </h2>
-            <p className="mb-6 sm:mb-8 text-sm sm:text-base text-muted-foreground max-w-lg mx-auto">
-              Plan een gratis gesprek van 30 minuten. Wij analyseren uw drie
-              grootste tijdverspillers en berekenen de exacte ROI van
-              automatisering voor uw situatie.
+        {/* CTA */}
+        <section className="border-t border-black/[0.07]">
+          <div className="container mx-auto max-w-3xl px-5 py-16 text-center sm:px-8 sm:py-24">
+            <h2 className="mb-4 text-3xl font-bold tracking-tight text-zinc-900 sm:text-4xl">Welk proces automatiseren we als eerste?</h2>
+            <p className="mx-auto mb-8 max-w-lg text-base text-zinc-500">
+              Plan een gratis gesprek van 30 minuten. Wij zoeken uw drie grootste tijdvreters en rekenen de besparing voor u uit.
             </p>
-            <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <a
-                href="https://calendly.com/omarnassar1127/30min"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-xl bg-foreground px-8 py-4 text-sm font-medium text-background transition-all hover:bg-foreground/90 active:scale-[0.98]"
-              >
+            <div className="flex flex-col justify-center gap-3 sm:flex-row">
+              <a href={CALENDLY} target="_blank" rel="noopener noreferrer"
+                className={`group inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-8 py-4 text-sm font-semibold text-white shadow-[0_12px_28px_-12px_rgba(70,55,210,0.6)] transition-colors hover:bg-primary/90 ${RING}`}>
                 Plan gratis intake
-                <ArrowRight className="h-4 w-4" />
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
               </a>
-              <a
-                href="mailto:info@virelio.nl"
-                className="inline-flex items-center justify-center gap-2 rounded-xl border border-border/60 bg-background px-8 py-4 text-sm font-medium text-foreground transition-all hover:bg-muted/40 active:scale-[0.98]"
-              >
+              <a href="mailto:info@virelio.nl"
+                className={`inline-flex items-center justify-center rounded-xl border border-black/[0.1] bg-white px-8 py-4 text-sm font-semibold text-zinc-900 transition-colors hover:border-primary/40 hover:text-primary ${RING}`}>
                 Mail ons direct
               </a>
             </div>
-            <p className="mt-5 text-xs text-muted-foreground">
-              Virelio · AI Agent Bureau · Amsterdam ·{" "}
-              <a
-                href="tel:+31687838713"
-                className="hover:text-foreground transition-colors"
-              >
-                +31 6 87838713
-              </a>
+            <p className="mt-6 text-xs text-zinc-500">
+              Virelio, AI agent bureau, Amsterdam.{" "}
+              <a href="tel:+31687838713" className="hover:text-zinc-900">+31 6 87838713</a>
             </p>
           </div>
         </section>
