@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect } from "react";
+import { EmailText } from "@/components/ui/email-text";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useLanguage } from "@/lib/i18n/language-context";
@@ -140,7 +141,7 @@ export default function BookMeeting() {
                   Email
                 </h3>
                 <p className="text-sm text-muted-foreground text-center mb-4">
-                  info@virelio.nl
+                  <EmailText />
                 </p>
                 <Button
                   variant="outline"

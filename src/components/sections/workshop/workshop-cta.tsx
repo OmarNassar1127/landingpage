@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { EmailText } from "@/components/ui/email-text";
 import { useLanguage } from "@/lib/i18n/language-context";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -126,7 +127,7 @@ export default function WorkshopCTA() {
                   href="mailto:info@virelio.nl"
                   className="hover:text-primary transition-colors"
                 >
-                  info@virelio.nl
+                  <EmailText />
                 </a>
                 <a
                   href="tel:+31687838713"

@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { WithEmails } from "@/components/ui/email-text";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { ArrowRight, Check, ChevronRight, Mail, MessageCircle, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -105,7 +106,7 @@ export default function CtaPanel({ isNL }: { isNL: boolean }) {
                     className={`flex items-center gap-3 rounded-lg p-3 transition-colors hover:bg-primary/[0.04] ${FOCUS}`}
                   >
                     <Icon className="h-4 w-4 flex-shrink-0 text-primary" aria-hidden="true" />
-                    <span className="text-sm font-medium tabular-nums text-foreground">{label}</span>
+                    <span className="text-sm font-medium tabular-nums text-foreground"><WithEmails text={label} /></span>
                   </a>
                 ))}
               </motion.div>

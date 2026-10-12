@@ -3,6 +3,7 @@
 import React from "react";
 import { ArrowLeft } from "lucide-react";
 import { useLanguage } from "@/lib/i18n/language-context";
+import { WithEmails } from "@/components/ui/email-text";
 
 /* Shared rendering for the three policy documents (terms, privacy, cookies). */
 
@@ -50,7 +51,7 @@ function Rich({ text }: { text: string }) {
             {m[1]}
           </a>
         ) : (
-          <React.Fragment key={i}>{part}</React.Fragment>
+          <WithEmails key={i} text={part} />
         );
       })}
     </>
@@ -63,7 +64,7 @@ function CompanyDetails({ lang }: { lang: "nl" | "en" }) {
       {COMPANY[lang].map(([label, value]) => (
         <React.Fragment key={label}>
           <dt className="text-zinc-500">{label}</dt>
-          <dd className="font-medium text-zinc-900">{value}</dd>
+          <dd className="font-medium text-zinc-900"><WithEmails text={value} /></dd>
         </React.Fragment>
       ))}
     </dl>
