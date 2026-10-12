@@ -12,7 +12,6 @@ import FloatingWhatsAppButton from "@/components/floating-whatsapp-button";
 import IntakeExplanationSection from "@/components/sections/intake-explanation-section";
 import GuaranteeSection from "@/components/sections/guarantee-section";
 import { generateMetadata } from "@/lib/metadata";
-import { siteConfig } from "@/lib/config";
 import JsonLd from "@/components/seo/json-ld";
 import { faqSchema, testimonialsSchema, servicesSchema, workshopSchema, certificationsSchema } from "@/lib/schema";
 
@@ -106,15 +105,11 @@ export default function Home() {
         <Hero />
         <CompanySlider />
         <GuaranteeSection />
-        <div id={siteConfig.sections.services.substring(1)}>
-          <Services />
-        </div>
+        <Services />
         <CaseStudies />
         <WhyVirelio />
         <Certifications />
-        <div id={siteConfig.sections.testimonials.substring(1)}>
-          <Testimonials />
-        </div>
+        <Testimonials />
         <IntakeExplanationSection />
 
 
