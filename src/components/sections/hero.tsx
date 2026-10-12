@@ -18,7 +18,7 @@ import {
 import { scrollToSection } from "@/lib/scroll-utils";
 import { Icon } from "@/components/ui/icon";
 import { useLanguage } from "@/lib/i18n/language-context";
-import AgentHQ from "@/components/sections/agent-hq";
+import AgentStack from "@/components/sections/agent-stack";
 
 interface ChatMessage {
   agent: string;
@@ -706,7 +706,7 @@ function HeroContent() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.6 }}
           >
-            <AgentHQ language={language} />
+            <AgentStack language={language} />
           </motion.div>
         </div>
       </div>
