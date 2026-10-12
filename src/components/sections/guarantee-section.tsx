@@ -8,9 +8,15 @@ export default function GuaranteeSection() {
     const { language } = useLanguage();
 
     const guarantees = [
-        language === 'nl'
-            ? 'Geld terug als je niet tevreden bent. Geen vragen, geen gedoe.'
-            : 'Money back if you\'re not satisfied. No questions asked.',
+        <>
+            {language === 'nl'
+                ? 'Geld terug op de setup als het prototype niet doet wat we samen hebben afgesproken. Zie onze '
+                : 'Your setup fee back if the prototype does not do what we agreed together. See our '}
+            <a href="/terms-of-service" className="font-medium text-primary hover:underline">
+                {language === 'nl' ? 'voorwaarden' : 'terms'}
+            </a>
+            .
+        </>,
         language === 'nl'
             ? 'Binnen 4 uur persoonlijke reactie van ons team'
             : 'Personal response from our team within 4 hours',
@@ -42,7 +48,7 @@ export default function GuaranteeSection() {
                         viewport={{ once: true }}
                         transition={{ delay: 0.05 }}
                     >
-                        {language === 'nl' ? 'Jouw tevredenheid, gegarandeerd' : 'Your Satisfaction, Guaranteed'}
+                        {language === 'nl' ? 'Werkt het niet zoals afgesproken? Geld terug' : 'Not working as agreed? Money back'}
                     </motion.h2>
 
                     <motion.p

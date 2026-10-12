@@ -158,8 +158,8 @@ function HeroContent() {
                   label: language === "nl" ? "bedrijven" : "companies",
                 },
                 {
-                  value: "100%",
-                  label: language === "nl" ? "garantie" : "guarantee",
+                  value: language === "nl" ? "Geld terug" : "Money back",
+                  label: language === "nl" ? "op de setup" : "on the setup",
                 },
               ].map((stat, idx) => (
                 <div key={idx} className="text-center lg:text-left">

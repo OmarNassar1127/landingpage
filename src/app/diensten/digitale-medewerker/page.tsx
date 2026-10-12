@@ -309,6 +309,10 @@ export default function DigitaleMedewerkerPage() {
                 </div>
               ))}
             </div>
+            <p className="mt-6 max-w-3xl text-xs leading-relaxed text-zinc-500">
+              Alle prijzen zijn exclusief btw. Verbruikskosten van AI-modellen en hosting hangen af van gebruik en verkeer en kunnen per maand verschillen; tarieven van externe aanbieders kunnen wijzigen. Wij adviseren altijd de beste verhouding tussen prijs en kwaliteit. Zie onze{" "}
+              <a href="/terms-of-service" className="underline underline-offset-2 hover:text-primary">algemene voorwaarden</a>.
+            </p>
           </div>
         </section>
 

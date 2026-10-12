@@ -30,7 +30,7 @@ const CookieConsent = ({
   const [showSettings, setShowSettings] = useState(false);
   const [preferences, setPreferences] = useState<CookiePreferences>({
     necessary: true,
-    analytics: true,
+    analytics: false,
     marketing: false,
     preferences: false,
   });
@@ -50,6 +50,9 @@ const CookieConsent = ({
         setOpen(true);
       }
     }
+    const reopen = () => { setShowSettings(true); setOpen(true); };
+    window.addEventListener("open-cookie-settings", reopen);
+    return () => window.removeEventListener("open-cookie-settings", reopen);
   }, []);
 
   const handleAcceptAll = () => {
@@ -62,6 +65,7 @@ const CookieConsent = ({
     
     setPreferences(allAccepted);
     localStorage.setItem("cookiePreferences", JSON.stringify(allAccepted));
+    window.dispatchEvent(new Event("cookie-consent-change"));
     
     if (onAccept) {
       onAccept(allAccepted);
@@ -80,6 +84,7 @@ const CookieConsent = ({
     
     setPreferences(minimalPreferences);
     localStorage.setItem("cookiePreferences", JSON.stringify(minimalPreferences));
+    window.dispatchEvent(new Event("cookie-consent-change"));
     
     if (onDecline) {
       onDecline();
@@ -90,6 +95,7 @@ const CookieConsent = ({
 
   const handleSavePreferences = () => {
     localStorage.setItem("cookiePreferences", JSON.stringify(preferences));
+    window.dispatchEvent(new Event("cookie-consent-change"));
     
     if (onAccept) {
       onAccept(preferences);

@@ -1,91 +1,177 @@
-'use client';
+"use client";
 
-import React from 'react';
-import Navbar from "@/components/sections/navbar";
-import Footer from "@/components/sections/footer";
+import React from "react";
+import { useLanguage } from "@/lib/i18n/language-context";
+import { EN_NOTE, LAST_UPDATED, PolicyDocument, type PolicyDoc } from "./terms-of-service";
 
-export default function CookiePolicy() {
-  const lastUpdated = "April 5, 2025";
+const NL: PolicyDoc = {
+  title: "Cookieverklaring",
+  updated: LAST_UPDATED.nl,
+  back: "Terug naar home",
+  numbered: false,
+  intro: [
+    "Op virelio.nl gebruiken wij zo min mogelijk cookies. In deze verklaring staat welke cookies en vergelijkbare technieken wij gebruiken, waarvoor, en hoe u uw keuze aanpast.",
+  ],
+  articles: [
+    {
+      title: "Wat zijn cookies",
+      body: [
+        "Een cookie is een klein tekstbestand dat een website in uw browser opslaat. Vergelijkbare technieken, zoals local storage, werken op dezelfde manier. In deze verklaring noemen wij ze allemaal cookies.",
+      ],
+    },
+    {
+      title: "Functionele cookies",
+      body: [
+        "Deze cookies zijn nodig om de website te laten werken. Hiervoor is geen toestemming nodig.",
+        {
+          list: [
+            "cookiePreferences (local storage, virelio.nl): bewaart uw cookiekeuze, zodat wij die niet steeds opnieuw vragen. Blijft bewaard tot u die zelf wist.",
+            "language (local storage, virelio.nl): bewaart of u de website in het Nederlands of het Engels leest. Blijft bewaard tot u die zelf wist.",
+            "Cloudflare: onze beveiligingspartij kan een functionele cookie plaatsen om de website te beschermen tegen bots en misbruik, zoals __cf_bm. Deze cookie blijft maximaal 30 minuten bewaard.",
+          ],
+        },
+        "Local storage blijft in uw eigen browser. Die gegevens worden niet naar ons verstuurd.",
+      ],
+    },
+    {
+      title: "Analytische cookies",
+      body: [
+        "Alleen als u daarvoor toestemming geeft, gebruiken wij Google Analytics 4. Zo zien wij welke pagina's worden bezocht en hoe wij de website kunnen verbeteren.",
+        {
+          list: [
+            "_ga (Google Analytics): onderscheidt bezoekers met een willekeurig ID. Bewaartermijn 2 jaar.",
+            "_ga_H1BKGBT5FM (Google Analytics): houdt de status van uw bezoek bij. Bewaartermijn 2 jaar.",
+          ],
+        },
+        "Welke gegevens Google Analytics verwerkt en met wie wij die delen, staat in onze [privacyverklaring](/privacy-policy).",
+      ],
+    },
+    {
+      title: "Geen marketingcookies",
+      body: [
+        "Wij plaatsen geen marketing- of advertentiecookies en wij volgen u niet over andere websites. De keuzes voor marketing- en voorkeurscookies in de cookiebanner hebben daarom op dit moment geen effect.",
+        "Klikt u op een link naar een andere dienst, zoals WhatsApp, Calendly of LinkedIn, dan kan die dienst op haar eigen website cookies plaatsen. Daarvoor geldt het cookiebeleid van die dienst.",
+      ],
+    },
+    {
+      title: "Uw toestemming",
+      body: [
+        "Bij uw eerste bezoek vragen wij in een banner om toestemming. U kiest Alles accepteren, Alles weigeren of stelt per soort cookie zelf in. Weigert u, dan plaatsen wij alleen functionele cookies. De website werkt dan gewoon.",
+      ],
+    },
+    {
+      title: "Toestemming wijzigen of intrekken",
+      body: [
+        "U kunt uw toestemming op elk moment intrekken. Zo werkt het:",
+        {
+          list: [
+            "Wis in uw browser de cookies en websitegegevens van virelio.nl. In de meeste browsers vindt u dit bij Instellingen, onder Privacy.",
+            "Bij uw volgende bezoek verschijnt de cookiebanner opnieuw. Kies dan Alles weigeren of pas uw keuze aan.",
+          ],
+        },
+        "U kunt Google Analytics ook op alle websites blokkeren met de browser-add-on van Google: [tools.google.com/dlpage/gaoptout](https://tools.google.com/dlpage/gaoptout).",
+      ],
+    },
+    {
+      title: "Cookies via uw browser beheren",
+      body: [
+        "In uw browserinstellingen kunt u cookies bekijken, verwijderen en blokkeren. Blokkeert u alle cookies, dan onthoudt de website uw taal- en cookiekeuze niet meer. Kijk voor uitleg in de helppagina's van uw browser, zoals Chrome, Safari, Firefox of Edge.",
+      ],
+    },
+    {
+      title: "Wijzigingen en contact",
+      body: [
+        "Gaan wij andere cookies gebruiken, dan passen wij deze verklaring aan en vragen wij waar nodig opnieuw om toestemming. Vragen? Mail naar info@virelio.nl.",
+      ],
+    },
+  ],
+};
 
-  return (
-    <div className="min-h-screen bg-background dark:bg-background">
-      {/* Hide navbar since it would be redundant with the back button */}
-      <main className="container mx-auto px-4 py-12 max-w-4xl bg-background dark:bg-background">
-        <div className="flex justify-between items-center mb-8">
-          <a href="/" className="flex items-center gap-2 px-4 py-2 rounded-md bg-secondary hover:bg-secondary/80 dark:bg-secondary dark:hover:bg-secondary/80 text-secondary-foreground dark:text-secondary-foreground transition-colors">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-left">
-              <path d="m12 19-7-7 7-7"/>
-              <path d="M19 12H5"/>
-            </svg>
-            Back to Home
-          </a>
-        </div>
-        <h1 className="text-4xl font-bold mb-6 text-foreground dark:text-foreground">Cookie Policy</h1>
-        <p className="text-sm text-muted-foreground mb-8">Last Updated: {lastUpdated}</p>
+const EN: PolicyDoc = {
+  title: "Cookie policy",
+  updated: LAST_UPDATED.en,
+  back: "Back to home",
+  note: EN_NOTE,
+  numbered: false,
+  intro: [
+    "On virelio.nl we use as few cookies as possible. This policy explains which cookies and similar technologies we use, what for, and how you change your choice.",
+  ],
+  articles: [
+    {
+      title: "What cookies are",
+      body: [
+        "A cookie is a small text file that a website stores in your browser. Similar technologies, such as local storage, work the same way. In this policy we call them all cookies.",
+      ],
+    },
+    {
+      title: "Functional cookies",
+      body: [
+        "These cookies are needed to make the website work. They do not require consent.",
+        {
+          list: [
+            "cookiePreferences (local storage, virelio.nl): stores your cookie choice so we do not ask again each time. Kept until you clear it.",
+            "language (local storage, virelio.nl): stores whether you read the website in Dutch or English. Kept until you clear it.",
+            "Cloudflare: our security provider may set a functional cookie to protect the website against bots and abuse, such as __cf_bm. This cookie is kept for at most 30 minutes.",
+          ],
+        },
+        "Local storage stays in your own browser. This data is not sent to us.",
+      ],
+    },
+    {
+      title: "Analytics cookies",
+      body: [
+        "Only if you consent, we use Google Analytics 4. This shows us which pages are visited and how we can improve the website.",
+        {
+          list: [
+            "_ga (Google Analytics): distinguishes visitors with a random ID. Kept for 2 years.",
+            "_ga_H1BKGBT5FM (Google Analytics): keeps track of the state of your visit. Kept for 2 years.",
+          ],
+        },
+        "Which data Google Analytics processes and with whom we share it is described in our [privacy statement](/privacy-policy).",
+      ],
+    },
+    {
+      title: "No marketing cookies",
+      body: [
+        "We do not set marketing or advertising cookies and we do not track you across other websites. The marketing and preference options in the cookie banner therefore currently have no effect.",
+        "If you click a link to another service, such as WhatsApp, Calendly or LinkedIn, that service may set cookies on its own website. Its own cookie policy applies.",
+      ],
+    },
+    {
+      title: "Your consent",
+      body: [
+        "On your first visit a banner asks for your consent. You choose Accept all, Decline all or set each type of cookie yourself. If you decline, we only set functional cookies. The website still works normally.",
+      ],
+    },
+    {
+      title: "Changing or withdrawing consent",
+      body: [
+        "You can withdraw your consent at any time. This is how:",
+        {
+          list: [
+            "Clear the cookies and site data for virelio.nl in your browser. In most browsers this is under Settings, in the Privacy section.",
+            "On your next visit the cookie banner appears again. Choose Decline all or adjust your choice.",
+          ],
+        },
+        "You can also block Google Analytics on all websites with Google's browser add-on: [tools.google.com/dlpage/gaoptout](https://tools.google.com/dlpage/gaoptout).",
+      ],
+    },
+    {
+      title: "Managing cookies in your browser",
+      body: [
+        "In your browser settings you can view, delete and block cookies. If you block all cookies, the website no longer remembers your language and cookie choice. See the help pages of your browser, such as Chrome, Safari, Firefox or Edge.",
+      ],
+    },
+    {
+      title: "Changes and contact",
+      body: [
+        "If we start using other cookies, we update this policy and ask for consent again where needed. Questions? Email info@virelio.nl.",
+      ],
+    },
+  ],
+};
 
-        <div className="prose dark:prose-invert max-w-none prose-headings:text-foreground dark:prose-headings:text-foreground prose-p:text-foreground/90 dark:prose-p:text-foreground/90 prose-strong:text-foreground dark:prose-strong:text-foreground prose-a:text-blue-600 dark:prose-a:text-blue-400 prose-a:no-underline hover:prose-a:underline">
-          <h2>What Are Cookies</h2>
-          <p>
-            Cookies are small pieces of text sent by your web browser by a website you visit. A cookie file is stored in your web browser and allows the Service or a third-party to recognize you and make your next visit easier and the Service more useful to you.
-          </p>
-          <p>
-            Cookies can be "persistent" or "session" cookies. Persistent cookies remain on your personal computer or mobile device when you go offline, while session cookies are deleted as soon as you close your web browser.
-          </p>
-
-          <h2>How Virelio Uses Cookies</h2>
-          <p>
-            When you use and access the Service, we may place a number of cookie files in your web browser. We use cookies for the following purposes:
-          </p>
-          <ul className="prose-li:text-foreground/90 dark:prose-li:text-foreground/90">
-            <li>
-              <strong className="text-foreground dark:text-foreground">Essential cookies:</strong> These cookies are required for the operation of our website. They include, for example, cookies that enable you to log into secure areas of our website.
-            </li>
-            <li>
-              <strong className="text-foreground dark:text-foreground">Analytical/performance cookies:</strong> These allow us to recognize and count the number of visitors and to see how visitors move around our website when they are using it. This helps us to improve the way our website works, for example, by ensuring that users are finding what they are looking for easily.
-            </li>
-            <li>
-              <strong className="text-foreground dark:text-foreground">Functionality cookies:</strong> These are used to recognize you when you return to our website. This enables us to personalize our content for you, greet you by name and remember your preferences (for example, your choice of language or region).
-            </li>
-            <li>
-              <strong className="text-foreground dark:text-foreground">Targeting cookies:</strong> These cookies record your visit to our website, the pages you have visited and the links you have followed. We will use this information to make our website and the advertising displayed on it more relevant to your interests.
-            </li>
-          </ul>
-
-          <h2>Third-Party Cookies</h2>
-          <p>
-            In addition to our own cookies, we may also use various third-party cookies to report usage statistics of the Service, deliver advertisements on and through the Service, and so on.
-          </p>
-
-          <h2>What Are Your Choices Regarding Cookies</h2>
-          <p>
-            If you'd like to delete cookies or instruct your web browser to delete or refuse cookies, please visit the help pages of your web browser. Please note, however, that if you delete cookies or refuse to accept them, you might not be able to use all of the features we offer, you may not be able to store your preferences, and some of our pages might not display properly.
-          </p>
-          <ul className="prose-li:text-foreground/90 dark:prose-li:text-foreground/90">
-            <li>For the Chrome web browser, please visit this page from Google: <a href="https://support.google.com/accounts/answer/32050" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline">https://support.google.com/accounts/answer/32050</a></li>
-            <li>For the Internet Explorer web browser, please visit this page from Microsoft: <a href="http://support.microsoft.com/kb/278835" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline">http://support.microsoft.com/kb/278835</a></li>
-            <li>For the Firefox web browser, please visit this page from Mozilla: <a href="https://support.mozilla.org/en-US/kb/delete-cookies-remove-info-websites-stored" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline">https://support.mozilla.org/en-US/kb/delete-cookies-remove-info-websites-stored</a></li>
-            <li>For the Safari web browser, please visit this page from Apple: <a href="https://support.apple.com/guide/safari/manage-cookies-and-website-data-sfri11471/mac" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline">https://support.apple.com/guide/safari/manage-cookies-and-website-data-sfri11471/mac</a></li>
-          </ul>
-
-          <h2>Cookie Policy Updates</h2>
-          <p>
-            We may update our Cookie Policy from time to time. We will notify you of any changes by posting the new Cookie Policy on this page and updating the "Last Updated" date at the top.
-          </p>
-          <p>
-            You are advised to review this Cookie Policy periodically for any changes. Changes to this Cookie Policy are effective when they are posted on this page.
-          </p>
-
-          <h2>Contact Us</h2>
-          <p>
-            If you have any questions about our Cookie Policy, please contact us:
-          </p>
-          <p className="dark:text-white">
-            <strong className="text-foreground dark:text-foreground">Email:</strong> <a href="mailto:info@virelio.nl" className="text-blue-600 dark:text-blue-400 hover:underline">info@virelio.nl</a><br />
-            <strong className="text-foreground dark:text-foreground">Address:</strong> Amsterdam, The Netherlands
-          </p>
-        </div>
-      </main>
-      <Footer />
-    </div>
-  );
+export default function CookiePolicy({ showBackLink = true }: { showBackLink?: boolean }) {
+  const { language } = useLanguage();
+  return <PolicyDocument doc={language === "en" ? EN : NL} showBackLink={showBackLink} />;
 }
