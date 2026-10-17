@@ -5,6 +5,8 @@ import { breadcrumbSchema } from "@/lib/schema";
 import { siteConfig } from "@/lib/config";
 import { HARNESS_URL, receptionist, solutionPath, solutions, type Lang } from "@/lib/solutions";
 import SolutionIllustration from "./illustrations";
+import Hero3D from "@/components/three/hero-3d";
+import { has3D } from "@/components/three/registry";
 import { BottomCta, COPY, Eyebrow, OpenDoor, PriceBlock, card } from "./shared";
 
 const HERO = {
@@ -71,13 +73,11 @@ export default function OverviewPage({ lang }: { lang: Lang }) {
       <main className="min-h-screen bg-white">
         <Navbar customNavLinks={h.nav} />
 
-        <section className="pb-12 pt-28 sm:pb-16 sm:pt-32 lg:pt-36">
-          <div className="container mx-auto max-w-4xl px-4 sm:px-6">
-            <Eyebrow>{h.eyebrow}</Eyebrow>
-            <h1 className="mb-5 text-4xl font-bold leading-[1.06] tracking-tight [hyphens:none] text-zinc-900 sm:text-5xl lg:text-[56px]">{h.title}</h1>
-            <p className="max-w-2xl text-base leading-relaxed text-zinc-500 sm:text-lg">{h.text}</p>
-          </div>
-        </section>
+        <Hero3D slug="overview" label={h.eyebrow} tall={false}>
+          <Eyebrow>{h.eyebrow}</Eyebrow>
+          <h1 className="mb-4 text-[32px] font-bold leading-[1.06] tracking-tight [hyphens:none] text-zinc-900 sm:mb-5 sm:text-5xl lg:text-[56px]">{h.title}</h1>
+          <p className="max-w-2xl text-base leading-relaxed text-zinc-500 sm:text-lg">{h.text}</p>
+        </Hero3D>
 
         <section id="oplossingen" className="border-t border-black/[0.07] bg-zinc-50/60 py-14 sm:py-20">
           <div className="container mx-auto max-w-6xl px-4 sm:px-6">
@@ -86,7 +86,11 @@ export default function OverviewPage({ lang }: { lang: Lang }) {
                 <li key={t.key}>
                   <a href={t.href} className={`group flex h-full flex-col p-4 transition-colors hover:border-primary/40 sm:p-5 ${card}`}>
                     <div className="mb-4 overflow-hidden rounded-xl border border-black/[0.06] transition-colors group-hover:border-primary/25">
-                      <SolutionIllustration slug={t.key} lang={lang} still />
+                      {has3D(t.key) ? (
+                        <img src={`/3d/${t.key}-1.webp`} alt="" width={900} height={900} loading="lazy" decoding="async" className="aspect-[4/3] w-full bg-white object-contain" />
+                      ) : (
+                        <SolutionIllustration slug={t.key} lang={lang} still />
+                      )}
                     </div>
                     <h2 className="mb-1.5 text-base font-semibold text-zinc-900 group-hover:text-primary">{t.name}</h2>
                     <p className="flex-1 text-sm leading-relaxed text-zinc-500">{t.teaser}</p>

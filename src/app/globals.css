@@ -121,6 +121,7 @@ html {
 
 body {
   overflow-x: hidden;
+  overflow-x: clip;
   width: 100%;
   position: relative;
 }
@@ -132,6 +133,7 @@ body {
   letter-spacing: -0.015em;
   line-height: 1.47059;
   overflow-x: hidden;
+  overflow-x: clip;
   width: 100%;
   position: relative;
 }
@@ -245,6 +247,7 @@ a:hover {
   html,
   body {
     overflow-x: hidden;
+    overflow-x: clip;
     width: 100%;
   }
 
@@ -278,6 +281,7 @@ a:hover {
   html,
   body {
     overflow-x: hidden;
+    overflow-x: clip;
     width: 100%;
   }
 
@@ -396,6 +400,7 @@ a:hover {
   body {
     @apply bg-background text-foreground;
     overflow-x: hidden;
+    overflow-x: clip;
     width: 100%;
     position: relative;
   }
