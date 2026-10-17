@@ -2,6 +2,7 @@ import { generateMetadata as genMeta } from "@/lib/metadata";
 import { faqSchema, breadcrumbSchema } from "@/lib/schema";
 import { siteConfig } from "@/lib/config";
 import Navbar from "@/components/sections/navbar";
+import CatalogLink from "@/components/oplossingen/catalog-link";
 import Footer from "@/components/sections/footer";
 import { ArrowRight, Check, HeartPulse, Calculator, Building2, Headphones, Plug, Brain, UserRound, Network } from "lucide-react";
 import NightDesk from "./night-desk";
@@ -352,6 +353,7 @@ export default function DigitaleMedewerkerPage() {
           </div>
         </section>
 
+        <CatalogLink />
         <Footer />
       </main>
     </>

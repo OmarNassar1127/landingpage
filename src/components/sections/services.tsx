@@ -277,6 +277,12 @@ const Services = () => {
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
               </button>
             </div>
+            <p className="mt-4 px-1 text-sm text-zinc-500">
+              {isNL ? "Liever per probleem zoeken? " : "Rather search by problem? "}
+              <a href={isNL ? "/oplossingen/" : "/en/solutions/"} className={`font-medium text-primary hover:underline ${RING}`}>
+                {isNL ? "Bekijk alle oplossingen" : "See all solutions"}
+              </a>
+            </p>
           </div>
         </div>
       </div>

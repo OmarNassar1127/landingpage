@@ -60,6 +60,15 @@ export function LanguageProvider({ children }: LanguageProviderProps) {
     
     // Change URL based on language using Next.js router (no redirects)
     const currentPath = window.location.pathname;
+    // The solution catalog has its own English slug for the overview path
+    if (lang === "en" && currentPath.startsWith('/oplossingen')) {
+      router.push(currentPath.replace(/^\/oplossingen/, '/en/solutions'));
+      return;
+    }
+    if (lang === "nl" && currentPath.startsWith('/en/solutions')) {
+      router.push(currentPath.replace(/^\/en\/solutions/, '/oplossingen'));
+      return;
+    }
     if (lang === "en" && !currentPath.startsWith('/en')) {
       // Switch to English - add /en to path
       if (currentPath === '/') {

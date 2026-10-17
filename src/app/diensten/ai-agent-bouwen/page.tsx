@@ -2,6 +2,7 @@ import { generateMetadata as genMeta } from "@/lib/metadata";
 import { faqSchema, breadcrumbSchema } from "@/lib/schema";
 import { siteConfig } from "@/lib/config";
 import Navbar from "@/components/sections/navbar";
+import CatalogLink from "@/components/oplossingen/catalog-link";
 import Footer from "@/components/sections/footer";
 import AgentWorkbench from "@/components/diensten/agent-bouwen/agent-workbench";
 import Pricing, { CALENDLY, MAINTENANCE, PRICING_TIERS } from "@/components/diensten/agent-bouwen/pricing";
@@ -284,6 +285,7 @@ export default function AIAgentBouwenPage() {
           </div>
         </section>
 
+        <CatalogLink />
         <Footer />
       </main>
     </>
