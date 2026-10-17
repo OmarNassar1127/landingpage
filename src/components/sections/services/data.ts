@@ -150,8 +150,8 @@ export const getCategories = (language: string): Category[] => {
             : "An AI agent that handles incoming phone calls in natural language. Answers FAQs, schedules appointments in your calendar and escalates to a human when needed.",
           integrations: ["Twilio Voice", "Google Calendar", "Slack", "CRM"],
           results: isNL
-            ? [{ value: "24/7", label: "Bereikbaar" }, { value: "<2s", label: "Opneemtijd" }, { value: "-87%", label: "Gesprekken" }]
-            : [{ value: "24/7", label: "Available" }, { value: "<2s", label: "Pickup time" }, { value: "-87%", label: "Call volume" }],
+            ? [{ value: "24/7", label: "Bereikbaar" }, { value: "<2s", label: "Opneemtijd" }, { value: "AVG", label: "Data in de EU" }]
+            : [{ value: "24/7", label: "Available" }, { value: "<2s", label: "Pickup time" }, { value: "GDPR", label: "Data in the EU" }],
         },
       ],
     },

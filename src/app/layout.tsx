@@ -90,7 +90,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Virelio | Digitale Medewerkers & AI Agents voor bedrijven",
-    description: "200+ automatiseringen. AI telefonie die 87% gesprekken automatiseert. Voor MKB & Enterprise.",
+    description: "AI agents op maat voor klantenservice, telefonie en backoffice. Vanaf €1.000 eenmalig. Voor MKB en enterprise.",
     site: "@Virelio",
     creator: "@Virelio",
     images: [`${siteConfig.url}/og-image.png`],

@@ -319,8 +319,8 @@ export default function Testimonials() {
           </div>
           <div className="text-sm text-muted-foreground">
             {language === "nl"
-              ? "Vertrouwd door 18+ bedrijven in Nederland"
-              : "Trusted by 18+ companies in the Netherlands"}
+              ? "Ervaringen van klanten"
+              : "What clients say"}
           </div>
         </motion.div>
       </div>

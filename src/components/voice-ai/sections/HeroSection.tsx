@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FiPlay, FiUsers } from "react-icons/fi";
+import { FiPlay, FiPhoneCall, FiUsers } from "react-icons/fi";
 import { useLanguage } from "@/lib/i18n/language-context";
 import { translations } from "@/lib/i18n/translations";
 
@@ -128,7 +128,7 @@ export default function HeroSection({ currentLang }: HeroSectionProps) {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 1.0 }}
         >
-          <FiUsers className="text-green-500 text-lg" />
+          <FiPhoneCall className="text-green-500 text-lg" />
           <span className="text-sm font-medium">{t.hero.socialProof}</span>
         </motion.div>
       </div>

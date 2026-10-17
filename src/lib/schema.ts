@@ -463,7 +463,7 @@ export function voiceAIServiceSchema() {
     "@id": `${siteConfig.url}/spraakassistent#service`,
     name: "AI Spraakassistent voor Bedrijven",
     alternateName: ["Voice AI", "Spraakassistent", "AI Telefonie", "Voice Assistant"],
-    description: "24/7 AI spraakassistent die klantgesprekken automatiseert. Beantwoordt binnen 2 beltonen, vermindert gesprekvolume met 87%, en integreert met bestaande systemen.",
+    description: "24/7 AI spraakassistent die klantgesprekken automatiseert. Beantwoordt binnen 2 beltonen en integreert met bestaande systemen.",
     url: `${siteConfig.url}/spraakassistent`,
     image: `${siteConfig.url}/og-image.png`,
     serviceType: "AI Voice Automation",

@@ -28,10 +28,10 @@ export const translations = {
           main: "neemt altijd op:",
           detail: "24/7, binnen twee beltonen.",
         },
-        trustSignal: "Geen opstartkosten",
+        trustSignal: "Vanaf €1.000 eenmalig",
         primaryCta: "Start gratis proef",
         secondaryCta: "Vraag gratis demo aan",
-        socialProof: "100+ bedrijven, 87% minder inkomende telefoontjes",
+        socialProof: "Neemt elk gesprek op, ook 's avonds en in het weekend",
       },
       problem: {
         title:
@@ -98,7 +98,7 @@ export const translations = {
       },
       socialProof: {
         title: "Vertrouwd door Industrieleiders",
-        metric: "87 % van klanten vermindert telefoongesprekken binnen 30 dagen",
+        metric: "Elk gesprek wordt opgenomen, ook buiten kantooruren",
         trustedBy: "Vertrouwd door industrieleiders",
         testimonials: [
           // {
@@ -132,8 +132,8 @@ export const translations = {
         ],
         metrics: [
           {
-            value: "87 %",
-            label: "gemiddelde vermindering van gespreksvolume",
+            value: "2",
+            label: "beltonen tot de assistent opneemt",
             icon: "TrendingUp",
           },
           {
@@ -142,8 +142,8 @@ export const translations = {
             icon: "Clock",
           },
           {
-            value: "100+",
-            label: "bedrijven vertrouwen Virelio",
+            value: "€1.000",
+            label: "eenmalig, onderhoud vanaf €99 per maand",
             icon: "Users",
           },
         ],
@@ -861,10 +861,10 @@ export const translations = {
           main: "does.",
           detail: "24/7. In 2 rings. Every single time.",
         },
-        trustSignal: "No setup fees",
+        trustSignal: "From €1,000 one-off",
         primaryCta: "Start free trial",
         secondaryCta: "View demo",
-        socialProof: "100+ companies - 87% call reduction",
+        socialProof: "Answers every call, evenings and weekends too",
       },
       problem: {
         title: "Your team spends 40% of time on routine calls",
@@ -928,7 +928,7 @@ export const translations = {
       },
       socialProof: {
         title: "Trusted by Industry Leaders",
-        metric: "87% of clients reduce call volume within 30 days",
+        metric: "Every call answered, also outside office hours",
         trustedBy: "Trusted by industry leaders",
         testimonials: [
           // {
@@ -962,8 +962,8 @@ export const translations = {
         ],
         metrics: [
           {
-            value: "87%",
-            label: "Average reduction in call volume",
+            value: "2",
+            label: "Rings until the assistant answers",
             icon: "TrendingUp",
           },
           {
@@ -972,8 +972,8 @@ export const translations = {
             icon: "Clock",
           },
           {
-            value: "100+",
-            label: "Companies trust Virelio",
+            value: "€1,000",
+            label: "One-off, maintenance from €99 a month",
             icon: "Users",
           },
         ],

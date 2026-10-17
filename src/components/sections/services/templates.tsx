@@ -380,7 +380,7 @@ export function DashboardTemplate({ activeAgent, agents, language }: { activeAge
         ]},
         { title: "Social Listening", metrics: [
           { label: "Vermeldingen vandaag", value: "23", color: "text-rose-400" },
-          { label: "Sentiment", value: "87% positief", color: "text-emerald-400" },
+          { label: "Sentiment", value: "Positief", color: "text-emerald-400" },
           { label: "Trending topic", value: "\"AI agents\"", color: "text-amber-400" },
           { label: "Competitor mentions", value: "4 negatief", color: "text-red-400" },
         ]},
@@ -406,7 +406,7 @@ export function DashboardTemplate({ activeAgent, agents, language }: { activeAge
         ]},
         { title: "Social Listening", metrics: [
           { label: "Mentions today", value: "23", color: "text-rose-400" },
-          { label: "Sentiment", value: "87% positive", color: "text-emerald-400" },
+          { label: "Sentiment", value: "Positive", color: "text-emerald-400" },
           { label: "Trending topic", value: "\"AI agents\"", color: "text-amber-400" },
           { label: "Competitor mentions", value: "4 negative", color: "text-red-400" },
         ]},

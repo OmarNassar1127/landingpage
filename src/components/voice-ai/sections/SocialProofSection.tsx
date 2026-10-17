@@ -87,7 +87,7 @@ export default function SocialProofSection({ currentLang }: SocialProofSectionPr
         >
           <div className="bg-gradient-to-r from-green-500/10 to-blue-600/10 rounded-2xl p-8 max-w-2xl mx-auto">
             <div className="text-4xl md:text-5xl font-bold text-slate-900 mb-2">
-              87%
+              24/7
             </div>
             <p className="text-lg text-gray-600 font-medium">
               {t.socialProof.metric}

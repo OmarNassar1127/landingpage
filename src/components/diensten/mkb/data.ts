@@ -22,7 +22,7 @@ export const USE_CASES = [
     title: "Klantenservice",
     short: "Klantenservice",
     problem: "Uw team beantwoordt elke dag dezelfde vragen over levertijd, retouren en facturen.",
-    solution: "Een agent beantwoordt 80% van de tickets via e-mail, WhatsApp en chat. De rest gaat naar de juiste collega.",
+    solution: "Een agent beantwoordt de terugkerende tickets via e-mail, WhatsApp en chat. De rest gaat naar de juiste collega.",
     saving: 3500,
     setup: 2000,
   },

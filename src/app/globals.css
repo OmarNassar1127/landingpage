@@ -290,7 +290,8 @@ a:hover {
   /* Prevent text from causing horizontal scroll */
   p {
     word-wrap: break-word;
-    hyphens: auto;
+    /* No automatic hyphenation: it split Dutch words badly ("ge-sprek", "er-bij"). */
+    hyphens: manual;
   }
 
   /* Headings never split a word with a hyphen ("vertrou-wen"); they wrap whole words and balance their lines. */

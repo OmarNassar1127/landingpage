@@ -154,8 +154,8 @@ function HeroContent() {
                   label: language === "nl" ? "reactietijd" : "response",
                 },
                 {
-                  value: "18+",
-                  label: language === "nl" ? "bedrijven" : "companies",
+                  value: language === "nl" ? "€1.000" : "€1,000",
+                  label: language === "nl" ? "vanaf, eenmalig" : "from, one-off",
                 },
                 {
                   value: language === "nl" ? "Geld terug" : "Money back",

@@ -5,6 +5,7 @@ import { CALENDLY } from "@/components/diensten/agent-bouwen/pricing";
 import { breadcrumbSchema } from "@/lib/schema";
 import { siteConfig } from "@/lib/config";
 import { getSolution, receptionist, solutionPath, type Lang, type Solution } from "@/lib/solutions";
+import SolutionIllustration from "./illustrations";
 import { BottomCta, COPY, Eyebrow, OpenDoor, PriceBlock, btnPrimary, btnSecondary, card } from "./shared";
 
 function relatedTiles(lang: Lang, slugs: string[]) {
@@ -77,26 +78,29 @@ export default function SolutionPage({ lang, solution: s }: { lang: Lang; soluti
 
         {/* Hero */}
         <section className="pb-14 pt-28 sm:pb-20 sm:pt-32 lg:pt-36">
-          <div className="container mx-auto max-w-4xl px-4 sm:px-6">
-            <nav aria-label="Breadcrumb" className="mb-6 text-sm text-zinc-500">
-              <a href={solutionPath(lang)} className="transition-colors hover:text-primary">
-                {c.catalog}
-              </a>
-              <span className="mx-2 text-zinc-300">/</span>
-              <span className="text-zinc-900">{s.name}</span>
-            </nav>
-            <Eyebrow>{s.name}</Eyebrow>
-            <h1 className="mb-6 text-[32px] font-bold leading-[1.12] tracking-tight [hyphens:none] text-zinc-900 sm:text-5xl sm:leading-[1.08]">{s.pain}</h1>
-            <p className="mb-8 max-w-2xl text-base leading-relaxed text-zinc-500 sm:text-lg">{s.intro}</p>
-            <div className="flex flex-col gap-3 sm:flex-row">
-              <a href={CALENDLY} target="_blank" rel="noopener noreferrer" className={btnPrimary}>
-                {c.intake}
-                <ArrowRight className="h-4 w-4" />
-              </a>
-              <a href="mailto:info@virelio.nl" className={btnSecondary}>
-                {c.ask}
-              </a>
+          <div className="container mx-auto grid max-w-6xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-[1fr_minmax(0,460px)] lg:gap-14">
+            <div className="min-w-0">
+              <nav aria-label="Breadcrumb" className="mb-6 text-sm text-zinc-500">
+                <a href={solutionPath(lang)} className="transition-colors hover:text-primary">
+                  {c.catalog}
+                </a>
+                <span className="mx-2 text-zinc-300">/</span>
+                <span className="text-zinc-900">{s.name}</span>
+              </nav>
+              <Eyebrow>{s.name}</Eyebrow>
+              <h1 className="mb-6 text-[32px] font-bold leading-[1.12] tracking-tight [hyphens:none] text-zinc-900 sm:text-5xl sm:leading-[1.08] lg:text-[44px]">{s.pain}</h1>
+              <p className="mb-8 max-w-2xl text-base leading-relaxed text-zinc-500 sm:text-lg">{s.intro}</p>
+              <div className="flex flex-col gap-3 sm:flex-row">
+                <a href={CALENDLY} target="_blank" rel="noopener noreferrer" className={btnPrimary}>
+                  {c.intake}
+                  <ArrowRight className="h-4 w-4" />
+                </a>
+                <a href="mailto:info@virelio.nl" className={btnSecondary}>
+                  {c.ask}
+                </a>
+              </div>
             </div>
+            <SolutionIllustration slug={s.slug} lang={lang} />
           </div>
         </section>
 

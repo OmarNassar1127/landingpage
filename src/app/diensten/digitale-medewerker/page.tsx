@@ -66,7 +66,7 @@ const faqItems = [
 ];
 
 const departments = [
-  { icon: Headphones, name: "Klantenservice", tasks: ["80% van de tickets automatisch afgehandeld", "24/7 antwoord via WhatsApp, e-mail en chat", "Complexe vragen naar de juiste collega"] },
+  { icon: Headphones, name: "Klantenservice", tasks: ["Terugkerende vragen automatisch afgehandeld", "24/7 antwoord via WhatsApp, e-mail en chat", "Complexe vragen naar de juiste collega"] },
   { icon: Calculator, name: "Finance", tasks: ["Facturen aanmaken en versturen", "Betalingsherinneringen op het juiste moment", "Betalingen matchen met openstaande facturen"] },
   { icon: Building2, name: "Operations", tasks: ["Orders uit Shopify, e-mail of formulieren", "Voorraad bewaken en leveranciers informeren", "Track & trace updates en KPI-rapportages"] },
   { icon: HeartPulse, name: "HR", tasks: ["Onboarding: accounts, documenten, intro's", "Vragen over verlof, beleid en salarisstroken", "Contractscreening en administratie"] },

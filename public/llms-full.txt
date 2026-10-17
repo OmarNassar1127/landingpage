@@ -250,7 +250,6 @@ ContentOS reduced the client's content production time by 80% while increasing p
 
 - Founded and based in Amsterdam, Netherlands
 - Serves clients across the Netherlands and internationally
-- 18+ companies served as of early 2026
 - Average time from intake to production: 2 weeks
 - Client data ownership: 100% — clients own all agents, code, and data
 - GDPR compliant — all data processing within the EU

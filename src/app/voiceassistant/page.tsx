@@ -3,7 +3,7 @@ import VoiceAIPage from "@/components/voice-ai/VoiceAIPage";
 
 export const metadata: Metadata = {
   title: "AI Voice Assistant for Business | 24/7 Call Automation | Virelio",
-  description: "Reduce call volume by 87% with enterprise-grade AI voice assistant. Answers in 2 rings, 24/7 availability. No setup fees. Trusted by 100+ companies. Start free trial today.",
+  description: "An AI voice assistant that answers your customer calls. Answers in 2 rings, 24/7 availability. From €1,000 one-off, maintenance from €99 a month.",
   keywords: "voice assistant, AI voice, voice AI, business phone automation, virtual assistant, enterprise voice solutions, call automation, AI customer service, voice bot, conversational AI, phone automation, business AI assistant, 24/7 availability, AI receptionist, automated phone system, natural language processing, NLP, speech recognition, voice recognition, phone bot, virtual receptionist, AI call center, voice automation, digital assistant, artificial intelligence phone, AI for business, SMB automation, enterprise voice AI, SaaS telephony, cloud phone system, VoIP AI, telecommunications AI, customer service automation, AI solutions, voice technology, Virelio, Amsterdam AI company, Netherlands tech, European AI, call handling, inbound call automation, outbound calling AI, voice response system, IVR replacement, intelligent voice response, contact center AI, customer experience automation, CX automation, voice analytics, sentiment analysis, multilingual voice AI, omnichannel support, API integration, CRM integration, real-time transcription, voice to text, automated scheduling, appointment booking AI",
   alternates: {
     canonical: "https://virelio.nl/voiceassistant",
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "AI Voice Assistant for Business | 24/7 Automation | Virelio",
-    description: "Reduce call volume by 87%. Enterprise AI voice assistant that answers in 2 rings, 24/7. No setup fees. Start today.",
+    description: "AI voice assistant that answers in 2 rings, 24/7. From €1,000 one-off. Book a free intake.",
     url: "/voiceassistant",
     locale: "en_US",
     type: "website",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "AI Voice Assistant | 24/7 Business Calls | Virelio",
-    description: "Reduce call volume by 87% with enterprise AI. Answers in 2 rings, 24/7 availability. Start free.",
+    description: "AI voice assistant. Answers in 2 rings, 24/7 availability. From €1,000 one-off.",
     images: ["/og-voice.png"],
   },
   robots: {

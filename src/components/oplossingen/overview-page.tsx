@@ -4,6 +4,7 @@ import Footer from "@/components/sections/footer";
 import { breadcrumbSchema } from "@/lib/schema";
 import { siteConfig } from "@/lib/config";
 import { HARNESS_URL, receptionist, solutionPath, solutions, type Lang } from "@/lib/solutions";
+import SolutionIllustration from "./illustrations";
 import { BottomCta, COPY, Eyebrow, OpenDoor, PriceBlock, card } from "./shared";
 
 const HERO = {
@@ -83,7 +84,10 @@ export default function OverviewPage({ lang }: { lang: Lang }) {
             <ul className="grid gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3">
               {tiles.map((t) => (
                 <li key={t.key}>
-                  <a href={t.href} className={`group flex h-full flex-col p-4 transition-colors hover:border-primary/40 sm:p-6 ${card}`}>
+                  <a href={t.href} className={`group flex h-full flex-col p-4 transition-colors hover:border-primary/40 sm:p-5 ${card}`}>
+                    <div className="mb-4 overflow-hidden rounded-xl border border-black/[0.06] transition-colors group-hover:border-primary/25">
+                      <SolutionIllustration slug={t.key} lang={lang} still />
+                    </div>
                     <h2 className="mb-1.5 text-base font-semibold text-zinc-900 group-hover:text-primary">{t.name}</h2>
                     <p className="flex-1 text-sm leading-relaxed text-zinc-500">{t.teaser}</p>
                     <span className="mt-3 flex items-center justify-between text-sm sm:mt-4">

@@ -49,9 +49,9 @@ const faqItems = [
 ];
 
 const agentTypes = [
-  { icon: MessageSquare, title: "Klantenservice agent", description: "Beantwoordt 80% van de supportvragen zelf. Werkt met Zendesk, Intercom en WhatsApp Business.", result: "2 FTE bespaard" },
-  { icon: TrendingUp, title: "Sales agent", description: "Kwalificeert inbound leads, plant afspraken in Calendly en stuurt persoonlijke follow-ups.", result: "+40% conversie" },
-  { icon: Zap, title: "Operations agent", description: "Verwerkt orders en maakt facturen aan in Exact Online of Moneybird. Zonder handwerk.", result: "90% minder handwerk" },
+  { icon: MessageSquare, title: "Klantenservice agent", description: "Beantwoordt de terugkerende supportvragen zelf. Werkt met Zendesk, Intercom en WhatsApp Business.", result: "Overdracht met samenvatting" },
+  { icon: TrendingUp, title: "Sales agent", description: "Kwalificeert inbound leads, plant afspraken in Calendly en stuurt persoonlijke follow-ups.", result: "Elke lead op tijd opgevolgd" },
+  { icon: Zap, title: "Operations agent", description: "Verwerkt orders en maakt facturen aan in Exact Online of Moneybird. Zonder handwerk.", result: "Boeking klaar ter controle" },
   { icon: BookOpen, title: "Kennisbank agent (RAG)", description: "Doorzoekt je documenten in SharePoint, Notion of Confluence en antwoordt met bronvermelding.", result: "Antwoord in <5 sec" },
 ];
 
@@ -62,7 +62,7 @@ const processSteps = [
   { step: "04", title: "Live", when: "Dag 7", description: "De agent draait. De eerste weken kijken we actief mee en verbeteren we op basis van echte gesprekken." },
 ];
 
-const proof = ["18+ bedrijven geholpen", "Live in 1 week", "AVG-conform, data in de EU", "Gratis intake"];
+const proof = ["Vanaf €1.000 eenmalig", "Live in 1 week", "AVG-conform, data in de EU", "Gratis intake"];
 
 const btnPrimary =
   "inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-7 py-3.5 text-sm font-semibold text-white shadow-[0_14px_30px_-14px_rgba(70,55,210,0.7)] transition-all hover:bg-primary/90 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2";

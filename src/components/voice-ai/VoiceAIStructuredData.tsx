@@ -33,7 +33,7 @@ export default function VoiceAIStructuredData({ lang }: VoiceAIStructuredDataPro
       "@type": "Offer",
       "price": "0",
       "priceCurrency": lang === 'nl' ? "EUR" : "USD",
-      "description": lang === 'nl' ? "Gratis proefperiode, geen opstartkosten" : "Free trial, no setup fees"
+      "description": lang === 'nl' ? "Vanaf €1.000 eenmalig, onderhoud vanaf €99 per maand" : "From €1,000 one-off, maintenance from €99 a month"
     },
     "aggregateRating": {
       "@type": "AggregateRating",
@@ -45,7 +45,7 @@ export default function VoiceAIStructuredData({ lang }: VoiceAIStructuredDataPro
     "featureList": lang === 'nl' ? [
       "24/7 beschikbaarheid",
       "Beantwoordt binnen 2 beltonen",
-      "87% reductie in gesprekvolume",
+      "Neemt op binnen 2 beltonen",
       "Nederlandse taalondersteuning",
       "Integratie met bestaande systemen",
       "Real-time transcriptie",
@@ -54,7 +54,7 @@ export default function VoiceAIStructuredData({ lang }: VoiceAIStructuredDataPro
     ] : [
       "24/7 availability",
       "Answers within 2 rings",
-      "87% reduction in call volume",
+      "Answers within 2 rings",
       "Multi-language support",
       "Integration with existing systems",
       "Real-time transcription",
@@ -80,7 +80,7 @@ export default function VoiceAIStructuredData({ lang }: VoiceAIStructuredDataPro
         "name": "Hoeveel kost de Virelio spraakassistent?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Virelio biedt een gratis proefperiode zonder opstartkosten. Contacteer ons voor een op maat gemaakt prijsvoorstel gebaseerd op uw bedrijfsbehoeften."
+          "text": "Eén agent met één koppeling kost €1.000 eenmalig, onderhoud vanaf €99 per maand. Moeten meerdere agents samen een heel proces afhandelen, dan kost dat €2.500 tot €4.000. Prijzen exclusief btw."
         }
       },
       {
@@ -105,7 +105,7 @@ export default function VoiceAIStructuredData({ lang }: VoiceAIStructuredDataPro
         "name": "How much does the Virelio voice assistant cost?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Virelio offers a free trial with no setup fees. Contact us for a customized pricing proposal based on your business needs."
+          "text": "One agent with one integration costs €1,000 one-off, maintenance from €99 a month. If several agents need to handle a whole process together, that costs €2,500 to €4,000. Prices exclude VAT."
         }
       },
       {
