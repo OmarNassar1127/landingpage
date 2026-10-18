@@ -7,7 +7,9 @@ export type Solution = {
   title: string;
   description: string;
   keywords: string;
-  /** Hero headline: the pain in the customer's own words. */
+  /** Short headline above the bento. */
+  headline: string;
+  /** The pain in the customer's own words. */
   pain: string;
   /** One short line for the catalog tile. */
   teaser: string;

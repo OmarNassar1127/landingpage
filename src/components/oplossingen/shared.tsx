@@ -80,10 +80,6 @@ export function Eyebrow({ children }: { children: React.ReactNode }) {
   );
 }
 
-function mailto(lang: Lang) {
-  return `mailto:info@virelio.nl?subject=${encodeURIComponent(COPY[lang].doorSubject)}`;
-}
-
 export function PriceBlock({ lang }: { lang: Lang }) {
   const c = COPY[lang];
   return (
@@ -115,22 +111,6 @@ export function PriceBlock({ lang }: { lang: Lang }) {
         </div>
       </div>
     </section>
-  );
-}
-
-export function OpenDoor({ lang }: { lang: Lang }) {
-  const c = COPY[lang];
-  return (
-    <div className="flex flex-col gap-4 rounded-2xl border border-black/[0.07] bg-white px-5 py-5 sm:flex-row sm:items-center sm:gap-6 sm:px-6">
-      <div className="min-w-0 flex-1">
-        <h2 className="text-lg font-semibold text-zinc-900">{c.doorTitle}</h2>
-        <p className="mt-1 text-sm leading-relaxed text-zinc-500">{c.doorText}</p>
-      </div>
-      <a href={mailto(lang)} className={`${btnSecondary} shrink-0 px-5 py-3`}>
-        {c.doorCta}
-        <ArrowRight className="h-4 w-4" />
-      </a>
-    </div>
   );
 }
 

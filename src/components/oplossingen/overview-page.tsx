@@ -1,13 +1,10 @@
-import { ArrowRight, ArrowUpRight, Code2 } from "lucide-react";
 import Navbar from "@/components/sections/navbar";
 import Footer from "@/components/sections/footer";
 import { breadcrumbSchema } from "@/lib/schema";
 import { siteConfig } from "@/lib/config";
-import { HARNESS_URL, receptionist, solutionPath, solutions, type Lang } from "@/lib/solutions";
-import SolutionIllustration from "./illustrations";
-import Hero3D from "@/components/three/hero-3d";
-import { has3D } from "@/components/three/registry";
-import { BottomCta, COPY, Eyebrow, OpenDoor, PriceBlock, card } from "./shared";
+import { receptionist, solutionPath, solutions, type Lang } from "@/lib/solutions";
+import { BottomCta, COPY, Eyebrow, PriceBlock } from "./shared";
+import OverviewBento from "./bento/overview-bento";
 
 const HERO = {
   nl: {
@@ -73,57 +70,12 @@ export default function OverviewPage({ lang }: { lang: Lang }) {
       <main className="min-h-screen bg-white">
         <Navbar customNavLinks={h.nav} />
 
-        <Hero3D slug="overview" label={h.eyebrow} tall={false}>
-          <Eyebrow>{h.eyebrow}</Eyebrow>
-          <h1 className="mb-4 text-[32px] font-bold leading-[1.06] tracking-tight [hyphens:none] text-zinc-900 sm:mb-5 sm:text-5xl lg:text-[56px]">{h.title}</h1>
-          <p className="max-w-2xl text-base leading-relaxed text-zinc-500 sm:text-lg">{h.text}</p>
-        </Hero3D>
-
-        <section id="oplossingen" className="border-t border-black/[0.07] bg-zinc-50/60 py-14 sm:py-20">
+        <section id="oplossingen" className="scroll-mt-16 bg-[#f5f5f7] pb-14 pt-[88px] sm:pb-20 sm:pt-28 lg:pt-32">
           <div className="container mx-auto max-w-6xl px-4 sm:px-6">
-            <ul className="grid gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3">
-              {tiles.map((t) => (
-                <li key={t.key}>
-                  <a href={t.href} className={`group flex h-full flex-col p-4 transition-colors hover:border-primary/40 sm:p-5 ${card}`}>
-                    <div className="mb-4 overflow-hidden rounded-xl border border-black/[0.06] transition-colors group-hover:border-primary/25">
-                      {has3D(t.key) ? (
-                        <img src={`/3d/${t.key}-1.webp`} alt="" width={900} height={900} loading="lazy" decoding="async" className="aspect-[4/3] w-full bg-white object-contain" />
-                      ) : (
-                        <SolutionIllustration slug={t.key} lang={lang} still />
-                      )}
-                    </div>
-                    <h2 className="mb-1.5 text-base font-semibold text-zinc-900 group-hover:text-primary">{t.name}</h2>
-                    <p className="flex-1 text-sm leading-relaxed text-zinc-500">{t.teaser}</p>
-                    <span className="mt-3 flex items-center justify-between text-sm sm:mt-4">
-                      <span className="text-zinc-400">{c.from}</span>
-                      <span className="inline-flex items-center gap-1 font-medium text-primary">
-                        {c.view}
-                        <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
-                      </span>
-                    </span>
-                  </a>
-                </li>
-              ))}
-              <li>
-                <a
-                  href={HARNESS_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group flex h-full flex-col rounded-2xl border border-dashed border-black/[0.15] bg-white/60 p-5 transition-colors hover:border-primary/40 sm:p-6"
-                >
-                  <Code2 className="mb-3 h-5 w-5 text-primary" />
-                  <h2 className="mb-1.5 text-base font-semibold text-zinc-900 group-hover:text-primary">{h.devTitle}</h2>
-                  <p className="flex-1 text-sm leading-relaxed text-zinc-500">{h.devText}</p>
-                  <span className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-primary">
-                    harness.omardev.xyz
-                    <ArrowUpRight className="h-3.5 w-3.5" />
-                  </span>
-                </a>
-              </li>
-            </ul>
-            <div className="mt-8">
-              <OpenDoor lang={lang} />
-            </div>
+            <Eyebrow>{h.eyebrow}</Eyebrow>
+            <h1 className="max-w-3xl text-[32px] font-bold leading-[1.05] tracking-[-0.03em] [hyphens:none] text-[#1d1d1f] sm:text-5xl lg:text-[56px]">{h.title}</h1>
+            <p className="mb-5 mt-3 max-w-2xl text-[15px] leading-relaxed text-[#6e6e73] sm:mb-8 sm:text-lg">{h.text}</p>
+            <OverviewBento lang={lang} tiles={tiles} devTitle={h.devTitle} devText={h.devText} />
           </div>
         </section>
 

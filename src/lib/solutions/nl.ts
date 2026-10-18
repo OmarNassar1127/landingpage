@@ -7,6 +7,7 @@ const MKB = { name: "AI voor het MKB", href: "/diensten/ai-automatisering-mkb/" 
 export const solutionsNl: Solution[] = [
   {
     slug: "klantenservice-agent",
+    headline: "Klantenservice die nooit slaapt.",
     name: "Klantenservice-agent",
     title: "Klantenservice-agent: 24/7 antwoord via mail, chat en WhatsApp",
     description:
@@ -33,6 +34,7 @@ export const solutionsNl: Solution[] = [
   },
   {
     slug: "ai-op-je-eigen-data",
+    headline: "Vraag het je database gewoon.",
     name: "AI op je eigen data",
     title: "AI op je eigen data: vragen aan je database in gewoon Nederlands",
     description:
@@ -59,6 +61,7 @@ export const solutionsNl: Solution[] = [
   },
   {
     slug: "offerte-agent",
+    headline: "Van aanvraag naar offerte, zonder avondwerk.",
     name: "Offerte-agent",
     title: "Offerte-agent: van aanvraag naar offerte in je eigen opmaak",
     description:
@@ -85,6 +88,7 @@ export const solutionsNl: Solution[] = [
   },
   {
     slug: "factuurverwerking",
+    headline: "Bonnetjes erin, boekingen klaar.",
     name: "Factuurverwerking",
     title: "Factuurverwerking met AI: inkoopfacturen en bonnetjes klaar om te boeken",
     description:
@@ -111,6 +115,7 @@ export const solutionsNl: Solution[] = [
   },
   {
     slug: "inbox-agent",
+    headline: "Een info@-inbox die zichzelf sorteert.",
     name: "Inbox-agent",
     title: "Inbox-agent: een gedeelde inbox die zichzelf sorteert",
     description:
@@ -137,6 +142,7 @@ export const solutionsNl: Solution[] = [
   },
   {
     slug: "sales-opvolging",
+    headline: "Elke lead op tijd opgevolgd.",
     name: "Sales-opvolging",
     title: "Sales-opvolging met AI: elke lead op tijd, je CRM op orde",
     description:
@@ -163,6 +169,7 @@ export const solutionsNl: Solution[] = [
   },
   {
     slug: "kennisbank-assistent",
+    headline: "Het juiste antwoord, met de bron erbij.",
     name: "Kennisbank-assistent",
     title: "Kennisbank-assistent: antwoorden uit je eigen documenten, met bron",
     description:
@@ -189,6 +196,7 @@ export const solutionsNl: Solution[] = [
   },
   {
     slug: "recruitment-screening",
+    headline: "Elk cv gelezen. Jij beslist.",
     name: "Recruitment-screening",
     title: "Recruitment-screening met AI: cv’s voorgeselecteerd, gesprekken gepland",
     description:
@@ -215,6 +223,7 @@ export const solutionsNl: Solution[] = [
   },
   {
     slug: "contract-check",
+    headline: "Weet wat je tekent.",
     name: "Contract-check",
     title: "Contract-check met AI: risicovolle en ontbrekende clausules gemarkeerd",
     description:
@@ -241,6 +250,7 @@ export const solutionsNl: Solution[] = [
   },
   {
     slug: "productteksten",
+    headline: "Elk product een goede tekst, in elke taal.",
     name: "Productteksten",
     title: "Productteksten met AI: beschrijvingen en vertalingen in je eigen toon",
     description:
@@ -267,6 +277,7 @@ export const solutionsNl: Solution[] = [
   },
   {
     slug: "planning-agent",
+    headline: "Het rooster rond, ook na een ziekmelding.",
     name: "Planning-agent",
     title: "Planning-agent: roosters, afspraken en routes volgens je eigen regels",
     description:

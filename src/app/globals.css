@@ -481,3 +481,38 @@ a:hover {
   background: rgba(148, 163, 184, 0.12);
   border-color: rgba(148, 163, 184, 0.2);
 }
+/* Bento tiles on the solution pages: small, calm loops. Off under reduced motion. */
+@media (prefers-reduced-motion: no-preference) {
+  .bx-ping { animation: bx-ping 2s ease-out infinite; }
+  .bx-grow { animation: bx-grow 3.2s ease-in-out infinite; transform-origin: bottom; }
+  .bx-shimmer { animation: bx-shimmer 2.4s ease-in-out infinite; }
+  .bx-float { animation: bx-float 5s ease-in-out infinite; }
+  .bx-blink { animation: bx-blink 1.1s steps(1) infinite; }
+  .bx-dot { animation: bx-dot 1.2s ease-in-out infinite; }
+  .bx-scan { animation: bx-scan 3.6s ease-in-out infinite; }
+  .bx-marquee { animation: bx-marquee 16s linear infinite; }
+  .bx-fill { animation: bx-fill 4.8s cubic-bezier(.22,1,.36,1) infinite; transform-origin: left; }
+  .bx-spin { animation: bx-spin 40s linear infinite; }
+  .bx-mark { animation: bx-mark 4.2s cubic-bezier(.22,1,.36,1) infinite; transform-origin: left; }
+  .bx-travel { animation: bx-travel 5s cubic-bezier(.45,0,.25,1) infinite; }
+  .bx-swap { animation: bx-swap 9s cubic-bezier(.65,0,.35,1) infinite; }
+  .bx-rise { animation: bx-rise 4.5s cubic-bezier(.22,1,.36,1) infinite; }
+  .bx-nudge { animation: bx-nudge 2.6s ease-in-out infinite; }
+}
+@keyframes bx-ping { 0% { box-shadow: 0 0 0 0 rgba(52,199,89,.55); } 70%, 100% { box-shadow: 0 0 0 10px rgba(52,199,89,0); } }
+@keyframes bx-grow { 50% { transform: scaleY(.55); } }
+@keyframes bx-shimmer { 50% { opacity: .4; } }
+@keyframes bx-float { 50% { transform: translateY(-6px); } }
+@keyframes bx-blink { 50% { opacity: 0; } }
+@keyframes bx-dot { 0%, 100% { opacity: .25; } 50% { opacity: 1; } }
+@keyframes bx-scan { 0% { transform: translateY(0); opacity: 0; } 10% { opacity: 1; } 85% { opacity: 1; } 100% { transform: translateY(var(--bx-scan, 80px)); opacity: 0; } }
+@keyframes bx-marquee { to { transform: translateX(-50%); } }
+@keyframes bx-fill { 0% { transform: scaleX(0); } 45%, 80% { transform: scaleX(1); } 100% { transform: scaleX(1); opacity: 0; } }
+@keyframes bx-spin { to { transform: rotate(360deg); } }
+@keyframes bx-mark { 0% { transform: scaleX(0); } 40%, 85% { transform: scaleX(1); opacity: 1; } 100% { transform: scaleX(1); opacity: 0; } }
+@keyframes bx-travel { 0% { left: 0%; } 45%, 55% { left: calc(100% - 10px); } 100% { left: 0%; } }
+@keyframes bx-swap { 0%, 22% { transform: translateY(0); } 25%, 47% { transform: translateY(-25%); } 50%, 72% { transform: translateY(-50%); } 75%, 100% { transform: translateY(-75%); } }
+@keyframes bx-rise { 0% { transform: translateY(8px); opacity: 0; } 15%, 80% { transform: translateY(0); opacity: 1; } 100% { transform: translateY(-4px); opacity: 0; } }
+@keyframes bx-nudge { 50% { transform: translateX(3px); } }
+/* Bento tile copy inherits the tile's size instead of the global 1rem for p. */
+.bp { font-size: inherit; line-height: inherit; letter-spacing: inherit; }

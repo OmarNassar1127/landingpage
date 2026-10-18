@@ -13,8 +13,6 @@ export const OBJECTS: Record<string, Loader> = {
   "contract-check": () => import("./objects/contract.js"),
   productteksten: () => import("./objects/productteksten.js"),
   "planning-agent": () => import("./objects/planning.js"),
-  /** The overview hero: all objects above. */
-  overview: () => import("./objects/overview.js"),
 };
 
 export const has3D = (slug: string) => slug in OBJECTS;

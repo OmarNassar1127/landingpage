@@ -1,4 +1,4 @@
-// Render the start and end stills of every 3D hero into public/3d/<slug>-<0|1>.webp.
+// Render the start and end stills of every 3D tile into public/3d/<slug>-<0|1>.webp.
 // Run against a served static export:
 //   npx next build && python3 -m http.server 3312 -d out &
 //   node scripts/posters.mjs [http://localhost:3312] [slug ...]
@@ -14,7 +14,7 @@ const registry = readFileSync(new URL("../src/components/three/registry.ts", imp
 const all = [...registry.matchAll(/^\s+"?([a-z-]+)"?: \(\) => import/gm)].map((m) => m[1]);
 const only = process.argv.slice(3);
 const slugs = only.length ? only : all;
-const pathOf = (slug) => (slug === "overview" ? "/oplossingen/" : `/oplossingen/${slug}/`);
+const pathOf = (slug) => `/oplossingen/${slug}/`;
 
 const out = new URL("../public/3d/", import.meta.url).pathname;
 mkdirSync(out, { recursive: true });

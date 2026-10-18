@@ -1,14 +1,12 @@
 import { ArrowRight, Check } from "lucide-react";
+import { preload } from "react-dom";
 import Navbar from "@/components/sections/navbar";
 import Footer from "@/components/sections/footer";
-import { CALENDLY } from "@/components/diensten/agent-bouwen/pricing";
 import { breadcrumbSchema } from "@/lib/schema";
 import { siteConfig } from "@/lib/config";
 import { getSolution, receptionist, solutionPath, type Lang, type Solution } from "@/lib/solutions";
-import SolutionIllustration from "./illustrations";
-import Hero3D from "@/components/three/hero-3d";
-import { has3D } from "@/components/three/registry";
-import { BottomCta, COPY, Eyebrow, OpenDoor, PriceBlock, btnPrimary, btnSecondary, card } from "./shared";
+import { BENTOS } from "./bento/layouts-b";
+import { BottomCta, COPY, Eyebrow, card } from "./shared";
 
 function relatedTiles(lang: Lang, slugs: string[]) {
   return slugs.map((slug) => {
@@ -64,20 +62,9 @@ export default function SolutionPage({ lang, solution: s }: { lang: Lang; soluti
 
   const related = relatedTiles(lang, s.related);
 
-  const intro = (
-    <>
-      <p className="mb-8 max-w-2xl text-base leading-relaxed text-zinc-500 sm:text-lg">{s.intro}</p>
-      <div className="flex flex-col gap-3 sm:flex-row">
-        <a href={CALENDLY} target="_blank" rel="noopener noreferrer" className={btnPrimary}>
-          {c.intake}
-          <ArrowRight className="h-4 w-4" />
-        </a>
-        <a href="mailto:info@virelio.nl" className={btnSecondary}>
-          {c.ask}
-        </a>
-      </div>
-    </>
-  );
+  const Bento = BENTOS[s.slug];
+  // The 3D tile's still is the largest thing on a phone: fetch it before the scripts.
+  preload(`/3d/${s.slug}-0.webp`, { as: "image", fetchPriority: "high" });
 
   return (
     <>
@@ -93,64 +80,20 @@ export default function SolutionPage({ lang, solution: s }: { lang: Lang; soluti
           ]}
         />
 
-        {has3D(s.slug) ? (
-          <>
-            <Hero3D slug={s.slug} beats={s.steps} label={s.name}>
-              <nav aria-label="Breadcrumb" className="mb-4 hidden text-sm text-zinc-500 sm:block lg:mb-6">
-                <a href={solutionPath(lang)} className="transition-colors hover:text-primary">
-                  {c.catalog}
-                </a>
-                <span className="mx-2 text-zinc-300">/</span>
-                <span className="text-zinc-900">{s.name}</span>
-              </nav>
-              <Eyebrow>{s.name}</Eyebrow>
-              <h1 className="text-[27px] font-bold leading-[1.13] tracking-tight [hyphens:none] text-zinc-900 sm:text-5xl sm:leading-[1.08] lg:mb-6 lg:text-[44px]">{s.pain}</h1>
-              <div className="hidden lg:block">{intro}</div>
-            </Hero3D>
-            <section className="pb-14 pt-8 sm:pb-20 lg:hidden">
-              <div className="container mx-auto max-w-6xl px-4 sm:px-6">{intro}</div>
-            </section>
-          </>
-        ) : (
-          <section className="pb-14 pt-28 sm:pb-20 sm:pt-32 lg:pt-36">
-            <div className="container mx-auto grid max-w-6xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-[1fr_minmax(0,460px)] lg:gap-14">
-              <div className="min-w-0">
-                <nav aria-label="Breadcrumb" className="mb-6 text-sm text-zinc-500">
-                  <a href={solutionPath(lang)} className="transition-colors hover:text-primary">
-                    {c.catalog}
-                  </a>
-                  <span className="mx-2 text-zinc-300">/</span>
-                  <span className="text-zinc-900">{s.name}</span>
-                </nav>
-                <Eyebrow>{s.name}</Eyebrow>
-                <h1 className="mb-6 text-[32px] font-bold leading-[1.12] tracking-tight [hyphens:none] text-zinc-900 sm:text-5xl sm:leading-[1.08] lg:text-[44px]">{s.pain}</h1>
-                {intro}
-              </div>
-              <SolutionIllustration slug={s.slug} lang={lang} />
-            </div>
-          </section>
-        )}
-
-        {/* How it works: the UI explainer next to the three steps */}
-        <section id="hoe-het-werkt" className="border-t border-black/[0.07] bg-zinc-50/60 py-16 sm:py-24">
+        {/* Headline, then one bento with the object, the product, the facts and the way in */}
+        <section className="bg-[#f5f5f7] pb-14 pt-[88px] sm:pb-20 sm:pt-28 lg:pt-32">
           <div className="container mx-auto max-w-6xl px-4 sm:px-6">
-            <Eyebrow>{c.howTitle}</Eyebrow>
-            <h2 className="mb-10 text-3xl font-bold tracking-tight text-zinc-900 sm:mb-14 sm:text-4xl">
-              {lang === "nl" ? "In drie stappen" : "In three steps"}
-            </h2>
-            <div className={has3D(s.slug) ? "grid items-start gap-8 lg:grid-cols-[minmax(0,460px)_1fr] lg:gap-12" : ""}>
-              {has3D(s.slug) && <SolutionIllustration slug={s.slug} lang={lang} />}
-              <ol className={has3D(s.slug) ? "grid gap-3 sm:gap-4" : "grid gap-3 sm:gap-4 md:grid-cols-3"}>
-                {s.steps.map((step, i) => (
-                  <li key={step.title} className={`relative p-5 sm:p-6 ${card}`}>
-                    <span className="absolute inset-x-6 top-0 h-[3px] rounded-b-full bg-primary" style={{ opacity: 0.35 + i * 0.3 }} aria-hidden="true" />
-                    <span className="mb-4 block text-sm font-bold tabular-nums text-primary">0{i + 1}</span>
-                    <h3 className="mb-1.5 text-[15px] font-semibold text-zinc-900">{step.title}</h3>
-                    <p className="text-sm leading-relaxed text-zinc-500">{step.text}</p>
-                  </li>
-                ))}
-              </ol>
-            </div>
+            <nav aria-label="Breadcrumb" className="mb-4 hidden text-sm text-zinc-500 sm:block">
+              <a href={solutionPath(lang)} className="transition-colors hover:text-primary">
+                {c.catalog}
+              </a>
+              <span className="mx-2 text-zinc-300">/</span>
+              <span className="text-zinc-900">{s.name}</span>
+            </nav>
+            <Eyebrow>{s.name}</Eyebrow>
+            <h1 className="max-w-3xl text-[32px] font-bold leading-[1.05] tracking-[-0.03em] [hyphens:none] text-[#1d1d1f] sm:text-5xl lg:text-[56px]">{s.headline}</h1>
+            <p className="mb-5 mt-3 max-w-2xl text-[15px] leading-relaxed text-[#6e6e73] sm:mb-8 sm:text-lg">{s.teaser}</p>
+            <Bento lang={lang} s={s} />
           </div>
         </section>
 
@@ -161,6 +104,7 @@ export default function SolutionPage({ lang, solution: s }: { lang: Lang; soluti
             <h2 className="mb-10 text-3xl font-bold tracking-tight text-zinc-900 sm:mb-14 sm:text-4xl">
               {lang === "nl" ? `Dit staat er bij oplevering` : `What is in place at handover`}
             </h2>
+            <p className="-mt-6 mb-8 max-w-2xl text-base leading-relaxed text-zinc-500 sm:-mt-8 sm:mb-10">{s.intro}</p>
             <ul className="grid gap-3 sm:grid-cols-2 sm:gap-4">
               {s.gets.map((g) => (
                 <li key={g} className={`flex items-start gap-3 px-5 py-4 text-[15px] text-zinc-700 ${card}`}>
@@ -169,17 +113,16 @@ export default function SolutionPage({ lang, solution: s }: { lang: Lang; soluti
                 </li>
               ))}
             </ul>
+            <p className="mt-6 max-w-2xl text-sm leading-relaxed text-zinc-500">
+              {c.priceLadder} {c.priceNote}
+            </p>
           </div>
         </section>
-
-        <PriceBlock lang={lang} />
 
         {/* Open door + related */}
         <section className="border-t border-black/[0.07] bg-zinc-50/60 py-16 sm:py-24">
           <div className="container mx-auto max-w-6xl px-4 sm:px-6">
-            <OpenDoor lang={lang} />
-
-            <h2 className="mb-6 mt-14 text-2xl font-bold tracking-tight text-zinc-900 sm:text-3xl">{c.alsoTitle}</h2>
+            <h2 className="mb-6 text-2xl font-bold tracking-tight text-zinc-900 sm:text-3xl">{c.alsoTitle}</h2>
             <div className="grid gap-3 sm:gap-4 md:grid-cols-3">
               {related.map((r) => (
                 <a key={r.key} href={r.href} className={`group flex flex-col p-5 transition-colors hover:border-primary/40 sm:p-6 ${card}`}>

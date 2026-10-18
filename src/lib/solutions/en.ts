@@ -6,6 +6,7 @@ const HOME = { name: "Custom AI agents by Virelio", href: "/en/" };
 export const solutionsEn: Solution[] = [
   {
     slug: "klantenservice-agent",
+    headline: "Customer service that never sleeps.",
     name: "Customer service agent",
     title: "Customer service agent: 24/7 answers by email, chat and WhatsApp",
     description:
@@ -32,6 +33,7 @@ export const solutionsEn: Solution[] = [
   },
   {
     slug: "ai-op-je-eigen-data",
+    headline: "Just ask your database.",
     name: "AI on your own data",
     title: "AI on your own data: ask your database questions in plain language",
     description:
@@ -58,6 +60,7 @@ export const solutionsEn: Solution[] = [
   },
   {
     slug: "offerte-agent",
+    headline: "From request to quote, without the late night.",
     name: "Quote agent",
     title: "Quote agent: from enquiry to a ready quote in your own format",
     description:
@@ -84,6 +87,7 @@ export const solutionsEn: Solution[] = [
   },
   {
     slug: "factuurverwerking",
+    headline: "Receipts in, bookings ready.",
     name: "Invoice processing",
     title: "AI invoice processing: purchase invoices and receipts ready to book",
     description:
@@ -110,6 +114,7 @@ export const solutionsEn: Solution[] = [
   },
   {
     slug: "inbox-agent",
+    headline: "A shared inbox that sorts itself.",
     name: "Inbox agent",
     title: "Inbox agent: a shared inbox that sorts itself",
     description:
@@ -136,6 +141,7 @@ export const solutionsEn: Solution[] = [
   },
   {
     slug: "sales-opvolging",
+    headline: "Every lead followed up on time.",
     name: "Sales follow-up",
     title: "AI sales follow-up: every lead on time, a clean CRM",
     description:
@@ -162,6 +168,7 @@ export const solutionsEn: Solution[] = [
   },
   {
     slug: "kennisbank-assistent",
+    headline: "The right answer, with its source.",
     name: "Knowledge base assistant",
     title: "Knowledge base assistant: answers from your own documents, with sources",
     description:
@@ -188,6 +195,7 @@ export const solutionsEn: Solution[] = [
   },
   {
     slug: "recruitment-screening",
+    headline: "Every CV read. You decide.",
     name: "Recruitment screening",
     title: "AI recruitment screening: CVs pre-screened, interviews scheduled",
     description:
@@ -214,6 +222,7 @@ export const solutionsEn: Solution[] = [
   },
   {
     slug: "contract-check",
+    headline: "Know what you sign.",
     name: "Contract check",
     title: "AI contract check: risky and missing clauses flagged for review",
     description:
@@ -240,6 +249,7 @@ export const solutionsEn: Solution[] = [
   },
   {
     slug: "productteksten",
+    headline: "A good text for every product, in every language.",
     name: "Product descriptions",
     title: "AI product descriptions: written and translated in your tone of voice",
     description:
@@ -266,6 +276,7 @@ export const solutionsEn: Solution[] = [
   },
   {
     slug: "planning-agent",
+    headline: "The schedule sorted, even after a sick call.",
     name: "Planning agent",
     title: "Planning agent: schedules, rosters and routes from your own rules",
     description:

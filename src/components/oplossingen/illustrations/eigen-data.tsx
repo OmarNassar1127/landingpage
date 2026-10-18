@@ -13,7 +13,7 @@ const T = {
     cols: ["Klant", "Q3", "Regio"],
     regions: ["Noord", "Zuid", "West", "Oost", "West", "Zuid", "Noord"],
     answer: "Antwoord",
-    lines: ["Klant 102, 014 en 087", "samen 77% van Q3."],
+    lines: ["Klant 102, 014 en 087", "samen €40.940 in Q3."],
     source: "Bron: verkoop_2026.xlsx",
   },
   en: {
@@ -23,7 +23,7 @@ const T = {
     cols: ["Customer", "Q3", "Region"],
     regions: ["North", "South", "West", "East", "West", "South", "North"],
     answer: "Answer",
-    lines: ["Customers 102, 014, 087:", "77% of Q3 together."],
+    lines: ["Customers 102, 014, 087:", "€40,940 in Q3 together."],
     source: "Source: sales_2026.xlsx",
   },
 };
