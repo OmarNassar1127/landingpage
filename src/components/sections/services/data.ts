@@ -273,14 +273,14 @@ export const getCategories = (language: string): Category[] => {
     },
     {
       id: "kennisbank",
-      title: isNL ? "Kennisbank & Intelligence" : "Knowledge & Intelligence",
+      title: isNL ? "Kennisbank (RAG) & Intelligence" : "Knowledge (RAG) & Intelligence",
       subtitle: isNL ? "Al je kennis, altijd vindbaar" : "All your knowledge, always findable",
       agentCount: "4 agents",
       icon: BookOpen,
       gradient: "from-violet-500 to-purple-400",
       agents: [
         {
-          name: isNL ? "Kennisbank Agent" : "Knowledge Base Agent",
+          name: isNL ? "Kennisbank Agent (RAG)" : "Knowledge Base Agent (RAG)",
           icon: Database,
           headline: isNL ? "Stel een vraag, krijg antwoord met bronnen" : "Ask a question, get answers with sources",
           description: isNL

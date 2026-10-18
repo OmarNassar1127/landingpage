@@ -290,7 +290,7 @@ export const translations = {
     hero: {
       title: "Virelio bouwt AI.",
       subtitle:
-        "AI-chatbots, kennisbanken, automatiseringen. Maatwerk webshops en tools. Van idee naar werkend systeem in 1 week.",
+        "AI-chatbots, kennisbanken (RAG), automatiseringen. Maatwerk webshops en tools. Van idee naar werkend systeem in 1 week.",
       ctaButton: "Bekijk Onze Projecten",
       secondaryButton: "Laten We Kennismaken",
     },
@@ -1119,7 +1119,7 @@ export const translations = {
     hero: {
       title: "Virelio builds AI.",
       subtitle:
-        "AI chatbots, knowledge bases, automations. Custom e-commerce and internal tools. From idea to working system in 1 week.",
+        "AI chatbots, knowledge bases (RAG), automations. Custom e-commerce and internal tools. From idea to working system in 1 week.",
       ctaButton: "View Our Work",
       secondaryButton: "Let's Talk",
     },

@@ -6,7 +6,7 @@ import { AgentMark, Arrow, Avatar, Bar, Bubble, C, Card, Chip, Glyph, Lines, Sce
 
 const T = {
   nl: {
-    title: "Kennisbank",
+    title: "Kennisbank (RAG)",
     label: "Een collega vraagt hoeveel vakantiedagen hij na vijf jaar krijgt. De assistent zoekt in drie documenten, markeert de juiste passage in het verlofbeleid en antwoordt met de bron erbij.",
     q: ["Hoeveel vakantiedagen krijg ik", "na 5 jaar in dienst?"],
     docs: ["Personeelshandboek.pdf", "Verlofbeleid.docx", "Cao 2026.pdf"],
@@ -17,7 +17,7 @@ const T = {
     who: "Assistent",
   },
   en: {
-    title: "Knowledge base",
+    title: "Knowledge base (RAG)",
     label: "A colleague asks how many days of leave they get after five years. The assistant searches three documents, highlights the right passage in the leave policy and answers with the source.",
     q: ["How many days of leave do I", "get after 5 years?"],
     docs: ["Staff handbook.pdf", "Leave policy.docx", "Agreement 2026.pdf"],

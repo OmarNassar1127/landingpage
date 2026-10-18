@@ -24,7 +24,7 @@ const getProjects = (language: string): Project[] => {
   return [
     {
       id: "kennisbank-luchtvaart",
-      title: isNL ? "Kennisbank voor de luchtvaart" : "Knowledge base for aviation",
+      title: isNL ? "Kennisbank (RAG) voor de luchtvaart" : "Knowledge base (RAG) for aviation",
       quote: isNL
         ? "Onze engineers zochten gemiddeld 2 uur per dag naar informatie. Nu vinden ze alles in seconden."
         : "Our engineers spent 2 hours daily searching for information. Now they find everything in seconds.",

@@ -95,8 +95,8 @@ function HeroContent() {
               className="text-lg sm:text-xl text-muted-foreground leading-relaxed mb-10 max-w-lg mx-auto lg:mx-0"
             >
               {language === "nl"
-                ? "AI agents die samenwerken, delegeren en uitvoeren. Van kennisbank tot automatisering, live in 1 week."
-                : "AI agents that collaborate, delegate and execute. From knowledge base to automation, live in 1 week."}
+                ? "AI agents die samenwerken, delegeren en uitvoeren. Van kennisbank (RAG) tot automatisering, live in 1 week."
+                : "AI agents that collaborate, delegate and execute. From knowledge base (RAG) to automation, live in 1 week."}
             </motion.p>
 
             <motion.div

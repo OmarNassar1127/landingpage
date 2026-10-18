@@ -169,15 +169,15 @@ export const solutionsEn: Solution[] = [
   {
     slug: "kennisbank-assistent",
     headline: "The right answer, with its source.",
-    name: "Knowledge base assistant",
-    title: "Knowledge base assistant: answers from your own documents, with sources",
+    name: "Knowledge base assistant (RAG)",
+    title: "Knowledge base assistant (RAG): answers from your own documents, with sources",
     description:
       "An AI assistant that answers your team’s questions from your own documents, always with a source. For SharePoint, Google Drive and Notion. From €1,000 one-off.",
     keywords: "knowledge base assistant, AI knowledge base, search internal documents, RAG, SharePoint AI, Notion AI search, answers with sources",
     pain: "“New colleagues ask everything three times, because nobody can find the right document.”",
     teaser: "Your team asks questions and gets answers from your own documents, with sources.",
     intro:
-      "The knowledge base assistant searches your handbooks, procedures and internal documents. Your team asks a question and gets a short answer with a link to the source.",
+      "The knowledge base assistant (RAG) searches your handbooks, procedures and internal documents. Your team asks a question and gets a short answer with a link to the source.",
     steps: [
       { title: "Connect the documents", text: "We connect the assistant to SharePoint, Google Drive, Notion or a folder of PDFs. Confidential material stays out." },
       { title: "Ask where you work", text: "Your team asks questions in Slack or Teams. No new tool to learn." },

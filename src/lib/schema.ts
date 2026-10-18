@@ -117,7 +117,7 @@ export const servicesSchema = () => {
       },
       {
         "@type": "Service",
-        name: "Knowledge Base Systems",
+        name: "Knowledge Base Systems (RAG)",
         description:
           "AI-powered knowledge management agents that capture, organise and surface company knowledge, so your whole team finds information instantly.",
         provider: {

@@ -170,15 +170,15 @@ export const solutionsNl: Solution[] = [
   {
     slug: "kennisbank-assistent",
     headline: "Het juiste antwoord, met de bron erbij.",
-    name: "Kennisbank-assistent",
-    title: "Kennisbank-assistent: antwoorden uit je eigen documenten, met bron",
+    name: "Kennisbank-assistent (RAG)",
+    title: "Kennisbank-assistent (RAG): antwoorden uit je eigen documenten, met bron",
     description:
       "Een AI assistent die vragen van je team beantwoordt uit je eigen documenten, altijd met bronvermelding. Voor SharePoint, Google Drive en Notion. Vanaf €1.000 eenmalig.",
     keywords: "kennisbank assistent, AI kennisbank, interne documenten doorzoeken, RAG, SharePoint AI, Notion AI zoeken, antwoorden met bronvermelding",
     pain: "“Nieuwe collega’s vragen alles drie keer, omdat niemand het juiste document kan vinden.”",
     teaser: "Je team stelt vragen en krijgt antwoord uit je eigen documenten, met bron.",
     intro:
-      "De kennisbank-assistent doorzoekt je handboeken, procedures en interne documenten. Je team stelt een vraag en krijgt een kort antwoord met een link naar de bron.",
+      "De kennisbank-assistent (RAG) doorzoekt je handboeken, procedures en interne documenten. Je team stelt een vraag en krijgt een kort antwoord met een link naar de bron.",
     steps: [
       { title: "Documenten koppelen", text: "We sluiten de assistent aan op SharePoint, Google Drive, Notion of een map met PDF’s. Wat vertrouwelijk is, blijft erbuiten." },
       { title: "Vragen waar je al werkt", text: "Je team stelt vragen in Slack of Teams. Geen nieuwe tool om te leren." },
