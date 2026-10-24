@@ -150,7 +150,7 @@ export default function GuidePage(p: GuideProps) {
         </div>
 
         <div className="mx-auto mt-8 flex max-w-3xl items-center gap-3 text-sm text-[#6e6e73]">
-          <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-primary text-xs font-bold text-white">V</span>
+          <img src="/favicon-96x96.png" alt="Virelio logo" className="h-8 w-8 shrink-0 rounded-lg" />
           <p>
             Virelio helpt webshops met slimme assistenten voor teksten en klantvragen.{" "}
             <a href={p.solution.href} className="font-medium text-primary hover:underline">

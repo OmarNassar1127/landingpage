@@ -81,21 +81,34 @@ export const productExamples = [
   },
 ];
 
-/** Invented shop and customers; the questions are the ones every webshop gets. */
-export const chatExamples = [
+export type ChatMsg = { from: "klant" | "shop"; text: string; time: string; link?: string };
+
+/** Invented shop and customers; the questions are the ones every webshop gets. Short bubbles, like a person types. */
+export const chatExamples: { tag: string; rule: string; name: string; messages: ChatMsg[] }[] = [
   {
     tag: "Bezorging",
     rule: "Voor 16:00 besteld, zelfde dag verstuurd met PostNL.",
-    customer: "Hoi, ik heb vorige week dinsdag besteld (10482) en nog niks ontvangen. Waar blijft mijn bestelling?",
-    reply:
-      "Hoi Sanne, vervelend dat je nog wacht. Je bestelling 10482 is woensdag verstuurd. Je was niet thuis, dus het pakket ligt bij het PostNL-punt bij jou in de buurt. Ophalen kan tot en met zaterdag.",
+    name: "Sanne",
+    messages: [
+      { from: "klant", time: "21:47", text: "Hoi! Ik heb woensdagavond besteld (10482) en nog niks binnen. Waar blijft mijn bestelling?" },
+      { from: "shop", time: "21:47", text: "Hoi Sanne! Even kijken… 🔎" },
+      { from: "shop", time: "21:47", text: "Gevonden! Je bestelling 10482 is donderdag met PostNL verstuurd en ligt nu bij het sorteercentrum." },
+      { from: "shop", time: "21:48", text: "Morgen tussen 14:00 en 17:00 wordt hij bij je bezorgd 📦 Hier is je track & trace:", link: "PostNL · bestelling 10482" },
+      { from: "klant", time: "21:48", text: "Top, dank je wel! 🙏" },
+    ],
   },
   {
     tag: "Retour",
     rule: "Ruilen binnen 30 dagen, met label. Retour is gratis.",
-    customer: "Ik heb drie weken geleden een jas gekregen maar hij is te klein. Kan ik hem nog ruilen?",
-    reply:
-      "Hoi Mark, ja, dat kan nog. Je zit binnen de 30 dagen. Laat het label eraan en maak via de link hieronder gratis een retourlabel aan. Kies \"ruilen\" en je nieuwe maat.",
+    name: "Mark",
+    messages: [
+      { from: "klant", time: "08:15", text: "Hoi, ik kreeg drie weken geleden een jas maar hij is te klein 😅 Kan ik hem nog ruilen?" },
+      { from: "shop", time: "08:15", text: "Hoi Mark! Dat kan zeker 👍" },
+      { from: "shop", time: "08:15", text: "Je hebt 30 dagen om te ruilen, dus je zit nog goed. Laat het label er wel aan." },
+      { from: "shop", time: "08:15", text: "Welke maat wil je hebben?" },
+      { from: "klant", time: "08:16", text: "Een L graag" },
+      { from: "shop", time: "08:16", text: "Geregeld! Hier is je gratis retourlabel. Zodra je jas binnen is, sturen we de L op.", link: "Retourlabel · gratis" },
+    ],
   },
 ];
 
