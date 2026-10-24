@@ -143,7 +143,7 @@ export function ChatHero() {
             </span>
           </div>
           <ChatHeader typing={typing} />
-          <div className="flex h-[440px] flex-col justify-end overflow-hidden bg-[#efeae2]">
+          <div className="flex h-[372px] flex-col justify-end overflow-hidden bg-[#efeae2]">
             <Messages messages={msgs} shown={shown} typing={typing} animate />
           </div>
           {/* input bar and home indicator */}

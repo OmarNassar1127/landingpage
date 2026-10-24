@@ -134,7 +134,7 @@ const CookieConsent = ({
             exit={{ y: 100, opacity: 0 }}
             transition={{ type: "spring", damping: 20 }}
             className={cn(
-              "fixed inset-x-0 bottom-0 z-[60] border-t border-black/[0.08] bg-white/95 px-4 pb-[max(12px,env(safe-area-inset-bottom))] pt-3 shadow-[0_-12px_30px_-20px_rgba(0,0,0,0.25)] backdrop-blur sm:bottom-4 sm:left-4 sm:right-4 sm:mx-auto sm:max-w-screen-md sm:rounded-2xl sm:border sm:px-5 sm:pb-4 sm:pt-4",
+              "fixed inset-x-0 bottom-0 z-[60] border-t border-black/[0.08] bg-white px-4 pb-[max(12px,env(safe-area-inset-bottom))] pt-3 shadow-[0_-12px_30px_-20px_rgba(0,0,0,0.25)] sm:bottom-4 sm:left-4 sm:right-4 sm:mx-auto sm:max-w-screen-md sm:rounded-2xl sm:border sm:px-5 sm:pb-4 sm:pt-4",
               className
             )}
           >
