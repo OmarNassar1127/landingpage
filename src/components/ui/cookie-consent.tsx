@@ -3,6 +3,7 @@
 import * as React from "react";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { usePathname } from "next/navigation";
 import { Button } from "./button";
 import { cn } from "@/lib/utils";
 
@@ -26,6 +27,8 @@ const CookieConsent = ({
   onDecline,
   className,
 }: CookieConsentProps) => {
+  const pathname = usePathname() || "";
+  const isEnglish = pathname.startsWith("/en") || pathname.startsWith("/voiceassistant");
   const [open, setOpen] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
   const [preferences, setPreferences] = useState<CookiePreferences>({
@@ -117,133 +120,109 @@ const CookieConsent = ({
     setShowSettings(!showSettings);
   };
 
-  // Function to reopen the cookie banner
-  const reopenConsentBanner = () => {
-    setOpen(true);
-  };
+  const t = isEnglish ? TEXT.en : TEXT.nl;
 
   return (
     <>
       <AnimatePresence>
         {open && (
           <motion.div
+            role="region"
+            aria-label={t.title}
             initial={{ y: 100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: 100, opacity: 0 }}
             transition={{ type: "spring", damping: 20 }}
             className={cn(
-              "fixed bottom-4 left-4 right-4 z-50 mx-auto max-w-screen-lg rounded-lg border bg-card p-4 shadow-lg md:p-6",
+              "fixed inset-x-0 bottom-0 z-[60] border-t border-black/[0.08] bg-white/95 px-4 pb-[max(12px,env(safe-area-inset-bottom))] pt-3 shadow-[0_-12px_30px_-20px_rgba(0,0,0,0.25)] backdrop-blur sm:bottom-4 sm:left-4 sm:right-4 sm:mx-auto sm:max-w-screen-md sm:rounded-2xl sm:border sm:px-5 sm:pb-4 sm:pt-4",
               className
             )}
           >
-            <div className="flex flex-col space-y-4">
-              <div className="flex flex-col space-y-2">
-                <h3 className="text-xl font-semibold">Cookie Settings</h3>
-                <p className="text-sm text-muted-foreground">
-                  We use cookies to enhance your browsing experience, serve personalized ads or content, and analyze our traffic. By clicking "Accept All", you consent to our use of cookies.
-                </p>
-              </div>
-
-              {showSettings && (
-                <motion.div
-                  initial={{ height: 0, opacity: 0 }}
-                  animate={{ height: "auto", opacity: 1 }}
-                  exit={{ height: 0, opacity: 0 }}
-                  className="flex flex-col space-y-3 overflow-hidden rounded-md border bg-background p-4"
+            <div className="flex flex-col gap-2.5 sm:flex-row sm:items-center sm:gap-4">
+              <p className="text-[13px] leading-snug text-zinc-600 sm:flex-1 sm:text-sm">
+                {t.line}{" "}
+                <button
+                  type="button"
+                  onClick={toggleSettings}
+                  className="font-medium text-zinc-900 underline underline-offset-2"
                 >
-                  <div className="flex flex-col space-y-4">
-                    <CookiePreferenceItem
-                      type="necessary"
-                      title="Necessary Cookies"
-                      description="These cookies are essential for the website to function properly."
-                      isChecked={preferences.necessary}
-                      onChange={() => {}} // No change allowed
-                      disabled={true}
-                    />
-                    
-                    <CookiePreferenceItem
-                      type="analytics"
-                      title="Analytics Cookies"
-                      description="These cookies help us understand how visitors interact with our website."
-                      isChecked={preferences.analytics}
-                      onChange={() => handleToggle("analytics")}
-                    />
-                    
-                    <CookiePreferenceItem
-                      type="marketing"
-                      title="Marketing Cookies"
-                      description="These cookies are used to track visitors across websites to display relevant advertisements."
-                      isChecked={preferences.marketing}
-                      onChange={() => handleToggle("marketing")}
-                    />
-                    
-                    <CookiePreferenceItem
-                      type="preferences"
-                      title="Preference Cookies"
-                      description="These cookies allow the website to remember choices you make and provide enhanced functionality."
-                      isChecked={preferences.preferences}
-                      onChange={() => handleToggle("preferences")}
-                    />
-                  </div>
-                </motion.div>
-              )}
-
-              <div className="flex flex-col-reverse gap-2 sm:flex-row sm:justify-between">
-                <div className="flex flex-1 flex-col gap-2 sm:flex-row">
-                  <Button
-                    variant="outline"
-                    onClick={handleDecline}
-                    className="flex-1"
-                  >
-                    Decline All
+                  {showSettings ? t.hide : t.settings}
+                </button>
+              </p>
+              <div className="flex gap-2">
+                <Button variant="outline" size="sm" onClick={handleDecline} className="h-9 flex-1 sm:flex-none sm:px-5">
+                  {t.decline}
+                </Button>
+                {showSettings ? (
+                  <Button size="sm" onClick={handleSavePreferences} className="h-9 flex-1 sm:flex-none sm:px-5">
+                    {t.save}
                   </Button>
-                  <Button
-                    variant="outline"
-                    onClick={toggleSettings}
-                    className="flex-1"
-                  >
-                    {showSettings ? "Hide Settings" : "Customize"}
+                ) : (
+                  <Button size="sm" onClick={handleAcceptAll} className="h-9 flex-1 sm:flex-none sm:px-5">
+                    {t.accept}
                   </Button>
-                </div>
-                <div className="flex flex-1 flex-col gap-2 sm:flex-row">
-                  {showSettings && (
-                    <Button
-                      onClick={handleSavePreferences}
-                      className="flex-1"
-                    >
-                      Save Preferences
-                    </Button>
-                  )}
-                  <Button
-                    onClick={handleAcceptAll}
-                    className="flex-1"
-                  >
-                    Accept All
-                  </Button>
-                </div>
+                )}
               </div>
             </div>
+
+            {showSettings && (
+              <motion.div
+                initial={{ height: 0, opacity: 0 }}
+                animate={{ height: "auto", opacity: 1 }}
+                className="mt-3 flex max-h-[45vh] flex-col gap-3 overflow-y-auto rounded-xl border border-black/[0.07] bg-zinc-50 p-3"
+              >
+                {(["necessary", "analytics", "marketing", "preferences"] as CookieType[]).map((type) => (
+                  <CookiePreferenceItem
+                    key={type}
+                    type={type}
+                    title={t.items[type][0]}
+                    description={t.items[type][1]}
+                    isChecked={preferences[type]}
+                    onChange={() => handleToggle(type)}
+                    disabled={type === "necessary"}
+                  />
+                ))}
+              </motion.div>
+            )}
           </motion.div>
         )}
       </AnimatePresence>
-
-      {/* Cookie settings button that can be placed anywhere
-      <Button
-        variant="outline"
-        size="sm"
-        onClick={reopenConsentBanner}
-        className="fixed bottom-4 right-4 z-40 rounded-full shadow-md"
-        aria-label="Cookie Settings"
-      >
-        <span className="sr-only">Cookie Settings</span>
-        <span className="flex items-center">
-          <CookieIcon className="mr-2 h-4 w-4" />
-          Cookie Settings
-        </span>
-      </Button> */}
     </>
   );
 };
+
+const TEXT = {
+  nl: {
+    title: "Cookies",
+    line: "We gebruiken cookies om de site te verbeteren.",
+    settings: "Instellingen",
+    hide: "Verbergen",
+    accept: "Accepteren",
+    decline: "Weigeren",
+    save: "Opslaan",
+    items: {
+      necessary: ["Noodzakelijk", "Nodig om de site te laten werken."],
+      analytics: ["Statistieken", "Laat ons zien hoe bezoekers de site gebruiken."],
+      marketing: ["Marketing", "Voor relevante advertenties op andere sites."],
+      preferences: ["Voorkeuren", "Onthoudt je keuzes, zoals je taal."],
+    },
+  },
+  en: {
+    title: "Cookies",
+    line: "We use cookies to improve the site.",
+    settings: "Settings",
+    hide: "Hide",
+    accept: "Accept",
+    decline: "Decline",
+    save: "Save",
+    items: {
+      necessary: ["Necessary", "Needed for the site to work."],
+      analytics: ["Analytics", "Shows us how visitors use the site."],
+      marketing: ["Marketing", "For relevant ads on other sites."],
+      preferences: ["Preferences", "Remembers your choices, such as language."],
+    },
+  },
+} as const;
 
 interface CookiePreferenceItemProps {
   type: CookieType;
@@ -268,7 +247,7 @@ const CookiePreferenceItem = ({
         <input
           id={`cookie-${type}`}
           type="checkbox"
-          className="h-4 w-4 rounded border-gray-300 text-primary accent-primary focus:ring-primary"
+          className="mt-0.5 h-4 w-4 rounded border-gray-300 text-primary accent-primary focus:ring-primary"
           checked={isChecked}
           onChange={onChange}
           disabled={disabled}
@@ -277,34 +256,13 @@ const CookiePreferenceItem = ({
       <div className="flex flex-col">
         <label
           htmlFor={`cookie-${type}`}
-          className="font-medium text-foreground"
+          className="text-sm font-medium text-foreground"
         >
           {title}
         </label>
-        <p className="text-sm text-muted-foreground">{description}</p>
+        <p className="text-xs text-muted-foreground">{description}</p>
       </div>
     </div>
-  );
-};
-
-// Simple cookie icon component
-const CookieIcon = ({ className }: { className?: string }) => {
-  return (
-    <svg 
-      xmlns="http://www.w3.org/2000/svg" 
-      viewBox="0 0 24 24" 
-      fill="none" 
-      stroke="currentColor" 
-      strokeWidth="2" 
-      strokeLinecap="round" 
-      strokeLinejoin="round" 
-      className={className}
-    >
-      <circle cx="12" cy="12" r="10" />
-      <circle cx="8" cy="8" r="1" />
-      <circle cx="12" cy="16" r="1" />
-      <circle cx="16" cy="9" r="1" />
-    </svg>
   );
 };
 

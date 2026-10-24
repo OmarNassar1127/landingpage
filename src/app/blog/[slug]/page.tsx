@@ -12,6 +12,7 @@ import {
 import { siteConfig } from "@/lib/config";
 import Navbar from "@/components/sections/navbar";
 import Footer from "@/components/sections/footer";
+import { VISUAL_GUIDES } from "@/components/blog-visual";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -86,6 +87,9 @@ export default async function BlogPostPage({ params }: Props) {
         />
       )}
 
+      {VISUAL_GUIDES[post.slug] ? (
+        VISUAL_GUIDES[post.slug]({ post })
+      ) : (
       <main className="min-h-screen">
         <Navbar />
 
@@ -250,6 +254,7 @@ export default async function BlogPostPage({ params }: Props) {
 
         <Footer />
       </main>
+      )}
     </>
   );
 }
