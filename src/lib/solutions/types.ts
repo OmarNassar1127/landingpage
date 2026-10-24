@@ -20,4 +20,6 @@ export type Solution = {
   related: string[];
   /** Related existing service page. */
   service: { name: string; href: string };
+  /** Plain-language guide with examples, in the same language. */
+  guide?: { name: string; href: string };
 };

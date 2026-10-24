@@ -31,6 +31,7 @@ export const solutionsNl: Solution[] = [
     ],
     related: ["inbox-agent", "kennisbank-assistent", "ai-receptionist"],
     service: DIGITALE_MEDEWERKER,
+    guide: { name: "Klantvragen van je webshop automatisch laten beantwoorden", href: "/blog/klantvragen-automatisch-beantwoorden/" },
   },
   {
     slug: "ai-op-je-eigen-data",
@@ -274,6 +275,7 @@ export const solutionsNl: Solution[] = [
     ],
     related: ["klantenservice-agent", "kennisbank-assistent", "inbox-agent"],
     service: MKB,
+    guide: { name: "Productteksten laten schrijven (met voorbeelden)", href: "/blog/productteksten-laten-schrijven/" },
   },
   {
     slug: "planning-agent",

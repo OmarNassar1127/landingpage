@@ -1,3 +1,5 @@
+import { webshopPosts } from "./blog-webshop";
+
 export type BlogPost = {
   slug: string;
   title: string;
@@ -7,6 +9,10 @@ export type BlogPost = {
   author: string;
   keywords: string[];
   readingTime: number;
+  /** Rendered as FAQPage JSON-LD. The visible FAQ lives in content. */
+  faq?: { question: string; answer: string }[];
+  /** Replaces the default intake call-to-action at the bottom. */
+  cta?: { title: string; text: string; label: string; href: string };
 };
 
 export const blogPosts: BlogPost[] = [
@@ -836,6 +842,7 @@ export const blogPosts: BlogPost[] = [
 
 <p>Voldoe je aan twee of meer criteria? Dan is de kans groot dat een WhatsApp AI agent zich binnen 3 maanden terugverdient. Plan een gratis intake en we berekenen jouw specifieke ROI. Lees ook hoe we <a href="/blog/klantenservice-automatiseren-ai">klantenservice volledig automatiseren</a>, ontdek het <a href="/blog/ai-agent-vs-chatbot">verschil tussen een AI agent en chatbot</a>, of bekijk onze <a href="/diensten/digitale-medewerker">digitale medewerker oplossing</a>.</p>`,
   },
+  ...webshopPosts,
 ];
 
 export function getBlogPost(slug: string): BlogPost | undefined {

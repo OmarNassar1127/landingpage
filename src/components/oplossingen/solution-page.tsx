@@ -145,6 +145,14 @@ export default function SolutionPage({ lang, solution: s }: { lang: Lang; soluti
                 {s.service.name}
               </a>
             </p>
+            {s.guide && (
+              <p className="mt-2 text-sm text-zinc-500">
+                {lang === "nl" ? "Voorbeelden bekijken?" : "See examples?"}{" "}
+                <a href={s.guide.href} className="font-medium text-primary hover:underline">
+                  {s.guide.name}
+                </a>
+              </p>
+            )}
           </div>
         </section>
 

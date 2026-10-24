@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { Clock, Calendar, ArrowRight } from "lucide-react";
 import { generateMetadata as genMeta } from "@/lib/metadata";
-import { blogPostSchema, breadcrumbSchema } from "@/lib/schema";
+import { blogPostSchema, breadcrumbSchema, faqSchema } from "@/lib/schema";
 import {
   blogPosts,
   getBlogPost,
@@ -79,6 +79,12 @@ export default async function BlogPostPage({ params }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbData) }}
       />
+      {post.faq && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema({ items: post.faq })) }}
+        />
+      )}
 
       <main className="min-h-screen">
         <Navbar />
@@ -224,19 +230,19 @@ export default async function BlogPostPage({ params }: Props) {
         <section className="border-t border-border/50">
           <div className="container mx-auto px-6 sm:px-8 max-w-4xl py-12 sm:py-16 md:py-20 text-center">
             <h2 className="mb-3 sm:mb-4 text-xl sm:text-2xl md:text-3xl font-bold text-foreground">
-              Klaar om te beginnen?
+              {post.cta ? post.cta.title : "Klaar om te beginnen?"}
             </h2>
             <p className="mb-6 sm:mb-8 text-sm sm:text-base text-muted-foreground max-w-lg mx-auto">
-              Plan een gratis intake en ontdek wat AI kan betekenen voor jouw
-              bedrijf.
+              {post.cta
+                ? post.cta.text
+                : "Plan een gratis intake en ontdek wat AI kan betekenen voor jouw bedrijf."}
             </p>
             <a
-              href="https://calendly.com/omarnassar1127/30min"
-              target="_blank"
-              rel="noopener noreferrer"
+              href={post.cta ? post.cta.href : "https://calendly.com/omarnassar1127/30min"}
+              {...(post.cta ? {} : { target: "_blank", rel: "noopener noreferrer" })}
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl bg-foreground px-7 py-3.5 text-sm font-medium text-background transition-all hover:bg-foreground/90 active:scale-[0.98]"
             >
-              Plan een gesprek
+              {post.cta ? post.cta.label : "Plan een gesprek"}
               <ArrowRight className="h-4 w-4" />
             </a>
           </div>
