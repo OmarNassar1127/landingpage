@@ -123,9 +123,9 @@ function Messages({ messages, shown, typing, animate }: { messages: ChatMsg[]; s
   );
 }
 
-/** Hero: an iPhone with the WhatsApp conversation about a late order. */
+/** Hero: an iPhone with the WhatsApp conversation about swapping a jacket. */
 export function ChatHero() {
-  const msgs = chatExamples[0].messages;
+  const msgs = chatExamples[1].messages;
   const { shown, typing } = usePlayback(msgs);
   return (
     <div className="relative mx-auto w-full max-w-[350px]" style={IOS_FONT}>
@@ -134,7 +134,7 @@ export function ChatHero() {
         <div className="overflow-hidden rounded-[44px] bg-[#f6f6f6]">
           {/* status bar with the island */}
           <div className="relative flex h-11 items-center justify-between px-7 text-[14px] font-semibold text-black">
-            <span>21:48</span>
+            <span>{msgs[msgs.length - 1].time}</span>
             <span aria-hidden="true" className="absolute left-1/2 top-2.5 h-[26px] w-[96px] -translate-x-1/2 rounded-full bg-black" />
             <span aria-hidden="true" className="flex items-center gap-1">
               <Signal className="h-3.5 w-3.5" strokeWidth={2.5} />
@@ -143,7 +143,7 @@ export function ChatHero() {
             </span>
           </div>
           <ChatHeader typing={typing} />
-          <div className="flex h-[372px] flex-col justify-end overflow-hidden bg-[#efeae2]">
+          <div className="flex h-[416px] flex-col justify-end overflow-hidden bg-[#efeae2]">
             <Messages messages={msgs} shown={shown} typing={typing} animate />
           </div>
           {/* input bar and home indicator */}
@@ -162,11 +162,11 @@ export function ChatHero() {
   );
 }
 
-/** The two questions every webshop gets, each with the rule the answers came from. */
+/** The late-order question with the rule the answers came from. The retour chat is in the hero, so it is not repeated here. */
 export function ChatExamples() {
   return (
-    <div className="grid gap-4 md:grid-cols-2 lg:gap-5" style={IOS_FONT}>
-      {chatExamples.map((ex) => (
+    <div className="mx-auto grid max-w-xl gap-4" style={IOS_FONT}>
+      {chatExamples.slice(0, 1).map((ex) => (
         <article key={ex.tag} className="overflow-hidden rounded-[24px] border border-black/[0.07] bg-white shadow-[0_24px_50px_-40px_rgba(70,55,210,0.35)]">
           <div className="flex items-center gap-2 bg-white px-4 py-3">
             <BookOpen className="h-4 w-4 shrink-0 text-primary" strokeWidth={1.8} />
