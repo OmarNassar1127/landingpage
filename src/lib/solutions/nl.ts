@@ -57,7 +57,7 @@ export const solutionsNl: Solution[] = [
       "Afspraken over welke tabellen hij wel en niet ziet",
       "Vragen stellen via Slack, Teams of e-mail",
     ],
-    related: ["kennisbank-assistent", "factuurverwerking", "sales-opvolging"],
+    related: ["eigen-bedrijfs-ai", "kennisbank-assistent", "factuurverwerking"],
     service: MKB,
   },
   {
@@ -192,7 +192,7 @@ export const solutionsNl: Solution[] = [
       "Rechten per map: niet iedereen ziet alles",
       "Een lijst van vragen waar nog geen document voor is",
     ],
-    related: ["ai-op-je-eigen-data", "klantenservice-agent", "contract-check"],
+    related: ["eigen-bedrijfs-ai", "ai-op-je-eigen-data", "contract-check"],
     service: AGENT_BOUWEN,
   },
   {
@@ -303,6 +303,34 @@ export const solutionsNl: Solution[] = [
     ],
     related: ["recruitment-screening", "ai-receptionist", "sales-opvolging"],
     service: DIGITALE_MEDEWERKER,
+  },
+  {
+    slug: "eigen-bedrijfs-ai",
+    headline: "Jullie eigen AI. Iedereen ziet alleen wat hij mag zien.",
+    name: "Eigen bedrijfs-AI",
+    title: "Eigen bedrijfs-AI: een AI-assistent op je eigen server, met rechten per rol",
+    description:
+      "Een eigen AI-assistent voor je kantoor, op je eigen server. Iedereen ziet alleen wat hij mag zien, BSN en IBAN worden afgeschermd en elke vraag staat in een logboek. Vanaf €1.000 eenmalig.",
+    keywords: "eigen AI assistent, bedrijfs AI, AI op eigen server, veilige AI voor accountants, AI administratiekantoor, AI salarisadministratie, ChatGPT alternatief zakelijk, AVG AI assistent",
+    pain: "“Mijn mensen plakken klantdossiers in ChatGPT, en ik weet niet wat er met die data gebeurt.”",
+    teaser: "Een AI-assistent op jullie eigen server die per persoon weet wat hij mag laten zien.",
+    intro:
+      "Jullie team stelt vragen aan één assistent, op jullie eigen server en over jullie eigen documenten. Elke vraag gaat langs dezelfde controles: wie vraagt het, mag hij dit zien, en staat er een BSN of IBAN in het antwoord die hij niet mag zien. Gemaakt voor kantoren die gegevens van klanten bewaren, zoals accountants, administratiekantoren en salarisadministraties.",
+    steps: [
+      { title: "Op jullie eigen server", text: "We installeren de assistent op jullie eigen server en koppelen jullie documenten. Iedereen meldt zich aan met zijn werkaccount." },
+      { title: "Rechten per rol", text: "Jullie bepalen wie wat ziet: salarissen alleen voor HR, notulen alleen voor de directie. Wat iemand niet mag zien, komt niet in zijn antwoord." },
+      { title: "Elke vraag gecontroleerd", text: "Pogingen om de assistent om de tuin te leiden worden tegengehouden, BSN en IBAN worden afgeschermd en elke vraag komt in het logboek." },
+    ],
+    gets: [
+      "De assistent op jullie eigen server",
+      "Aanmelden met jullie Microsoft- of Google-werkaccount",
+      "Rechten per rol, op documenten en op acties",
+      "BSN, IBAN en salarissen afgeschermd voor wie ze niet mag zien",
+      "Een logboek van elke vraag en elke controle",
+      "Een testset met aanvallen die bij elke wijziging opnieuw draait",
+    ],
+    related: ["kennisbank-assistent", "ai-op-je-eigen-data", "contract-check"],
+    service: AGENT_BOUWEN,
   },
 ];
 

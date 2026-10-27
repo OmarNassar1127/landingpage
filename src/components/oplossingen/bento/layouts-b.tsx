@@ -5,6 +5,7 @@ import type { ComponentType } from "react";
 import Tile3D from "@/components/three/tile-3d";
 import { Bento, CtaTile, DoorTile, GuaranteeTile, PriceTile, QuoteTile, SceneTile } from "./kit";
 import { Approve, Ask, Criteria, Eu, Honest, Languages, Mark, OnlyFacts, Slot, Week } from "./moments-b";
+import { Logbook, Masked, Measured, Roles } from "./moments-c";
 import { EigenDataBento, FactuurBento, InboxBento, KlantenserviceBento, OfferteBento, SalesBento, type BentoProps } from "./layouts-a";
 
 const nl = (lang: BentoProps["lang"]) => lang === "nl";
@@ -104,6 +105,29 @@ export function PlanningBento({ lang, s }: BentoProps) {
   );
 }
 
+export function BedrijfsAiBento({ lang, s }: BentoProps) {
+  return (
+    <Bento id="hoe-het-werkt">
+      <Tile3D slug={s.slug} steps={s.steps} label={s.name} tone="lilac" strip="list" className="col-span-2 lg:[grid-area:2/1/5/4]" boxClass="min-h-[240px]" />
+      <Roles lang={lang} className="col-span-2 lg:[grid-area:1/1/2/5]" />
+      <PriceTile lang={lang} tone="indigo" className="lg:[grid-area:1/5/2/7]" />
+      <Masked lang={lang} className="lg:[grid-area:4/4/5/6]" />
+      <SceneTile
+        lang={lang}
+        slug={s.slug}
+        title={nl(lang) ? "Elke vraag langs dezelfde controles" : "Every question through the same checks"}
+        className="col-span-2 lg:[grid-area:2/4/4/7]"
+      />
+      <Logbook lang={lang} className="lg:[grid-area:4/6/5/7]" />
+      <GuaranteeTile lang={lang} tone="soft" className="lg:[grid-area:5/4/6/5]" />
+      <Measured lang={lang} className="col-span-2 lg:[grid-area:5/1/6/4]" />
+      <DoorTile lang={lang} className="col-span-2 lg:[grid-area:5/5/6/7]" />
+      <QuoteTile text={s.pain} className="col-span-2 lg:[grid-area:6/1/7/3]" />
+      <CtaTile lang={lang} className="col-span-2 lg:[grid-area:6/3/7/7]" />
+    </Bento>
+  );
+}
+
 export const BENTOS: Record<string, ComponentType<BentoProps>> = {
   "klantenservice-agent": KlantenserviceBento,
   "ai-op-je-eigen-data": EigenDataBento,
@@ -116,4 +140,5 @@ export const BENTOS: Record<string, ComponentType<BentoProps>> = {
   "contract-check": ContractBento,
   productteksten: ProducttekstenBento,
   "planning-agent": PlanningBento,
+  "eigen-bedrijfs-ai": BedrijfsAiBento,
 };

@@ -55,7 +55,7 @@ export const solutionsEn: Solution[] = [
       "Clear rules on which tables it can and cannot see",
       "Ask questions in Slack, Teams or email",
     ],
-    related: ["kennisbank-assistent", "factuurverwerking", "sales-opvolging"],
+    related: ["eigen-bedrijfs-ai", "kennisbank-assistent", "factuurverwerking"],
     service: HOME,
   },
   {
@@ -190,7 +190,7 @@ export const solutionsEn: Solution[] = [
       "Permissions per folder: not everyone sees everything",
       "A list of questions that no document answers yet",
     ],
-    related: ["ai-op-je-eigen-data", "klantenservice-agent", "contract-check"],
+    related: ["eigen-bedrijfs-ai", "ai-op-je-eigen-data", "contract-check"],
     service: HOME,
   },
   {
@@ -299,6 +299,34 @@ export const solutionsEn: Solution[] = [
       "An overview of clashes and gaps in the plan",
     ],
     related: ["recruitment-screening", "ai-receptionist", "sales-opvolging"],
+    service: HOME,
+  },
+  {
+    slug: "eigen-bedrijfs-ai",
+    headline: "Your own company AI. Everyone sees only what they may see.",
+    name: "Your own company AI",
+    title: "Your own company AI: an AI assistant on your own server, with access per role",
+    description:
+      "Your office’s own AI assistant, on your own server. Everyone sees only what they may see, BSN and IBAN numbers are masked and every question is logged. From €1,000 one-off.",
+    keywords: "own AI assistant, company AI, self-hosted AI assistant, secure AI for accountants, AI for bookkeeping firms, AI for payroll, business ChatGPT alternative, GDPR AI assistant",
+    pain: "“My people paste client files into ChatGPT, and I don’t know what happens to that data.”",
+    teaser: "An AI assistant on your own server that knows, per person, what it may show.",
+    intro:
+      "Your team asks questions to one assistant, on your own server and about your own documents. Every question passes the same checks: who is asking, may they see this, and does the answer hold a BSN or IBAN they may not see. Made for offices that hold client data, such as accountants, bookkeeping firms and payroll offices.",
+    steps: [
+      { title: "On your own server", text: "We install the assistant on your own server and connect your documents. Everyone signs in with their work account." },
+      { title: "Access per role", text: "You decide who sees what: salaries for HR only, board notes for the director only. What someone may not see stays out of their answer." },
+      { title: "Every question checked", text: "Attempts to trick the assistant are stopped, BSN and IBAN numbers are masked, and every question goes into the log." },
+    ],
+    gets: [
+      "The assistant on your own server",
+      "Sign-in with your Microsoft or Google work account",
+      "Access per role, on documents and on actions",
+      "BSN, IBAN and salaries masked for those who may not see them",
+      "A log of every question and every check",
+      "A set of attack tests that runs again on every change",
+    ],
+    related: ["kennisbank-assistent", "ai-op-je-eigen-data", "contract-check"],
     service: HOME,
   },
 ];
