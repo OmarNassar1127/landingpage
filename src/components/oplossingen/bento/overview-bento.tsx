@@ -25,7 +25,6 @@ const SLOTS: { size: Size; area: string; tone?: "dark" | "lilac" }[] = [
   { size: "wide", area: "lg:[grid-area:5/1/6/3]", tone: "dark" },
   { size: "s", area: "lg:[grid-area:5/3/6/5]" },
   { size: "s", area: "lg:[grid-area:5/5/6/7]" },
-  { size: "wide", area: "lg:[grid-area:6/1/7/3]", tone: "lilac" },
 ];
 
 const SPAN: Record<Size, string> = {
@@ -92,7 +91,7 @@ export default function OverviewBento({ lang, tiles, devTitle, devText }: { lang
         href={HARNESS_URL}
         target="_blank"
         rel="noopener noreferrer"
-        className="group col-span-2 flex flex-col rounded-[22px] border border-dashed border-black/[0.15] bg-white/60 p-4 transition-colors hover:border-primary/40 sm:p-5 lg:rounded-[28px] lg:p-6 lg:[grid-area:6/3/7/5]"
+        className="group col-span-2 flex flex-col rounded-[22px] border border-dashed border-black/[0.15] bg-white/60 p-4 transition-colors hover:border-primary/40 sm:p-5 lg:rounded-[28px] lg:p-6 lg:[grid-area:6/1/7/4]"
       >
         <Code2 className="mb-3 h-5 w-5 text-primary" />
         <span className="text-[15px] font-semibold text-[#1d1d1f] group-hover:text-primary lg:text-[17px]">{devTitle}</span>
@@ -102,7 +101,7 @@ export default function OverviewBento({ lang, tiles, devTitle, devText }: { lang
           <ArrowUpRight className="h-3.5 w-3.5" />
         </span>
       </a>
-      <DoorTile lang={lang} tone="indigo" figure className="col-span-2 lg:[grid-area:6/5/7/7]" />
+      <DoorTile lang={lang} tone="indigo" figure className="col-span-2 lg:[grid-area:6/4/7/7]" />
     </Bento>
   );
 }

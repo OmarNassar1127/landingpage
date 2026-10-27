@@ -12,7 +12,7 @@ const nl = (lang: Lang) => lang === "nl";
 export function Ask({ lang, tone = "white", className = "" }: M) {
   return (
     <Tile tone={tone} className={className}>
-      <T tone={tone}>{nl(lang) ? "Vraag het in Slack of Teams" : "Ask in Slack or Teams"}</T>
+      <T tone={tone}>{nl(lang) ? "Antwoord met de bron erbij" : "Answers with their source"}</T>
       <span className="mt-auto flex items-center gap-2 rounded-full bg-[#f5f5f7] px-3 py-2.5 text-[13px] text-[#1d1d1f] lg:text-sm" aria-hidden="true">
         <Search className="h-4 w-4 shrink-0 text-[#a1a1aa]" />
         <span className="truncate">{nl(lang) ? "Hoeveel vakantiedagen heb ik?" : "How many days off do I get?"}</span>
@@ -22,20 +22,6 @@ export function Ask({ lang, tone = "white", className = "" }: M) {
         <FileSearch className="h-3 w-3" />
         {nl(lang) ? "Bron: Personeelshandboek" : "Source: Staff handbook"}
       </Chip>
-    </Tile>
-  );
-}
-
-export function Honest({ lang, tone = "dark", className = "" }: M) {
-  return (
-    <Tile tone={tone} className={className}>
-      <T tone={tone}>{nl(lang) ? "Staat het nergens?" : "Not written down?"}</T>
-      <p className="bp">{nl(lang) ? "Dan zegt hij dat eerlijk." : "Then it says so."}</p>
-      <span className="mt-auto flex gap-1 pt-3" aria-hidden="true">
-        {[0, 1, 2].map((i) => (
-          <span key={i} className="bx-dot h-1.5 w-1.5 rounded-full bg-[#a5b4fc]" style={{ animationDelay: `${i * 0.18}s` }} />
-        ))}
-      </span>
     </Tile>
   );
 }

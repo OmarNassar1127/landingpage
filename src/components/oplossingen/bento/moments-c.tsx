@@ -1,5 +1,5 @@
 /**
- * Product moments for eigen-bedrijfs-ai.
+ * Security moments for kennisbank-assistent.
  * The measured numbers come from the open-company-ai release gate (2026-10-27) and are
  * only ever shown together: 18/18 alone flatters the guard.
  */

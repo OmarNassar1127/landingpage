@@ -14,7 +14,6 @@ import Contract from "./contract";
 import Productteksten from "./productteksten";
 import Planning from "./planning";
 import Receptionist from "./receptionist";
-import BedrijfsAi from "./bedrijfs-ai";
 
 type Illustration = ComponentType<{ lang: Lang; still?: boolean }>;
 
@@ -30,7 +29,6 @@ const SCENES: Record<string, Illustration> = {
   "contract-check": Contract,
   productteksten: Productteksten,
   "planning-agent": Planning,
-  "eigen-bedrijfs-ai": BedrijfsAi,
   /** Only used on the overview tile that links to the voice assistant page. */
   "ai-receptionist": Receptionist,
 };
