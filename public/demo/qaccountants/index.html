@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>Demo: Q accountants beantwoordt klantvragen | Virelio</title>
+<style>
+  :root { --ink:#111827; --muted:#6b7280; --line:#e5e7eb; --brand:#4F46E5; --soft:#eef2ff; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:#f8fafc; font-family:system-ui,-apple-system,"Segoe UI",sans-serif; color:var(--ink); -webkit-font-smoothing:antialiased; }
+  main { max-width:560px; margin:0 auto; padding:28px 16px 40px; }
+  .pill { display:inline-block; font-size:12px; font-weight:600; letter-spacing:.02em; color:var(--brand); background:var(--soft); border-radius:999px; padding:5px 10px; }
+  h1 { font-size:24px; line-height:1.25; margin:14px 0 8px; letter-spacing:-.01em; }
+  .sub { color:var(--muted); font-size:15px; line-height:1.5; margin:0 0 20px; }
+  .card { background:#fff; border:1px solid var(--line); border-radius:20px; box-shadow:0 12px 40px rgba(79,70,229,.08); overflow:hidden; }
+  .head { display:flex; align-items:center; gap:10px; padding:14px 16px; border-bottom:1px solid var(--line); }
+  .dot { width:34px; height:34px; border-radius:50%; background:var(--brand); color:#fff; display:grid; place-items:center; font-weight:700; font-size:15px; flex:none; }
+  .head b { font-size:15px; display:block; }
+  .head span { font-size:12px; color:#059669; }
+  #log { padding:16px; min-height:180px; max-height:58vh; overflow-y:auto; display:flex; flex-direction:column; gap:10px; }
+  .msg { max-width:86%; padding:10px 13px; border-radius:16px; font-size:15px; line-height:1.45; white-space:pre-wrap; word-wrap:break-word; }
+  .bot { background:#f3f4f6; align-self:flex-start; border-bottom-left-radius:5px; }
+  .me { background:var(--brand); color:#fff; align-self:flex-end; border-bottom-right-radius:5px; }
+  .src { margin-top:6px; font-size:12px; color:var(--muted); }
+  .src a { color:var(--brand); text-decoration:none; }
+  .typing { color:var(--muted); font-style:italic; }
+  #chips { display:flex; flex-wrap:wrap; gap:8px; padding:0 16px 14px; }
+  #chips button { font:inherit; font-size:14px; text-align:left; color:var(--brand); background:var(--soft); border:0; border-radius:12px; padding:9px 12px; cursor:pointer; }
+  form { display:flex; gap:8px; padding:12px; border-top:1px solid var(--line); }
+  input { flex:1; font:inherit; font-size:16px; border:1px solid var(--line); border-radius:12px; padding:11px 12px; outline:none; min-width:0; }
+  input:focus { border-color:var(--brand); }
+  form button { font:inherit; font-weight:600; color:#fff; background:var(--brand); border:0; border-radius:12px; padding:0 16px; cursor:pointer; }
+  form button:disabled, #chips button:disabled { opacity:.5; }
+  .note { margin-top:22px; background:#fff; border:1px solid var(--line); border-radius:16px; padding:16px; font-size:14px; line-height:1.55; color:#374151; }
+  .note b { color:var(--ink); }
+  .note a { color:var(--brand); font-weight:600; }
+  footer { text-align:center; font-size:12px; color:var(--muted); margin-top:20px; }
+  footer a { color:inherit; }
+</style>
+</head>
+<body>
+<main>
+  <span class="pill">Demo · gemaakt door Virelio</span>
+  <h1>Q accountants beantwoordt klantvragen, ook om 23:00</h1>
+  <p class="sub">Deze assistent kent alleen de openbare pagina's van qaccountants.nl. Stel een vraag zoals een klant dat zou doen, of tik op een voorbeeld.</p>
+
+  <div class="card">
+    <div class="head"><div class="dot" id="initial"></div><div><b>Q accountants</b><span id="state">● online</span></div></div>
+    <div id="log"></div>
+    <div id="chips"></div>
+    <form id="f"><input id="q" placeholder="Typ een vraag…" autocomplete="off" maxlength="500"><button id="go">Stuur</button></form>
+  </div>
+
+  <div class="note">
+    <b>Dit is een demo.</b> Hij is gebouwd uit jullie website, zonder toegang tot iets anders. In het echt koppelen we hem aan jullie inbox, orders of documenten en bepalen jullie alles: wat hij wel en niet zegt, de toon, en wanneer een vraag naar een collega gaat. We kunnen er ook dingen af halen of bij bouwen.
+    <br><br>Benieuwd wat dit bij jullie zou doen? <a href="mailto:omarnassar1127@gmail.com?subject=Demo%20Q accountants">Mail Omar</a>
+  </div>
+  <footer><a href="https://virelio.nl/oplossingen/">virelio.nl/oplossingen</a></footer>
+</main>
+<script>
+const C = {"slug":"qaccountants","name":"Q accountants","api":"https://vdemo.omardev.xyz","questions":["Kunnen jullie mij helpen met het opstellen van een begroting?","Wat kost het om mijn jaarrekening te laten samenstellen?","Waar is jullie kantoor gevestigd en hoe kan ik contact opnemen?"]};
+const log = document.getElementById("log"), chips = document.getElementById("chips");
+const input = document.getElementById("q"), go = document.getElementById("go");
+const history = [];
+document.getElementById("initial").textContent = C.name.trim()[0].toUpperCase();
+
+function bubble(cls, text, sources) {
+  const d = document.createElement("div");
+  d.className = "msg " + cls;
+  d.textContent = text;
+  if (sources && sources.length) {
+    const s = document.createElement("div");
+    s.className = "src";
+    s.append("Bron: ");
+    sources.forEach((p, i) => {
+      const a = document.createElement("a");
+      a.href = p.url; a.target = "_blank"; a.rel = "noopener";
+      a.textContent = (p.title || "").split(/ [-|–] /)[0].trim() || new URL(p.url).pathname;
+      if (i) s.append(" · ");
+      s.append(a);
+    });
+    d.append(s);
+  }
+  log.append(d);
+  log.scrollTop = log.scrollHeight;
+  return d;
+}
+
+function setBusy(b) { go.disabled = b; input.disabled = b; chips.querySelectorAll("button").forEach((x) => x.disabled = b); }
+
+function off(text) {
+  document.getElementById("state").textContent = "● offline";
+  document.getElementById("state").style.color = "#9ca3af";
+  bubble("bot", text);
+  setBusy(true);
+}
+
+async function ask(q) {
+  q = q.trim();
+  if (!q) return;
+  bubble("me", q);
+  const wait = bubble("bot typing", "Even zoeken…");
+  setBusy(true);
+  try {
+    const r = await fetch(C.api + "/ask", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ slug: C.slug, question: q, history }) });
+    const j = await r.json();
+    wait.remove();
+    if (j.error === "off" || j.error === "cap") return off("Deze demo staat voor vandaag uit. Mail Omar als je hem verder wilt proberen.");
+    if (j.error === "slow_down") { bubble("bot", "Even rustig aan, probeer het over een paar minuten opnieuw."); return setBusy(false); }
+    if (!r.ok) { bubble("bot", "Er ging iets mis. Probeer het nog eens."); return setBusy(false); }
+    bubble("bot", j.answer, j.sources);
+    history.push({ role: "user", text: q }, { role: "assistant", text: j.answer });
+  } catch {
+    wait.remove();
+    bubble("bot", "Geen verbinding. Probeer het nog eens.");
+  }
+  setBusy(false);
+  input.focus();
+}
+
+bubble("bot", "Hoi! Ik ben de digitale assistent van " + C.name + ". Waar kan ik mee helpen?");
+C.questions.forEach((q) => {
+  const b = document.createElement("button");
+  b.type = "button"; b.textContent = q;
+  b.onclick = () => { b.remove(); ask(q); };
+  chips.append(b);
+});
+document.getElementById("f").onsubmit = (e) => { e.preventDefault(); const q = input.value; input.value = ""; ask(q); };
+fetch(C.api + "/status/" + C.slug).then((r) => r.json()).then((j) => { if (j.enabled === false) off("Deze demo staat voor vandaag uit. Mail Omar als je hem verder wilt proberen."); }).catch(() => {});
+</script>
+</body>
+</html>
