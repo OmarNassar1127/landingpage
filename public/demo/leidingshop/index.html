@@ -24,7 +24,19 @@
   .me { background:var(--brand); color:#fff; align-self:flex-end; border-bottom-right-radius:5px; }
   .src { margin-top:6px; font-size:12px; color:var(--muted); }
   .src a { color:var(--brand); text-decoration:none; }
-  .typing { color:var(--muted); font-style:italic; }
+  .think { display:flex; align-items:center; gap:10px; color:var(--muted); font-size:14px; }
+  .dots { display:inline-flex; gap:4px; }
+  .dots i { width:6px; height:6px; border-radius:50%; background:#9ca3af; animation:bounce 1.2s infinite ease-in-out; }
+  .dots i:nth-child(2) { animation-delay:.15s; } .dots i:nth-child(3) { animation-delay:.3s; }
+  @keyframes bounce { 0%,60%,100% { transform:translateY(0); opacity:.5 } 30% { transform:translateY(-4px); opacity:1 } }
+  .think span { transition:opacity .25s; }
+  .caret::after { content:""; display:inline-block; width:2px; height:1em; margin-left:2px; vertical-align:-2px; background:var(--brand); animation:blink 1s steps(1) infinite; }
+  @keyframes blink { 50% { opacity:0 } }
+  .src { animation:fade .4s ease both; }
+  @keyframes fade { from { opacity:0; transform:translateY(3px) } to { opacity:1; transform:none } }
+  .msg { animation:pop .25s ease both; }
+  @keyframes pop { from { opacity:0; transform:translateY(6px) } to { opacity:1; transform:none } }
+  @media (prefers-reduced-motion: reduce) { .dots i, .caret::after, .src, .msg { animation:none } }
   #chips { display:flex; flex-wrap:wrap; gap:8px; padding:0 16px 14px; }
   #chips button { font:inherit; font-size:14px; text-align:left; color:var(--brand); background:var(--soft); border:0; border-radius:12px; padding:9px 12px; cursor:pointer; }
   form { display:flex; gap:8px; padding:12px; border-top:1px solid var(--line); }
@@ -96,23 +108,83 @@ function off(text) {
   setBusy(true);
 }
 
+function thinking() {
+  const d = document.createElement("div");
+  d.className = "msg bot";
+  d.innerHTML = '<div class="think"><span class="dots"><i></i><i></i><i></i></span><span>Even zoeken…</span></div>';
+  log.append(d); log.scrollTop = log.scrollHeight;
+  const steps = ["Even zoeken…", "Website doorlezen…", "Antwoord schrijven…"];
+  let i = 0;
+  const label = d.querySelector(".think span:last-child");
+  const timer = setInterval(() => { i = Math.min(i + 1, steps.length - 1); label.style.opacity = 0; setTimeout(() => { label.textContent = steps[i]; label.style.opacity = 1; }, 200); }, 1400);
+  return { el: d, stop: () => clearInterval(timer) };
+}
+
+// Text arrives in bursts; reveal it at a steady pace so it reads like typing, faster when far behind.
+function typer(el) {
+  let shown = "", queue = "", done = false, raf, resolve;
+  const finished = new Promise((r) => (resolve = r));
+  el.classList.add("caret");
+  const tick = () => {
+    if (queue) {
+      const n = Math.max(1, Math.ceil(queue.length / 12));
+      shown += queue.slice(0, n); queue = queue.slice(n);
+      el.firstChild.textContent = shown;
+      log.scrollTop = log.scrollHeight;
+    }
+    if (queue || !done) raf = requestAnimationFrame(tick);
+    else { el.classList.remove("caret"); resolve(); }
+  };
+  el.textContent = ""; el.append(document.createTextNode(""));
+  raf = requestAnimationFrame(tick);
+  return { push: (t) => (queue += t), end: () => { done = true; return finished; }, text: () => shown + queue };
+}
+
 async function ask(q) {
   q = q.trim();
   if (!q) return;
   bubble("me", q);
-  const wait = bubble("bot typing", "Even zoeken…");
+  const wait = thinking();
   setBusy(true);
   try {
-    const r = await fetch(C.api + "/ask", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ slug: C.slug, question: q, history }) });
-    const j = await r.json();
-    wait.remove();
-    if (j.error === "off" || j.error === "cap") return off("Deze demo staat voor vandaag uit. Mail Omar als je hem verder wilt proberen.");
-    if (j.error === "slow_down") { bubble("bot", "Even rustig aan, probeer het over een paar minuten opnieuw."); return setBusy(false); }
-    if (!r.ok) { bubble("bot", "Er ging iets mis. Probeer het nog eens."); return setBusy(false); }
-    bubble("bot", j.answer, j.sources);
-    history.push({ role: "user", text: q }, { role: "assistant", text: j.answer });
+    const r = await fetch(C.api + "/ask?stream=1", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ slug: C.slug, question: q, history }) });
+    if (!r.ok) {
+      wait.stop(); wait.el.remove();
+      const j = await r.json().catch(() => ({}));
+      if (j.error === "off" || j.error === "cap") return off("Deze demo staat voor vandaag uit. Mail Omar als je hem verder wilt proberen.");
+      bubble("bot", j.error === "slow_down" ? "Even rustig aan, probeer het over een paar minuten opnieuw." : "Er ging iets mis. Probeer het nog eens.");
+      return setBusy(false);
+    }
+    const reader = r.body.getReader(), dec = new TextDecoder();
+    let buf = "", t = null, sources = [], failed = false;
+    for (;;) {
+      const { value, done } = await reader.read();
+      if (done) break;
+      buf += dec.decode(value, { stream: true });
+      let i;
+      while ((i = buf.indexOf("\n")) >= 0) {
+        const line = buf.slice(0, i); buf = buf.slice(i + 1);
+        if (!line) continue;
+        const m = JSON.parse(line);
+        if (m.t) {
+          if (!t) { wait.stop(); wait.el.className = "msg bot"; t = typer(wait.el); }
+          t.push(m.t);
+        }
+        if (m.done) sources = m.sources || [];
+        if (m.error) failed = true;
+      }
+    }
+    if (!t) { wait.stop(); wait.el.remove(); bubble("bot", "Er ging iets mis. Probeer het nog eens."); return setBusy(false); }
+    await t.end();
+    const answer = t.text().trim();
+    wait.el.firstChild.textContent = answer;
+    if (sources.length && !failed) {
+      const tmp = bubble("bot", "x", sources);
+      wait.el.append(tmp.querySelector(".src")); tmp.remove();
+    }
+    history.push({ role: "user", text: q }, { role: "assistant", text: answer });
   } catch {
-    wait.remove();
+    wait.stop(); wait.el.remove();
     bubble("bot", "Geen verbinding. Probeer het nog eens.");
   }
   setBusy(false);
