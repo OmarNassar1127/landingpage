@@ -47,6 +47,27 @@
   .note { margin-top:22px; background:#fff; border:1px solid var(--line); border-radius:16px; padding:16px; font-size:14px; line-height:1.55; color:#374151; }
   .note b { color:var(--ink); }
   .note a { color:var(--brand); font-weight:600; }
+  .tabs { display:flex; gap:4px; background:#eef0f4; border-radius:14px; padding:4px; margin:0 0 14px; }
+  .tabs button { flex:1; font:inherit; font-size:14px; font-weight:600; color:var(--muted); background:transparent; border:0; border-radius:10px; padding:9px 6px; white-space:nowrap; cursor:pointer; transition:background .2s, color .2s; }
+  .tabs button.on { background:#fff; color:var(--ink); box-shadow:0 1px 3px rgba(0,0,0,.08); }
+  [hidden] { display:none !important; }
+  .mbox { padding:14px 16px; }
+  .mlabel { font-size:12px; font-weight:600; color:var(--muted); text-transform:uppercase; letter-spacing:.04em; margin:0 0 8px; }
+  .mfrom { font-size:13px; color:var(--muted); margin-bottom:6px; }
+  textarea { width:100%; font:inherit; font-size:15px; line-height:1.45; border:1px solid var(--line); border-radius:12px; padding:11px 12px; outline:none; resize:vertical; min-height:210px; }
+  textarea:focus { border-color:var(--brand); }
+  .mhint { font-size:12px; color:var(--muted); margin:6px 0 0; }
+  .mgo { width:100%; margin-top:12px; font:inherit; font-weight:600; color:#fff; background:var(--brand); border:0; border-radius:12px; padding:12px; cursor:pointer; }
+  .mgo:disabled { opacity:.5; }
+  .draft { border-top:1px solid var(--line); padding:14px 16px 16px; background:#fafaff; animation:pop .25s ease both; }
+  .dhead { display:flex; align-items:center; justify-content:space-between; gap:8px; margin-bottom:8px; }
+  .badge { font-size:12px; font-weight:600; border-radius:999px; padding:4px 9px; animation:fade .4s ease both; }
+  .badge.ok { color:#047857; background:#d1fae5; } .badge.human { color:#92400e; background:#fef3c7; }
+  .dtext { font-size:15px; line-height:1.5; white-space:pre-wrap; word-wrap:break-word; background:#fff; border:1px solid var(--line); border-radius:12px; padding:12px 13px; }
+  .dact { display:flex; gap:8px; margin-top:12px; animation:fade .4s ease both; }
+  .dact button { flex:1; font:inherit; font-size:14px; font-weight:600; border-radius:12px; padding:10px; cursor:pointer; border:1px solid var(--line); background:#fff; color:var(--ink); }
+  .dact button.pri { background:#059669; border-color:#059669; color:#fff; }
+  .dnote { font-size:13px; line-height:1.5; color:#374151; background:var(--soft); border-radius:12px; padding:10px 12px; margin-top:10px; animation:fade .3s ease both; }
   footer { text-align:center; font-size:12px; color:var(--muted); margin-top:20px; }
   footer a { color:inherit; }
 </style>
@@ -55,13 +76,33 @@
 <main>
   <span class="pill">Demo · gemaakt door Virelio</span>
   <h1>De Bruijn in Wijnen beantwoordt klantvragen, ook om 23:00</h1>
-  <p class="sub">Deze assistent kent alleen de openbare pagina's van debruijninwijnen.nl. Stel een vraag zoals een klant dat zou doen, of tik op een voorbeeld.</p>
+  <p class="sub">Deze assistent kent alleen de openbare pagina's van debruijninwijnen.nl. Stel een vraag zoals een klant dat zou doen, of laat hem een klantmail beantwoorden.</p>
 
-  <div class="card">
+  <div class="tabs" role="tablist"><button type="button" class="on" data-t="chat">Chat op de site</button><button type="button" data-t="mail">Mail beantwoorden</button></div>
+
+  <div class="card" id="chatcard">
     <div class="head"><div class="dot" id="initial"></div><div><b>De Bruijn in Wijnen</b><span id="state">● online</span></div></div>
     <div id="log"></div>
     <div id="chips"></div>
     <form id="f"><input id="q" placeholder="Typ een vraag…" autocomplete="off" maxlength="500"><button id="go">Stuur</button></form>
+  </div>
+
+  <div class="card" id="mailcard" hidden>
+    <div class="head"><div class="dot">@</div><div><b>Inbox klantenservice</b><span>● concept klaarzetten</span></div></div>
+    <div class="mbox">
+      <p class="mlabel">Binnengekomen mail</p>
+      <div class="mfrom">Van: Sanne de Vries</div>
+      <textarea id="mail" maxlength="2000"></textarea>
+      <p class="mhint">Pas de mail aan of plak een echte klantmail.</p>
+      <button type="button" class="mgo" id="mgo">Schrijf concept-antwoord</button>
+    </div>
+    <div class="draft" id="draft" hidden>
+      <div class="dhead"><p class="mlabel" style="margin:0">Concept-antwoord</p><span class="badge" id="badge" hidden></span></div>
+      <div class="dtext" id="dtext"></div>
+      <div id="dsrc"></div>
+      <div class="dact" id="dact" hidden><button type="button" class="pri" data-a="ok">Goedkeuren en versturen</button><button type="button" data-a="edit">Aanpassen</button></div>
+      <div class="dnote" id="dnote" hidden></div>
+    </div>
   </div>
 
   <div class="note">
@@ -102,6 +143,7 @@ function bubble(cls, text, sources) {
 function setBusy(b) { go.disabled = b; input.disabled = b; chips.querySelectorAll("button").forEach((x) => x.disabled = b); }
 
 function off(text) {
+  const mg = document.getElementById("mgo"); if (mg) mg.disabled = true;
   document.getElementById("state").textContent = "● offline";
   document.getElementById("state").style.color = "#9ca3af";
   bubble("bot", text);
@@ -140,46 +182,55 @@ function typer(el) {
   return { push: (t) => (queue += t), end: () => { done = true; return finished; }, text: () => shown + queue };
 }
 
+// POST /ask?stream=1 and read the NDJSON lines. Returns { ok, error, sources, human }.
+async function stream(payload, onText) {
+  const r = await fetch(C.api + "/ask?stream=1", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ slug: C.slug, ...payload }) });
+  if (!r.ok) { const j = await r.json().catch(() => ({})); return { ok: false, error: j.error || "server" }; }
+  const reader = r.body.getReader(), dec = new TextDecoder();
+  let buf = "", out = { ok: true, sources: [], human: false }, got = false;
+  for (;;) {
+    const { value, done } = await reader.read();
+    if (done) break;
+    buf += dec.decode(value, { stream: true });
+    let i;
+    while ((i = buf.indexOf("\n")) >= 0) {
+      const line = buf.slice(0, i); buf = buf.slice(i + 1);
+      if (!line) continue;
+      const m = JSON.parse(line);
+      if (m.t) { got = true; onText(m.t); }
+      if (m.done) { out.sources = m.sources || []; out.human = !!m.human; }
+      if (m.error) out.ok = false;
+    }
+  }
+  if (!got) return { ok: false, error: "server" };
+  return out;
+}
+const offText = "Deze demo staat voor vandaag uit. Mail Omar als je hem verder wilt proberen.";
+const errText = (e) => e === "slow_down" ? "Even rustig aan, probeer het over een paar minuten opnieuw." : "Er ging iets mis. Probeer het nog eens.";
+
 async function ask(q) {
   q = q.trim();
   if (!q) return;
   bubble("me", q);
   const wait = thinking();
   setBusy(true);
+  let t = null;
   try {
-    const r = await fetch(C.api + "/ask?stream=1", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ slug: C.slug, question: q, history }) });
-    if (!r.ok) {
+    const res = await stream({ question: q, history }, (txt) => {
+      if (!t) { wait.stop(); wait.el.className = "msg bot"; t = typer(wait.el); }
+      t.push(txt);
+    });
+    if (!t) {
       wait.stop(); wait.el.remove();
-      const j = await r.json().catch(() => ({}));
-      if (j.error === "off" || j.error === "cap") return off("Deze demo staat voor vandaag uit. Mail Omar als je hem verder wilt proberen.");
-      bubble("bot", j.error === "slow_down" ? "Even rustig aan, probeer het over een paar minuten opnieuw." : "Er ging iets mis. Probeer het nog eens.");
+      if (res.error === "off" || res.error === "cap") return off(offText);
+      bubble("bot", errText(res.error));
       return setBusy(false);
     }
-    const reader = r.body.getReader(), dec = new TextDecoder();
-    let buf = "", t = null, sources = [], failed = false;
-    for (;;) {
-      const { value, done } = await reader.read();
-      if (done) break;
-      buf += dec.decode(value, { stream: true });
-      let i;
-      while ((i = buf.indexOf("\n")) >= 0) {
-        const line = buf.slice(0, i); buf = buf.slice(i + 1);
-        if (!line) continue;
-        const m = JSON.parse(line);
-        if (m.t) {
-          if (!t) { wait.stop(); wait.el.className = "msg bot"; t = typer(wait.el); }
-          t.push(m.t);
-        }
-        if (m.done) sources = m.sources || [];
-        if (m.error) failed = true;
-      }
-    }
-    if (!t) { wait.stop(); wait.el.remove(); bubble("bot", "Er ging iets mis. Probeer het nog eens."); return setBusy(false); }
     await t.end();
     const answer = t.text().trim();
     wait.el.firstChild.textContent = answer;
-    if (sources.length && !failed) {
-      const tmp = bubble("bot", "x", sources);
+    if (res.sources.length && res.ok) {
+      const tmp = bubble("bot", "x", res.sources);
       wait.el.append(tmp.querySelector(".src")); tmp.remove();
     }
     history.push({ role: "user", text: q }, { role: "assistant", text: answer });
@@ -190,6 +241,67 @@ async function ask(q) {
   setBusy(false);
   input.focus();
 }
+
+// Inbox mode
+const mail = document.getElementById("mail"), mgo = document.getElementById("mgo");
+const draft = document.getElementById("draft"), dtext = document.getElementById("dtext"), badge = document.getElementById("badge");
+const dsrc = document.getElementById("dsrc"), dact = document.getElementById("dact"), dnote = document.getElementById("dnote");
+const lc = (x) => x ? x[0].toLowerCase() + x.slice(1) : "";
+const qs = C.questions.slice(0, 2);
+mail.value = "Goedendag,\n\n" + (qs[0] || "Ik heb een vraag.") + (qs[1] ? " En " + lc(qs[1]) : "") + "\n\nMet vriendelijke groet,\nSanne de Vries";
+
+async function writeDraft() {
+  const q = mail.value.trim();
+  if (!q) return;
+  mgo.disabled = true; mail.disabled = true;
+  draft.hidden = false; badge.hidden = true; dact.hidden = true; dnote.hidden = true; dsrc.textContent = "";
+  dtext.innerHTML = '<div class="think"><span class="dots"><i></i><i></i><i></i></span><span>Mail lezen…</span></div>';
+  const steps = ["Mail lezen…", "Website doorzoeken…", "Concept schrijven…"]; let k = 0;
+  const lab = dtext.querySelector(".think span:last-child");
+  const timer = setInterval(() => { k = Math.min(k + 1, steps.length - 1); lab.textContent = steps[k]; }, 1400);
+  draft.scrollIntoView({ behavior: "smooth", block: "nearest" });
+  let t = null;
+  try {
+    const res = await stream({ question: q, mode: "mail" }, (txt) => {
+      if (!t) { clearInterval(timer); t = typer(dtext); }
+      t.push(txt);
+    });
+    clearInterval(timer);
+    if (!t) {
+      dtext.textContent = res.error === "off" || res.error === "cap" ? offText : errText(res.error);
+    } else {
+      await t.end();
+      dtext.firstChild.textContent = t.text().trim();
+      if (res.sources.length && res.ok) {
+        const tmp = bubble("bot", "x", res.sources);
+        dsrc.append(tmp.querySelector(".src")); tmp.remove();
+      }
+      badge.className = "badge " + (res.human ? "human" : "ok");
+      badge.textContent = res.human ? "Collega kijkt mee" : "Klaar om te versturen";
+      badge.hidden = false; dact.hidden = false;
+    }
+  } catch {
+    clearInterval(timer);
+    dtext.textContent = "Geen verbinding. Probeer het nog eens.";
+  }
+  mgo.disabled = false; mail.disabled = false;
+  mgo.textContent = "Opnieuw schrijven";
+}
+mgo.onclick = writeDraft;
+dact.onclick = (e) => {
+  const a = e.target.closest("button")?.dataset.a;
+  if (!a) return;
+  dnote.hidden = false;
+  dnote.textContent = a === "ok"
+    ? "In het echt gaat dit antwoord nu de deur uit vanuit jullie eigen mailbox. Jullie bepalen welke soorten mail hij zelf mag afhandelen en welke altijd langs een collega gaan."
+    : "In het echt pas je het concept aan in jullie eigen mailprogramma. Wat jullie vaak aanpassen, zetten we als vaste regel in zijn instructies.";
+};
+document.querySelector(".tabs").onclick = (e) => {
+  const b = e.target.closest("button"); if (!b) return;
+  document.querySelectorAll(".tabs button").forEach((x) => x.classList.toggle("on", x === b));
+  document.getElementById("chatcard").hidden = b.dataset.t !== "chat";
+  document.getElementById("mailcard").hidden = b.dataset.t !== "mail";
+};
 
 bubble("bot", "Hoi! Ik ben de digitale assistent van " + C.name + ". Waar kan ik mee helpen?");
 C.questions.forEach((q) => {
