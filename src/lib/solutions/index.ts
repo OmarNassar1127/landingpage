@@ -8,6 +8,10 @@ export type { Lang, Solution };
 export const solutions: Record<Lang, Solution[]> = { nl: solutionsNl, en: solutionsEn };
 export const receptionist = { nl: receptionistNl, en: receptionistEn };
 
+/** Offers we no longer sell (Omar, 2026-10-30: a free chatbot does product texts). The page stays for old blog links, but it is not listed. */
+export const RETIRED = new Set(["productteksten"]);
+export const listedSolutions = (lang: Lang) => solutions[lang].filter((s) => !RETIRED.has(s.slug));
+
 export const BASE: Record<Lang, string> = { nl: "/oplossingen/", en: "/en/solutions/" };
 
 export const HARNESS_URL = "https://harness.omardev.xyz";

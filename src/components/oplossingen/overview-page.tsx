@@ -2,7 +2,7 @@ import Navbar from "@/components/sections/navbar";
 import Footer from "@/components/sections/footer";
 import { breadcrumbSchema } from "@/lib/schema";
 import { siteConfig } from "@/lib/config";
-import { receptionist, solutionPath, solutions, type Lang } from "@/lib/solutions";
+import { listedSolutions, receptionist, solutionPath, type Lang } from "@/lib/solutions";
 import { BottomCta, COPY, Eyebrow, PriceBlock } from "./shared";
 import OverviewBento from "./bento/overview-bento";
 
@@ -38,7 +38,7 @@ export default function OverviewPage({ lang }: { lang: Lang }) {
   const r = receptionist[lang];
 
   const tiles = [
-    ...solutions[lang].map((s) => ({ key: s.slug, name: s.name, teaser: s.teaser, href: solutionPath(lang, s.slug) })),
+    ...listedSolutions(lang).map((s) => ({ key: s.slug, name: s.name, teaser: s.teaser, href: solutionPath(lang, s.slug) })),
     { key: "ai-receptionist", name: r.name, teaser: r.teaser, href: r.href },
   ];
 

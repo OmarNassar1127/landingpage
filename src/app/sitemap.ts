@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 import { siteConfig } from '@/lib/config';
 import { blogPosts } from '@/lib/blog-data';
-import { solutions, solutionPath, type Lang } from '@/lib/solutions';
+import { listedSolutions, solutionPath, type Lang } from '@/lib/solutions';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = siteConfig.url;
@@ -16,7 +16,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const solutionEntries: MetadataRoute.Sitemap = (['nl', 'en'] as Lang[]).flatMap((lang) => [
     { url: `${baseUrl}${solutionPath(lang)}`, lastModified, changeFrequency: 'monthly' as const, priority: lang === 'nl' ? 0.9 : 0.7 },
-    ...solutions[lang].map((s) => ({
+    ...listedSolutions(lang).map((s) => ({
       url: `${baseUrl}${solutionPath(lang, s.slug)}`,
       lastModified,
       changeFrequency: 'monthly' as const,

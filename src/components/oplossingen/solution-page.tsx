@@ -4,12 +4,12 @@ import Navbar from "@/components/sections/navbar";
 import Footer from "@/components/sections/footer";
 import { breadcrumbSchema } from "@/lib/schema";
 import { siteConfig } from "@/lib/config";
-import { getSolution, receptionist, solutionPath, type Lang, type Solution } from "@/lib/solutions";
+import { RETIRED, getSolution, receptionist, solutionPath, type Lang, type Solution } from "@/lib/solutions";
 import { BENTOS } from "./bento/layouts-b";
 import { BottomCta, COPY, Eyebrow, card } from "./shared";
 
 function relatedTiles(lang: Lang, slugs: string[]) {
-  return slugs.map((slug) => {
+  return slugs.filter((slug) => !RETIRED.has(slug)).map((slug) => {
     if (slug === "ai-receptionist") {
       const r = receptionist[lang];
       return { key: slug, name: r.name, teaser: r.teaser, href: r.href };
