@@ -199,6 +199,9 @@ C.questions.forEach((q) => {
   chips.append(b);
 });
 document.getElementById("f").onsubmit = (e) => { e.preventDefault(); const q = input.value; input.value = ""; ask(q); };
+// Tell the server a person is here: first tap, scroll or keypress (mail scanners only load the page).
+const seen = () => { ["pointerdown", "keydown", "scroll", "touchstart"].forEach((e) => removeEventListener(e, seen, true)); fetch(C.api + "/seen/" + C.slug, { method: "POST" }).catch(() => {}); };
+["pointerdown", "keydown", "scroll", "touchstart"].forEach((e) => addEventListener(e, seen, { capture: true, passive: true }));
 fetch(C.api + "/status/" + C.slug).then((r) => r.json()).then((j) => { if (j.enabled === false) off("Deze demo staat voor vandaag uit. Mail Omar als je hem verder wilt proberen."); }).catch(() => {});
 </script>
 </body>
