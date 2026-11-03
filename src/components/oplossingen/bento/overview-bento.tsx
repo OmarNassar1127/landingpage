@@ -14,17 +14,16 @@ type Size = "hero" | "s" | "tall" | "wide" | "big";
 // One entry per catalog position: phone size, desktop area, background.
 const SLOTS: { size: Size; area: string; tone?: "dark" | "lilac" }[] = [
   { size: "hero", area: "lg:[grid-area:1/1/3/4]" },
-  { size: "s", area: "lg:[grid-area:1/4/2/6]" },
-  { size: "s", area: "lg:[grid-area:1/6/3/7]", tone: "dark" },
-  { size: "tall", area: "lg:[grid-area:2/4/3/6]", tone: "lilac" },
-  { size: "s", area: "lg:[grid-area:3/1/4/3]" },
-  { size: "s", area: "lg:[grid-area:4/1/5/3]" },
-  { size: "wide", area: "lg:[grid-area:3/3/5/5]" },
+  { size: "wide", area: "lg:[grid-area:1/4/2/7]" },
+  { size: "wide", area: "lg:[grid-area:2/4/3/7]", tone: "dark" },
+  { size: "s", area: "lg:[grid-area:3/1/4/3]", tone: "lilac" },
+  { size: "s", area: "lg:[grid-area:3/3/4/5]" },
   { size: "s", area: "lg:[grid-area:3/5/4/7]" },
-  { size: "s", area: "lg:[grid-area:4/5/5/7]", tone: "lilac" },
-  { size: "wide", area: "lg:[grid-area:5/1/6/3]", tone: "dark" },
-  { size: "s", area: "lg:[grid-area:5/3/6/5]" },
-  { size: "s", area: "lg:[grid-area:5/5/6/7]" },
+  { size: "s", area: "lg:[grid-area:4/1/5/3]" },
+  { size: "s", area: "lg:[grid-area:4/3/5/5]", tone: "lilac" },
+  { size: "s", area: "lg:[grid-area:4/5/5/7]", tone: "dark" },
+  { size: "wide", area: "lg:[grid-area:5/1/6/4]" },
+  { size: "wide", area: "lg:[grid-area:5/4/6/7]" },
 ];
 
 const SPAN: Record<Size, string> = {
@@ -60,7 +59,7 @@ export default function OverviewBento({ lang, tiles, devTitle, devText }: { lang
             key={t.key}
             href={t.href}
             className={`group relative flex min-w-0 overflow-hidden rounded-[22px] p-4 transition-transform duration-300 hover:-translate-y-0.5 sm:p-5 lg:rounded-[28px] lg:p-6 ${bg} ${SPAN[slot.size]} ${slot.area} ${
-              side ? "flex-row items-center gap-3 lg:flex-col lg:items-stretch" : "flex-col"
+              side ? "flex-row items-center gap-3 lg:gap-5" : "flex-col"
             }`}
           >
             <Still
@@ -70,7 +69,7 @@ export default function OverviewBento({ lang, tiles, devTitle, devText }: { lang
                 slot.size === "hero"
                   ? "mx-auto aspect-square w-full max-w-[320px] flex-1 lg:max-w-[420px]"
                   : side
-                    ? "aspect-square w-[44%] shrink-0 lg:mx-auto lg:w-full lg:max-w-[190px]"
+                    ? "aspect-square w-[44%] shrink-0 lg:w-[38%] lg:max-w-[200px]"
                     : slot.size === "tall"
                       ? "mx-auto min-h-[150px] w-full flex-1"
                       : "mx-auto aspect-square w-full max-w-[150px] lg:max-w-[132px]"
