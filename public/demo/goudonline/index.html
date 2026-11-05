@@ -140,14 +140,14 @@ function typer(el) {
   return { push: (t) => (queue += t), end: () => { done = true; return finished; }, text: () => shown + queue };
 }
 
-async function ask(q) {
+async function ask(q, via = "typed") {
   q = q.trim();
   if (!q) return;
   bubble("me", q);
   const wait = thinking();
   setBusy(true);
   try {
-    const r = await fetch(C.api + "/ask?stream=1", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ slug: C.slug, question: q, history }) });
+    const r = await fetch(C.api + "/ask?stream=1", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ slug: C.slug, question: q, history, via }) });
     if (!r.ok) {
       wait.stop(); wait.el.remove();
       const j = await r.json().catch(() => ({}));
@@ -195,7 +195,7 @@ bubble("bot", "Hoi! Ik ben de digitale assistent van " + C.name + ". Waar kan ik
 C.questions.forEach((q) => {
   const b = document.createElement("button");
   b.type = "button"; b.textContent = q;
-  b.onclick = () => { b.remove(); ask(q); };
+  b.onclick = () => { b.remove(); ask(q, "example"); };
   chips.append(b);
 });
 document.getElementById("f").onsubmit = (e) => { e.preventDefault(); const q = input.value; input.value = ""; ask(q); };
