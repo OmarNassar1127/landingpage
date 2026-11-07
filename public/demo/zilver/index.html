@@ -47,6 +47,13 @@
   .note { margin-top:22px; background:#fff; border:1px solid var(--line); border-radius:16px; padding:16px; font-size:14px; line-height:1.55; color:#374151; }
   .note b { color:var(--ink); }
   .note a { color:var(--brand); font-weight:600; }
+  .lead { margin:4px 0 2px; padding:12px; border:1px dashed var(--brand); border-radius:14px; background:var(--soft); font-size:14px; line-height:1.45; align-self:stretch; }
+  .lead b { display:block; margin-bottom:8px; }
+  .lead input { width:100%; margin:0 0 8px; font-size:15px; padding:9px 10px; }
+  .lead .row { display:flex; gap:8px; }
+  .lead button { font:inherit; font-size:14px; font-weight:600; border:0; border-radius:10px; padding:9px 12px; cursor:pointer; }
+  .lead .yes { background:var(--brand); color:#fff; flex:1; }
+  .lead .no { background:#fff; color:var(--muted); }
   footer { text-align:center; font-size:12px; color:var(--muted); margin-top:20px; }
   footer a { color:inherit; }
 </style>
@@ -183,12 +190,29 @@ async function ask(q, via = "typed") {
       wait.el.append(tmp.querySelector(".src")); tmp.remove();
     }
     history.push({ role: "user", text: q }, { role: "assistant", text: answer });
+    if (history.length === 4) leadBox();
   } catch {
     wait.stop(); wait.el.remove();
     bubble("bot", "Geen verbinding. Probeer het nog eens.");
   }
   setBusy(false);
   input.focus();
+}
+
+// After two answers: one tap to say "interesting". Pings Omar; the optional field is how we reach the right person.
+function leadBox() {
+  const d = document.createElement("div");
+  d.className = "lead";
+  d.innerHTML = `<b></b><input type="text" placeholder="Je naam en e-mail of telefoon (mag leeg)" maxlength="160"><div class="row"><button type="button" class="yes">Ja, vertel meer</button><button type="button" class="no">Nee, dank je</button></div>`;
+  d.querySelector("b").textContent = "Wil je dit een week gratis proberen bij " + C.name + "?";
+  const send = (yes) => {
+    fetch(C.api + "/interest/" + C.slug, { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ yes, contact: d.querySelector("input").value.trim() }) }).catch(() => {});
+    d.innerHTML = yes ? "<b>Top, dank je!</b>Omar neemt binnen één werkdag contact op." : "Helder, dank voor het proberen!";
+  };
+  d.querySelector(".yes").onclick = () => send(true);
+  d.querySelector(".no").onclick = () => send(false);
+  log.append(d);
+  log.scrollTop = log.scrollHeight;
 }
 
 bubble("bot", "Hoi! Ik ben de digitale assistent van " + C.name + ". Waar kan ik mee helpen?");
