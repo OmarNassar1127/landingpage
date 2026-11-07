@@ -204,7 +204,7 @@ function leadBox() {
   const d = document.createElement("div");
   d.className = "lead";
   d.innerHTML = `<b></b><input type="text" placeholder="Je naam en e-mail of telefoon (mag leeg)" maxlength="160"><div class="row"><button type="button" class="yes">Ja, vertel meer</button><button type="button" class="no">Nee, dank je</button></div>`;
-  d.querySelector("b").textContent = "Wil je dit een week gratis proberen bij " + C.name + "?";
+  d.querySelector("b").textContent = "Wil je zien wat dit een week lang in de inbox van " + C.name + " doet?";
   const send = (yes) => {
     fetch(C.api + "/interest/" + C.slug, { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ yes, contact: d.querySelector("input").value.trim() }) }).catch(() => {});
     d.innerHTML = yes ? "<b>Top, dank je!</b>Omar neemt binnen één werkdag contact op." : "Helder, dank voor het proberen!";
