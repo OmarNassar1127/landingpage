@@ -27,7 +27,7 @@ export default function Navbar({ customNavLinks }: NavbarProps = {}) {
 
   const defaultNavLinks = [
     { name: t.nav.services, href: "#services" },
-    { name: language === 'nl' ? 'Klantresultaten' : 'Case studies', href: "#case-studies" },
+    { name: language === 'nl' ? 'Projecten' : 'Projects', href: "#case-studies" },
     { name: language === 'nl' ? 'Aanbevelingen' : 'References', href: "#testimonials" },
   ];
 

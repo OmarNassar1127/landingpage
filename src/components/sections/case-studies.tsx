@@ -328,15 +328,15 @@ export default function CaseStudies() {
         <div className="container mx-auto max-w-6xl px-6">
           <div className="mx-auto mb-14 max-w-2xl text-center sm:mb-16 lg:mb-4">
             <motion.p {...reveal()} className="mb-4 text-sm font-medium text-primary">
-              {isNL ? "Klantresultaten" : "Client results"}
+              {isNL ? "Projecten van Omar" : "Projects by Omar"}
             </motion.p>
             <motion.h2 {...reveal(0.05)} id="case-studies-title" className="mb-5 text-3xl font-semibold tracking-tight text-zinc-900 sm:text-4xl md:text-5xl">
               {isNL ? "Van idee tot lancering" : "From idea to launch"}
             </motion.h2>
             <motion.p {...reveal(0.1)} className="text-lg text-zinc-500">
               {isNL
-                ? "Bekijk hoe we AI-oplossingen bouwen die echt werken, van concept tot product."
-                : "See how we build AI solutions that actually work, from concept to product."}
+                ? "AI-projecten die Omar in zijn loopbaan bouwde, van concept tot product."
+                : "AI projects Omar built during his career, from concept to product."}
             </motion.p>
           </div>
 

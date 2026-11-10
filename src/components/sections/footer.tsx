@@ -54,7 +54,7 @@ export default function Footer() {
               {[
                 { name: t.nav.home, href: "#" },
                 { name: t.nav.services, href: "#services" },
-                { name: language === "nl" ? "Klantresultaten" : "Case studies", href: "#case-studies" },
+                { name: language === "nl" ? "Projecten" : "Projects", href: "#case-studies" },
                 { name: language === "nl" ? "Aanbevelingen" : "References", href: "#testimonials" },
                 { name: language === "nl" ? "Contact" : "Contact", href: "#ready-to-start" },
               ].map((link) => (
