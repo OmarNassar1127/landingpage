@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 import { scrollToSection, navigateFromPolicyPage } from "@/lib/scroll-utils";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Phone, Mail, ArrowRight } from "lucide-react";
+import { TEST_MAILTO } from "@/lib/test-offer";
 import { Icon } from "@/components/ui/icon";
 import { useLanguage } from "@/lib/i18n/language-context";
 
@@ -178,8 +179,8 @@ export default function Navbar({ customNavLinks }: NavbarProps = {}) {
                 asChild
                 className="bg-foreground text-background hover:bg-foreground/90 font-semibold px-5 py-2 rounded-lg shadow-sm"
               >
-                <a href="https://calendly.com/omarnassar1127/30min" target="_blank" rel="noopener noreferrer">
-                  {language === 'nl' ? 'Plan intake' : 'Book intake'}
+                <a href={TEST_MAILTO[language === 'en' ? 'en' : 'nl']}>
+                  {language === 'nl' ? 'Start de test' : 'Start the test'}
                 </a>
               </Button>
               <LanguageToggle />
@@ -284,13 +285,11 @@ export default function Navbar({ customNavLinks }: NavbarProps = {}) {
               >
                 {/* Main CTA */}
                 <a
-                  href="https://calendly.com/omarnassar1127/30min"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href={TEST_MAILTO[language === "en" ? "en" : "nl"]}
                   onClick={() => setMobileMenuOpen(false)}
                   className="w-full flex items-center justify-center gap-2 bg-foreground text-background font-semibold py-4 rounded-2xl text-base active:scale-[0.98] transition-transform"
                 >
-                  {language === "nl" ? "Plan een intake" : "Book an intake"}
+                  {language === "nl" ? "Start de test" : "Start the test"}
                   <ArrowRight className="w-4 h-4" />
                 </a>
 

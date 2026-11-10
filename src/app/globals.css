@@ -535,3 +535,7 @@ a:hover {
 @keyframes bx-nudge { 50% { transform: translateX(3px); } }
 /* Bento tile copy inherits the tile's size instead of the global 1rem for p. */
 .bp { font-size: inherit; line-height: inherit; letter-spacing: inherit; }
+
+/* Home hero mail card: draft caret. */
+@keyframes hero-caret { 50% { opacity: 0; } }
+.hero-caret { animation: hero-caret 1s steps(1) infinite; }
