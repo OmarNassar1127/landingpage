@@ -2,67 +2,21 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion, useInView, useReducedMotion, type TargetAndTransition } from "framer-motion";
-import {
-  BookOpen,
-  Calculator,
-  CalendarDays,
-  Check,
-  FileSpreadsheet,
-  FileText,
-  Mail,
-  MessageCircle,
-  ShoppingBag,
-  Sparkles,
-  type LucideIcon,
-} from "lucide-react";
-
-type Lang = "nl" | "en";
-type Tool = { label: string; icon: LucideIcon; tint: string };
-type Problem = { chip: string; now: string; inputs: Tool[]; outputs: Tool[]; result: string };
-
-const tool = (label: string, icon: LucideIcon, tint: string): Tool => ({ label, icon, tint });
-const MAIL = tool("Mail", Mail, "#FBE3D6");
-const EXACT = tool("Exact", Calculator, "#DDE7F3");
-const SHOP = tool("Shopify", ShoppingBag, "#E4E9DA");
-const EXCEL = tool("Excel", FileSpreadsheet, "#DCEFE2");
-const WA = tool("WhatsApp", MessageCircle, "#DCEFE2");
-const CAL = (l: string) => tool(l, CalendarDays, "#E7E3F6");
-const DOCS = (l: string) => tool(l, BookOpen, "#F3EBD8");
-const PDF = (l: string) => tool(l, FileText, "#F3EBD8");
-
-const PROBLEMS: Record<Lang, Problem[]> = {
-  nl: [
-    { chip: "We typen orders over uit mail", now: "Elke order komt binnen als mail en gaat met de hand het systeem in.", inputs: [MAIL], outputs: [EXACT, SHOP], result: "Orders staan zelf in je systeem. Jij keurt goed." },
-    { chip: "Offertes duren dagen", now: "Een aanvraag wacht tot iemand tijd heeft om te rekenen en te typen.", inputs: [MAIL, tool("Prijslijst", FileSpreadsheet, "#DCEFE2")], outputs: [PDF("Offerte")], result: "De offerte staat klaar uit je prijslijst. Jij keurt goed." },
-    { chip: "Facturen handmatig inboeken", now: "Pdf openen, bedragen overtypen, btw controleren. Elke week opnieuw.", inputs: [PDF("Factuur-pdf")], outputs: [EXACT], result: "Facturen staan klaargezet in je boekhouding. Jij keurt goed." },
-    { chip: "Klantvragen blijven liggen", now: "Mail en WhatsApp lopen vol terwijl jij aan het werk bent.", inputs: [MAIL, WA], outputs: [tool("Antwoord", Mail, "#FBE3D6")], result: "Elke vraag heeft een concept-antwoord. Jij keurt goed." },
-    { chip: "Planning in Excel", now: "Wie waar staat, zit in een sheet die één persoon bijhoudt.", inputs: [EXCEL, WA], outputs: [CAL("Agenda")], result: "Afspraken staan in de agenda van de monteur. Jij keurt goed." },
-    { chip: "Kennis zit in één hoofd", now: "Het team belt jou voor elke vraag over prijzen, regels en werkwijze.", inputs: [DOCS("Documenten"), MAIL], outputs: [WA], result: "Het team vraagt het de AI, met de bron erbij." },
-  ],
-  en: [
-    { chip: "We retype orders from email", now: "Every order arrives by email and gets typed into the system by hand.", inputs: [MAIL], outputs: [EXACT, SHOP], result: "Orders land in your system on their own. You approve." },
-    { chip: "Quotes take days", now: "A request waits until someone has time to calculate and type.", inputs: [MAIL, tool("Price list", FileSpreadsheet, "#DCEFE2")], outputs: [PDF("Quote")], result: "The quote is ready, from your price list. You approve." },
-    { chip: "Invoices entered by hand", now: "Open the pdf, retype the amounts, check the VAT. Every week again.", inputs: [PDF("Invoice pdf")], outputs: [EXACT], result: "Invoices are ready in your bookkeeping. You approve." },
-    { chip: "Customer questions pile up", now: "Email and WhatsApp fill up while you are on the job.", inputs: [MAIL, WA], outputs: [tool("Reply", Mail, "#FBE3D6")], result: "Every question has a draft reply. You approve." },
-    { chip: "Planning in Excel", now: "Who goes where lives in a sheet that one person keeps up.", inputs: [EXCEL, WA], outputs: [CAL("Calendar")], result: "Appointments are in the technician's calendar. You approve." },
-    { chip: "Knowledge lives in one head", now: "The team calls you for every question about prices, rules and how things work.", inputs: [DOCS("Documents"), MAIL], outputs: [WA], result: "The team asks the AI, with the source attached." },
-  ],
-};
-
-const UI = {
-  nl: { problem: "Het probleem", agent: "AI-medewerker", label: "Kies een probleem" },
-  en: { problem: "The problem", agent: "AI employee", label: "Pick a problem" },
-};
+import { Sparkles } from "lucide-react";
+import { PROBLEMS, UI, type Lang, type Problem, type Tool } from "@/components/sections/hero-problems-data";
+import ResultCard from "@/components/sections/hero-results";
 
 // Build timeline, in seconds after a problem is picked.
-const D = { now: 0.15, agent: 0.55, nodes: 0.8, lines: 1.25, flow: 2.2, result: 2.7 };
-const AUTO_MS = 7000; // idle auto-cycle
-const PICKED_MS = 14000; // after a tap, let it rest longer before moving on
+const D = { now: 0.15, agent: 0.55, nodes: 0.8, lines: 1.25, flow: 2.2 };
+// Then, in ms: the diagram gives way to the finished thing, and the approve button is pressed.
+const PHASE_MS = [3300, 5700, 5950]; // phase 1 result card, 2 pressed, 3 approved
+const AUTO_MS = 9000; // idle auto-cycle
+const PICKED_MS = 15000; // after a tap, let it rest longer before moving on
 
 // Diagram geometry in viewBox units. Pills sit over the line ends, so lines start inside them.
 const W = 320;
 const H = 150;
-const rows = (n: number) => (n === 1 ? [H / 2] : [H * 0.26, H * 0.74]);
+const rows = (n: number) => (n === 1 ? [H / 2] : n === 2 ? [H * 0.26, H * 0.74] : [H * 0.15, H / 2, H * 0.85]);
 const curve = (x1: number, y1: number, x2: number, y2: number) => {
   const mx = (x1 + x2) / 2;
   return `M${x1} ${y1} C${mx} ${y1} ${mx} ${y2} ${x2} ${y2}`;
@@ -90,7 +44,7 @@ function Node({ t, side, y, delay, still }: { t: Tool; side: "l" | "r"; y: numbe
   );
 }
 
-function Build({ p, lang, still }: { p: Problem; lang: Lang; still: boolean }) {
+function Build({ p, lang, still, phase }: { p: Problem; lang: Lang; still: boolean; phase: number }) {
   const ui = UI[lang];
   const ins = rows(p.inputs.length);
   const outs = rows(p.outputs.length);
@@ -114,8 +68,16 @@ function Build({ p, lang, still }: { p: Problem; lang: Lang; still: boolean }) {
         {p.now}
       </motion.p>
 
+      <div className="mt-4 grid flex-1 grid-cols-[minmax(0,1fr)] items-start sm:mt-6 [&>*]:col-start-1 [&>*]:row-start-1">
       {/* The system assembling itself: their tools, wired through one agent. */}
-      <div className="relative mt-4 w-full sm:mt-6" style={{ aspectRatio: `${W} / ${H}` }}>
+      <motion.div
+        initial={false}
+        animate={phase >= 1 ? { opacity: 0, scale: 0.96 } : { opacity: 1, scale: 1 }}
+        transition={still ? { duration: 0 } : spring}
+        className={`relative w-full ${phase >= 1 ? "pointer-events-none" : ""}`}
+        style={{ aspectRatio: `${W} / ${H}` }}
+        aria-hidden={phase >= 1}
+      >
         <svg viewBox={`0 0 ${W} ${H}`} className="absolute inset-0 h-full w-full" aria-hidden>
           {paths.map((d, i) => (
             <motion.path
@@ -165,19 +127,18 @@ function Build({ p, lang, still }: { p: Problem; lang: Lang; still: boolean }) {
             <span className="hidden sm:inline">{ui.agent}</span>
           </motion.div>
         </div>
-      </div>
-
-      <motion.div
-        initial={from({ opacity: 0, y: 8 })}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ ...spring, delay: at(D.result) }}
-        className="mt-auto flex items-start gap-2.5 rounded-2xl bg-[#F4F4FD] px-4 py-3 pt-3 text-[14px] font-medium leading-snug text-indigo-950 ring-1 ring-indigo-950/[0.05] sm:text-[15px]"
-      >
-        <span className="mt-[1px] flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-indigo-600 text-white">
-          <Check className="h-3 w-3" strokeWidth={3.2} />
-        </span>
-        {p.result}
       </motion.div>
+
+      {phase >= 1 && (
+        <motion.div
+          initial={still ? false : { opacity: 0, y: 14, scale: 0.98 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ ...spring, delay: still ? 0 : 0.12 }}
+        >
+          <ResultCard r={p.result} lang={lang} phase={phase} still={still} />
+        </motion.div>
+      )}
+      </div>
     </div>
   );
 }
@@ -190,6 +151,15 @@ export default function HeroProblems({ lang }: { lang: Lang }) {
   const inView = useInView(ref, { margin: "-10% 0px" });
   const [idx, setIdx] = useState(0);
   const [picked, setPicked] = useState(0); // bumps on every tap, restarts the rest timer
+  const [phase, setPhase] = useState(0);
+
+  // Per problem: build the diagram, show the finished thing, press approve.
+  useEffect(() => {
+    if (reduce) return setPhase(1);
+    setPhase(0);
+    const ids = PHASE_MS.map((ms, i) => setTimeout(() => setPhase(i + 1), ms));
+    return () => ids.forEach(clearTimeout);
+  }, [idx, picked, reduce]);
 
   // Idle auto-cycle; a tap holds the chosen problem longer. Stops off-screen and with reduced motion.
   useEffect(() => {
@@ -238,23 +208,23 @@ export default function HeroProblems({ lang }: { lang: Lang }) {
         <div aria-hidden className="absolute inset-x-6 -bottom-3 top-6 rounded-[28px] bg-white/70 ring-1 ring-zinc-900/[0.05]" />
         <div
           role="tabpanel"
-          className="relative grid rounded-[28px] bg-white p-5 ring-1 ring-zinc-900/[0.06] shadow-[0_1px_2px_rgba(60,40,20,0.05),0_12px_32px_-12px_rgba(60,40,20,0.16),0_40px_80px_-32px_rgba(79,70,229,0.22)] sm:p-7 [&>*]:col-start-1 [&>*]:row-start-1"
+          className="relative grid grid-cols-[minmax(0,1fr)] rounded-[28px] bg-white p-5 ring-1 ring-zinc-900/[0.06] shadow-[0_1px_2px_rgba(60,40,20,0.05),0_12px_32px_-12px_rgba(60,40,20,0.16),0_40px_80px_-32px_rgba(79,70,229,0.22)] sm:p-7 [&>*]:col-start-1 [&>*]:row-start-1"
         >
           {/* Sizer: the tallest problem reserves the height so nothing below jumps. */}
           {problems.map((p, i) => (
             <div key={`s${i}`} aria-hidden className="invisible">
-              <Build p={p} lang={lang} still />
+              <Build p={p} lang={lang} still phase={3} />
             </div>
           ))}
           <AnimatePresence initial={false} mode="wait">
             <motion.div
-              key={idx}
+              key={`${idx}-${picked}`}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0, transition: { duration: 0.18 } }}
               transition={{ duration: 0.25 }}
             >
-              <Build p={problems[idx]} lang={lang} still={reduce} />
+              <Build p={problems[idx]} lang={lang} still={reduce} phase={phase} />
             </motion.div>
           </AnimatePresence>
         </div>
