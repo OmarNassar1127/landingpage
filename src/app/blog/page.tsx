@@ -131,7 +131,7 @@ export default function BlogPage() {
                 Benieuwd wat AI voor jou kan doen?
               </h2>
               <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                Vertel ons over je uitdaging. We denken gratis en vrijblijvend mee.
+                Vertel ons over je uitdaging. We denken vrijblijvend mee.
               </p>
             </div>
             <a

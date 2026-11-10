@@ -13,7 +13,7 @@ import IntakeExplanationSection from "@/components/sections/intake-explanation-s
 import GuaranteeSection from "@/components/sections/guarantee-section";
 import { generateMetadata } from "@/lib/metadata";
 import JsonLd from "@/components/seo/json-ld";
-import { faqSchema, testimonialsSchema, servicesSchema, workshopSchema, certificationsSchema } from "@/lib/schema";
+import { faqSchema, servicesSchema, workshopSchema, certificationsSchema } from "@/lib/schema";
 
 // FAQ data for the landing page
 const faqData = {
@@ -26,7 +26,7 @@ const faqData = {
     {
       question: "Hoe snel kunnen jullie leveren?",
       answer:
-        "De meeste AI-agents zijn live binnen 1 week. We werken in korte sprints: gratis intake, prototype, feedback, lancering. Geen maandenlange trajecten.",
+        "De meeste AI-agents zijn live binnen 1 week. We werken in korte sprints: intake, prototype, feedback, lancering. Geen maandenlange trajecten.",
     },
     {
       question: "Kunnen jullie AI on-premise draaien?",
@@ -46,39 +46,6 @@ const faqData = {
   ],
 };
 
-// Testimonials data for structured data
-const testimonialsData = {
-  items: [
-    {
-      author: "Giulio Piccolo",
-      role: "Lead Engineer @ Suit Supply",
-      text: "The Virelio team stood out for their rapid development and strong foundation in AI. They independently tackled complex topics and delivered valuable insights.",
-    },
-    {
-      author: "Cristian Arboleda",
-      role: ".NET Developer",
-      text: "A talented team with a strong drive to grow and improve. Always supporting their clients, their greatest strength is quickly learning new domains and adapting to any process.",
-    },
-    {
-      author: "Ihor Tolkachov",
-      role: "Frontend Developer",
-      text: "Working with Virelio showed their reliability and skill. Together we created an automatic fine scanner that reduced a 30-minute process to just 10 seconds.",
-    },
-    {
-      author: "Oeds de Meer",
-      role: "Process & Information Manager @ SBB",
-      text: "Virelio consistently delivered sharp analyses and worked with tools like SQL, Looker, and Python. They recognize patterns in data and provide visual insights that drive better decisions.",
-    },
-    {
-      author: "Laura Britton",
-      role: "Project Manager Medical Affairs @ Sedgwick",
-      text: "Dedicated, helpful and reliable. Always deliver on their promises.",
-    },
-  ],
-};
-
-
-
 export const metadata: Metadata = generateMetadata({
   title: "Digitale Medewerkers & AI Agents voor bedrijven",
   description:
@@ -95,7 +62,6 @@ export default function Home() {
     <>
       {/* Adding structured data for better SEO */}
       <JsonLd data={faqSchema(faqData)} />
-      <JsonLd data={testimonialsSchema(testimonialsData)} />
       <JsonLd data={servicesSchema()} />
       <JsonLd data={workshopSchema()} />
       <JsonLd data={certificationsSchema()} />

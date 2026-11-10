@@ -73,7 +73,7 @@ export default function FloatingCTA() {
             <FiX />
           </button>
           <p className="text-sm text-gray-700 font-medium">
-            Probeer mij gratis
+            Probeer mij
           </p>
         </motion.div>
       )}

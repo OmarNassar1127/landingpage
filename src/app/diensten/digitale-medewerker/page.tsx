@@ -108,7 +108,7 @@ function Ctas({ secondary }: { secondary: string }) {
         rel="noopener noreferrer"
         className="inline-flex items-center justify-center gap-2 rounded-xl bg-zinc-900 px-7 py-3.5 text-sm font-medium text-white transition-all hover:bg-zinc-800 active:scale-[0.98]"
       >
-        Plan gratis intake
+        Plan een intake
         <ArrowRight className="h-4 w-4" />
       </a>
       <a
@@ -340,7 +340,7 @@ export default function DigitaleMedewerkerPage() {
           <div className="container mx-auto flex max-w-3xl flex-col items-center px-6 text-center sm:px-8">
             <h2 className={`${H2} mb-4`}>Welke afdeling automatiseren we als eerste?</h2>
             <p className="mb-8 max-w-lg text-base text-zinc-500">
-              Plan een gratis gesprek van 30 minuten. Wij analyseren uw processen en adviseren welke digitale medewerker
+              Plan een gesprek van 30 minuten. Wij analyseren uw processen en adviseren welke digitale medewerker
               de hoogste ROI oplevert.
             </p>
             <Ctas secondary="Mail ons direct" />

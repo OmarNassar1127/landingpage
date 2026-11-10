@@ -396,7 +396,7 @@ export default function CaseStudies() {
               className={`rounded-xl bg-zinc-900 px-8 py-6 text-base font-semibold text-white hover:bg-zinc-800 ${FOCUS}`}
               onClick={() => scrollToSection("ready-to-start")}
             >
-              {isNL ? "Plan gratis intake" : "Book free intake"}
+              {isNL ? "Plan een intake" : "Book an intake"}
             </Button>
           </motion.div>
         </div>

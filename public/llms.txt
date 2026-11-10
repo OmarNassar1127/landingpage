@@ -54,7 +54,7 @@ Team certified by leading AI companies:
 - GDPR compliant, EU data processing
 - On-premise deployment available for sensitive data
 - Multilingual: Dutch, English, Arabic, Spanish, French
-- Free intake — no obligations
+- Intake call, no obligations
 
 ## Case Studies
 - ZapBot (zapbot.nl): WhatsApp AI agent automating customer support for Dutch businesses — <10s response, 40% fewer no-shows, €2,800/month saved

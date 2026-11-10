@@ -59,17 +59,6 @@ type FAQProps = {
   items: FAQItemProps[];
 };
 
-type TestimonialProps = {
-  author: string;
-  role: string;
-  text: string;
-  organization?: string;
-};
-
-type TestimonialsProps = {
-  items: TestimonialProps[];
-};
-
 type AutomationAchievementProps = {
   totalAutomations: number;
   aiAutomationPercentage: number;
@@ -341,44 +330,6 @@ export function faqSchema({ items }: FAQProps) {
   };
 }
 
-export function testimonialsSchema({ items }: TestimonialsProps) {
-  return {
-    "@context": "https://schema.org",
-    "@type": "ItemList",
-    itemListElement: items.map((item, index) => ({
-      "@type": "ListItem",
-      position: index + 1,
-      item: {
-        "@type": "Review",
-        author: {
-          "@type": "Person",
-          name: item.author,
-          jobTitle: item.role,
-        },
-        reviewBody: item.text,
-        itemReviewed: {
-          "@type": "Organization",
-          name: siteConfig.name,
-          url: siteConfig.url,
-          description: "AI agency in Amsterdam, Netherlands, that builds custom AI agent teams for businesses.",
-          address: {
-            "@type": "PostalAddress",
-            addressCountry: "NL",
-            addressLocality: "Amsterdam",
-          },
-        },
-        reviewRating: {
-          "@type": "Rating",
-          bestRating: "5",
-          ratingValue: "5",
-          worstRating: "1",
-        },
-        datePublished: new Date().toISOString(),
-      },
-    })),
-  };
-}
-
 export function workshopSchema() {
   return {
     "@context": "https://schema.org",
@@ -495,13 +446,6 @@ export function voiceAIServiceSchema() {
       itemListElement: [
         {
           "@type": "Offer",
-          name: "Gratis Proefperiode",
-          description: "Test onze AI spraakassistent gratis",
-          price: "0",
-          priceCurrency: "EUR"
-        },
-        {
-          "@type": "Offer",
           name: "Business Pakket",
           description: "Voor MKB bedrijven",
           priceSpecification: {
@@ -521,13 +465,6 @@ export function voiceAIServiceSchema() {
           }
         }
       ]
-    },
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "4.8",
-      reviewCount: "127",
-      bestRating: "5",
-      worstRating: "1"
     },
     potentialAction: {
       "@type": "UseAction",

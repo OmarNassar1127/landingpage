@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "AI Voice Assistant for Business | 24/7 Automation | Virelio",
-    description: "AI voice assistant that answers in 2 rings, 24/7. From €1,000 one-off. Book a free intake.",
+    description: "AI voice assistant that answers in 2 rings, 24/7. From €1,000 one-off. Book an intake.",
     url: "/voiceassistant",
     locale: "en_US",
     type: "website",

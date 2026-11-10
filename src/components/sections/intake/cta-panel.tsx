@@ -51,7 +51,7 @@ export default function CtaPanel({ isNL }: { isNL: boolean }) {
           {isNL ? "Klaar om te beginnen?" : "Ready to start?"}
         </h3>
         <p className="mb-8 text-lg text-muted-foreground sm:mb-10 sm:text-xl">
-          {isNL ? "30 minuten. Gratis. Geen verplichtingen." : "30 minutes. Free. No commitments."}
+          {isNL ? "30 minuten, geen verplichtingen." : "30 minutes, no commitments."}
         </p>
 
         <div className="mb-6 flex justify-center">

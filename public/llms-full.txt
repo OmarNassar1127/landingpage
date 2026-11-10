@@ -139,10 +139,10 @@ All your knowledge, always findable.
 
 ## Pricing Model
 
-Virelio operates on a project-based pricing model. There are no monthly subscription tiers or seat-based fees. Each engagement is scoped during a free intake call and quoted accordingly.
+Virelio operates on a project-based pricing model. There are no monthly subscription tiers or seat-based fees. Each engagement is scoped during an intake call and quoted accordingly.
 
 Key pricing principles:
-- **Free intake**: The initial intake call is free and non-binding. Virelio will map the client's processes, identify automation opportunities, and propose a solution.
+- **Intake**: The initial intake call is non-binding. Virelio will map the client's processes, identify automation opportunities, and propose a solution.
 - **Fixed-scope projects**: Most projects are quoted as a fixed price for a defined deliverable (e.g., "customer service automation for Zendesk + WhatsApp, handling 80% of tier-1 tickets").
 - **Custom per project**: Pricing depends on the number of agents, integrations required, and complexity of the workflows. There is no one-size-fits-all rate.
 - **No lock-in**: Clients own 100% of the code, agents, and data at delivery. There is no ongoing platform fee unless the client chooses a retainer for maintenance and improvements.

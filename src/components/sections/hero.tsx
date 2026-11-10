@@ -117,8 +117,8 @@ function HeroContent() {
                   className="flex items-center justify-center gap-2"
                 >
                   {language === "nl"
-                    ? "Plan gratis intake"
-                    : "Book free intake"}
+                    ? "Plan een intake"
+                    : "Book an intake"}
                   <Icon
                     icon={ArrowRight}
                     className="h-4 w-4 group-hover:translate-x-1 transition-transform"

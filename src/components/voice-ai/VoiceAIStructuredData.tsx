@@ -35,13 +35,6 @@ export default function VoiceAIStructuredData({ lang }: VoiceAIStructuredDataPro
       "priceCurrency": lang === 'nl' ? "EUR" : "USD",
       "description": lang === 'nl' ? "Vanaf €1.000 eenmalig, onderhoud vanaf €99 per maand" : "From €1,000 one-off, maintenance from €99 a month"
     },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.8",
-      "ratingCount": "127",
-      "bestRating": "5",
-      "worstRating": "1"
-    },
     "featureList": lang === 'nl' ? [
       "24/7 beschikbaarheid",
       "Beantwoordt binnen 2 beltonen",
