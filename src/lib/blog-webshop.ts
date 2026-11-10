@@ -52,7 +52,7 @@ const serviceFaq = [
   },
   {
     question: "Wat kost het?",
-    answer: `${PRICE} Excl. btw. Het AI-gebruik betaal je apart aan de aanbieder. De eerste tien antwoorden zijn gratis.`,
+    answer: `${PRICE} Excl. btw. Het AI-gebruik betaal je apart aan de aanbieder. Eerst proberen? Stuur 20 echte klantmails: binnen twee werkdagen krijg je 20 concept-antwoorden en een telling hoeveel er klopten, voor €250, dat van de opstartkosten afgaat.`,
   },
 ];
 
@@ -142,7 +142,7 @@ export const webshopPosts: BlogPost[] = [
     slug: "klantvragen-automatisch-beantwoorden",
     title: "Klantvragen van je webshop automatisch laten beantwoorden",
     description:
-      "Elke dag dezelfde vragen over bezorging en retour? Laat een slimme assistent je klantenservice beantwoorden met jouw regels. Met voorbeeld. Eerste reeks gratis.",
+      "Elke dag dezelfde vragen over bezorging en retour? Laat een slimme assistent je klantenservice beantwoorden met jouw regels. Met voorbeeld en een testronde op je eigen mail.",
     publishedAt: "2026-10-24",
     author: "Virelio Team",
     readingTime: 4,
@@ -156,7 +156,7 @@ export const webshopPosts: BlogPost[] = [
     faq: serviceFaq,
     cta: {
       title: "Stuur ons je veelgestelde vragen",
-      text: "Mail je veelgestelde vragen en een paar echte klantmails. Wij laten gratis zien welke antwoorden de assistent zou sturen.",
+      text: "Stuur 20 echte klantmails. Binnen twee werkdagen zie je welke antwoorden de assistent zou sturen, en hoeveel er klopten. €250, gaat van de opstartkosten af.",
       label: "Mail je vragen",
       href: mailto("Klantenservice: gratis eerste reeks"),
     },
