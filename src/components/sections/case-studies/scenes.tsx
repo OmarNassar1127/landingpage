@@ -45,7 +45,6 @@ export function QAScene({ language }: Props) {
 
   return (
     <div className="relative mx-auto flex h-[420px] w-full max-w-[540px] flex-col justify-center">
-      <div className="absolute left-[12%] top-[14%] h-64 w-64 rounded-full bg-orange-400/20 blur-3xl" aria-hidden="true" />
       <a
         href={src}
         target="_blank"
@@ -85,10 +84,6 @@ export function ZapBotScene({ language }: Props) {
 
   return (
     <div className="relative mx-auto h-[420px] w-full max-w-[540px]" style={{ perspective: 1400 }} aria-hidden="true">
-      {/* soft brand glow */}
-      <div className="absolute left-[10%] top-[18%] h-64 w-64 rounded-full bg-emerald-400/25 blur-3xl" />
-      <div className="absolute right-[8%] bottom-[10%] h-48 w-48 rounded-full bg-primary/15 blur-3xl" />
-
       {/* calendar, tilted behind the phone */}
       <motion.div
         className="absolute right-0 top-10 w-[300px] rounded-2xl border border-black/[0.06] bg-white p-3.5 shadow-[0_30px_60px_-30px_rgba(23,23,28,0.45)]"
@@ -216,9 +211,6 @@ export function FraudScene({ language }: Props) {
 
   return (
     <div className="relative mx-auto h-[420px] w-full max-w-[540px]" style={{ perspective: 1400 }} aria-hidden="true">
-      <div className="absolute left-[30%] top-[20%] h-72 w-72 rounded-full bg-primary/20 blur-3xl" />
-      <div className="absolute right-[6%] top-[8%] h-40 w-40 rounded-full bg-rose-400/20 blur-3xl" />
-
       {/* risk gauge */}
       <motion.div className="absolute left-0 top-6 z-10 w-[210px] rounded-2xl bg-zinc-900 p-4 text-white shadow-[0_30px_60px_-30px_rgba(23,23,28,0.7)]"
         initial={false} animate={{ rotateY: 12, rotateX: 4 }} transition={SPRING}>
@@ -332,9 +324,6 @@ export function ContentOSScene({ language }: Props) {
 
   return (
     <div className="relative mx-auto h-[420px] w-full max-w-[540px]" style={{ perspective: 1400 }} aria-hidden="true">
-      <div className="absolute left-[8%] top-[24%] h-64 w-64 rounded-full bg-orange-400/25 blur-3xl" />
-      <div className="absolute right-[4%] top-[10%] h-56 w-56 rounded-full bg-pink-400/20 blur-3xl" />
-
       {/* the crew */}
       <div className="absolute inset-x-0 top-0 z-10 flex justify-center gap-2.5">
         {CREW.map((c, i) => {

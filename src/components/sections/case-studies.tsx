@@ -21,7 +21,6 @@ interface CaseStudy {
   demo?: string;
   logo: string;
   logoBg: string;
-  brand: string;
   tagline: string;
   challenge: string;
   solution: string;
@@ -39,8 +38,7 @@ const getCaseStudies = (language: string): CaseStudy[] => {
       url: "",
       demo: `/sims/qa-rig.html?lang=${isNL ? "nl" : "en"}`,
       logo: "",
-      logoBg: "bg-zinc-900",
-      brand: "#e8622c",
+      logoBg: "bg-ink",
       Icon: Bug,
       tagline: isNL ? "AI-agents die je app testen zoals echte klanten" : "AI agents that test your app like real customers",
       challenge: isNL
@@ -70,7 +68,6 @@ const getCaseStudies = (language: string): CaseStudy[] => {
       url: "https://zapbot.nl",
       logo: "/images/clients/whatsapp.svg",
       logoBg: "",
-      brand: "#10b981",
       tagline: isNL ? "WhatsApp AI-assistent voor bedrijven" : "WhatsApp AI assistant for businesses",
       challenge: isNL
         ? "Bedrijven misten berichten buiten kantooruren. Afspraken werden handmatig ingepland en no-shows kostten omzet. 's Avonds en in het weekend was niemand bereikbaar."
@@ -98,8 +95,7 @@ const getCaseStudies = (language: string): CaseStudy[] => {
       name: "Fraud Guard",
       url: "",
       logo: "",
-      logoBg: "bg-zinc-900",
-      brand: "#4637d2",
+      logoBg: "bg-ink",
       Icon: ShieldCheck,
       tagline: isNL ? "Fraudepreventie voor facturatie · gebouwd door ervaren mensen" : "Invoice fraud prevention · built by experienced people",
       challenge: isNL
@@ -128,8 +124,7 @@ const getCaseStudies = (language: string): CaseStudy[] => {
       name: "ContentOS",
       url: "",
       logo: "",
-      logoBg: "bg-gradient-to-br from-orange-500 to-pink-500",
-      brand: "#f97316",
+      logoBg: "bg-ink",
       tagline: isNL ? "AI-marketingteam dat content maakt terwijl jij slaapt" : "AI marketing team that creates content while you sleep",
       challenge: isNL
         ? "Een groeiend e-commerce merk produceerde 3 posts per week en had geen budget voor een volledig marketingteam. Content was inconsistent en campagnes werden te laat gelanceerd."
@@ -156,7 +151,7 @@ const getCaseStudies = (language: string): CaseStudy[] => {
   ];
 };
 
-const HAIRLINE = "border-[rgba(23,23,28,0.07)]";
+const HAIRLINE = "border-line";
 const EASE = [0.22, 1, 0.36, 1] as const;
 const FOCUS = "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-white";
 
@@ -189,8 +184,8 @@ function Metric({ label, value }: { label: string; value: string }) {
 
   return (
     <div ref={ref} className="flex flex-col-reverse gap-1 bg-white px-4 py-4 sm:px-5">
-      <dt className="text-[13px] leading-tight text-zinc-500">{label}</dt>
-      <dd className="text-2xl font-semibold tabular-nums tracking-tight text-zinc-900 sm:text-[28px]">
+      <dt className="text-[13px] leading-tight text-ink-soft">{label}</dt>
+      <dd className="text-2xl font-semibold tabular-nums tracking-tight text-ink sm:text-[28px]">
         <span className="sr-only">{value}</span>
         <span aria-hidden="true">{shown}</span>
       </dd>
@@ -246,33 +241,32 @@ function Story({ study, language, index, setRef }: { study: CaseStudy; language:
       <div className="flex items-center gap-3">
         <Logo study={study} />
         <div className="min-w-0">
-          <h3 id={`case-${index}-name`} className="flex items-center gap-2 text-xl font-semibold tracking-tight text-zinc-900 sm:text-2xl">
+          <h3 id={`case-${index}-name`} className="flex items-center gap-2 text-xl font-semibold tracking-tight text-ink sm:text-2xl">
             {study.name}
-            <span className="h-1.5 w-1.5 rounded-full" style={{ background: study.brand }} aria-hidden="true" />
           </h3>
-          <p className="text-sm text-zinc-500">{study.tagline}</p>
+          <p className="text-sm text-ink-soft">{study.tagline}</p>
         </div>
       </div>
 
       <div className="mt-7 space-y-5">
         <div>
-          <h4 className="mb-1.5 text-sm font-semibold text-zinc-900">{isNL ? "De uitdaging" : "The challenge"}</h4>
-          <p className="text-[15px] leading-relaxed text-zinc-600">{study.challenge}</p>
+          <h4 className="mb-1.5 text-sm font-semibold text-ink">{isNL ? "De uitdaging" : "The challenge"}</h4>
+          <p className="text-[15px] leading-relaxed text-ink-soft">{study.challenge}</p>
         </div>
         <div>
-          <h4 className="mb-1.5 text-sm font-semibold text-zinc-900">{isNL ? "Onze oplossing" : "Our solution"}</h4>
-          <p className="text-[15px] leading-relaxed text-zinc-600">{study.solution}</p>
+          <h4 className="mb-1.5 text-sm font-semibold text-ink">{isNL ? "Onze oplossing" : "Our solution"}</h4>
+          <p className="text-[15px] leading-relaxed text-ink-soft">{study.solution}</p>
         </div>
       </div>
 
-      <dl className={`mt-8 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border ${HAIRLINE} bg-[rgba(23,23,28,0.07)]`}>
+      <dl className={`mt-8 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border ${HAIRLINE} bg-line`}>
         {study.results.map((r) => <Metric key={r.label} label={r.label} value={r.value} />)}
       </dl>
 
       <div className="mt-6 flex flex-wrap items-center gap-2">
         <ul className="flex flex-wrap gap-2" aria-label={isNL ? "Technologie" : "Technology"}>
           {study.tech.map((t) => (
-            <li key={t} className={`rounded-full border ${HAIRLINE} bg-zinc-50 px-2.5 py-1 text-xs text-zinc-600`}>{t}</li>
+            <li key={t} className={`rounded-full border ${HAIRLINE} bg-band px-2.5 py-1 text-xs text-ink-soft`}>{t}</li>
           ))}
         </ul>
         {study.demo ? (
@@ -297,7 +291,7 @@ function Story({ study, language, index, setRef }: { study: CaseStudy; language:
             <span className="sr-only">: {study.name}</span>
           </a>
         ) : (
-          <span className="ml-auto text-sm font-medium text-zinc-500">{isNL ? "Op maat gebouwd" : "Custom built"}</span>
+          <span className="ml-auto text-sm font-medium text-ink-soft">{isNL ? "Op maat gebouwd" : "Custom built"}</span>
         )}
       </div>
     </article>
@@ -373,10 +367,10 @@ export default function CaseStudies() {
             <motion.p {...reveal()} className="mb-4 text-sm font-medium text-primary">
               {isNL ? "Projecten van Omar" : "Projects by Omar"}
             </motion.p>
-            <motion.h2 {...reveal(0.05)} id="case-studies-title" className="mb-5 text-3xl font-semibold tracking-tight text-zinc-900 sm:text-4xl md:text-5xl">
+            <motion.h2 {...reveal(0.05)} id="case-studies-title" className="mb-5 text-3xl font-semibold tracking-tight text-ink sm:text-4xl md:text-5xl">
               {isNL ? "Van idee tot lancering" : "From idea to launch"}
             </motion.h2>
-            <motion.p {...reveal(0.1)} className="text-lg text-zinc-500">
+            <motion.p {...reveal(0.1)} className="text-lg text-ink-soft">
               {isNL
                 ? "AI-projecten die Omar in zijn loopbaan bouwde, van concept tot product."
                 : "AI projects Omar built during his career, from concept to product."}
@@ -396,13 +390,13 @@ export default function CaseStudies() {
                       aria-current={i === active ? "step" : undefined}
                       className={`group rounded-sm pb-1 text-left ${FOCUS}`}
                     >
-                      <span className="block h-[2px] overflow-hidden rounded-full bg-[rgba(23,23,28,0.07)]">
+                      <span className="block h-[2px] overflow-hidden rounded-full bg-line">
                         <span
                           className="block h-full origin-left rounded-full bg-primary transition-transform duration-500 ease-out motion-reduce:transition-none"
                           style={{ transform: `scaleX(${i <= active ? 1 : 0})` }}
                         />
                       </span>
-                      <span className={`mt-2 block text-sm font-medium transition-colors duration-300 ${i === active ? "text-zinc-900" : "text-zinc-400 group-hover:text-zinc-600"}`}>
+                      <span className={`mt-2 block text-sm font-medium transition-colors duration-300 ${i === active ? "text-ink" : "text-ink-soft/60 group-hover:text-ink-soft"}`}>
                         {s.name}
                       </span>
                     </button>
@@ -433,10 +427,10 @@ export default function CaseStudies() {
           </div>
 
           <motion.div {...reveal()} className={`mt-16 border-t ${HAIRLINE} pt-14 text-center lg:mt-8`}>
-            <p className="mb-6 text-zinc-500">{isNL ? "Wil jij ook zo'n resultaat?" : "Want results like these?"}</p>
+            <p className="mb-6 text-ink-soft">{isNL ? "Wil jij ook zo'n resultaat?" : "Want results like these?"}</p>
             <Button
               size="lg"
-              className={`rounded-xl bg-zinc-900 px-8 py-6 text-base font-semibold text-white hover:bg-zinc-800 ${FOCUS}`}
+              className={`rounded-xl bg-ink px-8 py-6 text-base font-semibold text-white hover:bg-ink/90 ${FOCUS}`}
               onClick={() => scrollToSection("ready-to-start")}
             >
               {isNL ? "Plan een intake" : "Book an intake"}

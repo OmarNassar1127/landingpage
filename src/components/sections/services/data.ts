@@ -24,14 +24,15 @@ export interface Category {
   agents: Agent[];
 }
 
-/** Category colour. Used only for small dots and thin bars. */
+/** Category colour. Used only for small dots and thin bars. One accent for every category. */
+const BRAND = "rgb(var(--brand))";
 export const CATEGORY_COLOR: Record<string, string> = {
-  klantenservice: "#3b82f6",
-  sales: "#10b981",
-  operations: "#f59e0b",
-  kennisbank: "#8b5cf6",
-  "finance-legal": "#06b6d4",
-  "data-insights": "#f43f5e",
+  klantenservice: BRAND,
+  sales: BRAND,
+  operations: BRAND,
+  kennisbank: BRAND,
+  "finance-legal": BRAND,
+  "data-insights": BRAND,
 };
 
 export const getCategories = (language: string): Category[] => {

@@ -202,8 +202,8 @@ ${formData.goals}
                                     </form>
                                 ) : (
                                     <div className="text-center py-12">
-                                        <div className="w-16 h-16 bg-green-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                                            <Sparkles className="h-8 w-8 text-green-600" />
+                                        <div className="w-16 h-16 bg-brand-tint rounded-full flex items-center justify-center mx-auto mb-4">
+                                            <Sparkles className="h-8 w-8 text-brand" />
                                         </div>
                                         <h3 className="text-xl font-bold text-foreground mb-2">
                                             {language === 'nl' ? 'Verzonden!' : 'Sent!'}

@@ -33,10 +33,10 @@ function Node({ t, side, y, delay, still }: { t: Tool; side: "l" | "r"; y: numbe
         initial={still ? false : { opacity: 0, scale: 0.9, x: side === "l" ? -8 : 8 }}
         animate={{ opacity: 1, scale: 1, x: 0 }}
         transition={{ ...spring, delay }}
-        className="flex min-w-0 items-center gap-1.5 rounded-full bg-white py-1 pl-1 pr-2.5 text-[11.5px] font-medium text-zinc-700 shadow-[0_4px_14px_-6px_rgba(60,40,20,0.22)] ring-1 ring-zinc-900/[0.07] sm:gap-2 sm:pr-3 sm:text-[13px]"
+        className="flex min-w-0 items-center gap-1.5 rounded-full bg-white py-1 pl-1 pr-2.5 text-[11.5px] font-medium text-ink/80 shadow-[0_4px_14px_-6px_rgba(60,40,20,0.22)] ring-1 ring-line sm:gap-2 sm:pr-3 sm:text-[13px]"
       >
         <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full sm:h-7 sm:w-7" style={{ background: t.tint }}>
-          <Icon className="h-3.5 w-3.5 text-zinc-700" strokeWidth={2} />
+          <Icon className="h-3.5 w-3.5 text-ink/80" strokeWidth={2} />
         </span>
         <span className="truncate">{t.label}</span>
       </motion.div>
@@ -57,13 +57,13 @@ function Build({ p, lang, still, phase }: { p: Problem; lang: Lang; still: boole
 
   return (
     <div className="flex h-full flex-col">
-      <div className="text-[12px] font-medium uppercase tracking-[0.08em] text-zinc-400">{ui.problem}</div>
-      <p className="mt-1.5 text-[19px] font-semibold leading-snug tracking-[-0.015em] text-zinc-900 sm:text-[22px]">{p.chip}</p>
+      <div className="text-[12px] font-medium uppercase tracking-[0.08em] text-ink-soft/60">{ui.problem}</div>
+      <p className="mt-1.5 text-[19px] font-semibold leading-snug tracking-[-0.015em] text-ink sm:text-[22px]">{p.chip}</p>
       <motion.p
         initial={from({ opacity: 0, y: 6 })}
         animate={{ opacity: 1, y: 0 }}
         transition={{ ...spring, delay: at(D.now) }}
-        className="mt-1 text-[14px] leading-relaxed text-zinc-500 sm:text-[15px]"
+        className="mt-1 text-[14px] leading-relaxed text-ink-soft sm:text-[15px]"
       >
         {p.now}
       </motion.p>
@@ -84,7 +84,7 @@ function Build({ p, lang, still, phase }: { p: Problem; lang: Lang; still: boole
               key={`l${i}`}
               d={d}
               fill="none"
-              stroke="#C7C9F5"
+              className="stroke-brand/30"
               strokeWidth={1.6}
               strokeLinecap="round"
               initial={from({ pathLength: 0 })}
@@ -99,10 +99,9 @@ function Build({ p, lang, still, phase }: { p: Problem; lang: Lang; still: boole
                 d={d}
                 pathLength={100}
                 fill="none"
-                stroke="#6366F1"
+                className="hero-flow stroke-brand"
                 strokeWidth={2.2}
                 strokeLinecap="round"
-                className="hero-flow"
                 style={{ animationDelay: `${D.flow + i * 0.35}s` }}
               />
             ))}
@@ -120,7 +119,7 @@ function Build({ p, lang, still, phase }: { p: Problem; lang: Lang; still: boole
             initial={from({ opacity: 0, scale: 0.8 })}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ type: "spring", bounce: 0.25, duration: 0.7, delay: at(D.agent) }}
-            className="flex h-10 items-center gap-1.5 whitespace-nowrap rounded-2xl bg-indigo-600 px-3.5 text-[13px] font-semibold text-white shadow-[0_10px_28px_-8px_rgba(79,70,229,0.6)] sm:h-11 sm:px-4"
+            className="flex h-10 items-center gap-1.5 whitespace-nowrap rounded-2xl bg-brand px-3.5 text-[13px] font-semibold text-white shadow-[0_10px_28px_-8px_rgb(var(--brand)/0.6)] sm:h-11 sm:px-4"
           >
             <Sparkles className="h-3.5 w-3.5" strokeWidth={2.2} />
             <span className="sm:hidden">AI</span>
@@ -195,8 +194,8 @@ export default function HeroProblems({ lang }: { lang: Lang }) {
             }}
             className={`shrink-0 rounded-full px-3.5 py-2 text-[13px] font-medium transition-[background-color,color,box-shadow,transform] duration-200 active:scale-[0.96] ${
               i === idx
-                ? "bg-zinc-900 text-white shadow-[0_6px_16px_-8px_rgba(24,24,27,0.6)]"
-                : "bg-white/80 text-zinc-600 ring-1 ring-zinc-900/[0.08] hover:bg-white hover:text-zinc-900"
+                ? "bg-brand text-white shadow-[0_6px_16px_-8px_rgb(var(--brand)/0.6)]"
+                : "bg-white/80 text-ink-soft ring-1 ring-line hover:bg-white hover:text-ink"
             }`}
           >
             {p.chip}
@@ -205,10 +204,10 @@ export default function HeroProblems({ lang }: { lang: Lang }) {
       </div>
 
       <div className="relative">
-        <div aria-hidden className="absolute inset-x-6 -bottom-3 top-6 rounded-[28px] bg-white/70 ring-1 ring-zinc-900/[0.05]" />
+        <div aria-hidden className="absolute inset-x-6 -bottom-3 top-6 rounded-[28px] bg-white/70 ring-1 ring-line" />
         <div
           role="tabpanel"
-          className="relative grid grid-cols-[minmax(0,1fr)] rounded-[28px] bg-white p-5 ring-1 ring-zinc-900/[0.06] shadow-[0_1px_2px_rgba(60,40,20,0.05),0_12px_32px_-12px_rgba(60,40,20,0.16),0_40px_80px_-32px_rgba(79,70,229,0.22)] sm:p-7 [&>*]:col-start-1 [&>*]:row-start-1"
+          className="relative grid grid-cols-[minmax(0,1fr)] rounded-[28px] bg-white p-5 ring-1 ring-line shadow-[0_1px_2px_rgba(60,40,20,0.05),0_12px_32px_-12px_rgba(60,40,20,0.16),0_40px_80px_-32px_rgb(var(--brand)/0.22)] sm:p-7 [&>*]:col-start-1 [&>*]:row-start-1"
         >
           {/* Sizer: the tallest problem reserves the height so nothing below jumps. */}
           {problems.map((p, i) => (
