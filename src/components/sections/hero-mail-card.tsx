@@ -134,18 +134,11 @@ const spring = { type: "spring", bounce: 0, duration: 0.7 } as const;
 
 function Digit({ n }: { n: number }) {
   return (
-    <span className="relative mx-[0.3em] inline-flex h-[1.3em] w-[2ch] items-center justify-center overflow-hidden leading-none tabular-nums font-semibold text-zinc-900">
-      <AnimatePresence initial={false} mode="popLayout">
-        <motion.span
-          key={n}
-          initial={{ y: "100%", opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          exit={{ y: "-100%", opacity: 0 }}
-          transition={{ type: "spring", bounce: 0, duration: 0.45 }}
-        >
-          {n}
-        </motion.span>
-      </AnimatePresence>
+    // One layer only: the old number unmounts, the new one fades in, in a fixed 2ch slot.
+    <span className="mx-[0.3em] inline-block w-[2ch] text-center tabular-nums font-semibold text-zinc-900">
+      <motion.span key={n} className="inline-block" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.25 }}>
+        {n}
+      </motion.span>
     </span>
   );
 }
