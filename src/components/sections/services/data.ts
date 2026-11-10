@@ -2,7 +2,7 @@ import type { LucideIcon } from "lucide-react";
 import {
   Headphones, TrendingUp, Settings, BookOpen, Eye, Scale, Radar, Tags, UserMinus, Globe, Bot, UserPlus, Phone,
   MessageSquare, Target, Send, FileText, PenTool, Package, Receipt, Users, ClipboardList, Database, Shield,
-  FileBarChart, Microscope, ScanLine, Wallet, Fingerprint, CircleDollarSign,
+  FileBarChart, Microscope, ScanLine, Wallet, Fingerprint, CircleDollarSign, Bug,
 } from "lucide-react";
 
 export interface Agent {
@@ -217,7 +217,7 @@ export const getCategories = (language: string): Category[] => {
       id: "operations",
       title: "Operations",
       subtitle: isNL ? "Processen die zichzelf draaien" : "Processes that run themselves",
-      agentCount: "4 agents",
+      agentCount: "5 agents",
       icon: Settings,
       gradient: "from-amber-500 to-orange-400",
       agents: [
@@ -268,6 +268,18 @@ export const getCategories = (language: string): Category[] => {
           results: isNL
             ? [{ value: "Auto", label: "Notulen" }, { value: "5u/wk", label: "Bespaard" }, { value: "100%", label: "Actiepunten" }]
             : [{ value: "Auto", label: "Minutes" }, { value: "5h/wk", label: "Saved" }, { value: "100%", label: "Action items" }],
+        },
+        {
+          name: "QA Agent",
+          icon: Bug,
+          headline: isNL ? "Test je app zoals echte klanten dat doen" : "Tests your app like real customers do",
+          description: isNL
+            ? "AI-agents gebruiken je app op simulators met verschillende klantpersona's. Een aparte verifier controleert elke bevinding opnieuw, zodat alleen bevestigde bugs bij je team komen."
+            : "AI agents use your app on simulators with different customer personas. A separate verifier re-checks every finding, so only confirmed bugs reach your team.",
+          integrations: ["iOS Simulator", "React Native", "GitHub", "Slack"],
+          results: isNL
+            ? [{ value: "7", label: "Persona's" }, { value: "24/7", label: "Bij elke build" }, { value: "1", label: "Verifier" }]
+            : [{ value: "7", label: "Personas" }, { value: "24/7", label: "On every build" }, { value: "1", label: "Verifier" }],
         },
       ],
     },
