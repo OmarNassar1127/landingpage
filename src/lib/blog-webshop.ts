@@ -114,31 +114,6 @@ export const chatExamples: { tag: string; rule: string; name: string; messages: 
 
 export const webshopPosts: BlogPost[] = [
   {
-    slug: "productteksten-laten-schrijven",
-    title: "Productteksten laten schrijven voor je webshop (met voorbeelden)",
-    description:
-      "Honderden producten met alleen een rijtje specificaties? Laat je productteksten schrijven in je eigen stijl. Bekijk echte voorbeelden. De eerste reeks is gratis.",
-    publishedAt: "2026-10-24",
-    author: "Virelio Team",
-    readingTime: 4,
-    keywords: [
-      "productteksten laten schrijven",
-      "productbeschrijvingen webshop",
-      "productteksten AI",
-      "productomschrijving schrijven",
-      "webshop teksten",
-    ],
-    faq: productFaq,
-    cta: {
-      title: "Stuur ons tien producten",
-      text: "Mail je productlijst of een link naar je webshop. Wij schrijven de eerste tien teksten gratis, zodat je ziet wat je krijgt.",
-      label: "Mail je productlijst",
-      href: mailto("Productteksten: gratis eerste reeks"),
-    },
-    // Rendered by components/blog-visual, not as HTML.
-    content: "",
-  },
-  {
     slug: "klantvragen-automatisch-beantwoorden",
     title: "Klantvragen van je webshop automatisch laten beantwoorden",
     description:

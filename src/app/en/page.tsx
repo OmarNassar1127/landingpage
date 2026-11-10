@@ -1,7 +1,6 @@
 import { Metadata } from "next";
 import Navbar from "@/components/sections/navbar";
 import Hero from "@/components/sections/hero";
-import CompanySlider from "@/components/sections/company-slider";
 import CaseStudies from "@/components/sections/case-studies";
 import WhyVirelio from "@/components/sections/why-virelio";
 import Certifications from "@/components/sections/certifications";
@@ -70,7 +69,6 @@ export default function EnglishHome() {
       <main className="min-h-screen">
         <Navbar />
         <Hero />
-        <CompanySlider />
         <GuaranteeSection />
         <Services />
         <CaseStudies />

@@ -278,7 +278,6 @@ export const solutionsNl: Solution[] = [
     ],
     related: ["klantenservice-agent", "kennisbank-assistent", "inbox-agent"],
     service: MKB,
-    guide: { name: "Productteksten laten schrijven (met voorbeelden)", href: "/blog/productteksten-laten-schrijven/" },
   },
   {
     slug: "planning-agent",
