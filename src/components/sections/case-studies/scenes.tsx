@@ -2,14 +2,15 @@
 
 import React, { useEffect, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
-import { AlertTriangle, BarChart3, Bell, Bot, CalendarDays, Check, Heart, PenTool, Image as ImageIcon, ScanSearch, ShieldCheck, Target, TrendingUp } from "lucide-react";
+import { AlertTriangle, BarChart3, Bell, Bot, CalendarDays, Check, Heart, Maximize2, PenTool, Image as ImageIcon, ScanSearch, ShieldCheck, Target, TrendingUp } from "lucide-react";
 
 /**
  * The left-hand scenes of the case studies. Each one plays its product's story
  * on a loop: ZapBot books an appointment straight into a calendar, Fraud guard
  * scores invoices and splits the risky one into micro-invoices, ContentOS has
  * four agents build a post that lands in a live feed. Reduced motion shows the
- * finished state of each loop.
+ * finished state of each loop. The QA scene is different: it shows the 3D rig
+ * from /sims/qa-rig.html, live on desktop and as a still on smaller screens.
  */
 
 type Props = { language: string };
@@ -25,6 +26,49 @@ function usePhase(durations: number[]) {
     return () => clearTimeout(t);
   }, [phase, reduce, durations]);
   return phase;
+}
+
+/* ───────────────────────── AI QA agents: the 3D rig ───────────────────────── */
+
+/** The rig is a WebGL page. Desktop embeds it live; smaller screens get a still that opens it full screen. */
+export function QAScene({ language }: Props) {
+  const nl = language === "nl";
+  const src = `/sims/qa-rig.html?lang=${nl ? "nl" : "en"}`;
+  const [desktop, setDesktop] = useState(false);
+  useEffect(() => {
+    const mq = window.matchMedia("(min-width: 1024px)");
+    const sync = () => setDesktop(mq.matches);
+    sync();
+    mq.addEventListener("change", sync);
+    return () => mq.removeEventListener("change", sync);
+  }, []);
+
+  return (
+    <div className="relative mx-auto flex h-[420px] w-full max-w-[540px] flex-col justify-center">
+      <div className="absolute left-[12%] top-[14%] h-64 w-64 rounded-full bg-orange-400/20 blur-3xl" aria-hidden="true" />
+      <a
+        href={src}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="group relative block aspect-video w-full overflow-hidden rounded-2xl border border-black/[0.07] bg-[#f3f2ee] shadow-[0_30px_60px_-30px_rgba(23,23,28,0.45)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+      >
+        {desktop ? (
+          // pointer-events off: the rig captures the wheel for zoom, which would trap page scroll
+          <iframe src={src} title={nl ? "3D-demo van de AI QA-agents" : "3D demo of the AI QA agents"} loading="lazy" tabIndex={-1} className="pointer-events-none h-full w-full border-0" />
+        ) : (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img src="/images/qa-rig-poster.jpg" alt="" className="h-full w-full object-cover" />
+        )}
+        <span className="absolute bottom-3 right-3 inline-flex items-center gap-1.5 rounded-full bg-zinc-900/90 px-3 py-1.5 text-[12px] font-semibold text-white shadow-lg transition-transform duration-200 group-hover:scale-105">
+          <Maximize2 className="h-3.5 w-3.5" aria-hidden="true" />
+          {nl ? "Bekijk de 3D-demo" : "View the 3D demo"}
+        </span>
+      </a>
+      <p className="mt-3 text-center text-[12px] font-medium text-zinc-500">
+        {nl ? "Voorbeeldrun · illustratieve cijfers" : "Example run · illustrative numbers"}
+      </p>
+    </div>
+  );
 }
 
 /* ───────────────────────── ZapBot: chat books into the calendar ───────────────────────── */

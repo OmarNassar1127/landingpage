@@ -41,8 +41,8 @@ const testimonials: Testimonial[] = [
     id: 3,
     name: "Ihor Tolkachov",
     role: {
-      en: "Frontend Developer @ Mobility Platform",
-      nl: "Frontend Developer @ Mobiliteitsplatform",
+      en: "Frontend Developer",
+      nl: "Frontend Developer",
     },
     image: "/images/references/ihor.jpeg",
     content: {

@@ -2,11 +2,11 @@
 
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { AnimatePresence, MotionConfig, animate, motion, useInView, useReducedMotion } from "framer-motion";
-import { ArrowUpRight, ShieldCheck, TrendingUp, type LucideIcon } from "lucide-react";
+import { ArrowUpRight, Bug, ShieldCheck, TrendingUp, type LucideIcon } from "lucide-react";
 import { useLanguage } from "@/lib/i18n/language-context";
 import { Button } from "@/components/ui/button";
 import { scrollToSection } from "@/lib/scroll-utils";
-import { ContentOSScene, FraudScene, ZapBotScene } from "./case-studies/scenes";
+import { ContentOSScene, FraudScene, QAScene, ZapBotScene } from "./case-studies/scenes";
 
 /**
  * Client results as a scroll story. Desktop: a sticky browser frame on the left
@@ -17,6 +17,8 @@ import { ContentOSScene, FraudScene, ZapBotScene } from "./case-studies/scenes";
 interface CaseStudy {
   name: string;
   url: string;
+  /** Opens a full-screen interactive demo instead of a live site. */
+  demo?: string;
   logo: string;
   logoBg: string;
   brand: string;
@@ -32,6 +34,37 @@ interface CaseStudy {
 const getCaseStudies = (language: string): CaseStudy[] => {
   const isNL = language === "nl";
   return [
+    {
+      name: "AI QA Agents",
+      url: "",
+      demo: `/sims/qa-rig.html?lang=${isNL ? "nl" : "en"}`,
+      logo: "",
+      logoBg: "bg-zinc-900",
+      brand: "#e8622c",
+      Icon: Bug,
+      tagline: isNL ? "AI-agents die je app testen zoals echte klanten" : "AI agents that test your app like real customers",
+      challenge: isNL
+        ? "Handmatig testen van een mobiele app kost bij elke release dagen, en gescripte tests vinden alleen wat iemand vooraf heeft bedacht. Echte klanten doen dingen die in geen enkel testplan staan."
+        : "Manual testing of a mobile app takes days for every release, and scripted tests only find what someone thought of in advance. Real customers do things no test plan covers.",
+      solution: isNL
+        ? "AI-agents gebruiken de app op iOS-simulators zoals echte klanten, elk met een eigen persona: de zorgvuldige klant, iemand die niet betaalt, iemand die de regels probeert te omzeilen, een nieuwe aanmelding en een gezinsaccount, plus goedkopere sweeper-agents. Een aparte verifier-agent controleert elke bevinding opnieuw, dus alleen bevestigde bugs tellen. Het team beoordeelt bevindingen in een dashboard en die oordelen worden het geheugen van de agents. De app meet zijn eigen dekking tegen een lijst klantreizen. Alles draait op staging, met alleen testbetalingen."
+        : "AI agents use the app on iOS simulators like real customers, each with its own persona: the careful customer, someone who doesn't pay, someone gaming the rules, a new signup and a family account, plus cheaper sweeper agents. A separate verifier agent re-checks every finding, so only confirmed bugs count. The team rules on findings in a dashboard and those rulings become the agents' memory. The app measures its own coverage against a list of customer journeys. Everything runs on staging, with test payments only.",
+      results: isNL
+        ? [
+            { label: "Klantpersona's", value: "7" },
+            { label: "Onafhankelijke verifier", value: "1" },
+            { label: "Bij elke build", value: "24/7" },
+            { label: "Echte betalingen", value: "0" },
+          ]
+        : [
+            { label: "Customer personas", value: "7" },
+            { label: "Independent verifier", value: "1" },
+            { label: "On every build", value: "24/7" },
+            { label: "Real payments", value: "0" },
+          ],
+      tech: ["Claude agents", "iOS Simulator", "React Native", "Verifier"],
+      Preview: QAScene,
+    },
     {
       name: "ZapBot",
       url: "https://zapbot.nl",
@@ -70,8 +103,8 @@ const getCaseStudies = (language: string): CaseStudy[] => {
       Icon: ShieldCheck,
       tagline: isNL ? "Fraudepreventie voor facturatie · gebouwd door ervaren mensen" : "Invoice fraud prevention · built by experienced people",
       challenge: isNL
-        ? "Bij een snelgroeiend mobiliteitsplatform liepen de betalingsachterstanden op. Risicoklanten werden pas zichtbaar als de factuur al openstond."
-        : "At a fast-growing mobility platform, payment defaults were rising. Risky customers only became visible once the invoice was already overdue.",
+        ? "Bij een snelgroeiend abonnementsplatform liepen de betalingsachterstanden op. Risicoklanten werden pas zichtbaar als de factuur al openstond."
+        : "At a fast-growing subscription platform, payment defaults were rising. Risky customers only became visible once the invoice was already overdue.",
       solution: isNL
         ? "Ervaren mensen uit ons team bouwden een systeem dat betaalgedrag en transactiegeschiedenis analyseert en elke klant een dynamisch risicoprofiel geeft, nog vóór de facturatie. Klanten met een hoog risico krijgen kleinere, periodieke micro-facturen in plaats van één grote maandfactuur."
         : "Experienced people from our team built a system that analyses payment behaviour and transaction history and gives every customer a dynamic risk profile before they are invoiced. High-risk customers get smaller, periodic micro-invoices instead of one large monthly invoice.",
@@ -242,7 +275,17 @@ function Story({ study, language, index, setRef }: { study: CaseStudy; language:
             <li key={t} className={`rounded-full border ${HAIRLINE} bg-zinc-50 px-2.5 py-1 text-xs text-zinc-600`}>{t}</li>
           ))}
         </ul>
-        {study.url ? (
+        {study.demo ? (
+          <a
+            href={study.demo}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`group ml-auto inline-flex items-center gap-1 rounded-md text-sm font-medium text-primary underline-offset-4 hover:underline ${FOCUS}`}
+          >
+            {isNL ? "Bekijk de 3D-demo" : "View the 3D demo"}
+            <ArrowUpRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" aria-hidden="true" />
+          </a>
+        ) : study.url ? (
           <a
             href={study.url}
             target="_blank"
@@ -344,7 +387,7 @@ export default function CaseStudies() {
             {/* desktop: sticky frame */}
             <div ref={colRef} className="relative hidden lg:block">
               <div className="flex h-screen flex-col justify-center py-24" style={pinStyle}>
-                <nav aria-label={isNL ? "Klantcases" : "Client cases"} className="mb-5 grid grid-cols-3 gap-3">
+                <nav aria-label={isNL ? "Klantcases" : "Client cases"} className="mb-5 grid grid-cols-4 gap-3">
                   {studies.map((s, i) => (
                     <button
                       key={s.name}

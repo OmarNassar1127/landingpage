@@ -20,7 +20,7 @@ const faqData = {
     {
       question: "What does Virelio do?",
       answer:
-        "Virelio is an AI agent development company based in Amsterdam. We build custom AI agents including WhatsApp AI agents, voice agents, customer service agents, sales agents, knowledge base agents (RAG), compliance agents, and more. 24 specialized agents available, custom-built for your processes.",
+        "Virelio is an AI agent development company based in Amsterdam. We build custom AI agents including WhatsApp AI agents, voice agents, customer service agents, sales agents, knowledge base agents (RAG), compliance agents, and more. 25 specialized agents available, custom-built for your processes.",
     },
     {
       question: "How fast can you deliver?",

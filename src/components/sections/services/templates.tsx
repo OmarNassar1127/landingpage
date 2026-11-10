@@ -198,6 +198,12 @@ export function WorkflowTemplate({ activeAgent, agents, language }: { activeAgen
           { label: "Notulen gegenereerd", status: "done", time: "14:45" },
           { label: "Verstuurd naar #team + Linear", status: "active", time: "14:46" },
         ],
+        [
+          { label: "Nieuwe build op staging, 7 agents gestart", status: "done", time: "02:00" },
+          { label: "Wanbetaler-persona vindt een bug", status: "done", time: "02:18" },
+          { label: "Verifier speelt het opnieuw af: bevestigd", status: "done", time: "02:21" },
+          { label: "Bug klaar in het dashboard van je team", status: "active", time: "02:22" },
+        ],
       ]
     : [
         [
@@ -223,6 +229,12 @@ export function WorkflowTemplate({ activeAgent, agents, language }: { activeAgen
           { label: "3 action items detected", status: "done", time: "14:32" },
           { label: "Minutes generated", status: "done", time: "14:45" },
           { label: "Sent to #team + Linear", status: "active", time: "14:46" },
+        ],
+        [
+          { label: "New build on staging, 7 agents started", status: "done", time: "02:00" },
+          { label: "Non-payer persona finds a bug", status: "done", time: "02:18" },
+          { label: "Verifier replays it: confirmed", status: "done", time: "02:21" },
+          { label: "Bug waiting in your team's dashboard", status: "active", time: "02:22" },
         ],
       ];
 

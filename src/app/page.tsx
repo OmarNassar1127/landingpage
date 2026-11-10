@@ -20,7 +20,7 @@ const faqData = {
     {
       question: "Wat doet Virelio?",
       answer:
-        "Virelio is een AI-bureau in Amsterdam dat custom AI-agents bouwt voor bedrijven. Van WhatsApp AI agents en voice agents tot klantenservice agents, sales agents, kennisbank agents (RAG), compliance agents en meer. 24 gespecialiseerde agents beschikbaar, op maat gebouwd voor jouw processen.",
+        "Virelio is een AI-bureau in Amsterdam dat custom AI-agents bouwt voor bedrijven. Van WhatsApp AI agents en voice agents tot klantenservice agents, sales agents, kennisbank agents (RAG), compliance agents en meer. 25 gespecialiseerde agents beschikbaar, op maat gebouwd voor jouw processen.",
     },
     {
       question: "Hoe snel kunnen jullie leveren?",
