@@ -1,194 +1,88 @@
 "use client";
 
-import React, { useEffect } from "react";
-import { motion, useAnimation } from "framer-motion";
-import { Button } from "@/components/ui/button";
-import { useInView } from "react-intersection-observer";
-import { ArrowRight, Brain } from "lucide-react";
-import { scrollToSection } from "@/lib/scroll-utils";
-import { Icon } from "@/components/ui/icon";
+import React from "react";
+import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 import { useLanguage } from "@/lib/i18n/language-context";
-import AgentFloor from "@/components/sections/agent-floor";
+import HeroProblems from "@/components/sections/hero-problems";
+import { PROBLEM_MAILTO, TEST_MAILTO } from "@/lib/test-offer";
 
-function HeroContent() {
+const COPY = {
+  nl: {
+    h1a: "Vertel wat er vastloopt.",
+    h1b: "Wij bouwen het.",
+    sub: "Wij bouwen AI die het herhaalwerk overneemt, aangesloten op de systemen die je al gebruikt. Jij keurt goed.",
+    cta: "Vertel je probleem",
+    test: "Of start de test voor €250",
+    note: "Vaste prijs binnen 48 uur. Omar Nassar, regio Amsterdam.",
+  },
+  en: {
+    h1a: "Tell us what's stuck.",
+    h1b: "We build the fix.",
+    sub: "We build AI that takes over the repetitive work, wired into the tools you already use. You approve.",
+    cta: "Tell us your problem",
+    test: "Or start the €250 test",
+    note: "Fixed price within 48 hours. Omar Nassar, Amsterdam area.",
+  },
+};
+
+export default function Hero() {
   const { language } = useLanguage();
-  const [ref, inView] = useInView({ threshold: 0.1 });
-  const controls = useAnimation();
-
-  useEffect(() => {
-    if (inView) controls.start("visible");
-  }, [inView, controls]);
-
-  const container = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.1, delayChildren: 0.05 },
-    },
-  };
-  const item = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] },
-    },
-  };
+  const lang = language === "en" ? "en" : "nl";
+  const c = COPY[lang];
 
   return (
-    <section
-      id="hero"
-      ref={ref}
-      className="relative min-h-screen flex items-center bg-background overflow-hidden"
-    >
+    <section id="hero" className="relative overflow-hidden bg-white">
+      {/* Warm light from the top, a breath of the indigo accent behind the card, white at the seam. */}
       <div
-        className="absolute top-[-10%] right-[-5%] w-[45vw] h-[45vh] rounded-full opacity-[0.05] dark:opacity-[0.03] pointer-events-none"
+        aria-hidden
+        className="pointer-events-none absolute inset-0"
         style={{
           background:
-            "radial-gradient(circle, hsl(var(--primary)) 0%, transparent 70%)",
-          filter: "blur(100px)",
+            "radial-gradient(60% 50% at 15% 0%, rgba(255,214,184,0.45) 0%, rgba(255,214,184,0) 70%), radial-gradient(45% 45% at 80% 55%, rgba(129,140,248,0.16) 0%, rgba(129,140,248,0) 70%), linear-gradient(180deg, #FFFBF7 0%, #FFFFFF 100%)",
         }}
       />
 
-      <div className="container relative z-10 px-4 sm:px-6 max-w-7xl mx-auto py-24 sm:py-28 lg:py-32">
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-12 items-center">
-          {/* Left: Copy */}
-          <motion.div
-            variants={container}
-            initial="hidden"
-            animate={controls}
-            className="text-center lg:text-left"
-          >
-            <motion.div
-              variants={item}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/5 border border-primary/10 mb-8"
-            >
-              <Brain className="w-4 h-4 text-primary" />
-              <span className="text-xs sm:text-sm font-medium text-primary">
-                {language === "nl"
-                  ? "AI-team op aanvraag"
-                  : "AI team on demand"}
-              </span>
-            </motion.div>
+      <div className="relative mx-auto grid max-w-6xl items-center gap-6 px-5 pb-16 pt-[4.5rem] sm:gap-10 sm:px-8 sm:pt-32 lg:min-h-[100svh] lg:grid-cols-[1.05fr_1fr] lg:gap-16 lg:pb-24 lg:pt-28">
+        <div className="text-center lg:text-left">
+          <h1 className="mx-auto max-w-[16ch] text-[2rem] font-semibold leading-[1.06] tracking-[-0.032em] text-zinc-900 sm:text-[3.25rem] lg:mx-0 lg:text-[3.6rem] [text-wrap:balance]">
+            <span className="block">{c.h1a}</span>
+            <span className="block text-zinc-400">{c.h1b}</span>
+          </h1>
 
-            <motion.h1
-              variants={item}
-              className="text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-black tracking-tight leading-[0.95] mb-6"
-            >
-              {language === "nl" ? (
-                <>
-                  Wij bouwen jouw
-                  <br />
-                  <span className="text-primary">digitale team</span>
-                </>
-              ) : (
-                <>
-                  We build your
-                  <br />
-                  <span className="text-primary">digital team</span>
-                </>
-              )}
-            </motion.h1>
+          <p className="mx-auto mt-3 max-w-[34rem] text-[15px] sm:mt-5 leading-relaxed text-zinc-600 sm:text-[19px] lg:mx-0">
+            {c.sub}
+          </p>
 
-            <motion.p
-              variants={item}
-              className="text-lg sm:text-xl text-muted-foreground leading-relaxed mb-10 max-w-lg mx-auto lg:mx-0"
+          <div className="mt-5 flex flex-col items-center gap-2 sm:mt-8 sm:gap-3 sm:flex-row sm:justify-center lg:justify-start">
+            <a
+              href={PROBLEM_MAILTO[lang]}
+              className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-zinc-900 px-7 py-4 text-[16px] font-semibold text-white shadow-[0_8px_24px_-10px_rgba(24,24,27,0.5)] transition-[transform,background-color] duration-150 hover:bg-zinc-800 active:scale-[0.97] sm:w-auto"
             >
-              {language === "nl"
-                ? "AI agents die samenwerken, delegeren en uitvoeren. Van kennisbank (RAG) tot automatisering, live in 1 week."
-                : "AI agents that collaborate, delegate and execute. From knowledge base (RAG) to automation, live in 1 week."}
-            </motion.p>
-
-            <motion.div
-              variants={item}
-              className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12"
+              {c.cta}
+              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+            </a>
+            <a
+              href={TEST_MAILTO[lang]}
+              className="inline-flex items-center gap-1 px-2 py-2 text-[15px] font-medium text-indigo-600 hover:text-indigo-700"
             >
-              <Button
-                size="lg"
-                className="bg-foreground text-background hover:bg-foreground/90 shadow-lg px-8 sm:px-10 py-6 text-base font-semibold group rounded-xl"
-                asChild
-              >
-                <a
-                  href="#ready-to-start"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    scrollToSection("ready-to-start");
-                  }}
-                  className="flex items-center justify-center gap-2"
-                >
-                  {language === "nl"
-                    ? "Plan een intake"
-                    : "Book an intake"}
-                  <Icon
-                    icon={ArrowRight}
-                    className="h-4 w-4 group-hover:translate-x-1 transition-transform"
-                  />
-                </a>
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-border hover:border-primary/30 px-8 sm:px-10 py-3 sm:py-6 text-base rounded-xl"
-                asChild
-              >
-                <a
-                  href="#services"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    scrollToSection("services");
-                  }}
-                  className="flex items-center justify-center"
-                >
-                  {language === "nl" ? "Bekijk agents" : "View agents"}
-                </a>
-              </Button>
-            </motion.div>
+              {c.test}
+              <span aria-hidden>›</span>
+            </a>
+          </div>
 
-            <motion.div
-              variants={item}
-              className="flex items-center justify-center lg:justify-start gap-10 sm:gap-14"
-            >
-              {[
-                {
-                  value: "<4h",
-                  label: language === "nl" ? "reactietijd" : "response",
-                },
-                {
-                  value: language === "nl" ? "€1.000" : "€1,000",
-                  label: language === "nl" ? "vanaf, eenmalig" : "from, one-off",
-                },
-                {
-                  value: language === "nl" ? "Geld terug" : "Money back",
-                  label: language === "nl" ? "op de setup" : "on the setup",
-                },
-              ].map((stat, idx) => (
-                <div key={idx} className="text-center lg:text-left">
-                  <div className="text-2xl sm:text-3xl font-black text-foreground">
-                    {stat.value}
-                  </div>
-                  <div className="text-[11px] text-muted-foreground uppercase tracking-wider mt-0.5">
-                    {stat.label}
-                  </div>
-                </div>
-              ))}
-            </motion.div>
-          </motion.div>
-
-          {/* Right: the agent team at work */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4, duration: 0.6 }}
-          >
-            <AgentFloor language={language} />
-          </motion.div>
+          <p className="mx-auto mt-3 max-w-[30rem] text-[12px] sm:mt-5 sm:text-[13px] leading-relaxed text-zinc-500 lg:mx-0">{c.note}</p>
         </div>
+
+        <motion.div
+          className="min-w-0"
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ type: "spring", bounce: 0, duration: 0.9, delay: 0.15 }}
+        >
+          <HeroProblems lang={lang} />
+        </motion.div>
       </div>
     </section>
   );
-}
-
-// Rendered on the server as well, so the headline is in the static HTML.
-export default function Hero() {
-  return <HeroContent />;
 }
