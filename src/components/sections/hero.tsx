@@ -4,27 +4,25 @@ import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { useLanguage } from "@/lib/i18n/language-context";
-import HeroMailCard from "@/components/sections/hero-mail-card";
-import { TEST_MAILTO } from "@/lib/test-offer";
-
-const EXAMPLE_HREF = "/blog/klantvragen-automatisch-beantwoorden";
+import HeroProblems from "@/components/sections/hero-problems";
+import { PROBLEM_MAILTO, TEST_MAILTO } from "@/lib/test-offer";
 
 const COPY = {
   nl: {
-    h1a: "Elke klantmail al beantwoord.",
-    h1b: "Jij keurt alleen goed.",
-    sub: "Stuur 20 echte klantmails. Binnen twee werkdagen krijg je 20 concept-antwoorden terug, met een telling van hoeveel je zo had kunnen versturen.",
-    cta: "Start de test voor €250",
-    example: "Bekijk een voorbeeld",
-    note: "Verrekend met de setup. Geen toegang tot je inbox nodig. Omar Nassar, regio Amsterdam.",
+    h1a: "Vertel wat er vastloopt.",
+    h1b: "Wij bouwen het.",
+    sub: "Wij bouwen AI die het herhaalwerk overneemt, aangesloten op de systemen die je al gebruikt. Jij keurt goed.",
+    cta: "Vertel je probleem",
+    test: "Of start de test voor €250",
+    note: "Vaste prijs binnen 48 uur. Omar Nassar, regio Amsterdam.",
   },
   en: {
-    h1a: "Every customer email, already answered.",
-    h1b: "You just approve.",
-    sub: "Send 20 real customer emails. Within two working days you get 20 draft replies back, with a count of how many you could have sent as they are.",
-    cta: "Start the test for €250",
-    example: "See an example",
-    note: "Credited against the setup. No access to your inbox needed. Omar Nassar, Amsterdam area.",
+    h1a: "Tell us what's stuck.",
+    h1b: "We build the fix.",
+    sub: "We build AI that takes over the repetitive work, wired into the tools you already use. You approve.",
+    cta: "Tell us your problem",
+    test: "Or start the €250 test",
+    note: "Fixed price within 48 hours. Omar Nassar, Amsterdam area.",
   },
 };
 
@@ -58,17 +56,17 @@ export default function Hero() {
 
           <div className="mt-5 flex flex-col items-center gap-2 sm:mt-8 sm:gap-3 sm:flex-row sm:justify-center lg:justify-start">
             <a
-              href={TEST_MAILTO[lang]}
+              href={PROBLEM_MAILTO[lang]}
               className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-zinc-900 px-7 py-4 text-[16px] font-semibold text-white shadow-[0_8px_24px_-10px_rgba(24,24,27,0.5)] transition-[transform,background-color] duration-150 hover:bg-zinc-800 active:scale-[0.97] sm:w-auto"
             >
               {c.cta}
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
             </a>
             <a
-              href={EXAMPLE_HREF}
-              className="inline-flex items-center gap-1 px-2 py-2 text-[16px] font-medium text-indigo-600 hover:text-indigo-700"
+              href={TEST_MAILTO[lang]}
+              className="inline-flex items-center gap-1 px-2 py-2 text-[15px] font-medium text-indigo-600 hover:text-indigo-700"
             >
-              {c.example}
+              {c.test}
               <span aria-hidden>›</span>
             </a>
           </div>
@@ -77,11 +75,12 @@ export default function Hero() {
         </div>
 
         <motion.div
+          className="min-w-0"
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ type: "spring", bounce: 0, duration: 0.9, delay: 0.15 }}
         >
-          <HeroMailCard lang={lang} />
+          <HeroProblems lang={lang} />
         </motion.div>
       </div>
     </section>

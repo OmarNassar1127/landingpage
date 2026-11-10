@@ -539,3 +539,13 @@ a:hover {
 /* Home hero mail card: draft caret. */
 @keyframes hero-caret { 50% { opacity: 0; } }
 .hero-caret { animation: hero-caret 1s steps(1) infinite; }
+
+/* Home hero problem builder: a pulse travelling along each wire. */
+@keyframes hero-flow {
+  0% { stroke-dashoffset: 8; opacity: 0; }
+  6% { opacity: 1; }
+  55% { stroke-dashoffset: -92; opacity: 1; }
+  60%, 100% { stroke-dashoffset: -92; opacity: 0; }
+}
+.hero-flow { stroke-dasharray: 8 92; animation: hero-flow 2.6s cubic-bezier(.45,0,.25,1) infinite both; }
+@media (prefers-reduced-motion: reduce) { .hero-flow { animation: none; opacity: 0; } }
