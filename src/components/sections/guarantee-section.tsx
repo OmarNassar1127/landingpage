@@ -21,8 +21,8 @@ export default function GuaranteeSection() {
             ? 'Binnen 4 uur persoonlijke reactie van ons team'
             : 'Personal response from our team within 4 hours',
         language === 'nl'
-            ? 'Past het niet perfect? Gratis aanpassingen tot het klopt'
-            : 'Not perfect? Free revisions until it is'
+            ? 'Past het niet perfect? Aanpassingen tot het klopt, zonder meerprijs'
+            : 'Not perfect? Revisions until it is right, at no extra cost'
     ];
 
     return (

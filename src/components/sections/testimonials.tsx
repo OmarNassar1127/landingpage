@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { Star, ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useLanguage } from "@/lib/i18n/language-context";
 
 interface Testimonial {
@@ -11,7 +11,6 @@ interface Testimonial {
   role: { en: string; nl: string };
   image: string;
   content: { en: string; nl: string };
-  rating: number;
 }
 
 const testimonials: Testimonial[] = [
@@ -27,7 +26,6 @@ const testimonials: Testimonial[] = [
       en: "The Virelio team stood out for their rapid development and strong foundation in AI. They independently tackled complex topics and delivered valuable insights. A team with a steep learning curve that quickly makes impact.",
       nl: "Het Virelio team viel op door hun snelle ontwikkeling en sterke basis in AI. Ze pakten zelfstandig complexe onderwerpen op en leverden waardevolle inzichten. Een team met een sterke leercurve dat snel impact maakt.",
     },
-    rating: 5,
   },
   {
     id: 2,
@@ -38,7 +36,6 @@ const testimonials: Testimonial[] = [
       en: "A talented team with a strong drive to grow and improve. Always supporting their clients, their greatest strength is quickly learning new domains and adapting to any process.",
       nl: "Een getalenteerd team met een sterke drang om te groeien en verbeteren. Ze ondersteunen hun klanten altijd, en hun grootste kracht is het snel leren van nieuwe domeinen en aanpassen aan elk proces.",
     },
-    rating: 5,
   },
   {
     id: 3,
@@ -52,7 +49,6 @@ const testimonials: Testimonial[] = [
       en: "Working with Virelio showed their reliability and skill. Together we created an automatic fine scanner that reduced a 30-minute process to just 10 seconds, truly impressive efficiency improvement.",
       nl: "Het werken met Virelio toonde hun betrouwbaarheid en vaardigheid. Samen creëerden we een automatische boetescanner die een proces van 30 minuten reduceerde tot slechts 10 seconden. Indrukwekkend.",
     },
-    rating: 5,
   },
   {
     id: 4,
@@ -66,7 +62,6 @@ const testimonials: Testimonial[] = [
       en: "Virelio consistently delivered sharp analyses and worked with tools like SQL, Looker, and Python. They recognize patterns in data, think analytically, and provide visual insights that drive better decisions.",
       nl: "Virelio leverde continu scherpe analyses en werkte met tools als SQL, Looker en Python. Ze herkennen patronen in data, denken analytisch en leveren visuele inzichten die bijdragen aan betere beslissingen.",
     },
-    rating: 5,
   },
   {
     id: 5,
@@ -80,7 +75,6 @@ const testimonials: Testimonial[] = [
       en: "Impressive backend skills and creative problem-solving. The team delivers clean, well-structured solutions and communicates clearly throughout the process.",
       nl: "Indrukwekkende backend-vaardigheden en creatieve probleemoplossing. Het team levert schone, goed gestructureerde oplossingen en communiceert duidelijk door het hele proces.",
     },
-    rating: 5,
   },
   {
     id: 6,
@@ -94,7 +88,6 @@ const testimonials: Testimonial[] = [
       en: "Dedicated, helpful and reliable. Always deliver on their promises.",
       nl: "Toegewijd, behulpzaam en betrouwbaar. Komen altijd hun beloftes na.",
     },
-    rating: 5,
   },
 ];
 
@@ -107,16 +100,6 @@ function TestimonialCard({
 }) {
   return (
     <div className="h-full flex flex-col p-6 sm:p-8 rounded-2xl border border-border/50 bg-background hover:border-primary/20 transition-all duration-300 group">
-      {/* Stars */}
-      <div className="flex gap-0.5 mb-5">
-        {Array.from({ length: testimonial.rating }).map((_, i) => (
-          <Star
-            key={i}
-            className="w-4 h-4 fill-amber-400 text-amber-400"
-          />
-        ))}
-      </div>
-
       {/* Quote */}
       <blockquote className="flex-1 text-[15px] text-foreground/80 leading-relaxed mb-6">
         &ldquo;
@@ -197,7 +180,7 @@ export default function Testimonials() {
               viewport={{ once: true }}
               className="text-sm font-medium text-primary uppercase tracking-widest mb-4"
             >
-              {language === "nl" ? "Wat ze zeggen" : "What they say"}
+              {language === "nl" ? "Over de oprichter" : "About the founder"}
             </motion.p>
             <motion.h2
               className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight"
@@ -206,7 +189,7 @@ export default function Testimonials() {
               viewport={{ once: true }}
               transition={{ delay: 0.05 }}
             >
-              {language === "nl" ? "Aanbevelingen" : "Testimonials"}
+              {language === "nl" ? "Wat oud-collega's zeggen over Omar" : "What former colleagues say about Omar"}
             </motion.h2>
           </div>
 
@@ -305,23 +288,20 @@ export default function Testimonials() {
                 />
               ))}
             </div>
-            <div className="flex gap-0.5 ml-2">
-              {[1, 2, 3, 4, 5].map((i) => (
-                <Star
-                  key={i}
-                  className="w-3.5 h-3.5 fill-amber-400 text-amber-400"
-                />
-              ))}
-            </div>
-            <span className="text-sm font-semibold text-foreground ml-1">
-              5.0
-            </span>
           </div>
-          <div className="text-sm text-muted-foreground">
+          <p className="text-sm text-muted-foreground max-w-xl sm:text-left">
             {language === "nl"
-              ? "Ervaringen van klanten"
-              : "What clients say"}
-          </div>
+              ? "Virelio is opgericht door Omar Nassar, software- en AI-engineer in de regio Amsterdam. Deze referenties gaan over zijn werk in eerdere functies, niet over Virelio-projecten. "
+              : "Virelio was founded by Omar Nassar, a software and AI engineer in the Amsterdam area. These references are about his work in earlier roles, not about Virelio projects. "}
+            <a
+              href="https://www.linkedin.com/in/omar-nassar-ai/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-primary hover:underline"
+            >
+              {language === "nl" ? "Omar op LinkedIn" : "Omar on LinkedIn"}
+            </a>
+          </p>
         </motion.div>
       </div>
     </section>

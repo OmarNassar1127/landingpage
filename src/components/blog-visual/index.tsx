@@ -43,7 +43,7 @@ function Klantvragen({ post }: { post: BlogPost }) {
         { icon: Plug, text: "Wij koppelen je mail, chat of WhatsApp" },
         { icon: ShieldCheck, text: "Jij keurt eerst elk antwoord goed" },
       ]}
-      free={{ title: "De eerste tien gratis", text: "Stuur tien echte klantmails. Je ziet welke antwoorden de assistent zou sturen." }}
+      free={{ title: "Eerst een testronde", text: "Stuur 20 echte klantmails. Je ziet welke antwoorden de assistent zou sturen, en hoeveel er klopten." }}
       solution={{ name: "De klantenservice-assistent", href: "/oplossingen/klantenservice-agent/" }}
     />
   );

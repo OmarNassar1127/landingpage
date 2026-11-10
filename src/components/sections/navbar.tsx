@@ -28,7 +28,7 @@ export default function Navbar({ customNavLinks }: NavbarProps = {}) {
   const defaultNavLinks = [
     { name: t.nav.services, href: "#services" },
     { name: language === 'nl' ? 'Klantresultaten' : 'Case studies', href: "#case-studies" },
-    { name: language === 'nl' ? 'Aanbevelingen' : 'Testimonials', href: "#testimonials" },
+    { name: language === 'nl' ? 'Aanbevelingen' : 'References', href: "#testimonials" },
   ];
 
   const navLinks = customNavLinks || defaultNavLinks;
@@ -290,7 +290,7 @@ export default function Navbar({ customNavLinks }: NavbarProps = {}) {
                   onClick={() => setMobileMenuOpen(false)}
                   className="w-full flex items-center justify-center gap-2 bg-foreground text-background font-semibold py-4 rounded-2xl text-base active:scale-[0.98] transition-transform"
                 >
-                  {language === "nl" ? "Plan gratis intake" : "Book free intake"}
+                  {language === "nl" ? "Plan een intake" : "Book an intake"}
                   <ArrowRight className="w-4 h-4" />
                 </a>
 

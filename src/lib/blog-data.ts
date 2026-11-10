@@ -149,7 +149,7 @@ export const blogPosts: BlogPost[] = [
   <li>Volledige broncode in jouw GitHub repository</li>
   <li>Documentatie voor beheer en uitbreidingen</li>
   <li>Monitoring dashboard voor gesprekslogs en prestaties</li>
-  <li>30 dagen gratis support na livegang</li>
+  <li>30 dagen support na livegang, inbegrepen</li>
   <li>Overdracht van alle API-keys en credentials</li>
 </ul>
 
@@ -305,7 +305,7 @@ export const blogPosts: BlogPost[] = [
 
 <p>Een chatbot praat. Een AI agent handelt. Als jouw doel is om echt operationele last te verminderen en processen te automatiseren, heb je vrijwel altijd een AI agent nodig. De investering is hoger, maar de terugverdientijd ook aanzienlijk sneller, omdat de impact op je bedrijfsvoering veel groter is.</p>
 
-<p>Twijfel je welke aanpak past bij jouw situatie? Plan een gratis intake via onze website en we denken mee. Bekijk ook <a href="/blog/wat-kost-ai-agent">wat een AI agent kost</a>, hoe we <a href="/blog/klantenservice-automatiseren-ai">klantenservice automatiseren</a>, of ontdek onze <a href="/diensten/digitale-medewerker">digitale medewerker dienst</a>.</p>`,
+<p>Twijfel je welke aanpak past bij jouw situatie? Plan een intake via onze website en we denken mee. Bekijk ook <a href="/blog/wat-kost-ai-agent">wat een AI agent kost</a>, hoe we <a href="/blog/klantenservice-automatiseren-ai">klantenservice automatiseren</a>, of ontdek onze <a href="/diensten/digitale-medewerker">digitale medewerker dienst</a>.</p>`,
   },
 
   {
@@ -441,7 +441,7 @@ export const blogPosts: BlogPost[] = [
 
 <p><strong>"Onze producten zijn te complex voor een AI."</strong> Wij bouwen agents specifiek voor jouw kennisdomein, gekoppeld aan jouw documentatie. Een agent die in jouw Notion, SharePoint of PDF-bibliotheek zoekt, weet meer over je producten dan de meeste junior medewerkers. Onderzoek van <a href="https://www.gartner.com/" target="_blank" rel="noopener">Gartner</a> toont aan dat AI klantenservice de gemiddelde afhandelingstijd met 40% kan verlagen.</p>
 
-<p>Nieuwsgierig of dit voor jouw klantenservice werkt? Neem contact op voor een gratis analyse van jouw huidige ticketvolume. Lees ook over het <a href="/blog/ai-agent-vs-chatbot">verschil tussen een AI agent en chatbot</a>, hoe een <a href="/blog/whatsapp-ai-agent-bedrijven">WhatsApp AI agent werkt voor bedrijven</a>, of bekijk onze <a href="/diensten/ai-automatisering-mkb">AI automatisering voor MKB</a>.</p>`,
+<p>Nieuwsgierig of dit voor jouw klantenservice werkt? Neem contact op voor een analyse van jouw huidige ticketvolume. Lees ook over het <a href="/blog/ai-agent-vs-chatbot">verschil tussen een AI agent en chatbot</a>, hoe een <a href="/blog/whatsapp-ai-agent-bedrijven">WhatsApp AI agent werkt voor bedrijven</a>, of bekijk onze <a href="/diensten/ai-automatisering-mkb">AI automatisering voor MKB</a>.</p>`,
   },
 
   {
@@ -643,7 +643,7 @@ export const blogPosts: BlogPost[] = [
 
 <p><strong>Nee:</strong> Er is scepsis of angst in de organisatie die constructieve adoptie in de weg staat.</p>
 
-<p><strong>Wat dit betekent:</strong> Scepsis is gezond. AI is geen wondermiddel. Maar als er fundamentele weerstand is, begin dan met een interne presentatie of workshop om verwachtingen te kalibreren. Wij geven gratis AI awareness sessies voor management teams.</p>
+<p><strong>Wat dit betekent:</strong> Scepsis is gezond. AI is geen wondermiddel. Maar als er fundamentele weerstand is, begin dan met een interne presentatie of workshop om verwachtingen te kalibreren. Wij geven AI awareness sessies voor management teams.</p>
 
 <h2>Je score interpreteren</h2>
 
@@ -671,7 +671,7 @@ export const blogPosts: BlogPost[] = [
 
 <h3>Barrière 3: "We weten niet waar te beginnen"</h3>
 
-<p>Hiervoor is de oplossing simpel: vraag het ons. We doen gratis een intake waarbij we samen de drie meest kansrijke use cases voor jouw bedrijf identificeren, gerangschikt op ROI en implementatiegemak. Geen verplichtingen.</p>
+<p>Hiervoor is de oplossing simpel: vraag het ons. We doen een intake waarbij we samen de drie meest kansrijke use cases voor jouw bedrijf identificeren, gerangschikt op ROI en implementatiegemak. Geen verplichtingen.</p>
 
 <h2>Wanneer beginnen ondanks imperfecte omstandigheden?</h2>
 
@@ -840,7 +840,7 @@ export const blogPosts: BlogPost[] = [
   <li>Je wilt schalen zonder lineair meer personeel aan te nemen</li>
 </ul>
 
-<p>Voldoe je aan twee of meer criteria? Dan is de kans groot dat een WhatsApp AI agent zich binnen 3 maanden terugverdient. Plan een gratis intake en we berekenen jouw specifieke ROI. Lees ook hoe we <a href="/blog/klantenservice-automatiseren-ai">klantenservice volledig automatiseren</a>, ontdek het <a href="/blog/ai-agent-vs-chatbot">verschil tussen een AI agent en chatbot</a>, of bekijk onze <a href="/diensten/digitale-medewerker">digitale medewerker oplossing</a>.</p>`,
+<p>Voldoe je aan twee of meer criteria? Dan is de kans groot dat een WhatsApp AI agent zich binnen 3 maanden terugverdient. Plan een intake en we berekenen jouw specifieke ROI. Lees ook hoe we <a href="/blog/klantenservice-automatiseren-ai">klantenservice volledig automatiseren</a>, ontdek het <a href="/blog/ai-agent-vs-chatbot">verschil tussen een AI agent en chatbot</a>, of bekijk onze <a href="/diensten/digitale-medewerker">digitale medewerker oplossing</a>.</p>`,
   },
   ...webshopPosts,
 ];

@@ -84,7 +84,7 @@ ${formData.goals}
                             <div className="sticky top-0 bg-card border-b border-border p-6 flex items-center justify-between">
                                 <div>
                                     <h2 className="text-2xl font-bold text-foreground">
-                                        {language === 'nl' ? 'Vraag je gratis demo aan' : 'Request your free demo'}
+                                        {language === 'nl' ? 'Vraag je demo aan' : 'Request your demo'}
                                     </h2>
                                     <p className="text-sm text-muted-foreground mt-1">
                                         {language === 'nl'

@@ -29,8 +29,8 @@ export const translations = {
           detail: "24/7, binnen twee beltonen.",
         },
         trustSignal: "Vanaf €1.000 eenmalig",
-        primaryCta: "Start gratis proef",
-        secondaryCta: "Vraag gratis demo aan",
+        primaryCta: "Plan een demo",
+        secondaryCta: "Vraag een demo aan",
         socialProof: "Neemt elk gesprek op, ook 's avonds en in het weekend",
       },
       problem: {
@@ -629,13 +629,13 @@ export const translations = {
           "Neem contact met ons op voor een vrijblijvend gesprek over hoe onze AI-workshop uw team kan helpen groeien.",
 
         benefits: [
-          "Gratis intake-gesprek",
+          "Intake-gesprek",
           "Workshop volledig op maat",
           "Direct toepasbare resultaten",
           "3 maanden nazorg inbegrepen",
         ],
 
-        primaryButton: "Plan Gratis Kennismakingsgesprek",
+        primaryButton: "Plan een kennismakingsgesprek",
         secondaryButton: "Download Workshop Brochure",
       },
 
@@ -862,7 +862,7 @@ export const translations = {
           detail: "24/7. In 2 rings. Every single time.",
         },
         trustSignal: "From €1,000 one-off",
-        primaryCta: "Start free trial",
+        primaryCta: "Book a demo",
         secondaryCta: "View demo",
         socialProof: "Answers every call, evenings and weekends too",
       },
@@ -1459,13 +1459,13 @@ export const translations = {
           "Contact us for a no-obligation conversation about how our AI workshop can help your team grow.",
 
         benefits: [
-          "Free intake conversation",
+          "Intake conversation",
           "Workshop fully customized",
           "Immediately applicable results",
           "3 months aftercare included",
         ],
 
-        primaryButton: "Schedule Free Introduction Call",
+        primaryButton: "Schedule an introduction call",
         secondaryButton: "Download Workshop Brochure",
       },
 

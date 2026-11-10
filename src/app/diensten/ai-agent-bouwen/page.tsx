@@ -56,13 +56,13 @@ const agentTypes = [
 ];
 
 const processSteps = [
-  { step: "01", title: "Gratis intake", when: "Dag 1", description: "Een videocall van 30 minuten. We brengen je proces in kaart en kiezen de taak die de meeste tijd kost." },
+  { step: "01", title: "Intake", when: "Dag 1", description: "Een videocall van 30 minuten. We brengen je proces in kaart en kiezen de taak die de meeste tijd kost." },
   { step: "02", title: "Prototype", when: "Dag 2 tot 3", description: "Je krijgt een werkende versie en test die op echte vragen. Jouw feedback gaat direct de bouw in." },
   { step: "03", title: "Koppelingen", when: "Dag 4 tot 5", description: "We sluiten de agent aan op je CRM, e-mail, agenda, supportplatform of ERP." },
   { step: "04", title: "Live", when: "Dag 7", description: "De agent draait. De eerste weken kijken we actief mee en verbeteren we op basis van echte gesprekken." },
 ];
 
-const proof = ["Vanaf €1.000 eenmalig", "Live in 1 week", "AVG-conform, data in de EU", "Gratis intake"];
+const proof = ["Vanaf €1.000 eenmalig", "Live in 1 week", "AVG-conform, data in de EU", "Intake van 30 minuten"];
 
 const btnPrimary =
   "inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-7 py-3.5 text-sm font-semibold text-white shadow-[0_14px_30px_-14px_rgba(70,55,210,0.7)] transition-all hover:bg-primary/90 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2";
@@ -157,7 +157,7 @@ export default function AIAgentBouwenPage() {
               </p>
               <div className="flex flex-col gap-3 sm:flex-row">
                 <a href={CALENDLY} target="_blank" rel="noopener noreferrer" className={btnPrimary}>
-                  Plan gratis intake
+                  Plan een intake
                   <ArrowRight className="h-4 w-4" />
                 </a>
                 <a href="mailto:info@virelio.nl" className={btnSecondary}>
@@ -264,11 +264,11 @@ export default function AIAgentBouwenPage() {
             <div className="rounded-[28px] border border-black/[0.07] bg-zinc-50/60 px-6 py-12 text-center shadow-[0_40px_80px_-50px_rgba(70,55,210,0.35)] sm:px-10 sm:py-16">
               <h2 className="mb-3 text-3xl font-bold tracking-tight text-zinc-900 sm:text-4xl">Klaar voor je eerste AI agent?</h2>
               <p className="mx-auto mb-8 max-w-lg text-base text-zinc-500">
-                Plan een gratis intake van 30 minuten. Geen verkooppraatje: we luisteren en vertellen je eerlijk wat mogelijk is.
+                Plan een intake van 30 minuten. Geen verkooppraatje: we luisteren en vertellen je eerlijk wat mogelijk is.
               </p>
               <div className="flex flex-col justify-center gap-3 sm:flex-row">
                 <a href={CALENDLY} target="_blank" rel="noopener noreferrer" className={btnPrimary}>
-                  Plan gratis intake
+                  Plan een intake
                   <ArrowRight className="h-4 w-4" />
                 </a>
                 <a href="mailto:info@virelio.nl" className={btnSecondary}>

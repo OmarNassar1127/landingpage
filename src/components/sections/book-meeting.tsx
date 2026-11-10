@@ -82,8 +82,8 @@ export default function BookMeeting() {
             className="text-muted-foreground max-w-2xl mx-auto mb-8"
           >
             {language === "nl"
-              ? "Kies hoe je contact wilt maken. Gratis en vrijblijvend."
-              : "Choose how you want to connect. Free and non-binding."}
+              ? "Kies hoe je contact wilt maken. Vrijblijvend."
+              : "Choose how you want to connect. No commitment."}
           </motion.p>
         </div>
 

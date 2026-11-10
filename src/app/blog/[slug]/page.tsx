@@ -239,7 +239,7 @@ export default async function BlogPostPage({ params }: Props) {
             <p className="mb-6 sm:mb-8 text-sm sm:text-base text-muted-foreground max-w-lg mx-auto">
               {post.cta
                 ? post.cta.text
-                : "Plan een gratis intake en ontdek wat AI kan betekenen voor jouw bedrijf."}
+                : "Plan een intake en ontdek wat AI kan betekenen voor jouw bedrijf."}
             </p>
             <a
               href={post.cta ? post.cta.href : "https://calendly.com/omarnassar1127/30min"}

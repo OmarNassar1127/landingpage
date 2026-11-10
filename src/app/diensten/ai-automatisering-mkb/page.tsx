@@ -108,7 +108,7 @@ export default function AIAutomatiseringMKBPage() {
               <div className="flex flex-col gap-3 sm:flex-row">
                 <a href={CALENDLY} target="_blank" rel="noopener noreferrer"
                   className={`group inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-7 py-3.5 text-sm font-semibold text-white shadow-[0_12px_28px_-12px_rgba(70,55,210,0.6)] transition-colors hover:bg-primary/90 ${RING}`}>
-                  Plan gratis intake
+                  Plan een intake
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
                 </a>
                 <a href="mailto:info@virelio.nl"
@@ -272,12 +272,12 @@ export default function AIAutomatiseringMKBPage() {
           <div className="container mx-auto max-w-3xl px-5 py-16 text-center sm:px-8 sm:py-24">
             <h2 className="mb-4 text-3xl font-bold tracking-tight text-zinc-900 sm:text-4xl">Welk proces automatiseren we als eerste?</h2>
             <p className="mx-auto mb-8 max-w-lg text-base text-zinc-500">
-              Plan een gratis gesprek van 30 minuten. Wij zoeken uw drie grootste tijdvreters en rekenen de besparing voor u uit.
+              Plan een gesprek van 30 minuten. Wij zoeken uw drie grootste tijdvreters en rekenen de besparing voor u uit.
             </p>
             <div className="flex flex-col justify-center gap-3 sm:flex-row">
               <a href={CALENDLY} target="_blank" rel="noopener noreferrer"
                 className={`group inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-8 py-4 text-sm font-semibold text-white shadow-[0_12px_28px_-12px_rgba(70,55,210,0.6)] transition-colors hover:bg-primary/90 ${RING}`}>
-                Plan gratis intake
+                Plan een intake
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
               </a>
               <a href="mailto:info@virelio.nl"

@@ -190,7 +190,7 @@ export function DoorTile({ lang, tone = "white", className = "", figure = false 
   );
 }
 
-/** The primary call to action: the free intake (Calendly), with mail as the quiet second. */
+/** The primary call to action: the intake (Calendly), with mail as the quiet second. */
 export function CtaTile({ lang, tone = "indigo", className = "", title }: Fact & { title?: string }) {
   const c = COPY[lang];
   const onColor = tone === "indigo" || tone === "dark";
@@ -200,7 +200,7 @@ export function CtaTile({ lang, tone = "indigo", className = "", title }: Fact &
         <T tone={tone} big>
           {title ?? c.ctaTitle}
         </T>
-        <p className="bp">{lang === "nl" ? "Gratis intake van 30 minuten." : "A free 30-minute intake."}</p>
+        <p className="bp">{lang === "nl" ? "Intake van 30 minuten." : "A 30-minute intake."}</p>
       </div>
       <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2">
         <a

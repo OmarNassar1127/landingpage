@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "AI Spraakassistent voor Bedrijven | 24/7 Automatisering | Virelio",
-    description: "Nederlandse AI spraakassistent die binnen 2 beltonen opneemt, 24/7. Vanaf €1.000 eenmalig. Plan een gratis intake.",
+    description: "Nederlandse AI spraakassistent die binnen 2 beltonen opneemt, 24/7. Vanaf €1.000 eenmalig. Plan een intake.",
     url: "https://virelio.nl/spraakassistent",
     siteName: "Virelio: AI agents op maat",
     locale: "nl_NL",
