@@ -60,7 +60,7 @@ const certifications: Certification[] = [
     title: "Certificate of Completion: Agent Skills",
     date: "Mar 2026",
     skills: ["Autonomous Agents", "Multi-Step Reasoning", "Tool Use"],
-    color: "bg-neutral-900",
+    color: "bg-ink",
     logo: <div className="text-white"><AnthropicLogo /></div>,
   },
   {
@@ -84,7 +84,7 @@ const certifications: Certification[] = [
     title: "Model Context Protocol: Advanced Topics",
     date: "Mar 2026",
     skills: ["MCP Servers", "Tool Integration", "Agentic Workflows"],
-    color: "bg-neutral-900",
+    color: "bg-ink",
     logo: <div className="text-white"><AnthropicLogo /></div>,
   },
   {
@@ -108,7 +108,7 @@ const certifications: Certification[] = [
     title: "Claude Code in Action",
     date: "Mar 2026",
     skills: ["AI-Powered Development", "CLI Automation", "Pair Programming"],
-    color: "bg-neutral-900",
+    color: "bg-ink",
     logo: <div className="text-white"><AnthropicLogo /></div>,
   },
   {
@@ -240,7 +240,7 @@ export default function Certifications() {
   useEffect(() => setShuffledCerts(shuffleArray(certifications)), []);
 
   return (
-    <section className="py-16 sm:py-20 overflow-hidden">
+    <section className="bg-band py-16 sm:py-20 overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
         {/* Header */}
         <div className="text-center mb-10">

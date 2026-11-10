@@ -64,6 +64,17 @@
 :root {
   --font-inter: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
+  /* Virelio palette (2026-11-10). Space-separated RGB so Tailwind opacity modifiers work.
+     Tailwind names: ink, ink-soft, band, line, brand, brand-tint. */
+  --ink: 29 29 31;            /* #1D1D1F text */
+  --ink-soft: 107 102 96;     /* #6B6660 secondary text */
+  --band: 250 245 238;        /* #FAF5EE cream band */
+  --line: 234 228 219;        /* #EAE4DB card border */
+  --brand: 70 55 210;         /* #4637D2 the one accent */
+  --brand-tint: 236 235 252;  /* #ECEBFC accent tint */
+  --glow-peach: rgba(255, 214, 184, 0.45);  /* hero + closing CTA only */
+  --glow-indigo: rgba(129, 140, 248, 0.16); /* hero + closing CTA only */
+
   /* Light theme colors (Chatsheet-inspired) */
   --bg-primary-light: #FFFFFF;
   --bg-secondary-light: #F9FAFB;
@@ -322,33 +333,38 @@ a:hover {
   :root {
     /* Light theme - Premium Indigo */
     --background: 0 0% 100%;
-    --foreground: 240 10% 6%;
+    /* shadcn aliases of the Virelio palette above (HSL of the same hex values). */
+    --foreground: 240 3% 12%;
+    /* ink #1D1D1F */
 
     --card: 0 0% 100%;
-    --card-foreground: 240 10% 6%;
+    --card-foreground: 240 3% 12%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 6%;
+    --popover-foreground: 240 3% 12%;
 
-    --primary: 245 58% 51%;
-    /* Deep Indigo #4F46E5 */
+    --primary: 246 63% 52%;
+    /* brand #4637D2 */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 240 5% 96%;
-    --secondary-foreground: 240 6% 10%;
+    --secondary: 35 55% 96%;
+    /* band #FAF5EE */
+    --secondary-foreground: 240 3% 12%;
 
-    --muted: 240 5% 96%;
-    --muted-foreground: 240 4% 46%;
+    --muted: 35 55% 96%;
+    --muted-foreground: 33 5% 40%;
+    /* ink-soft #6B6660 */
 
-    --accent: 240 5% 96%;
-    --accent-foreground: 240 6% 10%;
+    --accent: 35 55% 96%;
+    --accent-foreground: 240 3% 12%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 240 6% 90%;
-    --input: 240 6% 90%;
-    --ring: 245 58% 51%;
+    --border: 36 26% 89%;
+    /* line #EAE4DB */
+    --input: 36 26% 89%;
+    --ring: 246 63% 52%;
 
     --radius: 0.75rem;
 
@@ -467,6 +483,14 @@ a:hover {
   to {
     opacity: 1;
   }
+}
+
+/* Hero wash: warm light from the top, a breath of indigo, white at the seam. Hero and closing CTA only. */
+.wash-hero {
+  background:
+    radial-gradient(60% 50% at 15% 0%, var(--glow-peach) 0%, transparent 70%),
+    radial-gradient(45% 45% at 80% 55%, var(--glow-indigo) 0%, transparent 70%),
+    linear-gradient(180deg, rgb(var(--band)) 0%, #FFFFFF 100%);
 }
 
 /* Uniform tech badge styling - Corporate neutral palette */

@@ -27,26 +27,23 @@ export type Result =
 export type Problem = { chip: string; now: string; inputs: Tool[]; outputs: Tool[]; result: Result };
 
 const tool = (label: string, icon: LucideIcon, tint: string): Tool => ({ label, icon, tint });
-const MAIL_T = "#FBE3D6";
-const DOC_T = "#F3EBD8";
-const GREEN_T = "#DCEFE2";
-const BLUE_T = "#DDE7F3";
-const LILAC_T = "#E7E3F6";
+// Tool icons sit on the neutral band; the agent pill carries the only accent.
+const TINT = "rgb(var(--band))";
 
-const OUTLOOK = tool("Outlook", Mail, MAIL_T);
-const GMAIL = tool("Gmail", Mail, MAIL_T);
-const EXACT = tool("Exact", Calculator, BLUE_T);
-const SHOPIFY = tool("Shopify", ShoppingBag, "#E4E9DA");
-const EXCEL = tool("Excel", FileSpreadsheet, GREEN_T);
-const WHATSAPP = tool("WhatsApp", MessageCircle, GREEN_T);
-const SHAREPOINT = tool("SharePoint", FolderOpen, BLUE_T);
-const TEAMS = tool("Teams", Users, LILAC_T);
+const OUTLOOK = tool("Outlook", Mail, TINT);
+const GMAIL = tool("Gmail", Mail, TINT);
+const EXACT = tool("Exact", Calculator, TINT);
+const SHOPIFY = tool("Shopify", ShoppingBag, TINT);
+const EXCEL = tool("Excel", FileSpreadsheet, TINT);
+const WHATSAPP = tool("WhatsApp", MessageCircle, TINT);
+const SHAREPOINT = tool("SharePoint", FolderOpen, TINT);
+const TEAMS = tool("Teams", Users, TINT);
 
 const nl: Problem[] = [
   {
     chip: "We typen orders over uit mail",
     now: "Elke order komt binnen als mail en gaat met de hand het systeem in.",
-    inputs: [OUTLOOK, tool("Bestelbon", FileText, DOC_T)],
+    inputs: [OUTLOOK, tool("Bestelbon", FileText, TINT)],
     outputs: [EXACT],
     result: {
       kind: "order",
@@ -63,8 +60,8 @@ const nl: Problem[] = [
   {
     chip: "Offertes duren dagen",
     now: "Een aanvraag wacht tot iemand tijd heeft om te rekenen en te typen.",
-    inputs: [GMAIL, tool("Prijslijst", FileSpreadsheet, GREEN_T)],
-    outputs: [tool("Offerte-pdf", FileText, DOC_T), EXACT],
+    inputs: [GMAIL, tool("Prijslijst", FileSpreadsheet, TINT)],
+    outputs: [tool("Offerte-pdf", FileText, TINT), EXACT],
     result: {
       kind: "quote",
       title: "Concept-offerte",
@@ -82,8 +79,8 @@ const nl: Problem[] = [
   {
     chip: "Facturen handmatig inboeken",
     now: "Pdf openen, bedragen overtypen, btw controleren. Elke week opnieuw.",
-    inputs: [tool("Factuur-pdf", FileText, DOC_T)],
-    outputs: [EXACT, tool("Bank", Landmark, LILAC_T)],
+    inputs: [tool("Factuur-pdf", FileText, TINT)],
+    outputs: [EXACT, tool("Bank", Landmark, TINT)],
     result: {
       kind: "invoice",
       title: "Inkoopfactuur",
@@ -102,7 +99,7 @@ const nl: Problem[] = [
     chip: "Klantvragen blijven liggen",
     now: "Mail en WhatsApp lopen vol terwijl jij aan het werk bent.",
     inputs: [GMAIL, WHATSAPP, SHOPIFY],
-    outputs: [tool("Antwoord", Mail, MAIL_T)],
+    outputs: [tool("Antwoord", Mail, TINT)],
     result: {
       kind: "message",
       title: "Concept-antwoord",
@@ -117,7 +114,7 @@ const nl: Problem[] = [
     chip: "Planning in Excel",
     now: "Wie waar staat, zit in een sheet die één persoon bijhoudt.",
     inputs: [EXCEL],
-    outputs: [tool("Agenda", CalendarDays, LILAC_T), WHATSAPP],
+    outputs: [tool("Agenda", CalendarDays, TINT), WHATSAPP],
     result: {
       kind: "plan",
       title: "Voorstel planning",
@@ -132,7 +129,7 @@ const nl: Problem[] = [
   {
     chip: "Kennis zit in één hoofd",
     now: "Het team belt jou voor elke vraag over prijzen, regels en werkwijze.",
-    inputs: [SHAREPOINT, tool("Handboek", BookOpen, DOC_T), EXCEL],
+    inputs: [SHAREPOINT, tool("Handboek", BookOpen, TINT), EXCEL],
     outputs: [TEAMS],
     result: {
       kind: "message",
@@ -151,7 +148,7 @@ const en: Problem[] = [
     ...nl[0],
     chip: "We retype orders from email",
     now: "Every order arrives by email and gets typed into the system by hand.",
-    inputs: [OUTLOOK, tool("Order form pdf", FileText, DOC_T)],
+    inputs: [OUTLOOK, tool("Order form pdf", FileText, TINT)],
     result: {
       kind: "order",
       title: "New order in Exact",
@@ -168,8 +165,8 @@ const en: Problem[] = [
     ...nl[1],
     chip: "Quotes take days",
     now: "A request waits until someone has time to calculate and type.",
-    inputs: [GMAIL, tool("Price list", FileSpreadsheet, GREEN_T)],
-    outputs: [tool("Quote pdf", FileText, DOC_T), EXACT],
+    inputs: [GMAIL, tool("Price list", FileSpreadsheet, TINT)],
+    outputs: [tool("Quote pdf", FileText, TINT), EXACT],
     result: {
       kind: "quote",
       title: "Draft quote",
@@ -188,7 +185,7 @@ const en: Problem[] = [
     ...nl[2],
     chip: "Invoices entered by hand",
     now: "Open the pdf, retype the amounts, check the VAT. Every week again.",
-    inputs: [tool("Invoice pdf", FileText, DOC_T)],
+    inputs: [tool("Invoice pdf", FileText, TINT)],
     result: {
       kind: "invoice",
       title: "Purchase invoice",
@@ -207,7 +204,7 @@ const en: Problem[] = [
     ...nl[3],
     chip: "Customer questions pile up",
     now: "Email and WhatsApp fill up while you are on the job.",
-    outputs: [tool("Reply", Mail, MAIL_T)],
+    outputs: [tool("Reply", Mail, TINT)],
     result: {
       kind: "message",
       title: "Draft reply",
@@ -222,7 +219,7 @@ const en: Problem[] = [
     ...nl[4],
     chip: "Planning in Excel",
     now: "Who goes where lives in a sheet that one person keeps up.",
-    outputs: [tool("Calendar", CalendarDays, LILAC_T), WHATSAPP],
+    outputs: [tool("Calendar", CalendarDays, TINT), WHATSAPP],
     result: {
       kind: "plan",
       title: "Proposed slot",
@@ -238,7 +235,7 @@ const en: Problem[] = [
     ...nl[5],
     chip: "Knowledge lives in one head",
     now: "The team calls you for every question about prices, rules and how things work.",
-    inputs: [SHAREPOINT, tool("Handbook", BookOpen, DOC_T), EXCEL],
+    inputs: [SHAREPOINT, tool("Handbook", BookOpen, TINT), EXCEL],
     result: {
       kind: "message",
       title: "Answer for the team",

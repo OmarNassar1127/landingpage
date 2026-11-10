@@ -54,6 +54,17 @@ module.exports = {
         widest: '0.1em',
       },
       colors: {
+        // Virelio palette (globals.css :root). One accent: brand.
+        ink: {
+          DEFAULT: "rgb(var(--ink) / <alpha-value>)",
+          soft: "rgb(var(--ink-soft) / <alpha-value>)",
+        },
+        band: "rgb(var(--band) / <alpha-value>)",
+        line: "rgb(var(--line) / <alpha-value>)",
+        brand: {
+          DEFAULT: "rgb(var(--brand) / <alpha-value>)",
+          tint: "rgb(var(--brand-tint) / <alpha-value>)",
+        },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

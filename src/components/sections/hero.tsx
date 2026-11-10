@@ -33,45 +33,38 @@ export default function Hero() {
 
   return (
     <section id="hero" className="relative overflow-hidden bg-white">
-      {/* Warm light from the top, a breath of the indigo accent behind the card, white at the seam. */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0"
-        style={{
-          background:
-            "radial-gradient(60% 50% at 15% 0%, rgba(255,214,184,0.45) 0%, rgba(255,214,184,0) 70%), radial-gradient(45% 45% at 80% 55%, rgba(129,140,248,0.16) 0%, rgba(129,140,248,0) 70%), linear-gradient(180deg, #FFFBF7 0%, #FFFFFF 100%)",
-        }}
-      />
+      {/* Hero wash (globals.css): warm light from the top, a breath of indigo, white at the seam. */}
+      <div aria-hidden className="wash-hero pointer-events-none absolute inset-0" />
 
       <div className="relative mx-auto grid max-w-6xl items-center gap-6 px-5 pb-16 pt-[4.5rem] sm:gap-10 sm:px-8 sm:pt-32 lg:min-h-[100svh] lg:grid-cols-[1.05fr_1fr] lg:gap-16 lg:pb-24 lg:pt-28">
         <div className="text-center lg:text-left">
-          <h1 className="mx-auto max-w-[16ch] text-[2rem] font-semibold leading-[1.06] tracking-[-0.032em] text-zinc-900 sm:text-[3.25rem] lg:mx-0 lg:text-[3.6rem] [text-wrap:balance]">
+          <h1 className="mx-auto max-w-[16ch] text-[2rem] font-semibold leading-[1.06] tracking-[-0.032em] text-ink sm:text-[3.25rem] lg:mx-0 lg:text-[3.6rem] [text-wrap:balance]">
             <span className="block">{c.h1a}</span>
-            <span className="block text-zinc-400">{c.h1b}</span>
+            <span className="block text-ink-soft/60">{c.h1b}</span>
           </h1>
 
-          <p className="mx-auto mt-3 max-w-[34rem] text-[15px] sm:mt-5 leading-relaxed text-zinc-600 sm:text-[19px] lg:mx-0">
+          <p className="mx-auto mt-3 max-w-[34rem] text-[15px] sm:mt-5 leading-relaxed text-ink-soft sm:text-[19px] lg:mx-0">
             {c.sub}
           </p>
 
           <div className="mt-5 flex flex-col items-center gap-2 sm:mt-8 sm:gap-3 sm:flex-row sm:justify-center lg:justify-start">
             <a
               href={PROBLEM_MAILTO[lang]}
-              className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-zinc-900 px-7 py-4 text-[16px] font-semibold text-white shadow-[0_8px_24px_-10px_rgba(24,24,27,0.5)] transition-[transform,background-color] duration-150 hover:bg-zinc-800 active:scale-[0.97] sm:w-auto"
+              className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-brand px-7 py-4 text-[16px] font-semibold text-white shadow-[0_8px_24px_-10px_rgb(var(--brand)/0.5)] transition-[transform,background-color] duration-150 hover:bg-brand/90 active:scale-[0.97] sm:w-auto"
             >
               {c.cta}
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
             </a>
             <a
               href={TEST_MAILTO[lang]}
-              className="inline-flex items-center gap-1 px-2 py-2 text-[15px] font-medium text-indigo-600 hover:text-indigo-700"
+              className="inline-flex items-center gap-1 px-2 py-2 text-[15px] font-medium text-brand hover:text-brand/80"
             >
               {c.test}
               <span aria-hidden>›</span>
             </a>
           </div>
 
-          <p className="mx-auto mt-3 max-w-[30rem] text-[12px] sm:mt-5 sm:text-[13px] leading-relaxed text-zinc-500 lg:mx-0">{c.note}</p>
+          <p className="mx-auto mt-3 max-w-[30rem] text-[12px] sm:mt-5 sm:text-[13px] leading-relaxed text-ink-soft lg:mx-0">{c.note}</p>
         </div>
 
         <motion.div

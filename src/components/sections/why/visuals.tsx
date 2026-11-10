@@ -47,12 +47,12 @@ export function OwnershipVisual({ lang }: { lang: Lang }) {
   return (
     <div ref={ref} aria-hidden="true" className="relative flex h-full flex-col justify-center gap-4">
       {/* repo card */}
-      <div className="rounded-xl border border-black/[0.07] bg-white shadow-[0_14px_36px_-22px_rgba(70,55,210,0.35)] dark:border-white/10 dark:bg-background">
-        <div className="flex items-center justify-between border-b border-black/[0.06] px-4 py-3 dark:border-white/10">
+      <div className="rounded-xl border border-line bg-white shadow-[0_14px_36px_-22px_rgb(var(--ink)/0.17)] dark:border-white/10 dark:bg-background">
+        <div className="flex items-center justify-between border-b border-line px-4 py-3 dark:border-white/10">
           <span className="truncate font-mono text-[12px] text-foreground">
             <span className="text-muted-foreground">{lang === "nl" ? "jouw-bedrijf" : "your-company"} / </span>ai-assistent
           </span>
-          <span className="relative flex h-7 shrink-0 items-center gap-1.5 rounded-full border border-black/[0.07] bg-[#fafafb] px-2.5 text-[11px] font-medium text-muted-foreground dark:border-white/10 dark:bg-white/5">
+          <span className="relative flex h-7 shrink-0 items-center gap-1.5 rounded-full border border-line bg-band px-2.5 text-[11px] font-medium text-muted-foreground dark:border-white/10 dark:bg-white/5">
             <span className="relative h-3.5 w-3.5">
               <AnimatePresence initial={false} mode="popLayout">
                 {stage >= 2 ? (
@@ -99,7 +99,7 @@ export function OwnershipVisual({ lang }: { lang: Lang }) {
               initial={false}
               animate={{ x: stage >= 3 ? "100%" : "0%" }}
               transition={{ duration: reduce ? 0 : 0.9, ease: EASE }}>
-              <span className="absolute top-1/2 flex h-8 w-[112px] -translate-y-1/2 items-center justify-center gap-1.5 rounded-lg border border-primary/20 bg-white font-mono text-[11px] text-foreground shadow-[0_8px_20px_-12px_rgba(70,55,210,0.55)] dark:bg-background">
+              <span className="absolute top-1/2 flex h-8 w-[112px] -translate-y-1/2 items-center justify-center gap-1.5 rounded-lg border border-primary/20 bg-white font-mono text-[11px] text-foreground shadow-[0_8px_20px_-12px_rgb(var(--ink)/0.28)] dark:bg-background">
                 <FileArchive className="h-3.5 w-3.5 text-primary" />
                 broncode.zip
               </span>
@@ -129,7 +129,7 @@ export function BlendVisual({ lang }: { lang: Lang }) {
         initial={false} animate={{ x: start ? 12 : -4 }} transition={t}>
         {lang === "nl" ? "Nieuw" : "New"}
       </motion.div>
-      <motion.div className="flex h-[72px] w-[72px] items-center justify-end rounded-full border border-black/[0.12] bg-white/60 pr-2.5 text-[10.5px] font-medium text-muted-foreground dark:border-white/15 dark:bg-white/5"
+      <motion.div className="flex h-[72px] w-[72px] items-center justify-end rounded-full border border-line bg-white/60 pr-2.5 text-[10.5px] font-medium text-muted-foreground dark:border-white/15 dark:bg-white/5"
         initial={false} animate={{ x: start ? -12 : 4 }} transition={t}>
         {lang === "nl" ? "Bewezen" : "Proven"}
       </motion.div>
@@ -164,7 +164,7 @@ export function EuShieldVisual() {
           );
         })}
       </svg>
-      <motion.div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white shadow-[0_8px_20px_-10px_rgba(70,55,210,0.6)] ring-1 ring-primary/15 dark:bg-background"
+      <motion.div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white shadow-[0_8px_20px_-10px_rgb(var(--ink)/0.3)] ring-1 ring-primary/15 dark:bg-background"
         initial={false} animate={{ scale: start ? 1 : 0.6, opacity: start ? 1 : 0 }}
         transition={{ delay: reduce ? 0 : 0.65, type: "spring", stiffness: 420, damping: 20 }}>
         <ShieldCheck className="h-5 w-5 text-primary" strokeWidth={2.2} />
@@ -180,7 +180,7 @@ export function SprintVisual({ lang }: { lang: Lang }) {
     <div ref={ref} aria-hidden="true" className="flex h-full w-full flex-col justify-center gap-2 px-1">
       <div className="flex items-end gap-[3px]">
         {Array.from({ length: 7 }, (_, i) => (
-          <div key={i} className="relative h-6 flex-1 overflow-hidden rounded-[3px] bg-black/[0.05] dark:bg-white/10">
+          <div key={i} className="relative h-6 flex-1 overflow-hidden rounded-[3px] bg-line dark:bg-white/10">
             <motion.div className={`absolute inset-0 origin-bottom ${i === 6 ? "bg-primary" : "bg-primary/45"}`}
               initial={false} animate={{ scaleY: start ? 1 : 0 }}
               transition={{ delay: reduce ? 0 : 0.1 + i * 0.12, duration: reduce ? 0 : 0.3, ease: EASE }} />
@@ -218,7 +218,7 @@ export function LanguageVisual() {
   const g = GREETINGS[i];
   return (
     <div ref={ref} aria-hidden="true" className="flex h-full flex-col items-center justify-center gap-3">
-      <div className="flex h-10 w-[150px] items-center gap-2 rounded-full border border-black/[0.07] bg-white pl-1.5 pr-4 shadow-[0_8px_22px_-14px_rgba(70,55,210,0.5)] dark:border-white/10 dark:bg-background">
+      <div className="flex h-10 w-[150px] items-center gap-2 rounded-full border border-line bg-white pl-1.5 pr-4 shadow-[0_8px_22px_-14px_rgb(var(--ink)/0.25)] dark:border-white/10 dark:bg-background">
         <span className="relative flex h-7 w-9 shrink-0 items-center justify-center overflow-hidden rounded-full bg-primary text-[11px] font-semibold text-white">
           <AnimatePresence mode="popLayout" initial={false}>
             <motion.span key={g.code} initial={{ y: 14, opacity: 0 }} animate={{ y: 0, opacity: 1 }} exit={{ y: -14, opacity: 0 }}
@@ -246,7 +246,7 @@ export function CancelVisual({ lang }: { lang: Lang }) {
   const flip = "transition duration-300 ease-out motion-reduce:transition-none";
   return (
     <div aria-hidden="true" className="flex h-full items-center justify-center">
-      <div className="flex w-[190px] items-center justify-between rounded-xl border border-black/[0.07] bg-white px-3.5 py-3 shadow-[0_8px_22px_-14px_rgba(70,55,210,0.45)] dark:border-white/10 dark:bg-background">
+      <div className="flex w-[190px] items-center justify-between rounded-xl border border-line bg-white px-3.5 py-3 shadow-[0_8px_22px_-14px_rgb(var(--ink)/0.23)] dark:border-white/10 dark:bg-background">
         <div className="relative text-[12px] leading-tight">
           <div className="font-medium text-foreground">{lang === "nl" ? "Abonnement" : "Subscription"}</div>
           <div className="relative h-4 text-[11px] text-muted-foreground">
@@ -254,7 +254,7 @@ export function CancelVisual({ lang }: { lang: Lang }) {
             <span className={`absolute left-0 translate-y-1 opacity-0 ${flip} group-hover:translate-y-0 group-hover:opacity-100`}>{lang === "nl" ? "Opgezegd, per direct" : "Cancelled, right away"}</span>
           </div>
         </div>
-        <span className="relative h-6 w-10 shrink-0 rounded-full bg-black/[0.08] dark:bg-white/15">
+        <span className="relative h-6 w-10 shrink-0 rounded-full bg-line dark:bg-white/15">
           <span className={`absolute inset-0 rounded-full bg-primary ${flip} group-hover:opacity-0`} />
           <span className={`absolute left-0.5 top-0.5 h-5 w-5 translate-x-4 rounded-full bg-white shadow-sm ${flip} group-hover:translate-x-0`} />
         </span>

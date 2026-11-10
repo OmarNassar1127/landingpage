@@ -134,17 +134,17 @@ const CookieConsent = ({
             exit={{ y: 100, opacity: 0 }}
             transition={{ type: "spring", damping: 20 }}
             className={cn(
-              "fixed inset-x-0 bottom-0 z-[60] border-t border-black/[0.08] bg-white px-4 pb-[max(12px,env(safe-area-inset-bottom))] pt-3 shadow-[0_-12px_30px_-20px_rgba(0,0,0,0.25)] sm:bottom-4 sm:left-4 sm:right-4 sm:mx-auto sm:max-w-screen-md sm:rounded-2xl sm:border sm:px-5 sm:pb-4 sm:pt-4",
+              "fixed inset-x-0 bottom-0 z-[60] border-t border-line bg-white px-4 pb-[max(12px,env(safe-area-inset-bottom))] pt-3 shadow-[0_-12px_30px_-20px_rgba(0,0,0,0.25)] sm:bottom-4 sm:left-4 sm:right-4 sm:mx-auto sm:max-w-screen-md sm:rounded-2xl sm:border sm:px-5 sm:pb-4 sm:pt-4",
               className
             )}
           >
             <div className="flex flex-col gap-2.5 sm:flex-row sm:items-center sm:gap-4">
-              <p className="text-[13px] leading-snug text-zinc-600 sm:flex-1 sm:text-sm">
+              <p className="text-[13px] leading-snug text-ink-soft sm:flex-1 sm:text-sm">
                 {t.line}{" "}
                 <button
                   type="button"
                   onClick={toggleSettings}
-                  className="font-medium text-zinc-900 underline underline-offset-2"
+                  className="font-medium text-ink underline underline-offset-2"
                 >
                   {showSettings ? t.hide : t.settings}
                 </button>
@@ -169,7 +169,7 @@ const CookieConsent = ({
               <motion.div
                 initial={{ height: 0, opacity: 0 }}
                 animate={{ height: "auto", opacity: 1 }}
-                className="mt-3 flex max-h-[45vh] flex-col gap-3 overflow-y-auto rounded-xl border border-black/[0.07] bg-zinc-50 p-3"
+                className="mt-3 flex max-h-[45vh] flex-col gap-3 overflow-y-auto rounded-xl border border-line bg-band p-3"
               >
                 {(["necessary", "analytics", "marketing", "preferences"] as CookieType[]).map((type) => (
                   <CookiePreferenceItem
@@ -247,7 +247,7 @@ const CookiePreferenceItem = ({
         <input
           id={`cookie-${type}`}
           type="checkbox"
-          className="mt-0.5 h-4 w-4 rounded border-gray-300 text-primary accent-primary focus:ring-primary"
+          className="mt-0.5 h-4 w-4 rounded border-line text-primary accent-primary focus:ring-primary"
           checked={isChecked}
           onChange={onChange}
           disabled={disabled}

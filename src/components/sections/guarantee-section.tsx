@@ -27,9 +27,6 @@ export default function GuaranteeSection() {
 
     return (
         <section className="py-20 sm:py-24 md:py-32 relative overflow-hidden" id="guarantee">
-            {/* Subtle background accent */}
-            <div className="absolute inset-0 bg-muted/30 dark:bg-muted/10" />
-
             <div className="container mx-auto px-4 relative z-10">
                 <div className="max-w-3xl mx-auto text-center">
                     <motion.p

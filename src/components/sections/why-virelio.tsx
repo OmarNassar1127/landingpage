@@ -86,10 +86,10 @@ const getReasons = (lang: Lang): Reason[] => {
 };
 
 const CARD =
-  "group relative flex h-full flex-col rounded-2xl border border-black/[0.07] bg-white p-5 sm:p-6 shadow-[0_1px_2px_rgba(23,23,28,0.04),0_16px_40px_-28px_rgba(70,55,210,0.28)] transition-shadow duration-300 hover:shadow-[0_1px_2px_rgba(23,23,28,0.04),0_22px_48px_-26px_rgba(70,55,210,0.4)] dark:border-white/10 dark:bg-background";
+  "group relative flex h-full flex-col rounded-2xl border border-line bg-white p-5 sm:p-6 shadow-[0_1px_2px_rgb(var(--ink)/0.04),0_16px_40px_-28px_rgb(var(--ink)/0.14)] transition-shadow duration-300 hover:shadow-[0_1px_2px_rgb(var(--ink)/0.04),0_22px_48px_-26px_rgb(var(--ink)/0.2)] dark:border-white/10 dark:bg-background";
 
 const STAGE =
-  "rounded-xl border border-black/[0.05] bg-[#fafafb] dark:border-white/10 dark:bg-white/[0.03]";
+  "rounded-xl border border-line bg-band dark:border-white/10 dark:bg-white/[0.03]";
 
 function Tag({ children }: { children: React.ReactNode }) {
   return (

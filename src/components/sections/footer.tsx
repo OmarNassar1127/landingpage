@@ -13,7 +13,7 @@ export default function Footer() {
   const isWorkshopPage = typeof window !== "undefined" && window.location.pathname.includes("/workshop");
 
   return (
-    <footer className="bg-background border-t border-border/50 py-16 sm:py-20">
+    <footer className="bg-band border-t border-border/50 py-16 sm:py-20">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-2 md:grid-cols-5 gap-8 md:gap-10">
           {/* Brand */}

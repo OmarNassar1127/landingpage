@@ -27,7 +27,7 @@ export default function CtaPanel({ isNL }: { isNL: boolean }) {
   return (
     <motion.div
       id="ready-to-start"
-      className="relative overflow-hidden rounded-3xl border border-black/[0.07] bg-[#fbfbfe] px-5 py-12 text-center shadow-[0_1px_2px_rgba(23,23,28,0.04),0_30px_60px_-40px_rgba(70,55,210,0.35)] sm:px-10 sm:py-16 md:py-20 dark:border-white/10 dark:bg-background"
+      className="relative overflow-hidden rounded-3xl wash-hero border border-line px-5 py-12 text-center shadow-[0_1px_2px_rgb(var(--ink)/0.04),0_30px_60px_-40px_rgb(var(--brand)/0.35)] sm:px-10 sm:py-16 md:py-20 dark:border-white/10 dark:bg-background"
       initial={reduce ? false : { opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.3 }}
@@ -39,7 +39,7 @@ export default function CtaPanel({ isNL }: { isNL: boolean }) {
         className="pointer-events-none absolute inset-0"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(70,55,210,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(70,55,210,0.06) 1px, transparent 1px)",
+            "linear-gradient(rgb(var(--brand) / 0.06) 1px, transparent 1px), linear-gradient(90deg, rgb(var(--brand) / 0.06) 1px, transparent 1px)",
           backgroundSize: "28px 28px",
           maskImage: "radial-gradient(ellipse 70% 70% at 50% 40%, #000 30%, transparent 100%)",
           WebkitMaskImage: "radial-gradient(ellipse 70% 70% at 50% 40%, #000 30%, transparent 100%)",
@@ -58,7 +58,7 @@ export default function CtaPanel({ isNL }: { isNL: boolean }) {
           <Button
             size="lg"
             asChild
-            className={`group h-auto rounded-xl bg-primary px-7 py-4 text-base font-semibold text-primary-foreground shadow-[0_12px_28px_-12px_rgba(70,55,210,0.7)] transition-shadow duration-300 hover:bg-primary/90 hover:shadow-[0_16px_34px_-12px_rgba(70,55,210,0.8)] sm:px-10 sm:text-lg ${FOCUS}`}
+            className={`group h-auto rounded-xl bg-primary px-7 py-4 text-base font-semibold text-primary-foreground shadow-[0_12px_28px_-12px_rgb(var(--brand)/0.7)] transition-shadow duration-300 hover:bg-primary/90 hover:shadow-[0_16px_34px_-12px_rgb(var(--brand)/0.8)] sm:px-10 sm:text-lg ${FOCUS}`}
           >
             <a href="https://calendly.com/omarnassar1127/30min" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-3">
               {isNL ? "Plan een gesprek" : "Schedule a call"}
@@ -96,7 +96,7 @@ export default function CtaPanel({ isNL }: { isNL: boolean }) {
                 animate={{ opacity: 1, y: 0 }}
                 exit={reduce ? { opacity: 0, transition: { duration: 0 } } : { opacity: 0, y: -6 }}
                 transition={{ duration: 0.2 }}
-                className="space-y-1 rounded-xl border border-black/[0.07] bg-white p-2 text-left dark:border-white/10 dark:bg-background"
+                className="space-y-1 rounded-xl border border-line bg-white p-2 text-left dark:border-white/10 dark:bg-background"
               >
                 {contacts.map(({ href, icon: Icon, label, external }) => (
                   <a

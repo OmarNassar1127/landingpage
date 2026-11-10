@@ -32,32 +32,32 @@ function AgentRow({ agent, index, color, reduce, isNL, onOpen }: {
     >
       <button
         onClick={onOpen}
-        className={`group relative flex w-full items-center gap-3 overflow-hidden rounded-2xl border border-black/[0.07] bg-white px-3.5 py-3.5 text-left shadow-[0_1px_2px_rgba(23,23,28,0.04)] transition-[box-shadow,transform] duration-200 hover:-translate-y-px hover:shadow-[0_14px_30px_-18px_rgba(23,23,28,0.35)] sm:gap-4 sm:px-5 sm:py-4 ${RING}`}
+        className={`group relative flex w-full items-center gap-3 overflow-hidden rounded-2xl border border-line bg-white px-3.5 py-3.5 text-left shadow-[0_1px_2px_rgb(var(--ink)/0.04)] transition-[box-shadow,transform] duration-200 hover:-translate-y-px hover:shadow-[0_14px_30px_-18px_rgb(var(--ink)/0.35)] sm:gap-4 sm:px-5 sm:py-4 ${RING}`}
       >
-        <span className="relative flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-black/[0.07] bg-zinc-50">
-          <Icon className="h-[18px] w-[18px] text-zinc-700" strokeWidth={2} />
+        <span className="relative flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-line bg-band">
+          <Icon className="h-[18px] w-[18px] text-ink/80" strokeWidth={2} />
           <span className="absolute -right-0.5 -top-0.5 h-2 w-2 rounded-full ring-2 ring-white" style={{ background: color }} />
         </span>
         <span className="min-w-0 flex-1">
           <span className="flex items-center gap-2">
-            <span className="truncate text-[15px] font-semibold text-zinc-900">{agent.name}</span>
-            <span className="inline-flex shrink-0 items-center gap-1.5 rounded-full bg-emerald-50 px-2 py-0.5 text-[11px] font-medium text-emerald-700">
+            <span className="truncate text-[15px] font-semibold text-ink">{agent.name}</span>
+            <span className="inline-flex shrink-0 items-center gap-1.5 rounded-full bg-brand-tint px-2 py-0.5 text-[11px] font-medium text-brand">
               <span className="relative flex h-1.5 w-1.5">
                 {!reduce && (
                   <motion.span
-                    className="absolute inset-0 rounded-full bg-emerald-500"
+                    className="absolute inset-0 rounded-full bg-brand"
                     animate={{ scale: [1, 2.4], opacity: [0.5, 0] }}
                     transition={{ duration: 1.6, repeat: Infinity, ease: "easeOut", delay: index * 0.3 }}
                   />
                 )}
-                <span className="relative h-1.5 w-1.5 rounded-full bg-emerald-500" />
+                <span className="relative h-1.5 w-1.5 rounded-full bg-brand" />
               </span>
               {isNL ? "actief" : "active"}
             </span>
           </span>
-          <span className="mt-0.5 block text-[13px] leading-snug text-zinc-500 sm:truncate">{agent.headline}</span>
+          <span className="mt-0.5 block text-[13px] leading-snug text-ink-soft sm:truncate">{agent.headline}</span>
           {/* work in progress: a thin line that keeps filling */}
-          <span className="mt-2.5 block h-[2px] overflow-hidden rounded-full bg-black/[0.05]" aria-hidden="true">
+          <span className="mt-2.5 block h-[2px] overflow-hidden rounded-full bg-line" aria-hidden="true">
             <motion.span
               className="block h-full w-full origin-left rounded-full"
               style={{ background: color, opacity: 0.7, scaleX: reduce ? 0.62 : undefined }}
@@ -67,7 +67,7 @@ function AgentRow({ agent, index, color, reduce, isNL, onOpen }: {
             />
           </span>
         </span>
-        <ChevronRight className="h-4 w-4 shrink-0 text-zinc-300 transition-transform group-hover:translate-x-0.5 group-hover:text-primary" />
+        <ChevronRight className="h-4 w-4 shrink-0 text-ink-soft/60 transition-transform group-hover:translate-x-0.5 group-hover:text-primary" />
       </button>
     </motion.li>
   );
@@ -141,14 +141,14 @@ const Services = () => {
                 <span className="h-1.5 w-1.5 rounded-full bg-primary" />
                 <span className="tabular-nums">{isNL ? `${totalAgents} digitale medewerkers` : `${totalAgents} digital employees`}</span>
               </p>
-              <h2 className="mb-4 text-3xl font-bold tracking-tight text-zinc-900 sm:text-4xl lg:text-[44px] lg:leading-[1.08]">
+              <h2 className="mb-4 text-3xl font-bold tracking-tight text-ink sm:text-4xl lg:text-[44px] lg:leading-[1.08]">
                 {isNL ? (
                   <>Welke agent past <span className="text-primary">bij jou</span>?</>
                 ) : (
                   <>Which agent fits <span className="text-primary">your team</span>?</>
                 )}
               </h2>
-              <p className="mb-8 text-base text-zinc-500 sm:text-lg">
+              <p className="mb-8 text-base text-ink-soft sm:text-lg">
                 {isNL
                   ? "Kies een categorie en ontdek wat onze agents voor je kunnen doen"
                   : "Choose a category and discover what our agents can do for you"}
@@ -171,8 +171,8 @@ const Services = () => {
                     onKeyDown={(e) => onTabKey(e, i)}
                     className={`relative flex w-full items-center gap-3 overflow-hidden rounded-xl border px-4 py-3 text-left transition-colors duration-200 ${RING} ${
                       on
-                        ? "border-black/[0.07] bg-white shadow-[0_10px_24px_-16px_rgba(23,23,28,0.35)]"
-                        : "border-transparent hover:bg-zinc-50"
+                        ? "border-line bg-white shadow-[0_10px_24px_-16px_rgb(var(--ink)/0.35)]"
+                        : "border-transparent hover:bg-band"
                     }`}
                   >
                     {/* indigo bar; while auto-advancing it fills up as a timer */}
@@ -189,10 +189,10 @@ const Services = () => {
                     )}
                     <span className="h-2 w-2 shrink-0 rounded-full" style={{ background: CATEGORY_COLOR[c.id] }} />
                     <span className="min-w-0 flex-1">
-                      <span className={`block text-[15px] font-semibold ${on ? "text-zinc-900" : "text-zinc-600"}`}>{c.title}</span>
-                      <span className="hidden truncate text-[13px] text-zinc-500 sm:block">{c.subtitle}</span>
+                      <span className={`block text-[15px] font-semibold ${on ? "text-ink" : "text-ink-soft"}`}>{c.title}</span>
+                      <span className="hidden truncate text-[13px] text-ink-soft sm:block">{c.subtitle}</span>
                     </span>
-                    <span className="shrink-0 text-xs tabular-nums text-zinc-400">{c.agents.length}</span>
+                    <span className="shrink-0 text-xs tabular-nums text-ink-soft/60">{c.agents.length}</span>
                   </button>
                 );
               })}
@@ -205,7 +205,7 @@ const Services = () => {
               id="services-panel"
               role="tabpanel"
               aria-labelledby={`services-tab-${cat.id}`}
-              className="rounded-[28px] border border-black/[0.07] bg-zinc-50/60 p-3 shadow-[0_40px_80px_-50px_rgba(23,23,28,0.35)] sm:p-5"
+              className="rounded-[28px] border border-line bg-band/60 p-3 shadow-[0_40px_80px_-50px_rgb(var(--ink)/0.35)] sm:p-5"
             >
               <AnimatePresence mode="wait" initial={false}>
                 <motion.div
@@ -218,8 +218,8 @@ const Services = () => {
                   <div className="flex flex-wrap items-center justify-between gap-3 px-2 pb-4 pt-2 sm:px-3">
                     <div className="flex min-w-0 items-center gap-2.5">
                       <span className="h-2.5 w-2.5 shrink-0 rounded-full" style={{ background: color }} />
-                      <h3 className="truncate text-lg font-semibold tracking-tight text-zinc-900">{cat.title}</h3>
-                      <span className="shrink-0 text-sm tabular-nums text-zinc-400">
+                      <h3 className="truncate text-lg font-semibold tracking-tight text-ink">{cat.title}</h3>
+                      <span className="shrink-0 text-sm tabular-nums text-ink-soft/60">
                         {cat.agents.length} agents
                       </span>
                     </div>
@@ -257,13 +257,13 @@ const Services = () => {
             </div>
 
             {/* Custom agent CTA */}
-            <div className="mt-4 flex flex-col gap-4 rounded-2xl border border-black/[0.07] bg-white px-5 py-4 sm:flex-row sm:items-center sm:gap-5">
+            <div className="mt-4 flex flex-col gap-4 rounded-2xl border border-line bg-white px-5 py-4 sm:flex-row sm:items-center sm:gap-5">
               <Zap className="hidden h-5 w-5 shrink-0 text-primary sm:block" />
               <div className="min-w-0 flex-1">
-                <h3 className="text-[15px] font-semibold text-zinc-900">
+                <h3 className="text-[15px] font-semibold text-ink">
                   {isNL ? "Niet gevonden wat je zoekt?" : "Didn't find what you need?"}
                 </h3>
-                <p className="text-[13px] leading-snug text-zinc-500">
+                <p className="text-[13px] leading-snug text-ink-soft">
                   {isNL
                     ? "Geen probleem. Wij bouwen agents volledig op maat, afgestemd op jouw processen, systemen en wensen. Vertel ons wat je nodig hebt."
                     : "No problem. We build fully custom agents, tailored to your processes, systems and needs. Tell us what you're looking for."}
@@ -271,13 +271,13 @@ const Services = () => {
               </div>
               <button
                 onClick={() => scrollToSection("ready-to-start")}
-                className={`group inline-flex shrink-0 items-center justify-center gap-2 rounded-xl border border-black/[0.1] bg-white px-4 py-2.5 text-sm font-semibold text-zinc-900 transition-colors hover:border-primary/40 hover:text-primary ${RING}`}
+                className={`group inline-flex shrink-0 items-center justify-center gap-2 rounded-xl border border-line bg-white px-4 py-2.5 text-sm font-semibold text-ink transition-colors hover:border-primary/40 hover:text-primary ${RING}`}
               >
                 {isNL ? "Bespreek jouw custom agent" : "Discuss your custom agent"}
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
               </button>
             </div>
-            <p className="mt-4 px-1 text-sm text-zinc-500">
+            <p className="mt-4 px-1 text-sm text-ink-soft">
               {isNL ? "Liever per probleem zoeken? " : "Rather search by problem? "}
               <a href={isNL ? "/oplossingen/" : "/en/solutions/"} className={`font-medium text-primary hover:underline ${RING}`}>
                 {isNL ? "Bekijk alle oplossingen" : "See all solutions"}

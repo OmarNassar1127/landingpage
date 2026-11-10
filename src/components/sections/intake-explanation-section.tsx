@@ -51,7 +51,7 @@ export default function IntakeExplanationSection() {
             };
 
     return (
-        <section aria-labelledby="intake-title" className="relative overflow-hidden bg-background py-20 sm:py-28 md:py-32" id="intake">
+        <section aria-labelledby="intake-title" className="relative overflow-hidden bg-band py-20 sm:py-28 md:py-32" id="intake">
             <div className="container mx-auto px-4 sm:px-6">
                 <div className="mx-auto max-w-5xl">
                     {/* Header */}

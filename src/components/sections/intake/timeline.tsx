@@ -65,11 +65,11 @@ export default function Timeline({ steps }: { steps: Step[] }) {
           style={geo.vertical
             ? { left: geo.x - 0.5, top: geo.y, width: 1, height: geo.len }
             : { left: geo.x, top: geo.y - 0.5, width: geo.len, height: 1 }}>
-          <div className="absolute inset-0 bg-black/[0.07] dark:bg-white/10" />
+          <div className="absolute inset-0 bg-line dark:bg-white/10" />
           <motion.div className="absolute inset-0 bg-primary/60"
             style={geo.vertical ? { scaleY: progress, originY: 0 } : { scaleX: progress, originX: 0 }} />
           <motion.div className="absolute left-0 top-0" style={geo.vertical ? { y: travel } : { x: travel }}>
-            <span className="absolute -left-[5px] -top-[5px] h-[11px] w-[11px] rounded-full bg-primary shadow-[0_0_0_4px_rgba(70,55,210,0.14),0_0_16px_2px_rgba(70,55,210,0.35)]" />
+            <span className="absolute -left-[5px] -top-[5px] h-[11px] w-[11px] rounded-full bg-primary shadow-[0_0_0_4px_rgb(var(--brand)/0.14),0_0_16px_2px_rgb(var(--brand)/0.35)]" />
           </motion.div>
         </div>
       )}
