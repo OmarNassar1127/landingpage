@@ -45,18 +45,18 @@ export default function Hero() {
         }}
       />
 
-      <div className="relative mx-auto grid max-w-6xl items-center gap-10 px-5 pb-20 pt-24 sm:px-8 sm:pt-32 lg:min-h-[100svh] lg:grid-cols-[1.05fr_1fr] lg:gap-16 lg:pb-24 lg:pt-28">
+      <div className="relative mx-auto grid max-w-6xl items-center gap-6 px-5 pb-16 pt-[4.5rem] sm:gap-10 sm:px-8 sm:pt-32 lg:min-h-[100svh] lg:grid-cols-[1.05fr_1fr] lg:gap-16 lg:pb-24 lg:pt-28">
         <div className="text-center lg:text-left">
-          <h1 className="mx-auto max-w-[16ch] text-[2.25rem] font-semibold leading-[1.06] tracking-[-0.032em] text-zinc-900 sm:text-[3.25rem] lg:mx-0 lg:text-[3.6rem] [text-wrap:balance]">
+          <h1 className="mx-auto max-w-[16ch] text-[2rem] font-semibold leading-[1.06] tracking-[-0.032em] text-zinc-900 sm:text-[3.25rem] lg:mx-0 lg:text-[3.6rem] [text-wrap:balance]">
             <span className="block">{c.h1a}</span>
             <span className="block text-zinc-400">{c.h1b}</span>
           </h1>
 
-          <p className="mx-auto mt-5 max-w-[34rem] text-[16px] leading-relaxed text-zinc-600 sm:text-[19px] lg:mx-0">
+          <p className="mx-auto mt-3 max-w-[34rem] text-[15px] sm:mt-5 leading-relaxed text-zinc-600 sm:text-[19px] lg:mx-0">
             {c.sub}
           </p>
 
-          <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center lg:justify-start">
+          <div className="mt-5 flex flex-col items-center gap-2 sm:mt-8 sm:gap-3 sm:flex-row sm:justify-center lg:justify-start">
             <a
               href={TEST_MAILTO[lang]}
               className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-zinc-900 px-7 py-4 text-[16px] font-semibold text-white shadow-[0_8px_24px_-10px_rgba(24,24,27,0.5)] transition-[transform,background-color] duration-150 hover:bg-zinc-800 active:scale-[0.97] sm:w-auto"
@@ -73,7 +73,7 @@ export default function Hero() {
             </a>
           </div>
 
-          <p className="mx-auto mt-5 max-w-[30rem] text-[13px] leading-relaxed text-zinc-500 lg:mx-0">{c.note}</p>
+          <p className="mx-auto mt-3 max-w-[30rem] text-[12px] sm:mt-5 sm:text-[13px] leading-relaxed text-zinc-500 lg:mx-0">{c.note}</p>
         </div>
 
         <motion.div
