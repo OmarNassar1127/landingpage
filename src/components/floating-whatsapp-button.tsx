@@ -25,7 +25,7 @@ export default function FloatingWhatsAppButton() {
                 href="https://wa.me/31687838713"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-ink hover:bg-ink/90 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-110 flex items-center justify-center group"
+                className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#25D366] hover:bg-[#1ebe5b] shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-110 flex items-center justify-center group"
             >
                 <MessageCircle className="h-7 w-7 sm:h-8 sm:w-8 text-white" strokeWidth={2.5} />
             </a>
