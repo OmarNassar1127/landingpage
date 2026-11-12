@@ -52,7 +52,7 @@ const serviceFaq = [
   },
   {
     question: "Wat kost het?",
-    answer: `${PRICE} Excl. btw. Het AI-gebruik betaal je apart aan de aanbieder. Eerst proberen? Stuur 20 echte klantmails: binnen twee werkdagen krijg je 20 concept-antwoorden en een telling hoeveel er klopten, voor €250, dat van de opstartkosten afgaat.`,
+    answer: `${PRICE} Excl. btw. Het AI-gebruik betaal je apart aan de aanbieder. Eerst proberen? Twee weken in je eigen inbox (Gmail of een gewone IMAP-mailbox) voor €250. Is minder dan de helft van de concepten bruikbaar, dan krijg je het terug. Ga je door, dan gaat het van de opstartkosten af.`,
   },
 ];
 
@@ -131,7 +131,7 @@ export const webshopPosts: BlogPost[] = [
     faq: serviceFaq,
     cta: {
       title: "Stuur ons je veelgestelde vragen",
-      text: "Stuur 20 echte klantmails. Binnen twee werkdagen zie je welke antwoorden de assistent zou sturen, en hoeveel er klopten. €250, gaat van de opstartkosten af.",
+      text: "Twee weken in je eigen inbox: bij elke nieuwe klantmail staat een concept-antwoord klaar. €250, terug als minder dan de helft bruikbaar is, en het gaat van de opstartkosten af.",
       label: "Mail je vragen",
       href: mailto("Klantenservice: gratis eerste reeks"),
     },

@@ -1,7 +1,7 @@
-// The €250 test round: the small secondary action under the hero button.
+// The €250 two-week trial in the shop's own inbox: the small secondary action under the hero button.
 export const TEST_MAILTO = {
-  nl: "mailto:info@virelio.nl?subject=Testronde%20%E2%82%AC250",
-  en: "mailto:info@virelio.nl?subject=Test%20round%20%E2%82%AC250",
+  nl: "mailto:info@virelio.nl?subject=Proef%202%20weken%20%E2%82%AC250",
+  en: "mailto:info@virelio.nl?subject=2-week%20trial%20%E2%82%AC250",
 };
 
 // The primary action (hero button and navbar): describe the problem, get a fixed price back.

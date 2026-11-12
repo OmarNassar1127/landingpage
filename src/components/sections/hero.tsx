@@ -13,7 +13,7 @@ const COPY = {
     h1b: "Wij bouwen het.",
     sub: "Wij bouwen AI die het herhaalwerk overneemt, aangesloten op de systemen die je al gebruikt. Jij keurt goed.",
     cta: "Vertel je probleem",
-    test: "Of start de test voor €250",
+    test: "Of probeer het 2 weken in je eigen inbox (€250, geld terug)",
     note: "Vaste prijs binnen 48 uur. Omar Nassar, regio Amsterdam.",
   },
   en: {
@@ -21,7 +21,7 @@ const COPY = {
     h1b: "We build the fix.",
     sub: "We build AI that takes over the repetitive work, wired into the tools you already use. You approve.",
     cta: "Tell us your problem",
-    test: "Or start the €250 test",
+    test: "Or try it for 2 weeks in your own inbox (€250, money back)",
     note: "Fixed price within 48 hours. Omar Nassar, Amsterdam area.",
   },
 };
